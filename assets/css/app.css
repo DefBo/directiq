@@ -5893,17 +5893,8 @@ body.enlarged {
   right: 0;
   cursor: pointer; }
 
-.main-table__filter-icon {
-  color: #00EBA8; }
-
-.main-table__close-icon {
-  color: #000; }
-  .main-table__close-icon-rect {
-    stroke: #b6ffe8;
-    -webkit-transition: stroke 0.25s;
-    transition: stroke 0.25s; }
-
 .main-table__filter-icon, .main-table__close-icon {
+  color: #00EBA8;
   -webkit-transition: color 0.25s;
   transition: color 0.25s; }
 
@@ -5911,8 +5902,13 @@ body.enlarged {
 .main-table__filter-btn:hover .main-table__close-icon {
   color: #0000FF; }
 
-.main-table__filter-btn:hover .main-table__close-icon-rect {
-  stroke: #0000FF; }
+.main-table__close-icon-cross {
+  fill: #000;
+  -webkit-transition: fill 0.25s;
+  transition: fill 0.25s; }
+
+.main-table__filter-btn:hover .main-table__close-icon-cross {
+  fill: #fff; }
 
 .main-table__filter-menu {
   visibility: collapse; }
