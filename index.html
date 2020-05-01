@@ -254,6 +254,16 @@
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Contacts</a></li>
                     <li class="breadcrumb-item active">My Lists</li>
                 </ol>
+
+                <i class="bookmark-plus__icon d-none d-sm-inline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
+                        <g id="Action-_-34---Action_-bookmark_-add_-save_-favourite-icon" data-name="Action-/-34---Action,-bookmark,-add,-save,-favourite-icon" transform="translate(0.75 0.75)">
+                            <path id="Path" d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13" transform="translate(-1972.5 -1089.5)" fill="none" stroke="blue" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                            <path id="Path-2" data-name="Path" d="M1986.5,1093.5v8m4-4h-8" transform="translate(-1972.5 -1089.5)" fill="none" stroke="#00eba8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                        </g>
+                    </svg>
+                </i>
+
             </div>
 
 
@@ -491,168 +501,65 @@
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="home-b1">
 
-                                        <table id="main-datatable" class="table nowrap">
-                                            <thead>
+                                        <div class="main-table__outer">
+                                            <table id="main-datatable" class="main-table table nowrap">
+                                                <thead>
                                                 <tr>
-                                                    <th class="nosort checkbox-col">
+                                                    <th class="nosort checkbox-col no-filter"></th>
+                                                    <th>ID</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Email</th>
+                                                    <th>Date Added</th>
+                                                    <th class="nosort">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="5.1" height="10" class="sort-i"><g><path class="sort-i__top" d="M2.55 1.572l1.761 1.762.783-.784L2.55 0 0 2.55l.788.784z" fill="#212b35"></path><path class="sort-i__bottom" d="M2.549 8.428L.788 6.667l-.784.783L2.548 10l2.55-2.55-.789-.783z" fill="#212b35"></path></g></svg>
+                                                    </th>
+                                                </tr>
+                                                <tr class="main-table__filter-menu">
+                                                    <th class="nosort checkbox-col no-filter">
                                                         <i>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="10.16" height="6" viewBox="0 0 8 4.94">
                                                                 <path d="M4237.768,4437.5l-3.06,3.053-3.06-3.053-.94.94,4,4,4-4Z" transform="translate(-4230.708 -4437.499)"/>
                                                             </svg>
                                                         </i>
                                                     </th>
-                                                    <th>List Name</th>
-                                                    <th>List Size</th>
-                                                    <th>Subscribed</th>
-                                                    <th>Disabled</th>
-                                                    <th>List Quality</th>
-                                                    <th>Last Modified</th>
-                                                    <th class="nosort"></th>
+                                                    <th>ID</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Email</th>
+                                                    <th>Date Added</th>
+                                                    <th class="nosort no-filter"></th>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="checkbox checkbox-single checkbox-custom">
-                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
-                                                            <label></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="list-name">
-                                                        <a href="#" class="list-name__link">Dodoaildo Mega List</a>
-                                                    </td>
-                                                    <td class="list-size">
-                                                        <div class="list-size__number">12,153</div>
-                                                        <div class="list-size__percents">15% engaged</div>
-                                                    </td>
-                                                    <td class="cell-subscribed">10,984</td>
-                                                    <td class="cell-disabled">1,385</td>
-                                                    <td>
-                                                        <i class="list-quality-icon list-quality-icon_2">
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                        </i>
-                                                    </td>
-                                                    <td class="cell-last-modified">Mar 31, 2020</td>
-                                                    <td class="cell-buttons">
-                                                        <button type="button" class="btn btn-success btn-success_custom waves-effect waves-light">View</button>
-                                                        <button type="button" class="btn btn-success btn-success_custom btn-success_dots waves-effect waves-light">
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="checkbox checkbox-single checkbox-custom">
-                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
-                                                            <label></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="list-name">
-                                                        <a href="#" class="list-name__link">My First List</a>
-                                                    </td>
-                                                    <td class="list-size">
-                                                        <div class="list-size__number">234</div>
-                                                        <div class="list-size__percents">73% engaged</div>
-                                                    </td>
-                                                    <td class="cell-subscribed">179</td>
-                                                    <td class="cell-disabled">14</td>
-                                                    <td>
-                                                        <i class="list-quality-icon list-quality-icon_3">
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                        </i>
-                                                    </td>
-                                                    <td class="cell-last-modified">Jun 7, 2019</td>
-                                                    <td class="cell-buttons">
-                                                        <button type="button" class="btn btn-success btn-success_custom waves-effect waves-light">View</button>
-                                                        <button type="button" class="btn btn-success btn-success_custom btn-success_dots waves-effect waves-light">
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="checkbox checkbox-single checkbox-custom">
-                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
-                                                            <label></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="list-name">
-                                                        <a href="#" class="list-name__link">DirectIQ Customers</a>
-                                                    </td>
-                                                    <td class="list-size">
-                                                        <div class="list-size__number">880</div>
-                                                        <div class="list-size__percents">3% engaged</div>
-                                                    </td>
-                                                    <td class="cell-subscribed">880</td>
-                                                    <td class="cell-disabled">0</td>
-                                                    <td>
-                                                        <i class="list-quality-icon list-quality-icon_3">
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                        </i>
-                                                    </td>
-                                                    <td class="cell-last-modified">Sep 11, 2008</td>
-                                                    <td class="cell-buttons">
-                                                        <button type="button" class="btn btn-success btn-success_custom waves-effect waves-light">View</button>
-                                                        <button type="button" class="btn btn-success btn-success_custom btn-success_dots waves-effect waves-light">
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="checkbox checkbox-single checkbox-custom">
-                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
-                                                            <label></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="list-name">
-                                                        <a href="#" class="list-name__link">Test List Beautiful</a>
-                                                    </td>
-                                                    <td class="list-size">
-                                                        <div class="list-size__number">12,153</div>
-                                                        <div class="list-size__percents">15% engaged</div>
-                                                    </td>
-                                                    <td class="cell-subscribed">14,914</td>
-                                                    <td class="cell-disabled">14,914</td>
-                                                    <td>
-                                                        <i class="list-quality-icon list-quality-icon_2">
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                        </i>
-                                                    </td>
-                                                    <td class="cell-last-modified">Mar 4, 2020</td>
-                                                    <td class="cell-buttons">
-                                                        <button type="button" class="btn btn-success btn-success_custom waves-effect waves-light">View</button>
-                                                        <button type="button" class="btn btn-success btn-success_custom btn-success_dots waves-effect waves-light">
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+
+                                            <div class="main-table__filter-btn">
+                                                <i class="main-table__filter-icon">
+                                                    <svg id="FILTER" xmlns="http://www.w3.org/2000/svg" width="20.187" height="22" viewBox="0 0 20.187 22">
+                                                        <g id="Group_87" data-name="Group 87" transform="translate(-7837.407 -1262.014)">
+                                                            <g id="Group_86" data-name="Group 86">
+                                                                <path id="Path_83" data-name="Path 83" d="M7857.47,1266.111a1.042,1.042,0,0,0-.92-.552h-2.961a2.971,2.971,0,0,0-5.85,0h-3a2.272,2.272,0,0,0,.373-1.251,2.294,2.294,0,1,0-4.215,1.251h-2.446a1.042,1.042,0,0,0-.865,1.624l7,10.4v5.9a.52.52,0,0,0,.729.478l4.8-2.088a.522.522,0,0,0,.313-.478v-3.817l7-10.4A1.04,1.04,0,0,0,7857.47,1266.111Zm-6.806-1.96a1.932,1.932,0,0,1,1.856,1.408h-3.713A1.932,1.932,0,0,1,7850.664,1264.151Zm-7.847-1.095a1.251,1.251,0,1,1-1.251,1.252A1.253,1.253,0,0,1,7842.817,1263.056Zm6.648,14.081a.53.53,0,0,0-.088.291v3.634l-3.754,1.635v-4.748h1.884a.521.521,0,0,0,0-1.043h-2.127l-5.247-7.8h10.531a.521.521,0,0,0,0-1.043h-11.232l-.982-1.46h18.1Z" fill="currentColor"/>
+                                                            </g>
+                                                        </g>
+                                                        <g id="Group_89" data-name="Group 89" transform="translate(-7837.407 -1262.014)">
+                                                            <g id="Group_88" data-name="Group 88">
+                                                                <path id="Path_84" data-name="Path 84" d="M7853.35,1268.214a.521.521,0,1,0,.153.369A.524.524,0,0,0,7853.35,1268.214Z" fill="currentColor"/>
+                                                            </g>
+                                                        </g>
+                                                    </svg>
+                                                </i>
+                                                <i class="main-table__close-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                                                        <g id="CLOSE" transform="translate(0.5 0.5)">
+                                                            <rect id="Rectangle_73" data-name="Rectangle 73" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
+                                                            <path class="main-table__close-icon-cross" id="ic_close_24px" data-name="ic close 24px" d="M9489.239,1605.581l-.806-.806-3.194,3.194-3.194-3.194-.806.806,3.194,3.194-3.194,3.194.806.806,3.194-3.194,3.194,3.194.806-.806-3.194-3.194Z" transform="translate(-9473.239 -1596.775)" fill="currentColor"/>
+                                                        </g>
+                                                    </svg>
+                                                </i>
+                                            </div>
+                                        </div>
 
                                     </div>
                                     <div class="tab-pane" id="profile-b1"></div>
@@ -690,12 +597,61 @@
                         sLengthMenu: "View _MENU_",
                         sInfo: "_START_ – _END_ of _TOTAL_"
                     },
-                    lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "All"]],
+                    lengthMenu: [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]],
+                    orderCellsTop: true,
+                    serverSide: true,
+                    ajax: 'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/contacts',
+                    columns: [
+                        {
+                            data: () => '',
+                            searchable: false,
+                            orderable: false,
+                            render: (data, type, row, meta) => {
+                                return `<div class="checkbox checkbox-single checkbox-custom"><input type="checkbox" name="contacts[]" value="${row.id}" aria-label="Single checkbox One"><label></label></div>`;
+                            }
+                        },
+                        { data: 'id' },
+                        { data: 'firstName', className: 'list-name' },
+                        { data: 'lastName', className: 'list-name' },
+                        { data: 'email', className: 'list-name' },
+                        { data: 'dateAdded', className: "cell-last-modified" },
+                        {
+                            data: () => '',
+                            searchable: false,
+                            orderable: false,
+                            render: (data, type, row, meta) =>{
+                                return `<button type="button" class="btn btn-success btn-success_custom waves-effect waves-light">View</button>
+                                        <button type="button" class="btn btn-success btn-success_custom btn-success_dots waves-effect waves-light">
+                                            <span class="btn-success__dot"></span>
+                                            <span class="btn-success__dot"></span>
+                                            <span class="btn-success__dot"></span>
+                                        </button>`;
+                            }
+                        },
+                    ],
+                    columnDefs: [],
                 });
 
                 mainDataTable.columns().iterator( 'column', function (ctx, idx) {
                     $( mainDataTable.column(idx).header() ).append('<svg xmlns="http://www.w3.org/2000/svg" width="5.1" height="10" class="sort-i"><g><path class="sort-i__top" d="M2.55 1.572l1.761 1.762.783-.784L2.55 0 0 2.55l.788.784z" fill="#212b35"/><path class="sort-i__bottom" d="M2.549 8.428L.788 6.667l-.784.783L2.548 10l2.55-2.55-.789-.783z" fill="#212b35"/></g></svg>');
                 });
+
+                $('#main-datatable thead tr:eq(1) th').each( function () {
+                    var title = $(this).text();
+                    $(this).html( '<input type="text" placeholder="Search '+title+'" class="column_search" />' );
+                } );
+
+                $('#main-datatable thead').on( 'keyup', ".column_search",function () {
+                    mainDataTable
+                        .column( $(this).parent().index() )
+                        .search( this.value )
+                        .draw();
+                } );
+            });
+
+            // Show filter
+            $('.main-table__filter-btn').click(function() {
+                $(".main-table__outer").toggleClass("_filter-visible");
             });
 
             // Fixed Menu Responsiveness Workaround
