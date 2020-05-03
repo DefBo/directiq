@@ -3801,7 +3801,6 @@ body.authentication-bg-pattern {
   font-family: "Nunito", sans-serif !important;
   font-weight: 700 !important; }
 
-/*@import "custom/plugins/datatable";*/
 .daterangepicker {
   font-family: "Nunito", sans-serif; }
   .daterangepicker td.active, .daterangepicker td.active:hover, .daterangepicker .ranges li.active {
@@ -5134,7 +5133,6 @@ body {
 
 .content-page {
   margin: 80px 13px 0 281px !important;
-  /*margin: 80px 33px 0 281px !important;*/
   padding-top: 25px;
   -webkit-transition: all .2s ease-out;
   transition: all .2s ease-out;
@@ -5519,172 +5517,6 @@ body {
     top: 0;
     right: 10px; }
 
-.home-page .main-table {
-  color: #212B35;
-  table-layout: fixed;
-  min-width: 860px;
-  width: 100% !important; }
-  .home-page .main-table thead th, .home-page .main-table td {
-    border: none; }
-  .home-page .main-table thead th {
-    background: #DAE8F7;
-    font-size: 12px;
-    font-weight: 600; }
-  .home-page .main-table td {
-    padding: 25px 0.85rem;
-    background: #fff;
-    vertical-align: middle; }
-  .home-page .main-table th, .home-page .main-table td {
-    text-align: right;
-    white-space: nowrap;
-    /*&:nth-child(2) {
-        width: 17.7% !important;
-      }
-
-      &:nth-child(3) {
-        width: 15.4% !important;
-      }
-
-      &:nth-child(4) {
-        width: 12.8% !important;
-      }
-
-      &:nth-child(5) {
-        width: 11.1% !important;
-      }
-
-      &:nth-child(6) {
-        width: 12.1% !important;
-      }
-
-      &:nth-child(7) {
-        width: 13.6% !important;
-      }
-
-      &:last-child {
-        width: calc(17.1% - 60px) !important;
-      }*/ }
-    .home-page .main-table th:first-child, .home-page .main-table td:first-child {
-      width: 60px !important;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box; }
-    .home-page .main-table th:nth-child(2), .home-page .main-table td:nth-child(2) {
-      text-align: left; }
-    .home-page .main-table th:last-child, .home-page .main-table td:last-child {
-      text-align: center; }
-  .home-page .main-table th {
-    padding: 0.7rem 0.85rem; }
-  .home-page .main-table thead input,
-  .home-page .main-table thead select {
-    width: 100%; }
-  .home-page .main-table .checkbox.checkbox-custom {
-    position: relative;
-    top: 3px; }
-  .home-page .main-table__wrap {
-    overflow: auto; }
-  .home-page .main-table__outer {
-    position: relative; }
-  .home-page .main-table__filter-menu {
-    visibility: collapse; }
-    .home-page .main-table__filter-menu th {
-      background: #F6F9FC !important; }
-  .home-page .main-table__outer._filter-visible .home-page .main-table__filter-menu {
-    visibility: visible; }
-  .home-page .main-table__outer._filter-visible .home-page .main-table__filter-icon,
-  .home-page .main-table__outer:not(._filter-visible) .home-page .main-table__close-icon {
-    display: none; }
-  .home-page .main-table__outer:not(._filter-visible) thead tr:first-child th {
-    border-bottom: 4px solid #ecf1f8 !important; }
-
-.home-page table.dataTable thead span.sort-icon {
-  display: inline-block;
-  vertical-align: middle;
-  padding-left: 5px;
-  width: 16px;
-  height: 16px; }
-
-.home-page table.dataTable thead .sorting:before, .home-page table.dataTable thead .sorting:after, .home-page table.dataTable thead .sorting_asc:before, .home-page table.dataTable thead .sorting_asc:after, .home-page table.dataTable thead .sorting_desc:before, .home-page table.dataTable thead .sorting_desc:after, .home-page table.dataTable thead .sorting_asc_disabled:before, .home-page table.dataTable thead .sorting_asc_disabled:after, .home-page table.dataTable thead .sorting_desc_disabled:before, .home-page table.dataTable thead .sorting_desc_disabled:after,
-.home-page .nosort .sort-i {
-  display: none; }
-
-.home-page table.dataTable {
-  margin: 0 !important; }
-  .home-page table.dataTable thead .sorting_asc .sort-i__top,
-  .home-page table.dataTable thead .sorting_desc .sort-i__bottom {
-    fill: #0000FF; }
-  .home-page table.dataTable thead .sorting_desc_disabled .sort-i__top,
-  .home-page table.dataTable thead .sorting_desc_disabled .sort-i__bottom {
-    fill: #0000FF;
-    opacity: 0.5; }
-  .home-page table.dataTable.nowrap th, .home-page table.dataTable table.dataTable.nowrap td {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box; }
-
-.home-page .list-name__link {
-  font-size: 12px;
-  font-weight: 600;
-  color: #212B35;
-  display: inline-block;
-  position: relative;
-  z-index: 1; }
-  .home-page .list-name__link::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 4px;
-    background: #B6FFE8;
-    z-index: -1; }
-
-.home-page .list-size__number {
-  font-size: 24px;
-  line-height: 1;
-  margin-bottom: 4px; }
-
-.home-page .list-size__percents {
-  font-size: 12px;
-  line-height: 1; }
-
-.home-page .cell-subscribed,
-.home-page .cell-disabled,
-.home-page .cell-last-modified {
-  font-weight: 600; }
-
-.home-page .cell-buttons {
-  font-size: 0; }
-
-.home-page table.dataTable thead > tr > th.sorting_asc, .home-page table.dataTable thead > tr > th.sorting_desc, .home-page table.dataTable thead > tr > th.sorting, .home-page table.dataTable thead > tr > td.sorting_asc, .home-page table.dataTable thead > tr > td.sorting_desc, .home-page table.dataTable thead > tr > td.sorting {
-  padding: .7rem .85rem; }
-
-.home-page .dataTables_length label {
-  color: #212B35;
-  font-size: 12px;
-  margin: 0;
-  font-weight: 700 !important; }
-
-.home-page .checkbox-col i {
-  margin: 0 5px; }
-
-.home-page .no-filter .column_search {
-  display: none; }
-
-.home-page .column_search {
-  border: 1px solid #fff;
-  line-height: 18px;
-  padding-left: 7.5px;
-  font-size: 10px;
-  -webkit-transition: border-color 0.4s;
-  transition: border-color 0.4s; }
-  .home-page .column_search:hover, .home-page .column_search:focus {
-    border-color: #0000FF;
-    outline: none; }
-
-.home-page .table.dataTable {
-  margin-top: 0 !important; }
-
 th, td {
   white-space: nowrap !important; }
 
@@ -5719,27 +5551,30 @@ table.dataTable tbody th, table.dataTable tbody td {
     outline: none; }
   .diriq-table thead th {
     background: #DAE8F7; }
-    .diriq-table thead th:nth-child(2):after {
+    ._list-name-table .diriq-table thead th:nth-child(2):after {
       background: #fff; }
   .diriq-table tfoot th {
     background: #F6F9FC; }
   .diriq-table th, .diriq-table td {
     font-weight: 400 !important;
-    padding-left: 27px !important;
-    padding-right: 13px !important;
-    min-width: 90px; }
+    padding-left: 12px !important;
+    padding-right: 12px !important; }
+    ._list-name-table .diriq-table th, ._list-name-table .diriq-table td {
+      min-width: 90px;
+      padding-left: 27px !important;
+      padding-right: 13px !important; }
     .diriq-table th:first-child, .diriq-table td:first-child {
       text-align: center;
       padding-left: 29px !important;
       padding-right: 10px !important;
       min-width: auto;
       width: 15px; }
-    .diriq-table th:nth-child(2), .diriq-table td:nth-child(2) {
+    ._list-name-table .diriq-table th:nth-child(2), ._list-name-table .diriq-table td:nth-child(2) {
       width: 174px !important;
       padding-left: 18px !important;
       padding-right: 28px !important;
       position: relative; }
-      .diriq-table th:nth-child(2):after, .diriq-table td:nth-child(2):after {
+      ._list-name-table .diriq-table th:nth-child(2):after, ._list-name-table .diriq-table td:nth-child(2):after {
         content: '';
         position: absolute;
         top: 0;
@@ -5775,10 +5610,12 @@ table.dataTable tbody th, table.dataTable tbody td {
     text-overflow: ellipsis; }
     .diriq-table__email:hover {
       color: #00f; }
-    .DTFC_LeftBodyLiner .diriq-table__email {
+    .DTFC_LeftBodyLiner .diriq-table__email,
+    .diriq-table__email .diriq-table__wrapper:not(._list-name-table) {
       position: relative;
       z-index: 1; }
-      .DTFC_LeftBodyLiner .diriq-table__email:after {
+      .DTFC_LeftBodyLiner .diriq-table__email:after,
+      .diriq-table__email .diriq-table__wrapper:not(._list-name-table):after {
         z-index: -1;
         content: '';
         position: absolute;
