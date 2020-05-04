@@ -5342,8 +5342,17 @@ body {
       height: 2px;
       background: #B6FFE8;
       z-index: -1; }
-  .contacts-card .btn {
-    margin-top: 15px; }
+
+.statistics-card {
+  padding: 40px 16px 52px; }
+
+.cust-card-wrap .btn {
+  margin-top: 15px; }
+
+.cust-card-wrap__buttons {
+  font-size: 0; }
+  .cust-card-wrap__buttons .btn + .btn {
+    margin-left: 20px; }
 
 .fw-600 {
   font-weight: 600; }
@@ -5930,6 +5939,114 @@ body:not(._filter-visible) .DTFC_RightFootWrapper {
 
 .nosort .sort-i {
   display: none; }
+
+.chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0; }
+
+.chart-legend {
+  font-size: 12px;
+  color: #454F5B; }
+
+.text-openers {
+  color: #00EBA8; }
+
+.text-clickers {
+  color: #0000FF; }
+
+.text-unsubscribers {
+  color: #ED1C24; }
+
+.card-chart {
+  padding: 37px; }
+
+.morris-chart {
+  color: #454F5B; }
+
+.morris-hover.morris-default-style {
+  background: #ecf1f8;
+  -webkit-box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
+          box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15); }
+
+.morris-hover-row-label {
+  color: #454F5B; }
+
+.date-range__wrap {
+  position: relative; }
+
+.date-range__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 160px;
+  height: 34px;
+  line-height: 34px;
+  border: none;
+  border-radius: 17px;
+  padding: 0 16px 0 46px;
+  font-size: 12px;
+  color: #212B35;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
+  .date-range__input:hover {
+    color: #fff;
+    background: #0000FF; }
+
+.date-range__icon {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  color: #00eba8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
+
+.date-range__input:hover + .date-range__icon {
+  color: #fff; }
+
+.flatpickr-day.endRange, .flatpickr-day.endRange.inRange, .flatpickr-day.endRange.nextMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.endRange:focus, .flatpickr-day.endRange:hover, .flatpickr-day.selected, .flatpickr-day.selected.inRange, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.selected:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange, .flatpickr-day.startRange.inRange, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.startRange:focus, .flatpickr-day.startRange:hover {
+  background-color: #0000FF;
+  border-color: #0000FF; }
+
+.knob-wrap {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%; }
+  .knob-wrap:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/knob-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center; }
+  .knob-wrap_down:after {
+    -webkit-transform: translate(-50%, -50%) rotate(180deg);
+            transform: translate(-50%, -50%) rotate(180deg); }
+
+.knob-text {
+  margin-left: 20px;
+  font-size: 12px; }
+  .knob-text p {
+    margin: 2px 0 10px;
+    color: #212B35; }
+  .knob-text span {
+    color: #454F5B; }
 
 @media (min-width: 1029px) {
   .nav-second-level {
