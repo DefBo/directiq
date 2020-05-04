@@ -1,35 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700,900");
 @font-face {
-  font-family: "Cerebri Sans,sans-serif";
-  src: url("../fonts/cerebrisans-light.eot");
-  src: local("Cerebri-sans Light"), url("../fonts/cerebrisans-light.woff") format("woff");
-  font-weight: 300; }
-
-@font-face {
-  font-family: "Cerebri Sans,sans-serif";
-  src: url("../fonts/cerebrisans-regular.eot");
-  src: local("Cerebri-sans Regular"), url("../fonts/cerebrisans-regular.woff") format("woff");
-  font-weight: 400; }
-
-@font-face {
-  font-family: "Cerebri Sans,sans-serif";
-  src: url("../fonts/cerebrisans-medium.eot");
-  src: local("Cerebri-sans Medium"), url("../fonts/cerebrisans-medium.woff") format("woff");
-  font-weight: 500; }
-
-@font-face {
-  font-family: "Cerebri Sans,sans-serif";
-  src: url("../fonts/cerebrisans-semibold.eot");
-  src: local("Cerebri-sans Semibold"), url("../fonts/cerebrisans-semibold.woff") format("woff");
-  font-weight: 600; }
-
-@font-face {
-  font-family: "Cerebri Sans,sans-serif";
-  src: url("../fonts/cerebrisans-bold.eot");
-  src: local("Cerebri-sans Bold"), url("../fonts/cerebrisans-bold.woff") format("woff");
-  font-weight: 700; }
-
-@font-face {
   font-family: "Proxima Nova,sans-serif";
   src: url("../fonts/ProximaNova-Black.eot");
   src: local("Cerebri-sans Light"), url("../fonts/ProximaNova-Black.woff") format("woff");
@@ -1194,7 +1164,7 @@ body {
   position: relative;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  font-family: "Cerebri Sans,sans-serif";
+  font-family: "Proxima Nova,sans-serif";
   font-size: 0.95rem; }
   #sidebar-menu > ul > li > a:hover, #sidebar-menu > ul > li > a:focus, #sidebar-menu > ul > li > a:active {
     color: #00acc1;
@@ -1807,7 +1777,7 @@ body.boxed-layout.enlarged .footer {
   min-width: 160px; }
 
 .font-family-secondary {
-  font-family: "Cerebri Sans,sans-serif"; }
+  font-family: "Proxima Nova,sans-serif"; }
 
 .avatar-xs {
   height: 1.5rem;
@@ -2637,11 +2607,11 @@ body.authentication-bg-pattern {
   text-shadow: rgba(102, 88, 221, 0.3) 5px 1px, rgba(102, 88, 221, 0.2) 10px 3px;
   font-size: 84px;
   line-height: 90px;
-  font-family: "Cerebri Sans,sans-serif"; }
+  font-family: "Proxima Nova,sans-serif"; }
 
 .error-text-box {
   font-size: 10rem;
-  font-family: "Cerebri Sans,sans-serif";
+  font-family: "Proxima Nova,sans-serif";
   min-height: 200px; }
   .error-text-box .text {
     fill: none;
@@ -3192,7 +3162,7 @@ body.authentication-bg-pattern {
     display: inline-block;
     margin-bottom: 5px;
     font-weight: 500;
-    font-family: "Cerebri Sans,sans-serif"; }
+    font-family: "Proxima Nova,sans-serif"; }
     .filter-menu a:hover {
       background-color: #6658dd;
       color: #fff; }
@@ -3706,7 +3676,7 @@ body.authentication-bg-pattern {
   background-color: #f1f5f7;
   border-radius: 50%;
   margin: 5px;
-  font-family: "Cerebri Sans,sans-serif";
+  font-family: "Proxima Nova,sans-serif";
   font-size: 12px; }
 
 .fc-button {
@@ -4161,7 +4131,7 @@ div.hopscotch-bubble {
   div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-arrow-border {
     border-top: 0 solid rgba(0, 0, 0, 0.5); }
   div.hopscotch-bubble h3 {
-    font-family: "Cerebri Sans,sans-serif";
+    font-family: "Proxima Nova,sans-serif";
     margin-bottom: 10px; }
   div.hopscotch-bubble .hopscotch-content {
     font-family: "Nunito", sans-serif; }
@@ -4176,7 +4146,7 @@ div.hopscotch-bubble {
 
 .legend tr {
   height: 30px;
-  font-family: "Cerebri Sans,sans-serif"; }
+  font-family: "Proxima Nova,sans-serif"; }
 
 .legendLabel {
   padding-left: 5px !important;
@@ -4195,7 +4165,7 @@ div.hopscotch-bubble {
     display: none; } }
 
 .morris-chart text {
-  font-family: "Cerebri Sans,sans-serif" !important; }
+  font-family: "Proxima Nova,sans-serif" !important; }
 
 .morris-hover {
   position: absolute;
@@ -4211,7 +4181,7 @@ div.hopscotch-bubble {
     .morris-hover.morris-default-style .morris-hover-row-label {
       font-weight: bold;
       margin: 0.25em 0;
-      font-family: "Cerebri Sans,sans-serif"; }
+      font-family: "Proxima Nova,sans-serif"; }
     .morris-hover.morris-default-style .morris-hover-point {
       white-space: nowrap;
       margin: 0.1em 0;
@@ -4322,7 +4292,7 @@ div.hopscotch-bubble {
   opacity: 1; }
   .c3-tooltip td {
     border-left: none;
-    font-family: "Cerebri Sans,sans-serif"; }
+    font-family: "Proxima Nova,sans-serif"; }
     .c3-tooltip td > span {
       background: #323a46; }
   .c3-tooltip tr {
@@ -4339,7 +4309,7 @@ div.hopscotch-bubble {
   color: #ced4da; }
 
 .c3-legend-item {
-  font-family: "Cerebri Sans,sans-serif";
+  font-family: "Proxima Nova,sans-serif";
   font-size: 14px; }
 
 .c3 line, .c3 path {
@@ -4579,7 +4549,7 @@ table[data-toggle="table"] {
   .tablesaw thead tr:first-child th {
     border: none;
     font-weight: 500;
-    font-family: "Cerebri Sans,sans-serif"; }
+    font-family: "Proxima Nova,sans-serif"; }
 
 .tablesaw td {
   border-top: 1px solid #f1f5f7 !important; }
@@ -4749,7 +4719,7 @@ table[data-toggle="table"] {
 
 .ms-optgroup-label {
   font-weight: 500;
-  font-family: "Cerebri Sans,sans-serif";
+  font-family: "Proxima Nova,sans-serif";
   color: #323a46 !important;
   font-size: 13px; }
 
@@ -4781,7 +4751,7 @@ table[data-toggle="table"] {
 .autocomplete-group {
   padding: 5px;
   font-weight: 500;
-  font-family: "Cerebri Sans,sans-serif"; }
+  font-family: "Proxima Nova,sans-serif"; }
 
 .autocomplete-group strong {
   font-weight: bold;
@@ -5008,7 +4978,7 @@ table[data-toggle="table"] {
   border: none;
   background: #323a46;
   color: #fff;
-  font-family: "Cerebri Sans,sans-serif";
+  font-family: "Proxima Nova,sans-serif";
   font-size: 0.875rem;
   padding: 5px 8px; }
 
@@ -5029,7 +4999,7 @@ table[data-toggle="table"] {
   max-width: 200px;
   display: none;
   color: #fff;
-  font-family: "Cerebri Sans,sans-serif"; }
+  font-family: "Proxima Nova,sans-serif"; }
 
 .mapael .zoomIn,
 .mapael .zoomOut,
@@ -5378,6 +5348,25 @@ body {
 .fw-600 {
   font-weight: 600; }
 
+.pages-link {
+  color: #212b35;
+  position: relative;
+  display: inline-block;
+  z-index: 1; }
+  .pages-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: #B6FFE8;
+    z-index: -1; }
+  .pages-link:hover {
+    color: #3827c1; }
+
 .navbar-custom {
   height: 80px;
   padding: 0 20px 0 0; }
@@ -5589,6 +5578,18 @@ table.dataTable tbody th, table.dataTable tbody td {
         height: 100%;
         width: 1px;
         background: #DAE8F7; }
+    ._my-lists-table .diriq-table th:nth-child(2), ._my-lists-table .diriq-table td:nth-child(2) {
+      width: 180px !important; }
+    ._my-lists-table .diriq-table th:nth-child(3),
+    ._my-lists-table .diriq-table th:nth-child(4),
+    ._my-lists-table .diriq-table th:nth-child(5),
+    ._my-lists-table .diriq-table th:nth-child(6),
+    ._my-lists-table .diriq-table th:nth-child(7), ._my-lists-table .diriq-table td:nth-child(3),
+    ._my-lists-table .diriq-table td:nth-child(4),
+    ._my-lists-table .diriq-table td:nth-child(5),
+    ._my-lists-table .diriq-table td:nth-child(6),
+    ._my-lists-table .diriq-table td:nth-child(7) {
+      text-align: right; }
     .diriq-table th input, .diriq-table td input {
       width: 100%; }
     .diriq-table th.nofilter input, .diriq-table td.nofilter input {
@@ -5617,11 +5618,11 @@ table.dataTable tbody th, table.dataTable tbody td {
     .diriq-table__email:hover {
       color: #00f; }
     .DTFC_LeftBodyLiner .diriq-table__email,
-    .diriq-table__email .diriq-table__wrapper:not(._list-name-table) {
+    .diriq-table__wrapper:not(._list-name-table) .diriq-table__email {
       position: relative;
       z-index: 1; }
       .DTFC_LeftBodyLiner .diriq-table__email:after,
-      .diriq-table__email .diriq-table__wrapper:not(._list-name-table):after {
+      .diriq-table__wrapper:not(._list-name-table) .diriq-table__email:after {
         z-index: -1;
         content: '';
         position: absolute;
@@ -5634,6 +5635,31 @@ table.dataTable tbody th, table.dataTable tbody td {
         background: #B6FFE8; }
   .diriq-table__bottom {
     margin-top: 12px; }
+  .diriq-table__list-size-number {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 4px; }
+  .diriq-table__list-size-percents {
+    font-size: 12px;
+    line-height: 1; }
+  .diriq-table__cell-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #212B35;
+    display: inline-block;
+    position: relative;
+    z-index: 1; }
+    .diriq-table__cell-title::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 4px;
+      background: #B6FFE8;
+      z-index: -1; }
   .diriq-table .checkbox-custom {
     margin-top: 4px; }
   .diriq-table.dataTable thead th.sorting,
@@ -5813,6 +5839,13 @@ table.dataTable tfoot th, table.dataTable tfoot td {
 table.dataTable tfoot th, table.dataTable tfoot td {
   padding-top: 9px !important;
   padding-bottom: 9px !important; }
+
+._my-lists-table table.dataTable tbody td,
+._my-lists-table table.dataTable tbody th {
+  padding-top: 28px !important;
+  padding-bottom: 22px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important; }
 
 .dataTables_scrollBody tfoot {
   visibility: collapse; }
