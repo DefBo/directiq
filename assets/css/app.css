@@ -5367,6 +5367,9 @@ body {
   .pages-link:hover {
     color: #3827c1; }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: "Proxima Nova,sans-serif"; }
+
 .navbar-custom {
   height: 80px;
   padding: 0 20px 0 0; }
