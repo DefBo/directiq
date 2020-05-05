@@ -1,28 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700,900");
-@font-face {
-  font-family: "Proxima Nova,sans-serif";
-  src: url("../fonts/ProximaNova-Black.eot");
-  src: local("Cerebri-sans Light"), url("../fonts/ProximaNova-Black.woff") format("woff");
-  font-weight: 900; }
-
-@font-face {
-  font-family: "Proxima Nova,sans-serif";
-  src: url("../fonts/ProximaNova-Bold.eot");
-  src: local("Cerebri-sans Light"), url("../fonts/ProximaNova-Bold.woff") format("woff");
-  font-weight: 700; }
-
-@font-face {
-  font-family: "Proxima Nova,sans-serif";
-  src: url("../fonts/ProximaNova-Extrabld.eot");
-  src: local("Cerebri-sans Light"), url("../fonts/ProximaNova-Extrabld.woff") format("woff");
-  font-weight: 800; }
-
-@font-face {
-  font-family: "Proxima Nova,sans-serif";
-  src: url("../fonts/ProximaNova-Light.eot");
-  src: local("Cerebri-sans Light"), url("../fonts/ProximaNova-Light.woff") format("woff");
-  font-weight: 300; }
-
 @font-face {
   font-family: "Proxima Nova,sans-serif";
   src: url("../fonts/ProximaNova-Regular.eot");
@@ -33,7 +8,19 @@
   font-family: "Proxima Nova,sans-serif";
   src: url("../fonts/ProximaNova-Semibold.eot");
   src: local("Cerebri-sans Light"), url("../fonts/ProximaNova-Semibold.woff") format("woff");
+  font-weight: 500; }
+
+@font-face {
+  font-family: "Proxima Nova,sans-serif";
+  src: url("../fonts/ProximaNova-Semibold.eot");
+  src: local("Cerebri-sans Light"), url("../fonts/ProximaNova-Semibold.woff") format("woff");
   font-weight: 600; }
+
+@font-face {
+  font-family: "Proxima Nova,sans-serif";
+  src: url("../fonts/ProximaNova-Bold.eot");
+  src: local("Cerebri-sans Light"), url("../fonts/ProximaNova-Bold.woff") format("woff");
+  font-weight: 700; }
 
 /*!
  * Hamburgers
@@ -5097,7 +5084,7 @@ table[data-toggle="table"] {
 body {
   background: #ECF1F8;
   font-family: "Proxima Nova,sans-serif";
-  padding-bottom: 20px; }
+  padding-bottom: 38px; }
   body.enlarged {
     min-height: auto; }
 
@@ -5305,6 +5292,15 @@ body {
     border-color: #0000FF;
     color: #fff; }
 
+.button_tag {
+  background: #fff;
+  border-color: #00EBA8;
+  color: #000; }
+  .button_tag:hover {
+    background: #0000FF;
+    border-color: #0000FF;
+    color: #fff; }
+
 .contacts-card {
   padding: 35px 42px; }
   .contacts-card__number {
@@ -5345,14 +5341,18 @@ body {
 
 .statistics-card {
   padding: 40px 16px 52px; }
-
-.cust-card-wrap .btn {
-  margin-top: 15px; }
+  .statistics-card__knobs {
+    margin-top: 38px; }
 
 .cust-card-wrap__buttons {
-  font-size: 0; }
-  .cust-card-wrap__buttons .btn + .btn {
-    margin-left: 20px; }
+  font-size: 0;
+  margin: 0 -10px; }
+  .cust-card-wrap__buttons:not(.cust-card-wrap__buttons_aside) .btn {
+    margin-top: 15px; }
+  .cust-card-wrap__buttons .btn {
+    margin: 0 10px; }
+  .cust-card-wrap__buttons_aside {
+    white-space: nowrap; }
 
 .fw-600 {
   font-weight: 600; }
@@ -5390,7 +5390,8 @@ body {
       font-family: inherit;
       display: inline-block;
       padding-right: 12px;
-      color: #00EBA8; }
+      color: #00EBA8;
+      font-weight: 700; }
     .navbar-custom .breadcrumb-item:first-child {
       padding-left: 0; }
   .navbar-custom .app-search {
@@ -5943,20 +5944,15 @@ body:not(._filter-visible) .DTFC_RightFootWrapper {
 .chart-title {
   font-size: 18px;
   font-weight: 600;
-  margin: 0; }
+  margin: 0 0 1rem 0;
+  white-space: nowrap; }
 
 .chart-legend {
   font-size: 12px;
-  color: #454F5B; }
-
-.text-openers {
-  color: #00EBA8; }
-
-.text-clickers {
-  color: #0000FF; }
-
-.text-unsubscribers {
-  color: #ED1C24; }
+  color: #454F5B;
+  text-align: center; }
+  .chart-legend span {
+    white-space: nowrap; }
 
 .card-chart {
   padding: 37px; }
@@ -5971,6 +5967,21 @@ body:not(._filter-visible) .DTFC_RightFootWrapper {
 
 .morris-hover-row-label {
   color: #454F5B; }
+
+.circle-i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  margin-right: 3px;
+  vertical-align: middle; }
+  .circle-i_openers {
+    background: #00EBA8; }
+  .circle-i_clickers {
+    background: #0000FF; }
+  .circle-i_unsubscribers {
+    background: #ED1C24; }
 
 .date-range__wrap {
   position: relative; }
@@ -6199,7 +6210,11 @@ body:not(._filter-visible) .DTFC_RightFootWrapper {
     width: 16px; }
     .diriq-table__more-btn-circle, .diriq-table__more-btn-circle:before, .diriq-table__more-btn-circle:after {
       width: 4px;
-      height: 4px; } }
+      height: 4px; }
+  .statistics-card__inner {
+    width: 100%; }
+  .cust-card-wrap__buttons_aside {
+    margin-top: 20px; } }
 
 @media (min-width: 577px) {
   .hamburger {
@@ -6229,7 +6244,17 @@ body:not(._filter-visible) .DTFC_RightFootWrapper {
     margin-left: 0 !important;
     padding: 0 6px; }
   .nav-tabs .nav-link, .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    font-size: 12px; } }
+    font-size: 12px; }
+  .statistics-card__knobs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 16px; }
+  .statistics-card__knobs-item + .statistics-card__knobs-item {
+    margin-top: 18px; }
+  .statistics-card__inner {
+    width: auto; } }
 
 @media (max-width: 320px) {
   .nav-tabs .nav-link, .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {

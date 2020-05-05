@@ -7,16 +7,12 @@
         <meta content="Dev version of DirIQ project" name="description" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
-        <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-        <link href="https://cdn.datatables.net/fixedcolumns/3.3.0/css/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body class="left-side-menu-sm _filter-visible list-name">
@@ -33,7 +29,14 @@
                                     <input type="text" class="form-control" placeholder="Start typing and search">
                                     <div class="input-group-append">
                                         <button class="btn" type="submit">
-                                            <i class="fe-search"></i>
+                                            <i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19.955" height="20.061" viewBox="0 0 19.955 20.061">
+                                                    <g id="Group_32" data-name="Group 32" transform="translate(-2704.75 -1088.25)">
+                                                        <circle id="Ellipse_1" data-name="Ellipse 1" cx="6.5" cy="6.5" r="6.5" transform="translate(2705.5 1089)" fill="none" stroke="blue" stroke-miterlimit="10" stroke-width="1.5"/>
+                                                        <line id="Line_1" data-name="Line 1" x2="6.667" y2="6.667" transform="translate(2716.977 1100.583)" fill="none" stroke="blue" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+                                                    </g>
+                                                </svg>
+                                            </i>
                                         </button>
                                     </div>
                                 </div>
@@ -55,12 +58,7 @@
                             </i>
                         </a>
                         <div class="dropdown-menu">
-
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="fe-briefcase mr-1"></i>
-                                <span>Sample Item</span>
-                            </a>
-
+                            <p class="text-center">Sample Dropdown Content</p>
                         </div>
                     </li>
 
@@ -78,12 +76,7 @@
                         </a>
 
                         <div class="dropdown-menu">
-
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="fe-briefcase mr-1"></i>
-                                <span>Sample Item</span>
-                            </a>
-
+                            <p class="text-center">Sample Dropdown Content</p>
                         </div>
                     </li>
 
@@ -99,86 +92,7 @@
                             <span class="badge badge-danger rounded-circle noti-icon-badge">9</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-
-                            <div class="dropdown-item noti-title">
-                                <h5 class="m-0">
-                        <span class="float-right">
-                            <a href="" class="text-dark">
-                                <small>Clear All</small>
-                            </a>
-                        </span>Notification
-                                </h5>
-                            </div>
-
-                            <div class="slimscroll noti-scroll">
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                                    <div class="notify-icon">
-                                        <img src="assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                                    <p class="notify-details">Cristina Pride</p>
-                                    <p class="text-muted mb-0 user-msg">
-                                        <small>Hi, How are you? What about our next meeting</small>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-primary">
-                                        <i class="mdi mdi-comment-account-outline"></i>
-                                    </div>
-                                    <p class="notify-details">Caleb Flakelar commented on Admin
-                                        <small class="text-muted">1 min ago</small>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon">
-                                        <img src="assets/images/users/user-4.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                                    <p class="notify-details">Karen Robinson</p>
-                                    <p class="text-muted mb-0 user-msg">
-                                        <small>Wow ! this admin looks good and awesome design</small>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-warning">
-                                        <i class="mdi mdi-account-plus"></i>
-                                    </div>
-                                    <p class="notify-details">New user registered.
-                                        <small class="text-muted">5 hours ago</small>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-info">
-                                        <i class="mdi mdi-comment-account-outline"></i>
-                                    </div>
-                                    <p class="notify-details">Caleb Flakelar commented on Admin
-                                        <small class="text-muted">4 days ago</small>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-secondary">
-                                        <i class="mdi mdi-heart"></i>
-                                    </div>
-                                    <p class="notify-details">Carlos Crouch liked
-                                        <b>Admin</b>
-                                        <small class="text-muted">13 days ago</small>
-                                    </p>
-                                </a>
-                            </div>
-
-                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                                View all
-                                <i class="fi-arrow-right"></i>
-                            </a>
-
+                            <p class="text-center">Sample Dropdown Content</p>
                         </div>
                     </li>
 
@@ -196,44 +110,14 @@
                             </i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow m-0">Welcome !</h6>
-                            </div>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-user"></i>
-                                <span>My Account</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-settings"></i>
-                                <span>Settings</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-lock"></i>
-                                <span>Lock Screen</span>
-                            </a>
-
-                            <div class="dropdown-divider"></div>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-log-out"></i>
-                                <span>Logout</span>
-                            </a>
-
+                            <p class="text-center">Sample Dropdown Content</p>
                         </div>
                     </li>
 
                 </ul>
 
                 <div class="logo-box d-none d-sm-block">
-                    <a href="my-lists-ep.html" class="logo text-center">
+                    <a href="./" class="logo text-center">
                         <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="44.834" height="45" viewBox="0 0 44.834 45">
                             <path id="Path_30" data-name="Path 30" d="M679.524,357.489H682.3v26.179h-2.779Z" transform="translate(-679.523 -338.668)" fill="blue"/>
                             <path id="Path_31" data-name="Path 31" d="M721.577,357.489h2.78v26.179h-2.78Z" transform="translate(-679.523 -338.668)" fill="blue"/>
@@ -251,17 +135,18 @@
                 </button>
 
                 <ol class="list-unstyled topnav-menu topnav-menu-left m-0 d-none d-sm-block">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Contacts</a></li>
+                    <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
                     <li class="breadcrumb-item active">My Lists
-
-                <i class="bookmark-plus__icon d-none d-md-inline">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
-                        <g id="Action-_-34---Action_-bookmark_-add_-save_-favourite-icon" data-name="Action-/-34---Action,-bookmark,-add,-save,-favourite-icon" transform="translate(0.75 0.75)">
-                            <path id="Path" d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13" transform="translate(-1972.5 -1089.5)" fill="none" stroke="blue" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                            <path id="Path-2" data-name="Path" d="M1986.5,1093.5v8m4-4h-8" transform="translate(-1972.5 -1089.5)" fill="none" stroke="#00eba8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                        </g>
-                    </svg>
-                </i>
+                        <i class="bookmark-plus__icon d-none d-md-inline">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
+                                <g id="Action-_-34---Action_-bookmark_-add_-save_-favourite-icon" data-name="Action-/-34---Action,-bookmark,-add,-save,-favourite-icon" transform="translate(0.75 0.75)">
+                                    <path id="Path" d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13" transform="translate(-1972.5 -1089.5)" fill="none" stroke="blue" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                    <path id="Path-2" data-name="Path" d="M1986.5,1093.5v8m4-4h-8" transform="translate(-1972.5 -1089.5)" fill="none" stroke="#00eba8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                </g>
+                            </svg>
+                        </i>
+                    </li>
+                </ol>
 
             </div>
 
@@ -288,7 +173,7 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Test Item</a>
+                                        <a href="./" class="nav-second-level__link">Home</a>
                                     </li>
                                 </ul>
                             </li>
@@ -307,8 +192,11 @@
                                     <span> Contacts </span>
                                 </a>
                                 <ul class="nav-second-level collapse in" aria-expanded="false">
+                                    <li class="nav-second-level__item">
+                                        <a href="./contacts-home-static.html" class="nav-second-level__link">Contacts</a>
+                                    </li>
                                     <li class="nav-second-level__item nav-second-level__item_active">
-                                        <a href="#" class="nav-second-level__link">My Lists</a>
+                                        <a href="./my-lists-static.html" class="nav-second-level__link">My Lists</a>
                                     </li>
                                     <li class="nav-second-level__item">
                                         <a href="#" class="nav-second-level__link">Add Contacts</a>
@@ -469,7 +357,6 @@
                 </div>
 
             </div>
-
 
             <div class="content-page">
                 <div class="content">
@@ -722,16 +609,11 @@
 
         </div>
 
-        <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
 
-        <!-- Third party js -->
         <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
         <script src="assets/libs/datatables/dataTables.bootstrap4.js"></script>
 
-        <script src="https://cdn.datatables.net/fixedcolumns/3.3.0/js/dataTables.fixedColumns.min.js"></script>
-
-        <!-- Custom js -->
         <script>
             // Datatables settings
             $(document).ready(function() {
@@ -756,20 +638,14 @@
 
                 $('.DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append('<svg xmlns="http://www.w3.org/2000/svg" width="5.1" height="10" class="sort-i"><g><path class="sort-i__top" d="M2.55 1.572l1.761 1.762.783-.784L2.55 0 0 2.55l.788.784z" fill="#212b35"/><path class="sort-i__bottom" d="M2.549 8.428L.788 6.667l-.784.783L2.548 10l2.55-2.55-.789-.783z" fill="#212b35"/></g></svg>');
 
-                $('.dataTables_scrollFootInner th').each( function (i) {
-                    var title = $('.dataTables_scrollFootInner th').eq( $(this).index() ).text();
+                function replaceWithInput(i) {
+                    var title = $(this).text();
                     $(this).html( '<input class="filter-input" type="text" placeholder="Search '+title+'" data-index="'+i+'" />' );
-                } );
+                }
 
-                $('.DTFC_LeftFootWrapper th').each( function (i) {
-                    var title = $('.DTFC_LeftFootWrapper th').eq( $(this).index() ).text();
-                    $(this).html( '<input class="filter-input" type="text" placeholder="Search '+title+'" data-index="'+i+'" />' );
-                } );
-
-                $('.DTFC_RightFootWrapper th').each( function (i) {
-                    var title = $('.DTFC_RightFootWrapper th').eq( $(this).index() ).text();
-                    $(this).html( '<input class="filter-input" type="text" placeholder="Search '+title+'" data-index="'+i+'" />' );
-                } );
+                $('.dataTables_scrollFootInner th').each(replaceWithInput);
+                $('.DTFC_LeftFootWrapper th').each(replaceWithInput);
+                $('.DTFC_RightFootWrapper th').each(replaceWithInput);
 
                 $( table.table().container() ).on( 'keyup', 'tfoot input', function () {
                     table
@@ -777,71 +653,9 @@
                         .search( this.value )
                         .draw();
                 } );
-
-                // Show filter
-                $('.diriq-table__filter-btn').click(function() {
-                    $("body").toggleClass("_filter-visible");
-                });
-
             } );
-
-            // Fixed Menu Responsiveness Workaround
-            $(document).ready(function() {
-                var alterClass = function() {
-                    var ww = document.body.clientWidth;
-                    if (ww < 768) {
-                        $("body").addClass("enlarged");
-                    }
-                };
-                $(window).resize(function(){
-                    alterClass();
-                });
-                alterClass();
-            });
-            $(document).ready(function() {
-                var alterClass = function() {
-                    var ww = document.body.clientWidth;
-                    if (ww < 577) {
-                        $("body").addClass("_nav-hidden");
-                    } else {
-                        $("body").removeClass("_nav-hidden");
-                        $('.hamburger').removeClass("is-active");
-                    }
-                };
-                $(window).resize(function(){
-                    alterClass();
-                });
-                alterClass();
-            });
-
-            // Hamburger Menu Logics
-            $('.hamburger').click(function() {
-                $("body").toggleClass("_nav-hidden");
-                $(this).toggleClass("is-active");
-            });
-
-            // Slimscroll resizing height fix
-            $(document).ready(function(){
-                $('.slimscroll-menu').slimScroll({
-                    height: 'auto'
-                });
-
-                $(window).resize(function(){
-                    var h=$(window).height()-250;
-                    $('.slimscroll-menu').height(h);
-                    $('.slimScrollDiv').height(h);
-                });
-            });
-
-            // Hide filter menu after it's initialised with appropriate sizes
-            $(document).ready(function () {
-                setTimeout(function() {
-                    $("body").removeClass("_filter-visible");
-                }, 1);
-            });
         </script>
 
-        <!-- App js -->
         <script src="assets/js/app.min.js"></script>
         
     </body>

@@ -1,12 +1,62 @@
-/*
-Template Name: Ubold - Responsive Bootstrap 4 Admin Dashboard
-Author: CoderThemes
-Version: 3.0.0
-Website: https://coderthemes.com/
-Contact: support@coderthemes.com
-File: Main Js File
-*/
+// Fixed Menu Responsiveness Workaround
+$(document).ready(function() {
+    var alterClass = function() {
+        var ww = document.body.clientWidth;
+        if (ww < 768) {
+            $("body").addClass("enlarged");
+        }
+    };
+    $(window).resize(function(){
+        alterClass();
+    });
+    alterClass();
+});
+$(document).ready(function() {
+    var alterClass = function() {
+        var ww = document.body.clientWidth;
+        if (ww < 577) {
+            $("body").addClass("_nav-hidden");
+        } else {
+            $("body").removeClass("_nav-hidden");
+            $('.hamburger').removeClass("is-active");
+        }
+    };
+    $(window).resize(function(){
+        alterClass();
+    });
+    alterClass();
+});
 
+// Hamburger Menu Logics
+$('.hamburger').click(function() {
+    $("body").toggleClass("_nav-hidden");
+    $(this).toggleClass("is-active");
+});
+
+// Slimscroll resizing height fix
+$(document).ready(function(){
+    $('.slimscroll-menu').slimScroll({
+        height: 'auto'
+    });
+
+    $(window).resize(function(){
+        var h=$(window).height()-250;
+        $('.slimscroll-menu').height(h);
+        $('.slimScrollDiv').height(h);
+    });
+});
+
+// Hide filter menu after it's initialised with appropriate sizes
+$(document).ready(function () {
+    setTimeout(function() {
+        $("body").removeClass("_filter-visible");
+    }, 1);
+});
+
+// Show filter
+$('.diriq-table__filter-btn').click(function() {
+    $("body").toggleClass("_filter-visible");
+});
 
 !function ($) {
     "use strict";
@@ -334,7 +384,7 @@ function ($) {
 
 
 }(window.jQuery),
-//initializing main application module
+
 function ($) {
     "use strict";
     $.App.init();
