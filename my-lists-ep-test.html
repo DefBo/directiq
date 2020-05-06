@@ -486,27 +486,9 @@
                     columns: [
                         {
                             data: () => '',
-                            searchable: false,
-                            orderable: false,
                             render: (data, type, row, meta) => {
-                                return `<div class="checkbox checkbox-single checkbox-custom"><input type="checkbox" name="contacts[]" value="${row.id}" aria-label="Single checkbox One"><label></label></div>`;
-                            }
-                        },
-                        { data: 'id' },
-                        { data: 'firstName', className: 'list-name' },
-                        { data: 'lastName', className: 'list-name' },
-                        { data: 'email', className: 'list-name' },
-                        { data: 'dateAdded', className: "cell-last-modified" },
-                        {
-                            data: () => '',
-                            render: (data, type, row, meta) =>{
-                                return `<i class="list-quality-icon list-quality-icon_${row.firstName}">
-                                            <span class="list-quality-icon__circle"></span>
-                                            <span class="list-quality-icon__circle"></span>
-                                            <span class="list-quality-icon__circle"></span>
-                                            <span class="list-quality-icon__circle"></span>
-                                            <span class="list-quality-icon__circle"></span>
-                                        </i>`;
+                                return `<div class="diriq-table__list-size-number">${row.id}</div>
+                                        <div class="diriq-table__list-size-percents">${row.id}% engaged</div>`;
                             }
                         },
                     ],
