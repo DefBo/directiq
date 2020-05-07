@@ -1,156 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <title>DirIQ Dev</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Dev version of DirIQ project" name="description" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+        <meta charset="utf-8" />
+        <title>Two Column Layout | UBold - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
 
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+
     </head>
 
-    <body class="left-side-menu-sm">
+    <body class="_conatcts-home-page" data-layout-mode="two-column" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "light"}, "showRightSidebarOnPageLoad": true}'></body>
 
+        <!-- Begin page -->
         <div id="wrapper">
 
-            <div class="navbar-custom navbar-custom-light">
-                <ul class="list-unstyled topnav-menu float-right mb-0">
+            <!-- Topbar Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+                    <ul class="list-unstyled topnav-menu float-right mb-0">
 
-                    <li class="d-none d-lg-block">
-                        <form class="app-search">
-                            <div class="app-search-box">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Start typing and search">
-                                    <div class="input-group-append">
-                                        <button class="btn" type="submit">
-                                            <i>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="19.955" height="20.061" viewBox="0 0 19.955 20.061">
-                                                    <g id="Group_32" data-name="Group 32" transform="translate(-2704.75 -1088.25)">
-                                                        <circle id="Ellipse_1" data-name="Ellipse 1" cx="6.5" cy="6.5" r="6.5" transform="translate(2705.5 1089)" fill="none" stroke="blue" stroke-miterlimit="10" stroke-width="1.5"/>
-                                                        <line id="Line_1" data-name="Line 1" x2="6.667" y2="6.667" transform="translate(2716.977 1100.583)" fill="none" stroke="blue" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
-                                                    </g>
-                                                </svg>
-                                            </i>
-                                        </button>
+                        <li class="navbar-search">
+                            <form class="app-search">
+                                <div class="app-search-box">
+                                    <div class="input-group">
+                                        <input type="search" class="form-control" placeholder="Start typing and search" id="top-search">
+                                        <div class="input-group-append">
+                                            <button class="btn" type="submit">
+                                                <i>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="19.955" height="20.061" viewBox="0 0 19.955 20.061">
+                                                        <g id="Group_32" data-name="Group 32" transform="translate(-2704.75 -1088.25)">
+                                                            <circle id="Ellipse_1" data-name="Ellipse 1" cx="6.5" cy="6.5" r="6.5" transform="translate(2705.5 1089)" fill="none" stroke="blue" stroke-miterlimit="10" stroke-width="1.5"/>
+                                                            <line id="Line_1" data-name="Line 1" x2="6.667" y2="6.667" transform="translate(2716.977 1100.583)" fill="none" stroke="blue" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+                                                        </g>
+                                                    </svg>
+                                                </i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
-                    </li>
+                            </form>
+                        </li>
 
-                    <li class="dropdown d-none d-md-block">
-                        <a class="nav-link dropdown-toggle waves-effect create-btn" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            Create
-                            <i>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13.545" height="8" viewBox="0 0 13.545 8">
-                                    <g id="Group_35" data-name="Group 35" transform="translate(-2864.918 -1094)">
-                                        <g id="Group_34" data-name="Group 34">
-                                            <path id="Path_30" data-name="Path 30" d="M2878.246,1094.669l-.443-.447a.744.744,0,0,0-1.048,0l-5.061,5.061-5.067-5.067a.744.744,0,0,0-1.048,0l-.444.444a.742.742,0,0,0,0,1.048l6.033,6.054a.754.754,0,0,0,.525.238h0a.753.753,0,0,0,.523-.238l6.027-6.038a.75.75,0,0,0,0-1.055Z" fill="blue"/>
+                        <li class="dropdown d-none d-sm-block">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light create-btn" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                Create
+                                <i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.545" height="8" viewBox="0 0 13.545 8">
+                                        <g id="Group_35" data-name="Group 35" transform="translate(-2864.918 -1094)">
+                                            <g id="Group_34" data-name="Group 34">
+                                                <path id="Path_30" data-name="Path 30" d="M2878.246,1094.669l-.443-.447a.744.744,0,0,0-1.048,0l-5.061,5.061-5.067-5.067a.744.744,0,0,0-1.048,0l-.444.444a.742.742,0,0,0,0,1.048l6.033,6.054a.754.754,0,0,0,.525.238h0a.753.753,0,0,0,.523-.238l6.027-6.038a.75.75,0,0,0,0-1.055Z" fill="blue"/>
+                                            </g>
                                         </g>
+                                    </svg>
+                                </i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <p class="text-center">Sample Dropdown Content</p>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <i>
+                                    <svg id="Component_4_8" data-name="Component 4 – 8" xmlns="http://www.w3.org/2000/svg" width="18.261" height="30" viewBox="0 0 18.261 30">
+                                        <path id="Path" d="M3136.528,1079.773h9.13v1.305h-1.3s.062,10.3.062,11.058a9.13,9.13,0,1,1-6.613-.013c0-1.721.029-11.045.029-11.045h-1.3Z" transform="translate(-3131.963 -1079.773)" fill="#00eba8" fill-rule="evenodd"/>
+                                        <path id="Path-2" data-name="Path" d="M3139.137,1082.382h3.913s-.034,9.983-.034,10.673a7.824,7.824,0,1,1-3.9.013C3139.116,1090.9,3139.137,1082.382,3139.137,1082.382Z" transform="translate(-3131.963 -1079.773)" fill="#fff" fill-rule="evenodd"/>
+                                        <path id="Path-3" data-name="Path" d="M3147.55,1100.82a6.457,6.457,0,0,1-12.913,0C3139.834,1100.82,3147.55,1093.472,3147.55,1100.82Z" transform="translate(-3131.963 -1079.773)" fill="#00eba8" fill-rule="evenodd"/>
+                                        <path id="Path-4" data-name="Path" d="M3145.984,1099.99a.979.979,0,1,1-.978.979A.978.978,0,0,1,3145.984,1099.99Z" transform="translate(-3131.963 -1079.773)" fill="#fff" fill-rule="evenodd"/>
+                                        <path id="Path-5" data-name="Path" d="M3144.68,1102.6a.979.979,0,1,1-.978.979A.978.978,0,0,1,3144.68,1102.6Z" transform="translate(-3131.963 -1079.773)" fill="#fff" fill-rule="evenodd"/>
+                                    </svg>
+                                </i>
+                            </a>
+
+                            <div class="dropdown-menu">
+                                <p class="text-center">Sample Dropdown Content</p>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21.073" height="21.264" viewBox="0 0 21.073 21.264">
+                                        <g id="Group_42" data-name="Group 42" transform="translate(-2973.442 -1086.868)">
+                                            <path id="Path_31" data-name="Path 31" d="M2986.709,1105.274a2.108,2.108,0,0,1-2.108,2.108h0a2.106,2.106,0,0,1-2.1-2.1v.34m9-6h-14m-1-4.63v3.565a4.139,4.139,0,0,1-.71,2.318l-1.4,2.068a1.059,1.059,0,0,0,.261,1.485,1.079,1.079,0,0,0,.586.194h17.474a1.063,1.063,0,0,0,1.053-1.073,1.051,1.051,0,0,0-.2-.606l-1.348-2.056a4.24,4.24,0,0,1-.713-2.351v-3.551a7.363,7.363,0,0,0-7.367-7.363h-.267A7.37,7.37,0,0,0,2976.5,1094.988Z" fill="none" stroke="#00eba8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <span class="badge badge-danger rounded-circle noti-icon-badge">9</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                                <p class="text-center">Sample Dropdown Content</p>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light user-profile-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="user-profile-figure">B</span>
+                                <i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.8" height="25" viewBox="0 0 5.8 25">
+                                        <g id="Group_39" data-name="Group 39" transform="translate(-3077 -1085)">
+                                            <circle id="Ellipse_3" data-name="Ellipse 3" cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1085.5)" fill="none" stroke="#00eba8" stroke-miterlimit="10" stroke-width="1"/>
+                                            <circle id="Ellipse_4" data-name="Ellipse 4" cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1095.1)" fill="none" stroke="#00eba8" stroke-miterlimit="10" stroke-width="1"/>
+                                            <circle id="Ellipse_5" data-name="Ellipse 5" cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1104.7)" fill="none" stroke="#00eba8" stroke-miterlimit="10" stroke-width="1"/>
+                                        </g>
+                                    </svg>
+                                </i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <p class="text-center">Sample Dropdown Content</p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <!-- LOGO -->
+                    <div class="logo-box">
+                        <a href="./" class="logo text-center">
+                            <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="44.834" height="45" viewBox="0 0 44.834 45">
+                                <path id="Path_30" data-name="Path 30" d="M679.524,357.489H682.3v26.179h-2.779Z" transform="translate(-679.523 -338.668)" fill="blue"/>
+                                <path id="Path_31" data-name="Path 31" d="M721.577,357.489h2.78v26.179h-2.78Z" transform="translate(-679.523 -338.668)" fill="blue"/>
+                                <path id="Path_32" data-name="Path 32" d="M682.147,383.668V381.2h39.981v2.471Z" transform="translate(-679.523 -338.668)" fill="blue"/>
+                                <path id="Path_33" data-name="Path 33" d="M724.357,357.489l-22.418,16.122-22.416-16.122,22.416-18.821Z" transform="translate(-679.523 -338.668)" fill="blue"/>
+                                <path id="Path_34" data-name="Path 34" d="M710.058,367.749,714.307,372l-23.225,6.691,9.086-6.435" transform="translate(-679.523 -338.668)" fill="blue"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                        <li>
+                            <button class="button-menu-mobile waves-effect waves-light">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <ol class="breadcrumbs list-unstyled topnav-menu topnav-menu-left m-0">
+                        <li class="breadcrumb-item active">Contacts
+                            <i class="breadcrumb-item__fav d-none d-md-inline">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
+                                    <g id="Action-_-34---Action_-bookmark_-add_-save_-favourite-icon" data-name="Action-/-34---Action,-bookmark,-add,-save,-favourite-icon" transform="translate(0.75 0.75)">
+                                        <path id="Path" d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13" transform="translate(-1972.5 -1089.5)" fill="none" stroke="blue" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                        <path id="Path-2" data-name="Path" d="M1986.5,1093.5v8m4-4h-8" transform="translate(-1972.5 -1089.5)" fill="none" stroke="#00eba8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
                                     </g>
                                 </svg>
                             </i>
-                        </a>
-                        <div class="dropdown-menu">
-                            <p class="text-center">Sample Dropdown Content</p>
-                        </div>
-                    </li>
+                        </li>
+                    </ol>
 
-                    <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i>
-                                <svg id="Component_4_8" data-name="Component 4 – 8" xmlns="http://www.w3.org/2000/svg" width="18.261" height="30" viewBox="0 0 18.261 30">
-                                    <path id="Path" d="M3136.528,1079.773h9.13v1.305h-1.3s.062,10.3.062,11.058a9.13,9.13,0,1,1-6.613-.013c0-1.721.029-11.045.029-11.045h-1.3Z" transform="translate(-3131.963 -1079.773)" fill="#00eba8" fill-rule="evenodd"/>
-                                    <path id="Path-2" data-name="Path" d="M3139.137,1082.382h3.913s-.034,9.983-.034,10.673a7.824,7.824,0,1,1-3.9.013C3139.116,1090.9,3139.137,1082.382,3139.137,1082.382Z" transform="translate(-3131.963 -1079.773)" fill="#fff" fill-rule="evenodd"/>
-                                    <path id="Path-3" data-name="Path" d="M3147.55,1100.82a6.457,6.457,0,0,1-12.913,0C3139.834,1100.82,3147.55,1093.472,3147.55,1100.82Z" transform="translate(-3131.963 -1079.773)" fill="#00eba8" fill-rule="evenodd"/>
-                                    <path id="Path-4" data-name="Path" d="M3145.984,1099.99a.979.979,0,1,1-.978.979A.978.978,0,0,1,3145.984,1099.99Z" transform="translate(-3131.963 -1079.773)" fill="#fff" fill-rule="evenodd"/>
-                                    <path id="Path-5" data-name="Path" d="M3144.68,1102.6a.979.979,0,1,1-.978.979A.978.978,0,0,1,3144.68,1102.6Z" transform="translate(-3131.963 -1079.773)" fill="#fff" fill-rule="evenodd"/>
-                                </svg>
-                            </i>
-                        </a>
-
-                        <div class="dropdown-menu">
-                            <p class="text-center">Sample Dropdown Content</p>
-                        </div>
-                    </li>
-
-                    <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21.073" height="21.264" viewBox="0 0 21.073 21.264">
-                                    <g id="Group_42" data-name="Group 42" transform="translate(-2973.442 -1086.868)">
-                                        <path id="Path_31" data-name="Path 31" d="M2986.709,1105.274a2.108,2.108,0,0,1-2.108,2.108h0a2.106,2.106,0,0,1-2.1-2.1v.34m9-6h-14m-1-4.63v3.565a4.139,4.139,0,0,1-.71,2.318l-1.4,2.068a1.059,1.059,0,0,0,.261,1.485,1.079,1.079,0,0,0,.586.194h17.474a1.063,1.063,0,0,0,1.053-1.073,1.051,1.051,0,0,0-.2-.606l-1.348-2.056a4.24,4.24,0,0,1-.713-2.351v-3.551a7.363,7.363,0,0,0-7.367-7.363h-.267A7.37,7.37,0,0,0,2976.5,1094.988Z" fill="none" stroke="#00eba8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                                    </g>
-                                </svg>
-                            </i>
-                            <span class="badge badge-danger rounded-circle noti-icon-badge">9</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-                            <p class="text-center">Sample Dropdown Content</p>
-                        </div>
-                    </li>
-
-                    <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect user-profile-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <span class="user-profile-figure">B</span>
-                            <i>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="5.8" height="25" viewBox="0 0 5.8 25">
-                                    <g id="Group_39" data-name="Group 39" transform="translate(-3077 -1085)">
-                                        <circle id="Ellipse_3" data-name="Ellipse 3" cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1085.5)" fill="none" stroke="#00eba8" stroke-miterlimit="10" stroke-width="1"/>
-                                        <circle id="Ellipse_4" data-name="Ellipse 4" cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1095.1)" fill="none" stroke="#00eba8" stroke-miterlimit="10" stroke-width="1"/>
-                                        <circle id="Ellipse_5" data-name="Ellipse 5" cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1104.7)" fill="none" stroke="#00eba8" stroke-miterlimit="10" stroke-width="1"/>
-                                    </g>
-                                </svg>
-                            </i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                            <p class="text-center">Sample Dropdown Content</p>
-                        </div>
-                    </li>
-
-                </ul>
-
-                <div class="logo-box d-none d-sm-block">
-                    <a href="./" class="logo text-center">
-                        <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="44.834" height="45" viewBox="0 0 44.834 45">
-                            <path id="Path_30" data-name="Path 30" d="M679.524,357.489H682.3v26.179h-2.779Z" transform="translate(-679.523 -338.668)" fill="blue"/>
-                            <path id="Path_31" data-name="Path 31" d="M721.577,357.489h2.78v26.179h-2.78Z" transform="translate(-679.523 -338.668)" fill="blue"/>
-                            <path id="Path_32" data-name="Path 32" d="M682.147,383.668V381.2h39.981v2.471Z" transform="translate(-679.523 -338.668)" fill="blue"/>
-                            <path id="Path_33" data-name="Path 33" d="M724.357,357.489l-22.418,16.122-22.416-16.122,22.416-18.821Z" transform="translate(-679.523 -338.668)" fill="blue"/>
-                            <path id="Path_34" data-name="Path 34" d="M710.058,367.749,714.307,372l-23.225,6.691,9.086-6.435" transform="translate(-679.523 -338.668)" fill="blue"/>
-                        </svg>
-                    </a>
+                    <div class="clearfix"></div>
                 </div>
-
-                <button class="hamburger hamburger--arrow" type="button">
-                  <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                  </span>
-                </button>
-
-                <ol class="list-unstyled topnav-menu topnav-menu-left m-0 d-none d-sm-block">
-                    <li class="breadcrumb-item active">Contacts</li>
-                </ol>
-
             </div>
+            <!-- end Topbar -->
 
+            <!-- ========== Left Sidebar Start ========== -->
             <div class="left-side-menu">
 
-                <div class="slimscroll-menu">
+                <div class="h-100" >
 
-                    <div id="sidebar-menu">
-
-                        <ul class="metismenu" id="side-menu">
-
-                            <li>
-                                <a href="javascript: void(0);">
+                    <div class="sidebar-content">
+                        <div class="sidebar-icon-menu h-100" data-simplebar>
+                            <nav class="nav flex-column" id="two-col-sidenav-main">
+                                <a class="nav-link d-flex flex-column align-content-center justify-content-center" href="./index.html">
                                     <i>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20.193" height="17.999" viewBox="0 0 20.193 17.999" fill="#00eba8">
                                             <g id="Group_3" data-name="Group 3" transform="translate(-1774.405 -1161.603)">
@@ -159,18 +180,10 @@
                                             </g>
                                         </svg>
                                     </i>
-                                    <span class="badge badge-success badge-pill float-right">4</span>
-                                    <span> Home </span>
+                                    <span>Home</span>
                                 </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li class="nav-second-level__item">
-                                        <a href="./" class="nav-second-level__link">Home</a>
-                                    </li>
-                                </ul>
-                            </li>
 
-                            <li class="active">
-                                <a href="javascript: void(0);" class="active">
+                                <a class="nav-link active d-flex flex-column align-content-center justify-content-center" href="#contacts">
                                     <i>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="17.719" height="15.328" viewBox="0 0 17.719 15.328" fill="#00eba8">
                                             <g id="Group_8" data-name="Group 8" transform="translate(-1775.641 -1232.35)">
@@ -179,42 +192,10 @@
                                             </g>
                                         </svg>
                                     </i>
-                                    <span class="badge badge-success badge-pill float-right">4</span>
-                                    <span> Contacts </span>
+                                    <span>Contacts</span>
                                 </a>
-                                <ul class="nav-second-level collapse in" aria-expanded="false">
-                                    <li class="nav-second-level__item nav-second-level__item_active">
-                                        <a href="./contacts-home-static.html" class="nav-second-level__link">Contacts</a>
-                                    </li>
-                                    <li class="nav-second-level__item">
-                                        <a href="./my-lists-static.html" class="nav-second-level__link">My Lists</a>
-                                    </li>
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Add Contacts</a>
-                                    </li>
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Tags</a>
-                                    </li>
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Segments</a>
-                                    </li>
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Custom Fields</a>
-                                    </li>
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Signup Forms</a>
-                                    </li>
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Suppression Lists</a>
-                                    </li>
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Cleaning Service</a>
-                                    </li>
-                                </ul>
-                            </li>
 
-                            <li>
-                                <a href="javascript: void(0);">
+                                <a class="nav-link d-flex flex-column align-content-center justify-content-center" href="#templates">
                                     <i>
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" fill="#00eba8">
                                             <defs>
@@ -237,18 +218,10 @@
                                             </g>
                                         </svg>
                                     </i>
-                                    <span class="badge badge-success badge-pill float-right">4</span>
-                                    <span> Templates </span>
+                                    <span>Templates</span>
                                 </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Test Item</a>
-                                    </li>
-                                </ul>
-                            </li>
 
-                            <li>
-                                <a href="javascript: void(0);">
+                                <a class="nav-link d-flex flex-column align-content-center justify-content-center" href="#campaigns">
                                     <i>
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.507" height="22" viewBox="0 0 29.507 22" fill="#00eba8">
                                             <g id="Group_16" data-name="Group 16" transform="translate(-1769.531 -1370.503)">
@@ -260,18 +233,10 @@
                                             </g>
                                         </svg>
                                     </i>
-                                    <span class="badge badge-success badge-pill float-right">4</span>
-                                    <span> Campaigns </span>
+                                    <span>Campaigns</span>
                                 </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Test Item</a>
-                                    </li>
-                                </ul>
-                            </li>
 
-                            <li>
-                                <a href="javascript: void(0);">
+                                <a class="nav-link d-flex flex-column align-content-center justify-content-center" href="#integrations">
                                     <i>
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17.894" height="24" viewBox="0 0 17.894 24" fill="#00eba8">
                                             <g id="Group_19" data-name="Group 19" transform="translate(-1775.553 -1441.65)">
@@ -282,18 +247,10 @@
                                             </g>
                                         </svg>
                                     </i>
-                                    <span class="badge badge-success badge-pill float-right">4</span>
-                                    <span> Integrations </span>
+                                    <span>Integrations</span>
                                 </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Test Item</a>
-                                    </li>
-                                </ul>
-                            </li>
 
-                            <li>
-                                <a href="javascript: void(0);">
+                                <a class="nav-link d-flex flex-column align-content-center justify-content-center" href="#settings">
                                     <i>
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21.515" height="18.91" viewBox="0 0 21.515 18.91" fill="#00eba8">
                                             <g id="Group_22" data-name="Group 22" transform="translate(-1773.743 -1516.196)">
@@ -306,18 +263,10 @@
                                             </g>
                                         </svg>
                                     </i>
-                                    <span class="badge badge-success badge-pill float-right">4</span>
-                                    <span> Settings </span>
+                                    <span>Settings</span>
                                 </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Test Item</a>
-                                    </li>
-                                </ul>
-                            </li>
 
-                            <li>
-                                <a href="javascript: void(0);">
+                                <a class="nav-link d-flex flex-column align-content-center justify-content-center" href="#bookmarks">
                                     <i>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15.29" height="20" viewBox="0 0 15.29 20" fill="#00eba8">
                                             <g id="Group_23" data-name="Group 23" transform="translate(-1776.855 -1590.399)">
@@ -329,25 +278,119 @@
                                             </g>
                                         </svg>
                                     </i>
-                                    <span class="badge badge-success badge-pill float-right">4</span>
-                                    <span> Bookmarks </span>
+                                    <span>Bookmarks</span>
                                 </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li class="nav-second-level__item">
-                                        <a href="#" class="nav-second-level__link">Test Item</a>
-                                    </li>
-                                </ul>
-                            </li>
 
-                        </ul>
+                            </nav>
+                        </div>
+                        <!--- Sidemenu -->
+                        <div class="sidebar-main-menu">
+                            <div id="two-col-menu" class="h-100" data-simplebar>
+                                <div class="twocolumn-menu-item" id="home">
+                                    <div class="title-box">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Sample Item</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
 
+                                <div class="twocolumn-menu-item d-block" id="contacts">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./my-lists-static.html">My Lists</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Add Contacts</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Tags</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Segments</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Custom Fields</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Signup Forms</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Suppression Lists</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Cleaning Service</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="twocolumn-menu-item" id="templates">
+                                    <div class="title-box">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Sample Item</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="twocolumn-menu-item" id="campaigns">
+                                    <div class="title-box">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Sample Item</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="twocolumn-menu-item" id="integrations">
+                                    <div class="title-box">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Sample Item</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="twocolumn-menu-item" id="settings">
+                                    <div class="title-box">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Sample Item</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="twocolumn-menu-item" id="bookmarks">
+                                    <div class="title-box">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Sample Item</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-
-                    <div class="clearfix"></div>
+                    <!-- End Sidebar -->
 
                 </div>
+                <!-- Sidebar -left -->
 
             </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
 
             <div class="content-page">
                 <div class="content">
@@ -356,13 +399,13 @@
 
                         <div class="row">
                             <div class="col">
-                                <div class="card-square card card-body">
+                                <div class="card-square card card-body mt-15">
                                     <div class="d-md-flex justify-content-between align-content-center">
                                         <div class="cust-card-wrap">
                                             <div class="contacts-card__number">153</div>
                                             <div class="contacts-card__title">New Contacts</div>
                                             <div class="contacts-card__text">
-                                                From Mar 15, 2020 to  May 14, 2020 you’ve added <a href="#" class="contacts-card__link">153 new contacts</a>
+                                                From Mar 15, 2020 to  May 14, 2020 you’ve added <a href="#" class="link">153 new contacts</a>
                                             </div>
                                             <div class="cust-card-wrap__buttons">
                                                 <button class="button_sm button_secondary btn btn-primary">New Contacts</button>
@@ -384,7 +427,7 @@
                                         <div class="contacts-card__number">491</div>
                                         <div class="contacts-card__title">Subscribed Contacts</div>
                                         <div class="contacts-card__text">
-                                            You’ve <a href="#" class="contacts-card__link">491 subscribed contacts</a> out of (<span>950 total contacts</span> in <span>3 lists</span>.)
+                                            You’ve <a href="#" class="link">491 subscribed contacts</a> out of (<span>950 total contacts</span> in <span>3 lists</span>.)
                                         </div>
                                         <div class="cust-card-wrap__buttons">
                                             <button class="button_sm button_secondary btn btn-primary">All Subscribers</button>
@@ -398,7 +441,7 @@
                                         <div class="contacts-card__number contacts-card__number_danger">43</div>
                                         <div class="contacts-card__title">Disabled Contacts</div>
                                         <div class="contacts-card__text">
-                                            You’ve <a href="#" class="contacts-card__link">43 disabled contacts</a> in total (<span>28 unsubscribed</span> and <span>15 hardbounced</span>.)
+                                            You’ve <a href="#" class="link">43 disabled contacts</a> in total (<span>28 unsubscribed</span> and <span>15 hardbounced</span>.)
                                         </div>
                                         <div class="cust-card-wrap__buttons">
                                             <button class="button_sm button_secondary btn btn-primary">All Disabled</button>
@@ -506,7 +549,7 @@
                                     <div class="cust-card-wrap">
                                         <h4 class="chart-title">Tags</h4>
                                         <div class="contacts-card__text">
-                                            Your contacts organized by tags. <a href="#" class="contacts-card__link">Learn more about tags.</a>
+                                            Your contacts organized by tags. <a href="#" class="link">Learn more about tags.</a>
                                         </div>
                                         <div class="cust-card-wrap__buttons">
                                             <button class="button_sm button_tag btn btn-primary">members (112)</button>
@@ -525,16 +568,22 @@
                 </div>
             </div>
 
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
         </div>
+        <!-- END wrapper -->
 
-
+        <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
 
-        <script src="assets/libs/morris-js/morris.min.js"></script>
+        <script src="assets/libs/morris.js06/morris.min.js"></script>
         <script src="assets/libs/raphael/raphael.min.js"></script>
 
         <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
-        <script src="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+        <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
         <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
 
@@ -577,6 +626,7 @@
                         xkey: xkey,
                         ykeys: ykeys,
                         labels: labels,
+                        dataLabels: false,
                         fillOpacity: opacity,
                         pointFillColors: Pfillcolor,
                         pointStrokeColors: Pstockcolor,
@@ -621,6 +671,7 @@
 
         </script>
 
+        <!-- App js -->
         <script src="assets/js/app.min.js"></script>
         
     </body>
