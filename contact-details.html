@@ -11,15 +11,16 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
 
-        <link href="assets/libs/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-
     </head>
 
-    <body data-layout-mode="two-column" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "light"}, "showRightSidebarOnPageLoad": true}'></body>
+    <body class="_conatcts-home-page" data-layout-mode="two-column" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "light"}, "showRightSidebarOnPageLoad": true}'></body>
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -148,7 +149,8 @@
 
                     <ol class="breadcrumbs list-unstyled topnav-menu topnav-menu-left m-0">
                         <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
-                        <li class="breadcrumb-item active">My Lists
+                        <li class="breadcrumb-item"><a href="./my-lists-static.html">My Lists</a></li>
+                        <li class="breadcrumb-item active">List Name
                             <button class="button-invisible d-none d-md-inline ml-18">
                                 <i class="add-to-fav-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -187,7 +189,7 @@
                                     <span>Home</span>
                                 </a>
 
-                                <a class="nav-link active d-flex flex-column align-content-center justify-content-center" href="./contacts-home-static.html">
+                                <a class="nav-link active d-flex flex-column align-content-center justify-content-center" href="#contacts">
                                     <i>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="17.719" height="15.328" viewBox="0 0 17.719 15.328" fill="#00eba8">
                                             <g id="Group_8" data-name="Group 8" transform="translate(-1775.641 -1232.35)">
@@ -400,23 +402,24 @@
                 <div class="content">
 
                     <div class="container-fluid">
+
                         <div class="row">
                             <div class="col-12">
 
                                 <ul class="nav nav-tabs nav-bordered">
                                     <li class="nav-item">
                                         <a href="#home-b1" data-toggle="tab" aria-expanded="false" class="nav-link active">
-                                            All Lists
+                                            Overview
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#profile-b1" data-toggle="tab" aria-expanded="true" class="nav-link">
-                                            Engaged Lists
+                                            Activity Feed
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#messages-b1" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                            Poor Lists
+                                            Notes
                                         </a>
                                     </li>
                                 </ul>
@@ -424,252 +427,166 @@
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="home-b1">
 
-                                        <div class="diriq-table__wrapper _my-lists-table">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="card-square card card-body">
+                                                    <div class="d-md-flex justify-content-between align-content-center">
+                                                        <div class="cust-card-wrap">
+                                                            <div class="contacts-card__number">153</div>
+                                                            <div class="contacts-card__title">New Contacts</div>
+                                                            <div class="contacts-card__text">
+                                                                From Mar 15, 2020 to  May 14, 2020 you’ve added <a href="#" class="link">153 new contacts</a>
+                                                            </div>
+                                                            <div class="cust-card-wrap__buttons">
+                                                                <button class="button_sm button_secondary btn btn-primary">New Contacts</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cust-card-wrap__buttons cust-card-wrap__buttons_aside">
+                                                            <button class="button_lg button_secondary btn btn-primary">Create List</button>
+                                                            <button class="button_lg button_primary btn btn-primary">Add Contacts</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                            <table id="data-table" class="diriq-table" style="width:100%">
-                                                <thead>
-                                                <tr>
-                                                    <th class="nosort checkbox-col">
-                                                        <i>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="10.16" height="6" viewBox="0 0 8 4.94">
-                                                                <path d="M4237.768,4437.5l-3.06,3.053-3.06-3.053-.94.94,4,4,4-4Z" transform="translate(-4230.708 -4437.499)"/>
-                                                            </svg>
-                                                        </i>
-                                                    </th>
-                                                    <th>List Name</th>
-                                                    <th>List Size</th>
-                                                    <th>Subscribed</th>
-                                                    <th>Disabled</th>
-                                                    <th>List Quality</th>
-                                                    <th>Last Modified</th>
-                                                    <th class="nosort"></th>
+                                        <div class="row">
+                                            <div class="col-md-6 d-md-flex flex-md-column flex-md-grow-1">
+                                                <div class="card-square card-grey card card-body contacts-card">
+                                                    <div class="cust-card-wrap">
+                                                        <div class="contacts-card__number">491</div>
+                                                        <div class="contacts-card__title">Subscribed Contacts</div>
+                                                        <div class="contacts-card__text">
+                                                            You’ve <a href="#" class="link">491 subscribed contacts</a> out of (<span>950 total contacts</span> in <span>3 lists</span>.)
+                                                        </div>
+                                                        <div class="cust-card-wrap__buttons">
+                                                            <button class="button_sm button_secondary btn btn-primary">All Subscribers</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 d-md-flex flex-md-column flex-md-grow-1">
+                                                <div class="card-square card-grey card card-body contacts-card">
+                                                    <div class="cust-card-wrap">
+                                                        <div class="contacts-card__number contacts-card__number_danger">43</div>
+                                                        <div class="contacts-card__title">Disabled Contacts</div>
+                                                        <div class="contacts-card__text">
+                                                            You’ve <a href="#" class="link">43 disabled contacts</a> in total (<span>28 unsubscribed</span> and <span>15 hardbounced</span>.)
+                                                        </div>
+                                                        <div class="cust-card-wrap__buttons">
+                                                            <button class="button_sm button_secondary btn btn-primary">All Disabled</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="checkbox checkbox-single checkbox-custom">
-                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
-                                                            <label></label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="diriq-table__link">Dodoaildo Mega List</a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="diriq-table__list-size-number">12,153</div>
-                                                        <div class="diriq-table__list-size-percents"><span>15%</span> engaged</div>
-                                                    </td>
-                                                    <td class="cell-subscribed">10,984</td>
-                                                    <td class="cell-disabled">1,385</td>
-                                                    <td>
-                                                        <i class="list-quality-icon list-quality-icon_2">
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                        </i>
-                                                    </td>
-                                                    <td class="cell-last-modified">Mar 31, 2020</td>
-                                                    <td class="cell-buttons">
-                                                        <button type="button" class="btn btn-success btn-success_custom waves-effect waves-light">View</button>
-                                                        <button type="button" class="btn btn-success btn-success_custom btn-success_dots waves-effect waves-light">
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="checkbox checkbox-single checkbox-custom">
-                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
-                                                            <label></label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="diriq-table__link">My First List</a>
-                                                    </td>
-                                                    <td class="list-size">
-                                                        <div class="diriq-table__list-size-number">234</div>
-                                                        <div class="diriq-table__list-size-percents"><span>73%</span> engaged</div>
-                                                    </td>
-                                                    <td class="cell-subscribed">179</td>
-                                                    <td class="cell-disabled">14</td>
-                                                    <td>
-                                                        <i class="list-quality-icon list-quality-icon_3">
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                        </i>
-                                                    </td>
-                                                    <td class="cell-last-modified">Jun 7, 2019</td>
-                                                    <td class="cell-buttons">
-                                                        <button type="button" class="btn btn-success btn-success_custom waves-effect waves-light">View</button>
-                                                        <button type="button" class="btn btn-success btn-success_custom btn-success_dots waves-effect waves-light">
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="checkbox checkbox-single checkbox-custom">
-                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
-                                                            <label></label>
-                                                        </div>
-                                                    </td>
-                                                    <td >
-                                                        <a href="#" class="diriq-table__link">DirectIQ Customers</a>
-                                                    </td>
-                                                    <td class="list-size">
-                                                        <div class="diriq-table__list-size-number">880</div>
-                                                        <div class="diriq-table__list-size-percents"><span>3%</span> engaged</div>
-                                                    </td>
-                                                    <td class="cell-subscribed">880</td>
-                                                    <td class="cell-disabled">0</td>
-                                                    <td>
-                                                        <i class="list-quality-icon list-quality-icon_3">
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                        </i>
-                                                    </td>
-                                                    <td class="cell-last-modified">Sep 11, 2008</td>
-                                                    <td class="cell-buttons">
-                                                        <button type="button" class="btn btn-success btn-success_custom waves-effect waves-light">View</button>
-                                                        <button type="button" class="btn btn-success btn-success_custom btn-success_dots waves-effect waves-light">
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="checkbox checkbox-single checkbox-custom">
-                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
-                                                            <label></label>
-                                                        </div>
-                                                    </td>
-                                                    <td >
-                                                        <a href="#" class="diriq-table__link">Test List Beautiful</a>
-                                                    </td>
-                                                    <td class="list-size">
-                                                        <div class="diriq-table__list-size-number">12,153</div>
-                                                        <div class="diriq-table__list-size-percents"><span>15%</span> engaged</div>
-                                                    </td>
-                                                    <td class="cell-subscribed">14,914</td>
-                                                    <td class="cell-disabled">14,914</td>
-                                                    <td>
-                                                        <i class="list-quality-icon list-quality-icon_2">
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                            <span class="list-quality-icon__circle"></span>
-                                                        </i>
-                                                    </td>
-                                                    <td class="cell-last-modified">Mar 4, 2020</td>
-                                                    <td class="cell-buttons">
-                                                        <button type="button" class="btn btn-success btn-success_custom waves-effect waves-light">View</button>
-                                                        <button type="button" class="btn btn-success btn-success_custom btn-success_dots waves-effect waves-light">
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                            <span class="btn-success__dot"></span>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                <tr>
-                                                    <th class="nosort"></th>
-                                                    <th>
-                                                        <input class="filter-input" type="text" placeholder="Type List Name">
-                                                    </th>
-                                                    <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Size</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Size</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Size</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Quality</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Date</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
-                                                        </select>
-                                                    </th>
-                                                    <th class="nosort"></th>
-                                                </tr>
-                                                </tfoot>
-                                            </table>
+                                        <div class="diriq-table__wrapper">
 
-                                            <div class="diriq-table__filter-btn">
-                                                <i class="diriq-table__filter-icon">
-                                                    <svg id="FILTER" xmlns="http://www.w3.org/2000/svg" width="20.187" height="22" viewBox="0 0 20.187 22">
-                                                        <g id="Group_87" data-name="Group 87" transform="translate(-7837.407 -1262.014)">
-                                                            <g id="Group_86" data-name="Group 86">
-                                                                <path id="Path_83" data-name="Path 83" d="M7857.47,1266.111a1.042,1.042,0,0,0-.92-.552h-2.961a2.971,2.971,0,0,0-5.85,0h-3a2.272,2.272,0,0,0,.373-1.251,2.294,2.294,0,1,0-4.215,1.251h-2.446a1.042,1.042,0,0,0-.865,1.624l7,10.4v5.9a.52.52,0,0,0,.729.478l4.8-2.088a.522.522,0,0,0,.313-.478v-3.817l7-10.4A1.04,1.04,0,0,0,7857.47,1266.111Zm-6.806-1.96a1.932,1.932,0,0,1,1.856,1.408h-3.713A1.932,1.932,0,0,1,7850.664,1264.151Zm-7.847-1.095a1.251,1.251,0,1,1-1.251,1.252A1.253,1.253,0,0,1,7842.817,1263.056Zm6.648,14.081a.53.53,0,0,0-.088.291v3.634l-3.754,1.635v-4.748h1.884a.521.521,0,0,0,0-1.043h-2.127l-5.247-7.8h10.531a.521.521,0,0,0,0-1.043h-11.232l-.982-1.46h18.1Z" fill="currentColor"/>
-                                                            </g>
-                                                        </g>
-                                                        <g id="Group_89" data-name="Group 89" transform="translate(-7837.407 -1262.014)">
-                                                            <g id="Group_88" data-name="Group 88">
-                                                                <path id="Path_84" data-name="Path 84" d="M7853.35,1268.214a.521.521,0,1,0,.153.369A.524.524,0,0,0,7853.35,1268.214Z" fill="currentColor"/>
-                                                            </g>
-                                                        </g>
-                                                    </svg>
-                                                </i>
-                                                <i class="diriq-table__close-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
-                                                        <g id="CLOSE" transform="translate(0.5 0.5)">
-                                                            <rect id="Rectangle_73" data-name="Rectangle 73" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
-                                                            <path class="diriq-table__close-icon-cross" id="ic_close_24px" data-name="ic close 24px" d="M9489.239,1605.581l-.806-.806-3.194,3.194-3.194-3.194-.806.806,3.194,3.194-3.194,3.194.806.806,3.194-3.194,3.194,3.194.806-.806-3.194-3.194Z" transform="translate(-9473.239 -1596.775)" fill="currentColor"/>
-                                                        </g>
-                                                    </svg>
-                                                </i>
+                                            <div class="row no-gutters chart-wrap">
+                                                <div class="col-md-8">
+                                                    <div class="card-square card-chart card card-body contacts-card align-content-start">
+                                                        <div class="cust-card-wrap">
+                                                            <div class="d-flex flex-column flex-sm-row justify-content-between align-content-center">
+                                                                <h4 class="chart-title">Contacts Performance</h4>
+                                                                <p class="chart-legend">
+                                                                    <span class="mx-2"><i class="circle-i circle-i_openers"></i> Openers</span>
+                                                                    <span class="mx-2"><i class="circle-i circle-i_clickers"></i> Clickers</span>
+                                                                    <span class="mx-2"><i class="circle-i circle-i_unsubscribers"></i> Unsubscribers</span>
+                                                                </p>
+                                                            </div>
+                                                            <div id="morris-line-example" style="height: 246px" class="morris-chart"></div>
+                                                            <div class="cust-card-wrap__buttons">
+                                                                <button class="button_sm button_secondary btn btn-primary">All Openers</button>
+                                                                <button class="button_sm button_secondary btn btn-primary">All Clickers</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 d-flex flex-direction-column">
+                                                    <div class="card-square card-grey card card-body statistics-card flex-grow-1 align-items-center">
+
+                                                        <div class="d-flex flex-column justify-content-between flex-grow-1 statistics-card__inner">
+                                                            <div class="d-flex justify-content-center w-100">
+                                                                <div class="date-range__wrap">
+                                                                    <input type="text" id="range-datepicker" class="form-control date-range__input" placeholder="Pick dates" value="2020-03-31 – 2020-04-25">
+                                                                    <i class="date-range__icon">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="19.143" height="20" viewBox="0 0 19.143 20">
+                                                                            <g id="Group_55" data-name="Group 55" transform="translate(-2823.928 -1687.5)">
+                                                                                <rect id="Rectangle_27" data-name="Rectangle 27" width="17.143" height="17.143" rx="1.905" transform="translate(2824.928 1689.357)" stroke-width="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                                                                <line id="Line_6" data-name="Line 6" y2="3.429" transform="translate(2836.928 1688.5)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                                                                <line id="Line_7" data-name="Line 7" y2="3.429" transform="translate(2830.072 1688.5)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                                                                <line id="Line_8" data-name="Line 8" x2="15.429" transform="translate(2825.786 1695.357)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                                                            </g>
+                                                                        </svg>
+                                                                    </i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="d-flex flex-md-column flex-grow-1 justify-content-between statistics-card__knobs">
+                                                                <div class="d-flex statistics-card__knobs-item">
+                                                                    <div class="knob-wrap knob-wrap_up">
+                                                                        <input data-plugin="knob" data-width="50" data-height="50" data-linecap=round
+                                                                               data-fgColor="#00EBA8" value="75" data-displayInput=false data-skin="tron" data-angleOffset="180"
+                                                                               data-readOnly=true data-thickness=".1" data-bgColor="#f6f9fc"/>
+                                                                    </div>
+                                                                    <div class="knob-text">
+                                                                        <p>Openers</p>
+                                                                        <span><i class="circle-i circle-i_openers"></i> 245</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="d-flex statistics-card__knobs-item">
+                                                                    <div class="knob-wrap knob-wrap_down">
+                                                                        <input data-plugin="knob" data-width="50" data-height="50" data-linecap=round
+                                                                               data-fgColor="#0000FF" value="35" data-displayInput=false data-skin="tron" data-angleOffset="180"
+                                                                               data-readOnly=true data-thickness=".1" data-bgColor="#f6f9fc"/>
+                                                                    </div>
+                                                                    <div class="knob-text">
+                                                                        <p>Clickers</p>
+                                                                        <span><i class="circle-i circle-i_clickers"></i> 7</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="d-flex statistics-card__knobs-item">
+                                                                    <div class="knob-wrap knob-wrap_up">
+                                                                        <input data-plugin="knob" data-width="50" data-height="50" data-linecap=round
+                                                                               data-fgColor="#ED1C24" value="15" data-displayInput=false data-skin="tron" data-angleOffset="180"
+                                                                               data-readOnly=true data-thickness=".1" data-bgColor="#f6f9fc"/>
+                                                                    </div>
+                                                                    <div class="knob-text">
+                                                                        <p>Unsubscribers</p>
+                                                                        <span><i class="circle-i circle-i_unsubscribers"></i> 12</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
                                             </div>
 
-                                            <div class="more-button__wrap">
-                                                <div class="dropdown">
-                                                    <button class="more-button dropdown-toggle" type="button" id="moreMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <div class="more-button__circle"></div>
-                                                    </button>
 
-                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu_more" aria-labelledby="moreMenuButton">
-                                                        <div class="dropdown-menu-inner">
-                                                            <a class="dropdown-item" href="#">Action Item 1</a>
-                                                            <a class="dropdown-item" href="#">Action Item 2</a>
-                                                            <a class="dropdown-item" href="#">Action Item 3</a>
+                                            <div class="diriq-table__more-btn">
+                                                <div class="diriq-table__more-btn-circle"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card-square card-grey card card-body contacts-card m-0">
+                                                    <div class="cust-card-wrap">
+                                                        <h4 class="chart-title">Tags</h4>
+                                                        <div class="contacts-card__text">
+                                                            Your contacts organized by tags. <a href="#" class="link">Learn more about tags.</a>
+                                                        </div>
+                                                        <div class="cust-card-wrap__buttons">
+                                                            <button class="button_sm button_tag btn btn-primary">members (112)</button>
+                                                            <button class="button_sm button_tag btn btn-primary">wordpress (543)</button>
+                                                            <button class="button_sm button_tag btn btn-primary">staff (6)</button>
+                                                            <button class="button_sm button_tag btn btn-primary">vip service (94)</button>
+                                                            <button class="button_sm button_secondary btn btn-primary">Manage Tags</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -684,6 +601,7 @@
 
                             </div>
                         </div>
+
                     </div>
 
                 </div>
@@ -695,37 +613,101 @@
 
 
         </div>
-
-        <a href="#" class="back-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" viewBox="0 0 8 8"><path id="ic_arrow_back_24px" d="M12,7.5H5.915l2.8-2.8L8,4,4,8l4,4,.705-.7L5.915,8.5H12Z" transform="translate(-4 -4)"></path></svg>
-        </a>
-
         <!-- END wrapper -->
 
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
 
-        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/morris.js06/morris.min.js"></script>
+        <script src="assets/libs/raphael/raphael.min.js"></script>
+
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+        <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
 
         <script>
-            // Datatables settings
-            $(document).ready(function() {
-                $('#data-table').DataTable({
-                    scrollX:        true,
-                    scrollCollapse: true,
-                    order: [],
-                    aoColumnDefs: [{
-                        bSortable: false,
-                        aTargets: ['nosort']
-                    }],
-                    sDom: 't<"d-flex justify-content-between align-content-center diriq-table__bottom"l<"d-flex align-content-center"ip>>',
-                    oLanguage: {
-                        sLengthMenu: "View _MENU_",
-                        sInfo: "_START_ – _END_ of _TOTAL_"
+            // Range date picker settings and initialisation
+            !function ($) {
+                "use strict";
+
+                var FormPickers = function () { };
+
+                FormPickers.prototype.init = function () {
+                    $('#range-datepicker').flatpickr({
+                        mode: "range",
+                        altInput: true,
+                        altFormat: "M j",
+                        dateFormat: "Y-m-d",
+                        locale: {
+                            rangeSeparator: ' – '
+                        }
+                    });
+                },
+                    $.FormPickers = new FormPickers, $.FormPickers.Constructor = FormPickers
+
+            }(window.jQuery),
+                function ($) {
+                    "use strict";
+                    $.FormPickers.init()
+                }(window.jQuery);
+
+            // Morris chart settings and initialization
+            !function($) {
+                "use strict";
+
+                var MorrisCharts = function() {};
+
+                MorrisCharts.prototype.createLineChart = function(element, data, xkey, ykeys, labels, opacity, Pfillcolor, Pstockcolor, lineColors) {
+                    Morris.Line({
+                        element: element,
+                        data: data,
+                        xkey: xkey,
+                        ykeys: ykeys,
+                        labels: labels,
+                        dataLabels: false,
+                        fillOpacity: opacity,
+                        pointFillColors: Pfillcolor,
+                        pointStrokeColors: Pstockcolor,
+                        behaveLikeLine: true,
+                        gridLineColor: '#eef0f2',
+                        hideHover: 'auto',
+                        lineWidth: '1.5px',
+                        pointSize: 0,
+                        resize: true,
+                        lineColors: lineColors,
+                        parseTime: false,
+                    });
+                },
+
+                    MorrisCharts.prototype.init = function() {
+
+                        //create line chart
+                        var $data  = [
+                            { y: 'June 15', a: 8, b: 25, c: 13 },
+                            { y: 'June 16', a: 24, b: 60, c: 26 },
+                            { y: 'June 17', a: 56, b: 27, c: 16 },
+                            { y: 'June 18', a: 14, b: 29, c: 15 },
+                            { y: 'June 19', a: 15, b: 36, c: 27 },
+                            { y: 'June 20', a: 16, b: 32, c: 14 },
+                            { y: 'June 21', a: 48, b: 44, c: 26 },
+                        ];
+                        this.createLineChart('morris-line-example', $data, 'y', ['a', 'b', 'c'], ["Openers", "Clickers", "Unsubscribers"],['0.1'],['#ffffff'],['#999999'], ['#00EBA8', '#0000FF', '#ED1C24']);
+
                     },
-                });
-            });
+
+                    $.MorrisCharts = new MorrisCharts, $.MorrisCharts.Constructor = MorrisCharts
+
+            }(window.jQuery),
+
+                function($) {
+                    "use strict";
+                    setTimeout(function() {
+                        $.MorrisCharts.init();
+                    }, 200);
+
+                }(window.jQuery);
+
         </script>
 
         <!-- App js -->
