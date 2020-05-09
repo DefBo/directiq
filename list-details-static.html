@@ -764,7 +764,7 @@
         <script>
             // Datatable settings and initialisation
             $(document).ready(function() {
-                $('#data-table').DataTable({
+                var table = $('#data-table').DataTable({
                     scrollX:        true,
                     scrollCollapse: true,
                     fixedColumns:   {
@@ -781,6 +781,10 @@
                         sLengthMenu: "View _MENU_",
                         sInfo: "_START_ – _END_ of _TOTAL_"
                     },
+                });
+
+                $(window).on('resize', function () {
+                    table.columns.adjust();
                 });
             } );
         </script>
