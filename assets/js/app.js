@@ -936,5 +936,8 @@ function ($) {
 // Waves Effect
 Waves.init();
 
-// Feather Icons
-feather.replace()
+$(document).ready(function() {
+    if($('#data-table').length >0 ){
+        $('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append('<svg xmlns="http://www.w3.org/2000/svg" width="5.1" height="10" class="sort-i"><g><path class="sort-i__top" d="M2.55 1.572l1.761 1.762.783-.784L2.55 0 0 2.55l.788.784z" fill="#212b35"/><path class="sort-i__bottom" d="M2.549 8.428L.788 6.667l-.784.783L2.548 10l2.55-2.55-.789-.783z" fill="#212b35"/></g></svg>');
+    }
+});
