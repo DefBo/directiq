@@ -307,7 +307,7 @@
                                             <a class="nav-link" href="./my-lists-static.html">My Lists</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Add Contacts</a>
+                                            <a class="nav-link" href="./add-contacts.html">Add Contacts</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Tags</a>
@@ -426,10 +426,10 @@
 
                                         <div class="row">
                                             <div class="col">
-                                                <div class="card-square card card-body">
+                                                <div class="card-square card card-body p-20 p-sm-40">
                                                     <div class="cust-card-wrap d-md-flex justify-content-between align-content-center">
                                                         <h3 class="title-medium">List Name Here (14,019 total)</h3>
-                                                        <a href="#" class="button_lg button_primary btn btn-primary">Add Contacts</a>
+                                                        <a href="./add-contacts.html" class="button_lg button_primary btn btn-primary">Add Contacts</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -437,7 +437,7 @@
 
                                         <div class="row">
                                             <div class="col-md-6 d-md-flex flex-md-column flex-md-grow-1">
-                                                <div class="card-square card-grey card card-body contacts-card">
+                                                <div class="card-square card-grey card card-body contacts-card p-20 p-sm-40">
                                                     <div class="cust-card-wrap">
                                                         <div class="contacts-card__number">491</div>
                                                         <div class="contacts-card__title">Subscribed Contacts</div>
@@ -451,7 +451,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6 d-md-flex flex-md-column flex-md-grow-1">
-                                                <div class="card-square card-grey card card-body contacts-card">
+                                                <div class="card-square card-grey card card-body contacts-card p-20 p-sm-40">
                                                     <div class="cust-card-wrap">
                                                         <div class="contacts-card__number contacts-card__number_danger">43</div>
                                                         <div class="contacts-card__title">Disabled Contacts</div>
@@ -782,6 +782,10 @@
                         sInfo: "_START_ – _END_ of _TOTAL_"
                     },
                 });
+
+                $(window).bind('resize', function () {
+                    table.columns.adjust();
+                } );
             } );
         </script>
 
