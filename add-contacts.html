@@ -20,10 +20,9 @@
 	    <!-- App css -->
 	    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
 	    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
-
     </head>
 
-    <body data-layout-mode="two-column" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "light"}, "showRightSidebarOnPageLoad": true}'>
+    <body data-layout-mode="two-column">
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -668,7 +667,7 @@
                                                             <p class="font-14 font-weight-bold mb-12 color-primary">Create a new contact list to save your new contacts</p>
                                                             <input type="text" placeholder="New List Name Here" class="form-control px-12 mb-30">
                                                             <p class="font-12 mb-12 font-weight-medium font-secondary">You can also <span class="font-primary font-weight-bold">select old lists</span> to save them</p>
-                                                            <table id="data-table" class="datatable datatable_small _contact-details-lists bg-white" style="width:100%">
+                                                            <table id="upload-list-data-table" class="datatable datatable_small _contact-details-lists bg-white" style="width:100%">
                                                                 <thead>
                                                                 <tr>
                                                                     <th class="nosort checkbox-col"></th>
@@ -822,18 +821,22 @@
                                                     <div class="col-lg-4 d-flex flex-column justify-content-end">
                                                             <p class="font-12 mt-30 mb-12 font-weight-medium font-secondary">Try <span class="font-primary font-weight-bold">adding tags</span> to your contacts before finishing</p>
                                                             <div class="cust-card-wrap__buttons m-0 p-16 pt-0 px-sm-30 pb-sm-30 pt-sm-14 bg-white cust-card-wrap__buttons_add-contact-tags">
-                                                                <button class="button_sm button_tag button_tag-del btn btn-primary mt-16 pr-5">
+                                                                <div class="button_sm button_tag-del btn mt-16 pr-5">
                                                                     vip
-                                                                    <svg class="ml-11 mt-n2" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
-                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </button>
-                                                                <button class="button_sm button_tag btn btn-primary mt-16 pr-5">
+                                                                    <button class="button-invisible ml-11">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                            <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="button_sm button_tag-del btn mt-16 pr-5">
                                                                     staff
-                                                                    <svg class="ml-11 mt-n2" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
-                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </button>
+                                                                    <button class="button-invisible ml-11">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                            <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
                                                                 <a href="./add-tag.html" class="button_sm button_secondary btn btn-primary">Add Tag</a>
                                                             </div>
                                                     </div>
@@ -858,8 +861,702 @@
 
                                     <div class="tab-pane" id="add-contact-add-one-by-one">
 
+                                        <div class="add-contact-upload-list__step">
+
+                                            <div class="card-square card card-body mb-0 p-20 px-sm-40 pt-sm-40 pb-sm-36">
+                                                <div class="cust-card-wrap">
+                                                    <h4 class="font-18 mt-0 mb-11 font-weight-semibold">Type Your Contacts</h4>
+                                                    <p class="font-12 font-weight-medium color-secondary mb-0">
+                                                        Start typing contact information then click ADD button for as many contacts as you want.
+                                                        <span class="font-weight-bold color-primary">You'll save your contacts to a contact list on the next step.</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="card-square card card-grey card-body mb-0 p-20 p-sm-40">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="text" placeholder="E-mail Address" class="form-control px-12 mt-16 mt-md-0">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="First Name" class="form-control px-12 mt-16 mt-md-0">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="Last Name" class="form-control px-12 mt-16 mt-md-0">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row d-none" id="show-more-fields-row">
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="Additional Field" class="form-control px-12 mt-16 mt-md-30">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="Another Field" class="form-control mt-16 mt-md-30">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="Yet Another" class="form-control mt-16 mt-md-30">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="And One More" class="form-control mt-16 mt-md-30">
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex align-items-center justify-content-between mt-20">
+                                                    <button class="button_lg button_secondary btn btn-primary mt-10" id="add-contact-btn">Add</button>
+                                                    <a href="" class="link font-12" id="show-more-fields-link">Show <span class="show-more-text">More</span><span class="show-more-text d-none">Less</span> Fields</a>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="d-none" id="added-contacts">
+
+                                                <div class="card-square card card-body mb-0 p-20 px-sm-40 pt-sm-40 pb-sm-36">
+                                                    <div class="cust-card-wrap">
+                                                        <p class="font-14 font-weight-bold mb-0 color-primary">Added Contacts</p>
+                                                        <div class="cust-card-wrap__buttons mt-n7">
+                                                            <div class="button_sm button_tag-del btn mt-21 pr-5">
+                                                                dodogildo@gmail.com
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <div class="button_sm button_tag-del btn mt-21 pr-5">
+                                                                erezmali@hotmail.com
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <div class="button_sm button_tag-del btn mt-21 pr-5">
+                                                                little_bird92@borulojistik.co.uk
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <div class="button_sm button_tag-del btn mt-21 pr-5">
+                                                                barbi@me.com
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <div class="button_sm button_tag-del btn mt-21 pr-5">
+                                                                joe.cocker@cocki.com
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <div class="button_sm button_tag-del btn mt-21 pr-5">
+                                                                maul@me.com
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="mt-15">
+                                                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-start">
+                                                        <div class="checkbox checkbox-custom mt-16">
+                                                            <input type="checkbox" value="option1" id="customCheck3">
+                                                            <label class="custom-control-label" for="customCheck3">I accept bla bla blabla and lorem lipsum permisson based bla bla</label>
+                                                        </div>
+
+                                                        <button class="button_lg button_primary btn btn-primary add-contact-upload-list__next-step mt-16">Ready? Go!</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="add-contact-upload-list__step d-none">
+
+                                            <div class="card-square card card-body mb-0 p-20 px-sm-40 pt-sm-40 pb-sm-36">
+                                                <div class="cust-card-wrap">
+                                                    <h4 class="font-18 mb-0 font-weight-medium"><a href="#" class="link font-weight-medium">15,123 New Contacts</a> To Be Imported. (They're Not Saved Yet!)</h4>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="card-square card card-grey card-body mb-0 p-20 px-sm-40 py-sm-35">
+
+                                                <div class="row">
+
+                                                    <div class="col-lg-8">
+                                                        <div class="d-flex flex-column">
+                                                            <p class="font-14 font-weight-bold mb-12 color-primary">Create a new contact list to save your new contacts</p>
+                                                            <input type="text" placeholder="New List Name Here" class="form-control px-12 mb-30">
+                                                            <p class="font-12 mb-12 font-weight-medium font-secondary">You can also <span class="font-primary font-weight-bold">select old lists</span> to save them</p>
+                                                            <table id="add-one-by-one-data-table" class="datatable datatable_small _contact-details-lists bg-white" style="width:100%">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th class="nosort checkbox-col"></th>
+                                                                    <th>List Name</th>
+                                                                    <th>Last Modified</th>
+                                                                    <th>List Size</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        My First List
+                                                                    </td>
+                                                                    <td>
+                                                                        Mar 31, 2020
+                                                                    </td>
+                                                                    <td>
+                                                                        12,1511
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Dodogildo Subscribers
+                                                                    </td>
+                                                                    <td>
+                                                                        Jun 7, 2020
+                                                                    </td>
+                                                                    <td>
+                                                                        234
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Jonathan Bagel list
+                                                                    </td>
+                                                                    <td>
+                                                                        Sep 29, 2019
+                                                                    </td>
+                                                                    <td>
+                                                                        880
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Filtered contacts by name
+                                                                    </td>
+                                                                    <td>
+                                                                        Dec 4, 2019
+                                                                    </td>
+                                                                    <td>
+                                                                        14,914
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        My First List
+                                                                    </td>
+                                                                    <td>
+                                                                        Mar 31, 2020
+                                                                    </td>
+                                                                    <td>
+                                                                        12,1511
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Dodogildo Subscribers
+                                                                    </td>
+                                                                    <td>
+                                                                        Jun 7, 2020
+                                                                    </td>
+                                                                    <td>
+                                                                        234
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Jonathan Bagel list
+                                                                    </td>
+                                                                    <td>
+                                                                        Sep 29, 2019
+                                                                    </td>
+                                                                    <td>
+                                                                        880
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Filtered contacts by name
+                                                                    </td>
+                                                                    <td>
+                                                                        Dec 4, 2019
+                                                                    </td>
+                                                                    <td>
+                                                                        14,914
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4 d-flex flex-column justify-content-end">
+                                                        <p class="font-12 mt-30 mb-12 font-weight-medium font-secondary">Try <span class="font-primary font-weight-bold">adding tags</span> to your contacts before finishing</p>
+                                                        <div class="cust-card-wrap__buttons m-0 p-16 pt-0 px-sm-30 pb-sm-30 pt-sm-14 bg-white cust-card-wrap__buttons_add-contact-tags">
+                                                            <div class="button_sm button_tag-del btn mt-16 pr-5">
+                                                                vip
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <div class="button_sm button_tag-del btn mt-16 pr-5">
+                                                                staff
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <a href="./add-tag.html" class="button_sm button_secondary btn btn-primary">Add Tag</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mt-18">
+                                                <button class="button_lg button_secondary btn btn-primary add-contact-upload-list__previous-step mt-10">Back</button>
+                                                <div class="d-flex flex-column flex-sm-row align-items-center">
+                                                    <div class="checkbox checkbox-custom mt-10">
+                                                        <input type="checkbox" value="option1" id="customCheck6">
+                                                        <label class="custom-control-label" for="customCheck6">Update values of existing contacts</label>
+                                                    </div>
+                                                    <a href="./contacts-list-success.html" class="button_lg button_primary btn btn-primary mt-10 ml-sm-30">Save and Finish</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
                                     </div>
-                                    <div class="tab-pane" id="add-contact-copy-paste"></div>
+
+                                    <div class="tab-pane" id="add-contact-copy-paste">
+
+                                        <div class="add-contact-upload-list__step">
+                                            <div class="card-square card card-body mb-0 p-20 pt-sm-40 px-sm-40 pb-sm-36">
+                                                <div class="cust-card-wrap">
+                                                    <h4 class="chart-title mb-0">Copy and Paste Contacts From Excel</h4>
+                                                    <div class="contacts-card__text mt-12">
+                                                        Copy your contacts in Excel and paste them to the text area below. <a href="#" class="link">Learn more on Excel Copy Paste.</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-square card-grey card card-body p-20 p-sm-40 mb-0">
+
+                                                <div class="paste-excel-textarea__wrapper">
+                                                    <textarea id="paste-excel-textarea" class="paste-excel-textarea" placeholder="Email Address. . .                           First Name. . .                       Last Name. . ."></textarea>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="d-none" id="paste-excel-textarea-next-step">
+                                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-12">
+                                                    <div class="checkbox checkbox-custom mt-16">
+                                                        <input type="checkbox" value="option1" id="customCheck4">
+                                                        <label class="custom-control-label" for="customCheck4">I accept bla bla blabla and lorem lipsum permisson based bla bla</label>
+                                                    </div>
+
+                                                    <button class="button_lg button_primary btn btn-primary add-contact-upload-list__next-step mt-16">Ready? Go!</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="add-contact-upload-list__step d-none">
+
+                                            <div class="card-square card card-body mb-0 p-20 px-sm-40 pt-sm-40 pb-sm-36">
+                                                <div class="cust-card-wrap">
+                                                    <h4 class="chart-title mb-0">Match Your Fields</h4>
+                                                    <div class="contacts-card__text mt-12">
+                                                        Please help us understand your data by matching fields below. <a href="#" class="link">Learn more about matching fields on list import.</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="add-contact-upload-list__match-outer">
+                                                <div class="card-square card card-body p-0 flex-row add-contact-upload-list__match-wrap">
+
+                                                    <div class="p-20 p-sm-40 bg-light-grey">
+                                                        <select class="selectpicker mb-29" data-style="btn-light">
+                                                            <option value="" class="d-none">Make a Selection</option>
+                                                            <option>Option 1</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                        </select>
+
+                                                        <div class="font-12 font-weight-medium color-secondary">
+                                                            <div class="add-contact-upload-list__match-item">cagdaskocyigit@gmail.com</div>
+                                                            <div class="add-contact-upload-list__match-item">hello@zipbaby.com</div>
+                                                            <div class="add-contact-upload-list__match-item">tasarim@grafikservis-dodogilempi.com</div>
+                                                            <div class="add-contact-upload-list__match-item">dodogildo@gmail.com</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="p-20 p-sm-40 bg-dark-grey">
+                                                        <select class="selectpicker mb-29" data-style="btn-light">
+                                                            <option value="" class="d-none">Make a Selection</option>
+                                                            <option selected>First Name</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                        </select>
+
+                                                        <div class="font-12 font-weight-medium color-secondary">
+                                                            <div class="add-contact-upload-list__match-item">Cagdullah</div>
+                                                            <div class="add-contact-upload-list__match-item">Barilla</div>
+                                                            <div class="add-contact-upload-list__match-item">Orkunt</div>
+                                                            <div class="add-contact-upload-list__match-item">Fenasi</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="p-20 p-sm-40 bg-light-grey">
+                                                        <select class="selectpicker mb-29" data-style="btn-light">
+                                                            <option value="" class="d-none">Make a Selection</option>
+                                                            <option>Option 1</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                        </select>
+
+                                                        <div class="font-12 font-weight-medium color-secondary">
+                                                            <div class="add-contact-upload-list__match-item">Dodogildo</div>
+                                                            <div class="add-contact-upload-list__match-item">Erginovichowskikayuadaerasdada</div>
+                                                            <div class="add-contact-upload-list__match-item">Hayvanatormen</div>
+                                                            <div class="add-contact-upload-list__match-item">Zik</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="p-20 p-sm-40 bg-dark-grey">
+                                                        <select class="selectpicker mb-29" data-style="btn-light">
+                                                            <option value="" class="d-none">Make a Selection</option>
+                                                            <option>Option 1</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                        </select>
+
+                                                        <div class="font-12 font-weight-medium color-secondary">
+                                                            <div class="add-contact-upload-list__match-item">0817414239312490-234294242424242</div>
+                                                            <div class="add-contact-upload-list__match-item">09-0285-2-57230304320-852-823529</div>
+                                                            <div class="add-contact-upload-list__match-item">90371259098325-520853241738-2347</div>
+                                                            <div class="add-contact-upload-list__match-item">02525-82532525-0825-25588829-081</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="p-20 p-sm-40 bg-light-grey">
+                                                        <select class="selectpicker mb-29" data-style="btn-light">
+                                                            <option value="" class="d-none">Make a Selection</option>
+                                                            <option>Option 1</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                        </select>
+
+                                                        <div class="font-12 font-weight-medium color-secondary">
+                                                            <div class="add-contact-upload-list__match-item">cagdaskocyigit@gmail.com</div>
+                                                            <div class="add-contact-upload-list__match-item">hello@zipbaby.com</div>
+                                                            <div class="add-contact-upload-list__match-item">tasarim@grafikservis-dodogilempi.com</div>
+                                                            <div class="add-contact-upload-list__match-item">dodogildo@gmail.com</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="p-20 p-sm-40 bg-dark-grey">
+                                                        <select class="selectpicker mb-29" data-style="btn-light">
+                                                            <option value="" class="d-none">Make a Selection</option>
+                                                            <option selected>First Name</option>
+                                                            <option>Option 2</option>
+                                                            <option>Option 3</option>
+                                                        </select>
+
+                                                        <div class="font-12 font-weight-medium color-secondary">
+                                                            <div class="add-contact-upload-list__match-item">Cagdullah</div>
+                                                            <div class="add-contact-upload-list__match-item">Barilla</div>
+                                                            <div class="add-contact-upload-list__match-item">Orkunt</div>
+                                                            <div class="add-contact-upload-list__match-item">Fenasi</div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <button class="button_lg button_secondary btn btn-primary add-contact-upload-list__previous-step">Back</button>
+
+                                                <button class="button_lg button_primary btn btn-primary add-contact-upload-list__next-step">Continue</button>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="add-contact-upload-list__step d-none">
+
+                                            <div class="card-square card card-body mb-0 p-20 px-sm-40 pt-sm-40 pb-sm-36">
+                                                <div class="cust-card-wrap">
+                                                    <h4 class="font-18 mb-0 font-weight-medium"><a href="#" class="link font-weight-medium">15,123 New Contacts</a> To Be Imported. (They're Not Saved Yet!)</h4>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="card-square card card-grey card-body mb-0 p-20 px-sm-40 py-sm-35">
+
+                                                <div class="row">
+
+                                                    <div class="col-lg-8">
+                                                        <div class="d-flex flex-column">
+                                                            <p class="font-14 font-weight-bold mb-12 color-primary">Create a new contact list to save your new contacts</p>
+                                                            <input type="text" placeholder="New List Name Here" class="form-control px-12 mb-30">
+                                                            <p class="font-12 mb-12 font-weight-medium font-secondary">You can also <span class="font-primary font-weight-bold">select old lists</span> to save them</p>
+                                                            <table id="copy-paste-data-table" class="datatable datatable_small _contact-details-lists bg-white" style="width:100%">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th class="nosort checkbox-col"></th>
+                                                                    <th>List Name</th>
+                                                                    <th>Last Modified</th>
+                                                                    <th>List Size</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        My First List
+                                                                    </td>
+                                                                    <td>
+                                                                        Mar 31, 2020
+                                                                    </td>
+                                                                    <td>
+                                                                        12,1511
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Dodogildo Subscribers
+                                                                    </td>
+                                                                    <td>
+                                                                        Jun 7, 2020
+                                                                    </td>
+                                                                    <td>
+                                                                        234
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Jonathan Bagel list
+                                                                    </td>
+                                                                    <td>
+                                                                        Sep 29, 2019
+                                                                    </td>
+                                                                    <td>
+                                                                        880
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Filtered contacts by name
+                                                                    </td>
+                                                                    <td>
+                                                                        Dec 4, 2019
+                                                                    </td>
+                                                                    <td>
+                                                                        14,914
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        My First List
+                                                                    </td>
+                                                                    <td>
+                                                                        Mar 31, 2020
+                                                                    </td>
+                                                                    <td>
+                                                                        12,1511
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Dodogildo Subscribers
+                                                                    </td>
+                                                                    <td>
+                                                                        Jun 7, 2020
+                                                                    </td>
+                                                                    <td>
+                                                                        234
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Jonathan Bagel list
+                                                                    </td>
+                                                                    <td>
+                                                                        Sep 29, 2019
+                                                                    </td>
+                                                                    <td>
+                                                                        880
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox checkbox-single checkbox-custom">
+                                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                            <label></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        Filtered contacts by name
+                                                                    </td>
+                                                                    <td>
+                                                                        Dec 4, 2019
+                                                                    </td>
+                                                                    <td>
+                                                                        14,914
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4 d-flex flex-column justify-content-end">
+                                                        <p class="font-12 mt-30 mb-12 font-weight-medium font-secondary">Try <span class="font-primary font-weight-bold">adding tags</span> to your contacts before finishing</p>
+                                                        <div class="cust-card-wrap__buttons m-0 p-16 pt-0 px-sm-30 pb-sm-30 pt-sm-14 bg-white cust-card-wrap__buttons_add-contact-tags">
+                                                            <div class="button_sm button_tag-del btn mt-16 pr-5">
+                                                                vip
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <div class="button_sm button_tag-del btn mt-16 pr-5">
+                                                                staff
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <a href="./add-tag.html" class="button_sm button_secondary btn btn-primary">Add Tag</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mt-18">
+                                                <button class="button_lg button_secondary btn btn-primary add-contact-upload-list__previous-step mt-10">Back</button>
+                                                <div class="d-flex flex-column flex-sm-row align-items-center">
+                                                    <div class="checkbox checkbox-custom mt-10">
+                                                        <input type="checkbox" value="option1" id="customCheck7">
+                                                        <label class="custom-control-label" for="customCheck7">Update values of existing contacts</label>
+                                                    </div>
+                                                    <a href="./contacts-list-success.html" class="button_lg button_primary btn btn-primary mt-10 ml-sm-30">Save and Finish</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
                                     <div class="tab-pane" id="add-contact-import"></div>
                                 </div>
 
@@ -870,7 +1567,6 @@
                     </div> <!-- container -->
 
                 </div> <!-- content -->
-
             </div>
 
             <!-- ============================================================== -->
@@ -884,21 +1580,18 @@
         <!-- App js -->
         <script src="assets/js/vendor.min.js"></script>
 
-        <!-- Dropzone file uploads-->
         <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
-
         <script src="assets/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
-
         <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 
-        <!-- Init js-->
         <script src="assets/js/pages/form-fileuploads.init.js"></script>
+        <script src="assets/js/pages/tln.min.js"></script>
 
         <script>
             // Datatables settings
             $(document).ready(function() {
-                var table = $('#data-table').DataTable({
+                $('#upload-list-data-table, #add-one-by-one-data-table, #copy-paste-data-table').DataTable({
                     scrollX:        true,
                     scrollY:        127,
                     scrollCollapse: true,
@@ -910,34 +1603,11 @@
                     }],
                     sDom: 't',
                 });
-
-                $('.add-contact-upload-list__next-step').click(function() {
-                    $(this).closest(".add-contact-upload-list__step").addClass("d-none");
-                    $(this).closest(".add-contact-upload-list__step").next(".add-contact-upload-list__step").removeClass("d-none");
-                    table.columns.adjust();
-                });
-
-                $('.add-contact-upload-list__previous-step').click(function() {
-                    $(this).closest(".add-contact-upload-list__step").addClass("d-none");
-                    $(this).closest(".add-contact-upload-list__step").prev(".add-contact-upload-list__step").removeClass("d-none");
-                });
-
-                $(window).bind('resize', function () {
-                    table.columns.adjust();
-                } );
-            });
-
-            $('.datatable._contact-details-lists input:checkbox').change(function(){
-                if($(this).is(":checked")) {
-                    $(this).closest('tr').addClass("_active");
-                } else {
-                    $(this).closest('tr').removeClass("_active");
-                }
             });
         </script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-        
+
     </body>
 </html>

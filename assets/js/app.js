@@ -937,7 +937,66 @@ function ($) {
 Waves.init();
 
 $(document).ready(function() {
-    if($('#data-table').length >0 ){
+    if($('.dataTable').length >0 ){
         $('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append('<i class="sort-i__wrap"><svg xmlns="http://www.w3.org/2000/svg" width="5.1" height="10" class="sort-i"><g><path class="sort-i__top" d="M2.55 1.572l1.761 1.762.783-.784L2.55 0 0 2.55l.788.784z" fill="#212b35"/><path class="sort-i__bottom" d="M2.549 8.428L.788 6.667l-.784.783L2.548 10l2.55-2.55-.789-.783z" fill="#212b35"/></g></svg></i>');
     }
+
+    if($('#paste-excel-textarea').length >0 ){
+        TLN.append_line_numbers('paste-excel-textarea');
+
+        $(this).keyup(function () {
+            if ($('#paste-excel-textarea').val()) {
+                $('#paste-excel-textarea-next-step').removeClass('d-none');
+            } else {
+                $('#paste-excel-textarea-next-step').addClass('d-none');
+            }
+        });
+    }
+
+    $('.datatable._contact-details-lists input:checkbox').change(function(){
+        if($(this).is(":checked")) {
+            $(this).closest('tr').addClass("_active");
+        } else {
+            $(this).closest('tr').removeClass("_active");
+        }
+    });
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+        adjustDataTableColumns();
+    });
+
+    $('.add-contact-upload-list__next-step').click(function() {
+        $(this).closest(".add-contact-upload-list__step").addClass("d-none");
+        $(this).closest(".add-contact-upload-list__step").next(".add-contact-upload-list__step").removeClass("d-none");
+        adjustDataTableColumns();
+    });
+
+    $('.add-contact-upload-list__previous-step').click(function() {
+        $(this).closest(".add-contact-upload-list__step").addClass("d-none");
+        $(this).closest(".add-contact-upload-list__step").prev(".add-contact-upload-list__step").removeClass("d-none");
+        adjustDataTableColumns();
+    });
+
+    $(window).bind('resize', function () {
+        adjustDataTableColumns();
+    });
+
+    $('#show-more-fields-link').click(function() {
+        event.preventDefault();
+        $('#show-more-fields-row').toggleClass("d-none");
+        $(this).children('.show-more-text').toggleClass("d-none");
+    });
+
+    $('#add-contact-btn').click(function() {
+        $('#added-contacts').toggleClass("d-none");
+    });
+
+    $('.close').click(function() {
+        $(this).closest('.add-contact__success').addClass('d-none')
+    });
 });
+
+
+function adjustDataTableColumns() {
+    $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+}

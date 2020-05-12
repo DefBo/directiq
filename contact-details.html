@@ -739,18 +739,22 @@
                                                             Organize your contact by tags.
                                                         </div>
                                                         <div class="cust-card-wrap__buttons">
-                                                            <button class="button_sm button_tag button_tag-del btn btn-primary mt-16 pr-5">
+                                                            <div class="button_sm button_tag-del btn mt-16 pr-5">
                                                                 vip
-                                                                <svg class="ml-11 mt-n2" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
-                                                                    <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"/>
-                                                                </svg>
-                                                            </button>
-                                                            <button class="button_sm button_tag btn btn-primary mt-16 pr-5">
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <div class="button_sm button_tag-del btn mt-16 pr-5">
                                                                 staff
-                                                                <svg class="ml-11 mt-n2" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
-                                                                    <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"/>
-                                                                </svg>
-                                                            </button>
+                                                                <button class="button-invisible ml-11">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                                                        <path id="ic_close_24px" data-name="ic close 24px" d="M10809.714,1741.473l-.8-.806-3.2,3.194-3.194-3.194-.806.806,3.2,3.194-3.2,3.194.806.806,3.194-3.194,3.2,3.194.8-.806-3.194-3.194Z" transform="translate(-10801.714 -1740.667)" fill="currentColor"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
                                                             <a href="./add-tag.html" class="button_sm button_secondary btn btn-primary">Add Tag</a>
                                                         </div>
                                                     </div>
@@ -1186,12 +1190,9 @@
 
         <script src="assets/libs/morris.js06/morris.min.js"></script>
         <script src="assets/libs/raphael/raphael.min.js"></script>
-
         <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
         <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-
         <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
-
         <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 
@@ -1212,14 +1213,6 @@
                 });
             });
 
-            $('.datatable._contact-details-lists input:checkbox').change(function(){
-                if($(this).is(":checked")) {
-                    $(this).closest('tr').addClass("_active");
-                } else {
-                    $(this).closest('tr').removeClass("_active");
-                }
-            });
-
             // Range date picker settings and initialisation
             !function ($) {
                 "use strict";
@@ -1227,31 +1220,7 @@
                 var FormPickers = function () { };
 
                 FormPickers.prototype.init = function () {
-                    $('#range-datepicker').flatpickr({
-                        mode: "range",
-                        altInput: true,
-                        altFormat: "M j, Y",
-                        dateFormat: "Y-m-d",
-                        locale: {
-                            rangeSeparator: ' – '
-                        }
-                    });
-                },
-                    $.FormPickers = new FormPickers, $.FormPickers.Constructor = FormPickers
-
-            }(window.jQuery),
-                function ($) {
-                    "use strict";
-                    $.FormPickers.init()
-                }(window.jQuery);
-
-            !function ($) {
-                "use strict";
-
-                var FormPickers = function () { };
-
-                FormPickers.prototype.init = function () {
-                    $('#activity-range-datepicker').flatpickr({
+                    $('#range-datepicker, #activity-range-datepicker').flatpickr({
                         mode: "range",
                         altInput: true,
                         altFormat: "M j, Y",
@@ -1316,7 +1285,6 @@
                     $.MorrisCharts = new MorrisCharts, $.MorrisCharts.Constructor = MorrisCharts
 
             }(window.jQuery),
-
                 function($) {
                     "use strict";
                     setTimeout(function() {
