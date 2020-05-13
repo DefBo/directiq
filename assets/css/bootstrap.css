@@ -14791,6 +14791,9 @@ a.text-blue:hover, a.text-blue:focus {
   font-size: 22px;
   line-height: 80px;
   font-weight: 500; }
+  @media (max-width: 767.98px) {
+    .breadcrumb-item {
+      line-height: 60px; } }
   .breadcrumb-item.active, .breadcrumb-item a {
     color: #00f; }
   .breadcrumb-item:before, .breadcrumb-item + .breadcrumb-item:before {
