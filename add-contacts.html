@@ -655,9 +655,9 @@
                                                     <div class="fallback">
                                                         <input name="file" type="file" multiple />
                                                     </div>
-
                                                     <div class="dz-message needsclick">
-                                                        <h3 class="font-16 color-black font-weight-medium mb-18">Drag and drop a file here (or click to upload)</h3>
+                                                        <div class="dropzone__error-message"></div>
+                                                        <h3 class="font-16 color-black font-weight-medium mb-18 mt-0">Drag and drop a file here (or click to upload)</h3>
                                                         <i class="d-block">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="66.712" height="50" viewBox="0 0 66.712 50">
                                                                 <g data-name="Group 288">
@@ -1792,7 +1792,6 @@
         <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 
-        <script src="assets/js/pages/form-fileuploads.init.js"></script>
         <script src="assets/js/pages/tln.min.js"></script>
 
         <script>
@@ -1811,6 +1810,99 @@
                     sDom: 't',
                 });
             });
+
+            // Dropzone init and settings
+
+            function bytesToMb(bytes) {
+                return bytes / Math.pow(1024, 2);
+            }
+
+            var ERRORS_FILE_UPLOAD = {
+                fileType: 'This file type is not supported. Please, upload PDF or PNG.',
+                size: 'File Size must not exceed 1Mb. Please try again.'
+            };
+            var ACCEPTED_FILE_SIZE_IN_MB = 1;
+            var ACCEPTED_FILE_TYPE = 'application/pdf, image/png';
+
+            // Dropzone
+            !function ($) {
+                "use strict";
+
+                var FileUpload = function () {
+                    this.$body = $("body")
+                };
+
+
+                /* Initializing */
+                FileUpload.prototype.init = function () {
+                    // Disable auto discovery
+
+                    Dropzone.autoDiscover = false;
+
+                    $('[data-plugin="dropzone"]').each(function () {
+                        var actionUrl = $(this).attr('action')
+                        var previewContainer = $(this).data('previewsContainer');
+
+                        var opts = {
+                            url: actionUrl, acceptedFiles: ACCEPTED_FILE_TYPE, maxFilesize: ACCEPTED_FILE_SIZE_IN_MB
+                        };
+
+                        if (previewContainer) {
+                            opts['previewsContainer'] = previewContainer;
+                        }
+
+                        var uploadPreviewTemplate = $(this).data("uploadPreviewTemplate");
+                        if (uploadPreviewTemplate) {
+                            opts['previewTemplate'] = $(uploadPreviewTemplate).html();
+                        }
+                        var dropzoneEl = new Dropzone(this, opts);
+                        var errorElement = dropzoneEl.element.querySelector('.dropzone__error-message');
+                        dropzoneEl.on("addedfiles", function (files) {
+                            files.forEach(function(file) {
+                                console.log(file)
+                                errorElement.innerHTML = '';
+                                dropzoneEl.element.classList.remove('dropzone_error');
+                                if (!file.accepted) {
+
+                                    if (!ACCEPTED_FILE_TYPE.split(',').some(type => type === file.type)) errorElement.innerHTML = ERRORS_FILE_UPLOAD.fileType;
+                                    if (bytesToMb(file.size) > ACCEPTED_FILE_SIZE_IN_MB) errorElement.innerHTML = ERRORS_FILE_UPLOAD.size;
+
+                                    dropzoneEl.element.classList.add('dropzone_error');
+                                    return dropzoneEl.removeFile(file);
+                                }
+                            });
+                        });
+                    });
+                },
+
+                        //init fileupload
+                        $.FileUpload = new FileUpload, $.FileUpload.Constructor = FileUpload;
+
+                }(window.jQuery),
+
+                    //initializing FileUpload
+                    function ($) {
+                        "use strict";
+
+                        $.FileUpload.init();
+
+                    }(window.jQuery);
+
+
+                if ($('[data-plugins="dropify"]').length > 0) {
+                    // Dropify
+                    $('[data-plugins="dropify"]').dropify({
+                        messages: {
+                            'default': 'Drag and drop a file here or click',
+                            'replace': 'Drag and drop or click to replace',
+                            'remove': 'Remove',
+                            'error': 'Ooops, something wrong appended.'
+                        },
+                        error: {
+                            'fileSize': 'The file size is too big (1M max).'
+                        }
+                    });
+                }
         </script>
 
         <!-- App js -->
