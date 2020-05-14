@@ -1035,4 +1035,20 @@ $(document).ready(function() {
     ham.addEventListener('click', function() {
         document.body.classList.toggle('nav-is-toggled');
     });
+
+    // Stop transitions on resize
+    var resizeTimer;
+    window.addEventListener("resize", () => {
+        document.body.classList.add("animation-stopper");
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            document.body.classList.remove("animation-stopper");
+        }, 400);
+    });
+});
+
+
+// Stop transitions on page load
+$(window).on('load', function () {
+    $("body").removeClass("animation-stopper");
 });
