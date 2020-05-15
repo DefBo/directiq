@@ -15394,7 +15394,7 @@ a.text-blue:hover, a.text-blue:focus {
     color: #758796; }
   .form-control::placeholder {
     color: #758796; }
-  .form-control:hover {
+  .form-control:hover, .form-control:focus {
     border-color: #0000FF !important; }
   .form-control:placeholder-shown {
     border-color: #A0B1BA; }
