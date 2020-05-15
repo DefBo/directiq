@@ -615,10 +615,8 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-control__wrap mb-30">
-                                                        <input type="text" placeholder="First Name" class="form-control px-12" required>
-                                                        <div class="invalid-feedback">
-                                                            You must provide a dodingo
-                                                        </div>
+                                                        <input type="text" placeholder="First Name" class="form-control px-12">
+                                                        <span class="text-danger field-validation-error"><span class="">First Name field is required.</span></span>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
@@ -629,19 +627,15 @@
                                                             <option>Option 2</option>
                                                             <option>Option 3</option>
                                                         </select>
-                                                        <div class="invalid-feedback">
-                                                            You must provide a dodingo
-                                                        </div>
+                                                        <span class="text-danger field-validation-error"><span class="">List Selection field is required.</span></span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-control__wrap mb-30">
-                                                        <input type="text" placeholder="E-mail Address" class="form-control px-12" required>
-                                                        <div class="invalid-feedback">
-                                                            You must provide a dodingo
-                                                        </div>
+                                                        <input type="text" placeholder="E-mail Address" class="form-control px-12">
+                                                        <span class="text-danger field-validation-error"><span class="">Email field is required.</span></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -649,18 +643,16 @@
                                                 <div class="col-12">
                                                     <div class="mb-30">
                                                         <div class="radio_inline radio">
-                                                            <input type="radio" id="inlineRadio1" value="option1" name="radioInline" required>
+                                                            <input type="radio" id="inlineRadio1" value="option1" name="radioInline">
                                                             <label for="inlineRadio1"> Male </label>
-                                                            <div class="invalid-feedback">
-                                                                You must provide a dodingo
-                                                            </div>
+                                                            <span class="text-danger field-validation-error"><span class="">This field is required.</span></span>
                                                         </div>
                                                         <div class="radio_inline radio">
-                                                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline" required>
+                                                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
                                                             <label for="inlineRadio2"> Female </label>
                                                         </div>
                                                         <div class="radio_inline radio">
-                                                            <input type="radio" id="inlineRadio3" value="option3" name="radioInline" required>
+                                                            <input type="radio" id="inlineRadio3" value="option3" name="radioInline">
                                                             <label for="inlineRadio3"> Prefer not to say </label>
                                                         </div>
                                                     </div>
@@ -671,17 +663,18 @@
                                                 <div class="col-12">
                                                     <div class="form-control__wrap mb-30">
                                                         <div class="checkbox checkbox-custom">
-                                                            <input type="checkbox" value="option1" id="customCheck1" required>
+                                                            <input type="checkbox" value="option1" id="customCheck1">
                                                             <label class="custom-control-label" for="customCheck1">I've read and the Terms of Use and I agree</label>
-                                                            <div class="invalid-feedback">
-                                                                You must provide a dodingo
-                                                            </div>
+                                                            <span class="text-danger field-validation-error"><span class="">The field is required.</span></span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <button class="button_lg button_primary btn btn-primary" type="submit">Click This Button</button>
+                                            <div class="d-flex align-items-center">
+                                                <button class="button_lg button_primary btn btn-primary mr-20" onClick="$('.needs-validation input, .needs-validation select').addClass('input-validation-error')">Click This Button</button>
+                                                <button class="button_lg button_secondary btn btn-primary" onClick="$('.needs-validation input, .needs-validation select').removeClass('input-validation-error')">Back</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
