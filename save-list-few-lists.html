@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta charset="utf-8" />
-        <title>My Lists | DirectIQ</title>
+        <title>Save List | DirectIQ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -20,9 +19,6 @@
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
-
-        <link href="assets/libs/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-
     </head>
 
     <body data-layout-mode="two-column" class="animation-stopper">
@@ -50,7 +46,7 @@
 
                         <ol class="breadcrumbs">
                             <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
-                            <li class="breadcrumb-item active">My Lists
+                            <li class="breadcrumb-item active">Add Contacts
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -193,12 +189,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item-link active" href="./my-lists-static.html">
+                                <a class="nav-item-link" href="./my-lists-static.html">
                                     My Lists
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item-link" href="./add-contacts.html">
+                                <a class="nav-item-link active" href="./add-contacts.html">
                                     Add Contacts
                                 </a>
                             </li>
@@ -593,148 +589,149 @@
             <div class="content-page">
                 <div class="content">
 
+                    <!-- Start Content-->
                     <div class="container-fluid">
+
                         <div class="row">
                             <div class="col-12">
 
                                 <ul class="nav nav-tabs nav-bordered">
                                     <li class="nav-item">
-                                        <a href="#home-b1" data-toggle="tab" aria-expanded="false" class="nav-link active">
-                                            All Lists
+                                        <a href="#add-contact-upload-list" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                                            Upload List
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#profile-b1" data-toggle="tab" aria-expanded="true" class="nav-link">
-                                            Engaged Lists
+                                        <a href="#add-contact-add-one-by-one" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                            Add One by One
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#messages-b1" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                            Poor Lists
+                                        <a href="#add-contact-copy-paste" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Copy Paste Contacts
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#add-contact-import" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Import From Other Service
                                         </a>
                                     </li>
                                 </ul>
 
                                 <div class="tab-content">
-                                    <div class="tab-pane show active" id="home-b1">
+                                    <div class="tab-pane show active" id="add-contact-upload-list">
 
-                                        <div class="diriq-table__wrapper _my-lists-table">
+                                        <div class="card">
 
-                                            <table id="data-table" class="diriq-table" style="width:100%">
-                                                <thead>
-                                                <tr>
-                                                    <th class="nosort checkbox-col">
-                                                        <i>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="10.16" height="6" viewBox="0 0 8 4.94">
-                                                                <path d="M4237.768,4437.5l-3.06,3.053-3.06-3.053-.94.94,4,4,4-4Z" transform="translate(-4230.708 -4437.499)"/>
-                                                            </svg>
-                                                        </i>
-                                                    </th>
-                                                    <th>ID</th>
-                                                    <th>First Name</th>
-                                                    <th>Last Name</th>
-                                                    <th>Email</th>
-                                                    <th>Date Added</th>
-                                                    <th class="nosort"></th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                </tbody>
-                                                <tfoot>
-                                                <tr>
-                                                    <th class="nosort"></th>
-                                                    <th>
-                                                        <input class="filter-input" type="text" placeholder="Type ID">
-                                                    </th>
-                                                    <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select First Name</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Last Name</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Email</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Date Added</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
-                                                        </select>
-                                                    </th>
-                                                    <th class="nosort"></th>
-                                                </tr>
-                                                </tfoot>
-                                            </table>
+                                            <h4 class="mb-26">
+                                                <a href="#" class="link font-weight-semibold">15,123 new contacts</a> will be imported. Now, select where to save them:
+                                            </h4>
 
-                                            <div class="diriq-table__filter-btn">
-                                                <i class="diriq-table__filter-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.187" height="22" viewBox="0 0 20.187 22">
-                                                        <g transform="translate(-7837.407 -1262.014)">
-                                                            <g>
-                                                                <path d="M7857.47,1266.111a1.042,1.042,0,0,0-.92-.552h-2.961a2.971,2.971,0,0,0-5.85,0h-3a2.272,2.272,0,0,0,.373-1.251,2.294,2.294,0,1,0-4.215,1.251h-2.446a1.042,1.042,0,0,0-.865,1.624l7,10.4v5.9a.52.52,0,0,0,.729.478l4.8-2.088a.522.522,0,0,0,.313-.478v-3.817l7-10.4A1.04,1.04,0,0,0,7857.47,1266.111Zm-6.806-1.96a1.932,1.932,0,0,1,1.856,1.408h-3.713A1.932,1.932,0,0,1,7850.664,1264.151Zm-7.847-1.095a1.251,1.251,0,1,1-1.251,1.252A1.253,1.253,0,0,1,7842.817,1263.056Zm6.648,14.081a.53.53,0,0,0-.088.291v3.634l-3.754,1.635v-4.748h1.884a.521.521,0,0,0,0-1.043h-2.127l-5.247-7.8h10.531a.521.521,0,0,0,0-1.043h-11.232l-.982-1.46h18.1Z" fill="currentColor"/>
-                                                            </g>
-                                                        </g>
-                                                        <g transform="translate(-7837.407 -1262.014)">
-                                                            <g>
-                                                                <path d="M7853.35,1268.214a.521.521,0,1,0,.153.369A.524.524,0,0,0,7853.35,1268.214Z" fill="currentColor"/>
-                                                            </g>
-                                                        </g>
-                                                    </svg>
-                                                </i>
-                                                <i class="diriq-table__close-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
-                                                        <g transform="translate(0.5 0.5)">
-                                                            <rect width="24" height="24" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
-                                                            <path class="diriq-table__close-icon-cross" d="M9489.239,1605.581l-.806-.806-3.194,3.194-3.194-3.194-.806.806,3.194,3.194-3.194,3.194.806.806,3.194-3.194,3.194,3.194.806-.806-3.194-3.194Z" transform="translate(-9473.239 -1596.775)" fill="currentColor"/>
-                                                        </g>
-                                                    </svg>
-                                                </i>
-                                            </div>
-                                            <div class="dropdown _more">
-                                                <a class="dropdown-toggle _more" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.8" height="25" viewBox="0 0 5.8 25">
-                                                        <g transform="translate(-3045.538 -1649.326)">
-                                                            <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3046.038 1649.826)" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
-                                                            <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3046.038 1659.426)" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
-                                                            <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3046.038 1669.026)" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
-                                                        </g>
-                                                    </svg>
-                                                </a>
+                                            <div class="d-flex justify-content-between">
 
-                                                <div class="dropdown-menu dropdown-menu-right _actions" aria-labelledby="moreMenuButton">
-                                                    <div class="dropdown-menu-inner">
-                                                        <a class="dropdown-item" href="#">Action Item 1</a>
-                                                        <a class="dropdown-item" href="#">Action Item 2</a>
-                                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                                <div class="contact__option">
+                                                    <p class="font-weight-bold mb-12">Create a new contact list to save your new contacts</p>
+                                                    <div class="card p-30 mb-0 bg-light-grey">
+                                                        <div class="radio d-flex">
+                                                            <input type="radio" id="Radio5" value="option5" name="radio" class="_save-list-radio">
+                                                            <label for="Radio5" class="flex-grow-1">
+                                                                <div class="form-control__wrap">
+                                                                    <input type="text" placeholder="New List Name Here" class="form-control _with-radio">
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <span class="contact__option-or">OR</span>
+
+                                                <div class="contact__option">
+                                                    <p class="font-weight-bold mb-12">Save contacts to older lists</p>
+                                                    <div class="card _older-lists">
+
+                                                        <div class="contact__older-lists">
+                                                            <div class="contact__older-list-row">
+                                                                <div class="radio">
+                                                                    <input type="radio" id="Radio1" value="option1" name="radio" class="_save-list-radio">
+                                                                    <label for="Radio1"> My First List</label>
+                                                                </div>
+                                                                <div class="contact__list-number">12,1511</div>
+                                                            </div>
+
+                                                            <div class="contact__older-list-row">
+                                                                <div class="radio">
+                                                                    <input type="radio" id="Radio2" value="option2" name="radio" class="_save-list-radio">
+                                                                    <label for="Radio2"> Dodogildo Subscribers </label>
+                                                                </div>
+                                                                <div class="contact__list-number">234</div>
+                                                            </div>
+
+                                                            <div class="contact__older-list-row">
+                                                                <div class="radio">
+                                                                    <input type="radio" id="Radio3" value="option3" name="radio" class="_save-list-radio">
+                                                                    <label for="Radio3"> Jonathan Bagel list </label>
+                                                                </div>
+                                                                <div class="contact__list-number">880</div>
+                                                            </div>
+
+                                                            <div class="contact__older-list-row">
+                                                                <div class="radio">
+                                                                    <input type="radio" id="Radio4" value="option4" name="radio" class="_save-list-radio">
+                                                                    <label for="Radio4"> Filtered contacts by name... </label>
+                                                                </div>
+                                                                <div class="contact__list-number">14,914</div>
+                                                            </div>
+
+                                                            <div class="contact__older-list-row">
+                                                                <div class="radio">
+                                                                    <input type="radio" id="Radio6" value="option6" name="radio" class="_save-list-radio">
+                                                                    <label for="Radio6"> Test 1 </label>
+                                                                </div>
+                                                                <div class="contact__list-number">914</div>
+                                                            </div>
+
+                                                            <div class="contact__older-list-row">
+                                                                <div class="radio">
+                                                                    <input type="radio" id="Radio7" value="option7" name="radio" class="_save-list-radio">
+                                                                    <label for="Radio7"> Test 2 </label>
+                                                                </div>
+                                                                <div class="contact__list-number">1,014</div>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
+
+
+                                        <div class="contact__buttons">
+                                            <button class="btn _lg _secondary">Back</button>
+                                            <div class="contact__finish _disabled">
+                                                <div class="checkbox checkbox-custom">
+                                                    <input type="checkbox" value="option1" id="customCheck7">
+                                                    <label class="custom-control-label" for="customCheck7">Update values of existing contacts</label>
+                                                </div>
+                                                <a href="./contacts-list-success.html" class="btn _lg _primary ml-sm-30">Save and Finish</a>
+                                            </div>
+                                        </div>
+
                                     </div>
 
-                                    <div class="tab-pane" id="profile-b1"></div>
-                                    <div class="tab-pane" id="messages-b1"></div>
+                                    <div class="tab-pane" id="add-contact-add-one-by-one"></div>
+
+                                    <div class="tab-pane" id="add-contact-copy-paste"></div>
+
+                                    <div class="tab-pane" id="add-contact-import"></div>
                                 </div>
 
                             </div>
                         </div>
-                    </div>
 
-                </div>
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
             </div>
 
             <!-- ============================================================== -->
@@ -748,96 +745,17 @@
             </a>
 
         </div>
-
         <!-- END wrapper -->
 
-        <!-- Vendor js -->
+        <!-- App js -->
         <script src="assets/js/vendor.min.js"></script>
 
-        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-
         <script>
-            // Datatables settings
-            $(document).ready(function() {
-                $('#data-table').DataTable( {
-                    scrollX:        true,
-                    scrollCollapse: true,
-                    order: [],
-                    aoColumnDefs: [{
-                        bSortable: false,
-                        aTargets: ['nosort']
-                    }],
-                    sDom: 't<"d-flex justify-content-between align-content-center diriq-table__bottom"l<"d-flex align-content-center"ip>>',
-                    oLanguage: {
-                        sLengthMenu: "View _MENU_",
-                        sInfo: "_START_ – _END_ of _TOTAL_"
-                    },
-                    serverSide: true,
-                    ajax: {
-                        url: 'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/contacts',
-                        type: 'POST'
-                    },
-                    columns: [
-                        {
-                            data: () => '',
-                            searchable: false,
-                            orderable: false,
-                            render: (data, type, row, meta) => {
-                                return `<div class="checkbox checkbox-single"><input type="checkbox" name="contacts[]" value="${row.id}" aria-label="Single checkbox One"><label></label></div>`;
-                            }
-                        },
-                        { data: 'id' },
-                        {
-                            data: () => '',
-                            searchable: false,
-                            orderable: false,
-                            render: (data, type, row, meta) => {
-                                return `<span class="font-weight-semibold">${row.firstName}</span>`;
-                            }
-                        },
-                        {
-                            data: () => '',
-                            searchable: false,
-                            orderable: false,
-                            render: (data, type, row, meta) => {
-                                return `<span class="font-weight-semibold">${row.lastName}</span>`;
-                            }
-                        },
-                        {
-                            data: () => '',
-                            searchable: false,
-                            orderable: false,
-                            render: (data, type, row, meta) => {
-                                return `<span class="font-weight-semibold">${row.email}</span>`;
-                            }
-                        },
-                        { data: 'dateAdded' },
-                        {
-                            data: () => '',
-                            searchable: false,
-                            orderable: false,
-                            render: (data, type, row, meta) =>{
-                                return `<button type="button" class="btn _sm _secondary">View</button>
-                                        <button type="button" class="btn _sm _primary ml-4">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="10" viewBox="0 0 2 10">
-                                                <g transform="translate(-7846.438 -1337.556)">
-                                                    <circle cx="1" cy="1" r="1" transform="translate(7846.438 1337.556)" fill="currentColor"/>
-                                                    <circle cx="1" cy="1" r="1" transform="translate(7846.438 1341.556)" fill="currentColor"/>
-                                                    <circle cx="1" cy="1" r="1" transform="translate(7846.438 1345.556)" fill="currentColor"/>
-                                                </g>
-                                            </svg>
-                                        </button>`;
-                            }
-                        },
-                    ],
-                    columnDefs: [],
-                });
-            });
+
         </script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-        
+
     </body>
 </html>
