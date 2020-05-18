@@ -842,6 +842,9 @@
                         },
                     ],
                     columnDefs: [],
+                    initComplete: function( settings, json ) {
+                        $('.diriq-table__wrapper').removeClass('loading');
+                    },
                 });
             });
         </script>
