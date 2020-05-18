@@ -6313,7 +6313,10 @@ body.nav-is-toggled:after {
       min-height: 170px; } }
 
 .card._chosen {
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='blue' stroke-width='2' stroke-dasharray='10%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); }
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='blue' stroke-width='2' stroke-dasharray='7.5%2c 15' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); }
+
+.card._no-dash {
+  background-image: none; }
 
 .card._older-lists {
   padding: 30px;
@@ -6684,6 +6687,64 @@ body.nav-is-toggled:after {
     .bootstrap-select .dropdown-item:hover {
       background: #f6f9fc;
       color: #00f; }
+  .bootstrap-select._with-search .btn {
+    font-size: 12px;
+    padding: 0 9px 0 12px;
+    height: 28px;
+    border-color: #A0B1BA !important; }
+    .bootstrap-select._with-search .btn.bs-placeholder {
+      color: #758796 !important; }
+    .bootstrap-select._with-search .btn:not(.bs-placeholder) {
+      border-color: #000 !important;
+      position: relative; }
+      .bootstrap-select._with-search .btn:not(.bs-placeholder):before {
+        display: none; }
+      .bootstrap-select._with-search .btn:not(.bs-placeholder):hover {
+        border-color: #0000FF !important; }
+    .bootstrap-select._with-search .btn:hover {
+      border-color: #0000FF !important; }
+  .bootstrap-select._with-search .dropdown-toggle:after {
+    content: '';
+    width: 8px;
+    height: 4.94px; }
+  .bootstrap-select._with-search .dropdown-menu {
+    left: 0 !important;
+    right: 15px !important;
+    max-height: 132px;
+    overflow: auto;
+    padding: 0 0 0 3px !important; }
+    .bootstrap-select._with-search .dropdown-menu:hover::-webkit-scrollbar-thumb {
+      background: #0000FF; }
+    .bootstrap-select._with-search .dropdown-menu::-webkit-scrollbar {
+      width: 20px;
+      background: #fff; }
+    .bootstrap-select._with-search .dropdown-menu::-webkit-scrollbar-thumb {
+      background: #00EBA8;
+      border: 5px solid #fff;
+      border-radius: 20px; }
+    .bootstrap-select._with-search .dropdown-menu::-webkit-scrollbar-thumb:active {
+      background: #0000FF; }
+  .bootstrap-select._with-search .dropdown-item {
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px; }
+  .bootstrap-select._with-search .bs-searchbox {
+    padding: 17px 26px 10px 28px;
+    position: relative;
+    z-index: 2;
+    background: #fff; }
+    .bootstrap-select._with-search .bs-searchbox .form-control {
+      border-color: #F6F9FC;
+      background: #F6F9FC;
+      height: 22px;
+      font-size: 10px;
+      padding: 0 8px; }
+      .bootstrap-select._with-search .bs-searchbox .form-control:hover, .bootstrap-select._with-search .bs-searchbox .form-control:focus {
+        background: #fff;
+        border-color: #0000FF; }
+  .bootstrap-select._with-search > .dropdown-menu > .inner:before {
+    top: auto;
+    height: calc(100% + 50px); }
 
 .breadcrumbs {
   display: flex; }

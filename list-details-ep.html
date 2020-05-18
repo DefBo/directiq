@@ -1075,6 +1075,9 @@
                         }
                     },
                 ],
+                initComplete() {
+                        $('.diriq-table__wrapper').removeClass('loading');
+                },
                 columnDefs: []
             });
         });

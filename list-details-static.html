@@ -997,6 +997,9 @@
                         sLengthMenu: "View _MENU_",
                         sInfo: "_START_ – _END_ of _TOTAL_"
                     },
+                    initComplete() {
+                        $('.diriq-table__wrapper').removeClass('loading');
+                    }
                 });
             } );
         </script>
