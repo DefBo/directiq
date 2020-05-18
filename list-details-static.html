@@ -862,7 +862,7 @@
                                                 <tr>
                                                     <th class="nosort"></th>
                                                     <th>
-                                                        <input class="filter-input" type="text" placeholder="Type Email Address">
+                                                        <input class="filter-input" type="text" placeholder="Type Email Address" data-index="1">
                                                     </th>
                                                     <th>
                                                         <select class="filter-input" required>
@@ -872,10 +872,10 @@
                                                         </select>
                                                     </th>
                                                     <th>
-                                                        <input class="filter-input" type="text" placeholder="Type First Name">
+                                                        <input class="filter-input" type="text" placeholder="Type First Name" data-index="3">
                                                     </th>
                                                     <th>
-                                                        <input class="filter-input" type="text" placeholder="Type Last Name">
+                                                        <input class="filter-input" type="text" placeholder="Type Last Name" data-index="4">
                                                     </th>
                                                     <th>
                                                         <select class="filter-input" required>
@@ -990,7 +990,7 @@
         <script>
             // Datatable settings and initialisation
             $(document).ready(function() {
-                $('#data-table').DataTable({
+                var table = $('#data-table').DataTable({
                     scrollX:        true,
                     scrollCollapse: true,
                     fixedColumns:   {
@@ -1007,10 +1007,14 @@
                         sLengthMenu: "View _MENU_",
                         sInfo: "_START_ – _END_ of _TOTAL_"
                     },
-                    initComplete: function() {
-                        $('.diriq-table__wrapper').removeClass('loading');
-                    },
                 });
+
+                $( table.table().container() ).on( 'keyup', 'tfoot input', function () {
+                    table
+                        .column( $(this).data('index') )
+                        .search( this.value )
+                        .draw();
+                } );
             } );
         </script>
 

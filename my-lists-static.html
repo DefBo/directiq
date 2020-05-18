@@ -618,7 +618,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="home-b1">
 
-                                        <div class="diriq-table__wrapper _my-lists-table">
+                                        <div class="diriq-table__wrapper _my-lists-table _with-endpoint">
 
                                             <table id="data-table" class="diriq-table" style="width:100%">
                                                 <thead>
@@ -810,7 +810,7 @@
                                                 <tr>
                                                     <th class="nosort"></th>
                                                     <th>
-                                                        <input class="filter-input" type="text" placeholder="Type List Name">
+                                                        <input class="filter-input" type="text" placeholder="Type List Name" data-index="1">
                                                     </th>
                                                     <th>
                                                         <select class="filter-input" required>
@@ -849,6 +849,7 @@
                                                     </th>
                                                     <th class="nosort"></th>
                                                 </tr>
+
                                                 </tfoot>
                                             </table>
 
@@ -942,7 +943,7 @@
         <script>
             // Datatables settings
             $(document).ready(function() {
-                $('#data-table').DataTable({
+                var table = $('#data-table').DataTable({
                     scrollX:        true,
                     scrollCollapse: true,
                     order: [],
@@ -956,6 +957,13 @@
                         sInfo: "_START_ – _END_ of _TOTAL_"
                     },
                 });
+
+                $( table.table().container() ).on( 'keyup', 'tfoot input', function () {
+                    table
+                        .column( $(this).data('index') )
+                        .search( this.value )
+                        .draw();
+                } );
             });
         </script>
 

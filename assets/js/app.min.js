@@ -965,24 +965,10 @@ $(document).ready(function() {
 			adjustDataTableColumns();
 		});
 	}
-	if ($('.diriq-table__wrapper').length > 0) {
-		$('.diriq-table__wrapper').each(function() {
+	if ($('.diriq-table__wrapper._with-endpoint').length > 0) {
+		$('.diriq-table__wrapper._with-endpoint').each(function() {
 			var tableWrapper = this;
 			$(tableWrapper).addClass('loading');
-
-			var filterInput = $(tableWrapper).find('tfoot input');
-
-			if (filterInput.length > 0) {
-				filterInput.each(function() {
-					var input = this;
-					console.log(input);
-					$(input).on('keyup', function() {
-						var table = $(tableWrapper).find('#data-table')[0];
-						console.dir(table);
-						$(table).column($(this).data('index')).search(this.value).draw();
-					});
-				});
-			}
 		});
 	}
 
