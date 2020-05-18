@@ -6633,8 +6633,6 @@ body.nav-is-toggled:after {
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain; }
-      .bootstrap-select .btn:not(.bs-placeholder):hover {
-        border-color: #0000FF !important; }
     .bootstrap-select .btn:hover {
       border-color: #0000FF !important; }
   .bootstrap-select .dropdown-toggle:after {
@@ -6657,27 +6655,14 @@ body.nav-is-toggled:after {
     padding: 0;
     border-radius: 0;
     border: 1px solid #00f;
-    box-shadow: none;
-    overflow: visible !important; }
+    overflow: visible !important;
+    box-shadow: 3px 3px 0 0 blue; }
     .bootstrap-select > .dropdown-menu > .inner {
       position: relative;
       z-index: 1; }
       .bootstrap-select > .dropdown-menu > .inner > .dropdown-menu {
         padding: 14px 0 10px;
         animation: none !important; }
-      .bootstrap-select > .dropdown-menu > .inner:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transform: translate(4px, 4px);
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: #00f;
-        z-index: -1; }
   .bootstrap-select .dropdown-item {
     padding: 6px 8px;
     font-weight: 500;
@@ -6695,12 +6680,9 @@ body.nav-is-toggled:after {
     .bootstrap-select._with-search .btn.bs-placeholder {
       color: #758796 !important; }
     .bootstrap-select._with-search .btn:not(.bs-placeholder) {
-      border-color: #000 !important;
-      position: relative; }
+      border-color: #212B35 !important; }
       .bootstrap-select._with-search .btn:not(.bs-placeholder):before {
         display: none; }
-      .bootstrap-select._with-search .btn:not(.bs-placeholder):hover {
-        border-color: #0000FF !important; }
     .bootstrap-select._with-search .btn:hover {
       border-color: #0000FF !important; }
   .bootstrap-select._with-search .dropdown-toggle:after {
@@ -6711,8 +6693,7 @@ body.nav-is-toggled:after {
     left: 0 !important;
     right: 15px !important;
     max-height: 132px;
-    overflow: auto;
-    padding: 0 0 0 3px !important; }
+    overflow: auto; }
     .bootstrap-select._with-search .dropdown-menu:hover::-webkit-scrollbar-thumb {
       background: #0000FF; }
     .bootstrap-select._with-search .dropdown-menu::-webkit-scrollbar {
@@ -6726,10 +6707,10 @@ body.nav-is-toggled:after {
       background: #0000FF; }
   .bootstrap-select._with-search .dropdown-item {
     text-align: left;
-    padding-left: 30px;
-    padding-right: 30px; }
+    padding-left: 26px;
+    padding-right: 26px; }
   .bootstrap-select._with-search .bs-searchbox {
-    padding: 17px 26px 10px 28px;
+    padding: 17px 5px 10px 25px;
     position: relative;
     z-index: 2;
     background: #fff; }
@@ -6742,10 +6723,10 @@ body.nav-is-toggled:after {
       .bootstrap-select._with-search .bs-searchbox .form-control:hover, .bootstrap-select._with-search .bs-searchbox .form-control:focus {
         background: #fff;
         border-color: #0000FF; }
-  .bootstrap-select._with-search > .dropdown-menu > .inner:before {
-    top: auto;
-    height: calc(100% + 50px);
-    display: none; }
+  .bootstrap-select._with-search > .dropdown-menu {
+    padding: 0 23px 0 3px !important; }
+    .bootstrap-select._with-search > .dropdown-menu > .inner > .dropdown-menu {
+      padding: 0; }
 
 .breadcrumbs {
   display: flex; }
