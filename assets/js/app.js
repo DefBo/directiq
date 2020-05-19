@@ -659,7 +659,7 @@ function createDataTable(id, config) {
 		});
 	});
 
-	var canSearch = true;
+	var canSearch = false;
 	var debounce = null;
 
 	function filterTable(element, value) {
@@ -671,14 +671,13 @@ function createDataTable(id, config) {
 		var input = this;
 		clearTimeout(debounce);
 
-		if ($(this).val().length > 3) {
+		if ($(this).val().length > 2) {
 			debounce = setTimeout(function() {
 				canSearch = true;
 				filterTable(input, input.value);
 			}, 500);
 		} else if (canSearch) {
 			debounce = setTimeout(function() {
-				console.log(canSearch);
 				filterTable(input, '');
 				canSearch = false;
 			}, 500);
