@@ -979,13 +979,13 @@
 
         <script src="assets/libs/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
 
-        <script>
+    <script>
         // Datatables settings
-        $(document).ready(function() {
-            var table = $('#data-table').DataTable( {
-                scrollX:        true,
+        $(document).ready(function () {
+            var config = {
+                scrollX: true,
                 scrollCollapse: true,
-                fixedColumns:   {
+                fixedColumns: {
                     leftColumns: 2,
                     rightColumns: 1
                 },
@@ -1071,7 +1071,7 @@
                         data: () => '',
                         searchable: false,
                         orderable: false,
-                        render: (data, type, row, meta) =>{
+                        render: (data, type, row, meta) => {
                             return `<button type="button" class="btn _sm _secondary">View</button>
                                     <button type="button" class="btn _sm _primary ml-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="2" height="10" viewBox="0 0 2 10">
@@ -1086,19 +1086,15 @@
                     },
                 ],
                 columnDefs: [],
-                initComplete: function() {
+                initComplete: function () {
                     $('.diriq-table__wrapper').removeClass('loading');
                 },
-            });
+            }
 
-            $( table.table().container() ).on( 'keyup', 'tfoot input', function () {
-                table
-                    .column( $(this).data('index') )
-                    .search( this.value )
-                    .draw();
-            } );
+            var table = createDataTable('#data-table', config);
+
         });
-        </script>
+    </script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>

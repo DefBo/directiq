@@ -767,11 +767,14 @@
         <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
         <script>
             // Datatables settings
-            $(document).ready(function() {
-                var table = $('#data-table').DataTable( {
-                    scrollX:        true,
+            $(document).ready(function () {
+                var config = {
+                    scrollX: true,
                     scrollCollapse: true,
                     order: [],
                     aoColumnDefs: [{
@@ -827,37 +830,28 @@
                             data: () => '',
                             searchable: false,
                             orderable: false,
-                            render: (data, type, row, meta) =>{
+                            render: (data, type, row, meta) => {
                                 return `<button type="button" class="btn _sm _secondary">View</button>
-                                        <button type="button" class="btn _sm _primary ml-4">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="10" viewBox="0 0 2 10">
-                                                <g transform="translate(-7846.438 -1337.556)">
-                                                    <circle cx="1" cy="1" r="1" transform="translate(7846.438 1337.556)" fill="currentColor"/>
-                                                    <circle cx="1" cy="1" r="1" transform="translate(7846.438 1341.556)" fill="currentColor"/>
-                                                    <circle cx="1" cy="1" r="1" transform="translate(7846.438 1345.556)" fill="currentColor"/>
-                                                </g>
-                                            </svg>
-                                        </button>`;
+                                            <button type="button" class="btn _sm _primary ml-4">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="2" height="10" viewBox="0 0 2 10">
+                                                    <g transform="translate(-7846.438 -1337.556)">
+                                                        <circle cx="1" cy="1" r="1" transform="translate(7846.438 1337.556)" fill="currentColor"/>
+                                                        <circle cx="1" cy="1" r="1" transform="translate(7846.438 1341.556)" fill="currentColor"/>
+                                                        <circle cx="1" cy="1" r="1" transform="translate(7846.438 1345.556)" fill="currentColor"/>
+                                                    </g>
+                                                </svg>
+                                            </button>`;
                             }
                         },
                     ],
                     columnDefs: [],
-                    initComplete: function() {
+                    initComplete: function () {
                         $('.diriq-table__wrapper').removeClass('loading');
                     },
-                });
-
-                $( table.table().container() ).on( 'keyup', 'tfoot input', function () {
-                    table
-                        .column( $(this).data('index') )
-                        .search( this.value )
-                        .draw();
-                } );
+                };
+    
+                var table = createDataTable('#data-table', config);
             });
         </script>
-
-        <!-- App js -->
-        <script src="assets/js/app.min.js"></script>
-        
     </body>
 </html>

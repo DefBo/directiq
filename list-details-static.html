@@ -989,11 +989,11 @@
 
         <script>
             // Datatable settings and initialisation
-            $(document).ready(function() {
-                var table = $('#data-table').DataTable({
-                    scrollX:        true,
+            $(document).ready(function () {
+                var config = {
+                    scrollX: true,
                     scrollCollapse: true,
-                    fixedColumns:   {
+                    fixedColumns: {
                         leftColumns: 2,
                         rightColumns: 1
                     },
@@ -1006,17 +1006,12 @@
                     oLanguage: {
                         sLengthMenu: "View _MENU_",
                         sInfo: "_START_ – _END_ of _TOTAL_"
-                    },
-                });
+                    }
+                }
+                var table = createDataTable('#data-table', config);
+            });
+            </script>
 
-                $( table.table().container() ).on( 'keyup', 'tfoot input', function () {
-                    table
-                        .column( $(this).data('index') )
-                        .search( this.value )
-                        .draw();
-                } );
-            } );
-        </script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>

@@ -649,9 +649,46 @@ File: Main Js File
 */
 
 // Show filter
-$('.diriq-table__filter-btn').click(function() {
-	$('body').toggleClass('_filter-visible');
-});
+
+function createDataTable(id, config) {
+	var table = $(id).DataTable(config);
+
+	$(table.table().container()).find('tfoot').each(function() {
+		$(this).find('th').each(function(i) {
+			$(this).find('input').attr('data-index', i);
+		});
+	});
+
+	var canSearch = true;
+	var debounce = null;
+
+	function filterTable(element, value) {
+		if (table.settings()[0].jqXHR) table.settings()[0].jqXHR.abort();
+		table.column($(element).data('index')).search(value).draw();
+	}
+
+	$(table.table().container()).on('keyup', 'tfoot input', function() {
+		var input = this;
+		clearTimeout(debounce);
+
+		if ($(this).val().length > 3) {
+			debounce = setTimeout(function() {
+				canSearch = true;
+				filterTable(input, input.value);
+			}, 500);
+		} else if (canSearch) {
+			debounce = setTimeout(function() {
+				console.log(canSearch);
+				filterTable(input, '');
+				canSearch = false;
+			}, 500);
+		}
+	});
+
+	$('.diriq-table__filter-btn').click(function() {
+		$('body').toggleClass('_filter-visible');
+	});
+}
 
 !(function($) {
 	'use strict';

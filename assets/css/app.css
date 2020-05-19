@@ -6686,6 +6686,12 @@ body.nav-is-toggled:after {
         display: none; }
     .bootstrap-select._with-search .btn:hover {
       border-color: #0000FF !important; }
+  .bootstrap-select._with-search.show .btn {
+    border-color: #758796 !important;
+    color: #212B35 !important;
+    /*&:hover {
+          border-color: #0000FF !important;
+        }*/ }
   .bootstrap-select._with-search .dropdown-toggle:after {
     content: '';
     width: 8px;
