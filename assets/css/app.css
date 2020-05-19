@@ -7203,7 +7203,12 @@ body.nav-is-toggled:after {
     cursor: pointer;
     font-size: 12px;
     font-weight: 700;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    order: 1; }
+    .switcher__label:hover ~ .switcher__toggle:after {
+      background: #0000ff; }
+    .switcher__label:hover + .switcher:checked + .switcher__toggle:after {
+      background: #fff; }
     .switcher__label span {
       color: #454F5B;
       font-weight: 500; }
