@@ -6455,9 +6455,10 @@ body.nav-is-toggled:after {
 .contact__option {
   flex: 0 0 45.5%;
   display: flex;
-  flex-direction: column; }
-  .contact__option .card {
-    flex: 1; }
+  flex-direction: column;
+  /*.card {
+      flex: 1;
+    }*/ }
 
 .contact__option-or {
   font-size: 16px;
@@ -7156,6 +7157,56 @@ body.nav-is-toggled:after {
     max-width: 730px;
     height: 200px;
     margin: 0 auto; }
+
+.switcher {
+  height: 0;
+  width: 0;
+  visibility: hidden; }
+  .switcher + .switcher__toggle {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 27px;
+    height: 14px;
+    background: #DAE8F7;
+    display: block;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 0; }
+    .switcher + .switcher__toggle:after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-radius: 50%;
+      transition: 0.3s; }
+    .switcher + .switcher__toggle:hover:after {
+      background: #0000ff; }
+  .switcher:checked + .switcher__toggle {
+    background: #0000ff; }
+    .switcher:checked + .switcher__toggle:after {
+      background: #fff;
+      left: calc(100% - 2px);
+      transform: translateX(-100%); }
+  .switcher__wrap {
+    display: flex;
+    align-items: center; }
+    .switcher__wrap._auto-sync {
+      display: none;
+      margin-top: 27px; }
+      ._chosen + .switcher__wrap._auto-sync {
+        display: flex; }
+  .switcher__label {
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 0; }
+    .switcher__label span {
+      color: #454F5B;
+      font-weight: 500; }
 
 th, td {
   white-space: nowrap !important; }
