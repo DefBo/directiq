@@ -648,10 +648,40 @@ Contact: support@coderthemes.com
 File: Main Js File
 */
 
-// Show filter
+const DEFAULT_DATA_TABLE_CONFIG = {
+	scrollX: true,
+	scrollCollapse: true,
+	order: [],
+	aoColumnDefs: [
+		{
+			bSortable: false,
+			aTargets: [ 'nosort' ]
+		}
+	],
+	sDom:
+		't<"d-flex justify-content-between align-content-center diriq-table__bottom"l<"d-flex align-content-center"ip>>',
+	oLanguage: {
+		sLengthMenu: 'View _MENU_',
+		sInfo: '_START_ – _END_ of _TOTAL_'
+	},
+	initComplete: function() {
+		$('.diriq-table__wrapper').removeClass('loading');
+	}
+};
 
-function createDataTable(id, config) {
-	var table = $(id).DataTable(config);
+const FIXED_DATA_TABLE_CONFIG = {
+	fixedColumns: {
+		leftColumns: 2,
+		rightColumns: 1
+	}
+};
+
+function createDataTable(id, config, isFixedCollumns) {
+	if (isFixedCollumns) {
+		config = { ...FIXED_DATA_TABLE_CONFIG, ...config };
+	}
+
+	var table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG, ...config });
 
 	$(table.table().container()).find('tfoot').each(function() {
 		$(this).find('th').each(function(i) {
@@ -663,7 +693,6 @@ function createDataTable(id, config) {
 	var debounce = null;
 
 	function filterTable(element, value) {
-		if (table.settings()[0].jqXHR) table.settings()[0].jqXHR.abort();
 		table.column($(element).data('index')).search(value).draw();
 	}
 
@@ -681,6 +710,25 @@ function createDataTable(id, config) {
 				filterTable(input, '');
 				canSearch = false;
 			}, 500);
+		}
+	});
+
+	if ($('.diriq-table__wrapper._with-endpoint').length > 0) {
+		$('.diriq-table__wrapper._with-endpoint').each(function() {
+			var tableWrapper = this;
+			$(tableWrapper).addClass('loading');
+		});
+	}
+
+	$('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append(
+		'<i class="sort-i__wrap"><svg xmlns="http://www.w3.org/2000/svg" width="5.1" height="10" class="sort-i"><g><path class="sort-i__top" d="M2.55 1.572l1.761 1.762.783-.784L2.55 0 0 2.55l.788.784z" fill="#212b35"/><path class="sort-i__bottom" d="M2.549 8.428L.788 6.667l-.784.783L2.548 10l2.55-2.55-.789-.783z" fill="#212b35"/></g></svg></i>'
+	);
+
+	$('.datatable._contact-details-lists input:checkbox').change(function() {
+		if ($(this).is(':checked')) {
+			$(this).closest('tr').addClass('_active');
+		} else {
+			$(this).closest('tr').removeClass('_active');
 		}
 	});
 
@@ -990,23 +1038,10 @@ $(document).ready(function() {
 
 	$(window).resize(function() {
 		checkSize();
-	});
-
-	if ($('.dataTable').length > 0) {
-		$('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append(
-			'<i class="sort-i__wrap"><svg xmlns="http://www.w3.org/2000/svg" width="5.1" height="10" class="sort-i"><g><path class="sort-i__top" d="M2.55 1.572l1.761 1.762.783-.784L2.55 0 0 2.55l.788.784z" fill="#212b35"/><path class="sort-i__bottom" d="M2.549 8.428L.788 6.667l-.784.783L2.548 10l2.55-2.55-.789-.783z" fill="#212b35"/></g></svg></i>'
-		);
-
-		$(window).bind('resize', function() {
+		if ($('.dataTable').length > 0) {
 			adjustDataTableColumns();
-		});
-	}
-	if ($('.diriq-table__wrapper._with-endpoint').length > 0) {
-		$('.diriq-table__wrapper._with-endpoint').each(function() {
-			var tableWrapper = this;
-			$(tableWrapper).addClass('loading');
-		});
-	}
+		}
+	});
 
 	if ($('#paste-excel-textarea').length > 0) {
 		TLN.append_line_numbers('paste-excel-textarea');
@@ -1019,14 +1054,6 @@ $(document).ready(function() {
 			}
 		});
 	}
-
-	$('.datatable._contact-details-lists input:checkbox').change(function() {
-		if ($(this).is(':checked')) {
-			$(this).closest('tr').addClass('_active');
-		} else {
-			$(this).closest('tr').removeClass('_active');
-		}
-	});
 
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 		adjustDataTableColumns();
