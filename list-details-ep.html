@@ -1051,18 +1051,21 @@
           serverSide: true,
           columns: [
             {
+                data: () => '',
               name: 'id',
               render: (data, type, row, meta) => {
                 return `<div class="checkbox checkbox-single"><input type="checkbox" name="contacts[]" value="${row.id}" aria-label="Single checkbox One"><label></label></div>`;
               },
             },
             {
+                data: () => '',
               name: 'email',
               render: (data, type, row, meta) => {
                 return `<a href="#" class="diriq-table__link">${row.email}</a>`;
               },
             },
             {
+                data: () => '',
               name: 'quality',
               render: (data, type, row, meta) => {
                 return `<i class="quality-icon _2">
@@ -1075,30 +1078,35 @@
               },
             },
             {
+                data: () => '',
               name: 'firstName',
               render: (data, type, row, meta) => {
                 return `<span class="font-weight-semibold">${row.firstName}</span>`;
               },
             },
             {
+                data: () => '',
               name: 'lastName',
               render: (data, type, row, meta) => {
                 return `<span class="font-weight-semibold">${row.lastName}</span>`;
               },
             },
             {
+                data: () => '',
               name: 'subscriber',
               render: (data, type, row, meta) => {
                 return `<span class="table-status _success">subscriber</span>`;
               },
             },
             {
+                data: () => '',
               name: 'member',
               render: (data, type, row, meta) => {
                 return `<span class="table-tag">member</span>`;
               },
             },
             {
+                data: () => '',
               name: 'view',
               render: (data, type, row, meta) => {
                 return `<button type="button" class="btn _sm _secondary">View</button> <button type="button" class="btn _sm _primary ml-4"><svg width="2" height="10"><use xlink:href="assets/images/sprite.svg#more-dots"></use></svg></button>`;
