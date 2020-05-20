@@ -17,11 +17,14 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
 
+        <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
 
         <link href="assets/libs/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
 
     </head>
 
@@ -49,8 +52,11 @@
                             <li class="breadcrumb-item active">My Lists
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
-                                        <svg width="19.5" height="17.805">
-                                            <use xlink:href="assets/images/sprite.svg#add-to-bookmarks"></use>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
+                                            <g transform="translate(0.75 0.75)">
+                                                <path class="add-to-fav-icon__bg" d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13" transform="translate(-1972.5 -1089.5)" fill="none" stroke="blue" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                                <path class="add-to-fav-icon__plus" d="M1986.5,1093.5v8m4-4h-8" transform="translate(-1972.5 -1089.5)" fill="none" stroke="#00eba8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                            </g>
                                         </svg>
                                     </i>
                                 </button>
@@ -582,7 +588,7 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <button type="button" class="btn _sm _secondary">View</button>
-                                                            <button type="button" class="btn _sm _primary ml-4">
+                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
                                                                 <svg width="2" height="10">
                                                                     <use xlink:href="assets/images/sprite.svg#more-dots"></use>
                                                                 </svg>
@@ -619,7 +625,7 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <button type="button" class="btn _sm _secondary">View</button>
-                                                            <button type="button" class="btn _sm _primary ml-4">
+                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
                                                                 <svg width="2" height="10">
                                                                     <use xlink:href="assets/images/sprite.svg#more-dots"></use>
                                                                 </svg>
@@ -656,7 +662,7 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <button type="button" class="btn _sm _secondary">View</button>
-                                                            <button type="button" class="btn _sm _primary ml-4">
+                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
                                                                 <svg width="2" height="10">
                                                                     <use xlink:href="assets/images/sprite.svg#more-dots"></use>
                                                                 </svg>
@@ -693,7 +699,7 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <button type="button" class="btn _sm _secondary">View</button>
-                                                            <button type="button" class="btn _sm _primary ml-4">
+                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
                                                                 <svg width="2" height="10">
                                                                     <use xlink:href="assets/images/sprite.svg#more-dots"></use>
                                                                 </svg>
@@ -709,38 +715,38 @@
                                                         <input class="filter-input" type="text" placeholder="Type List Name">
                                                     </th>
                                                     <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Size</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
+                                                        <select class="form-control" data-toggle="select2" required>
+                                                            <option class="d-none" value="" disabled selected>Select Size</option>
+                                                            <option value="test-1">Option 1</option>
+                                                            <option value="test-2">Option 2</option>
                                                         </select>
                                                     </th>
                                                     <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Size</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
+                                                        <select class="form-control" data-toggle="select2" required>
+                                                            <option class="d-none" value="" disabled selected>Select Size</option>
+                                                            <option value="test-1">Option 1</option>
+                                                            <option value="test-2">Option 2</option>
                                                         </select>
                                                     </th>
                                                     <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Size</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
+                                                        <select class="form-control" data-toggle="select2" required>
+                                                            <option class="d-none" value="" disabled selected>Select Size</option>
+                                                            <option value="test-1">Option 1</option>
+                                                            <option value="test-2">Option 2</option>
                                                         </select>
                                                     </th>
                                                     <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Quality</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
+                                                        <select class="form-control" data-toggle="select2" required>
+                                                            <option class="d-none" value="" disabled selected>Select Quality</option>
+                                                            <option value="test-1">Option 1</option>
+                                                            <option value="test-2">Option 2</option>
                                                         </select>
                                                     </th>
                                                     <th>
-                                                        <select class="filter-input" required>
-                                                            <option value="" disabled selected>Select Date</option>
-                                                            <option value="custom-option">Option 1</option>
-                                                            <option value="custom-option">Option 2</option>
+                                                        <select class="form-control" data-toggle="select2" required>
+                                                            <option class="d-none" value="" disabled selected>Select Date</option>
+                                                            <option value="test-1">Option 1</option>
+                                                            <option value="test-2">Option 2</option>
                                                         </select>
                                                     </th>
                                                     <th class="nosort"></th>
@@ -765,8 +771,11 @@
                                                     </svg>
                                                 </i>
                                                 <i class="diriq-table__close-icon">
-                                                    <svg width="25" height="25">
-                                                        <use xlink:href="assets/images/sprite.svg#filter-close"></use>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                                                        <g transform="translate(0.5 0.5)">
+                                                            <rect width="24" height="24" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
+                                                            <path class="diriq-table__close-icon-cross" d="M9489.239,1605.581l-.806-.806-3.194,3.194-3.194-3.194-.806.806,3.194,3.194-3.194,3.194.806.806,3.194-3.194,3.194,3.194.806-.806-3.194-3.194Z" transform="translate(-9473.239 -1596.775)" fill="currentColor"/>
+                                                        </g>
                                                     </svg>
                                                 </i>
                                             </div>
@@ -820,30 +829,12 @@
         <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 
+        <script src="assets/libs/select2/js/select2.min.js"></script>
+
         <script>
             // Datatables settings
-            $(document).ready(function() {
-                var table = $('#data-table').DataTable({
-                    scrollX:        true,
-                    scrollCollapse: true,
-                    order: [],
-                    aoColumnDefs: [{
-                        bSortable: false,
-                        aTargets: ['nosort']
-                    }],
-                    sDom: 't<"d-flex justify-content-between align-content-center diriq-table__bottom"l<"d-flex align-content-center"ip>>',
-                    oLanguage: {
-                        sLengthMenu: "View _MENU_",
-                        sInfo: "_START_ – _END_ of _TOTAL_"
-                    },
-                });
-
-                $( table.table().container() ).on( 'keyup', 'tfoot input', function () {
-                    table
-                        .column( $(this).data('index') )
-                        .search( this.value )
-                        .draw();
-                } );
+            $(document).ready(function () {
+                var table = createDataTable('#data-table', {}, true);
             });
         </script>
 

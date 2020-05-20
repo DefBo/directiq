@@ -1007,6 +1007,33 @@ function createDataTable(id, config, isFixedCollumns) {
 		$.App.init();
 	})(window.jQuery);
 
+if ($('select[data-toggle=select2]').length > 0) {
+    !function($) {
+        "use strict";
+
+        var FormAdvanced = function() {};
+
+        //initializing tooltip
+        FormAdvanced.prototype.initSelect2 = function() {
+            // Select2
+            $('[data-toggle="select2"]').select2();
+        },
+
+            //initilizing
+            FormAdvanced.prototype.init = function() {
+                var $this = this;
+                this.initSelect2();
+            },
+
+            $.FormAdvanced = new FormAdvanced, $.FormAdvanced.Constructor = FormAdvanced
+
+    }(window.jQuery),
+        function ($) {
+            "use strict";
+            $.FormAdvanced.init();
+        }(window.jQuery);
+}
+
 function adjustDataTableColumns() {
 	$($.fn.dataTable.tables(true)).DataTable().columns.adjust();
 }

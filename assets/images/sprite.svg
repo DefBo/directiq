@@ -22,12 +22,6 @@
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10.41" id="activity-arrow">
     <path d="M375.09,590.463l-7.59,7.59-5.59-5.59h4.59v-2h-8v8h2v-4.59l7,7,9-9Z" transform="translate(-358.5 -590.463)" fill="#ed1c24"/>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.5 17.805" id="add-to-bookmarks">
-    <g transform="translate(0.75 0.75)">
-      <path class="add-to-fav-icon__bg" d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13" transform="translate(-1972.5 -1089.5)" fill="none" stroke="blue" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-      <path class="add-to-fav-icon__plus" d="M1986.5,1093.5v8m4-4h-8" transform="translate(-1972.5 -1089.5)" fill="none" stroke="#00eba8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-    </g>
-  </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 8" id="back-arrow">
     <path d="M12,7.5H5.915l2.8-2.8L8,4,4,8l4,4,.705-.7L5.915,8.5H12Z" transform="translate(-4 -4)"/>
   </symbol>
@@ -72,8 +66,11 @@
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4.94" id="check-col">
     <path d="M4237.768,4437.5l-3.06,3.053-3.06-3.053-.94.94,4,4,4-4Z" transform="translate(-4230.708 -4437.499)"/>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.351 20" id="contacts-arrow">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.351 20" id="contacts-arrow-left">
     <path d="M10981.179,1226l10,10,2.351-2.35-7.634-7.65,7.634-7.65-2.351-2.35Z" transform="translate(-10981.179 -1216)" fill="currentColor"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.35 20" id="contacts-arrow-right">
+    <path d="M11018.35,1216l-2.35,2.35,7.633,7.65-7.633,7.65,2.35,2.35,10-10Z" transform="translate(-11016 -1216)" fill="currentColor"/>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.719 15.328" fill="#00eba8" id="contacts-i">
     <g transform="translate(-1775.641 -1232.35)">
@@ -123,12 +120,6 @@
       <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1085.5)" fill="#fff" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
       <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1095.1)" fill="#fff" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
       <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1104.7)" fill="#fff" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
-    </g>
-  </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" id="filter-close">
-    <g transform="translate(0.5 0.5)">
-      <rect width="24" height="24" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
-      <path class="diriq-table__close-icon-cross" d="M9489.239,1605.581l-.806-.806-3.194,3.194-3.194-3.194-.806.806,3.194,3.194-3.194,3.194.806.806,3.194-3.194,3.194,3.194.806-.806-3.194-3.194Z" transform="translate(-9473.239 -1596.775)" fill="currentColor"/>
     </g>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.187 22" id="filter">

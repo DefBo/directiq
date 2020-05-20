@@ -2266,7 +2266,7 @@ body[data-layout-mode="two-column"][data-layout-width="boxed"]:not([data-sidebar
   transition-duration: 0.075s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--squeeze .hamburger-inner::before {
-    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
   .hamburger--squeeze .hamburger-inner::after {
     transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
@@ -2277,7 +2277,7 @@ body[data-layout-mode="two-column"][data-layout-width="boxed"]:not([data-sidebar
   .hamburger--squeeze.is-active .hamburger-inner::before, .nav-is-toggled .hamburger--squeeze .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
   .hamburger--squeeze.is-active .hamburger-inner::after, .nav-is-toggled .hamburger--squeeze .hamburger-inner::after {
     bottom: 0;
     transform: rotate(-90deg);
@@ -7218,6 +7218,39 @@ body.nav-is-toggled:after {
     .switcher__label span {
       color: #454F5B;
       font-weight: 500; }
+
+.select2-container .select2-selection--single {
+  border-radius: 0;
+  background-color: #fff;
+  background-image: url(../images/dropdown-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 7px) center;
+  background-size: 6px 3.7px;
+  border: none;
+  outline: 0;
+  line-height: 22px;
+  font-size: 10px;
+  padding: 0 7px;
+  color: #212b35;
+  font-weight: 500;
+  height: 22px;
+  text-align: left !important; }
+
+.select2-container.select2-container--open .select2-selection--single {
+  outline: .75px solid #00f; }
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  line-height: 22px;
+  padding: 0; }
+
+.select2-selection__arrow {
+  display: none; }
+
+.select2-results__option:first-child {
+  display: none; }
+
+.select2-hidden-accessible:required:invalid + .select2 .select2-selection__rendered {
+  color: #758796; }
 
 th, td {
   white-space: nowrap !important; }
