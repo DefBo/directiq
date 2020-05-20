@@ -1051,22 +1051,19 @@
           serverSide: true,
           columns: [
             {
-                data: () => '',
-              name: 'id',
+              data: () => '',
               render: (data, type, row, meta) => {
                 return `<div class="checkbox checkbox-single"><input type="checkbox" name="contacts[]" value="${row.id}" aria-label="Single checkbox One"><label></label></div>`;
               },
             },
             {
-                data: () => '',
-              name: 'email',
+              data: () => '',
               render: (data, type, row, meta) => {
                 return `<a href="#" class="diriq-table__link">${row.email}</a>`;
               },
             },
             {
-                data: () => '',
-              name: 'quality',
+              data: () => '',
               render: (data, type, row, meta) => {
                 return `<i class="quality-icon _2">
                                     <span></span>
@@ -1078,36 +1075,31 @@
               },
             },
             {
-                data: () => '',
-              name: 'firstName',
+              data: () => '',
               render: (data, type, row, meta) => {
                 return `<span class="font-weight-semibold">${row.firstName}</span>`;
               },
             },
             {
-                data: () => '',
-              name: 'lastName',
+              data: () => '',
               render: (data, type, row, meta) => {
                 return `<span class="font-weight-semibold">${row.lastName}</span>`;
               },
             },
             {
-                data: () => '',
-              name: 'subscriber',
+              data: () => '',
               render: (data, type, row, meta) => {
                 return `<span class="table-status _success">subscriber</span>`;
               },
             },
             {
-                data: () => '',
-              name: 'member',
+              data: () => '',
               render: (data, type, row, meta) => {
                 return `<span class="table-tag">member</span>`;
               },
             },
             {
-                data: () => '',
-              name: 'view',
+              data: () => '',
               render: (data, type, row, meta) => {
                 return `<button type="button" class="btn _sm _secondary">View</button> <button type="button" class="btn _sm _primary ml-4"><svg width="2" height="10"><use xlink:href="assets/images/sprite.svg#more-dots"></use></svg></button>`;
               },

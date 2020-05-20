@@ -677,40 +677,34 @@
                 columns: [
                     {
                         data: () => '',
-                        name: 'id',
                         render: (data, type, row, meta) => {
                             return `<div class="checkbox checkbox-single"><input type="checkbox" name="contacts[]" value="${row.id}" aria-label="Single checkbox One"><label></label></div>`;
                         },
                     },
                     {
                         data: 'id',
-                        name: 'id',
                     },
                     {
                         data: () => '',
-                        name: 'firstName',
                         render: (data, type, row, meta) => {
                             return `<span class="font-weight-semibold">${row.firstName}</span>`;
                         },
                     },
                     {
                         data: () => '',
-                        name: 'lastName',
                         render: (data, type, row, meta) => {
                             return `<span class="font-weight-semibold">${row.lastName}</span>`;
                         },
                     },
                     {
                         data: () => '',
-                        name: 'email',
                         render: (data, type, row, meta) => {
                             return `<span class="font-weight-semibold">${row.email}</span>`;
                         },
                     },
-                    { data: 'dateAdded', name: 'dateAdded' },
+                    { data: 'dateAdded' },
                     {
                         data: () => '',
-                        name: 'view',
                         render: (data, type, row, meta) => {
                             return `<button type="button" class="btn _sm _secondary">View</button> <button type="button" class="btn _sm _primary ml-4"><svg width="2" height="10"><use xlink:href="assets/images/sprite.svg#more-dots"></use></svg></button>`;
                         },
