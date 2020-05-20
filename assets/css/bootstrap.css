@@ -15852,6 +15852,8 @@ a.text-blue:hover, a.text-blue:focus {
     color: #758796; }
   .form-control:hover, .form-control:focus {
     border-color: #0000FF !important; }
+  .form-control:-ms-input-placeholder {
+    border-color: #A0B1BA; }
   .form-control:placeholder-shown {
     border-color: #A0B1BA; }
 
