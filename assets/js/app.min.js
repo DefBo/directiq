@@ -690,26 +690,21 @@ function createDataTable(id, config, isFixedCollumns) {
 	});
 
 	var canSearch = false;
-	var debounce = null;
 
 	function filterTable(element, value) {
+		if (table.settings()[0].jqXHR) table.settings()[0].jqXHR.abort();
 		table.column($(element).data('index')).search(value).draw();
 	}
 
 	$(table.table().container()).on('keyup', 'tfoot input', function() {
 		var input = this;
-		clearTimeout(debounce);
 
 		if ($(this).val().length > 2) {
-			debounce = setTimeout(function() {
-				canSearch = true;
-				filterTable(input, input.value);
-			}, 500);
+			canSearch = true;
+			filterTable(input, input.value);
 		} else if (canSearch) {
-			debounce = setTimeout(function() {
-				filterTable(input, '');
-				canSearch = false;
-			}, 500);
+			filterTable(input, '');
+			canSearch = false;
 		}
 	});
 
@@ -1008,30 +1003,28 @@ function createDataTable(id, config, isFixedCollumns) {
 	})(window.jQuery);
 
 if ($('select[data-toggle=select2]').length > 0) {
-    !function($) {
-        "use strict";
+	!(function($) {
+		'use strict';
 
-        var FormAdvanced = function() {};
+		var FormAdvanced = function() {};
 
-        //initializing tooltip
-        FormAdvanced.prototype.initSelect2 = function() {
-            // Select2
-            $('[data-toggle="select2"]').select2();
-        },
-
-            //initilizing
-            FormAdvanced.prototype.init = function() {
-                var $this = this;
-                this.initSelect2();
-            },
-
-            $.FormAdvanced = new FormAdvanced, $.FormAdvanced.Constructor = FormAdvanced
-
-    }(window.jQuery),
-        function ($) {
-            "use strict";
-            $.FormAdvanced.init();
-        }(window.jQuery);
+		//initializing tooltip
+		(FormAdvanced.prototype.initSelect2 = function() {
+			// Select2
+			$('[data-toggle="select2"]').select2();
+		}),
+			//initilizing
+			(FormAdvanced.prototype.init = function() {
+				var $this = this;
+				this.initSelect2();
+			}),
+			($.FormAdvanced = new FormAdvanced()),
+			($.FormAdvanced.Constructor = FormAdvanced);
+	})(window.jQuery),
+		(function($) {
+			'use strict';
+			$.FormAdvanced.init();
+		})(window.jQuery);
 }
 
 function adjustDataTableColumns() {
