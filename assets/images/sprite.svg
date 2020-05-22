@@ -193,6 +193,11 @@
       <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3046.038 1669.026)" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
     </g>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 10" id="more-dots-small">
+    <circle cx="1" cy="1" r="1"/>
+    <circle cx="1" cy="1" r="1" transform="translate(0 4)"/>
+    <circle cx="1" cy="1" r="1" transform="translate(0 8)"/>
+  </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.955 20.061" fill="#00eba8" id="search">
     <g transform="translate(-2704.75 -1088.25)">
       <circle cx="6.5" cy="6.5" r="6.5" transform="translate(2705.5 1089)" fill="none" stroke="blue" stroke-miterlimit="10" stroke-width="1.5"/>
