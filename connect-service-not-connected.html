@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta charset="utf-8" />
-        <title>All Pages | DirectIQ</title>
+        <title>Add Contacts | DirectIQ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -16,11 +15,9 @@
         <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#0000ff">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
-
-        <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
-
+	    <!-- App css -->
+	    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+	    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
     </head>
 
     <body data-layout-mode="two-column" class="animation-stopper">
@@ -43,7 +40,8 @@
                         </div>
 
                         <ol class="breadcrumbs">
-                            <li class="breadcrumb-item active">Home
+                            <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
+                            <li class="breadcrumb-item active">Add Contacts
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -128,7 +126,6 @@
             <!-- end Topbar -->
 
             <!-- ========== Left Sidebar Start ========== -->
-
             <button class="hamburger hamburger--squeeze" id="ham" type="button">
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
@@ -168,7 +165,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item-link" href="./add-contacts.html">
+                                <a class="nav-item-link active" href="./add-contacts.html">
                                     Add Contacts
                                 </a>
                             </li>
@@ -497,7 +494,6 @@
                     </button>
                 </div>
             </nav>
-
             <!-- Left Sidebar End -->
 
             <!-- ============================================================== -->
@@ -509,47 +505,113 @@
 
                     <!-- Start Content-->
                     <div class="container-fluid">
-                        <div class="card mb-0 mt-15">
 
-                            <h3 class="mb-16">Pages</h3>
+                        <div class="row">
+                            <div class="col-12">
 
-                            <p class="sub-header">
-                                All pages that are implemented or currently in progress.
-                            </p>
+                                <ul class="nav nav-tabs nav-bordered">
+                                    <li class="nav-item">
+                                        <a href="#add-contact-upload-list" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Upload List
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#add-contact-add-one-by-one" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                            Add One by One
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#add-contact-copy-paste" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Copy Paste Contacts
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#add-contact-import" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                                            Import From Other Service
+                                        </a>
+                                    </li>
+                                </ul>
 
-                            <h4 class="mb-16"><a class="link" href="my-lists-static.html">My Lists</a> (static)</h4>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="add-contact-upload-list"></div>
 
-                            <h4 class="mb-16"><a class="link" href="my-lists-ep.html">My Lists</a> (endpoint integrated)</h4>
+                                    <div class="tab-pane" id="add-contact-add-one-by-one"></div>
 
-                            <h4 class="mb-16"><a class="link" href="list-details-static.html">List Details</a> (static)</h4>
+                                    <div class="tab-pane" id="add-contact-copy-paste"></div>
 
-                            <h4 class="mb-16"><a class="link" href="list-details-ep.html">List Details</a> (endpoint integrated)</h4>
+                                    <div class="tab-pane show active" id="add-contact-import">
 
-                            <h4 class="mb-16"><a class="link" href="contacts-home-static.html">Contacts Home</a></h4>
+                                        <div class="card _connect">
+                                            <div class="connect__icon-wrap">
+                                                <i class="connect__icon">
+                                                    <svg>
+                                                        <use xlink:href="assets/images/sprite.svg#dropbox"></use>
+                                                    </svg>
+                                                </i>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="contact-details.html">Contact Details</a></h4>
+                                            <div class="connect__content">
+                                                <div class="connect__title-wrap">
+                                                    <h4>Dropbox Integration</h4>
+                                                    <span class="table-status _small _danger ml-20">not connected</span>
+                                                </div>
+                                                <button class="btn _xl _primary _round ml-20">Connect Dropbox</button>
+                                            </div>
+                                        </div>
 
-                            <h4 class="mb-16"><a class="link" href="add-contacts.html">Add Contacts</a></h4>
+                                        <div class="connect__cards-wrap">
+                                            <div class="card connect__cards-main">
+                                                <i class="mb-19">
+                                                    <svg width="87.062" height="75">
+                                                        <use xlink:href="assets/images/sprite.svg#cat-laptop"></use>
+                                                    </svg>
+                                                </i>
+                                                <h5 class="mb-10">Let's Connect DirectIQ To Your Dropbox Account</h5>
+                                                <p class="font-12 color-secondary font-weight-medium mb-24">
+                                                    In order to start syncing your contacts and import them here, lets first authorize and connect your Dropbox account with DirectIQ. Clicking the <span class="font-weight-bold color-primary">Connect Button</span> will open a separate window.
+                                                </p>
+                                                <div class="d-flex align-items-center mb-30">
+                                                    <input type="text" placeholder="Store Name" class="form-control connect__store-name">
+                                                    <span class="ml-10 font-12 font-weight-bold">.myshopify.com</span>
+                                                </div>
+                                                <button class="btn _lg _secondary">Connect Dropbox</button>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="form-validation-examples.html">Form Validation Example</a></h4>
+                                            <div class="connect__cards-aside">
+                                                <div class="card connect__card-aside">
+                                                    <i class="mb-22">
+                                                        <svg width="102.381" height="50">
+                                                            <use xlink:href="assets/images/sprite.svg#cat-two"></use>
+                                                        </svg>
+                                                    </i>
+                                                    <h5 class="mb-5">Yay! We Have a Shopify App!</h5>
+                                                    <p class="font-12 color-secondary font-weight-medium mb-15">
+                                                        Install our official app on Shopify App Store to get flexibility and to do more.
+                                                    </p>
+                                                    <button class="btn _sm _secondary">Go To Shopify App Store</button>
+                                                </div>
 
-                            <h4 class="mb-16"><a class="link" href="save-list-new-user.html">Save List</a> (new user)</h4>
+                                                <div class="card connect__card-aside">
+                                                    <i class="mb-22">
+                                                        <svg width="38.917" height="50">
+                                                            <use xlink:href="assets/images/sprite.svg#cat-light"></use>
+                                                        </svg>
+                                                    </i>
+                                                    <h5 class="mb-5">Want a Native Shopify App?</h5>
+                                                    <p class="font-12 color-secondary font-weight-medium mb-15">
+                                                        Talk to us. Would you rather use a native Shopify App by DirectIQ?
+                                                    </p>
+                                                    <button class="btn _sm _secondary">Request a Feature</button>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                            <h4 class="mb-16"><a class="link" href="save-list-few-lists.html">Save List</a> (select from few lists)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="save-list-many-lists.html">Save List</a> (select from many lists)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="confirm-modals.html">Confirmation Modals</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="import-from-other-service.html">Add Contacts</a> (import from other service)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="connect-service-not-connected.html">Connect Service</a> (not connected)</h4>
-
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div> <!-- container -->
-
                 </div> <!-- content -->
-
             </div>
 
             <!-- ============================================================== -->
@@ -563,14 +625,13 @@
             </a>
 
         </div>
-
         <!-- END wrapper -->
 
-        <!-- Vendor js -->
+        <!-- App js -->
         <script src="assets/js/vendor.min.js"></script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-        
+
     </body>
 </html>
