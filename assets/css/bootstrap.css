@@ -16280,6 +16280,9 @@ button.close {
   .modal-colored-header .close {
     color: #fff !important; }
 
+.modal-dialog {
+  margin: 1.7em auto; }
+
 .nav-tabs > li > a, .nav-pills > li > a {
   color: #212B35;
   font-weight: 500; }
