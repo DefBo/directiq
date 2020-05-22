@@ -6037,6 +6037,12 @@ body.nav-is-toggled:after {
     height: 34px;
     line-height: 34px;
     font-weight: 500; }
+  .btn._xl {
+    font-size: 18px;
+    height: 45px;
+    padding: 0 20.5px; }
+    .btn._xl:hover {
+      transform: scale(0.925); }
   .btn._primary, .btn._primary:focus {
     background: #00EBA8;
     border-color: #00EBA8;
@@ -6049,6 +6055,8 @@ body.nav-is-toggled:after {
     background: #0000FF;
     border-color: #0000FF;
     color: #fff; }
+  .btn._round {
+    border-radius: 30px; }
 
 .link {
   color: #212B35;
@@ -6328,6 +6336,11 @@ body.nav-is-toggled:after {
   flex: 1;
   padding-top: 27px;
   padding-right: 10px; }
+
+.card._connect {
+  padding: 0;
+  flex-direction: row;
+  height: 100px; }
 
 .contact__avatar, .contact__arrows {
   flex: 0 0 100px;
@@ -7295,11 +7308,19 @@ body.nav-is-toggled:after {
   width: 240px;
   height: 40px;
   position: relative; }
-  .integrations__item._connected .integrations__icon-wrap {
+  .integrations__item .integrations__synch-i,
+  .integrations__item .integrations__connect-i,
+  .integrations__item .integrations__off-i {
+    display: none; }
+  .integrations__item._connected .integrations__connect-i,
+  .integrations__item._synched .integrations__synch-i,
+  .integrations__item._off .integrations__off-i {
+    display: block; }
+  .integrations__item._connected .integrations__icon-wrap, .integrations__item._synched .integrations__icon-wrap {
     background: #0000FF; }
-  .integrations__item._connected .integrations__icon {
+  .integrations__item._connected .integrations__icon, .integrations__item._synched .integrations__icon {
     color: #fff; }
-  .integrations__item._connected .integrations__body {
+  .integrations__item._connected .integrations__body, .integrations__item._synched .integrations__body {
     border-color: #0000FF; }
   .integrations__item._off {
     pointer-events: none; }
@@ -7356,6 +7377,34 @@ body.nav-is-toggled:after {
 .integrations__status {
   color: #0000FF;
   transition: color 0.25s; }
+
+.connect__icon-wrap {
+  height: 100%;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #B6FFE8; }
+
+.connect__icon {
+  display: block;
+  color: #00EBA8; }
+  .connect__icon svg {
+    display: block;
+    height: 50px;
+    max-width: 50px; }
+
+.connect__content {
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1; }
+
+.connect__title-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center; }
 
 th, td {
   white-space: nowrap !important; }
