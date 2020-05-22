@@ -3,7 +3,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>All Pages | DirectIQ</title>
+        <title>Contacts Overview | DirectIQ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -16,14 +16,13 @@
         <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#0000ff">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
-
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
 
     </head>
 
-    <body data-layout-mode="two-column" class="animation-stopper">
+    <body data-layout-mode="two-column" class="_conatcts-home-page animation-stopper">
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -43,7 +42,7 @@
                         </div>
 
                         <ol class="breadcrumbs">
-                            <li class="breadcrumb-item active">Home
+                            <li class="breadcrumb-item active">Sample Page
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -128,7 +127,6 @@
             <!-- end Topbar -->
 
             <!-- ========== Left Sidebar Start ========== -->
-
             <button class="hamburger hamburger--squeeze" id="ham" type="button">
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
@@ -155,7 +153,7 @@
                                Contacts
                             </span>
                         </a>
-                        <ul class="nav-items nav-expand-content active">
+                        <ul class="nav-items nav-expand-content">
                             <li class="nav-title">Contacts</li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="./contacts-home-static.html">
@@ -497,7 +495,6 @@
                     </button>
                 </div>
             </nav>
-
             <!-- Left Sidebar End -->
 
             <!-- ============================================================== -->
@@ -507,49 +504,81 @@
             <div class="content-page">
                 <div class="content">
 
-                    <!-- Start Content-->
                     <div class="container-fluid">
-                        <div class="card mb-0 mt-15">
 
-                            <h3 class="mb-16">Pages</h3>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card mt-15">
+                                    <div class="d-md-flex justify-content-between align-content-center">
+                                        <div>
+                                            <div class="font-36 lh-1 mt-n4">153</div>
+                                            <h5 class="mt-10">New Contacts</h5>
+                                            <div class="font-12 color-secondary font-weight-medium mt-14">
+                                                From Mar 15, 2020 to  May 14, 2020 you’ve added <a href="#" class="link">153 new contacts</a>
+                                            </div>
+                                            <a class="btn _sm _secondary mt-13 mb-20 mb-md-0" href="new-contact.html">New Contacts</a>
+                                        </div>
+                                        <div class="d-flex mx-n10">
+                                            <div class="mx-10 confirm__wrap">
+                                                <button class="btn _lg _secondary confirm__btn">Confirm 1</button>
 
-                            <p class="sub-header">
-                                All pages that are implemented or currently in progress.
-                            </p>
+                                                <div class="d-none confirm__modal">
+                                                    <div class="confirm__content">
+                                                        <p class="confirm__text">You sure you want to delete babies? This may hurt massively?</p>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <button class="btn _lg _secondary">Nope</button>
+                                                        <button class="btn _lg _primary">Sure</button>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="my-lists-static.html">My Lists</a> (static)</h4>
+                                            <div class="mx-10 confirm__wrap">
+                                                <button class="btn _lg _primary confirm__btn">Confirm 2</button>
 
-                            <h4 class="mb-16"><a class="link" href="my-lists-ep.html">My Lists</a> (endpoint integrated)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="list-details-static.html">List Details</a> (static)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="list-details-ep.html">List Details</a> (endpoint integrated)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="contacts-home-static.html">Contacts Home</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="contact-details.html">Contact Details</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="add-contacts.html">Add Contacts</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="form-validation-examples.html">Form Validation Example</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="save-list-new-user.html">Save List</a> (new user)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="save-list-few-lists.html">Save List</a> (select from few lists)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="save-list-many-lists.html">Save List</a> (select from many lists)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="confirm-modals.html">Confirmation Modals</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="import-from-other-service.html">Add Contacts</a> (import from other service)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="connect-service-not-connected.html">Connect Service</a> (not connected)</h4>
-
+                                                <div class="d-none confirm__modal">
+                                                    <div class="confirm__content">
+                                                        <h5 class="mb-9">That Will Hurt</h5>
+                                                        <p class="confirm__text">You sure you want to delete babies? This may hurt massively?</p>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <button class="btn _lg _secondary">Nope</button>
+                                                        <button class="btn _lg _primary">Sure</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div> <!-- container -->
 
-                </div> <!-- content -->
+                        <div class="row">
+                            <div class="col-md-6 d-md-flex flex-md-column flex-md-grow-1">
+                                <div class="card bg-light-grey align-items-start flex-grow-1">
+                                    <div class="font-36 lh-1 mt-n4">491</div>
+                                    <h5 class="mt-10">Subscribed Contacts</h5>
+                                    <div class="font-12 color-secondary font-weight-medium mt-14">
+                                        You’ve <a href="#" class="link">491 subscribed contacts</a> out of (<span class="color-primary">950 total contacts</span> in <span class="color-primary">3 lists</span>.)
+                                    </div>
+                                    <a href="./all-subscribers.html" class="btn _sm _secondary mt-13">All Subscribers</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-md-flex flex-md-column flex-md-grow-1">
+                                <div class="card bg-light-grey align-items-start flex-grow-1">
+                                    <div class="font-36 lh-1 mt-n4 color-danger">43</div>
+                                    <h5 class="mt-10">Disabled Contacts</h5>
+                                    <div class="font-12 color-secondary font-weight-medium mt-14">
+                                        You’ve <a href="#" class="link">43 disabled contacts</a> in total (<span class="color-primary">28 unsubscribed</span> and <span class="color-primary">15 hardbounced</span>.)
+                                    </div>
+                                    <a href="./all-disabled.html" class="btn _sm _secondary mt-13">All Disabled</a>
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
+
+                </div>
             </div>
 
             <!-- ============================================================== -->
@@ -563,8 +592,8 @@
             </a>
 
         </div>
-
         <!-- END wrapper -->
+
 
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
