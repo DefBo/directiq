@@ -159,6 +159,36 @@
                 <li class="nav-item nav-expand">
                     <a class="nav-item-link nav-expand-link" href="#">
                         <i>
+                            <svg width="20.193" height="17.999">
+                                <use xlink:href="assets/images/sprite.svg#home-i"></use>
+                            </svg>
+                        </i>
+                        <span>
+                           Home
+                        </span>
+                    </a>
+                    <ul class="nav-items nav-expand-content">
+                        <li class="nav-title">Home</li>
+                        <li class="nav-item">
+                            <a class="nav-item-link" href="./">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item-link" href="#">
+                                Test Item 2
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item-link" href="#">
+                                Test Item 3
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-expand">
+                    <a class="nav-item-link nav-expand-link" href="#">
+                        <i>
                             <svg width="17.719" height="15.328">
                                 <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
                             </svg>
@@ -615,254 +645,7 @@
     <script>
         // Datatable settings and initialisation
         $(document).ready(function () {
-            var data = {
-                Columns: [
-                    {
-                        KeyId: 0,
-                        IsExtra: false,
-                        Position: 0,
-                        Name: 'id',
-                        DisplayName: 'Id',
-                        Type: 2
-                    },
-                    {
-                        KeyId: 0,
-                        IsExtra: false,
-                        Position: 1,
-                        Name: 'firstname',
-                        DisplayName: 'First Name',
-                        Type: 1
-                    },
-                    {
-                        KeyId: 0,
-                        IsExtra: false,
-                        Position: 2,
-                        Name: 'lastname',
-                        DisplayName: 'Last Name',
-                        Type: 1
-                    },
-                    {
-                        KeyId: 0,
-                        IsExtra: false,
-                        Position: 3,
-                        Name: 'email',
-                        DisplayName: 'Email',
-                        Type: 1
-                    },
-                    {
-                        KeyId: 2,
-                        IsExtra: true,
-                        Position: 1,
-                        Name: 'Phone',
-                        DisplayName: 'Phone',
-                        Type: 1
-                    },
-                    {
-                        KeyId: 1,
-                        IsExtra: true,
-                        Position: 2,
-                        Name: 'Address',
-                        DisplayName: 'Address',
-                        Type: 1
-                    },
-                    {
-                        KeyId: 3,
-                        IsExtra: true,
-                        Position: 3,
-                        Name: 'Age',
-                        DisplayName: 'Age',
-                        Type: 2
-                    }
-                ],
-                Rows: [
-                    {
-                        Cells: [
-                            {
-                                Position: 0,
-                                Value: '1'
-                            },
-                            {
-                                Position: 1,
-                                Value: 'Name1'
-                            },
-                            {
-                                Position: 2,
-                                Value: 'Last1'
-                            },
-                            {
-                                Position: 3,
-                                Value: 'email1@dir.com'
-                            },
-                            {
-                                Position: 5,
-                                Value: 'Tirana, Albania'
-                            },
-                            {
-                                Position: 4,
-                                Value: '0699320124'
-                            },
-                            {
-                                Position: 6,
-                                Value: '29'
-                            }
-                        ],
-                        MaxPosition: 6
-                    },
-                    {
-                        Cells: [
-                            {
-                                Position: 0,
-                                Value: '3'
-                            },
-                            {
-                                Position: 1,
-                                Value: 'Name2'
-                            },
-                            {
-                                Position: 2,
-                                Value: 'Last2'
-                            },
-                            {
-                                Position: 3,
-                                Value: 'email2@dir.com'
-                            },
-                            {
-                                Position: 5,
-                                Value: 'Rome, Italy'
-                            }
-                        ],
-                        MaxPosition: 5
-                    },
-                    {
-                        Cells: [
-                            {
-                                Position: 0,
-                                Value: '4'
-                            },
-                            {
-                                Position: 1,
-                                Value: 'Name3'
-                            },
-                            {
-                                Position: 2,
-                                Value: 'Last3'
-                            },
-                            {
-                                Position: 3,
-                                Value: 'email3@dir.com'
-                            }
-                        ],
-                        MaxPosition: 3
-                    },
-                    {
-                        Cells: [
-                            {
-                                Position: 0,
-                                Value: '5'
-                            },
-                            {
-                                Position: 1,
-                                Value: 'Name4'
-                            },
-                            {
-                                Position: 2,
-                                Value: 'Last4'
-                            },
-                            {
-                                Position: 3,
-                                Value: 'email4@dir.com'
-                            }
-                        ],
-                        MaxPosition: 3
-                    },
-                    {
-                        Cells: [
-                            {
-                                Position: 0,
-                                Value: '6'
-                            },
-                            {
-                                Position: 1,
-                                Value: 'Name5'
-                            },
-                            {
-                                Position: 2,
-                                Value: 'Last5'
-                            },
-                            {
-                                Position: 3,
-                                Value: 'email5@dir.com'
-                            }
-                        ],
-                        MaxPosition: 3
-                    },
-                    {
-                        Cells: [
-                            {
-                                Position: 0,
-                                Value: '7'
-                            },
-                            {
-                                Position: 1,
-                                Value: 'Name6'
-                            },
-                            {
-                                Position: 2,
-                                Value: 'Last6'
-                            },
-                            {
-                                Position: 3,
-                                Value: 'email6@dir.com'
-                            },
-                            {
-                                Position: 6,
-                                Value: '40'
-                            }
-                        ],
-                        MaxPosition: 6
-                    },
-                    {
-                        Cells: [
-                            {
-                                Position: 0,
-                                Value: '8'
-                            },
-                            {
-                                Position: 1,
-                                Value: 'Name7'
-                            },
-                            {
-                                Position: 2,
-                                Value: 'Last7'
-                            },
-                            {
-                                Position: 3,
-                                Value: 'email7@dir.com'
-                            }
-                        ],
-                        MaxPosition: 3
-                    }
-                ]
-            };
-
-            var collumnTitles = data.Columns.map(collumn => 
-                { return { title: collumn.DisplayName } }
-            );
-
-            var dataTable = data.Rows.map(row => {
-                var draftData = [];
-                data.Columns.forEach((collumn, index) => {
-                       var draftRow = row.Cells.find(cell => cell.Position === index);
-                       draftRow ? draftData.push(draftRow.Value) : draftData.push('')
-                })
-                return draftData;
-            });
-
-            var config = {
-                data: dataTable,
-                columns: collumnTitles
-            }
-            var table = createDataTable('#data-table', config, false, true);
+            const table = createDataTable('#data-table', {}, false, true);
         });
     </script>
 

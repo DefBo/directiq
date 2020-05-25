@@ -40,8 +40,8 @@
                         </div>
 
                         <ol class="breadcrumbs">
-                            <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
-                            <li class="breadcrumb-item active">Add Contacts
+                            <li class="breadcrumb-item"><a href="#">Integrations</a></li>
+                            <li class="breadcrumb-item active">Contact Integrations
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -171,7 +171,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item nav-expand active">
+                    <li class="nav-item nav-expand">
                         <a class="nav-item-link nav-expand-link" href="#">
                             <i>
                                 <svg width="17.719" height="15.328">
@@ -195,7 +195,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item-link active" href="./add-contacts.html">
+                                <a class="nav-item-link" href="./add-contacts.html">
                                     Add Contacts
                                 </a>
                             </li>
@@ -337,7 +337,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item nav-expand">
+                    <li class="nav-item nav-expand active">
                         <a class="nav-item-link nav-expand-link" href="#">
                             <i>
                                 <svg width="17.894" height="24">
@@ -349,43 +349,23 @@
                         <ul class="nav-items nav-expand-content">
                             <li class="nav-title">Integrations</li>
                             <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 1
+                                <a class="nav-item-link active" href="contact-integrations.html">
+                                    Contact Integrations
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 2
+                                    Social Media Integrations
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 3
+                                    Plugins & Apps
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 4
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 5
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 6
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 7
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 8
+                                    API
                                 </a>
                             </li>
                         </ul>
@@ -539,49 +519,36 @@
                         <div class="row">
                             <div class="col-12">
 
+                                <div class="card my-14">
+                                    <h4 class="mt-n4">Auto-Sync Your Contacts</h4>
+                                    <div class="font-12 color-secondary font-weight-medium mt-12">
+                                        Select an integration to connect and change sync settings. <a href="#" class="link">Learn more</a>.
+                                    </div>
+                                </div>
+
                                 <ul class="nav nav-tabs nav-bordered">
                                     <li class="nav-item">
-                                        <a href="#add-contact-upload-list" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                            Upload List
+                                        <a href="#all" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                                            All
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#add-contact-add-one-by-one" data-toggle="tab" aria-expanded="true" class="nav-link">
-                                            Add One by One
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#add-contact-copy-paste" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                            Copy Paste Contacts
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#add-contact-import" data-toggle="tab" aria-expanded="false" class="nav-link active">
-                                            Import From Other Service
+                                        <a href="#connected" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                            Connected
                                         </a>
                                     </li>
                                 </ul>
 
                                 <div class="tab-content">
-                                    <div class="tab-pane" id="add-contact-upload-list"></div>
-
-                                    <div class="tab-pane" id="add-contact-add-one-by-one"></div>
-
-                                    <div class="tab-pane" id="add-contact-copy-paste"></div>
-
-                                    <div class="tab-pane show active" id="add-contact-import">
+                                    <div class="tab-pane show active" id="all">
 
                                         <div class="upload-list__step">
-                                            <div class="card mb-0">
-                                                <h4>Import Contacts From Other Services</h4>
-                                                <div class="font-12 color-secondary font-weight-medium mt-12">
-                                                    Select an integration below to import your contacts with just a few clicks. <a href="#" class="link">Learn more on integrations</a>.
-                                                </div>
-                                            </div>
-
-                                            <div class="card p-25 mb-0 bg-light-grey">
+                                            <div class="card p-40 mb-0 bg-light-grey">
 
                                                 <div class="integrations__wrap">
+
+                                                    <h4 class="mt-n2 mb-15">Ecommerce Integrations</h4>
+
                                                     <a href="#" class="integrations__item _synched">
                                                         <span class="integrations__item-inner">
                                                             <span class="integrations__icon-wrap">
@@ -659,6 +626,8 @@
                                                             </span>
                                                         </span>
                                                     </a>
+
+                                                    <h4 class="mt-18 mb-15">CRM Integrations</h4>
 
                                                     <a href="#" class="integrations__item">
                                                         <span class="integrations__item-inner">
@@ -790,20 +759,7 @@
                                                         </span>
                                                     </a>
 
-                                                    <a href="#" class="integrations__item">
-                                                        <span class="integrations__item-inner">
-                                                            <span class="integrations__icon-wrap">
-                                                                <i class="integrations__icon">
-                                                                    <svg width="20" height="11.815">
-                                                                        <use xlink:href="assets/images/sprite.svg#yahoo"></use>
-                                                                    </svg>
-                                                                </i>
-                                                            </span>
-                                                            <span class="integrations__body">
-                                                                <span class="integrations__name">Yahoo</span>
-                                                            </span>
-                                                        </span>
-                                                    </a>
+                                                    <h4 class="mt-18 mb-15">Webmail Integrations</h4>
 
                                                     <a href="#" class="integrations__item">
                                                         <span class="integrations__item-inner">
@@ -883,6 +839,8 @@
                                                         </span>
                                                     </a>
 
+                                                    <h4 class="mt-18 mb-15">ESP Integrations</h4>
+
                                                     <a href="#" class="integrations__item">
                                                         <span class="integrations__item-inner">
                                                             <span class="integrations__icon-wrap">
@@ -894,6 +852,116 @@
                                                             </span>
                                                             <span class="integrations__body">
                                                                 <span class="integrations__name">Icon Missing</span>
+                                                                <i class="integrations__status">
+                                                                    <svg class="integrations__synch-i" width="23.25" height="13.41">
+                                                                        <use xlink:href="assets/images/sprite.svg#synched"></use>
+                                                                    </svg>
+                                                                    <svg class="integrations__connect-i" width="17.59" height="13.41">
+                                                                        <use xlink:href="assets/images/sprite.svg#connected"></use>
+                                                                    </svg>
+                                                                    <svg class="integrations__off-i" width="17.88" height="13.41">
+                                                                        <use xlink:href="assets/images/sprite.svg#off"></use>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+
+                                                    <a href="#" class="integrations__item">
+                                                        <span class="integrations__item-inner">
+                                                            <span class="integrations__icon-wrap">
+                                                                <i class="integrations__icon">
+                                                                    <svg width="20" height="11.815">
+                                                                        <use xlink:href="assets/images/sprite.svg#yahoo"></use>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                            <span class="integrations__body">
+                                                                <span class="integrations__name">Yahoo</span>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="tab-pane" id="connected">
+
+                                        <div class="upload-list__step">
+                                            <div class="card p-40 mb-0 bg-light-grey">
+
+                                                <div class="integrations__wrap">
+
+                                                    <h4 class="mt-n2 mb-15">Ecommerce Integrations</h4>
+
+                                                    <a href="#" class="integrations__item _synched">
+                                                        <span class="integrations__item-inner">
+                                                            <span class="integrations__icon-wrap">
+                                                                <i class="integrations__icon">
+                                                                    <svg width="17.587" height="20">
+                                                                        <use xlink:href="assets/images/sprite.svg#shopify"></use>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                            <span class="integrations__body">
+                                                                <span class="integrations__name">Shopify</span>
+                                                                <i class="integrations__status">
+                                                                    <svg class="integrations__synch-i" width="23.25" height="13.41">
+                                                                        <use xlink:href="assets/images/sprite.svg#synched"></use>
+                                                                    </svg>
+                                                                    <svg class="integrations__connect-i" width="17.59" height="13.41">
+                                                                        <use xlink:href="assets/images/sprite.svg#connected"></use>
+                                                                    </svg>
+                                                                    <svg class="integrations__off-i" width="17.88" height="13.41">
+                                                                        <use xlink:href="assets/images/sprite.svg#off"></use>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+
+                                                    <h4 class="mt-18 mb-15">CRM Integrations</h4>
+
+                                                    <a href="#" class="integrations__item _connected">
+                                                        <span class="integrations__item-inner">
+                                                            <span class="integrations__icon-wrap">
+                                                                <i class="integrations__icon">
+                                                                    <svg width="19.601" height="20">
+                                                                        <use xlink:href="assets/images/sprite.svg#gmail"></use>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                            <span class="integrations__body">
+                                                                <span class="integrations__name">Gmail</span>
+                                                                <i class="integrations__status">
+                                                                    <svg class="integrations__synch-i" width="23.25" height="13.41">
+                                                                        <use xlink:href="assets/images/sprite.svg#synched"></use>
+                                                                    </svg>
+                                                                    <svg class="integrations__connect-i" width="17.59" height="13.41">
+                                                                        <use xlink:href="assets/images/sprite.svg#connected"></use>
+                                                                    </svg>
+                                                                    <svg class="integrations__off-i" width="17.88" height="13.41">
+                                                                        <use xlink:href="assets/images/sprite.svg#off"></use>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+
+                                                    <a href="#" class="integrations__item _connected">
+                                                        <span class="integrations__item-inner">
+                                                            <span class="integrations__icon-wrap">
+                                                                <i class="integrations__icon">
+                                                                    <svg width="19.636" height="20">
+                                                                        <use xlink:href="assets/images/sprite.svg#insightly"></use>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                            <span class="integrations__body">
+                                                                <span class="integrations__name">Insightly</span>
                                                                 <i class="integrations__status">
                                                                     <svg class="integrations__synch-i" width="23.25" height="13.41">
                                                                         <use xlink:href="assets/images/sprite.svg#synched"></use>

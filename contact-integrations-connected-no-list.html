@@ -40,8 +40,8 @@
                         </div>
 
                         <ol class="breadcrumbs">
-                            <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
-                            <li class="breadcrumb-item active">Add Contacts
+                            <li class="breadcrumb-item"><a href="./contacts-home-static.html">Integrations</a></li>
+                            <li class="breadcrumb-item active">Contact Integrations
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -171,7 +171,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item nav-expand active">
+                    <li class="nav-item nav-expand">
                         <a class="nav-item-link nav-expand-link" href="#">
                             <i>
                                 <svg width="17.719" height="15.328">
@@ -195,7 +195,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item-link active" href="./add-contacts.html">
+                                <a class="nav-item-link" href="./add-contacts.html">
                                     Add Contacts
                                 </a>
                             </li>
@@ -337,7 +337,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item nav-expand">
+                    <li class="nav-item nav-expand active">
                         <a class="nav-item-link nav-expand-link" href="#">
                             <i>
                                 <svg width="17.894" height="24">
@@ -349,43 +349,23 @@
                         <ul class="nav-items nav-expand-content">
                             <li class="nav-title">Integrations</li>
                             <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 1
+                                <a class="nav-item-link active" href="contact-integrations.html">
+                                    Contact Integrations
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 2
+                                    Social Media Integrations
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 3
+                                    Plugins & Apps
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 4
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 5
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 6
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 7
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 8
+                                    API
                                 </a>
                             </li>
                         </ul>
@@ -539,105 +519,88 @@
                         <div class="row">
                             <div class="col-12">
 
-                                <ul class="nav nav-tabs nav-bordered">
-                                    <li class="nav-item">
-                                        <a href="#add-contact-upload-list" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                            Upload List
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#add-contact-add-one-by-one" data-toggle="tab" aria-expanded="true" class="nav-link">
-                                            Add One by One
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#add-contact-copy-paste" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                            Copy Paste Contacts
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#add-contact-import" data-toggle="tab" aria-expanded="false" class="nav-link active">
-                                            Import From Other Service
-                                        </a>
-                                    </li>
-                                </ul>
+                                <div class="card _connect mt-16">
+                                    <div class="connect__icon-wrap">
+                                        <i class="connect__icon">
+                                            <svg>
+                                                <use xlink:href="assets/images/sprite.svg#shopify"></use>
+                                            </svg>
+                                        </i>
+                                    </div>
 
-                                <div class="tab-content">
-                                    <div class="tab-pane" id="add-contact-upload-list"></div>
-
-                                    <div class="tab-pane" id="add-contact-add-one-by-one"></div>
-
-                                    <div class="tab-pane" id="add-contact-copy-paste"></div>
-
-                                    <div class="tab-pane show active" id="add-contact-import">
-
-                                        <div class="card _connect">
-                                            <div class="connect__icon-wrap">
-                                                <i class="connect__icon">
-                                                    <svg>
-                                                        <use xlink:href="assets/images/sprite.svg#dropbox"></use>
-                                                    </svg>
-                                                </i>
-                                            </div>
-
-                                            <div class="connect__content">
-                                                <div class="connect__title-wrap">
-                                                    <h4>Dropbox Integration</h4>
-                                                    <span class="table-status _small _danger ml-20">not connected</span>
-                                                </div>
-                                                <button class="btn _xl _primary _round ml-20">Connect Dropbox</button>
-                                            </div>
+                                    <div class="connect__content">
+                                        <div class="connect__title-wrap">
+                                            <h4>Shopify Integration</h4>
+                                            <span class="table-status _small _success ml-20">connected</span>
                                         </div>
+                                        <div class="dropdown mt-10 mt-md-0 mr-md-8">
+                                            <a class="dropdown-toggle _solid _lg" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                                Actions
+                                                <svg width="13.545" height="8">
+                                                    <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
+                                                </svg>
+                                            </a>
 
-                                        <div class="connect__cards-wrap">
-                                            <div class="card connect__cards-main">
-                                                <i class="mb-19">
-                                                    <svg width="87.062" height="75">
-                                                        <use xlink:href="assets/images/sprite.svg#cat-laptop"></use>
-                                                    </svg>
-                                                </i>
-                                                <h5 class="mb-10">Let's Connect DirectIQ To Your Dropbox Account</h5>
-                                                <p class="font-12 color-secondary font-weight-medium mb-24">
-                                                    In order to start syncing your contacts and import them here, lets first authorize and connect your Dropbox account with DirectIQ. Clicking the <span class="font-weight-bold color-primary">Connect Button</span> will open a separate window.
-                                                </p>
-                                                <div class="d-flex align-items-center mb-30">
-                                                    <input type="text" placeholder="Store Name" class="form-control connect__store-name">
-                                                    <span class="ml-10 font-12 font-weight-bold">.myshopify.com</span>
-                                                </div>
-                                                <button class="btn _lg _secondary">Connect Dropbox</button>
-                                            </div>
-
-                                            <div class="connect__cards-aside">
-                                                <div class="card connect__card-aside">
-                                                    <i class="mb-22">
-                                                        <svg width="102.381" height="50">
-                                                            <use xlink:href="assets/images/sprite.svg#cat-two"></use>
-                                                        </svg>
-                                                    </i>
-                                                    <h5 class="mb-5">Yay! We Have a Shopify App!</h5>
-                                                    <p class="font-12 color-secondary font-weight-medium mb-15">
-                                                        Install our official app on Shopify App Store to get flexibility and to do more.
-                                                    </p>
-                                                    <button class="btn _sm _secondary">Go To Shopify App Store</button>
-                                                </div>
-
-                                                <div class="card connect__card-aside">
-                                                    <i class="mb-22">
-                                                        <svg width="38.917" height="50">
-                                                            <use xlink:href="assets/images/sprite.svg#cat-light"></use>
-                                                        </svg>
-                                                    </i>
-                                                    <h5 class="mb-5">Want a Native Shopify App?</h5>
-                                                    <p class="font-12 color-secondary font-weight-medium mb-15">
-                                                        Talk to us. Would you rather use a native Shopify App by DirectIQ?
-                                                    </p>
-                                                    <button class="btn _sm _secondary">Request a Feature</button>
+                                            <div class="dropdown-menu _actions">
+                                                <div class="dropdown-menu-inner">
+                                                    <a class="dropdown-item" href="#">Reinvoke Access</a>
+                                                    <a class="dropdown-item" href="#">Remap Columns</a>
+                                                    <a class="dropdown-item" href="#">Disconnect</a>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
+
+                                <div class="connect__cards-wrap">
+                                    <div class="card connect__cards-main">
+                                        <i class="mb-19">
+                                            <svg width="74.825" height="75">
+                                                <use xlink:href="assets/images/sprite.svg#cat-coffee"></use>
+                                            </svg>
+                                        </i>
+
+                                        <h5 class="mb-20 mt-2">First, You Need to Create a Contact List To Import Your Contacts From Shopify</h5>
+
+                                        <button class="btn _sm _secondary _add-new-list">Create Your First List</button>
+                                        <div class="add-new-list-input d-none w-100">
+                                            <div class="d-flex align-items-center">
+                                                <div class="form-control__wrap mr-15 flex-grow-1">
+                                                    <input type="text" placeholder="E-mail Address" class="form-control">
+                                                    <span class="text-danger field-validation-error"><span class="">Your List Name Here</span></span>
+                                                </div>
+
+                                                <button class="btn _sm _primary _check">
+                                                    <svg width="11.805" height="9">
+                                                        <use xlink:href="assets/images/sprite.svg#check"></use>
+                                                    </svg>
+                                                </button>
+
+                                                <button class="btn _sm _secondary _check">
+                                                    <svg width="8" height="8">
+                                                        <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="connect__cards-aside">
+                                        <div class="card connect__card-aside">
+                                            <i class="mb-22">
+                                                <svg width="38.917" height="50">
+                                                    <use xlink:href="assets/images/sprite.svg#cat-light"></use>
+                                                </svg>
+                                            </i>
+                                            <h5 class="mb-5">Want a Native Shopify App?</h5>
+                                            <p class="font-12 color-secondary font-weight-medium mb-15">
+                                                Talk to us. Would you rather use a native Shopify App by DirectIQ?
+                                            </p>
+                                            <button class="btn _sm _secondary">Request a Feature</button>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div> <!-- container -->
@@ -659,6 +622,27 @@
 
         <!-- App js -->
         <script src="assets/js/vendor.min.js"></script>
+
+        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+        <script>
+            // Datatables settings
+            $(document).ready(function() {
+                $('#data-table').DataTable({
+                    scrollX:        true,
+                    scrollY:        127,
+                    scrollCollapse: true,
+                    paging:         false,
+                    order: [],
+                    aoColumnDefs: [{
+                        bSortable: false,
+                        aTargets: ['nosort']
+                    }],
+                    sDom: 't',
+                });
+            });
+        </script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
