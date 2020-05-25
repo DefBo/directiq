@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta charset="utf-8" />
-        <title>All Pages | DirectIQ</title>
+        <title>Add Contacts | DirectIQ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -16,11 +15,9 @@
         <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#0000ff">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
-
-        <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
-
+	    <!-- App css -->
+	    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+	    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
     </head>
 
     <body data-layout-mode="two-column" class="animation-stopper">
@@ -43,7 +40,8 @@
                         </div>
 
                         <ol class="breadcrumbs">
-                            <li class="breadcrumb-item active">Home
+                            <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
+                            <li class="breadcrumb-item active">Add Contacts
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -128,7 +126,6 @@
             <!-- end Topbar -->
 
             <!-- ========== Left Sidebar Start ========== -->
-
             <button class="hamburger hamburger--squeeze" id="ham" type="button">
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
@@ -168,7 +165,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item-link" href="./add-contacts.html">
+                                <a class="nav-item-link active" href="./add-contacts.html">
                                     Add Contacts
                                 </a>
                             </li>
@@ -497,7 +494,6 @@
                     </button>
                 </div>
             </nav>
-
             <!-- Left Sidebar End -->
 
             <!-- ============================================================== -->
@@ -509,51 +505,270 @@
 
                     <!-- Start Content-->
                     <div class="container-fluid">
-                        <div class="card mb-0 mt-15">
 
-                            <h3 class="mb-16">Pages</h3>
+                        <div class="row">
+                            <div class="col-12">
 
-                            <p class="sub-header">
-                                All pages that are implemented or currently in progress.
-                            </p>
+                                <ul class="nav nav-tabs nav-bordered">
+                                    <li class="nav-item">
+                                        <a href="#add-contact-upload-list" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Upload List
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#add-contact-add-one-by-one" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                            Add One by One
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#add-contact-copy-paste" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Copy Paste Contacts
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#add-contact-import" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                                            Import From Other Service
+                                        </a>
+                                    </li>
+                                </ul>
 
-                            <h4 class="mb-16"><a class="link" href="my-lists-static.html">My Lists</a> (static)</h4>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="add-contact-upload-list"></div>
 
-                            <h4 class="mb-16"><a class="link" href="my-lists-ep.html">My Lists</a> (endpoint integrated)</h4>
+                                    <div class="tab-pane" id="add-contact-add-one-by-one"></div>
 
-                            <h4 class="mb-16"><a class="link" href="list-details-static.html">List Details</a> (static)</h4>
+                                    <div class="tab-pane" id="add-contact-copy-paste"></div>
 
-                            <h4 class="mb-16"><a class="link" href="list-details-ep.html">List Details</a> (endpoint integrated)</h4>
+                                    <div class="tab-pane show active" id="add-contact-import">
 
-                            <h4 class="mb-16"><a class="link" href="contacts-home-static.html">Contacts Home</a></h4>
+                                        <div class="card _connect">
+                                            <div class="connect__icon-wrap">
+                                                <i class="connect__icon">
+                                                    <svg>
+                                                        <use xlink:href="assets/images/sprite.svg#shopify"></use>
+                                                    </svg>
+                                                </i>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="contact-details.html">Contact Details</a></h4>
+                                            <div class="connect__content">
+                                                <div class="connect__title-wrap">
+                                                    <h4>Shopify Integration</h4>
+                                                    <span class="table-status _small _success ml-20">connected</span>
+                                                </div>
+                                                <div class="dropdown mt-10 mt-md-0 mr-md-8">
+                                                    <a class="dropdown-toggle _solid _lg" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                                        Actions
+                                                        <svg width="13.545" height="8">
+                                                            <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
+                                                        </svg>
+                                                    </a>
 
-                            <h4 class="mb-16"><a class="link" href="add-contacts.html">Add Contacts</a></h4>
+                                                    <div class="dropdown-menu _actions">
+                                                        <div class="dropdown-menu-inner">
+                                                            <a class="dropdown-item" href="#">Reinvoke Access</a>
+                                                            <a class="dropdown-item" href="#">Remap Columns</a>
+                                                            <a class="dropdown-item" href="#">Disconnect</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                            <h4 class="mb-16"><a class="link" href="form-validation-examples.html">Form Validation Example</a></h4>
+                                        <div class="connect__cards-wrap">
+                                            <div class="card connect__cards-main">
+                                                <h5 class="mb-20">First, You Need to Create a Contact List To Import Your Contacts From Shopify</h5>
+                                                <button class="btn _sm _secondary mb-20">Add a New List</button>
+                                                <div class="d-flex align-items-center w-100 pr-20 mb-20">
+                                                    <div class="form-control__wrap mr-15 flex-grow-1">
+                                                        <input type="text" placeholder="E-mail Address" class="form-control">
+                                                        <span class="text-danger field-validation-error"><span class="">Your List Name Here</span></span>
+                                                    </div>
 
-                            <h4 class="mb-16"><a class="link" href="save-list-new-user.html">Save List</a> (new user)</h4>
+                                                    <button class="btn _sm _primary _check">
+                                                        <svg width="11.805" height="9">
+                                                            <use xlink:href="assets/images/sprite.svg#check"></use>
+                                                        </svg>
+                                                    </button>
 
-                            <h4 class="mb-16"><a class="link" href="save-list-few-lists.html">Save List</a> (select from few lists)</h4>
+                                                    <button class="btn _sm _secondary _check">
+                                                        <svg width="8" height="8">
+                                                            <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
 
-                            <h4 class="mb-16"><a class="link" href="save-list-many-lists.html">Save List</a> (select from many lists)</h4>
+                                                <table id="data-table" class="datatable datatable_small _contact-details-lists" style="width:100%">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="nosort checkbox-col"></th>
+                                                        <th>List Name</th>
+                                                        <th>Last Modified</th>
+                                                        <th>List Size</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            My First List
+                                                        </td>
+                                                        <td>
+                                                            Mar 31, 2020
+                                                        </td>
+                                                        <td>
+                                                            12,1511
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            Dodogildo Subscribers
+                                                        </td>
+                                                        <td>
+                                                            Jun 7, 2020
+                                                        </td>
+                                                        <td>
+                                                            234
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            Jonathan Bagel list
+                                                        </td>
+                                                        <td>
+                                                            Sep 29, 2019
+                                                        </td>
+                                                        <td>
+                                                            880
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            Filtered contacts by name
+                                                        </td>
+                                                        <td>
+                                                            Dec 4, 2019
+                                                        </td>
+                                                        <td>
+                                                            14,914
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            My First List
+                                                        </td>
+                                                        <td>
+                                                            Mar 31, 2020
+                                                        </td>
+                                                        <td>
+                                                            12,1511
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            Dodogildo Subscribers
+                                                        </td>
+                                                        <td>
+                                                            Jun 7, 2020
+                                                        </td>
+                                                        <td>
+                                                            234
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            Jonathan Bagel list
+                                                        </td>
+                                                        <td>
+                                                            Sep 29, 2019
+                                                        </td>
+                                                        <td>
+                                                            880
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            Filtered contacts by name
+                                                        </td>
+                                                        <td>
+                                                            Dec 4, 2019
+                                                        </td>
+                                                        <td>
+                                                            14,914
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="confirm-modals.html">Confirmation Modals</a></h4>
+                                            <div class="connect__cards-aside">
+                                                <div class="card connect__card-aside">
+                                                    <i class="mb-22">
+                                                        <svg width="102.381" height="50">
+                                                            <use xlink:href="assets/images/sprite.svg#cat-two"></use>
+                                                        </svg>
+                                                    </i>
+                                                    <h5 class="mb-5">Yay! We Have a Shopify App!</h5>
+                                                    <p class="font-12 color-secondary font-weight-medium mb-15">
+                                                        Install our official app on Shopify App Store to get flexibility and to do more.
+                                                    </p>
+                                                    <button class="btn _sm _secondary">Go To Shopify App Store</button>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                            <h4 class="mb-16"><a class="link" href="import-from-other-service.html">Add Contacts</a> (import from other service)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="connect-service-not-connected.html">Connect Service</a> (not connected)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="connect-service-connected.html">Connect Service</a> (connected)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="toggle-columns.html">Toggle Columns Modal</a></h4>
-
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div> <!-- container -->
-
                 </div> <!-- content -->
-
             </div>
 
             <!-- ============================================================== -->
@@ -567,14 +782,34 @@
             </a>
 
         </div>
-
         <!-- END wrapper -->
 
-        <!-- Vendor js -->
+        <!-- App js -->
         <script src="assets/js/vendor.min.js"></script>
+
+        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+        <script>
+            // Datatables settings
+            $(document).ready(function() {
+                $('#data-table').DataTable({
+                    scrollX:        true,
+                    scrollY:        127,
+                    scrollCollapse: true,
+                    paging:         false,
+                    order: [],
+                    aoColumnDefs: [{
+                        bSortable: false,
+                        aTargets: ['nosort']
+                    }],
+                    sDom: 't',
+                });
+            });
+        </script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-        
+
     </body>
 </html>

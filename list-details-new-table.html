@@ -521,12 +521,66 @@
                     <div class="row">
                         <div class="col-12">
 
-                            <table class="diriq-table" id="new-table">
-                                <thead>
-                                    <tr></tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+
+                            <div class="tab-content">
+                                <div class="tab-pane show active" id="home-b1">
+
+                                    <div class="diriq-table__wrapper _list-name-table">
+
+                                        <table id="data-table" class="diriq-table" style="width:100%">
+                                        </table>
+
+                                        <!-- Table loader -->
+                                        <div class="lds-ellipsis__wrap">
+                                            <div class="lds-ellipsis">
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="diriq-table__filter-btn">
+                                            <i class="diriq-table__filter-icon">
+                                                <svg width="20.187" height="22">
+                                                    <use xlink:href="assets/images/sprite.svg#filter"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="diriq-table__close-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                                                    <g transform="translate(0.5 0.5)">
+                                                        <rect width="24" height="24" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
+                                                        <path class="diriq-table__close-icon-cross" d="M9489.239,1605.581l-.806-.806-3.194,3.194-3.194-3.194-.806.806,3.194,3.194-3.194,3.194.806.806,3.194-3.194,3.194,3.194.806-.806-3.194-3.194Z" transform="translate(-9473.239 -1596.775)" fill="currentColor"/>
+                                                    </g>
+                                                </svg>
+                                            </i>
+                                        </div>
+
+                                        <div class="dropdown _more">
+                                            <a class="dropdown-toggle _more" data-toggle="dropdown" href="#"
+                                                role="button" aria-haspopup="false" aria-expanded="false">
+                                                <svg width="5.8" height="25">
+                                                    <use xlink:href="assets/images/sprite.svg#more-dots"></use>
+                                                </svg>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right _actions"
+                                                aria-labelledby="moreMenuButton">
+                                                <div class="dropdown-menu-inner">
+                                                    <a class="dropdown-item" href="#">Action Item 1</a>
+                                                    <a class="dropdown-item" href="#">Action Item 2</a>
+                                                    <a class="dropdown-item" href="#">Action Item 3</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-pane" id="profile-b1"></div>
+                                <div class="tab-pane" id="messages-b1"></div>
+                            </div>
 
                         </div>
                     </div>
@@ -557,6 +611,261 @@
     <script src="assets/libs/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
 
     <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <script>
+        // Datatable settings and initialisation
+        $(document).ready(function () {
+            var data = {
+                Columns: [
+                    {
+                        KeyId: 0,
+                        IsExtra: false,
+                        Position: 0,
+                        Name: 'id',
+                        DisplayName: 'Id',
+                        Type: 2
+                    },
+                    {
+                        KeyId: 0,
+                        IsExtra: false,
+                        Position: 1,
+                        Name: 'firstname',
+                        DisplayName: 'First Name',
+                        Type: 1
+                    },
+                    {
+                        KeyId: 0,
+                        IsExtra: false,
+                        Position: 2,
+                        Name: 'lastname',
+                        DisplayName: 'Last Name',
+                        Type: 1
+                    },
+                    {
+                        KeyId: 0,
+                        IsExtra: false,
+                        Position: 3,
+                        Name: 'email',
+                        DisplayName: 'Email',
+                        Type: 1
+                    },
+                    {
+                        KeyId: 2,
+                        IsExtra: true,
+                        Position: 1,
+                        Name: 'Phone',
+                        DisplayName: 'Phone',
+                        Type: 1
+                    },
+                    {
+                        KeyId: 1,
+                        IsExtra: true,
+                        Position: 2,
+                        Name: 'Address',
+                        DisplayName: 'Address',
+                        Type: 1
+                    },
+                    {
+                        KeyId: 3,
+                        IsExtra: true,
+                        Position: 3,
+                        Name: 'Age',
+                        DisplayName: 'Age',
+                        Type: 2
+                    }
+                ],
+                Rows: [
+                    {
+                        Cells: [
+                            {
+                                Position: 0,
+                                Value: '1'
+                            },
+                            {
+                                Position: 1,
+                                Value: 'Name1'
+                            },
+                            {
+                                Position: 2,
+                                Value: 'Last1'
+                            },
+                            {
+                                Position: 3,
+                                Value: 'email1@dir.com'
+                            },
+                            {
+                                Position: 5,
+                                Value: 'Tirana, Albania'
+                            },
+                            {
+                                Position: 4,
+                                Value: '0699320124'
+                            },
+                            {
+                                Position: 6,
+                                Value: '29'
+                            }
+                        ],
+                        MaxPosition: 6
+                    },
+                    {
+                        Cells: [
+                            {
+                                Position: 0,
+                                Value: '3'
+                            },
+                            {
+                                Position: 1,
+                                Value: 'Name2'
+                            },
+                            {
+                                Position: 2,
+                                Value: 'Last2'
+                            },
+                            {
+                                Position: 3,
+                                Value: 'email2@dir.com'
+                            },
+                            {
+                                Position: 5,
+                                Value: 'Rome, Italy'
+                            }
+                        ],
+                        MaxPosition: 5
+                    },
+                    {
+                        Cells: [
+                            {
+                                Position: 0,
+                                Value: '4'
+                            },
+                            {
+                                Position: 1,
+                                Value: 'Name3'
+                            },
+                            {
+                                Position: 2,
+                                Value: 'Last3'
+                            },
+                            {
+                                Position: 3,
+                                Value: 'email3@dir.com'
+                            }
+                        ],
+                        MaxPosition: 3
+                    },
+                    {
+                        Cells: [
+                            {
+                                Position: 0,
+                                Value: '5'
+                            },
+                            {
+                                Position: 1,
+                                Value: 'Name4'
+                            },
+                            {
+                                Position: 2,
+                                Value: 'Last4'
+                            },
+                            {
+                                Position: 3,
+                                Value: 'email4@dir.com'
+                            }
+                        ],
+                        MaxPosition: 3
+                    },
+                    {
+                        Cells: [
+                            {
+                                Position: 0,
+                                Value: '6'
+                            },
+                            {
+                                Position: 1,
+                                Value: 'Name5'
+                            },
+                            {
+                                Position: 2,
+                                Value: 'Last5'
+                            },
+                            {
+                                Position: 3,
+                                Value: 'email5@dir.com'
+                            }
+                        ],
+                        MaxPosition: 3
+                    },
+                    {
+                        Cells: [
+                            {
+                                Position: 0,
+                                Value: '7'
+                            },
+                            {
+                                Position: 1,
+                                Value: 'Name6'
+                            },
+                            {
+                                Position: 2,
+                                Value: 'Last6'
+                            },
+                            {
+                                Position: 3,
+                                Value: 'email6@dir.com'
+                            },
+                            {
+                                Position: 6,
+                                Value: '40'
+                            }
+                        ],
+                        MaxPosition: 6
+                    },
+                    {
+                        Cells: [
+                            {
+                                Position: 0,
+                                Value: '8'
+                            },
+                            {
+                                Position: 1,
+                                Value: 'Name7'
+                            },
+                            {
+                                Position: 2,
+                                Value: 'Last7'
+                            },
+                            {
+                                Position: 3,
+                                Value: 'email7@dir.com'
+                            }
+                        ],
+                        MaxPosition: 3
+                    }
+                ]
+            };
+
+            var collumnTitles = data.Columns.map(collumn => 
+                { return { title: collumn.DisplayName } }
+            );
+
+            var dataTable = data.Rows.map(row => {
+                var draftData = [];
+                data.Columns.forEach((collumn, index) => {
+                       var draftRow = row.Cells.find(cell => cell.Position === index);
+                       draftRow ? draftData.push(draftRow.Value) : draftData.push('')
+                })
+                return draftData;
+            });
+
+            var config = {
+                data: dataTable,
+                columns: collumnTitles
+            }
+            var table = createDataTable('#data-table', config, false, true);
+        });
+    </script>
+
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>

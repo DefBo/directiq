@@ -6057,6 +6057,11 @@ body.nav-is-toggled:after {
     color: #fff; }
   .btn._round {
     border-radius: 30px; }
+  .btn._check {
+    padding: 0;
+    width: 25px; }
+    .btn._check + .btn._check {
+      margin-left: 10px; }
 
 .link {
   color: #212B35;
@@ -7273,6 +7278,9 @@ body.nav-is-toggled:after {
 
 .confirm__wrap {
   position: relative; }
+  @media (max-width: 767.98px) {
+    .confirm__wrap {
+      position: static; } }
 
 .confirm__modal {
   position: absolute;
@@ -7291,6 +7299,16 @@ body.nav-is-toggled:after {
     left: 0;
     background: rgba(218, 232, 247, 0.7);
     z-index: -1; }
+  @media (max-width: 767.98px) {
+    .confirm__modal {
+      top: auto;
+      bottom: 20px;
+      right: 0;
+      left: 0;
+      margin: auto; } }
+  @media (max-width: 320px) {
+    .confirm__modal {
+      width: 270px; } }
 
 .confirm__content {
   padding: 19px 20px 14px;
@@ -7436,6 +7454,12 @@ body.nav-is-toggled:after {
         line-height: 34px;
         font-weight: 500;
         margin-top: 16px; } }
+  .connect__content .dropdown-menu._actions {
+    min-width: 144px;
+    margin-top: 5px; }
+    .connect__content .dropdown-menu._actions .dropdown-item {
+      padding: 6px 26px;
+      text-align: left; }
 
 .connect__title-wrap {
   flex: 1;
@@ -7506,6 +7530,9 @@ body.nav-is-toggled:after {
       height: 20px; }
     .toggle-column__item .dragula-handle svg {
       display: block; }
+
+.dragula-handle {
+  cursor: url("../images/drag.png"), auto !important; }
 
 th, td {
   white-space: nowrap !important; }
