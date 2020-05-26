@@ -1168,14 +1168,6 @@ $(document).ready(function() {
 
 	if ($('#paste-excel-textarea').length > 0) {
 		TLN.append_line_numbers('paste-excel-textarea');
-
-		$(this).keyup(function() {
-			if ($('#paste-excel-textarea').val()) {
-				$('#paste-excel-textarea-next-step').removeClass('d-none');
-			} else {
-				$('#paste-excel-textarea-next-step').addClass('d-none');
-			}
-		});
 	}
 
     if ($('#data-table').length > 0) {

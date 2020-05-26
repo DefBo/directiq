@@ -6685,9 +6685,15 @@ body.nav-is-toggled:after {
     border: 1px solid #00f;
     overflow: visible !important;
     box-shadow: 3px 3px 0 0 blue; }
+    .upload-list__match-wrap .bootstrap-select > .dropdown-menu {
+      transform: translate3d(0px, 0px, 0px) !important;
+      overflow: auto !important;
+      max-height: 165px !important; }
     .bootstrap-select > .dropdown-menu > .inner {
       position: relative;
       z-index: 1; }
+      .upload-list__match-wrap .bootstrap-select > .dropdown-menu > .inner {
+        overflow: visible !important; }
       .bootstrap-select > .dropdown-menu > .inner > .dropdown-menu {
         padding: 14px 0 10px;
         animation: none !important; }
