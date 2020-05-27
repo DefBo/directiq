@@ -648,6 +648,29 @@ Contact: support@coderthemes.com
 File: Main Js File
 */
 
+function debounce(f, ms = 500) {
+	let isCooldown = false;
+
+	return function() {
+		if (isCooldown) return;
+
+		f.apply(this, arguments);
+
+		isCooldown = true;
+
+		setTimeout(() => (isCooldown = false), ms);
+	};
+}
+
+const DEFAULT_SELECT_OPTIONS = {
+	quality: [ 1, 2, 3, 4, 5 ],
+	status: [ 'active', 'passive' ]
+};
+
+const DEFAULT_SELECT2_OPTIONS = {
+	tags: [ 'tag1', 'tag2', 'tag3' ]
+};
+
 const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 
 const CORS_HEADER = {
@@ -691,9 +714,8 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 		const response = await fetch(url, options);
 		return response.json();
 	};
-
-	const getTableData = (data) =>
-		data.rows.map((row) => {
+	const getTableData = (data) => {
+		return data.rows.map((row) => {
 			var draftData = [];
 			data.columns.forEach((collumn, index) => {
 				var draftRow = row.cells.find((cell) => cell.position === index);
@@ -701,33 +723,125 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 			});
 			return draftData;
 		});
+	};
 
 	const getSearchParams = () => {
 		const params = { ...defaultSearchParams, ...globalSearchParams };
-		return Object.keys(params).map((keys) => `${keys}=${params[keys]}`).join('&');
+		return Object.keys(params)
+			.map((keys) => `${keys}=${typeof params[keys] === 'object' ? '[' + params[keys] + ']' : params[keys]}`)
+			.join('&');
 	};
 
 	const getCollumnTitles = (data) =>
 		data.columns.map((collumn) => {
+			if (collumn.name === 'quality')
+				return {
+					title: collumn.displayName,
+					render: function(data, type, row, meta) {
+						let renderElements = '<div class="quality__wrapper">';
+						DEFAULT_SELECT_OPTIONS[collumn.name].forEach((item) => {
+							renderElements += `<span class="${data >= item ? 'active ' : ''}quality__item"></span>`;
+						});
+						renderElements += '</div>';
+						return renderElements;
+					}
+				};
 			return { title: collumn.displayName };
 		});
 
-	const filterTable = async (element, table, isDynamicTable) => {
-		const value = element.value.length > 2 ? element.value : '';
+	const setCurrentPagination = ({ pageSize, pageNumber, totalCount }) => {
+		const data = {
+			text: `${pageSize * pageNumber - pageSize + 1} - ${totalCount < pageSize * pageNumber
+				? totalCount
+				: pageSize * pageNumber} of ${totalCount}`,
+			next: totalCount > pageSize * pageNumber,
+			prev: pageNumber !== 1
+		};
 
-		if (!isDynamicTable) {
-			table.column($(element).data('index')).search(value).draw();
-			return;
+		const paginationString = tableWrapper.querySelector('#data-table_info');
+		const paginationWrapper = paginationString.parentNode;
+		const clonePaginationWrapper = paginationWrapper.cloneNode(true);
+		paginationWrapper.parentNode.appendChild(clonePaginationWrapper);
+		paginationWrapper.remove();
+
+		tableWrapper.querySelector('#data-table_info').innerHTML = data.text;
+
+		const paginationButtonPrevious = tableWrapper.querySelector('.paginate_button.previous');
+
+		paginationButtonPrevious.addEventListener(
+			'click',
+			debounce(() => {
+				globalSearchParams = {
+					...globalSearchParams,
+					pageNumber: pageNumber - 1
+				};
+				filterTable();
+			})
+		);
+
+		data.prev
+			? paginationButtonPrevious.classList.remove('disabled')
+			: paginationButtonPrevious.classList.add('disabled');
+
+		const paginationButtonNext = tableWrapper.querySelector('.paginate_button.next');
+		paginationButtonNext.addEventListener(
+			'click',
+			debounce(() => {
+				globalSearchParams = {
+					...globalSearchParams,
+					pageNumber: pageNumber + 1
+				};
+				filterTable();
+			})
+		);
+		data.next ? paginationButtonNext.classList.remove('disabled') : paginationButtonNext.classList.add('disabled');
+	};
+
+	const generateSearchSelect = (collumn, parrent, isMuliple = false) => {
+		const select = document.createElement('select');
+		!isMuliple && select.classList.add('filter-input');
+		select.name = collumn.name;
+
+		if (!isMuliple) {
+			const defaultOption = document.createElement('option');
+			defaultOption.text = `Select ${collumn.displayName}`;
+			defaultOption.value = '';
+			defaultOption.selected = true;
+			select.options.add(defaultOption);
+		} else {
+			select.multiple = 'multiple';
+			select.classList.add('form-control', 'select2-hidden-accessible');
 		}
 
-		const data = await getData(`${PROXY_URL}${TABLE_API}?${getSearchParams()}`, {
+		const options = isMuliple ? DEFAULT_SELECT2_OPTIONS[collumn.name] : DEFAULT_SELECT_OPTIONS[collumn.name];
+		options.forEach((item) => {
+			const option = document.createElement('option');
+			option.value = item;
+			option.text = item;
+			select.options.add(option);
+		});
+		parrent.appendChild(select);
+	};
+
+	const filterTable = async (element = null, isDynamicTable = false) => {
+		if (element) {
+			const value = element.value.length > 2 ? element.value : '';
+
+			if (!isDynamicTable) {
+				table.column($(element).data('index')).search(value).draw();
+				return;
+			}
+		}
+		console.log(getSearchParams());
+		fetchedData = await getData(`${PROXY_URL}${TABLE_API}?${getSearchParams()}`, {
 			method: 'POST',
 			...CORS_HEADER
 		});
 
-		const tableData = getTableData(data);
+		const tableData = getTableData(fetchedData);
 		table.clear();
 		table.rows.add(tableData).draw();
+		setCurrentPagination(fetchedData);
 	};
 
 	if (isFixedCollumns) {
@@ -746,7 +860,9 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 			tableWrapper.classList.add('loading');
 		}
 
-		fetchedData = await getData(`${PROXY_URL}${TABLE_API}`, { ...CORS_HEADER });
+		fetchedData = await getData(`${PROXY_URL}${TABLE_API}`, {
+			...CORS_HEADER
+		});
 
 		if (!fetchedData) return;
 
@@ -768,13 +884,18 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 		fetchedData.columns.forEach((collumn, index) => {
 			const th = document.createElement('th');
 
-			const input = document.createElement('input');
-			input.classList.add('filter-input');
-			input.placeholder = `Search ${collumn.displayName}`;
-			input.type = 'text';
-			input.name = collumn.name;
-
-			th.appendChild(input);
+			if (Object.keys(DEFAULT_SELECT_OPTIONS).some((item) => collumn.name == item)) {
+				generateSearchSelect(collumn, th);
+			} else if (Object.keys(DEFAULT_SELECT2_OPTIONS).some((item) => collumn.name == item)) {
+				generateSearchSelect(collumn, th, true);
+			} else {
+				const input = document.createElement('input');
+				input.classList.add('filter-input');
+				input.placeholder = `Search ${collumn.displayName}`;
+				input.type = 'text';
+				input.name = collumn.keyId === 0 ? collumn.name : `extra[${collumn.keyId}]`;
+				th.appendChild(input);
+			}
 
 			tFootTr.appendChild(th);
 		});
@@ -785,42 +906,96 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 
 	var table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG, ...config });
 
-	const tFootInputsWrapper = tableWrapper.querySelectorAll('.dataTables_scrollFoot th');
+	if (isNewTable) {
+		$('.select2-hidden-accessible').select2();
+		$('.select2-hidden-accessible').on(
+			'select2:select',
+			debounce((e) => {
+				const value = $(e.target).val();
+				console.log(value);
 
-	tFootInputsWrapper.forEach((inputWrapper, i) => {
-		const input = inputWrapper.querySelector('input.filter-input');
+				globalSearchParams = {
+					...globalSearchParams,
+					[e.target.name]: value,
+					pageNumber: 1
+				};
 
-		if (input) {
-			let debounce = null;
-			let canSearch = false;
+				filterTable(e.target, isNewTable);
+			})
+		);
 
-			input.dataset.id = i;
+		const tFootInputsWrapper = tableWrapper.querySelectorAll('.dataTables_scrollFoot th');
 
-			input.addEventListener('input', () => {
-				clearTimeout(debounce);
+		tFootInputsWrapper.forEach((inputWrapper, i) => {
+			const input = inputWrapper.querySelector('input.filter-input');
+			const select = inputWrapper.querySelector('select.filter-input');
+			if (input) {
+				let canSearch = false;
 
-				debounce = setTimeout(function() {
-					if (input.value.length > 2) {
-						canSearch = true;
-						globalSearchParams = { ...globalSearchParams, [input.name]: input.value };
-						filterTable(input, table, isNewTable);
-					} else if (canSearch) {
-						globalSearchParams = { ...globalSearchParams, [input.name]: '' };
-						filterTable(input, table, isNewTable);
-						canSearch = false;
-					}
-				}, 200);
-			});
-		}
-	});
+				input.dataset.id = i;
 
-	const lengthSelect = tableWrapper.querySelector('.dataTables_length select');
+				input.addEventListener(
+					'input',
+					debounce(() => {
+						if (input.value.length > 2) {
+							canSearch = true;
+							globalSearchParams = {
+								...globalSearchParams,
+								[input.name]: input.value,
+								pageNumber: 1
+							};
+							filterTable(input, isNewTable);
+						} else if (canSearch) {
+							globalSearchParams = {
+								...globalSearchParams,
+								[input.name]: '',
+								pageNumber: 1
+							};
+							filterTable(input, isNewTable);
+							canSearch = false;
+						}
+					})
+				);
+			} else if (select) {
+				select.addEventListener(
+					'change',
+					debounce((e) => {
+						const value = e.target.value;
 
-	lengthSelect.addEventListener('change', (e) => {
-		const value = e.target.value;
-		globalSearchParams = { ...globalSearchParams, pageSize: value };
-		filterTable(e.target, table, isNewTable);
-	});
+						globalSearchParams = {
+							...globalSearchParams,
+							[e.target.name]: value,
+							pageNumber: 1
+						};
+
+						filterTable(e.target, isNewTable);
+					})
+				);
+			}
+		});
+
+		setCurrentPagination(fetchedData);
+
+		const lengthSelect = tableWrapper.querySelector('.dataTables_length select');
+
+		lengthSelect.addEventListener(
+			'change',
+			debounce((e) => {
+				const value = Number.parseInt(e.target.value);
+
+				globalSearchParams = {
+					...globalSearchParams,
+					pageSize: value,
+					pageNumber:
+						value * fetchedData.pageNumber > fetchedData.totalCount
+							? Math.round(fetchedData.totalCount / value)
+							: fetchedData.pageNumber
+				};
+
+				filterTable(e.target, isNewTable);
+			})
+		);
+	}
 
 	if ($('.diriq-table__wrapper._with-endpoint').length > 0) {
 		$('.diriq-table__wrapper._with-endpoint').each(function() {
@@ -828,10 +1003,6 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 			$(tableWrapper).addClass('loading');
 		});
 	}
-
-	/*$('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append(
-		'<i class="sort-i__wrap"><svg xmlns="http://www.w3.org/2000/svg" width="5.1" height="10" class="sort-i"><g><path class="sort-i__top" d="M2.55 1.572l1.761 1.762.783-.784L2.55 0 0 2.55l.788.784z" fill="#212b35"/><path class="sort-i__bottom" d="M2.549 8.428L.788 6.667l-.784.783L2.548 10l2.55-2.55-.789-.783z" fill="#212b35"/></g></svg></i>'
-	);*/
 
 	adjustDataTableColumns();
 
@@ -1033,9 +1204,9 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 			(this.$body = $('body')), (this.$window = $(window));
 		};
 
-		/** 
-     * Initlizes the controls
-    */
+		/**
+         * Initlizes the controls
+         */
 		(App.prototype.initControls = function() {
 			// Preloader
 			$(window).on('load', function() {
@@ -1230,15 +1401,15 @@ $(document).ready(function() {
 		TLN.append_line_numbers('paste-excel-textarea');
 	}
 
-    if ($('#data-table').length > 0) {
-        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
-            adjustDataTableColumns();
-        });
+	if ($('#data-table').length > 0) {
+		$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+			adjustDataTableColumns();
+		});
 
-        $('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append(
-            '<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'
-        );
-    }
+		$('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append(
+			'<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'
+		);
+	}
 
 	$('.upload-list__next-step').click(function() {
 		$(this).closest('.upload-list__step').addClass('d-none');
@@ -1303,15 +1474,15 @@ $(document).ready(function() {
 		$(this).closest('.confirm__modal').addClass('d-none');
 	});
 
-    $('._add-new-list').click(function() {
-        $(this).addClass('d-none');
-        $(this).next('.add-new-list-input').removeClass('d-none');
-    });
+	$('._add-new-list').click(function() {
+		$(this).addClass('d-none');
+		$(this).next('.add-new-list-input').removeClass('d-none');
+	});
 
-    $('.add-new-list-input ._check').click(function() {
-        $(this).closest('.add-new-list-input').addClass('d-none');
-        $('._add-new-list').removeClass('d-none');
-    });
+	$('.add-new-list-input ._check').click(function() {
+		$(this).closest('.add-new-list-input').addClass('d-none');
+		$('._add-new-list').removeClass('d-none');
+	});
 
 	// Navigation
 	var navExpand = [].slice.call(document.querySelectorAll('.nav-expand'));
