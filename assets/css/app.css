@@ -6067,6 +6067,22 @@ body.nav-is-toggled:after {
     height: 14px;
     padding: 0;
     border-radius: 50%; }
+  .btn._social-integration {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #B6FFE8;
+    overflow: hidden; }
+    .btn._social-integration i {
+      color: #00EBA8; }
+    ._connected .btn._social-integration {
+      background: #0000ff; }
+      ._connected .btn._social-integration i {
+        color: #fff; }
 
 .link {
   color: #212B35;

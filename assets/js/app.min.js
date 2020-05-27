@@ -648,6 +648,16 @@ Contact: support@coderthemes.com
 File: Main Js File
 */
 
+const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
+
+const CORS_HEADER = {
+	headers: {
+		'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+	}
+};
+
+const TABLE_API = 'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/custom';
+
 const DEFAULT_DATA_TABLE_CONFIG = {
 	scrollX: true,
 	scrollCollapse: true,
@@ -676,90 +686,140 @@ const FIXED_DATA_TABLE_CONFIG = {
 	}
 };
 
-async function createDataTable(id, config, isFixedCollumns, isNewTable) {
+const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
+	const getData = async (url, options) => {
+		const response = await fetch(url, options);
+		return response.json();
+	};
+
+	const getTableData = (data) =>
+		data.rows.map((row) => {
+			var draftData = [];
+			data.columns.forEach((collumn, index) => {
+				var draftRow = row.cells.find((cell) => cell.position === index);
+				draftRow ? draftData.push(draftRow.value) : draftData.push('');
+			});
+			return draftData;
+		});
+
+	const getSearchParams = () => {
+		const params = { ...defaultSearchParams, ...globalSearchParams };
+		return Object.keys(params).map((keys) => `${keys}=${params[keys]}`).join('&');
+	};
+
+	const getCollumnTitles = (data) =>
+		data.columns.map((collumn) => {
+			return { title: collumn.displayName };
+		});
+
+	const filterTable = async (element, table, isDynamicTable) => {
+		const value = element.value.length > 2 ? element.value : '';
+
+		if (!isDynamicTable) {
+			table.column($(element).data('index')).search(value).draw();
+			return;
+		}
+
+		const data = await getData(`${PROXY_URL}${TABLE_API}?${getSearchParams()}`, {
+			method: 'POST',
+			...CORS_HEADER
+		});
+
+		const tableData = getTableData(data);
+		table.clear();
+		table.rows.add(tableData).draw();
+	};
+
 	if (isFixedCollumns) {
 		config = { ...FIXED_DATA_TABLE_CONFIG, ...config };
 	}
 
-	const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-	const targetUrl = 'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/custom';
+	let defaultSearchParams = null;
+	let globalSearchParams = null;
+	let fetchedData = null;
+
+	const tableElement = document.querySelector(id);
+	const tableWrapper = tableElement.closest('.diriq-table__wrapper');
 
 	if (isNewTable) {
-		if ($(id).parent('.diriq-table__wrapper').length > 0) {
-			$(id).parent('.diriq-table__wrapper').each(function() {
-				$(this).addClass('loading');
-			});
+		if (tableWrapper) {
+			tableWrapper.classList.add('loading');
 		}
 
-		const response = await fetch(`${proxyUrl}${targetUrl}`, {
-			headers: {
-				'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-			}
+		fetchedData = await getData(`${PROXY_URL}${TABLE_API}`, { ...CORS_HEADER });
+
+		if (!fetchedData) return;
+
+		defaultSearchParams = fetchedData.columns.reduce((accumulator, collumn) => {
+			const collumnName = collumn.keyId === 0 ? collumn.name : `extra[${collumn.keyId}]`;
+			return { ...accumulator, [collumnName]: '' };
+		}, {});
+
+		config = {
+			...config,
+			data: getTableData(fetchedData),
+			columns: getCollumnTitles(fetchedData)
+		};
+
+		// create footer in dynamic dataTable
+		const tFoot = document.createElement('tfoot');
+		const tFootTr = document.createElement('tr');
+
+		fetchedData.columns.forEach((collumn, index) => {
+			const th = document.createElement('th');
+
+			const input = document.createElement('input');
+			input.classList.add('filter-input');
+			input.placeholder = `Search ${collumn.displayName}`;
+			input.type = 'text';
+			input.name = collumn.name;
+
+			th.appendChild(input);
+
+			tFootTr.appendChild(th);
 		});
 
-		if (response.ok) {
-			const data = await response.json();
-
-			const collumnTitles = data.columns.map((collumn) => {
-				return { title: collumn.displayName };
-			});
-
-			const dataTable = data.rows.map((row) => {
-				var draftData = [];
-				data.columns.forEach((collumn, index) => {
-					var draftRow = row.cells.find((cell) => cell.position === index);
-					draftRow ? draftData.push(draftRow.value) : draftData.push('');
-				});
-				return draftData;
-			});
-			console.log(dataTable);
-
-			config = {
-				...config,
-				data: dataTable,
-				columns: collumnTitles
-			};
-
-			$(id).html('<tfoot><tr></tr></tfoot>');
-			config.columns.forEach((collumn) => {
-				$(id).find('tfoot tr').append('<th></th>');
-			});
-
-			$(id).find('tfoot').each(function() {
-				$(this).find('th').each(function(i) {
-					$(this).html(
-						'<input type="text" class="filter-input" placeholder="Search ' +
-							config.columns[i].title +
-							'" data-index="' +
-							i +
-							'" />'
-					);
-				});
-			});
-		}
+		tFoot.appendChild(tFootTr);
+		tableElement.appendChild(tFoot);
 	}
 
 	var table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG, ...config });
 
-	var canSearch = false;
+	const tFootInputsWrapper = tableWrapper.querySelectorAll('.dataTables_scrollFoot th');
 
-	function filterTable(element, value) {
-		if (table.settings()[0].jqXHR) table.settings()[0].jqXHR.abort();
-		console.log('test');
-		table.clear();
-		table.rows.add([]).draw();
-	}
+	tFootInputsWrapper.forEach((inputWrapper, i) => {
+		const input = inputWrapper.querySelector('input.filter-input');
 
-	$(table.table().container()).on('keyup', 'tfoot input', function() {
-		var input = this;
+		if (input) {
+			let debounce = null;
+			let canSearch = false;
 
-		if ($(this).val().length > 2) {
-			canSearch = true;
-			filterTable(input, input.value);
-		} else if (canSearch) {
-			filterTable(input, '');
-			canSearch = false;
+			input.dataset.id = i;
+
+			input.addEventListener('input', () => {
+				clearTimeout(debounce);
+
+				debounce = setTimeout(function() {
+					if (input.value.length > 2) {
+						canSearch = true;
+						globalSearchParams = { ...globalSearchParams, [input.name]: input.value };
+						filterTable(input, table, isNewTable);
+					} else if (canSearch) {
+						globalSearchParams = { ...globalSearchParams, [input.name]: '' };
+						filterTable(input, table, isNewTable);
+						canSearch = false;
+					}
+				}, 200);
+			});
 		}
+	});
+
+	const lengthSelect = tableWrapper.querySelector('.dataTables_length select');
+
+	lengthSelect.addEventListener('change', (e) => {
+		const value = e.target.value;
+		globalSearchParams = { ...globalSearchParams, pageSize: value };
+		filterTable(e.target, table, isNewTable);
 	});
 
 	if ($('.diriq-table__wrapper._with-endpoint').length > 0) {
@@ -786,7 +846,7 @@ async function createDataTable(id, config, isFixedCollumns, isNewTable) {
 	$('.diriq-table__filter-btn').click(function() {
 		$('body').toggleClass('_filter-visible');
 	});
-}
+};
 
 !(function($) {
 	'use strict';
