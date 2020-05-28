@@ -667,11 +667,11 @@ const DEFAULT_SELECT_OPTIONS = {
 	status: [ 'active', 'passive' ]
 };
 
-const DEFAULT_SELECT2_OPTIONS = {
+const DEFAULT_MULTIPLY_SELECT_OPTIONS = {
 	tags: [ 'tag1', 'tag2', 'tag3' ]
 };
 
-const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
+const PROXY_URL = 'https://thingproxy.freeboard.io/fetch/';
 
 const CORS_HEADER = {
 	headers: {
@@ -715,20 +715,31 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 		return response.json();
 	};
 	const getTableData = (data) => {
-		return data.rows.map((row) => {
-			var draftData = [];
-			data.columns.forEach((collumn, index) => {
-				var draftRow = row.cells.find((cell) => cell.position === index);
-				draftRow ? draftData.push(draftRow.value) : draftData.push('');
+		if (!data.errors) {
+			return data.rows.map((row) => {
+				var draftData = [];
+				data.columns.forEach((collumn, index) => {
+					var draftRow = row.cells.find((cell) => cell.position === index);
+					draftRow ? draftData.push(draftRow.value) : draftData.push('');
+				});
+				return draftData;
 			});
-			return draftData;
-		});
+		}
 	};
 
 	const getSearchParams = () => {
 		const params = { ...defaultSearchParams, ...globalSearchParams };
 		return Object.keys(params)
-			.map((keys) => `${keys}=${typeof params[keys] === 'object' ? '[' + params[keys] + ']' : params[keys]}`)
+			.map((keys) => {
+				if (keys === 'tags' && typeof params[keys] === 'object') {
+					let tagsParams = [];
+					params[keys].forEach((key) => {
+						tagsParams.push(`${keys}=${key}`);
+					});
+					return tagsParams.join('&');
+				}
+				return `${keys}=${params[keys]}`;
+			})
 			.join('&');
 	};
 
@@ -737,27 +748,9 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 			if (collumn.name === 'quality')
 				return {
 					title: collumn.displayName,
-					/*render: function(data, type, row, meta) {
-						let renderElements = '<div class="quality__wrapper">';
-						DEFAULT_SELECT_OPTIONS[collumn.name].forEach((item) => {
-							renderElements += `<span class="${data >= item ? 'active ' : ''}quality__item"></span>`;
-						});
-						renderElements += '</div>';
-						return renderElements;
-					}*/
-                    render: function(data, type, row, meta) {
-                        let qualityIcon = '<div>';
-                        let activeItemsCount = 0;
-                        DEFAULT_SELECT_OPTIONS[collumn.name].forEach((item) => {
-                            if (data >= item) {
-                                activeItemsCount += 1;
-							}
-                            qualityIcon += `<span></span>`;
-                        });
-                        qualityIcon += '</div>';
-                        qualityIcon = `<div class="quality-icon _${activeItemsCount}">` + qualityIcon + '</div>';
-                        return qualityIcon;
-                    }
+					render: function(data, type, row, meta) {
+						return generateQualitySelect(data);
+					}
 				};
 			return { title: collumn.displayName };
 		});
@@ -812,31 +805,51 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 
 	const generateSearchSelect = (collumn, parrent, isMuliple = false) => {
 		const select = document.createElement('select');
-		!isMuliple && select.classList.add('filter-input');
-		select.setAttribute("required", "");
+		select.setAttribute('required', '');
 		select.name = collumn.name;
+		select.id = collumn.name;
+		select.dataset.toggle = 'select2';
+		select.classList.add('form-control');
 
-		if (!isMuliple) {
+		if (isMuliple) {
+			select.multiple = 'multiple';
+		} else {
 			const defaultOption = document.createElement('option');
-			defaultOption.text = `Select ${collumn.displayName}`;
+			defaultOption.text = '';
 			defaultOption.value = '';
 			defaultOption.selected = true;
+			defaultOption.disabled = true;
 			select.options.add(defaultOption);
-		} else {
-			select.multiple = 'multiple';
-			select.setAttribute("data-placeholder", "Select Tags");
-			select.classList.add('form-control', 'select2-hidden-accessible');
 		}
 
-		const options = isMuliple ? DEFAULT_SELECT2_OPTIONS[collumn.name] : DEFAULT_SELECT_OPTIONS[collumn.name];
+		const options = isMuliple
+			? DEFAULT_MULTIPLY_SELECT_OPTIONS[collumn.name]
+			: DEFAULT_SELECT_OPTIONS[collumn.name];
+
 		options.forEach((item) => {
 			const option = document.createElement('option');
 			option.value = item;
-			option.text = item;
+
+			if (collumn.name == 'quality') {
+				option.text = generateQualitySelect(item);
+			} else {
+				option.text = item;
+			}
 			select.options.add(option);
 		});
 		parrent.appendChild(select);
 	};
+
+	function generateQualitySelect(state) {
+		let qualityIcon = '';
+		DEFAULT_SELECT_OPTIONS.quality.forEach((item) => {
+			qualityIcon += `<span></span>`;
+		});
+
+		return state.id
+			? $(`<div class="quality-icon _${state.id}">${qualityIcon}</div>`)
+			: `<div class="quality-icon _${state}">${qualityIcon}</div>`;
+	}
 
 	const filterTable = async (element = null, isDynamicTable = false) => {
 		if (element) {
@@ -847,16 +860,20 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 				return;
 			}
 		}
-		console.log(getSearchParams());
-		fetchedData = await getData(`${PROXY_URL}${TABLE_API}?${getSearchParams()}`, {
+		draftfetchedData = await getData(`${PROXY_URL}${TABLE_API}?${getSearchParams()}`, {
 			method: 'POST',
 			...CORS_HEADER
 		});
-
+		if (!draftfetchedData.errors) {
+			fetchedData = draftfetchedData;
+		}
 		const tableData = getTableData(fetchedData);
-		table.clear();
-		table.rows.add(tableData).draw();
-		setCurrentPagination(fetchedData);
+		if (tableData) {
+			table.clear();
+			table.rows.add(tableData).draw();
+
+			setCurrentPagination(fetchedData);
+		}
 	};
 
 	if (isFixedCollumns) {
@@ -865,6 +882,7 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 
 	let defaultSearchParams = null;
 	let globalSearchParams = null;
+	let searchParams = null;
 	let fetchedData = null;
 
 	const tableElement = document.querySelector(id);
@@ -888,6 +906,7 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 
 		config = {
 			...config,
+			ordering: false,
 			data: getTableData(fetchedData),
 			columns: getCollumnTitles(fetchedData)
 		};
@@ -901,7 +920,7 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 
 			if (Object.keys(DEFAULT_SELECT_OPTIONS).some((item) => collumn.name == item)) {
 				generateSearchSelect(collumn, th);
-			} else if (Object.keys(DEFAULT_SELECT2_OPTIONS).some((item) => collumn.name == item)) {
+			} else if (Object.keys(DEFAULT_MULTIPLY_SELECT_OPTIONS).some((item) => collumn.name == item)) {
 				generateSearchSelect(collumn, th, true);
 			} else {
 				const input = document.createElement('input');
@@ -921,29 +940,102 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 
 	var table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG, ...config });
 
+	$('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append(
+		'<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'
+	);
+
 	if (isNewTable) {
-		$('.select2-hidden-accessible').select2();
-		$('.select2-hidden-accessible').on(
-			'select2:select',
-			debounce((e) => {
-				const value = $(e.target).val();
-				console.log(value);
+		const tableHeads = tableWrapper.querySelectorAll('thead');
+		tableHeads.forEach((head) => {
+			const thSort = head.querySelectorAll('.sorting_disabled');
 
-				globalSearchParams = {
-					...globalSearchParams,
-					[e.target.name]: value,
-					pageNumber: 1
-				};
+			thSort.forEach((th, index) => {
+				th.classList.remove('sorting_disabled');
+				th.classList.add('sorting');
 
-				filterTable(e.target, isNewTable);
-			})
-		);
+				if (fetchedData.columns[index].name === 'id') {
+					th.classList.add('sorting_desc');
+				}
+				th.addEventListener('click', () => {
+					if (th.classList.contains('sorting_asc')) {
+						thSort.forEach((th2) => {
+							th2.classList.remove('sorting_desc');
+							th2.classList.remove('sorting_asc');
+						});
+
+						th.classList.add('sorting_desc');
+
+						globalSearchParams = {
+							...globalSearchParams,
+							orderBy: fetchedData.columns[index].name,
+							orderDir: 'desc'
+						};
+						filterTable();
+					} else if (!th.classList.contains('sorting_asc')) {
+						thSort.forEach((th3) => {
+							th3.classList.remove('sorting_desc');
+							th3.classList.remove('sorting_asc');
+						});
+
+						th.classList.add('sorting_asc');
+
+						globalSearchParams = {
+							...globalSearchParams,
+							orderBy: fetchedData.columns[index].name,
+							orderDir: 'asc'
+						};
+						filterTable();
+					}
+				});
+			});
+		});
+		$('.diriq-table__wrapper select[data-toggle="select2"]').each(function() {
+			const select = this;
+			const templateResult = this.id === 'quality' && { templateResult: generateQualitySelect };
+			$(select).select2({
+				...templateResult,
+				minimumResultsForSearch: -1,
+				escapeMarkup: function(markup) {
+					return markup;
+				},
+				placeholder: {
+					id: '',
+					text: 'None Selected'
+				},
+				allowClear: true
+			});
+			$(select).on(
+				'select2:select',
+				debounce((e) => {
+					const value = $(e.target).val();
+					globalSearchParams = {
+						...globalSearchParams,
+						[e.target.name]: value,
+						pageNumber: 1
+					};
+
+					filterTable(e.target, isNewTable);
+				})
+			);
+			$(select).on(
+				'select2:unselect',
+				debounce((e) => {
+					const value = $(e.target).val();
+					globalSearchParams = {
+						...globalSearchParams,
+						[e.target.name]: value,
+						pageNumber: 1
+					};
+
+					filterTable(e.target, isNewTable);
+				})
+			);
+		});
 
 		const tFootInputsWrapper = tableWrapper.querySelectorAll('.dataTables_scrollFoot th');
 
 		tFootInputsWrapper.forEach((inputWrapper, i) => {
 			const input = inputWrapper.querySelector('input.filter-input');
-			const select = inputWrapper.querySelector('select.filter-input');
 			if (input) {
 				let canSearch = false;
 
@@ -969,21 +1061,6 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 							filterTable(input, isNewTable);
 							canSearch = false;
 						}
-					})
-				);
-			} else if (select) {
-				select.addEventListener(
-					'change',
-					debounce((e) => {
-						const value = e.target.value;
-
-						globalSearchParams = {
-							...globalSearchParams,
-							[e.target.name]: value,
-							pageNumber: 1
-						};
-
-						filterTable(e.target, isNewTable);
 					})
 				);
 			}
@@ -1313,7 +1390,7 @@ if ($('select[data-toggle=select2]').length > 0) {
 		//initializing tooltip
 		(FormAdvanced.prototype.initSelect2 = function() {
 			// Select2
-			$('[data-toggle="select2"]').select2();
+			$('[data-toggle="select2"]').select2({ minimumResultsForSearch: -1 });
 		}),
 			//initilizing
 			(FormAdvanced.prototype.init = function() {
@@ -1420,10 +1497,6 @@ $(document).ready(function() {
 		$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 			adjustDataTableColumns();
 		});
-
-		$('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append(
-			'<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'
-		);
 	}
 
 	$('.upload-list__next-step').click(function() {
@@ -1500,10 +1573,10 @@ $(document).ready(function() {
 	});
 
 	$('#copy-api-btn').click(function() {
-		var copyText = document.getElementById("copy-api-input");
+		var copyText = document.getElementById('copy-api-input');
 		copyText.select();
 		copyText.setSelectionRange(0, 99999);
-		document.execCommand("copy");
+		document.execCommand('copy');
 	});
 
 	// Navigation
