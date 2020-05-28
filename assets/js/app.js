@@ -737,14 +737,27 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 			if (collumn.name === 'quality')
 				return {
 					title: collumn.displayName,
-					render: function(data, type, row, meta) {
+					/*render: function(data, type, row, meta) {
 						let renderElements = '<div class="quality__wrapper">';
 						DEFAULT_SELECT_OPTIONS[collumn.name].forEach((item) => {
 							renderElements += `<span class="${data >= item ? 'active ' : ''}quality__item"></span>`;
 						});
 						renderElements += '</div>';
 						return renderElements;
-					}
+					}*/
+                    render: function(data, type, row, meta) {
+                        let qualityIcon = '<div>';
+                        let activeItemsCount = 0;
+                        DEFAULT_SELECT_OPTIONS[collumn.name].forEach((item) => {
+                            if (data >= item) {
+                                activeItemsCount += 1;
+							}
+                            qualityIcon += `<span></span>`;
+                        });
+                        qualityIcon += '</div>';
+                        qualityIcon = `<div class="quality-icon _${activeItemsCount}">` + qualityIcon + '</div>';
+                        return qualityIcon;
+                    }
 				};
 			return { title: collumn.displayName };
 		});
@@ -800,6 +813,7 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 	const generateSearchSelect = (collumn, parrent, isMuliple = false) => {
 		const select = document.createElement('select');
 		!isMuliple && select.classList.add('filter-input');
+		select.setAttribute("required", "");
 		select.name = collumn.name;
 
 		if (!isMuliple) {
@@ -810,6 +824,7 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 			select.options.add(defaultOption);
 		} else {
 			select.multiple = 'multiple';
+			select.setAttribute("data-placeholder", "Select Tags");
 			select.classList.add('form-control', 'select2-hidden-accessible');
 		}
 
