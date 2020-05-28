@@ -671,8 +671,8 @@ const DEFAULT_MULTIPLY_SELECT_OPTIONS = {
 	tags: [ 'tag1', 'tag2', 'tag3' ]
 };
 
-const PROXY_URL = 'https://thingproxy.freeboard.io/fetch/';
-
+// const PROXY_URL = 'https://thingproxy.freeboard.io/fetch/';
+const PROXY_URL = '';
 const CORS_HEADER = {
 	headers: {
 		'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
