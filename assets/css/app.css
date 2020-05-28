@@ -7462,6 +7462,30 @@ body.nav-is-toggled:after {
   color: #0000FF;
   transition: color 0.25s; }
 
+.api-integration-list {
+  padding-left: 9px;
+  list-style: none; }
+  .api-integration-list__item {
+    font-size: 12px;
+    font-weight: 500;
+    color: #454F5B; }
+    .api-integration-list__item + .api-integration-list__item {
+      margin-top: 7px; }
+    .api-integration-list__item:before {
+      content: '';
+      background: #00EBA8;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+      margin-right: 5px; }
+    .api-integration-list__item span {
+      font-weight: 700;
+      color: #212B35; }
+
 .connect__icon-wrap {
   height: 100%;
   width: 100px;
