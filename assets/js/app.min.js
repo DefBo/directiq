@@ -1582,6 +1582,11 @@ if ($('[data-plugin="dragula"]').length > 0) {
 
 function adjustDataTableColumns() {
 	$($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+	if ($('.dataTables_scrollBody').width() < $('.dataTables_scrollBody>table').width()) {
+		$('.dataTables_scrollBody').parents('.diriq-table__wrapper').addClass('with-scroll');
+	} else {
+		$('.dataTables_scrollBody').parents('.diriq-table__wrapper').removeClass('with-scroll');
+	}
 }
 
 function checkSize() {
