@@ -7404,6 +7404,44 @@ body.nav-is-toggled:after {
     height: 32px;
     line-height: 32px; }
 
+.modal._confirm .modal-dialog, .modal._negative .modal-dialog {
+  pointer-events: auto;
+  top: 121px;
+  margin: 0 37px 0 363px;
+  max-width: none;
+  z-index: 1002; }
+  .modal._confirm .modal-dialog:after, .modal._negative .modal-dialog:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translate(-10px, 10px);
+    z-index: -1; }
+  .modal._confirm .modal-dialog:before, .modal._negative .modal-dialog:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(218, 232, 247, 0.7);
+    z-index: -2; }
+
+.modal._confirm .modal-dialog {
+  border: 1px solid #0000ff; }
+  .modal._confirm .modal-dialog:after {
+    background: #0000ff; }
+
+.modal._negative .modal-dialog {
+  border: 1px solid #ED1C24; }
+  .modal._negative .modal-dialog:after {
+    background: #ED1C24; }
+
 .integrations__wrap {
   max-width: 1091px;
   width: 100%;

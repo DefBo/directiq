@@ -16240,10 +16240,11 @@ form input[type="checkbox"]:not(.input-validation-error) ~ .field-validation-err
     right: 20px;
     z-index: 1; }
 
-.modal.show .modal-right {
+.modal.show .modal-right,
+.modal.show .modal-dialog {
   transform: translate(0, 0) !important; }
 
-.modal .close {
+.modal ._toggle-columns .close {
   position: absolute;
   top: 0;
   right: 0;
