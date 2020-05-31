@@ -7410,6 +7410,10 @@ body.nav-is-toggled:after {
   margin: 0 37px 0 363px;
   max-width: none;
   z-index: 1002; }
+  @media (max-width: 767.98px) {
+    .modal._confirm .modal-dialog, .modal._negative .modal-dialog {
+      margin: 0 20px 0 29px;
+      top: 86px; } }
   .modal._confirm .modal-dialog:after, .modal._negative .modal-dialog:after {
     content: '';
     display: block;
