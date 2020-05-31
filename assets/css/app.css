@@ -6314,12 +6314,11 @@ body.nav-is-toggled:after {
           .knobs._double:after > div + div {
             margin-top: 22px; } }
 
-.list-add-success {
+.confirmation {
   position: relative;
-  margin: 13px 0 27px 10px;
-  border: 1px solid #0000ff;
+  margin: 13px 12px 27px 22px;
   z-index: 1002; }
-  .list-add-success:after {
+  .confirmation:after {
     content: '';
     display: block;
     position: absolute;
@@ -6329,10 +6328,9 @@ body.nav-is-toggled:after {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #0000ff;
     transform: translate(-10px, 10px);
     z-index: -1; }
-  .list-add-success:before {
+  .confirmation:before {
     content: '';
     position: fixed;
     top: 0;
@@ -6341,6 +6339,14 @@ body.nav-is-toggled:after {
     right: 0;
     background: rgba(218, 232, 247, 0.7);
     z-index: -2; }
+  .confirmation._positive {
+    border: 1px solid #0000ff; }
+    .confirmation._positive:after {
+      background: #0000ff; }
+  .confirmation._negative {
+    border: 1px solid #ED1C24; }
+    .confirmation._negative:after {
+      background: #ED1C24; }
 
 .card._contact {
   padding: 0;

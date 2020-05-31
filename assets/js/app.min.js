@@ -1653,8 +1653,8 @@ $(document).ready(function() {
 		$('#added-contacts').toggleClass('d-none');
 	});
 
-	$('.close').click(function() {
-		$(this).closest('.list-add-success').addClass('d-none');
+	$('.confirmation .close').click(function() {
+		$(this).closest('.confirmation').addClass('d-none');
 	});
 
 	$('.form-control._save-list').on('change keyup', function() {
