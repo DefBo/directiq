@@ -6159,7 +6159,7 @@ body.nav-is-toggled:after {
   display: inline-block;
   font-weight: 500;
   padding: 10px;
-  transition: color 0.25s, background 0.25s, border 0.25s; }
+  transition: color 0.25s, background 0.25s, border 0.25s, transform 0.25s; }
   .dropdown-toggle._outline {
     border: 1px solid #0000FF;
     border-radius: 23px;
@@ -6167,7 +6167,8 @@ body.nav-is-toggled:after {
     font-size: 18px; }
     .dropdown-toggle._outline:hover {
       background: #0000FF;
-      color: #fff; }
+      color: #fff;
+      transform: scale(0.9); }
       .dropdown-toggle._outline:hover svg {
         color: #fff; }
     .dropdown-toggle._outline svg {
@@ -6189,7 +6190,7 @@ body.nav-is-toggled:after {
       color: #fff;
       transition: transform 0.25s, color 0.25s; }
   .dropdown-toggle._lg {
-    line-height: 43px;
+    line-height: 44px;
     padding: 0 19px; }
     .dropdown-toggle._lg svg {
       margin-left: 4.6px; }
@@ -6837,7 +6838,7 @@ body.nav-is-toggled:after {
       transform: translateX(0);
       width: 268px;
       top: 80px;
-      background: #fff;
+      background: #ecf1f8;
       transition: none !important; }
       .nav-drill__icons {
         display: none; } }
@@ -6901,7 +6902,8 @@ body.nav-is-toggled:after {
   flex: 0 0 100%;
   list-style: none;
   padding: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  background: #fff; }
   @media (max-width: 767.98px) {
     .nav-items {
       overflow: auto; } }
@@ -6954,13 +6956,16 @@ body.nav-is-toggled:after {
   @media (min-width: 768px) {
     .nav-expand-content {
       transform: translateX(0);
-      width: 216px;
+      width: auto;
       height: calc(100% - 80px);
       overflow: auto;
       left: 100px;
       background-color: #F6F9FC;
       padding: 0;
-      transition: opacity 0.25s, visibility 0.25s; } }
+      transition: opacity 0.25s, visibility 0.25s; }
+      .nav-expand-content .nav-item-link {
+        min-width: 168px;
+        white-space: nowrap; } }
   @media (max-width: 767.98px) {
     .nav-expand-content {
       height: calc(100% - 100px); } }
@@ -7293,7 +7298,7 @@ body.nav-is-toggled:after {
   outline: 0;
   line-height: 22px;
   font-size: 10px;
-  padding: 0 7px;
+  padding: 0 17px 0 7px;
   color: #212b35;
   font-weight: 500;
   height: 22px;
@@ -7345,14 +7350,14 @@ body.nav-is-toggled:after {
 .select2-hidden-accessible:required:invalid + .select2 .select2-selection__rendered {
   color: #758796; }
 
-.select2-search__field:-ms-input-placeholder {
-  color: #758796 !important; }
-
-.select2-search__field::-ms-input-placeholder {
-  color: #758796 !important; }
-
-.select2-search__field::placeholder {
-  color: #758796 !important; }
+.select2-search__field {
+  text-overflow: ellipsis; }
+  .select2-search__field:-ms-input-placeholder {
+    color: #758796 !important; }
+  .select2-search__field::-ms-input-placeholder {
+    color: #758796 !important; }
+  .select2-search__field::placeholder {
+    color: #758796 !important; }
 
 .confirm__wrap {
   position: relative; }
@@ -7683,8 +7688,8 @@ th, td {
   display: none; }
 
 table.dataTable.diriq-table tbody th, table.dataTable.diriq-table tbody td {
-  padding-top: 12px !important;
-  padding-bottom: 12px !important; }
+  padding-top: 0 !important;
+  padding-bottom: 0 !important; }
 
 .diriq-table {
   color: #212B35;
@@ -7697,16 +7702,24 @@ table.dataTable.diriq-table tbody th, table.dataTable.diriq-table tbody td {
     background: #DAE8F7;
     font-weight: 600 !important; }
     ._list-name-table .diriq-table thead th:nth-child(2):after {
-      background: #fff; }
+      background: #fff !important; }
   .diriq-table tfoot th {
     background: #F6F9FC;
     font-size: 0; }
+  ._list-name-table.with-scroll .diriq-table th:nth-child(2):before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    height: 10px;
+    width: 1px;
+    background: #dae8f7; }
   .diriq-table th, .diriq-table td {
     font-weight: 500;
     padding-left: 12px !important;
     padding-right: 12px !important; }
     ._list-name-table .diriq-table th, ._list-name-table .diriq-table td {
-      min-width: 90px;
+      /*min-width: 90px;*/
       padding-left: 27px !important;
       padding-right: 13px !important; }
     .diriq-table th:first-child, .diriq-table td:first-child {
@@ -7729,15 +7742,15 @@ table.dataTable.diriq-table tbody th, table.dataTable.diriq-table tbody td {
       padding-left: 18px !important;
       padding-right: 28px !important;
       position: relative; }
-      ._list-name-table .diriq-table th:nth-child(2):after, ._list-name-table .diriq-table td:nth-child(2):after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        height: 100%;
-        width: 1px;
-        background: #DAE8F7; }
+    ._list-name-table.with-scroll .diriq-table th:nth-child(2):after, ._list-name-table.with-scroll .diriq-table td:nth-child(2):after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 1px;
+      background: #DAE8F7; }
     ._my-lists-table .diriq-table th:first-child .checkbox, ._my-lists-table .diriq-table td:first-child .checkbox {
       margin-top: -5px; }
     ._my-lists-table .diriq-table th:nth-child(2), ._my-lists-table .diriq-table td:nth-child(2) {
@@ -7754,7 +7767,7 @@ table.dataTable.diriq-table tbody th, table.dataTable.diriq-table tbody td {
       text-align: right;
       min-width: 72px !important; }
   .diriq-table tbody tr {
-    height: 50px !important; }
+    height: 40px !important; }
   .diriq-table__wrapper {
     padding-right: 22px;
     position: relative; }
@@ -7795,7 +7808,8 @@ table.dataTable.diriq-table tbody th, table.dataTable.diriq-table tbody td {
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-weight: 600; }
+    font-weight: 600;
+    vertical-align: middle; }
     .diriq-table__link:hover {
       color: #212B35; }
     .DTFC_LeftBodyLiner .diriq-table__link,
@@ -7935,6 +7949,8 @@ table.dataTable.diriq-table thead th, table.dataTable.diriq-table thead td {
       .dataTables_wrapper .dataTables_paginate li.paginate_button.previous .page-link:hover, .dataTables_wrapper .dataTables_paginate li.paginate_button.next .page-link:hover {
         background: #00eba8;
         color: #fff; }
+      .dataTables_wrapper .dataTables_paginate li.paginate_button.previous .page-link:focus, .dataTables_wrapper .dataTables_paginate li.paginate_button.next .page-link:focus {
+        box-shadow: none !important; }
   .dataTables_wrapper .dataTables_paginate li.paginate_button.previous .page-link:before {
     transform: rotate(90deg); }
   .dataTables_wrapper .dataTables_paginate li.paginate_button.next .page-link:before {
@@ -7999,7 +8015,8 @@ table.dataTable tfoot th, table.dataTable tfoot td {
   padding: 0 7px;
   color: #212B35;
   font-weight: 500;
-  width: 100%; }
+  width: 100%;
+  text-overflow: ellipsis; }
   .filter-input:focus {
     outline: 0.75px solid #0000ff; }
 
@@ -8054,7 +8071,12 @@ body:not(._filter-visible) .dataTables_scrollFoot {
 ._filter-visible .dataTables_scrollHead,
 ._filter-visible .DTFC_LeftHeadWrapper,
 ._filter-visible .DTFC_RightHeadWrapper {
-  border-bottom: 40px solid #F6F9FC !important; }
+  border-bottom: 46px solid #F6F9FC !important; }
+
+.dataTables_scrollHead,
+.DTFC_LeftHeadWrapper,
+.DTFC_RightHeadWrapper {
+  border-bottom: 10px solid #fff !important; }
 
 .DTFC_ScrollWrapper,
 .DTFC_RightWrapper {
@@ -8312,6 +8334,31 @@ div.dataTables_wrapper div.dataTables_info {
 
 ._list-name-table.new .dataTables_scrollBody {
   overflow-y: hidden !important; }
+
+.DTFC_RightBodyWrapper,
+.DTFC_RightBodyLiner {
+  overflow: visible !important; }
+
+.DTFC_LeftBodyWrapper,
+.DTFC_LeftBodyLiner {
+  overflow: hidden !important; }
+
+.DTFC_LeftBodyLiner, .DTFC_RightBodyLiner {
+  width: 100% !important; }
+
+.DTFC_LeftHeadWrapper {
+  overflow: visible !important; }
+
+.dropdown-link-sm {
+  position: relative; }
+  .dropdown-link-sm:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px; }
 
 @media (max-width: 1124px) {
   .navbar-search {
