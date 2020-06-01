@@ -1167,9 +1167,16 @@ $(window).on('load', function() {
 
 const setMenuWidth = () => {
 	const navDrill = document.querySelector('.nav-drill');
+	if (!navDrill) return;
+	
 	const navitemActive = navDrill.querySelector('.nav-expand.active');
+	if (!navitemActive) return;
+
 	const subItemActive = navDrill.querySelector('.nav-expand-content.active');
+	if (!subItemActive) return;
+
 	const contentPage = document.querySelector('.content-page');
+	if (!contentPage) return;
 
 	const menuWidth = navitemActive.clientWidth + subItemActive.clientWidth;
 	navDrill.style.width = menuWidth + 'px';

@@ -7681,6 +7681,9 @@ body.nav-is-toggled:after {
     .toggle-column__item .dragula-handle svg {
       display: block; }
 
+.filter-option-inner-inner {
+  line-height: 28px; }
+
 th, td {
   white-space: nowrap !important; }
 
@@ -7734,8 +7737,6 @@ table.dataTable.diriq-table tbody th, table.dataTable.diriq-table tbody td {
       padding-left: 29px !important;
       padding-right: 29px !important;
       min-width: auto; }
-    ._list-name-table .diriq-table th:first-child, ._list-name-table .diriq-table td:first-child {
-      vertical-align: top !important; }
     ._list-name-table.new .diriq-table th:first-child, ._list-name-table.new .diriq-table td:first-child {
       vertical-align: middle !important; }
     ._list-name-table .diriq-table th:nth-child(2), ._list-name-table .diriq-table td:nth-child(2) {
@@ -7751,8 +7752,6 @@ table.dataTable.diriq-table tbody th, table.dataTable.diriq-table tbody td {
       height: 100%;
       width: 1px;
       background: #DAE8F7; }
-    ._my-lists-table .diriq-table th:first-child .checkbox, ._my-lists-table .diriq-table td:first-child .checkbox {
-      margin-top: -5px; }
     ._my-lists-table .diriq-table th:nth-child(2), ._my-lists-table .diriq-table td:nth-child(2) {
       width: 180px !important; }
     ._my-lists-table .diriq-table th:nth-child(3),
@@ -8332,7 +8331,7 @@ div.dataTables_wrapper div.dataTables_info {
   100% {
     transform: translate(24px, 0); } }
 
-._list-name-table.new .dataTables_scrollBody {
+.dataTables_scrollBody {
   overflow-y: hidden !important; }
 
 .DTFC_RightBodyWrapper,
@@ -8359,6 +8358,9 @@ div.dataTables_wrapper div.dataTables_info {
     transform: translate(-50%, -50%);
     width: 30px;
     height: 30px; }
+
+._list-name-table:not(.new) .DTFC_LeftBodyLiner {
+  padding-right: 0 !important; }
 
 @media (max-width: 1124px) {
   .navbar-search {
