@@ -1183,84 +1183,6 @@ const setMenuWidth = () => {
 	contentPage.style.marginLeft = menuWidth + 'px';
 };
 
-const DEFAULT_SELECT_OPTIONS = {
-	quality: [ 1, 2, 3, 4, 5 ],
-	status: [ 'active', 'passive' ]
-};
-
-const generateQualitySelect = (state) => {
-	let data = '';
-	if (state.id) {
-		data = state.id;
-	} else if (state.text) {
-		data = state.text;
-	} else {
-		data = state;
-	}
-	let qualityIcon = '';
-	DEFAULT_SELECT_OPTIONS.quality.forEach((item) => {
-		qualityIcon += `<span></span>`;
-	});
-
-	return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
-};
-
-const generateStatusSelect = (state) => {
-	let data = '';
-
-	if (state.id) {
-		data = state.id;
-	} else if (state.text) {
-		data = state.text;
-	} else {
-		data = state;
-	}
-
-	return `<span class="table-status _${data.toLowerCase() === 'active' ? 'success' : 'danger'}">${data}</span>`;
-};
-
-const generateSimpleSelect = (state) => {
-	let data = '';
-
-	if (state.id) {
-		data = state.id;
-	} else if (state.text) {
-		data = state.text;
-	} else {
-		data = state;
-	}
-
-	return data;
-};
-
-const SELECT_TEMPLATES = {
-	quality: (state) => generateQualitySelect(state),
-	status: (state) => generateStatusSelect(state)
-};
-
-const generateCustomSelect = (name, state) => {
-	if (SELECT_TEMPLATES[name]) return SELECT_TEMPLATES[name](state);
-	return generateSimpleSelect(state);
-};
-
-const DEFAULT_MULTIPLY_SELECT_OPTIONS = {
-	tags: [ 'tag1', 'tag2', 'tag3' ]
-};
-const COLLUMN_WITHOUT_SEARCH = [ 'id', 'viewButton' ];
-let PROXY_URL = '';
-
-if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-	PROXY_URL = 'https://thingproxy.freeboard.io/fetch/';
-}
-
-const CORS_HEADER = {
-	headers: {
-		'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-	}
-};
-
-const TABLE_API = 'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/custom';
-
 const DEFAULT_DATA_TABLE_CONFIG = {
 	scrollX: true,
 	scrollCollapse: true,
@@ -1292,9 +1214,145 @@ const FIXED_DATA_TABLE_CONFIG = {
 	}
 };
 
-const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
-	let cancelController = null;
+const createDataTable = async (id, config, isFixedCollumns) => {
+	if (isFixedCollumns) {
+		config = { ...FIXED_DATA_TABLE_CONFIG, ...config };
+	}
 
+	var table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG, ...config });
+
+	$('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append(
+		'<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'
+	);
+
+	if ($('.diriq-table__wrapper._with-endpoint').length > 0) {
+		$('.diriq-table__wrapper._with-endpoint').each(function() {
+			var tableWrapper = this;
+			$(tableWrapper).addClass('loading');
+		});
+	}
+
+	$('.datatable._contact-details-lists input:checkbox').change(function() {
+		if ($(this).is(':checked')) {
+			$(this).closest('tr').addClass('_active');
+		} else {
+			$(this).closest('tr').removeClass('_active');
+		}
+	});
+};
+
+const generateQualitySelect = (state) => {
+	let data = '';
+	if (state.id) {
+		data = state.id;
+	} else if (state.text) {
+		return state.text;
+	} else {
+		data = state;
+	}
+	let qualityIcon = '';
+	DEFAULT_SELECT_OPTIONS.quality.forEach((item) => {
+		qualityIcon += `<span></span>`;
+	});
+
+	return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
+};
+
+const generateStatusSelect = (state) => {
+	let data = '';
+
+	if (state.id) {
+		data = state.id;
+	} else if (state.text) {
+		return state.text;
+	} else {
+		data = state;
+	}
+
+	return `<span class="table-status _${data.toLowerCase() === 'active' ? 'success' : 'danger'}">${data}</span>`;
+};
+
+const generateSimpleSelect = (state) => {
+	let data = '';
+
+	if (state.id) {
+		data = state.id;
+	} else if (state.text) {
+		data = state.text;
+	} else {
+		data = state;
+	}
+
+	return data;
+};
+
+const generateCustomSelect = (name, state) => {
+	if (SELECT_TEMPLATES[name]) return SELECT_TEMPLATES[name](state);
+	return generateSimpleSelect(state);
+};
+
+const setListnerToCheckboxes = (inputs, array) => {
+	inputs.forEach((input) => {
+		input.addEventListener('click', () => {
+			if (input.checked) {
+				array.push(input.value);
+			} else {
+				array = array.filter((item) => item !== input.value);
+			}
+		});
+		input.dataset.listner = true;
+	});
+};
+
+let cancelController = null;
+
+const removeSelectedRows = (url, params) => {
+	if (cancelController) cancelController.abort();
+	const cancel = new AbortController();
+	cancelController = cancel;
+	const response = fetch(url, {
+		body: JSON.stringify({ ...params }),
+		method: 'POST',
+		signal: cancel.signal
+	}).catch(function(err) {
+		console.warn(err);
+	});
+};
+
+const TABLE_CHECKBOX_ACTIONS = {
+	remove: (params) => removeSelectedRows(`${PROXY_URL}${TABLE_API}`, params)
+};
+
+const SELECT_TEMPLATES = {
+	quality: (state) => generateQualitySelect(state),
+	status: (state) => generateStatusSelect(state)
+};
+
+const DEFAULT_SELECT_OPTIONS = {
+	quality: [ 1, 2, 3, 4, 5 ],
+	status: [ 'active', 'passive' ]
+};
+
+const DEFAULT_MULTIPLY_SELECT_OPTIONS = {
+	tags: [ 'tag1', 'tag2', 'tag3' ]
+};
+
+const COLLUMN_WITHOUT_SEARCH = [ 'id', 'viewButton' ];
+let PROXY_URL = '';
+
+if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+	PROXY_URL = 'https://thingproxy.freeboard.io/fetch/';
+}
+
+const CORS_HEADER = {
+	headers: {
+		'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+	}
+};
+
+const TABLE_API = 'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/custom';
+
+const createCustomDataTable = async (id, config, isFixedCollumns) => {
 	const getData = async (url, options) => {
 		if (cancelController) cancelController.abort();
 		const cancel = new AbortController();
@@ -1356,18 +1414,18 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 								</a>
 								
 								<div class="dropdown-menu dropdown-menu-left _actions mt-5"
-									aria-labelledby="moreMenuButton">
+									aria-labelledby="moreMenuButton" data-id="table-checkbox-actions">
 									<div class="dropdown-menu-inner">
-										<a class="dropdown-item" href="#">Action Item 1</a>
+										<a class="dropdown-item" data-action="remove" href="#">Remove</a>
 										<a class="dropdown-item" href="#">Action Item 2</a>
 										<a class="dropdown-item" href="#">Action Item 3</a>
 									</div>
 								</div>
 							</div>
 					`,
-					render: function() {
+					render: function(data) {
 						return `<div class="checkbox checkbox-single">
-						<input type="checkbox" value="option1" aria-label="Single checkbox One">
+						<input type="checkbox" value="${data}" aria-label="Single checkbox One">
 						<label></label>
 					</div>`;
 					}
@@ -1491,10 +1549,9 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 			select.multiple = 'multiple';
 		} else {
 			const defaultOption = document.createElement('option');
-			defaultOption.text = '';
+			defaultOption.text = `Select ${collumn.displayName}`;
 			defaultOption.value = '';
 			defaultOption.selected = true;
-			defaultOption.disabled = true;
 			select.options.add(defaultOption);
 		}
 
@@ -1530,15 +1587,7 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 		});
 	};
 
-	const filterTable = async (element = null, isDynamicTable = false) => {
-		if (element) {
-			const value = element.value.length > 2 ? element.value : '';
-
-			if (!isDynamicTable) {
-				table.column($(element).data('index')).search(value).draw();
-				return;
-			}
-		}
+	const filterTable = async () => {
 		draftfetchedData = await getData(
 			`${PROXY_URL}${TABLE_API}?${getSearchParams()}`,
 			{
@@ -1577,6 +1626,9 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 
 			setCurrentPagination(fetchedData);
 
+			checkboxSelected = [];
+			setListnerToCheckboxes(tableWrapper.querySelectorAll('.checkbox-single input'), checkboxSelected);
+
 			if (draftfixedSorts) {
 				draftfixedSorts.forEach((field) => {
 					field.classes.split(' ').forEach((className) => {
@@ -1594,64 +1646,62 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 	let defaultSearchParams = null;
 	let globalSearchParams = {};
 	let fetchedData = null;
+	let checkboxSelected = [];
 
 	const tableElement = document.querySelector(id);
 	const tableWrapper = tableElement.closest('.diriq-table__wrapper');
 
-	if (isNewTable) {
-		if (tableWrapper) {
-			tableWrapper.classList.add('loading');
+	if (tableWrapper) {
+		tableWrapper.classList.add('loading');
+	}
+
+	fetchedData = await getData(`${PROXY_URL}${TABLE_API}`, {
+		...CORS_HEADER
+	});
+
+	if (!fetchedData) return;
+
+	addCustomCollumn(fetchedData);
+
+	defaultSearchParams = fetchedData.columns.reduce((accumulator, collumn) => {
+		const collumnName = collumn.keyId === 0 ? collumn.name : `extra[${collumn.keyId}]`;
+		return { ...accumulator, [collumnName]: '' };
+	}, {});
+
+	config = {
+		...config,
+		ordering: false,
+		data: getTableData(fetchedData),
+		columns: getCollumnTitles(fetchedData)
+	};
+
+	const tFoot = document.createElement('tfoot');
+	const tFootTr = document.createElement('tr');
+
+	fetchedData.columns.forEach((collumn, index) => {
+		const th = document.createElement('th');
+		if (Object.keys(DEFAULT_SELECT_OPTIONS).some((item) => collumn.name === item)) {
+			generateSearchSelect(collumn, th);
+		} else if (Object.keys(DEFAULT_MULTIPLY_SELECT_OPTIONS).some((item) => collumn.name == item)) {
+			generateSearchSelect(collumn, th, true);
+		} else if (COLLUMN_WITHOUT_SEARCH.every((item) => collumn.name !== item && !collumn.isExtra)) {
+			const input = document.createElement('input');
+			input.classList.add('filter-input');
+			input.placeholder = `Search ${collumn.displayName}`;
+			input.type = 'text';
+			input.name = collumn.keyId === 0 ? collumn.name : `extra[${collumn.keyId}]`;
+			th.appendChild(input);
 		}
 
-		fetchedData = await getData(`${PROXY_URL}${TABLE_API}`, {
-			...CORS_HEADER
-		});
+		tFootTr.appendChild(th);
+	});
 
-		if (!fetchedData) return;
-
-		addCustomCollumn(fetchedData);
-
-		defaultSearchParams = fetchedData.columns.reduce((accumulator, collumn) => {
-			const collumnName = collumn.keyId === 0 ? collumn.name : `extra[${collumn.keyId}]`;
-			return { ...accumulator, [collumnName]: '' };
-		}, {});
-
-		config = {
-			...config,
-			ordering: false,
-			data: getTableData(fetchedData),
-			columns: getCollumnTitles(fetchedData)
-		};
-
-		// create footer in dynamic dataTable
-		const tFoot = document.createElement('tfoot');
-		const tFootTr = document.createElement('tr');
-
-		fetchedData.columns.forEach((collumn, index) => {
-			const th = document.createElement('th');
-
-			if (Object.keys(DEFAULT_SELECT_OPTIONS).some((item) => collumn.name === item)) {
-				generateSearchSelect(collumn, th);
-			} else if (Object.keys(DEFAULT_MULTIPLY_SELECT_OPTIONS).some((item) => collumn.name == item)) {
-				generateSearchSelect(collumn, th, true);
-			} else if (COLLUMN_WITHOUT_SEARCH.every((item) => collumn.name !== item)) {
-				const input = document.createElement('input');
-				input.classList.add('filter-input');
-				input.placeholder = `Search ${collumn.displayName}`;
-				input.type = 'text';
-				input.name = collumn.keyId === 0 ? collumn.name : `extra[${collumn.keyId}]`;
-				th.appendChild(input);
-			}
-
-			tFootTr.appendChild(th);
-		});
-
-		tFoot.appendChild(tFootTr);
-		tableElement.appendChild(tFoot);
-	}
+	tFoot.appendChild(tFootTr);
+	tableElement.appendChild(tFoot);
 
 	var table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG, ...config });
 
+	const tableCheckboxActions = tableWrapper.querySelectorAll('[data-id="table-checkbox-actions"]');
 	const tFootInputsWrapper = tableWrapper.querySelectorAll('.diriq-table th');
 	const tableHeads = tableWrapper.querySelectorAll('thead');
 	const lengthSelect = tableWrapper.querySelector('.dataTables_length select');
@@ -1663,130 +1713,141 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 		'<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'
 	);
 
-	if (isNewTable) {
-		tableHeads.forEach((head) => {
-			const thSort = head.querySelectorAll('.sorting_disabled');
+	setListnerToCheckboxes(tableWrapper.querySelectorAll('.checkbox-single input'), checkboxSelected);
+	tableHeads.forEach((head) => {
+		const thSort = head.querySelectorAll('.sorting_disabled');
 
-			thSort.forEach((th, index) => {
-				if (fetchedData.columns[index].name !== 'id') {
-					th.classList.remove('sorting_disabled');
-					th.classList.add('sorting');
+		thSort.forEach((th, index) => {
+			if (fetchedData.columns[index].name !== 'id') {
+				th.classList.remove('sorting_disabled');
+				th.classList.add('sorting');
 
-					th.addEventListener('click', () => {
-						if (th.classList.contains('sorting_asc')) {
-							allSortElements.forEach((th2) => {
-								th2.classList.remove('sorting_desc');
-								th2.classList.remove('sorting_asc');
-							});
+				th.addEventListener('click', () => {
+					if (th.classList.contains('sorting_asc')) {
+						allSortElements.forEach((th2) => {
+							th2.classList.remove('sorting_desc');
+							th2.classList.remove('sorting_asc');
+						});
 
-							th.classList.add('sorting_desc');
+						th.classList.add('sorting_desc');
 
-							globalSearchParams = {
-								...globalSearchParams,
-								orderBy: fetchedData.columns[index].name,
-								orderDir: 'desc'
-							};
-							filterTable();
-						} else if (!th.classList.contains('sorting_asc')) {
-							allSortElements.forEach((th3) => {
-								th3.classList.remove('sorting_desc');
-								th3.classList.remove('sorting_asc');
-							});
-
-							th.classList.add('sorting_asc');
-
-							globalSearchParams = {
-								...globalSearchParams,
-								orderBy: fetchedData.columns[index].name,
-								orderDir: 'asc'
-							};
-							filterTable();
-						}
-					});
-				}
-			});
-		});
-		$('.diriq-table__wrapper select[data-toggle="select2"]').each(function() {
-			const select = this;
-			$(select).select2({
-				templateResult: (state) => generateCustomSelect(this.id, state),
-				minimumResultsForSearch: -1,
-				escapeMarkup: function(markup) {
-					return markup;
-				},
-
-				placeholder: {
-					id: '',
-					text: `Select ${select.dataset.placeholder}`
-				},
-				allowClear: true
-			});
-			$(select).on('select2:select', (e) => {
-				const value = $(e.target).val();
-				globalSearchParams = {
-					...globalSearchParams,
-					[e.target.name]: value,
-					pageNumber: 1
-				};
-
-				filterTable(e.target, isNewTable);
-			});
-			$(select).on('select2:unselect', (e) => {
-				const value = $(e.target).val();
-				globalSearchParams = {
-					...globalSearchParams,
-					[e.target.name]: value,
-					pageNumber: 1
-				};
-
-				filterTable(e.target, isNewTable);
-			});
-		});
-
-		tFootInputsWrapper.forEach((inputWrapper, i) => {
-			const input = inputWrapper.querySelector('input.filter-input');
-			if (input) {
-				let canSearch = false;
-
-				input.dataset.id = i;
-
-				input.addEventListener('input', () => {
-					if (input.value.length > 2) {
-						canSearch = true;
 						globalSearchParams = {
 							...globalSearchParams,
-							[input.name]: input.value,
-							pageNumber: 1
+							orderBy: fetchedData.columns[index].name,
+							orderDir: 'desc'
 						};
-						filterTable(input, isNewTable);
-					} else if (canSearch) {
+						filterTable();
+					} else if (!th.classList.contains('sorting_asc')) {
+						allSortElements.forEach((th3) => {
+							th3.classList.remove('sorting_desc');
+							th3.classList.remove('sorting_asc');
+						});
+
+						th.classList.add('sorting_asc');
+
 						globalSearchParams = {
 							...globalSearchParams,
-							[input.name]: '',
-							pageNumber: 1
+							orderBy: fetchedData.columns[index].name,
+							orderDir: 'asc'
 						};
-						filterTable(input, isNewTable);
-						canSearch = false;
+						filterTable();
 					}
 				});
 			}
 		});
-
-		setCurrentPagination(fetchedData);
-
-		lengthSelect.addEventListener('change', (e) => {
-			const value = Number.parseInt(e.target.value);
-
+	});
+	$('.diriq-table__wrapper select[data-toggle="select2"]').each(function() {
+		const select = this;
+		$(select).select2({
+			templateResult: (state) => generateCustomSelect(this.id, state),
+			minimumResultsForSearch: -1,
+			escapeMarkup: function(markup) {
+				return markup;
+			},
+			placeholder: {
+				id: '-1',
+				text: `Select ${select.dataset.placeholder}`
+			},
+			allowClear: true
+		});
+		$(select).on('select2:select', (e) => {
+			const value = $(e.target).val();
 			globalSearchParams = {
 				...globalSearchParams,
-				pageSize: value,
-				pageNumber:
-					value * fetchedData.pageNumber > fetchedData.totalCount
-						? Math.round(fetchedData.totalCount / value)
-						: fetchedData.pageNumber
+				[e.target.name]: value,
+				pageNumber: 1
 			};
 
-			filterTable(e.target, isNewTable);
+			filterTable();
+		});
+		$(select).on('select2:unselect', (e) => {
+			const value = $(e.target).val();
+			globalSearchParams = {
+				...globalSearchParams,
+				[e.target.name]: value,
+				pageNumber: 1
+			};
+
+			filterTable();
+		});
+	});
+
+	tFootInputsWrapper.forEach((inputWrapper, i) => {
+		const input = inputWrapper.querySelector('input.filter-input');
+		if (input) {
+			let canSearch = false;
+
+			input.dataset.id = i;
+
+			input.addEventListener('input', () => {
+				if (input.value.length > 2) {
+					canSearch = true;
+					globalSearchParams = {
+						...globalSearchParams,
+						[input.name]: input.value,
+						pageNumber: 1
+					};
+					filterTable();
+				} else if (canSearch) {
+					globalSearchParams = {
+						...globalSearchParams,
+						[input.name]: '',
+						pageNumber: 1
+					};
+					filterTable();
+					canSearch = false;
+				}
+			});
+		}
+	});
+
+	setCurrentPagination(fetchedData);
+
+	lengthSelect.addEventListener('change', (e) => {
+		const value = Number.parseInt(e.target.value);
+
+		globalSearchParams = {
+			...globalSearchParams,
+			pageSize: value,
+			pageNumber:
+				value * fetchedData.pageNumber > fetchedData.totalCount
+					? Math.round(fetchedData.totalCount / value)
+					: fetchedData.pageNumber
+		};
+
+		filterTable();
+	});
+
+	if (tableCheckboxActions.length > 0) {
+		tableCheckboxActions.forEach((checkBoxWrapper) => {
+			const dropdownItems = checkBoxWrapper.querySelectorAll('.dropdown-item');
+			dropdownItems.forEach((item) => {
+				if (item.dataset.action) {
+					item.addEventListener('click', () => {
+						TABLE_CHECKBOX_ACTIONS[item.dataset.action]({ data: checkboxSelected });
+					});
+				}
+			});
 		});
 	}
 
@@ -1796,8 +1857,6 @@ const createDataTable = async (id, config, isFixedCollumns, isNewTable) => {
 			$(tableWrapper).addClass('loading');
 		});
 	}
-
-	adjustDataTableColumns();
 
 	$('.datatable._contact-details-lists input:checkbox').change(function() {
 		if ($(this).is(':checked')) {
