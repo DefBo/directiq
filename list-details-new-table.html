@@ -643,8 +643,9 @@
 
     <script>
         // Datatable settings and initialisation
+        const TABLE_API = 'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/custom';
         $(document).ready(function () {
-            const table = createCustomDataTable('#data-table', {}, true, true);
+            const table = createCustomDataTable('#data-table', {}, true );
         });
     </script>
 
