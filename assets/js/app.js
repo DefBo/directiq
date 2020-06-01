@@ -1287,6 +1287,8 @@ const generateQualitySelect = (state) => {
 	return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
 };
 
+const getUserLink = (id) => `/${id}`;
+
 const generateStatusSelect = (state) => {
 	let data = '';
 
@@ -1367,21 +1369,20 @@ const DEFAULT_MULTIPLY_SELECT_OPTIONS = {
 };
 
 const COLLUMN_WITHOUT_SEARCH = [ 'id', 'viewButton' ];
+
 let PROXY_URL = '';
+let CORS_HEADER = {};
 
 if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
 	PROXY_URL = 'https://thingproxy.freeboard.io/fetch/';
+	CORS_HEADER = {
+		headers: {
+			'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+		}
+	};
 }
 
-const CORS_HEADER = {
-	headers: {
-		'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-	}
-};
-
-const TABLE_API = 'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/custom';
-
-const createCustomDataTable = async (id, config, isFixedCollumns) => {
+const createCustomDataTable = async (id, config, isFixedCollumns, api) => {
 	const getData = async (url, options) => {
 		if (cancelController) cancelController.abort();
 		const cancel = new AbortController();
@@ -1421,8 +1422,6 @@ const createCustomDataTable = async (id, config, isFixedCollumns) => {
 			})
 			.join('&');
 	};
-
-	const getUserLink = (id) => `/${id}`;
 
 	const getCollumnTitles = (data) => {
 		return data.columns.map((collumn) => {
@@ -1886,6 +1885,8 @@ const createCustomDataTable = async (id, config, isFixedCollumns) => {
 			$(tableWrapper).addClass('loading');
 		});
 	}
+
+	adjustDataTableColumns();
 
 	$('.datatable._contact-details-lists input:checkbox').change(function() {
 		if ($(this).is(':checked')) {
