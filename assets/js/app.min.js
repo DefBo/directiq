@@ -1275,7 +1275,7 @@ const generateQualitySelect = (state) => {
 	if (state.id) {
 		data = state.id;
 	} else if (state.text) {
-		return state.text;
+		return `<span class="select2-results__clear">${state.text}</span>`;
 	} else {
 		data = state;
 	}
@@ -1295,7 +1295,7 @@ const generateStatusSelect = (state) => {
 	if (state.id) {
 		data = state.id;
 	} else if (state.text) {
-		return state.text;
+		return `<span class="select2-results__clear">${state.text}</span>`;
 	} else {
 		data = state;
 	}

@@ -6218,7 +6218,7 @@ body.nav-is-toggled:after {
       color: #fff; }
   .dropdown-toggle._user {
     padding: 0 22px 0 0; }
-    .dropdown-toggle._user span {
+    .dropdown-toggle._user .user-avatar {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -6231,7 +6231,13 @@ body.nav-is-toggled:after {
       font-size: 18px;
       margin: 17.5px 0;
       transition: .25s;
-      position: relative; }
+      position: relative;
+      overflow: hidden; }
+      .dropdown-toggle._user .user-avatar img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
     .dropdown-toggle._user svg {
       position: absolute;
       right: 10px;
@@ -7358,6 +7364,12 @@ body.nav-is-toggled:after {
     color: #758796 !important; }
   .select2-search__field::placeholder {
     color: #758796 !important; }
+
+.select2-results__option {
+  font-size: 10px;
+  margin: 0 -5px;
+  white-space: nowrap;
+  font-weight: 500; }
 
 .confirm__wrap {
   position: relative; }
