@@ -1322,19 +1322,6 @@ const generateCustomSelect = (name, state) => {
 	return generateSimpleSelect(state);
 };
 
-const setListnerToCheckboxes = (inputs, array) => {
-	inputs.forEach((input) => {
-		input.addEventListener('click', () => {
-			if (input.checked) {
-				array.push(input.value);
-			} else {
-				array = array.filter((item) => item !== input.value);
-			}
-		});
-		input.dataset.listner = true;
-	});
-};
-
 let cancelController = null;
 
 const removeSelectedRows = (url, params) => {
@@ -1421,6 +1408,20 @@ const createCustomDataTable = async (id, config, isFixedCollumns, api) => {
 				return `${keys}=${params[keys]}`;
 			})
 			.join('&');
+	};
+
+	const setListnerToCheckboxes = (inputs) => {
+		if (inputs.length > 0) {
+			inputs.forEach((input) => {
+				input.addEventListener('click', () => {
+					if (input.checked) {
+						checkboxSelected.push(input.value);
+					} else {
+						checkboxSelected = checkboxSelected.filter((item) => item !== input.value);
+					}
+				});
+			});
+		}
 	};
 
 	const getCollumnTitles = (data) => {
@@ -1655,7 +1656,7 @@ const createCustomDataTable = async (id, config, isFixedCollumns, api) => {
 			setCurrentPagination(fetchedData);
 
 			checkboxSelected = [];
-			setListnerToCheckboxes(tableWrapper.querySelectorAll('.checkbox-single input'), checkboxSelected);
+			setListnerToCheckboxes(tableWrapper.querySelectorAll('.checkbox-single input'));
 
 			if (draftfixedSorts) {
 				draftfixedSorts.forEach((field) => {
@@ -1741,7 +1742,7 @@ const createCustomDataTable = async (id, config, isFixedCollumns, api) => {
 		'<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'
 	);
 
-	setListnerToCheckboxes(tableWrapper.querySelectorAll('.checkbox-single input'), checkboxSelected);
+	setListnerToCheckboxes(tableWrapper.querySelectorAll('.checkbox-single input'));
 	tableHeads.forEach((head) => {
 		const thSort = head.querySelectorAll('.sorting_disabled');
 
