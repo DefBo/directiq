@@ -16,13 +16,9 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
 
-        <!-- Plugins css-->
-        <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
-
-        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-
+        <link href="assets/libs/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables.net-fixedcolumns-dt/css/fixedColumns.dataTables.min.css" rel="stylesheet"
+              type="text/css" />
         <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
         
 	    <!-- App css -->
@@ -580,30 +576,33 @@
                                                 <h5 class="mb-29">Conditions</h5>
 
                                                 <div class="row pr-46">
-                                                    <div class="col-md-3">
-                                                        <select class="form-control _select2-lg" data-toggle="select2" required>
-                                                            <option value="test-1" selected>Fields</option>
+                                                    <div class="col-md-3 condition-col">
+                                                        <select class="form-control _select2-lg" required>
+                                                            <option></option>
+                                                            <option value="test-1">Fields</option>
                                                             <option value="test-2">Option 2</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <select class="form-control _select2-lg" data-toggle="select2" required>
-                                                            <option value="test-1" selected>Email Address</option>
+                                                    <div class="col-md-3 condition-col d-none">
+                                                        <select class="form-control _select2-lg" required>
+                                                            <option></option>
+                                                            <option value="test-1">Email Address</option>
                                                             <option value="test-2">Option 2</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <select class="form-control _select2-lg" data-toggle="select2" required>
-                                                            <option value="test-1" selected>Contains</option>
+                                                    <div class="col-md-3 condition-col d-none">
+                                                        <select class="form-control _select2-lg" required>
+                                                            <option></option>
+                                                            <option value="test-1">Contains</option>
                                                             <option value="test-2">Option 2</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <input type="text" placeholder="Type Text" class="form-control mt-16 mt-md-0">
+                                                    <div class="col-md-3 condition-col d-none">
+                                                        <input type="text" placeholder="Type Text" class="form-control mt-16 mt-md-0" id="condition-text-input">
                                                     </div>
                                                 </div>
 
-                                                <div class="pr-46" id="show-more-fields-row">
+                                                <div class="pr-46 d-none" id="show-more-fields-row">
                                                     <div class="row mt-30">
                                                         <div class="col">
                                                             <div class="radio_inline radio mr-34">
@@ -617,29 +616,32 @@
                                                         </div>
                                                     </div>
                                                     <div class="row mt-30 more-conditions">
-                                                        <div class="col-md-3">
-                                                            <select class="form-control _select2-lg" data-toggle="select2" required>
-                                                                <option value="test-1" selected>Fields</option>
+                                                        <div class="col-md-3 condition-col">
+                                                            <select class="form-control _select2-lg" required>
+                                                                <option></option>
+                                                                <option value="test-1">Fields</option>
                                                                 <option value="test-2">Option 2</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-md-3">
-                                                            <select class="form-control _select2-lg" data-toggle="select2" required>
-                                                                <option value="test-1" selected>Email Address</option>
+                                                        <div class="col-md-3 condition-col d-none">
+                                                            <select class="form-control _select2-lg" required>
+                                                                <option></option>
+                                                                <option value="test-1">Email Address</option>
                                                                 <option value="test-2">Option 2</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-md-3">
-                                                            <select class="form-control _select2-lg" data-toggle="select2" required>
-                                                                <option value="test-1" selected>Contains</option>
+                                                        <div class="col-md-3 condition-col d-none">
+                                                            <select class="form-control _select2-lg" required>
+                                                                <option></option>
+                                                                <option value="test-1">Contains</option>
                                                                 <option value="test-2">Option 2</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-3 condition-col d-none">
                                                             <input type="text" placeholder="Type Text" class="form-control mt-16 mt-md-0">
                                                         </div>
 
-                                                        <button class="btn _sm _secondary _check">
+                                                        <button class="btn _sm _secondary _check" id="hide-more-fields-btn">
                                                             <svg width="8" height="8">
                                                                 <use xlink:href="assets/images/sprite.svg#cross"></use>
                                                             </svg>
@@ -647,84 +649,316 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="d-flex align-items-center justify-content-between mt-30">
-                                                    <button class="btn _sm _secondary">Add Another Condition</button>
-                                                </div>
+                                                <div class="mt-30 d-none" id="conditions-buttons">
+                                                    <button class="btn _sm _secondary" id="add-another-condition-btn">Add Another Condition</button>
 
-                                                <div class="d-flex justify-content-between mt-30">
+                                                    <div class="d-flex justify-content-between mt-30">
+                                                        <div>
+                                                            <button class="btn _lg _primary" id="apply-conditions-btn">Apply</button>
+                                                            <button class="btn _lg _secondary ml-20 d-none" id="reset-conditions-btn">Reset</button>
+                                                        </div>
 
-                                                    <button class="btn _lg _primary">Apply</button>
-                                                    <button class="btn _lg _secondary ml-20">Reset</button>
+                                                        <button class="btn _lg _primary d-none" data-toggle="modal" data-target="#save-segment" id="save-segments-btn">Save Segment (10,258 Contacts)</button>
+                                                    </div>
                                                 </div>
 
                                             </div>
 
-                                            <div class="d-none" id="added-contacts">
+                                            <div class="diriq-table__wrapper _list-name-table mt-30 _hidden">
 
-                                                <div class="card mb-0">
-                                                    <p class="font-14 font-weight-bold mb-0 color-primary">Added Contacts</p>
-                                                    <div class="font-0 mx-n10 mt-n7">
-                                                        <div class="btn _sm _tag-del">
-                                                            dodogildo@gmail.com
-                                                            <button class="btn_icon ml-11">
-                                                                <svg width="8" height="8">
-                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                <table id="data-table" class="diriq-table" style="width:100%">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="nosort">
+                                                            <i>
+                                                                <svg width="10.16" height="6">
+                                                                    <use xlink:href="assets/images/sprite.svg#check-col">
+                                                                    </use>
                                                                 </svg>
-                                                            </button>
-                                                        </div>
-                                                        <div class="btn _sm _tag-del">
-                                                            erezmali@hotmail.com
-                                                            <button class="btn_icon ml-11">
-                                                                <svg width="8" height="8">
-                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
-                                                                </svg>
-                                                            </button>
-                                                        </div>
-                                                        <div class="btn _sm _tag-del">
-                                                            little_bird92@borulojistik.co.uk
-                                                            <button class="btn_icon ml-11">
-                                                                <svg width="8" height="8">
-                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
-                                                                </svg>
-                                                            </button>
-                                                        </div>
-                                                        <div class="btn _sm _tag-del">
-                                                            barbi@me.com
-                                                            <button class="btn_icon ml-11">
-                                                                <svg width="8" height="8">
-                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
-                                                                </svg>
-                                                            </button>
-                                                        </div>
-                                                        <div class="btn _sm _tag-del">
-                                                            joe.cocker@cocki.com
-                                                            <button class="btn_icon ml-11">
-                                                                <svg width="8" height="8">
-                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
-                                                                </svg>
-                                                            </button>
-                                                        </div>
-                                                        <div class="btn _sm _tag-del">
-                                                            maul@me.com
-                                                            <button class="btn_icon ml-11">
-                                                                <svg width="8" height="8">
-                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
-                                                                </svg>
-                                                            </button>
+                                                            </i>
+                                                        </th>
+                                                        <th>Email Address</th>
+                                                        <th>Quality</th>
+                                                        <th>First Name</th>
+                                                        <th>Last Name</th>
+                                                        <th>Status</th>
+                                                        <th>Tags</th>
+                                                        <th class="nosort"></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1"
+                                                                       aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" class="diriq-table__link">barisergin@gmail.com</a>
+                                                        </td>
+                                                        <td>
+                                                            <i class="quality-icon _2">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </i>
+                                                        </td>
+                                                        <td>
+                                                            <span class="font-weight-semibold">Baris</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="font-weight-semibold">Ergin</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="table-status _success">subscriber</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="table-tag">member</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex">
+                                                                <button type="button"
+                                                                        class="btn _sm _secondary">View</button>
+                                                                <button type="button" class="btn _sm _primary ml-4 px-6">
+                                                                    <svg width="2" height="10">
+                                                                        <use
+                                                                                xlink:href="assets/images/sprite.svg#more-dots">
+                                                                        </use>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1"
+                                                                       aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#"
+                                                               class="diriq-table__link">steve.48masc@darknet.org</a>
+                                                        </td>
+                                                        <td>
+                                                            <i class="list-quality-icon _2">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </i>
+                                                        </td>
+                                                        <td>
+                                                            <span class="font-weight-semibold">Steve</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="font-weight-semibold">Wozniakov</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="table-status _success">subscriber</span>
+                                                        </td>
+                                                        <td></td>
+                                                        <td>
+                                                            <div class="d-flex">
+                                                                <button type="button"
+                                                                        class="btn _sm _secondary">View</button>
+                                                                <button type="button" class="btn _sm _primary ml-4 px-6">
+                                                                    <svg width="2" height="10">
+                                                                        <use
+                                                                                xlink:href="assets/images/sprite.svg#more-dots">
+                                                                        </use>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1"
+                                                                       aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#"
+                                                               class="diriq-table__link">chadokoch72@mirkelam.co.uk</a>
+                                                        </td>
+                                                        <td>
+                                                            <i class="quality-icon _2">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </i>
+                                                        </td>
+                                                        <td>
+                                                            <span class="font-weight-semibold">Chado</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="font-weight-semibold">Kochiko</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="table-status _danger">disabled</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="table-tag">vip</span>
+                                                            <span class="table-tag">best work</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex">
+                                                                <button type="button"
+                                                                        class="btn _sm _secondary">View</button>
+                                                                <button type="button" class="btn _sm _primary ml-4 px-6">
+                                                                    <svg width="2" height="10">
+                                                                        <use
+                                                                                xlink:href="assets/images/sprite.svg#more-dots">
+                                                                        </use>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="checkbox checkbox-single">
+                                                                <input type="checkbox" value="option1"
+                                                                       aria-label="Single checkbox One">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#"
+                                                               class="diriq-table__link">alfrikanski@hotmail.com</a>
+                                                        </td>
+                                                        <td>
+                                                            <i class="quality-icon _2">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </i>
+                                                        </td>
+                                                        <td>
+                                                            <span class="font-weight-semibold">Alfredo</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="font-weight-semibold">Magento</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="table-status _success">subscriber</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="table-tag">vip</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex">
+                                                                <button type="button"
+                                                                        class="btn _sm _secondary">View</button>
+                                                                <button type="button" class="btn _sm _primary ml-4 px-6">
+                                                                    <svg width="2" height="10">
+                                                                        <use
+                                                                                xlink:href="assets/images/sprite.svg#more-dots">
+                                                                        </use>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                    <tr>
+                                                        <th class="nosort"></th>
+                                                        <th>
+                                                            <input class="filter-input" type="text"
+                                                                   placeholder="Type Email Address">
+                                                        </th>
+                                                        <th>
+                                                            <select class="form-control" data-toggle="select2" required>
+                                                                <option class="d-none" value="" disabled selected>Select Quality</option>
+                                                                <option value="test-1">Option 1</option>
+                                                                <option value="test-2">Option 2</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>
+                                                            <input class="filter-input" type="text"
+                                                                   placeholder="Type First Name">
+                                                        </th>
+                                                        <th>
+                                                            <input class="filter-input" type="text"
+                                                                   placeholder="Type Last Name">
+                                                        </th>
+                                                        <th>
+                                                            <select class="form-control" data-toggle="select2" required>
+                                                                <option class="d-none" value="" disabled selected>Select Status</option>
+                                                                <option value="test-1">Option 1</option>
+                                                                <option value="test-2">Option 2</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>
+                                                            <select class="form-control" data-toggle="select2" required>
+                                                                <option class="d-none" value="" disabled selected>Select Tags</option>
+                                                                <option value="test-1">Option 1</option>
+                                                                <option value="test-2">Option 2</option>
+                                                            </select>
+                                                        </th>
+                                                        <th class="nosort"></th>
+                                                    </tr>
+                                                    </tfoot>
+                                                </table>
+
+                                                <!-- Table loader -->
+                                                <div class="lds-ellipsis__wrap">
+                                                    <div class="lds-ellipsis">
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="diriq-table__filter-btn">
+                                                    <i class="diriq-table__filter-icon">
+                                                        <svg width="20.187" height="22">
+                                                            <use xlink:href="assets/images/sprite.svg#filter"></use>
+                                                        </svg>
+                                                    </i>
+                                                    <i class="diriq-table__close-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                                                            <g transform="translate(0.5 0.5)">
+                                                                <rect width="24" height="24" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
+                                                                <path class="diriq-table__close-icon-cross" d="M9489.239,1605.581l-.806-.806-3.194,3.194-3.194-3.194-.806.806,3.194,3.194-3.194,3.194.806.806,3.194-3.194,3.194,3.194.806-.806-3.194-3.194Z" transform="translate(-9473.239 -1596.775)" fill="currentColor"/>
+                                                            </g>
+                                                        </svg>
+                                                    </i>
+                                                </div>
+
+                                                <div class="dropdown _more">
+                                                    <a class="dropdown-toggle _more" data-toggle="dropdown" href="#"
+                                                       role="button" aria-haspopup="false" aria-expanded="false">
+                                                        <svg width="5.8" height="25">
+                                                            <use xlink:href="assets/images/sprite.svg#more-dots"></use>
+                                                        </svg>
+                                                    </a>
+
+                                                    <div class="dropdown-menu dropdown-menu-right _actions"
+                                                         aria-labelledby="moreMenuButton">
+                                                        <div class="dropdown-menu-inner">
+                                                            <a class="dropdown-item" href="#">Action Item 1</a>
+                                                            <a class="dropdown-item" href="#">Action Item 2</a>
+                                                            <a class="dropdown-item" href="#">Action Item 3</a>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="mt-15">
-                                                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-start">
-                                                        <div class="checkbox mt-16">
-                                                            <input type="checkbox" value="option1" id="customCheck3">
-                                                            <label class="custom-control-label" for="customCheck3">I accept bla bla blabla and lorem lipsum permisson based bla bla</label>
-                                                        </div>
-
-                                                        <button class="btn _lg _primary upload-list__next-step mt-16">Ready? Go!</button>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
 
@@ -751,133 +985,103 @@
                 </svg>
             </a>
 
+            <div id="save-segment" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <svg width="8" height="8">
+                                <use xlink:href="assets/images/sprite.svg#cross"></use>
+                            </svg>
+                        </button>
+                        <div class="modal-body">
+                            <h4 class="mb-13 mt-2">Save Segment</h4>
+                            <div class="form-control__wrap mb-14">
+                                <input type="text" placeholder="Segment Name Here" class="form-control">
+                            </div>
+                            <p class="font-12 font-weight-bold lh-1-3 mb-19">Use a distinguishing name. <span class="font-weight-semibold">Segments are for your own use.</span></p>
+                            <button class="btn _lg _primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal -->
+
         </div>
         <!-- END wrapper -->
 
         <!-- App js -->
         <script src="assets/js/vendor.min.js"></script>
 
-        <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
-        <script src="assets/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
         <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 
-        <script src="assets/js/pages/tln.min.js"></script>
+        <script src="assets/libs/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
 
         <script src="assets/libs/select2/js/select2.min.js"></script>
 
         <script>
-            // Datatables settings
-            $(document).ready(function() {
-                $('#upload-list-data-table, #add-one-by-one-data-table, #copy-paste-data-table').DataTable({
-                    scrollX:        true,
-                    scrollY:        127,
-                    scrollCollapse: true,
-                    paging:         false,
-                    order: [],
-                    aoColumnDefs: [{
-                        bSortable: false,
-                        aTargets: ['nosort']
-                    }],
-                    sDom: 't',
+            $(document).ready(function () {
+                var table = createDataTable('#data-table', {}, true);
+
+                $('._select2-lg').select2({
+                    placeholder: 'Select an option',
+                    allowClear: true,
+                    minimumResultsForSearch: -1
                 });
+
+                $("._select2-lg").on("change",function(){
+                    $(this).closest('.condition-col').next('.condition-col').removeClass('d-none');
+                });
+
+                $('#condition-text-input').on('change keyup', function() {
+                    if ($(this).val().length > 0) {
+                        $('#conditions-buttons').removeClass('d-none');
+                    } else {
+                        $('#conditions-buttons').addClass('d-none');
+                    }
+                });
+
+                $('#add-another-condition-btn').click(function() {
+                    $('#show-more-fields-row').removeClass('d-none');
+                });
+
+                $('#hide-more-fields-btn').click(function() {
+                    $('#show-more-fields-row').addClass('d-none');
+                });
+
+                $('#apply-conditions-btn').click(function() {
+                    $('._list-name-table').removeClass('_hidden');
+                    $('#save-segments-btn').removeClass('d-none');
+                    $('#reset-conditions-btn').removeClass('d-none');
+                });
+
+                $('#reset-conditions-btn').click(function() {
+                    $('._list-name-table').addClass('_hidden');
+                    $('#save-segments-btn').addClass('d-none');
+                    $(this).addClass('d-none');
+                });
+
+
+
+                /*$('#add-another-condition-btn').click(function() {
+                    $('#show-more-fields-row').removeClass('d-none');
+                });
+
+                $('#hide-more-fields-btn').click(function() {
+                    $('#show-more-fields-row').addClass('d-none');
+                });
+
+                $('#condition-text-input').on('change keyup', function() {
+                    if ($(this).val().length > 0) {
+                        $('#reset-conditions-btn').removeClass('d-none');
+                    } else {
+                        $('#reset-conditions-btn').addClass('d-none');
+                    }
+                });
+
+                $('#reset-conditions-btn').click(function() {
+                    $('#show-more-fields-row').addClass('d-none');
+                });*/
             });
-
-            // Dropzone init and settings
-
-            function bytesToMb(bytes) {
-                return bytes / Math.pow(1024, 2);
-            }
-
-            var ERRORS_FILE_UPLOAD = {
-                fileType: 'This file type is not supported. Please, upload PDF or PNG.',
-                size: 'File Size must not exceed 1Mb. Please try again.'
-            };
-            var ACCEPTED_FILE_SIZE_IN_MB = 1;
-            var ACCEPTED_FILE_TYPE = 'application/pdf, image/png';
-
-            // Dropzone
-            !function ($) {
-                "use strict";
-
-                var FileUpload = function () {
-                    this.$body = $("body")
-                };
-
-
-                /* Initializing */
-                FileUpload.prototype.init = function () {
-                    // Disable auto discovery
-
-                    Dropzone.autoDiscover = false;
-
-                    $('[data-plugin="dropzone"]').each(function () {
-                        var actionUrl = $(this).attr('action')
-                        var previewContainer = $(this).data('previewsContainer');
-
-                        var opts = {
-                            url: actionUrl, acceptedFiles: ACCEPTED_FILE_TYPE, maxFilesize: ACCEPTED_FILE_SIZE_IN_MB
-                        };
-
-                        if (previewContainer) {
-                            opts['previewsContainer'] = previewContainer;
-                        }
-
-                        var uploadPreviewTemplate = $(this).data("uploadPreviewTemplate");
-                        if (uploadPreviewTemplate) {
-                            opts['previewTemplate'] = $(uploadPreviewTemplate).html();
-                        }
-                        var dropzoneEl = new Dropzone(this, opts);
-
-                        var errorElement = dropzoneEl.element.querySelector('.dropzone__error-message');
-                        dropzoneEl.on("addedfiles", function (files) {
-                            files.forEach(function(file) {
-                                console.log(file)
-                                errorElement.innerHTML = '';
-
-                                dropzoneEl.element.classList.remove('dropzone_error');
-                                if (!file.accepted) {
-
-                                    if (!ACCEPTED_FILE_TYPE.split(',').some(type => type === file.type)) errorElement.innerHTML = ERRORS_FILE_UPLOAD.fileType;
-                                    if (bytesToMb(file.size) > ACCEPTED_FILE_SIZE_IN_MB) errorElement.innerHTML = ERRORS_FILE_UPLOAD.size;
-
-
-                                    dropzoneEl.element.classList.add('dropzone_error');
-                                    return dropzoneEl.removeFile(file);
-                                }
-                            });
-                        });
-                    });
-                },
-
-                        //init fileupload
-                        $.FileUpload = new FileUpload, $.FileUpload.Constructor = FileUpload;
-
-                }(window.jQuery),
-
-                    //initializing FileUpload
-                    function ($) {
-                        "use strict";
-
-                        $.FileUpload.init();
-
-                    }(window.jQuery);
-
-
-                if ($('[data-plugins="dropify"]').length > 0) {
-                    // Dropify
-                    $('[data-plugins="dropify"]').dropify({
-                        messages: {
-                            'default': 'Drag and drop a file here or click',
-                            'replace': 'Drag and drop or click to replace',
-                            'remove': 'Remove',
-                            'error': 'Ooops, something wrong appended.'
-                        },
-                        error: {
-                            'fileSize': 'The file size is too big (1M max).'
-                        }
-                    });
-                }
         </script>
 
         <!-- App js -->

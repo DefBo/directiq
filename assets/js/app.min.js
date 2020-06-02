@@ -1048,6 +1048,10 @@ $(document).ready(function() {
 		adjustDataTableColumns();
 	});
 
+    $('#apply-conditions-btn').click(function() {
+        adjustDataTableColumns();
+    });
+
 	$('.upload-list__previous-step').click(function() {
 		$(this).closest('.upload-list__step').addClass('d-none');
 		$(this).closest('.upload-list__step').prev('.upload-list__step').removeClass('d-none');
