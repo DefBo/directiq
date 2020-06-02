@@ -1023,10 +1023,10 @@ Waves.init();
 
 $(document).ready(function() {
 	checkSize();
-	setMenuWidth();
+	/*setMenuWidth();*/
 	$(window).resize(function() {
 		checkSize();
-		setMenuWidth();
+		/*setMenuWidth();*/
 		if ($('.dataTable').length > 0) {
 			adjustDataTableColumns();
 		}
@@ -1174,7 +1174,8 @@ $(window).on('load', function() {
 	});
 });
 
-const setMenuWidth = () => {
+/// Commented because of moving to a new navigation concept
+/*const setMenuWidth = () => {
 	const navDrill = document.querySelector('.nav-drill');
 	if (!navDrill) return;
 	
@@ -1190,7 +1191,7 @@ const setMenuWidth = () => {
 	const menuWidth = navitemActive.clientWidth + subItemActive.clientWidth;
 	navDrill.style.width = menuWidth + 'px';
 	contentPage.style.marginLeft = menuWidth + 'px';
-};
+};*/
 
 const DEFAULT_DATA_TABLE_CONFIG = {
 	scrollX: true,
