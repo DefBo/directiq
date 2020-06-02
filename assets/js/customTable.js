@@ -334,7 +334,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 		const responce = await fetch(url).catch(function(err) {
 			console.error(err);
 		});
-
+		console.log(responce);
 		if (responce) {
 			const { data } = await responce.json();
 			column = { ...column, options: data };
