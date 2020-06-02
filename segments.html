@@ -551,9 +551,9 @@
                         <div class="row">
                             <div class="col-12">
 
-                                <div class="card mt-14 mb-28">
+                                <div class="card mt-14 mb-16">
                                     <h4 class="mt-n4">Segment Your Contacts</h4>
-                                    <div class="font-12 color-secondary font-weight-medium mt-12">
+                                    <div class="font-12 color-secondary font-weight-medium mt-11">
                                         A <span class="color-primary font-weight-bold">segment</span> is a group of contacts. Its content takes shape automatically based on <span class="color-primary font-weight-bold">set rules</span>. Segments are handy when sending campaigns. <a href="#" class="link">Learn more</a>.
                                     </div>
                                 </div>
@@ -579,7 +579,7 @@
 
                                                 <h5 class="mb-29">Conditions</h5>
 
-                                                <div class="row">
+                                                <div class="row pr-46">
                                                     <div class="col-md-3">
                                                         <select class="form-control _select2-lg" data-toggle="select2" required>
                                                             <option value="test-1" selected>Fields</option>
@@ -603,24 +603,58 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="row d-none" id="show-more-fields-row">
-                                                    <div class="col-md-3">
-                                                        <input type="text" placeholder="Additional Field" class="form-control mt-16 mt-md-30">
+                                                <div class="pr-46" id="show-more-fields-row">
+                                                    <div class="row mt-30">
+                                                        <div class="col">
+                                                            <div class="radio_inline radio mr-34">
+                                                                <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
+                                                                <label for="inlineRadio1"> OR </label>
+                                                            </div>
+                                                            <div class="radio_inline radio mr-0">
+                                                                <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                                                                <label for="inlineRadio2"> AND </label>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <input type="text" placeholder="Another Field" class="form-control mt-16 mt-md-30">
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <input type="text" placeholder="Yet Another" class="form-control mt-16 mt-md-30">
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <input type="text" placeholder="And One More" class="form-control mt-16 mt-md-30">
+                                                    <div class="row mt-30 more-conditions">
+                                                        <div class="col-md-3">
+                                                            <select class="form-control _select2-lg" data-toggle="select2" required>
+                                                                <option value="test-1" selected>Fields</option>
+                                                                <option value="test-2">Option 2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <select class="form-control _select2-lg" data-toggle="select2" required>
+                                                                <option value="test-1" selected>Email Address</option>
+                                                                <option value="test-2">Option 2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <select class="form-control _select2-lg" data-toggle="select2" required>
+                                                                <option value="test-1" selected>Contains</option>
+                                                                <option value="test-2">Option 2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <input type="text" placeholder="Type Text" class="form-control mt-16 mt-md-0">
+                                                        </div>
+
+                                                        <button class="btn _sm _secondary _check">
+                                                            <svg width="8" height="8">
+                                                                <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                            </svg>
+                                                        </button>
                                                     </div>
                                                 </div>
 
-                                                <div class="d-flex align-items-center justify-content-between mt-20">
-                                                    <button class="btn _lg _secondary mt-10" id="add-contact-btn">Add</button>
-                                                    <a href="" class="link font-12" id="show-more-fields-link">Show <span class="show-more-text">More</span><span class="show-more-text d-none">Less</span> Fields</a>
+                                                <div class="d-flex align-items-center justify-content-between mt-30">
+                                                    <button class="btn _sm _secondary">Add Another Condition</button>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between mt-30">
+
+                                                    <button class="btn _lg _primary">Apply</button>
+                                                    <button class="btn _lg _secondary ml-20">Reset</button>
                                                 </div>
 
                                             </div>

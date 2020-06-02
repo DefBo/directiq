@@ -1131,7 +1131,11 @@ $(document).ready(function() {
         }
     );
 
-    $('._select2-lg').data('select2').$dropdown.addClass("select2-container--lg");
+    if ($('._select2-lg').length > 0) {
+        $('._select2-lg').each(function() {
+            $(this).data('select2').$dropdown.addClass("select2-container--lg");
+        });
+	}
 
 	// Navigation
 	var navExpand = [].slice.call(document.querySelectorAll('.nav-expand'));
