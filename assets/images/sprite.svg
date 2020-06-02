@@ -117,9 +117,9 @@
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.8 25" id="empty-dots">
     <g transform="translate(-3077 -1085)">
-      <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1085.5)" fill="#fff" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
-      <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1095.1)" fill="#fff" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
-      <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1104.7)" fill="#fff" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
+      <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1085.5)" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
+      <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1095.1)" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
+      <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3077.5 1104.7)" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
     </g>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.187 22" id="filter">
