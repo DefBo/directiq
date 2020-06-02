@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta charset="utf-8" />
-        <title>Contacts Overview | DirectIQ</title>
+        <title>Add Contacts | DirectIQ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -17,16 +16,21 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
 
+        <!-- Plugins css-->
+        <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+
         <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
 
-        <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
-
+        <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        
+	    <!-- App css -->
+	    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+	    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
     </head>
 
-    <body data-layout-mode="two-column" class="_conatcts-home-page animation-stopper">
+    <body data-layout-mode="two-column" class="animation-stopper">
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -46,7 +50,8 @@
                         </div>
 
                         <ol class="breadcrumbs">
-                            <li class="breadcrumb-item active">Contacts
+                            <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
+                            <li class="breadcrumb-item active">Segments
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -192,7 +197,7 @@
                         <ul class="nav-items nav-expand-content">
                             <li class="nav-title">Contacts</li>
                             <li class="nav-item">
-                                <a class="nav-item-link active" href="./contacts-home-static.html">
+                                <a class="nav-item-link" href="./contacts-home-static.html">
                                     Overview
                                 </a>
                             </li>
@@ -212,7 +217,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item-link" href="segments.html">
+                                <a class="nav-item-link active" href="segments.html">
                                     Segments
                                 </a>
                             </li>
@@ -506,7 +511,7 @@
                 </ul>
 
                 <div class="nav-drill__icons">
-                    <button  class="btn_icon">
+                    <button class="btn_icon">
                         <svg width="42.182" height="42.414">
                             <use xlink:href="assets/images/sprite.svg#mobile-search"></use>
                         </svg>
@@ -540,170 +545,166 @@
             <div class="content-page">
                 <div class="content">
 
+                    <!-- Start Content-->
                     <div class="container-fluid">
 
                         <div class="row">
-                            <div class="col">
-                                <div class="card mt-15">
-                                    <div class="d-md-flex justify-content-between align-content-center">
-                                        <div>
-                                            <div class="font-36 lh-1 mt-n4">153</div>
-                                            <h5 class="mt-10">New Contacts</h5>
-                                            <div class="font-12 color-secondary font-weight-medium mt-14">
-                                                From Mar 15, 2020 to  May 14, 2020 you’ve added <a href="#" class="link">153 new contacts</a>
-                                            </div>
-                                            <a class="btn _sm _secondary mt-13 mb-20 mb-md-0" href="new-contact.html">New Contacts</a>
-                                        </div>
-                                        <div class="d-flex mx-n10">
-                                            <button class="btn _lg _secondary mx-10" data-toggle="modal" data-target="#create-list-modal">Create List</button>
-                                            <a href="./add-contact.html" class="btn _lg _primary mx-10">Add Contacts</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 d-md-flex flex-md-column flex-md-grow-1">
-                                <div class="card bg-light-grey align-items-start flex-grow-1">
-                                    <div class="font-36 lh-1 mt-n4">491</div>
-                                    <h5 class="mt-10">Subscribed Contacts</h5>
-                                    <div class="font-12 color-secondary font-weight-medium mt-14">
-                                        You’ve <a href="#" class="link">491 subscribed contacts</a> out of (<span class="color-primary">950 total contacts</span> in <span class="color-primary">3 lists</span>.)
-                                    </div>
-                                    <a href="./all-subscribers.html" class="btn _sm _secondary mt-13">All Subscribers</a>
-                                </div>
-                            </div>
-                            <div class="col-md-6 d-md-flex flex-md-column flex-md-grow-1">
-                                <div class="card bg-light-grey align-items-start flex-grow-1">
-                                    <div class="font-36 lh-1 mt-n4 color-danger">43</div>
-                                    <h5 class="mt-10">Disabled Contacts</h5>
-                                    <div class="font-12 color-secondary font-weight-medium mt-14">
-                                        You’ve <a href="#" class="link">43 disabled contacts</a> in total (<span class="color-primary">28 unsubscribed</span> and <span class="color-primary">15 hardbounced</span>.)
-                                    </div>
-                                    <a href="./all-disabled.html" class="btn _sm _secondary mt-13">All Disabled</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pr-0 pr-md-22 position-relative">
-
-                            <div class="row no-gutters chart-wrap">
-                                <div class="col-md-8">
-                                    <div class="card align-content-start">
-                                        <div class="d-flex justify-content-between align-items-center flex-wrap">
-                                            <h4 class="mb-16">Contacts Performance</h4>
-                                            <p class="font-12 color-secondary font-weight-medium">
-                                                <span><i class="circle-i circle-i_openers"></i> Openers</span>
-                                                <span class="ml-25"><i class="circle-i circle-i_clickers"></i> Clickers</span>
-                                                <span class="ml-25"><i class="circle-i circle-i_unsubscribers"></i> Unsubscribers</span>
-                                            </p>
-                                        </div>
-                                        <div id="morris-line-example" style="height: 246px" class="color-secondary"></div>
-                                        <div class="d-flex mx-n10">
-                                            <a href="./all-openers.html" class="btn _sm _secondary mt-13 mx-10">All Openers</a>
-                                            <a href="./all-clickers.html" class="btn _sm _secondary mt-13 mx-10">All Clickers</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 d-flex flex-direction-column">
-                                    <div class="card bg-light-grey flex-grow-1 align-items-center">
-
-                                        <div class="d-flex flex-column justify-content-between flex-grow-1">
-                                            <div class="d-flex justify-content-center w-100">
-                                                <div class="date-range__wrap">
-                                                    <input type="text" id="range-datepicker" class="date-range__input" placeholder="Pick dates" value="2020-03-31 – 2020-04-25">
-                                                    <i class="date-range__icon">
-                                                        <svg width="19.143" height="20">
-                                                            <use xlink:href="assets/images/sprite.svg#calendar"></use>
-                                                        </svg>
-                                                    </i>
-                                                </div>
-                                            </div>
-
-                                            <div class="knobs _triple">
-                                                <div class="d-flex">
-                                                    <div class="knob-wrap knob-wrap_up">
-                                                        <input data-plugin="knob" data-width="50" data-height="50" data-linecap=round
-                                                               data-fgColor="#00EBA8" value="75" data-displayInput=false data-skin="tron" data-angleOffset="180"
-                                                               data-readOnly=true data-thickness=".1" data-bgColor="#f6f9fc"/>
-                                                    </div>
-                                                    <div class="knob-text">
-                                                        <p>Openers</p>
-                                                        <span><i class="circle-i circle-i_openers"></i> 245</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="d-flex">
-                                                    <div class="knob-wrap knob-wrap_down">
-                                                        <input data-plugin="knob" data-width="50" data-height="50" data-linecap=round
-                                                               data-fgColor="#0000FF" value="35" data-displayInput=false data-skin="tron" data-angleOffset="180"
-                                                               data-readOnly=true data-thickness=".1" data-bgColor="#f6f9fc"/>
-                                                    </div>
-                                                    <div class="knob-text">
-                                                        <p>Clickers</p>
-                                                        <span><i class="circle-i circle-i_clickers"></i> 7</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="d-flex">
-                                                    <div class="knob-wrap knob-wrap_up">
-                                                        <input data-plugin="knob" data-width="50" data-height="50" data-linecap=round
-                                                               data-fgColor="#ED1C24" value="15" data-displayInput=false data-skin="tron" data-angleOffset="180"
-                                                               data-readOnly=true data-thickness=".1" data-bgColor="#f6f9fc"/>
-                                                    </div>
-                                                    <div class="knob-text">
-                                                        <p>Unsubscribers</p>
-                                                        <span><i class="circle-i circle-i_unsubscribers"></i> 12</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="dropdown _more">
-                                <a class="dropdown-toggle _more" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <svg width="5.8" height="25">
-                                        <use xlink:href="assets/images/sprite.svg#more-dots"></use>
-                                    </svg>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right _actions" aria-labelledby="moreMenuButton">
-                                    <div class="dropdown-menu-inner">
-                                        <a class="dropdown-item" href="#">Action Item 1</a>
-                                        <a class="dropdown-item" href="#">Action Item 2</a>
-                                        <a class="dropdown-item" href="#">Action Item 3</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="row">
                             <div class="col-12">
-                                <div class="card bg-light-grey m-0">
-                                    <h4>Tags</h4>
-                                    <div class="font-12 color-secondary font-weight-medium mt-14">
-                                        Your contacts organized by tags. <a href="#" class="link">Learn more about tags.</a>
+
+                                <div class="card mt-14 mb-28">
+                                    <h4 class="mt-n4">Segment Your Contacts</h4>
+                                    <div class="font-12 color-secondary font-weight-medium mt-12">
+                                        A <span class="color-primary font-weight-bold">segment</span> is a group of contacts. Its content takes shape automatically based on <span class="color-primary font-weight-bold">set rules</span>. Segments are handy when sending campaigns. <a href="#" class="link">Learn more</a>.
                                     </div>
-                                    <div class="d-flex mx-n10 flex-wrap">
-                                        <a href="#" class="btn _sm _tag">members (112)</a>
-                                        <a href="#" class="btn _sm _tag">wordpress (543)</a>
-                                        <a href="#" class="btn _sm _tag">staff (6)</a>
-                                        <a href="#" class="btn _sm _tag">vip service (94)</a>
-                                        <a href="./manage-tags.html" class="btn _sm _secondary mt-16 mx-10">Manage Tags</a>
+                                </div>
+
+                                <ul class="nav nav-tabs nav-bordered">
+                                    <li class="nav-item">
+                                        <a href="#create-segment" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                                            Create Segment
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#saved-segments" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                            Saved Segments
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane show active" id="create-segment">
+
+                                        <div class="upload-list__step">
+                                            <div class="card bg-light-grey mb-0">
+
+                                                <h5 class="mb-29">Conditions</h5>
+
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <select class="form-control _select2-lg" data-toggle="select2" required>
+                                                            <option value="test-1" selected>Fields</option>
+                                                            <option value="test-2">Option 2</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control _select2-lg" data-toggle="select2" required>
+                                                            <option value="test-1" selected>Email Address</option>
+                                                            <option value="test-2">Option 2</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control _select2-lg" data-toggle="select2" required>
+                                                            <option value="test-1" selected>Contains</option>
+                                                            <option value="test-2">Option 2</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="Type Text" class="form-control mt-16 mt-md-0">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row d-none" id="show-more-fields-row">
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="Additional Field" class="form-control mt-16 mt-md-30">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="Another Field" class="form-control mt-16 mt-md-30">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="Yet Another" class="form-control mt-16 mt-md-30">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder="And One More" class="form-control mt-16 mt-md-30">
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex align-items-center justify-content-between mt-20">
+                                                    <button class="btn _lg _secondary mt-10" id="add-contact-btn">Add</button>
+                                                    <a href="" class="link font-12" id="show-more-fields-link">Show <span class="show-more-text">More</span><span class="show-more-text d-none">Less</span> Fields</a>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="d-none" id="added-contacts">
+
+                                                <div class="card mb-0">
+                                                    <p class="font-14 font-weight-bold mb-0 color-primary">Added Contacts</p>
+                                                    <div class="font-0 mx-n10 mt-n7">
+                                                        <div class="btn _sm _tag-del">
+                                                            dodogildo@gmail.com
+                                                            <button class="btn_icon ml-11">
+                                                                <svg width="8" height="8">
+                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                        <div class="btn _sm _tag-del">
+                                                            erezmali@hotmail.com
+                                                            <button class="btn_icon ml-11">
+                                                                <svg width="8" height="8">
+                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                        <div class="btn _sm _tag-del">
+                                                            little_bird92@borulojistik.co.uk
+                                                            <button class="btn_icon ml-11">
+                                                                <svg width="8" height="8">
+                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                        <div class="btn _sm _tag-del">
+                                                            barbi@me.com
+                                                            <button class="btn_icon ml-11">
+                                                                <svg width="8" height="8">
+                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                        <div class="btn _sm _tag-del">
+                                                            joe.cocker@cocki.com
+                                                            <button class="btn_icon ml-11">
+                                                                <svg width="8" height="8">
+                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                        <div class="btn _sm _tag-del">
+                                                            maul@me.com
+                                                            <button class="btn_icon ml-11">
+                                                                <svg width="8" height="8">
+                                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mt-15">
+                                                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-start">
+                                                        <div class="checkbox mt-16">
+                                                            <input type="checkbox" value="option1" id="customCheck3">
+                                                            <label class="custom-control-label" for="customCheck3">I accept bla bla blabla and lorem lipsum permisson based bla bla</label>
+                                                        </div>
+
+                                                        <button class="btn _lg _primary upload-list__next-step mt-16">Ready? Go!</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
+
+                                    <div class="tab-pane" id="saved-segments">
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-
-                </div>
+                    </div> <!-- container -->
+                </div> <!-- content -->
             </div>
 
             <!-- ============================================================== -->
@@ -719,120 +720,134 @@
         </div>
         <!-- END wrapper -->
 
-        <div id="create-list-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        <svg width="8" height="8">
-                            <use xlink:href="assets/images/sprite.svg#cross"></use>
-                        </svg>
-                    </button>
-                    <div class="modal-body">
-                        <h4 class="mb-13">Create List</h4>
-                        <div class="form-control__wrap mb-13">
-                            <input type="text" placeholder="Your List Name Here" class="form-control">
-                        </div>
-                        <p class="font-12 font-weight-bold lh-1-3 mb-19">Chose a clean, brandable list name. <span class="font-weight-semibold">Remember, your contacts will see this when they subscribe or unsubscribe</span></p>
-                        <button class="btn _lg _primary">Create</button>
-                    </div>
-                </div>
-            </div>
-        </div><!-- /.modal -->
-
-
-        <!-- Vendor js -->
+        <!-- App js -->
         <script src="assets/js/vendor.min.js"></script>
 
-        <script src="assets/libs/morris.js06/morris.min.js"></script>
-        <script src="assets/libs/raphael/raphael.min.js"></script>
-        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
-        <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-        <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+        <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
+        <script src="assets/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+        <script src="assets/js/pages/tln.min.js"></script>
+
+        <script src="assets/libs/select2/js/select2.min.js"></script>
 
         <script>
-            // Range date picker settings and initialisation
+            // Datatables settings
+            $(document).ready(function() {
+                $('#upload-list-data-table, #add-one-by-one-data-table, #copy-paste-data-table').DataTable({
+                    scrollX:        true,
+                    scrollY:        127,
+                    scrollCollapse: true,
+                    paging:         false,
+                    order: [],
+                    aoColumnDefs: [{
+                        bSortable: false,
+                        aTargets: ['nosort']
+                    }],
+                    sDom: 't',
+                });
+            });
+
+            // Dropzone init and settings
+
+            function bytesToMb(bytes) {
+                return bytes / Math.pow(1024, 2);
+            }
+
+            var ERRORS_FILE_UPLOAD = {
+                fileType: 'This file type is not supported. Please, upload PDF or PNG.',
+                size: 'File Size must not exceed 1Mb. Please try again.'
+            };
+            var ACCEPTED_FILE_SIZE_IN_MB = 1;
+            var ACCEPTED_FILE_TYPE = 'application/pdf, image/png';
+
+            // Dropzone
             !function ($) {
                 "use strict";
 
-                var FormPickers = function () { };
+                var FileUpload = function () {
+                    this.$body = $("body")
+                };
 
-                FormPickers.prototype.init = function () {
-                    $('#range-datepicker').flatpickr({
-                        mode: "range",
-                        altInput: true,
-                        altFormat: "M j",
-                        dateFormat: "Y-m-d",
-                        locale: {
-                            rangeSeparator: ' – '
+
+                /* Initializing */
+                FileUpload.prototype.init = function () {
+                    // Disable auto discovery
+
+                    Dropzone.autoDiscover = false;
+
+                    $('[data-plugin="dropzone"]').each(function () {
+                        var actionUrl = $(this).attr('action')
+                        var previewContainer = $(this).data('previewsContainer');
+
+                        var opts = {
+                            url: actionUrl, acceptedFiles: ACCEPTED_FILE_TYPE, maxFilesize: ACCEPTED_FILE_SIZE_IN_MB
+                        };
+
+                        if (previewContainer) {
+                            opts['previewsContainer'] = previewContainer;
+                        }
+
+                        var uploadPreviewTemplate = $(this).data("uploadPreviewTemplate");
+                        if (uploadPreviewTemplate) {
+                            opts['previewTemplate'] = $(uploadPreviewTemplate).html();
+                        }
+                        var dropzoneEl = new Dropzone(this, opts);
+
+                        var errorElement = dropzoneEl.element.querySelector('.dropzone__error-message');
+                        dropzoneEl.on("addedfiles", function (files) {
+                            files.forEach(function(file) {
+                                console.log(file)
+                                errorElement.innerHTML = '';
+
+                                dropzoneEl.element.classList.remove('dropzone_error');
+                                if (!file.accepted) {
+
+                                    if (!ACCEPTED_FILE_TYPE.split(',').some(type => type === file.type)) errorElement.innerHTML = ERRORS_FILE_UPLOAD.fileType;
+                                    if (bytesToMb(file.size) > ACCEPTED_FILE_SIZE_IN_MB) errorElement.innerHTML = ERRORS_FILE_UPLOAD.size;
+
+
+                                    dropzoneEl.element.classList.add('dropzone_error');
+                                    return dropzoneEl.removeFile(file);
+                                }
+                            });
+                        });
+                    });
+                },
+
+                        //init fileupload
+                        $.FileUpload = new FileUpload, $.FileUpload.Constructor = FileUpload;
+
+                }(window.jQuery),
+
+                    //initializing FileUpload
+                    function ($) {
+                        "use strict";
+
+                        $.FileUpload.init();
+
+                    }(window.jQuery);
+
+
+                if ($('[data-plugins="dropify"]').length > 0) {
+                    // Dropify
+                    $('[data-plugins="dropify"]').dropify({
+                        messages: {
+                            'default': 'Drag and drop a file here or click',
+                            'replace': 'Drag and drop or click to replace',
+                            'remove': 'Remove',
+                            'error': 'Ooops, something wrong appended.'
+                        },
+                        error: {
+                            'fileSize': 'The file size is too big (1M max).'
                         }
                     });
-                },
-                    $.FormPickers = new FormPickers, $.FormPickers.Constructor = FormPickers
-
-            }(window.jQuery),
-                function ($) {
-                    "use strict";
-                    $.FormPickers.init()
-                }(window.jQuery);
-
-            // Morris chart settings and initialization
-            !function($) {
-                "use strict";
-
-                var MorrisCharts = function() {};
-
-                MorrisCharts.prototype.createLineChart = function(element, data, xkey, ykeys, labels, opacity, Pfillcolor, Pstockcolor, lineColors) {
-                    Morris.Line({
-                        element: element,
-                        data: data,
-                        xkey: xkey,
-                        ykeys: ykeys,
-                        labels: labels,
-                        dataLabels: false,
-                        fillOpacity: opacity,
-                        pointFillColors: Pfillcolor,
-                        pointStrokeColors: Pstockcolor,
-                        behaveLikeLine: true,
-                        gridLineColor: '#eef0f2',
-                        hideHover: 'auto',
-                        lineWidth: '1.5px',
-                        pointSize: 0,
-                        resize: true,
-                        lineColors: lineColors,
-                        parseTime: false,
-                    });
-                },
-
-                    MorrisCharts.prototype.init = function() {
-
-                        //create line chart
-                        var $data  = [
-                            { y: 'June 15', a: 8, b: 25, c: 13 },
-                            { y: 'June 16', a: 24, b: 60, c: 26 },
-                            { y: 'June 17', a: 56, b: 27, c: 16 },
-                            { y: 'June 18', a: 14, b: 29, c: 15 },
-                            { y: 'June 19', a: 15, b: 36, c: 27 },
-                            { y: 'June 20', a: 16, b: 32, c: 14 },
-                            { y: 'June 21', a: 48, b: 44, c: 26 },
-                        ];
-                        this.createLineChart('morris-line-example', $data, 'y', ['a', 'b', 'c'], ["Openers", "Clickers", "Unsubscribers"],['0.1'],['#ffffff'],['#999999'], ['#00EBA8', '#0000FF', '#ED1C24']);
-
-                    },
-
-                    $.MorrisCharts = new MorrisCharts, $.MorrisCharts.Constructor = MorrisCharts
-
-            }(window.jQuery),
-                function($) {
-                    "use strict";
-                    setTimeout(function() {
-                        $.MorrisCharts.init();
-                    }, 200);
-
-                }(window.jQuery);
+                }
         </script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-        
+
     </body>
 </html>
