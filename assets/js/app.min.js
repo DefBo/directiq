@@ -1122,6 +1122,15 @@ $(document).ready(function() {
 		document.execCommand('copy');
 	});
 
+    $('.nav-drill>.nav-items>.nav-item').hover(
+        function () {
+            $('body').addClass('navigation-hovered');
+        },
+        function () {
+            $('body').removeClass('navigation-hovered');
+        }
+    );
+
 	// Navigation
 	var navExpand = [].slice.call(document.querySelectorAll('.nav-expand'));
 	var backLink = `<li class="nav-back"><a class="nav-back-link" href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path id="ic_arrow_back_24px" d="M24,12.75H8.787l6.987-6.987L14,4,4,14,14,24l1.763-1.762L8.787,15.25H24Z" transform="translate(-4 -4)" fill="#fff"/></svg></a></li>`;
@@ -1360,7 +1369,7 @@ const COLLUMN_WITHOUT_SEARCH = [ 'id', 'viewButton' ];
 let PROXY_URL = '';
 let CORS_HEADER = {};
 
-if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+if (location.host === 'localhost:3000' || location.host === '127.0.0.1:3000') {
 	PROXY_URL = 'https://thingproxy.freeboard.io/fetch/';
 	CORS_HEADER = {
 		headers: {

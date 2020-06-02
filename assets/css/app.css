@@ -7696,6 +7696,43 @@ body.nav-is-toggled:after {
 .filter-option-inner-inner {
   line-height: 28px; }
 
+@media (min-width: 768px) {
+  .new-navigation .navigation-hovered:after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 100px);
+    height: 100%;
+    background: rgba(218, 232, 247, 0.7);
+    transform: translateX(100px);
+    z-index: 1;
+    overflow: hidden; }
+  .new-navigation body[data-layout-mode=two-column] .content-page {
+    margin-left: 100px; }
+  .new-navigation .nav-item-link.active {
+    background: transparent; }
+  .new-navigation .nav-drill > .nav-items > .nav-item > .nav-item-link:hover svg {
+    transform: none; }
+  .new-navigation .nav-drill > .nav-items > .nav-item.active > .nav-item-link {
+    background-color: transparent; }
+  .new-navigation .nav-drill > .nav-items > .nav-item:hover > .nav-item-link {
+    background-color: #f6f9fc; }
+  .new-navigation .nav-drill > .nav-items > .nav-item {
+    display: block; }
+  .new-navigation .nav-items.nav-expand-content {
+    padding-top: 17px; }
+  .new-navigation .nav-expand-content {
+    transition: none; }
+  .new-navigation .nav-expand.active > .nav-expand-content {
+    opacity: 0;
+    visibility: hidden; }
+  .new-navigation .nav-expand:hover > .nav-expand-content {
+    opacity: 1;
+    visibility: visible; }
+  .new-navigation .nav-drill {
+    width: auto; } }
+
 th, td {
   white-space: nowrap !important; }
 

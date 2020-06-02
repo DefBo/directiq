@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="new-navigation">
     <head>
 
         <meta charset="utf-8" />
-        <title>All Pages | DirectIQ</title>
+        <title>My Lists | DirectIQ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -17,9 +17,14 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
 
+        <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+
+        <link href="assets/libs/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
 
     </head>
 
@@ -43,7 +48,8 @@
                         </div>
 
                         <ol class="breadcrumbs">
-                            <li class="breadcrumb-item active">Home
+                            <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
+                            <li class="breadcrumb-item active">My Lists
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -130,7 +136,6 @@
             <!-- end Topbar -->
 
             <!-- ========== Left Sidebar Start ========== -->
-
             <button class="hamburger hamburger--squeeze" id="ham" type="button">
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
@@ -157,26 +162,26 @@
                                Home
                             </span>
                         </a>
-                        <ul class="nav-items nav-expand-content active">
+                        <ul class="nav-items nav-expand-content">
                             <li class="nav-title">Home</li>
                             <li class="nav-item">
-                                <a class="nav-item-link active" href="./">
+                                <a class="nav-item-link" href="./">
                                     Home
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 2
+                                    Home Test Item 2
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 3
+                                    Home Test Item 3
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item nav-expand">
+                    <li class="nav-item nav-expand active">
                         <a class="nav-item-link nav-expand-link" href="#">
                             <i>
                                 <svg width="17.719" height="15.328">
@@ -195,7 +200,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item-link" href="./my-lists-static.html">
+                                <a class="nav-item-link active" href="./my-lists-static.html">
                                     My Lists
                                 </a>
                             </li>
@@ -249,7 +254,7 @@
                             <li class="nav-title">Templates</li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 1
+                                    Templates Item 1
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -302,7 +307,7 @@
                             <li class="nav-title">Campaigns</li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 1
+                                    Campaigns Item 1
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -355,7 +360,7 @@
                             <li class="nav-title">Integrations</li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 1
+                                    Integrations Item 1
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -408,7 +413,7 @@
                             <li class="nav-title">Settings</li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 1
+                                    Settings Item 1
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -461,7 +466,7 @@
                             <li class="nav-title">Bookmarks</li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 1
+                                    Bookmarks Test Long Item 1
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -529,7 +534,6 @@
                     </button>
                 </div>
             </nav>
-
             <!-- Left Sidebar End -->
 
             <!-- ============================================================== -->
@@ -539,73 +543,302 @@
             <div class="content-page">
                 <div class="content">
 
-                    <!-- Start Content-->
                     <div class="container-fluid">
-                        <div class="card mb-0 mt-15">
+                        <div class="row">
+                            <div class="col-12">
 
-                            <h3 class="mb-16">Pages</h3>
+                                <ul class="nav nav-tabs nav-bordered">
+                                    <li class="nav-item">
+                                        <a href="#home-b1" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                                            All Lists
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#profile-b1" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                            Engaged Lists
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#messages-b1" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Poor Lists
+                                        </a>
+                                    </li>
+                                </ul>
 
-                            <p class="sub-header">
-                                All pages that are implemented or currently in progress.
-                            </p>
+                                <div class="tab-content">
+                                    <div class="tab-pane show active" id="home-b1">
 
-                            <h4 class="mb-16"><a class="link" href="my-lists-static.html">My Lists</a> (static)</h4>
+                                        <div class="diriq-table__wrapper _my-lists-table">
 
-                            <h4 class="mb-16"><a class="link" href="my-lists-ep.html">My Lists</a> (endpoint integrated)</h4>
+                                            <table id="data-table" class="diriq-table" style="width:100%">
+                                                <thead>
+                                                <tr>
+                                                    <th class="nosort checkbox-col">
+                                                        <i>
+                                                            <svg width="10.16" height="6">
+                                                                <use xlink:href="assets/images/sprite.svg#check-col"></use>
+                                                            </svg>
+                                                        </i>
+                                                    </th>
+                                                    <th>List Name</th>
+                                                    <th>List Size</th>
+                                                    <th>Subscribed</th>
+                                                    <th>Disabled</th>
+                                                    <th>List Quality</th>
+                                                    <th>Last Modified</th>
+                                                    <th class="nosort"></th>
 
-                            <h4 class="mb-16"><a class="link" href="list-details-static.html">List Details</a> (static)</h4>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="checkbox checkbox-single">
+                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                            <label></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" class="diriq-table__link">Dodoaildo Mega List</a>
+                                                    </td>
+                                                    <td>
+                                                        <div class="diriq-table__list-size-number">12,153</div>
+                                                        <div class="diriq-table__list-size-percents"><span>15%</span> engaged</div>
+                                                    </td>
+                                                    <td>10,984</td>
+                                                    <td>1,385</td>
+                                                    <td>
+                                                        <i class="quality-icon _2">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </i>
+                                                    </td>
+                                                    <td>Mar 31, 2020</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <button type="button" class="btn _sm _secondary">View</button>
+                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
+                                                                <svg width="2" height="10">
+                                                                    <use xlink:href="assets/images/sprite.svg#more-dots"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="checkbox checkbox-single">
+                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                            <label></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" class="diriq-table__link">My First List</a>
+                                                    </td>
+                                                    <td>
+                                                        <div class="diriq-table__list-size-number">234</div>
+                                                        <div class="diriq-table__list-size-percents"><span>73%</span> engaged</div>
+                                                    </td>
+                                                    <td>179</td>
+                                                    <td>14</td>
+                                                    <td>
+                                                        <i class="quality-icon _3">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </i>
+                                                    </td>
+                                                    <td>Jun 7, 2019</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <button type="button" class="btn _sm _secondary">View</button>
+                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
+                                                                <svg width="2" height="10">
+                                                                    <use xlink:href="assets/images/sprite.svg#more-dots"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="checkbox checkbox-single">
+                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                            <label></label>
+                                                        </div>
+                                                    </td>
+                                                    <td >
+                                                        <a href="#" class="diriq-table__link">DirectIQ Customers</a>
+                                                    </td>
+                                                    <td>
+                                                        <div class="diriq-table__list-size-number">880</div>
+                                                        <div class="diriq-table__list-size-percents"><span>3%</span> engaged</div>
+                                                    </td>
+                                                    <td>880</td>
+                                                    <td>0</td>
+                                                    <td>
+                                                        <i class="quality-icon _3">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </i>
+                                                    </td>
+                                                    <td>Sep 11, 2008</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <button type="button" class="btn _sm _secondary">View</button>
+                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
+                                                                <svg width="2" height="10">
+                                                                    <use xlink:href="assets/images/sprite.svg#more-dots"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="checkbox checkbox-single">
+                                                            <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                            <label></label>
+                                                        </div>
+                                                    </td>
+                                                    <td >
+                                                        <a href="#" class="diriq-table__link">Test List Beautiful</a>
+                                                    </td>
+                                                    <td>
+                                                        <div class="diriq-table__list-size-number">12,153</div>
+                                                        <div class="diriq-table__list-size-percents"><span>15%</span> engaged</div>
+                                                    </td>
+                                                    <td>14,914</td>
+                                                    <td>14,914</td>
+                                                    <td>
+                                                        <i class="quality-icon _2">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </i>
+                                                    </td>
+                                                    <td>Mar 4, 2020</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <button type="button" class="btn _sm _secondary">View</button>
+                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
+                                                                <svg width="2" height="10">
+                                                                    <use xlink:href="assets/images/sprite.svg#more-dots"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                <tr>
+                                                    <th class="nosort"></th>
+                                                    <th>
+                                                        <input class="filter-input" type="text" placeholder="Type List Name">
+                                                    </th>
+                                                    <th>
+                                                        <select class="form-control" data-toggle="select2" required>
+                                                            <option class="d-none" value="" disabled selected>Select Size</option>
+                                                            <option value="test-1">Option 1</option>
+                                                            <option value="test-2">Option 2</option>
+                                                        </select>
+                                                    </th>
+                                                    <th>
+                                                        <select class="form-control" data-toggle="select2" required>
+                                                            <option class="d-none" value="" disabled selected>Select Size</option>
+                                                            <option value="test-1">Option 1</option>
+                                                            <option value="test-2">Option 2</option>
+                                                        </select>
+                                                    </th>
+                                                    <th>
+                                                        <select class="form-control" data-toggle="select2" required>
+                                                            <option class="d-none" value="" disabled selected>Select Size</option>
+                                                            <option value="test-1">Option 1</option>
+                                                            <option value="test-2">Option 2</option>
+                                                        </select>
+                                                    </th>
+                                                    <th>
+                                                        <select class="form-control" data-toggle="select2" required>
+                                                            <option class="d-none" value="" disabled selected>Select Quality</option>
+                                                            <option value="test-1">Option 1</option>
+                                                            <option value="test-2">Option 2</option>
+                                                        </select>
+                                                    </th>
+                                                    <th>
+                                                        <select class="form-control" data-toggle="select2" required>
+                                                            <option class="d-none" value="" disabled selected>Select Date</option>
+                                                            <option value="test-1">Option 1</option>
+                                                            <option value="test-2">Option 2</option>
+                                                        </select>
+                                                    </th>
+                                                    <th class="nosort"></th>
+                                                </tr>
 
-                            <h4 class="mb-16"><a class="link" href="list-details-ep.html">List Details</a> (endpoint integrated)</h4>
+                                                </tfoot>
+                                            </table>
 
-                            <h4 class="mb-16"><a class="link" href="contacts-home-static.html">Contacts Home</a></h4>
+                                            <div class="lds-ellipsis__wrap">
+                                                <div class="lds-ellipsis">
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                </div>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="contact-details.html">Contact Details</a></h4>
+                                            <div class="diriq-table__filter-btn">
+                                                <i class="diriq-table__filter-icon">
+                                                    <svg width="20.187" height="22">
+                                                        <use xlink:href="assets/images/sprite.svg#filter"></use>
+                                                    </svg>
+                                                </i>
+                                                <i class="diriq-table__close-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                                                        <g transform="translate(0.5 0.5)">
+                                                            <rect width="24" height="24" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
+                                                            <path class="diriq-table__close-icon-cross" d="M9489.239,1605.581l-.806-.806-3.194,3.194-3.194-3.194-.806.806,3.194,3.194-3.194,3.194.806.806,3.194-3.194,3.194,3.194.806-.806-3.194-3.194Z" transform="translate(-9473.239 -1596.775)" fill="currentColor"/>
+                                                        </g>
+                                                    </svg>
+                                                </i>
+                                            </div>
+                                            <div class="dropdown _more">
+                                                <a class="dropdown-toggle _more" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                                    <svg width="5.8" height="25">
+                                                        <use xlink:href="assets/images/sprite.svg#more-dots"></use>
+                                                    </svg>
+                                                </a>
 
-                            <h4 class="mb-16"><a class="link" href="add-contacts.html">Add Contacts</a></h4>
+                                                <div class="dropdown-menu dropdown-menu-right _actions" aria-labelledby="moreMenuButton">
+                                                    <div class="dropdown-menu-inner">
+                                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="form-validation-examples.html">Form Validation Example</a></h4>
+                                        </div>
+                                    </div>
 
-                            <h4 class="mb-16"><a class="link" href="save-list-new-user.html">Save List</a> (new user)</h4>
+                                    <div class="tab-pane" id="profile-b1"></div>
+                                    <div class="tab-pane" id="messages-b1"></div>
+                                </div>
 
-                            <h4 class="mb-16"><a class="link" href="save-list-few-lists.html">Save List</a> (select from few lists)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="save-list-many-lists.html">Save List</a> (select from many lists)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="confirm-modals.html">Confirmation Modals</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="import-from-other-service.html">Add Contacts</a> (import from other service)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="connect-service-not-connected.html">Add Contacts</a> (import from other service - not connected)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="toggle-columns.html">Toggle Columns Modal</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="contact-integrations.html">Contact Integrations</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="contact-integrations-not-connected.html">Contact Integrations</a> (not connected)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="contact-integrations-connected.html">Contact Integrations</a> (connected)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="contact-integrations-connected-no-list.html">Contact Integrations</a> (connected - no list)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="social-media-integrations.html">Social Media Integrations</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="api.html">Integrations - API</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="confirmation.html">Confirmation Notification</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="negative.html">Negative Notification</a></h4>
-
-                            <hr>
-
-                            <h4 class="mb-16"><a class="link" href="list-details-new-table.html">Custom Table</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="my-lists-newnav.html">New Navigation Concept</a></h4>
-
+                            </div>
                         </div>
-                    </div> <!-- container -->
+                    </div>
 
-                </div> <!-- content -->
-
+                </div>
             </div>
 
             <!-- ============================================================== -->
@@ -624,6 +857,18 @@
 
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
+
+        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+        <script src="assets/libs/select2/js/select2.min.js"></script>
+
+        <script>
+            // Datatables settings
+            $(document).ready(function () {
+                var table = createDataTable('#data-table', {}, true);
+            });
+        </script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
