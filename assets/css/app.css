@@ -6818,7 +6818,6 @@ body.nav-is-toggled:after {
   z-index: 1002;
   top: 0;
   left: 0;
-  width: calc(100vw - 60px);
   height: 100%;
   background-color: #0000FF;
   -webkit-overflow-scrolling: touch;
@@ -6830,6 +6829,7 @@ body.nav-is-toggled:after {
     transform: translateX(0); }
   @media (max-width: 767.98px) {
     .nav-drill {
+      width: calc(100vw - 60px) !important;
       padding-bottom: 100px; }
       .nav-drill__icons {
         position: absolute;
@@ -6908,8 +6908,10 @@ body.nav-is-toggled:after {
   flex: 0 0 100%;
   list-style: none;
   padding: 0;
-  margin-bottom: 0;
-  background: #fff; }
+  margin-bottom: 0; }
+  @media (min-width: 768px) {
+    .nav-items {
+      background: #fff; } }
   @media (max-width: 767.98px) {
     .nav-items {
       overflow: auto; } }
