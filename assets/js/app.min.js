@@ -1126,6 +1126,29 @@ $(document).ready(function() {
 		document.execCommand('copy');
 	});
 
+	$('#user-profile-btn-mobile').click(function() {
+        $('body').removeClass('nav-is-toggled');
+        $('.dropdown._user').addClass('show');
+        $('.profile-dropdown').addClass('show');
+        $('.hamburger').addClass('_with-overlay');
+	});
+
+    $(document).click(function(event) {
+        $target = $(event.target);
+
+        if (!$target.closest('.profile-dropdown, #user-profile-btn-mobile, .select2-container--user-profile').length) {
+            $('.dropdown._user').removeClass('show');
+            $('.profile-dropdown').removeClass('show');
+            $('.hamburger').removeClass('_with-overlay');
+        }
+    });
+
+    $('.profile-dropdown .close').click(function() {
+        $('.dropdown._user').removeClass('show');
+        $('.profile-dropdown').removeClass('show');
+        $('.hamburger').removeClass('_with-overlay');
+    });
+
 	$('.nav-drill>.nav-items>.nav-item').hover(
 		function() {
 			$('body').addClass('navigation-hovered');
