@@ -1167,6 +1167,10 @@ $(document).ready(function() {
 	});
 
 	//add spinner for table
+
+    $(document).on('click', '.dropdown._user .dropdown-menu', function (e) {
+        e.stopPropagation();
+    });
 });
 
 // Stop transitions on page load

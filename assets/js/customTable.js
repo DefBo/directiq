@@ -266,7 +266,8 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 
 		const paginationButtonPrevious = tableWrapper.querySelector('.paginate_button.previous');
 
-		paginationButtonPrevious.addEventListener('click', () => {
+		paginationButtonPrevious.addEventListener('click', (e) => {
+			e.preventDefault();
 			globalSearchParams = {
 				...globalSearchParams,
 				pageNumber: pageNumber - 1
@@ -280,7 +281,8 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 			: paginationButtonPrevious.classList.add('disabled');
 
 		const paginationButtonNext = tableWrapper.querySelector('.paginate_button.next');
-		paginationButtonNext.addEventListener('click', () => {
+		paginationButtonNext.addEventListener('click', (e) => {
+			e.preventDefault();
 			globalSearchParams = {
 				...globalSearchParams,
 				pageNumber: pageNumber + 1
