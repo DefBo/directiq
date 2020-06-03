@@ -6226,7 +6226,6 @@ body.nav-is-toggled:after {
       height: 45px;
       border-radius: 50%;
       box-sizing: border-box;
-      border: 1px solid #00f;
       color: #000;
       font-size: 18px;
       margin: 17.5px 0;
@@ -6237,7 +6236,9 @@ body.nav-is-toggled:after {
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: cover; }
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid #00f; }
     .dropdown-toggle._user svg {
       position: absolute;
       right: 10px;
@@ -6507,9 +6508,6 @@ body.nav-is-toggled:after {
   display: flex;
   align-items: center;
   transition: opacity 0.25s; }
-  .contact__finish._disabled {
-    opacity: 0.2;
-    pointer-events: none; }
   @media (max-width: 575.8px) {
     .contact__finish {
       flex-direction: column; } }
@@ -7150,6 +7148,10 @@ body.nav-is-toggled:after {
 ._hidden {
   opacity: 0;
   visibility: hidden; }
+
+._disabled {
+  opacity: 0.4;
+  pointer-events: none; }
 
 .tln-active, .tln-wrapper, .tln-line {
   margin: 0;
