@@ -1141,6 +1141,12 @@ $(document).ready(function() {
         });
 	}
 
+    if ($('.dropdown._user ._select2-lg').length > 0) {
+        $('.dropdown._user ._select2-lg').each(function() {
+            $(this).data('select2').$dropdown.addClass("select2-container--user-profile");
+        });
+    }
+
 	// Navigation
 	var navExpand = [].slice.call(document.querySelectorAll('.nav-expand'));
 	var backLink = `<li class="nav-back"><a class="nav-back-link" href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path id="ic_arrow_back_24px" d="M24,12.75H8.787l6.987-6.987L14,4,4,14,14,24l1.763-1.762L8.787,15.25H24Z" transform="translate(-4 -4)" fill="#fff"/></svg></a></li>`;
