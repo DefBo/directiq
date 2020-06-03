@@ -171,7 +171,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 					title: `<div class="dropdown">
 								<a href="#" data-toggle="dropdown" class="dropdown-link-sm">
 									<svg width="10.16" height="6">
-										<use xlink:href="/assets/images/sprite.svg#check-col"></use>
+										<use xlink:href="${absolutelyLinks}/assets/images/sprite.svg#check-col"></use>
 									</svg>
 								</a>
 								
@@ -233,7 +233,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 									<div class="dropdown">
 										<button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
 											<svg width="2" height="10">
-												<use xlink:href="/assets/images/sprite.svg#more-dots"></use>
+												<use xlink:href="${absolutelyLinks}/assets/images/sprite.svg#more-dots"></use>
 											</svg>
 										</button>
 										
@@ -262,7 +262,6 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 			next: totalCount > pageSize * pageNumber,
 			prev: pageNumber !== 1
 		};
-		console.log(data);
 		const paginationString = tableWrapper.querySelector('#data-table_info');
 		const paginationWrapper = paginationString.parentNode;
 		const clonePaginationWrapper = paginationWrapper.cloneNode(true);

@@ -726,7 +726,9 @@
         const LIST_ID = 30
         const RESPONCE_URL = `${TABLE_API}/${LIST_ID}`;
         //add window.location.host for table load in andriiv.com because site located in folder directiq but my link is absolutely 
-        const TAGS_API = window.location.host === 'andriiv.com' ? 'http://andriiv.com/directiq/assets/js/tagsMock.json' : '/assets/js/tagsMock.json';
+        const absolutelyLinks = window.location.host === 'andriiv.com' ? 'http://andriiv.com/directiq/' : '/';
+        
+        const TAGS_API = `${absolutelyLinks}assets/js/tagsMock.json`;
 
         const LINK_TO_USER_PAGE = '/';
 
