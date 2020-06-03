@@ -15,6 +15,27 @@ const generateQualitySelect = (state) => {
 	return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
 };
 
+function debounce(f, t) {
+	return function(args) {
+		let previousCall = this.lastCall;
+		this.lastCall = Date.now();
+		if (previousCall && this.lastCall - previousCall <= t) {
+			clearTimeout(this.lastCallTimer);
+		}
+		this.lastCallTimer = setTimeout(() => f(args), t);
+	};
+}
+
+const createEmptyTable = (id, tableWrapper) => {
+	tableWrapper.classList.remove('loading');
+	var table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG });
+	tableWrapper.classList.add('dataTables_wrapper--error');
+};
+
+const catchErrors = (fetchFunction) => {
+	fetchFunction.catch();
+};
+
 const getUserLink = (id) => `${LINK_TO_USER_PAGE || '/'}${id}`;
 
 const generateStatusSelect = (state) => {
@@ -57,13 +78,11 @@ const removeSelectedRows = (url, params) => {
 	const response = fetch(url, {
 		body: JSON.stringify({ ...params }),
 		signal: cancel.signal
-	}).catch(function(err) {
-		console.warn(err);
 	});
 };
 
 const TABLE_CHECKBOX_ACTIONS = {
-	remove: (params) => removeSelectedRows(`${TABLE_API}/${LIST_ID}`, params)
+	remove: (params) => removeSelectedRows(`${RESPONCE_URL}`, params)
 };
 
 const SELECT_TEMPLATES = {
@@ -77,28 +96,35 @@ const DEFAULT_SELECT_OPTIONS = {
 };
 
 const createCustomDataTable = async (id, config, isFixedColumns, api) => {
-	const getData = async (url, options) => {
+	const getData = async (url) => {
 		if (cancelController) cancelController.abort();
 		const cancel = new AbortController();
 		cancelController = cancel;
-		const response = await fetch(url, { ...options, signal: cancel.signal }).catch(function(err) {
-			console.warn(err);
-		});
-		if (!response) return;
-		return response.json();
+		let responsedData = null;
+		await fetch(url, { signal: cancel.signal })
+			.then((response) => {
+				if (response.status !== 200) {
+					return;
+				}
+				return response.json().then((data) => {
+					responsedData = data;
+				});
+			})
+			.catch((err) => console.err(err));
+		return responsedData;
 	};
 
 	const getTableData = (data) => {
-		if (!data.errors) {
-			return data.rows.map((row) => {
-				var draftData = [];
-				data.columns.forEach((column, index) => {
-					var draftRow = row.cells.find((cell) => cell.position === index);
-					draftRow ? draftData.push(draftRow.value) : draftData.push('');
-				});
-				return draftData;
+		if (!data) return [];
+
+		return data.rows.map((row) => {
+			var draftData = [];
+			data.columns.forEach((column, index) => {
+				var draftRow = row.cells.find((cell) => cell.position === index);
+				draftRow ? draftData.push(draftRow.value) : draftData.push('');
 			});
-		}
+			return draftData;
+		});
 	};
 
 	const getSearchParams = () => {
@@ -230,13 +256,13 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 
 	const setCurrentPagination = ({ pageSize, pageNumber, totalCount }) => {
 		const data = {
-			text: `${pageSize * pageNumber - pageSize + 1} - ${totalCount < pageSize * pageNumber
+			text: `${pageSize * pageNumber - pageSize + (totalCount > 0 && 1)} - ${totalCount < pageSize * pageNumber
 				? totalCount
 				: pageSize * pageNumber} of ${totalCount}`,
 			next: totalCount > pageSize * pageNumber,
 			prev: pageNumber !== 1
 		};
-
+		console.log(data);
 		const paginationString = tableWrapper.querySelector('#data-table_info');
 		const paginationWrapper = paginationString.parentNode;
 		const clonePaginationWrapper = paginationWrapper.cloneNode(true);
@@ -314,12 +340,10 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 	};
 
 	const generateMultipleSelect = async (column, th, url) => {
-		const responce = await fetch(url).catch(function(err) {
-			console.error(err);
-		});
-		console.log(responce);
+		const responce = await getData(url);
+
 		if (responce) {
-			const { data } = await responce.json();
+			const { data } = responce;
 			column = { ...column, options: data };
 			generateSearchSelect(column, th, true);
 		}
@@ -342,19 +366,27 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 		});
 	};
 
-	const filterTable = async () => {
+	const filterDataTable = async () => {
 		tableWrapper.classList.add('loading');
-		draftfetchedData = await getData(`${TABLE_API}/${LIST_ID}?${getSearchParams()}`, true);
+		draftfetchedData = await getData(`${RESPONCE_URL}?${getSearchParams()}`);
 
-		if (!draftfetchedData) {
-			tableWrapper.classList.remove('loading');
-			return;
-		}
-
-		if (!draftfetchedData.errors) {
+		if (!draftfetchedData || draftfetchedData.rows.length === 0) {
+			tableWrapper.classList.add('dataTables_wrapper--empty');
+			fetchedData = {
+				...fetchedData,
+				rows: [],
+				totalCount: 0,
+				pageCount: 0,
+				pageNumber: 1,
+				hasNextPage: false
+			};
+		} else {
 			fetchedData = draftfetchedData;
-			addCustomColumn(fetchedData);
+			tableWrapper.classList.remove('dataTables_wrapper--empty');
 		}
+
+		tableWrapper.classList.remove('loading');
+		addCustomColumn(fetchedData);
 
 		const tableData = getTableData(fetchedData);
 
@@ -369,26 +401,25 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 					classes: field.className
 				});
 			});
+		table.clear();
+		table.rows.add(tableData).draw();
 
-		if (tableData) {
-			table.clear();
-			table.rows.add(tableData).draw();
+		setCurrentPagination(fetchedData);
 
-			setCurrentPagination(fetchedData);
+		checkboxSelected = [];
+		setListnerToCheckboxes(tableWrapper.querySelectorAll('.checkbox-single input'));
 
-			checkboxSelected = [];
-			setListnerToCheckboxes(tableWrapper.querySelectorAll('.checkbox-single input'));
-
-			if (draftfixedSorts) {
-				draftfixedSorts.forEach((field) => {
-					field.classes.split(' ').forEach((className) => {
-						field.element.classList.add(className);
-					});
+		if (draftfixedSorts) {
+			draftfixedSorts.forEach((field) => {
+				field.classes.split(' ').forEach((className) => {
+					field.element.classList.add(className);
 				});
-			}
+			});
 		}
 		tableWrapper.classList.remove('loading');
 	};
+
+	const filterTable = debounce(() => filterDataTable(), 300);
 
 	if (isFixedColumns) {
 		config = { ...FIXED_DATA_TABLE_CONFIG, ...config };
@@ -406,11 +437,14 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 		tableWrapper.classList.add('loading');
 	}
 
-	fetchedData = await getData(`${TABLE_API}/${LIST_ID}`);
+	fetchedData = await getData(RESPONCE_URL);
 
-	if (!fetchedData) return;
+	if (!fetchedData) {
+		return createEmptyTable(id, tableWrapper);
+	}
 
-	addCustomColumn(fetchedData);
+	tableWrapper.classList.remove('dataTables_wrapper--error');
+	fetchedData && addCustomColumn(fetchedData);
 
 	defaultSearchParams = fetchedData.columns.reduce((accumulator, column) => {
 		const columnName = column.keyId === 0 ? column.name : `extra[${column.keyId}]`;
