@@ -7978,6 +7978,15 @@ body.nav-is-toggled:after {
   background: rgba(218, 232, 247, 0.7);
   z-index: -2; }
 
+.dropdown._user.show .user-avatar {
+  background: transparent;
+  color: #000;
+  transform: scale(1); }
+
+.dropdown._user.show svg {
+  color: #00eba8;
+  fill: transparent; }
+
 @keyframes discount-slide-in {
   0% {
     opacity: 0;

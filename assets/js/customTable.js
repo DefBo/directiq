@@ -56,7 +56,6 @@ const removeSelectedRows = (url, params) => {
 	cancelController = cancel;
 	const response = fetch(url, {
 		body: JSON.stringify({ ...params }),
-		method: 'POST',
 		signal: cancel.signal
 	}).catch(function(err) {
 		console.warn(err);
@@ -64,7 +63,7 @@ const removeSelectedRows = (url, params) => {
 };
 
 const TABLE_CHECKBOX_ACTIONS = {
-	remove: (params) => removeSelectedRows(`${PROXY_URL}${TABLE_API}`, params)
+	remove: (params) => removeSelectedRows(`${TABLE_API}/${LIST_ID}`, params)
 };
 
 const SELECT_TEMPLATES = {
@@ -76,24 +75,6 @@ const DEFAULT_SELECT_OPTIONS = {
 	quality: [ 1, 2, 3, 4, 5 ],
 	status: [ 'active', 'passive' ]
 };
-
-const DEFAULT_MULTIPLY_SELECT_OPTIONS = {
-	tags: [ 'tag1', 'tag2', 'tag3' ]
-};
-
-const COLUMN_WITHOUT_SEARCH = [ 'id', 'viewButton' ];
-
-let PROXY_URL = '';
-let CORS_HEADER = {};
-
-if (location.host === 'localhost:3000' || location.host === '127.0.0.1:3000') {
-	PROXY_URL = 'https://thingproxy.freeboard.io/fetch/';
-	CORS_HEADER = {
-		headers: {
-			'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-		}
-	};
-}
 
 const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 	const getData = async (url, options) => {
@@ -124,10 +105,10 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 		const params = { ...defaultSearchParams, ...globalSearchParams };
 		return Object.keys(params)
 			.map((keys) => {
-				if (keys === 'tags' && typeof params[keys] === 'object') {
+				if (keys === 'tags' && typeof params[keys] === 'object' && params[keys].length > 0) {
 					let tagsParams = [];
 					params[keys].forEach((key, index) => {
-						tagsParams.push(`${keys}=${index}`);
+						tagsParams.push(`${keys}=${key}`);
 					});
 					return tagsParams.join('&');
 				}
@@ -164,7 +145,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 					title: `<div class="dropdown">
 								<a href="#" data-toggle="dropdown" class="dropdown-link-sm">
 									<svg width="10.16" height="6">
-										<use xlink:href="assets/images/sprite.svg#check-col"></use>
+										<use xlink:href="/assets/images/sprite.svg#check-col"></use>
 									</svg>
 								</a>
 								
@@ -226,7 +207,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 									<div class="dropdown">
 										<button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
 											<svg width="2" height="10">
-												<use xlink:href="assets/images/sprite.svg#more-dots"></use>
+												<use xlink:href="/assets/images/sprite.svg#more-dots"></use>
 											</svg>
 										</button>
 										
@@ -362,16 +343,11 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 	};
 
 	const filterTable = async () => {
-		draftfetchedData = await getData(
-			`${PROXY_URL}${TABLE_API}?${getSearchParams()}`,
-			{
-				method: 'POST',
-				...CORS_HEADER
-			},
-			true
-		);
+		tableWrapper.classList.add('loading');
+		draftfetchedData = await getData(`${TABLE_API}/${LIST_ID}?${getSearchParams()}`, true);
 
 		if (!draftfetchedData) {
+			tableWrapper.classList.remove('loading');
 			return;
 		}
 
@@ -411,6 +387,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 				});
 			}
 		}
+		tableWrapper.classList.remove('loading');
 	};
 
 	if (isFixedColumns) {
@@ -429,9 +406,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 		tableWrapper.classList.add('loading');
 	}
 
-	fetchedData = await getData(`${PROXY_URL}${TABLE_API}`, {
-		...CORS_HEADER
-	});
+	fetchedData = await getData(`${TABLE_API}/${LIST_ID}`);
 
 	if (!fetchedData) return;
 
@@ -458,7 +433,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 			generateSearchSelect(column, th, false, true);
 		} else if (column.name === 'tags') {
 			await generateMultipleSelect(column, th, TAGS_API);
-		} else if (COLUMN_WITHOUT_SEARCH.every((item) => column.name !== item && !column.isExtra)) {
+		} else if (COLUMN_WITHOUT_SEARCH.every((item) => column.name !== item)) {
 			const input = document.createElement('input');
 			input.classList.add('filter-input');
 			input.placeholder = `Search ${column.displayName}`;
@@ -493,10 +468,16 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 		const thSort = head.querySelectorAll('.sorting_disabled');
 
 		thSort.forEach((th, index) => {
-			if (fetchedData.columns[index].name !== 'id') {
+			if (
+				COLLUMN_WITHOUT_ORDERING_NOT_EXTRA.every(
+					(item) => fetchedData.columns[index].name !== item && !fetchedData.columns[index].isExtra
+				)
+			) {
 				th.classList.remove('sorting_disabled');
 				th.classList.add('sorting');
-
+				if (fetchedData.columns[index].name === COLLUMN_DEFAULT_SORT.name) {
+					th.classList.add(`sorting_${COLLUMN_DEFAULT_SORT.dir}`);
+				}
 				th.addEventListener('click', () => {
 					if (th.classList.contains('sorting_asc')) {
 						allSortElements.forEach((th2) => {

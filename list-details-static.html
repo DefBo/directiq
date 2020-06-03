@@ -122,18 +122,78 @@
                         </div>
                     </div>
 
-                    <div class="dropdown ml-10">
-                        <a class="dropdown-toggle _user" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="false" aria-expanded="false">
-                            <span class="user-avatar">
-                                <img src="assets/images/user.png" alt="User Avatar">
-                            </span>
+                    <div class="dropdown ml-10 _user">
+                        <a class="dropdown-toggle _user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="user-avatar">
+                                    <img src="assets/images/user.png" alt="User Avatar">
+                                </span>
                             <svg width="5.8" height="25">
                                 <use xlink:href="assets/images/sprite.svg#empty-dots"></use>
                             </svg>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                            <p class="text-center">Sample Dropdown Content</p>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+                            <div class="profile-dropdown__inner">
+
+                                <div class="profile-dropdown__email">barisergin@gmail.com</div>
+                                <div class="profile-dropdown__id">Account ID #123456</div>
+                                <a href="#" class="profile-dropdown__link mb-9">
+                                    <svg width="16" height="16">
+                                        <use xlink:href="assets/images/sprite.svg#profile"></use>
+                                        <span class="profile-dropdown__link-text">My Account</span>
+                                    </svg>
+                                </a>
+                                <div class="profile-dropdown__divider mb-13"></div>
+                                <div class="profile-dropdown__progress">
+                                    <div class="d-flex justify-content-between font-12 mb-5">
+                                        <span class="font-weight-bold">Free</span>
+                                        <span class="color-secondary font-weight-medium">25/1500</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <a href="#" class="profile-dropdown__link mb-4">
+                                    <svg width="13.375" height="16">
+                                        <use xlink:href="assets/images/sprite.svg#swap"></use>
+                                        <span class="profile-dropdown__link-text">Change Plan</span>
+                                    </svg>
+                                </a>
+                                <div class="profile-dropdown__divider mb-5"></div>
+                                <a href="#" class="profile-dropdown__link">
+                                    <svg width="16" height="12.235">
+                                        <use xlink:href="assets/images/sprite.svg#group"></use>
+                                        <span class="profile-dropdown__link-text">Switch Account</span>
+                                    </svg>
+                                </a>
+                                <a href="#" class="profile-dropdown__link">
+                                    <svg width="16" height="16">
+                                        <use xlink:href="assets/images/sprite.svg#support"></use>
+                                        <span class="profile-dropdown__link-text">Support</span>
+                                    </svg>
+                                </a>
+
+                                <select class="form-control _select2-lg" data-toggle="select2" required>
+                                    <option value="test-1">English</option>
+                                    <option value="test-2">Chinese</option>
+                                    <option value="test-2">Spanish</option>
+                                    <option value="test-2">Portugese</option>
+                                    <option value="test-2">Italian</option>
+                                </select>
+
+                                <div class="profile-dropdown__divider mb-22"></div>
+                                <button class="profile-dropdown__btn">Log-out</button>
+
+                                <div class="profile-dropdown__discount">
+                                    <div class="font-14 font-weight-bold">Hey Baris!</div>
+                                    <div class="font-36">30%</div>
+                                    <div class="font-12 color-secondary font-weight-medium mb-10">
+                                        <span class="text-nowrap">Upgrade in 12 hours and use</span>
+                                        <br>
+                                        <span class="font-weight-bold color-primary">30% personal discount!</span>
+                                    </div>
+                                    <button class="btn _lg _primary">Redeem Now</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

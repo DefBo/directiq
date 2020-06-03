@@ -1126,19 +1126,19 @@ $(document).ready(function() {
 		document.execCommand('copy');
 	});
 
-    $('.nav-drill>.nav-items>.nav-item').hover(
-        function () {
-            $('body').addClass('navigation-hovered');
-        },
-        function () {
-            $('body').removeClass('navigation-hovered');
-        }
-    );
+	$('.nav-drill>.nav-items>.nav-item').hover(
+		function() {
+			$('body').addClass('navigation-hovered');
+		},
+		function() {
+			$('body').removeClass('navigation-hovered');
+		}
+	);
 
-    if ($('._select2-lg').length > 0) {
-        $('._select2-lg').each(function() {
-            $(this).data('select2').$dropdown.addClass("select2-container--lg");
-        });
+	if ($('._select2-lg').length > 0) {
+		$('._select2-lg').each(function() {
+			$(this).data('select2').$dropdown.addClass('select2-container--lg');
+		});
 	}
 
     if ($('.dropdown._user ._select2-lg').length > 0) {
@@ -1194,25 +1194,6 @@ $(window).on('load', function() {
 	});
 });
 
-/// Commented because of moving to a new navigation concept
-/*const setMenuWidth = () => {
-	const navDrill = document.querySelector('.nav-drill');
-	if (!navDrill) return;
-	
-	const navitemActive = navDrill.querySelector('.nav-expand.active');
-	if (!navitemActive) return;
-
-	const subItemActive = navDrill.querySelector('.nav-expand-content.active');
-	if (!subItemActive) return;
-
-	const contentPage = document.querySelector('.content-page');
-	if (!contentPage) return;
-
-	const menuWidth = navitemActive.clientWidth + subItemActive.clientWidth;
-	navDrill.style.width = menuWidth + 'px';
-	contentPage.style.marginLeft = menuWidth + 'px';
-};*/
-
 const DEFAULT_DATA_TABLE_CONFIG = {
 	scrollX: true,
 	scrollCollapse: true,
@@ -1243,6 +1224,25 @@ const FIXED_DATA_TABLE_CONFIG = {
 		fixedColumnsLeft: 2
 	}
 };
+
+/// Commented because of moving to a new navigation concept
+/*const setMenuWidth = () => {
+	const navDrill = document.querySelector('.nav-drill');
+	if (!navDrill) return;
+	
+	const navitemActive = navDrill.querySelector('.nav-expand.active');
+	if (!navitemActive) return;
+
+	const subItemActive = navDrill.querySelector('.nav-expand-content.active');
+	if (!subItemActive) return;
+
+	const contentPage = document.querySelector('.content-page');
+	if (!contentPage) return;
+
+	const menuWidth = navitemActive.clientWidth + subItemActive.clientWidth;
+	navDrill.style.width = menuWidth + 'px';
+	contentPage.style.marginLeft = menuWidth + 'px';
+};*/
 
 const createDataTable = async (id, config, isFixedCollumns) => {
 	if (isFixedCollumns) {
