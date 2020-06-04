@@ -728,25 +728,25 @@
                                         <div class="row">
                                             <div class="col-md-8 d-flex flex-column">
                                                 <div class="card mb-30 flex-grow-1">
-                                                    <div>
+                                                    <div id="contact-details-lists" class="show-assigned">
                                                         <h4>Lists</h4>
                                                         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mt-12 mb-18">
                                                             <div class="font-weight-medium font-12 font-secondary">
                                                                 Select lists you want your contact assigned to
                                                             </div>
                                                             <div class="d-flex align-items-center align-self-end align-self-md-center mt-10 mt-md-0">
-                                                                <div class="radio form-check-inline mr-19 ml-15">
-                                                                    <input type="radio" id="show-assigned" value="option2" name="radioInline" checked>
+                                                                <div class="radio form-check-inline mr-19 ml-15" >
+                                                                    <input type="radio" id="show-assigned" value="option2" name="radioInline" data-toggle="data-table" checked>
                                                                     <label for="show-assigned"> Show Assigned </label>
                                                                 </div>
                                                                 <div class="radio form-check-inline mr-0">
-                                                                    <input type="radio" id="show-all" value="option2" name="radioInline" >
+                                                                    <input type="radio" id="show-all" value="option2" data-toggle="data-table" name="radioInline" >
                                                                     <label for="show-all"> Show All </label>
                                                                 </div>
                                                             </div>
                                                         </div>
 
-                                                        <table id="data-table" class="datatable datatable_small _contact-details-lists" style="width:100%">
+                                                        <table id="data-table" class="datatable datatable_small _contact-details-lists " style="width:100%">
                                                             <thead>
                                                             <tr>
                                                                 <th class="nosort checkbox-col"></th>
@@ -841,10 +841,10 @@
                                                                     12,1511
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="assigned">
                                                                 <td>
                                                                     <div class="checkbox checkbox-single">
-                                                                        <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                        <input type="checkbox" value="option1" checked aria-label="Single checkbox One">
                                                                         <label></label>
                                                                     </div>
                                                                 </td>
@@ -858,10 +858,10 @@
                                                                     234
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="assigned">
                                                                 <td>
                                                                     <div class="checkbox checkbox-single">
-                                                                        <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                        <input type="checkbox" value="option1" checked aria-label="Single checkbox One">
                                                                         <label></label>
                                                                     </div>
                                                                 </td>
@@ -875,10 +875,10 @@
                                                                     880
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="assigned">
                                                                 <td>
                                                                     <div class="checkbox checkbox-single">
-                                                                        <input type="checkbox" value="option1" aria-label="Single checkbox One">
+                                                                        <input type="checkbox" value="option1" checked aria-label="Single checkbox One">
                                                                         <label></label>
                                                                     </div>
                                                                 </td>
@@ -1360,6 +1360,26 @@
                     }],
                     sDom: 't',
                 });
+                adjustDataTableColumns()
+                const contactLists = document.querySelector('#contact-details-lists');
+                
+                const showAssigned = document.querySelector('#show-assigned');
+                showAssigned.addEventListener('change', () => {
+                    if(contactLists.classList.contains('show-all')) {
+                        contactLists.classList.remove('show-all');
+                        contactLists.classList.add('show-assigned');
+                        adjustDataTableColumns()
+                    }
+                })
+                const showAll = document.querySelector('#show-all');
+                showAll.addEventListener('change', () => {
+                    if(contactLists.classList.contains('show-assigned')) {
+                        contactLists.classList.remove('show-assigned');
+                        contactLists.classList.add('show-all');
+                        adjustDataTableColumns()
+                    }
+                })
+
             });
 
             // Range date picker settings and initialisation

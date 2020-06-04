@@ -1001,7 +1001,9 @@ function addWithScrollTable() {
 
 function adjustDataTableColumns() {
 	$($.fn.dataTable.tables({ visible: true })).DataTable().columns.adjust();
-	$($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns().relayout();
+	if ($($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns) {
+		$($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns().relayout();
+	}
 	addWithScrollTable();
 }
 
