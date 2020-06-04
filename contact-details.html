@@ -736,11 +736,11 @@
                                                             </div>
                                                             <div class="d-flex align-items-center align-self-end align-self-md-center mt-10 mt-md-0">
                                                                 <div class="radio form-check-inline mr-19 ml-15">
-                                                                    <input type="radio" id="show-assigned" value="option2" name="radioInline">
+                                                                    <input type="radio" id="show-assigned" value="option2" name="radioInline" checked>
                                                                     <label for="show-assigned"> Show Assigned </label>
                                                                 </div>
                                                                 <div class="radio form-check-inline mr-0">
-                                                                    <input type="radio" id="show-all" value="option2" name="radioInline" checked>
+                                                                    <input type="radio" id="show-all" value="option2" name="radioInline" >
                                                                     <label for="show-all"> Show All </label>
                                                                 </div>
                                                             </div>
@@ -1345,9 +1345,10 @@
         <script src="assets/libs/select2/js/select2.min.js"></script>
 
         <script>
-            // Datatables settings
+            // Datatables settings 
+            
             $(document).ready(function() {
-                $('#data-table').DataTable({
+                var table = createDataTable('#data-table', {
                     scrollX:        true,
                     scrollY:        127,
                     scrollCollapse: true,

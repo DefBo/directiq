@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta charset="utf-8" />
-        <title>All Pages | DirectIQ</title>
+        <title>Add Contacts | DirectIQ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -17,12 +16,14 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
 
+        <link href="assets/libs/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables.net-fixedcolumns-dt/css/fixedColumns.dataTables.min.css" rel="stylesheet"
+              type="text/css" />
         <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-
-        <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
-
+        
+	    <!-- App css -->
+	    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+	    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
     </head>
 
     <body data-layout-mode="two-column" class="animation-stopper">
@@ -45,7 +46,8 @@
                         </div>
 
                         <ol class="breadcrumbs">
-                            <li class="breadcrumb-item active">Home
+                            <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
+                            <li class="breadcrumb-item active">Segments
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -199,7 +201,6 @@
             <!-- end Topbar -->
 
             <!-- ========== Left Sidebar Start ========== -->
-
             <button class="hamburger hamburger--squeeze" id="ham" type="button">
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
@@ -226,10 +227,10 @@
                                Home
                             </span>
                         </a>
-                        <ul class="nav-items nav-expand-content active">
+                        <ul class="nav-items nav-expand-content">
                             <li class="nav-title">Home</li>
                             <li class="nav-item">
-                                <a class="nav-item-link active" href="./">
+                                <a class="nav-item-link" href="./">
                                     Home
                                 </a>
                             </li>
@@ -245,7 +246,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item nav-expand">
+                    <li class="nav-item nav-expand active">
                         <a class="nav-item-link nav-expand-link" href="#">
                             <i>
                                 <svg width="17.719" height="15.328">
@@ -279,7 +280,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item-link" href="segments.html">
+                                <a class="nav-item-link active" href="segments.html">
                                     Segments
                                 </a>
                             </li>
@@ -596,7 +597,6 @@
                     </button>
                 </div>
             </nav>
-
             <!-- Left Sidebar End -->
 
             <!-- ============================================================== -->
@@ -608,73 +608,208 @@
 
                     <!-- Start Content-->
                     <div class="container-fluid">
-                        <div class="card mb-0 mt-15">
 
-                            <h3 class="mb-16">Pages</h3>
+                        <div class="row">
+                            <div class="col-12">
 
-                            <p class="sub-header">
-                                All pages that are implemented or currently in progress.
-                            </p>
+                                <div class="card bg-light-grey mb-0">
 
-                            <h4 class="mb-16"><a class="link" href="my-lists-static.html">My Lists</a> (static)</h4>
+                                    <div class="pr-46" id="show-more-fields-row">
 
-                            <h4 class="mb-16"><a class="link" href="my-lists-ep.html">My Lists</a> (endpoint integrated)</h4>
+                                        <div class="row more-conditions mb-40">
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Fields</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Email Address</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Contains</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <input type="text" placeholder="Type Text" class="form-control mt-16 mt-md-0">
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="list-details-static.html">List Details</a> (static)</h4>
+                                            <button class="btn _sm _secondary _check">
+                                                <svg width="8" height="8">
+                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
 
-                            <h4 class="mb-16"><a class="link" href="list-details-ep.html">List Details</a> (endpoint integrated)</h4>
+                                        <div class="row more-conditions mb-40">
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Stats</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Open Rate</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Greater Than</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-1 condition-col">
+                                                <input type="text" placeholder=" " class="form-control mt-16 mt-md-0" required>
+                                                <span class="condition-additional-sign">%</span>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="contacts-home-static.html">Contacts Home</a></h4>
+                                            <button class="btn _sm _secondary _check">
+                                                <svg width="8" height="8">
+                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
 
-                            <h4 class="mb-16"><a class="link" href="contact-details.html">Contact Details</a></h4>
+                                        <div class="row more-conditions mb-40">
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Location</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Is</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Portugal</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Lisbon</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="add-contacts.html">Add Contacts</a></h4>
+                                            <button class="btn _sm _secondary _check">
+                                                <svg width="8" height="8">
+                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
 
-                            <h4 class="mb-16"><a class="link" href="form-validation-examples.html">Form Validation Example</a></h4>
+                                        <div class="row more-conditions mb-40">
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Location</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Is</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Portugal</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="save-list-new-user.html">Save List</a> (new user)</h4>
+                                            <button class="btn _sm _secondary _check">
+                                                <svg width="8" height="8">
+                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
 
-                            <h4 class="mb-16"><a class="link" href="save-list-few-lists.html">Save List</a> (select from few lists)</h4>
+                                        <div class="row more-conditions mb-40">
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Campaign</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Christmas Final Sales Campaign with coupons</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Opened</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="save-list-many-lists.html">Save List</a> (select from many lists)</h4>
+                                            <button class="btn _sm _secondary _check">
+                                                <svg width="8" height="8">
+                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
 
-                            <h4 class="mb-16"><a class="link" href="confirm-modals.html">Confirmation Modals</a></h4>
+                                        <div class="row more-conditions mb-40">
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg" required>
+                                                    <option></option>
+                                                    <option value="test-1" >Quality Score</option>
+                                                    <option value="test-2">Option 2</option>
+                                                </select>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="import-from-other-service.html">Add Contacts</a> (import from other service)</h4>
+                                            <div class="col-md-3 condition-col">
+                                                <select class="form-control _select2-lg _quality" required></select>
+                                            </div>
 
-                            <h4 class="mb-16"><a class="link" href="connect-service-not-connected.html">Add Contacts</a> (import from other service - not connected)</h4>
+                                            <button class="btn _sm _secondary _check">
+                                                <svg width="8" height="8">
+                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
 
-                            <h4 class="mb-16"><a class="link" href="toggle-columns.html">Toggle Columns Modal</a></h4>
 
-                            <h4 class="mb-16"><a class="link" href="contact-integrations.html">Contact Integrations</a></h4>
 
-                            <h4 class="mb-16"><a class="link" href="contact-integrations-not-connected.html">Contact Integrations</a> (not connected)</h4>
+                                    </div>
 
-                            <h4 class="mb-16"><a class="link" href="contact-integrations-connected.html">Contact Integrations</a> (connected)</h4>
+                                </div>
 
-                            <h4 class="mb-16"><a class="link" href="contact-integrations-connected-no-list.html">Contact Integrations</a> (connected - no list)</h4>
-
-                            <h4 class="mb-16"><a class="link" href="social-media-integrations.html">Social Media Integrations</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="api.html">Integrations - API</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="confirmation.html">Confirmation Notification</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="negative.html">Negative Notification</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="segments.html">Segments</a></h4>
-
-                            <h4 class="mb-16"><a class="link" href="segments-possible-fields.html">Segments - Possible Fields</a></h4>
-
-                            <hr>
-
-                            <h4 class="mb-16"><a class="link" href="list-details-new-table.html">Custom Table</a></h4>
-
+                            </div>
                         </div>
                     </div> <!-- container -->
-
                 </div> <!-- content -->
-
             </div>
 
             <!-- ============================================================== -->
@@ -687,17 +822,89 @@
                 </svg>
             </a>
 
-        </div>
+            <div id="save-segment" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <svg width="8" height="8">
+                                <use xlink:href="assets/images/sprite.svg#cross"></use>
+                            </svg>
+                        </button>
+                        <div class="modal-body">
+                            <h4 class="mb-13 mt-2">Save Segment</h4>
+                            <div class="form-control__wrap mb-14">
+                                <input type="text" placeholder="Segment Name Here" class="form-control">
+                            </div>
+                            <p class="font-12 font-weight-bold lh-1-3 mb-19">Use a distinguishing name. <span class="font-weight-semibold">Segments are for your own use.</span></p>
+                            <button class="btn _lg _primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal -->
 
+            <div id="rename-segment-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <svg width="8" height="8">
+                                <use xlink:href="assets/images/sprite.svg#cross"></use>
+                            </svg>
+                        </button>
+                        <div class="modal-body">
+                            <h4 class="mb-13">Rename Segment</h4>
+                            <div class="form-control__wrap mb-13">
+                                <input type="text" placeholder="Old Name" class="form-control">
+                            </div>
+                            <button class="btn _lg _primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal -->
+
+            <div id="name-duplicate-segment-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <svg width="8" height="8">
+                                <use xlink:href="assets/images/sprite.svg#cross"></use>
+                            </svg>
+                        </button>
+                        <div class="modal-body">
+                            <h4 class="mb-13">Name Your Duplicate Segment</h4>
+                            <div class="form-control__wrap mb-13">
+                                <input type="text" placeholder="“Copy of” suffix + Old List Name here" class="form-control">
+                            </div>
+                            <button class="btn _lg _primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal -->
+
+        </div>
         <!-- END wrapper -->
 
-        <!-- Vendor js -->
+        <!-- App js -->
         <script src="assets/js/vendor.min.js"></script>
+
+        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+        <script src="assets/libs/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
 
         <script src="assets/libs/select2/js/select2.min.js"></script>
 
+        <script>
+            $(document).ready(function () {
+                $('._select2-lg').select2({
+                    placeholder: 'Select an option',
+                    allowClear: true,
+                    minimumResultsForSearch: -1
+                });
+            });
+        </script>
+
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-        
+
     </body>
 </html>

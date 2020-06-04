@@ -648,7 +648,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane show active" id="home-b1">
 
-                                    <div class="diriq-table__wrapper _list-name-table">
+                                    <div class="diriq-table__wrapper _list-name-table disable-vertical-scroll">
 
                                         <table id="data-table" class="diriq-table" style="width:100%">
                                             <thead>
@@ -949,7 +949,7 @@
 
                                 <div class="tab-pane" id="profile-b1">
 
-                                    <div class="diriq-table__wrapper _list-name-table">
+                                    <div class="diriq-table__wrapper _list-name-table disable-vertical-scroll">
 
                                         <table id="data-table-2" class="diriq-table" style="width:100%">
                                             <thead>
@@ -1249,9 +1249,9 @@
                                 </div>
                                 <div class="tab-pane" id="messages-b1">
 
-                                    <div class="diriq-table__wrapper _list-name-table">
+                                    <div class="diriq-table__wrapper _list-name-table disable-vertical-scroll">
 
-                                        <table id="data-table-2" class="diriq-table" style="width:100%">
+                                        <table id="data-table-3" class="diriq-table" style="width:100%">
                                             <thead>
                                             <tr>
                                                 <th class="nosort">
@@ -1582,7 +1582,9 @@
     <script>
         // Datatable settings and initialisation
         $(document).ready(function () {
-            var table = createDataTable('#data-table, #data-table-2, #data-table-3', {}, true);
+            var table = createDataTable('#data-table', {}, true);
+            var table2 = createDataTable('#data-table-2', {}, true);
+            var table2 = createDataTable('#data-table-3', {}, true);
         });
     </script>
 
