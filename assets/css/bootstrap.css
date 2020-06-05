@@ -16508,8 +16508,9 @@ button.close {
 .modal-dialog {
   margin: 1.7em auto; }
 
-.nav-tabs > li > a, .nav-pills > li > a {
-  color: #212B35;
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  color: #212b35;
   font-weight: 500; }
 
 .nav-pills > a {
@@ -16537,8 +16538,8 @@ button.close {
     padding: 10px 20px 6px;
     transition: 0.25s; }
     .nav-bordered li a:hover {
-      border-color: #B6FFE8 !important;
-      color: #0000FF; }
+      border-color: #b6ffe8 !important;
+      color: #0000ff; }
     .nav-bordered li a.active {
       border-width: 0 0 4px 0 !important;
       border-color: #00eba8 !important; }
@@ -16548,6 +16549,14 @@ button.close {
 .tab-content {
   position: relative;
   padding: 18px 0 0 0; }
+
+.js-dataTable-control a {
+  cursor: pointer; }
+  .js-dataTable-control a .active {
+    pointer-events: none; }
+
+.js-dataTable-control.disabled {
+  pointer-events: none; }
 
 .pagination-rounded .page-link {
   border-radius: 30px !important;

@@ -95,7 +95,32 @@ const DEFAULT_SELECT_OPTIONS = {
 	status: [ 'active', 'passive' ]
 };
 
-const createCustomDataTable = async (id, config, isFixedColumns, api) => {
+const createCustomDataTable = async (id, config, isFixedColumns) => {
+	const generateOuterControls = (filterCallback) => {
+		const tableOuterControls = document.querySelector('.js-dataTable-control');
+		if (tableOuterControls) {
+			const buttons = tableOuterControls.querySelectorAll('.nav-link');
+			if (buttons.length > 0) {
+				buttons.forEach((button) => {
+					button.addEventListener('click', (e) => {
+						e.preventDefault();
+						globalSearchParams = {
+							...globalSearchParams,
+							[tableOuterControls.dataset.filter]: button.dataset.filterValue,
+							pageNumber: 1
+						};
+						filterCallback();
+						buttons.forEach((button2) => {
+							button2.classList.remove('active');
+						});
+
+						button.classList.add('active');
+					});
+				});
+			}
+		}
+	};
+
 	const getData = async (url) => {
 		if (cancelController) cancelController.abort();
 		const cancel = new AbortController();
@@ -171,7 +196,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 					title: `<div class="dropdown">
 								<a href="#" data-toggle="dropdown" class="dropdown-link-sm">
 									<svg width="10.16" height="6">
-										<use xlink:href="${absolutelyLinks}/assets/images/sprite.svg#check-col"></use>
+										<use xlink:href="${absolutelyLinks}assets/images/sprite.svg#check-col"></use>
 									</svg>
 								</a>
 								
@@ -233,7 +258,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 									<div class="dropdown">
 										<button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
 											<svg width="2" height="10">
-												<use xlink:href="${absolutelyLinks}/assets/images/sprite.svg#more-dots"></use>
+												<use xlink:href="${absolutelyLinks}assets/images/sprite.svg#more-dots"></use>
 											</svg>
 										</button>
 										
@@ -314,6 +339,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 			const defaultOption = document.createElement('option');
 			defaultOption.text = `Select ${column.displayName}`;
 			defaultOption.value = '';
+			defaultOption.title = ' ';
 			defaultOption.selected = true;
 			select.options.add(defaultOption);
 		}
@@ -330,7 +356,7 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 			const option = document.createElement('option');
 
 			option.value = isMuliple ? item.id : item;
-
+			option.title = ' ';
 			option.text = generateCustomSelect(column.name, isMuliple ? item.text : item);
 
 			select.options.add(option);
@@ -428,6 +454,8 @@ const createCustomDataTable = async (id, config, isFixedColumns, api) => {
 	let globalSearchParams = {};
 	let fetchedData = null;
 	let checkboxSelected = [];
+
+	generateOuterControls(filterTable);
 
 	const tableElement = document.querySelector(id);
 	const tableWrapper = tableElement.closest('.diriq-table__wrapper');
