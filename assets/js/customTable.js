@@ -193,7 +193,7 @@ const createCustomDataTable = async (id, config, isFixedColumns) => {
 				};
 			if (column.name === 'id') {
 				return {
-					title: `<div class="dropdown">
+					title: `<div class="dropdown _actions">
 								<a href="#" data-toggle="dropdown" class="dropdown-link-sm">
 									<svg width="10.16" height="6">
 										<use xlink:href="${absolutelyLinks}assets/images/sprite.svg#check-col"></use>
@@ -255,7 +255,7 @@ const createCustomDataTable = async (id, config, isFixedColumns) => {
 					render: function(data, type, row, meta) {
 						return `<div class="d-flex">
 									<a href="${getUserLink(row[0])}" class="btn _sm _secondary">View</a>
-									<div class="dropdown">
+									<div class="dropdown _actions">
 										<button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
 											<svg width="2" height="10">
 												<use xlink:href="${absolutelyLinks}assets/images/sprite.svg#more-dots"></use>

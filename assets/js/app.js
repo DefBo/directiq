@@ -1111,6 +1111,13 @@ $(document).ready(function() {
 		adjustDataTableColumns();
 	});
 
+    $('.dropdown._actions').on('show.bs.dropdown', function () {
+        $('body').addClass('actions-visible');
+    });
+    $('.dropdown._actions').on('hide.bs.dropdown', function () {
+        $('body').removeClass('actions-visible');
+    });
+
 	$('#apply-conditions-btn').click(function() {
 		adjustDataTableColumns();
 	});
