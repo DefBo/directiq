@@ -193,21 +193,9 @@ const createCustomDataTable = async (id, config, isFixedColumns) => {
 				};
 			if (column.name === 'id') {
 				return {
-					title: `<div class="dropdown _actions">
-								<a href="#" data-toggle="dropdown" class="dropdown-link-sm">
-									<svg width="10.16" height="6">
-										<use xlink:href="${absolutelyLinks}assets/images/sprite.svg#check-col"></use>
-									</svg>
-								</a>
-								
-								<div class="dropdown-menu dropdown-menu-left _actions mt-5"
-									aria-labelledby="moreMenuButton" data-id="table-checkbox-actions">
-									<div class="dropdown-menu-inner">
-										<a class="dropdown-item" data-action="remove" href="#">Remove</a>
-										<a class="dropdown-item" href="#">Action Item 2</a>
-										<a class="dropdown-item" href="#">Action Item 3</a>
-									</div>
-								</div>
+					title: `<div class="checkbox checkbox-single">
+								<input type="checkbox" value="${data}" aria-label="Single checkbox One">
+								<label></label>
 							</div>
 					`,
 					render: function(data) {
@@ -337,7 +325,7 @@ const createCustomDataTable = async (id, config, isFixedColumns) => {
 			select.multiple = 'multiple';
 		} else {
 			const defaultOption = document.createElement('option');
-			defaultOption.text = `Select ${column.displayName}`;
+			defaultOption.text = `Select`;
 			defaultOption.value = '';
 			defaultOption.title = ' ';
 			defaultOption.selected = true;
@@ -497,7 +485,7 @@ const createCustomDataTable = async (id, config, isFixedColumns) => {
 		} else if (COLUMN_WITHOUT_SEARCH.every((item) => column.name !== item)) {
 			const input = document.createElement('input');
 			input.classList.add('filter-input');
-			input.placeholder = `Search ${column.displayName}`;
+			input.placeholder = `Search`;
 			input.type = 'text';
 			input.autocomplete = 'none';
 			input.dataset.name = column.keyId === 0 ? column.name : `extra[${column.keyId}]`;
@@ -584,7 +572,7 @@ const createCustomDataTable = async (id, config, isFixedColumns) => {
 			},
 			placeholder: {
 				id: '-1',
-				text: `Select ${select.dataset.placeholder}`
+				text: `Select`
 			},
 			allowClear: true
 		});

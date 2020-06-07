@@ -1118,7 +1118,7 @@ $(document).ready(function() {
         $('body').removeClass('actions-visible');
     });
 
-	$('#apply-conditions-btn').click(function() {
+    $('#apply-conditions-btn').click(function() {
 		adjustDataTableColumns();
 	});
 
@@ -1270,6 +1270,14 @@ $(document).ready(function() {
 	$(document).on('click', '.dropdown._user .dropdown-menu', function(e) {
 		e.stopPropagation();
 	});
+
+    $('th input[type=checkbox]').click(function() {
+        if ($(this).is(':checked')) {
+            $('td input[type=checkbox]').attr('checked', true);
+        } else {
+            $('td input[type=checkbox]').attr('checked', false);
+        }
+    });
 });
 
 // Stop transitions on page load
@@ -1340,10 +1348,21 @@ const FIXED_DATA_TABLE_CONFIG = {
 // Open appropriate tab with hash link
 var url = document.location.toString();
 if (url.match('#')) {
-	$('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+    $('.nav-tabs a[href="#'+url.split('#')[1]+'"]').tab('show') ;
+    if (location.hash) {
+        setTimeout(function() {
+
+            window.scrollTo(0, 0);
+        }, 1);
+    }
 }
-$('.nav-tabs a').on('shown.bs.tab', function(e) {
-	window.location.hash = e.target.hash;
+
+$('.nav-tabs a').on('shown.bs.tab', function (e) {
+    if(history.pushState) {
+        history.pushState(null, null, e.target.hash);
+    } else {
+        window.location.hash = e.target.hash; //Polyfill for old browsers
+    }
 });
 
 const createDataTable = (id, config, isFixedCollumns) => {

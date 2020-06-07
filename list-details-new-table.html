@@ -654,7 +654,7 @@
                                             </i>
                                         </div>
 
-                                        <div class="dropdown _more _custom-table">
+                                        <div class="dropdown _more _actions _custom-table">
                                             <a class="dropdown-toggle _more" data-toggle="dropdown" href="#"
                                                 role="button" aria-haspopup="false" aria-expanded="false">
                                                 <svg width="5.8" height="25">
@@ -662,7 +662,7 @@
                                                 </svg>
                                             </a>
 
-                                            <div class="dropdown-menu dropdown-menu-right _actions _custom-table"
+                                            <div class="dropdown-menu dropdown-menu-right _actions _custom-table mt-3"
                                                 aria-labelledby="moreMenuButton">
                                                 <div class="dropdown-menu-inner">
                                                     <a class="dropdown-item" href="#">Rename</a>
@@ -811,6 +811,21 @@
     <script src="assets/js/customTable.js"></script>
 
     <script>
+
+        $(document).on({
+            mouseenter: function (event) {
+                var table = $(event.target).parents('.dataTables_wrapper').find('table.dataTable');
+                trIndex = $(this).index() + 1;
+                table.find("tr:eq(" + trIndex + ")").addClass("hover");
+            },
+            mouseleave: function (event) {
+                var table = $(event.target).parents('.dataTables_wrapper').find('table.dataTable');
+                trIndex = $(this).index() + 1;
+                table.find("tr:eq(" + trIndex + ")").removeClass("hover");
+            }
+        }, ".dataTables_wrapper tbody tr");
+
+
         // Datatable settings and initialisation
         const TABLE_API =
             'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/custom';

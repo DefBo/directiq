@@ -6307,7 +6307,7 @@ body.nav-is-toggled:after {
     border: none;
     color: #000;
     padding: 0; }
-    .dropdown-toggle._more:hover {
+    .dropdown-toggle._more:hover, .dropdown.show .dropdown-toggle._more {
       color: #fff;
       background: #0000FF; }
   .dropdown-toggle._activity {
@@ -7368,7 +7368,8 @@ body.nav-is-toggled:after {
   font-weight: 500;
   height: 22px;
   text-align: left !important;
-  min-height: 0 !important; }
+  min-height: 0 !important;
+  min-width: 56px; }
   .select2-container .select2-selection--single .select2-selection__rendered,
   .select2-container .select2-selection--multiple .select2-selection__rendered {
     line-height: 22px;
@@ -8192,7 +8193,7 @@ table.dataTable.diriq-table tbody th, table.dataTable.diriq-table tbody td {
       padding-left: 29px !important;
       padding-right: 10px !important;
       min-width: auto;
-      width: 15px; }
+      width: 12px !important; }
     ._my-lists-table .diriq-table th:last-child,
     ._list-name-table .diriq-table th:last-child, ._my-lists-table .diriq-table td:last-child,
     ._list-name-table .diriq-table td:last-child {
@@ -8228,7 +8229,10 @@ table.dataTable.diriq-table tbody th, table.dataTable.diriq-table tbody td {
       text-align: right;
       min-width: 72px !important; }
   .diriq-table tbody tr {
-    height: 40px !important; }
+    height: 40px !important;
+    transition: background-color 0.25s; }
+    .diriq-table tbody tr.hover {
+      background: #F6F9FC; }
   .diriq-table__wrapper {
     padding-right: 22px;
     position: relative; }
