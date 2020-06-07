@@ -8185,8 +8185,6 @@ table.dataTable.diriq-table tbody th, table.dataTable.diriq-table tbody td {
   font-size: 12px; }
   ._my-lists-table .diriq-table {
     table-layout: fixed !important; }
-    ._my-lists-table .diriq-table tbody tr:hover {
-      background: #F6F9FC; }
   .diriq-table th:focus {
     outline: none; }
   .diriq-table thead th {

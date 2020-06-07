@@ -1370,6 +1370,20 @@ const setDataTableActions = (table) => {
 	});
 };
 
+$(document).on({
+    mouseenter: function (event) {
+        var table = $(event.target).parents('.dataTables_wrapper').find('table.dataTable');
+
+        trIndex = $(this).index();
+        table.find("tbody tr:eq(" + trIndex + ")").addClass("hover");
+    },
+    mouseleave: function (event) {
+        var table = $(event.target).parents('.dataTables_wrapper').find('table.dataTable');
+
+        trIndex = $(this).index();
+        table.find("tbody tr:eq(" + trIndex + ")").removeClass("hover");
+    }
+}, ".dataTables_wrapper tbody tr");
 const createDataTable = (id, config, isFixedCollumns) => {
 	if (isFixedCollumns) {
 		config = { ...FIXED_DATA_TABLE_CONFIG, ...config };

@@ -814,22 +814,6 @@
 
     <script>
 
-        $(document).on({
-            mouseenter: function (event) {
-                var table = $(event.target).parents('.dataTables_wrapper').find('table.dataTable');
-
-                trIndex = $(this).index();
-                table.find("tbody tr:eq(" + trIndex + ")").addClass("hover");
-            },
-            mouseleave: function (event) {
-                var table = $(event.target).parents('.dataTables_wrapper').find('table.dataTable');
-
-                trIndex = $(this).index();
-                table.find("tbody tr:eq(" + trIndex + ")").removeClass("hover");
-            }
-        }, ".dataTables_wrapper tbody tr");
-
-
         // Datatable settings and initialisation
         const TABLE_API =
             'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/custom';
