@@ -674,9 +674,11 @@ const createCustomDataTable = async (id, config, isFixedColumns) => {
 		}
 	});
 
+	tableWrapper.classList.toggle('_filter-hidden');
+
 	filterButton.addEventListener('click', () => {
-		body.classList.toggle('_filter-visible');
-		if (!body.classList.contains('_filter-visible')) {
+		tableWrapper.classList.toggle('_filter-hidden');
+		if (tableWrapper.classList.contains('_filter-hidden')) {
 			tFootInputsWrapper.forEach((th) => {
 				const input = th.querySelector('input');
 
@@ -698,4 +700,6 @@ const createCustomDataTable = async (id, config, isFixedColumns) => {
 			filterTable();
 		}
 	});
+
+	setDataTableActions(table);
 };

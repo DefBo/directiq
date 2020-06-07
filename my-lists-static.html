@@ -9,12 +9,14 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-        <link rel="manifest" href="assets/images/site.webmanifest">
-        <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#0000ff">
-        <meta name="msapplication-TileColor" content="#ffffff">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png?v=M4K2b5JM9m">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png?v=M4K2b5JM9m">
+        <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m">
+        <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m" color="#5bbad5">
+        <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m">
+        <meta name="msapplication-TileColor" content="#0000ff">
+        <meta name="msapplication-config" content="assets/images/browserconfig.xml?v=M4K2b5JM9m">
         <meta name="theme-color" content="#ffffff">
 
         <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
@@ -633,7 +635,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="home-b1">
 
-                                        <div class="diriq-table__wrapper _my-lists-table">
+                                        <div class="diriq-table__wrapper _my-lists-table disable-vertical-scroll _filter-hidden">
 
                                             <table id="data-table" class="diriq-table" style="width:100%">
                                                 <thead>
@@ -684,11 +686,21 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <button type="button" class="btn _sm _secondary">View</button>
-                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
-                                                                <svg width="2" height="10">
-                                                                    <use xlink:href="assets/images/sprite.svg#more-dots"></use>
-                                                                </svg>
-                                                            </button>
+                                                            <div class="dropdown _actions">
+                                                                <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown" aria-expanded="true">
+                                                                    <svg width="2" height="10">
+                                                                        <use xlink:href="/assets/images/sprite.svg#more-dots"></use>
+                                                                    </svg>
+                                                                </button>
+
+                                                                <div class="dropdown-menu dropdown-menu-right _actions mt-5" aria-labelledby="moreMenuButton" x-placement="bottom-end" style="position: absolute; transform: translate3d(-108px, 25px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                                    <div class="dropdown-menu-inner">
+                                                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -721,11 +733,21 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <button type="button" class="btn _sm _secondary">View</button>
-                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
-                                                                <svg width="2" height="10">
-                                                                    <use xlink:href="assets/images/sprite.svg#more-dots"></use>
-                                                                </svg>
-                                                            </button>
+                                                            <div class="dropdown _actions">
+                                                                <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown" aria-expanded="true">
+                                                                    <svg width="2" height="10">
+                                                                        <use xlink:href="/assets/images/sprite.svg#more-dots"></use>
+                                                                    </svg>
+                                                                </button>
+
+                                                                <div class="dropdown-menu dropdown-menu-right _actions mt-5" aria-labelledby="moreMenuButton" x-placement="bottom-end" style="position: absolute; transform: translate3d(-108px, 25px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                                    <div class="dropdown-menu-inner">
+                                                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -758,11 +780,21 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <button type="button" class="btn _sm _secondary">View</button>
-                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
-                                                                <svg width="2" height="10">
-                                                                    <use xlink:href="assets/images/sprite.svg#more-dots"></use>
-                                                                </svg>
-                                                            </button>
+                                                            <div class="dropdown _actions">
+                                                                <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown" aria-expanded="true">
+                                                                    <svg width="2" height="10">
+                                                                        <use xlink:href="/assets/images/sprite.svg#more-dots"></use>
+                                                                    </svg>
+                                                                </button>
+
+                                                                <div class="dropdown-menu dropdown-menu-right _actions mt-5" aria-labelledby="moreMenuButton" x-placement="bottom-end" style="position: absolute; transform: translate3d(-108px, 25px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                                    <div class="dropdown-menu-inner">
+                                                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -795,11 +827,21 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <button type="button" class="btn _sm _secondary">View</button>
-                                                            <button type="button" class="btn _sm _primary ml-4 px-6">
-                                                                <svg width="2" height="10">
-                                                                    <use xlink:href="assets/images/sprite.svg#more-dots"></use>
-                                                                </svg>
-                                                            </button>
+                                                            <div class="dropdown _actions">
+                                                                <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown" aria-expanded="true">
+                                                                    <svg width="2" height="10">
+                                                                        <use xlink:href="/assets/images/sprite.svg#more-dots"></use>
+                                                                    </svg>
+                                                                </button>
+
+                                                                <div class="dropdown-menu dropdown-menu-right _actions mt-5" aria-labelledby="moreMenuButton" x-placement="bottom-end" style="position: absolute; transform: translate3d(-108px, 25px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                                    <div class="dropdown-menu-inner">
+                                                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -808,39 +850,39 @@
                                                 <tr>
                                                     <th class="nosort"></th>
                                                     <th>
-                                                        <input class="filter-input" type="text" placeholder="Type List Name">
+                                                        <input class="filter-input" type="text" placeholder="Search">
                                                     </th>
                                                     <th>
                                                         <select class="form-control" data-toggle="select2" required>
-                                                            <option class="d-none" value="" disabled selected>Select Size</option>
+                                                            <option class="d-none" value="" disabled selected>Select</option>
                                                             <option value="test-1">Option 1</option>
                                                             <option value="test-2">Option 2</option>
                                                         </select>
                                                     </th>
                                                     <th>
                                                         <select class="form-control" data-toggle="select2" required>
-                                                            <option class="d-none" value="" disabled selected>Select Size</option>
+                                                            <option class="d-none" value="" disabled selected>Select</option>
                                                             <option value="test-1">Option 1</option>
                                                             <option value="test-2">Option 2</option>
                                                         </select>
                                                     </th>
                                                     <th>
                                                         <select class="form-control" data-toggle="select2" required>
-                                                            <option class="d-none" value="" disabled selected>Select Size</option>
+                                                            <option class="d-none" value="" disabled selected>Select</option>
                                                             <option value="test-1">Option 1</option>
                                                             <option value="test-2">Option 2</option>
                                                         </select>
                                                     </th>
                                                     <th>
                                                         <select class="form-control" data-toggle="select2" required>
-                                                            <option class="d-none" value="" disabled selected>Select Quality</option>
+                                                            <option class="d-none" value="" disabled selected>Select</option>
                                                             <option value="test-1">Option 1</option>
                                                             <option value="test-2">Option 2</option>
                                                         </select>
                                                     </th>
                                                     <th>
                                                         <select class="form-control" data-toggle="select2" required>
-                                                            <option class="d-none" value="" disabled selected>Select Date</option>
+                                                            <option class="d-none" value="" disabled selected>Select</option>
                                                             <option value="test-1">Option 1</option>
                                                             <option value="test-2">Option 2</option>
                                                         </select>
@@ -882,7 +924,7 @@
                                                     </svg>
                                                 </a>
 
-                                                <div class="dropdown-menu dropdown-menu-right _actions" aria-labelledby="moreMenuButton">
+                                                <div class="dropdown-menu dropdown-menu-right _actions mt-3" aria-labelledby="moreMenuButton">
                                                     <div class="dropdown-menu-inner">
                                                         <a class="dropdown-item" href="#">Action Item 1</a>
                                                         <a class="dropdown-item" href="#">Action Item 2</a>
@@ -928,6 +970,10 @@
         <script src="assets/libs/select2/js/select2.min.js"></script>
 
         <script>
+            /*$('.diriq-table__filter-btn').click(function() {
+                $(this).closest('.diriq-table__wrapper').toggleClass('_filter-hidden');
+            });*/
+
             // Datatables settings
             $(document).ready(function () {
                 var table = createDataTable('#data-table', {}, true);
