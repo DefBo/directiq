@@ -7682,16 +7682,16 @@ body.nav-is-toggled:after {
   color: #0000FF;
   transition: color 0.25s; }
 
-.api-integration-list {
+.custom-list {
   padding-left: 9px;
   list-style: none; }
-  .api-integration-list__item {
+  .custom-list__item {
     font-size: 12px;
     font-weight: 500;
     color: #454F5B; }
-    .api-integration-list__item + .api-integration-list__item {
+    .custom-list__item + .custom-list__item {
       margin-top: 7px; }
-    .api-integration-list__item:before {
+    .custom-list__item:before {
       content: '';
       background: #00EBA8;
       width: 4px;
@@ -7702,9 +7702,28 @@ body.nav-is-toggled:after {
       position: relative;
       top: -1px;
       margin-right: 5px; }
-    .api-integration-list__item span {
+    .custom-list__item span {
       font-weight: 700;
       color: #212B35; }
+
+.plugins-apps__card {
+  padding: 0;
+  flex-direction: row;
+  flex: 1; }
+
+.plugins-apps__aside {
+  background: #F6F9FC; }
+
+.plugins-apps__body {
+  padding: 40px; }
+
+.plugins-apps__icon {
+  width: 100px;
+  height: 100px;
+  background: #B6FFE8;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .connect__icon-wrap {
   height: 100%;
