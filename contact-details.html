@@ -2266,18 +2266,30 @@
                                                                     ></use>
                                                                 </svg>
                                                             </button>
-                                                            <button
-                                                                class="btn _sm _primary _check ml-10"
-                                                            >
-                                                                <svg
-                                                                    width="10"
-                                                                    height="11"
+                                                            <div class="confirm__wrap ml-10">
+                                                                <button
+                                                                        class="btn _sm _primary _check confirm__btn"
                                                                 >
-                                                                    <use
-                                                                        xlink:href="assets/images/sprite.svg#trashcan"
-                                                                    ></use>
-                                                                </svg>
-                                                            </button>
+                                                                    <svg
+                                                                            width="10"
+                                                                            height="11"
+                                                                    >
+                                                                        <use
+                                                                                xlink:href="assets/images/sprite.svg#trashcan"
+                                                                        ></use>
+                                                                    </svg>
+                                                                </button>
+
+                                                                <div class="confirm__modal d-none _to-right">
+                                                                    <div class="confirm__content">
+                                                                        <p class="confirm__text">You sure you want to delete this note?</p>
+                                                                    </div>
+                                                                    <div class="d-flex">
+                                                                        <button class="btn _lg _secondary">Nope</button>
+                                                                        <button class="btn _lg _primary">Sure</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -2330,18 +2342,30 @@
                                                                     ></use>
                                                                 </svg>
                                                             </button>
-                                                            <button
-                                                                class="btn _sm _primary _check ml-10"
-                                                            >
-                                                                <svg
-                                                                    width="10"
-                                                                    height="11"
+                                                            <div class="confirm__wrap ml-10">
+                                                                <button
+                                                                        class="btn _sm _primary _check confirm__btn"
                                                                 >
-                                                                    <use
-                                                                        xlink:href="assets/images/sprite.svg#trashcan"
-                                                                    ></use>
-                                                                </svg>
-                                                            </button>
+                                                                    <svg
+                                                                            width="10"
+                                                                            height="11"
+                                                                    >
+                                                                        <use
+                                                                                xlink:href="assets/images/sprite.svg#trashcan"
+                                                                        ></use>
+                                                                    </svg>
+                                                                </button>
+
+                                                                <div class="confirm__modal d-none _to-right">
+                                                                    <div class="confirm__content">
+                                                                        <p class="confirm__text">You sure you want to delete this note?</p>
+                                                                    </div>
+                                                                    <div class="d-flex">
+                                                                        <button class="btn _lg _secondary">Nope</button>
+                                                                        <button class="btn _lg _primary">Sure</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2391,21 +2415,15 @@
                         </svg>
                     </button>
                     <div class="modal-body">
-                        <h4 class="mb-13">Create List</h4>
-                        <div class="form-control__wrap mb-13">
-                            <input
-                                type="text"
-                                placeholder="Your List Name Here"
+                        <h4 class="mb-13">Add Note</h4>
+                        <div class="form-control__wrap mb-19">
+                            <textarea
+                                placeholder="Your Note Text Here"
                                 class="form-control"
-                            />
+                                rows="5"
+                                maxlength="500"
+                            ></textarea>
                         </div>
-                        <p class="font-12 font-weight-bold lh-1-3 mb-19">
-                            Chose a clean, brandable list name.
-                            <span class="font-weight-semibold"
-                                >Remember, your contacts will see this when they
-                                subscribe or unsubscribe</span
-                            >
-                        </p>
                         <button class="btn _lg _primary">Create</button>
                     </div>
                 </div>

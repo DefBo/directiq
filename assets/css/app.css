@@ -7497,6 +7497,9 @@ body.nav-is-toggled:after {
   right: 0;
   width: 300px;
   z-index: 1002; }
+  .confirm__modal._to-right {
+    right: auto;
+    left: 0; }
   .confirm__modal .btn {
     width: 150px; }
   .confirm__modal:after {

@@ -16305,6 +16305,9 @@ a.text-blue:hover, a.text-blue:focus {
   .form-control:placeholder-shown {
     border-color: #A0B1BA; }
 
+textarea.form-control {
+  padding: 7px 12px; }
+
 .form-control,
 .custom-select {
   box-shadow: none; }
