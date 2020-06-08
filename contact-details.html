@@ -33,6 +33,9 @@
             rel="stylesheet"
             type="text/css"
         />
+        <link href="assets/libs/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables.net-fixedcolumns-dt/css/fixedColumns.dataTables.min.css" rel="stylesheet"
+              type="text/css" />
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
@@ -1102,15 +1105,16 @@
                                                             </div>
                                                         </div>
 
-                                                        <table
-                                                            id="data-table"
-                                                            class="datatable datatable_small _contact-details-lists"
-                                                            style="width: 100%;"
-                                                        >
-                                                            <thead>
+                                                        <div class="datatable__wrap">
+                                                            <table
+                                                                    id="data-table"
+                                                                    class="datatable datatable_small _contact-details-lists"
+                                                                    style="width: 100%;"
+                                                            >
+                                                                <thead>
                                                                 <tr>
                                                                     <th
-                                                                        class="nosort checkbox-col"
+                                                                            class="nosort checkbox-col"
                                                                     ></th>
                                                                     <th>
                                                                         List
@@ -1125,17 +1129,17 @@
                                                                         Size
                                                                     </th>
                                                                 </tr>
-                                                            </thead>
-                                                            <tbody>
+                                                                </thead>
+                                                                <tbody>
                                                                 <tr>
                                                                     <td>
                                                                         <div
-                                                                            class="checkbox checkbox-single"
+                                                                                class="checkbox checkbox-single"
                                                                         >
                                                                             <input
-                                                                                type="checkbox"
-                                                                                value="option1"
-                                                                                aria-label="Single checkbox One"
+                                                                                    type="checkbox"
+                                                                                    value="option1"
+                                                                                    aria-label="Single checkbox One"
                                                                             />
                                                                             <label></label>
                                                                         </div>
@@ -1155,12 +1159,12 @@
                                                                 <tr>
                                                                     <td>
                                                                         <div
-                                                                            class="checkbox checkbox-single"
+                                                                                class="checkbox checkbox-single"
                                                                         >
                                                                             <input
-                                                                                type="checkbox"
-                                                                                value="option1"
-                                                                                aria-label="Single checkbox One"
+                                                                                    type="checkbox"
+                                                                                    value="option1"
+                                                                                    aria-label="Single checkbox One"
                                                                             />
                                                                             <label></label>
                                                                         </div>
@@ -1180,12 +1184,12 @@
                                                                 <tr>
                                                                     <td>
                                                                         <div
-                                                                            class="checkbox checkbox-single"
+                                                                                class="checkbox checkbox-single"
                                                                         >
                                                                             <input
-                                                                                type="checkbox"
-                                                                                value="option1"
-                                                                                aria-label="Single checkbox One"
+                                                                                    type="checkbox"
+                                                                                    value="option1"
+                                                                                    aria-label="Single checkbox One"
                                                                             />
                                                                             <label></label>
                                                                         </div>
@@ -1206,12 +1210,12 @@
                                                                 <tr>
                                                                     <td>
                                                                         <div
-                                                                            class="checkbox checkbox-single"
+                                                                                class="checkbox checkbox-single"
                                                                         >
                                                                             <input
-                                                                                type="checkbox"
-                                                                                value="option1"
-                                                                                aria-label="Single checkbox One"
+                                                                                    type="checkbox"
+                                                                                    value="option1"
+                                                                                    aria-label="Single checkbox One"
                                                                             />
                                                                             <label></label>
                                                                         </div>
@@ -1232,12 +1236,12 @@
                                                                 <tr>
                                                                     <td>
                                                                         <div
-                                                                            class="checkbox checkbox-single"
+                                                                                class="checkbox checkbox-single"
                                                                         >
                                                                             <input
-                                                                                type="checkbox"
-                                                                                value="option1"
-                                                                                aria-label="Single checkbox One"
+                                                                                    type="checkbox"
+                                                                                    value="option1"
+                                                                                    aria-label="Single checkbox One"
                                                                             />
                                                                             <label></label>
                                                                         </div>
@@ -1255,17 +1259,17 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr
-                                                                    class="assigned"
+                                                                        class="assigned"
                                                                 >
                                                                     <td>
                                                                         <div
-                                                                            class="checkbox checkbox-single"
+                                                                                class="checkbox checkbox-single"
                                                                         >
                                                                             <input
-                                                                                type="checkbox"
-                                                                                value="option1"
-                                                                                checked
-                                                                                aria-label="Single checkbox One"
+                                                                                    type="checkbox"
+                                                                                    value="option1"
+                                                                                    checked
+                                                                                    aria-label="Single checkbox One"
                                                                             />
                                                                             <label></label>
                                                                         </div>
@@ -1283,17 +1287,17 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr
-                                                                    class="assigned"
+                                                                        class="assigned"
                                                                 >
                                                                     <td>
                                                                         <div
-                                                                            class="checkbox checkbox-single"
+                                                                                class="checkbox checkbox-single"
                                                                         >
                                                                             <input
-                                                                                type="checkbox"
-                                                                                value="option1"
-                                                                                checked
-                                                                                aria-label="Single checkbox One"
+                                                                                    type="checkbox"
+                                                                                    value="option1"
+                                                                                    checked
+                                                                                    aria-label="Single checkbox One"
                                                                             />
                                                                             <label></label>
                                                                         </div>
@@ -1312,17 +1316,17 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr
-                                                                    class="assigned"
+                                                                        class="assigned"
                                                                 >
                                                                     <td>
                                                                         <div
-                                                                            class="checkbox checkbox-single"
+                                                                                class="checkbox checkbox-single"
                                                                         >
                                                                             <input
-                                                                                type="checkbox"
-                                                                                value="option1"
-                                                                                checked
-                                                                                aria-label="Single checkbox One"
+                                                                                    type="checkbox"
+                                                                                    value="option1"
+                                                                                    checked
+                                                                                    aria-label="Single checkbox One"
                                                                             />
                                                                             <label></label>
                                                                         </div>
@@ -1340,8 +1344,10 @@
                                                                         14,914
                                                                     </td>
                                                                 </tr>
-                                                            </tbody>
-                                                        </table>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>

@@ -8688,6 +8688,18 @@ div.dataTables_wrapper div.dataTables_info {
         max-width: 200px; } }
   .datatable._sync-lists .switcher__wrap {
     justify-content: center; }
+  .datatable__wrap table.dataTable thead th, .datatable__wrap table.dataTable thead td {
+    padding: 1px;
+    border-bottom: none;
+    font-weight: 600; }
+  .datatable__wrap table.dataTable thead .sorting,
+  .datatable__wrap table.dataTable thead .sorting_asc,
+  .datatable__wrap table.dataTable thead .sorting_desc {
+    background: none; }
+  .datatable__wrap table.dataTable tbody th, .datatable__wrap table.dataTable tbody td {
+    padding: 1px; }
+  .datatable__wrap .dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: none; }
 
 .sort-arrow {
   display: none;
