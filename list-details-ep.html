@@ -969,13 +969,6 @@
                                             <a
                                                     class="dropdown-item"
                                                     href="#"
-                                                    data-toggle="modal"
-                                                    data-target="#toggle-columns-modal"
-                                            >Toggle Columns</a
-                                            >
-                                            <a
-                                                    class="dropdown-item"
-                                                    href="#"
                                             >Action Item 2</a
                                             >
                                             <a
@@ -983,6 +976,7 @@
                                                     href="#"
                                             >Action Item 3</a
                                             >
+                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#toggle-columns-modal-1">Toggle Columns</a>
                                         </div>
                                     </div>
                                 </div>
@@ -998,6 +992,175 @@
     <!-- End Page content -->
     <!-- ============================================================== -->
 
+    <div id="toggle-columns-modal-1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered _toggle-columns">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <svg width="8" height="8">
+                        <use xlink:href="assets/images/sprite.svg#cross"></use>
+                    </svg>
+                </button>
+                <div class="modal-body">
+                    <h5>Toggle Columns</h5>
+
+                    <div data-plugin="dragula" data-containers='["handle-dragula"]' data-handleClass="dragula-handle">
+
+                        <div id="handle-dragula">
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-1" class="switcher__label font-weight-medium">Email Address</label>
+                                    <input type="checkbox" id="switch-1" class="switcher" checked>
+                                    <label for="switch-1" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-8" class="switcher__label font-weight-medium">Quality</label>
+                                    <input type="checkbox" id="switch-8" class="switcher" checked>
+                                    <label for="switch-8" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-9" class="switcher__label font-weight-medium">First Name</label>
+                                    <input type="checkbox" id="switch-9" class="switcher" checked>
+                                    <label for="switch-9" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-10" class="switcher__label font-weight-medium">Last Name</label>
+                                    <input type="checkbox" id="switch-10" class="switcher" checked>
+                                    <label for="switch-10" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-11" class="switcher__label font-weight-medium">Status</label>
+                                    <input type="checkbox" id="switch-11" class="switcher" checked>
+                                    <label for="switch-11" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-2" class="switcher__label font-weight-medium">Tags</label>
+                                    <input type="checkbox" id="switch-2" class="switcher" checked>
+                                    <label for="switch-2" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-3" class="switcher__label font-weight-medium">Date Added</label>
+                                    <input type="checkbox" id="switch-3" class="switcher" checked>
+                                    <label for="switch-3" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-4" class="switcher__label font-weight-medium">Position</label>
+                                    <input type="checkbox" id="switch-4" class="switcher" checked>
+                                    <label for="switch-4" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-5" class="switcher__label font-weight-medium">Website</label>
+                                    <input type="checkbox" id="switch-5" class="switcher" checked>
+                                    <label for="switch-5" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-6" class="switcher__label font-weight-medium">Address</label>
+                                    <input type="checkbox" id="switch-6" class="switcher" checked>
+                                    <label for="switch-5" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-column__item">
+                                <div class="dragula-handle">
+                                    <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#more-dots-small"></use>
+                                    </svg>
+                                </div>
+                                <div class="switcher__wrap">
+                                    <label for="switch-7" class="switcher__label font-weight-medium">Year</label>
+                                    <input type="checkbox" id="switch-7" class="switcher" checked>
+                                    <label for="switch-7" class="switcher__toggle"></label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class="btn _lg _primary">Save</button>
+            </div>
+        </div>
+    </div><!-- /.modal -->
+
     <a href="#" class="btn_back">
         <svg width="8" height="8">
             <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
@@ -1012,10 +1175,9 @@
 
 <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-
 <script src="assets/libs/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
-
 <script src="assets/libs/select2/js/select2.min.js"></script>
+<script src="assets/libs/dragula/dragula.min.js"></script>
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
