@@ -8437,6 +8437,13 @@ table.dataTable.diriq-table thead th, table.dataTable.diriq-table thead td {
 .dataTables_wrapper--empty.with-scroll .DTFC_RightWrapper:after {
   display: none; }
 
+.dataTables_wrapper--empty .dataTables_scrollBody {
+  overflow: hidden !important; }
+  .dataTables_wrapper--empty .dataTables_scrollBody > table {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
+
 .dataTables_wrapper .dataTables_paginate li.paginate_button {
   display: none;
   border: none !important;

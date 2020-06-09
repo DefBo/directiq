@@ -589,244 +589,135 @@
                         <div class="row">
                             <div class="col-12">
 
-                                <div class="card _connect mt-16">
-                                    <div class="connect__icon-wrap">
-                                        <i class="connect__icon">
-                                            <svg>
-                                                <use xlink:href="assets/images/sprite.svg#shopify"></use>
-                                            </svg>
-                                        </i>
-                                    </div>
-
-                                    <div class="connect__content">
-                                        <div class="connect__title-wrap">
-                                            <h4>Shopify Integration</h4>
-                                            <span class="table-status _small _success ml-20">connected</span>
-                                        </div>
-                                        <div class="dropdown mt-10 mt-md-0 mr-md-8">
-                                            <a class="dropdown-toggle _solid _lg" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                                Actions
-                                                <svg width="13.545" height="8">
-                                                    <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
-                                                </svg>
-                                            </a>
-
-                                            <div class="dropdown-menu _actions">
-                                                <div class="dropdown-menu-inner">
-                                                    <a class="dropdown-item" href="#">Reinvoke Access</a>
-                                                    <a class="dropdown-item" href="#">Remap Columns</a>
-                                                    <a class="dropdown-item" href="#">Disconnect</a>
-                                                </div>
+                                <div class="card mt-14 mb-28">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h4 class="mt-n4">Manage Your Fields</h4>
+                                            <div class="font-12 color-secondary font-weight-medium mt-12">
+                                                You can create <span class="color-primary font-weight-bold">Custom Fields</span> to better personalize your contacts. <a href="#" class="link">Learn more</a>.
                                             </div>
                                         </div>
+                                        <button class="btn _lg _secondary">Create Custom Field</button>
                                     </div>
+
                                 </div>
 
-                                <div class="connect__cards-wrap">
-                                    <div class="card connect__cards-main">
-                                        <h5 class="mb-23 mt-2">Sync List To Import Contacts (You Can Also Toggle Auto-Sync) *</h5>
+                                <ul class="nav nav-tabs nav-bordered">
+                                    <li class="nav-item">
+                                        <a
+                                                href="#all-fields"
+                                                data-toggle="tab"
+                                                aria-expanded="false"
+                                                class="nav-link active"
+                                        >
+                                            All Fields
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a
+                                                href="#custom-fields"
+                                                data-toggle="tab"
+                                                aria-expanded="true"
+                                                class="nav-link"
+                                        >
+                                            Custom Fields
+                                        </a>
+                                    </li>
+                                </ul>
 
-                                        <div class="w-100">
-                                            <table id="data-table" class="datatable datatable_small _sync-lists" style="width:100%">
-                                                <thead>
-                                                <tr>
-                                                    <th>List Name</th>
-                                                    <th>List Size</th>
-                                                    <th>Last Sync</th>
-                                                    <th class="nosort">Auto-Sync</th>
-                                                    <th class="nosort">Sync</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        My First List
-                                                    </td>
-                                                    <td>
-                                                        157,912
-                                                    </td>
-                                                    <td>
-                                                        -
-                                                    </td>
-                                                    <td>
-                                                        <div class="switcher__wrap">
-                                                            <input type="checkbox" id="switch-1" class="switcher">
-                                                            <label for="switch-1" class="switcher__toggle"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn _secondary _sync-list">
-                                                            <svg width="6.545" height="9">
-                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
-                                                            </svg>
-                                                        </button>
-                                                    </td>
-                                                </tr>
+                                <div class="tab-content">
+                                    <div
+                                            class="tab-pane show active"
+                                            id="all-fields"
+                                    >
 
-                                                <tr>
-                                                    <td>
-                                                        Dodogildo Subscribers
-                                                    </td>
-                                                    <td>
-                                                        3
-                                                    </td>
-                                                    <td>
-                                                        -
-                                                    </td>
-                                                    <td>
-                                                        <div class="switcher__wrap">
-                                                            <input type="checkbox" id="switch-2" class="switcher">
-                                                            <label for="switch-2" class="switcher__toggle"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn _secondary _sync-list">
-                                                            <svg width="6.545" height="9">
-                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
-                                                            </svg>
-                                                        </button>
-                                                    </td>
-                                                </tr>
+                                        <div class="connect__cards-wrap">
+                                            <div class="card connect__cards-main">
 
-                                                <tr>
-                                                    <td>
-                                                        Jonathan Bagel list
-                                                    </td>
-                                                    <td>
-                                                        9,536
-                                                    </td>
-                                                    <td>
-                                                        Sep 29, 2019
-                                                    </td>
-                                                    <td>
-                                                        <div class="switcher__wrap">
-                                                            <input type="checkbox" id="switch-3" class="switcher" checked="">
-                                                            <label for="switch-3" class="switcher__toggle"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn _secondary _sync-list">
-                                                            <svg width="6.545" height="9">
-                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
-                                                            </svg>
-                                                        </button>
-                                                    </td>
-                                                </tr>
+                                                <div class="w-100">
+                                                    <table id="data-table" class="datatable datatable_small" style="width:100%">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Field Name</th>
+                                                            <th>Shortcode</th>
+                                                            <th>Data Type</th>
+                                                            <th>Usage</th>
+                                                            <th class="nosort">Public</th>
+                                                            <th class="nosort">Action</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
 
-                                                <tr>
-                                                    <td>
-                                                        Filtered contacts by lorem ipsum lorem
-                                                    </td>
-                                                    <td>
-                                                        10,974
-                                                    </td>
-                                                    <td>
-                                                        Dec 4, 2019
-                                                    </td>
-                                                    <td>
-                                                        <div class="switcher__wrap">
-                                                            <input type="checkbox" id="switch-4" class="switcher">
-                                                            <label for="switch-4" class="switcher__toggle"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn _secondary _sync-list">
-                                                            <svg width="6.545" height="9">
-                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
-                                                            </svg>
-                                                        </button>
-                                                    </td>
-                                                </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span class="color-primary font-weight-semibold">Email Address</span>
+                                                            </td>
+                                                            <td>
+                                                                %%email%%
+                                                            </td>
+                                                            <td>
+                                                                Email
+                                                            </td>
+                                                            <td>
+                                                                157,912
+                                                            </td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
 
-                                                <tr>
-                                                    <td>
-                                                        Jonathan Bagel list
-                                                    </td>
-                                                    <td>
-                                                        9,536
-                                                    </td>
-                                                    <td>
-                                                        Sep 29, 2019
-                                                    </td>
-                                                    <td>
-                                                        <div class="switcher__wrap">
-                                                            <input type="checkbox" id="switch-5" class="switcher" checked="">
-                                                            <label for="switch-5" class="switcher__toggle"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn _secondary _sync-list">
-                                                            <svg width="6.545" height="9">
-                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
-                                                            </svg>
-                                                        </button>
-                                                    </td>
-                                                </tr>
+                                                        <!--<tr>
+                                                            <td>
+                                                                Jonathan Bagel list
+                                                            </td>
+                                                            <td>
+                                                                9,536
+                                                            </td>
+                                                            <td>
+                                                                Sep 29, 2019
+                                                            </td>
+                                                            <td>
+                                                                <div class="switcher__wrap">
+                                                                    <input type="checkbox" id="switch-5" class="switcher" checked="">
+                                                                    <label for="switch-5" class="switcher__toggle"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <button class="btn _secondary _sync-list">
+                                                                    <svg width="6.545" height="9">
+                                                                        <use xlink:href="assets/images/sprite.svg#sync"></use>
+                                                                    </svg>
+                                                                </button>
+                                                            </td>
+                                                        </tr>-->
 
-                                                <tr>
-                                                    <td>
-                                                        Filtered contacts by lorem ipsum lorem
-                                                    </td>
-                                                    <td>
-                                                        10,974
-                                                    </td>
-                                                    <td>
-                                                        Dec 4, 2019
-                                                    </td>
-                                                    <td>
-                                                        <div class="switcher__wrap">
-                                                            <input type="checkbox" id="switch-6" class="switcher">
-                                                            <label for="switch-6" class="switcher__toggle"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn _secondary _sync-list">
-                                                            <svg width="6.545" height="9">
-                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
-                                                            </svg>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                        <button class="btn _sm _secondary mt-7 ml-19 _add-new-list">Add a New List</button>
-                                        <div class="add-new-list-input d-none w-100">
-                                            <div class="d-flex align-items-center pl-19 mt-4">
-                                                <div class="form-control__wrap mr-15 flex-grow-1">
-                                                    <input type="text" placeholder="E-mail Address" class="form-control">
-                                                    <span class="text-danger field-validation-error"><span class="">Your List Name Here</span></span>
+                                                        </tbody>
+                                                    </table>
                                                 </div>
+                                            </div>
 
-                                                <button class="btn _sm _primary _check">
-                                                    <svg width="11.805" height="9">
-                                                        <use xlink:href="assets/images/sprite.svg#check"></use>
-                                                    </svg>
-                                                </button>
-
-                                                <button class="btn _sm _secondary _check">
-                                                    <svg width="8" height="8">
-                                                        <use xlink:href="assets/images/sprite.svg#cross"></use>
-                                                    </svg>
-                                                </button>
+                                            <div class="connect__cards-aside">
+                                                <div class="card connect__card-aside">
+                                                    <i class="mb-22">
+                                                        <svg width="57.91" height="50" >
+                                                            <use xlink:href="assets/images/sprite.svg#cat-book"></use>
+                                                        </svg>
+                                                    </i>
+                                                    <h5 class="mb-5">How to Use Custom Fields</h5>
+                                                    <p class="font-12 color-secondary font-weight-medium mb-21">
+                                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
+                                                    </p>
+                                                    <button class="btn _sm _secondary">Learn More</button>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
 
-                                    <div class="connect__cards-aside">
-                                        <div class="card connect__card-aside">
-                                            <i class="mb-22">
-                                                <svg width="42.343" height="50" >
-                                                    <use xlink:href="assets/images/sprite.svg#cat-hug"></use>
-                                                </svg>
-                                            </i>
-                                            <h5 class="mb-5">* How Auto-sync Works</h5>
-                                            <p class="font-12 color-secondary font-weight-medium mb-0">
-                                                With auto-sync turned on, DirectIQ will automatically fetch your new contacts daily and save them to your selected contact list.
-                                                <a href="#" class="link">Click here to learn more on auto-sync.</a>
-                                            </p>
-                                        </div>
+                                    <div
+                                            class="tab-pane"
+                                            id="custom-fields"
+                                    >
+
                                     </div>
                                 </div>
 
@@ -861,7 +752,6 @@
             $(document).ready(function() {
                 $('#data-table').DataTable({
                     scrollX:        true,
-                    scrollY:        127,
                     scrollCollapse: true,
                     paging:         false,
                     order: [],
