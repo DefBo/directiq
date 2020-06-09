@@ -17,9 +17,7 @@
         <meta name="msapplication-TileColor" content="#0000ff">
         <meta name="msapplication-config" content="assets/images/browserconfig.xml?v=M4K2b5JM9m">
         <meta name="theme-color" content="#ffffff">
-
         <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-        
 	    <!-- App css -->
 	    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
 	    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
@@ -32,7 +30,7 @@
 
             <!-- Topbar Start -->
             <div class="navbar-custom">
-                <div class="navbar-custom__inner container-fluid">
+                <div class="container-fluid navbar-custom__inner">
 
                     <div>
                         <!-- LOGO -->
@@ -46,7 +44,7 @@
 
                         <ol class="breadcrumbs">
                             <li class="breadcrumb-item"><a href="./contacts-home-static.html">Contacts</a></li>
-                            <li class="breadcrumb-item active">Tags
+                            <li class="breadcrumb-item active">Fields
                                 <button class="btn_icon d-none d-md-inline ml-18">
                                     <i class="add-to-fav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
@@ -245,7 +243,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item nav-expand active">
+                    <li class="nav-item nav-expand">
                         <a class="nav-item-link nav-expand-link" href="#">
                             <i>
                                 <svg width="17.719" height="15.328">
@@ -279,7 +277,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-item-link active" href="segments.html">
+                                <a class="nav-item-link" href="segments.html">
                                     Segments
                                 </a>
                             </li>
@@ -411,7 +409,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item nav-expand">
+                    <li class="nav-item nav-expand active">
                         <a class="nav-item-link nav-expand-link" href="#">
                             <i>
                                 <svg width="17.894" height="24">
@@ -423,43 +421,23 @@
                         <ul class="nav-items nav-expand-content">
                             <li class="nav-title">Integrations</li>
                             <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 1
+                                <a class="nav-item-link active" href="contact-integrations.html">
+                                    Contact Integrations
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-item-link" href="social-media-integrations.html">
+                                    Social Media Integrations
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 2
+                                    Plugins & Apps
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-item-link" href="#">
-                                    Test Item 3
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 4
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 5
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 6
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 7
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-item-link" href="#">
-                                    Test Item 8
+                                    API
                                 </a>
                             </li>
                         </ul>
@@ -611,79 +589,247 @@
                         <div class="row">
                             <div class="col-12">
 
-                                <div class="card mt-14 mb-16">
-                                    <h4 class="mt-n3">Manage Your Tags</h4>
-                                    <div class="font-12 color-secondary font-weight-medium mt-23">
-                                        Use tags to better organize your contacts. <a href="#" class="link">More on tags</a>.
+                                <div class="card _connect mt-16">
+                                    <div class="connect__icon-wrap">
+                                        <i class="connect__icon">
+                                            <svg>
+                                                <use xlink:href="assets/images/sprite.svg#shopify"></use>
+                                            </svg>
+                                        </i>
                                     </div>
-                                    <div class="d-flex flex-wrap align-items-center mt-29">
-                                        <div class="dropdown segments__item-wrap _actions">
-                                            <div class="segments__item" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
-                                                <div class="segments__item-body">Wordpress (2,030)</div>
-                                                <div class="segments__item-more">
-                                                    <svg width="2" height="10">
-                                                        <use xlink:href="assets/images/sprite.svg#more-dots"></use>
-                                                    </svg>
-                                                </div>
-                                            </div>
 
-                                            <div class="dropdown-menu dropdown-menu-right _actions _sm mt-3" aria-labelledby="moreMenuButton">
+                                    <div class="connect__content">
+                                        <div class="connect__title-wrap">
+                                            <h4>Shopify Integration</h4>
+                                            <span class="table-status _small _success ml-20">connected</span>
+                                        </div>
+                                        <div class="dropdown mt-10 mt-md-0 mr-md-8">
+                                            <a class="dropdown-toggle _solid _lg" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                                Actions
+                                                <svg width="13.545" height="8">
+                                                    <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
+                                                </svg>
+                                            </a>
+
+                                            <div class="dropdown-menu _actions">
                                                 <div class="dropdown-menu-inner">
-                                                    <a class="dropdown-item" href="#">View</a>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#rename-tag-modal">Rename</a>
-
-
-                                                    <div class="confirm__wrap">
-                                                        <button class="dropdown-item confirm__btn">Delete</button>
-
-                                                        <div class="confirm__modal _to-right d-none">
-                                                            <div class="confirm__content">
-                                                                <p class="confirm__text">You sure you want to delete this tag?</p>
-                                                            </div>
-                                                            <div class="d-flex">
-                                                                <button class="btn _lg _secondary">Nope</button>
-                                                                <button class="btn _lg _primary">Sure</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <a class="dropdown-item" href="#">Reinvoke Access</a>
+                                                    <a class="dropdown-item" href="#">Remap Columns</a>
+                                                    <a class="dropdown-item" href="#">Disconnect</a>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="dropdown segments__item-wrap _actions">
-                                            <div class="segments__item" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
-                                                <div class="segments__item-body">VIP (78)</div>
-                                                <div class="segments__item-more">
-                                                    <svg width="2" height="10">
-                                                        <use xlink:href="assets/images/sprite.svg#more-dots"></use>
-                                                    </svg>
-                                                </div>
-                                            </div>
-
-                                            <div class="dropdown-menu dropdown-menu-right _actions _sm mt-3" aria-labelledby="moreMenuButton">
-                                                <div class="dropdown-menu-inner">
-                                                    <a class="dropdown-item" href="#">View</a>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#rename-tag-modal">Rename</a>
-                                                    <div class="confirm__wrap">
-                                                        <button class="dropdown-item confirm__btn">Delete</button>
-
-                                                        <div class="confirm__modal _to-right d-none">
-                                                            <div class="confirm__content">
-                                                                <p class="confirm__text">You sure you want to delete this tag?</p>
-                                                            </div>
-                                                            <div class="d-flex">
-                                                                <button class="btn _lg _secondary">Nope</button>
-                                                                <button class="btn _lg _primary">Sure</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <button class="btn _sm _secondary ml-20" data-toggle="modal" data-target="#name-your-tag">Create Tag</button>
                                     </div>
                                 </div>
+
+                                <div class="connect__cards-wrap">
+                                    <div class="card connect__cards-main">
+                                        <h5 class="mb-23 mt-2">Sync List To Import Contacts (You Can Also Toggle Auto-Sync) *</h5>
+
+                                        <div class="w-100">
+                                            <table id="data-table" class="datatable datatable_small _sync-lists" style="width:100%">
+                                                <thead>
+                                                <tr>
+                                                    <th>List Name</th>
+                                                    <th>List Size</th>
+                                                    <th>Last Sync</th>
+                                                    <th class="nosort">Auto-Sync</th>
+                                                    <th class="nosort">Sync</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        My First List
+                                                    </td>
+                                                    <td>
+                                                        157,912
+                                                    </td>
+                                                    <td>
+                                                        -
+                                                    </td>
+                                                    <td>
+                                                        <div class="switcher__wrap">
+                                                            <input type="checkbox" id="switch-1" class="switcher">
+                                                            <label for="switch-1" class="switcher__toggle"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn _secondary _sync-list">
+                                                            <svg width="6.545" height="9">
+                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
+                                                            </svg>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        Dodogildo Subscribers
+                                                    </td>
+                                                    <td>
+                                                        3
+                                                    </td>
+                                                    <td>
+                                                        -
+                                                    </td>
+                                                    <td>
+                                                        <div class="switcher__wrap">
+                                                            <input type="checkbox" id="switch-2" class="switcher">
+                                                            <label for="switch-2" class="switcher__toggle"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn _secondary _sync-list">
+                                                            <svg width="6.545" height="9">
+                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
+                                                            </svg>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        Jonathan Bagel list
+                                                    </td>
+                                                    <td>
+                                                        9,536
+                                                    </td>
+                                                    <td>
+                                                        Sep 29, 2019
+                                                    </td>
+                                                    <td>
+                                                        <div class="switcher__wrap">
+                                                            <input type="checkbox" id="switch-3" class="switcher" checked="">
+                                                            <label for="switch-3" class="switcher__toggle"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn _secondary _sync-list">
+                                                            <svg width="6.545" height="9">
+                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
+                                                            </svg>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        Filtered contacts by lorem ipsum lorem
+                                                    </td>
+                                                    <td>
+                                                        10,974
+                                                    </td>
+                                                    <td>
+                                                        Dec 4, 2019
+                                                    </td>
+                                                    <td>
+                                                        <div class="switcher__wrap">
+                                                            <input type="checkbox" id="switch-4" class="switcher">
+                                                            <label for="switch-4" class="switcher__toggle"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn _secondary _sync-list">
+                                                            <svg width="6.545" height="9">
+                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
+                                                            </svg>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        Jonathan Bagel list
+                                                    </td>
+                                                    <td>
+                                                        9,536
+                                                    </td>
+                                                    <td>
+                                                        Sep 29, 2019
+                                                    </td>
+                                                    <td>
+                                                        <div class="switcher__wrap">
+                                                            <input type="checkbox" id="switch-5" class="switcher" checked="">
+                                                            <label for="switch-5" class="switcher__toggle"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn _secondary _sync-list">
+                                                            <svg width="6.545" height="9">
+                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
+                                                            </svg>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        Filtered contacts by lorem ipsum lorem
+                                                    </td>
+                                                    <td>
+                                                        10,974
+                                                    </td>
+                                                    <td>
+                                                        Dec 4, 2019
+                                                    </td>
+                                                    <td>
+                                                        <div class="switcher__wrap">
+                                                            <input type="checkbox" id="switch-6" class="switcher">
+                                                            <label for="switch-6" class="switcher__toggle"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn _secondary _sync-list">
+                                                            <svg width="6.545" height="9">
+                                                                <use xlink:href="assets/images/sprite.svg#sync"></use>
+                                                            </svg>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <button class="btn _sm _secondary mt-7 ml-19 _add-new-list">Add a New List</button>
+                                        <div class="add-new-list-input d-none w-100">
+                                            <div class="d-flex align-items-center pl-19 mt-4">
+                                                <div class="form-control__wrap mr-15 flex-grow-1">
+                                                    <input type="text" placeholder="E-mail Address" class="form-control">
+                                                    <span class="text-danger field-validation-error"><span class="">Your List Name Here</span></span>
+                                                </div>
+
+                                                <button class="btn _sm _primary _check">
+                                                    <svg width="11.805" height="9">
+                                                        <use xlink:href="assets/images/sprite.svg#check"></use>
+                                                    </svg>
+                                                </button>
+
+                                                <button class="btn _sm _secondary _check">
+                                                    <svg width="8" height="8">
+                                                        <use xlink:href="assets/images/sprite.svg#cross"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="connect__cards-aside">
+                                        <div class="card connect__card-aside">
+                                            <i class="mb-22">
+                                                <svg width="42.343" height="50" >
+                                                    <use xlink:href="assets/images/sprite.svg#cat-hug"></use>
+                                                </svg>
+                                            </i>
+                                            <h5 class="mb-5">* How Auto-sync Works</h5>
+                                            <p class="font-12 color-secondary font-weight-medium mb-0">
+                                                With auto-sync turned on, DirectIQ will automatically fetch your new contacts daily and save them to your selected contact list.
+                                                <a href="#" class="link">Click here to learn more on auto-sync.</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div> <!-- container -->
@@ -700,72 +846,33 @@
                 </svg>
             </a>
 
-            <div id="save-segment" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            <svg width="8" height="8">
-                                <use xlink:href="assets/images/sprite.svg#cross"></use>
-                            </svg>
-                        </button>
-                        <div class="modal-body">
-                            <h4 class="mb-13 mt-2">Save Segment</h4>
-                            <div class="form-control__wrap mb-14">
-                                <input type="text" placeholder="Segment Name Here" class="form-control">
-                            </div>
-                            <p class="font-12 font-weight-bold lh-1-3 mb-19">Use a distinguishing name. <span class="font-weight-semibold">Segments are for your own use.</span></p>
-                            <button class="btn _lg _primary">Save</button>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.modal -->
-
-            <div id="rename-tag-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            <svg width="8" height="8">
-                                <use xlink:href="assets/images/sprite.svg#cross"></use>
-                            </svg>
-                        </button>
-                        <div class="modal-body">
-                            <h4 class="mb-13">Rename Tag</h4>
-                            <div class="form-control__wrap mb-13">
-                                <input type="text" placeholder="Old Name" class="form-control">
-                            </div>
-                            <button class="btn _lg _primary">Save</button>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.modal -->
-
-            <div id="name-your-tag" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            <svg width="8" height="8">
-                                <use xlink:href="assets/images/sprite.svg#cross"></use>
-                            </svg>
-                        </button>
-                        <div class="modal-body">
-                            <h4 class="mb-13">Name Your Tag</h4>
-                            <div class="form-control__wrap mb-13">
-                                <input type="text" placeholder="Tag Name Here" class="form-control">
-                            </div>
-                            <p class="font-12 font-weight-bold lh-1-3 mb-19">Use a distinguishing name. <span class="font-weight-semibold">Tags are for your own use only.</span></p>
-                            <button class="btn _lg _primary">Create</button>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.modal -->
-
         </div>
         <!-- END wrapper -->
 
         <!-- App js -->
         <script src="assets/js/vendor.min.js"></script>
 
+        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
         <script src="assets/libs/select2/js/select2.min.js"></script>
+
+        <script>
+            // Datatables settings
+            $(document).ready(function() {
+                $('#data-table').DataTable({
+                    scrollX:        true,
+                    scrollY:        127,
+                    scrollCollapse: true,
+                    paging:         false,
+                    order: [],
+                    aoColumnDefs: [{
+                        bSortable: false,
+                        aTargets: ['nosort']
+                    }],
+                    sDom: 't',
+                });
+            });
+        </script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>

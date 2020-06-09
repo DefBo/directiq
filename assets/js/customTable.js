@@ -54,7 +54,6 @@ const generateStatusSelect = (state) => {
 
 const generateSimpleSelect = (state) => {
 	let data = '';
-
 	if (state.text) {
 		data = state.text;
 	} else {
@@ -95,7 +94,9 @@ const DEFAULT_SELECT_OPTIONS = {
 	status: [ 'active', 'passive' ]
 };
 
-const createCustomDataTable = async (id, config, isFixedColumns) => {
+const createCustomDataTable = async (id, config, customConfig) => {
+	const { isFixedColumns, withViewButton } = customConfig;
+
 	const generateOuterControls = (filterCallback) => {
 		const tableOuterControls = document.querySelector('.js-dataTable-control');
 		if (tableOuterControls) {
@@ -363,6 +364,7 @@ const createCustomDataTable = async (id, config, isFixedColumns) => {
 	};
 
 	const addCustomColumn = (data) => {
+		if (!withViewButton) return;
 		data.columns.push({
 			displayName: '',
 			isExtra: true,
@@ -506,7 +508,6 @@ const createCustomDataTable = async (id, config, isFixedColumns) => {
 	const lengthSelect = tableWrapper.querySelector('.dataTables_length select');
 	const filterButton = tableWrapper.querySelector('.diriq-table__filter-btn');
 	const allSortElements = tableWrapper.querySelectorAll('.sorting_disabled');
-	const body = document.querySelector('body');
 
 	$('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)').append(
 		'<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'

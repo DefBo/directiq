@@ -1401,11 +1401,7 @@
                                                                 </svg>
                                                             </button>
                                                         </div>
-                                                        <a
-                                                            href="./add-tag.html"
-                                                            class="btn _sm _secondary mt-16 mx-10"
-                                                            >Add Tag</a
-                                                        >
+                                                        <button class="btn _sm _secondary mt-16 mx-10" data-toggle="modal" data-target="#add-tag-modal">Add Tag</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2389,6 +2385,30 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
+            <div id="add-tag-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <svg width="8" height="8">
+                                <use xlink:href="assets/images/sprite.svg#cross"></use>
+                            </svg>
+                        </button>
+                        <div class="modal-body">
+                            <h4 class="mb-13">Add Tag</h4>
+                            <div class="form-control__wrap mb-19">
+                                <select class="form-control _select2-lg" multiple="multiple" required>
+                                    <option></option>
+                                    <option value="test-1">Custom tag 1</option>
+                                    <option value="test-2">Custom tag 2</option>
+                                    <option value="test-3">Custom tag 3</option>
+                                </select>
+                            </div>
+                            <button class="btn _lg _primary">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal -->
+
             <a href="#" class="btn_back">
                 <svg width="8" height="8">
                     <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
@@ -2450,8 +2470,16 @@
         <script src="assets/libs/select2/js/select2.min.js"></script>
 
         <script>
-            // Datatables settings
+            $(document).ready(function () {
+                $('._select2-lg').select2({
+                    placeholder: 'Select tag',
+                    allowClear: true,
+                    minimumResultsForSearch: -1,
+                    tags: true,
+                });
+            });
 
+            // Datatables settings
             $(document).ready(function () {
                 var table = createDataTable('#data-table', {
                     scrollX: true,

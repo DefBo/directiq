@@ -1002,7 +1002,6 @@ function addWithScrollTable() {
 function adjustDataTableColumns() {
 	$($.fn.dataTable.tables({ visible: true })).DataTable().columns.adjust();
 	if ($($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns) {
-		console.log($($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns());
 		$($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns().relayout();
 	}
 	addWithScrollTable();
@@ -1058,7 +1057,7 @@ $(document).ready(function() {
 	$(window).resize(function() {
 		checkSize();
 		/*setMenuWidth();*/
-		if ($($.fn.dataTable.tables()).length > 0) {
+		if ($($.fn.dataTable).length > 0) {
 			adjustDataTableColumns();
 		}
 	});
@@ -1066,7 +1065,7 @@ $(document).ready(function() {
 	if ($('#paste-excel-textarea').length > 0) {
 		TLN.append_line_numbers('paste-excel-textarea');
 	}
-	if ($($.fn.dataTable.tables()).length > 0) {
+	if ($($.fn.dataTable).length > 0) {
 		addWithScrollTable();
 		$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 			adjustDataTableColumns();
@@ -1194,6 +1193,10 @@ $(document).ready(function() {
 		if (!isElementInView) {
 			$(this)[0].nextElementSibling.scrollIntoView({ block: 'end',  behavior: 'smooth' });
 		}
+
+		$(document).on('click', '.confirm__btn', function (e) {
+			e.stopPropagation();
+		});
 	});
 
 	$('.confirm__modal .btn').click(function() {
@@ -1291,6 +1294,7 @@ $(document).ready(function() {
 	});
 	$('.dropdown._actions, .dropdown._more').on('hide.bs.dropdown', function() {
 		$('body').removeClass('actions-visible');
+		$('.dropdown._actions .confirm__modal, .dropdown._more .confirm__modal').addClass('d-none');
 	});
 	$('.dropdown._actions, .dropdown._more').addClass('js-withShowListner');
 	//add spinner for table
