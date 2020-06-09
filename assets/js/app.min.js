@@ -1002,6 +1002,7 @@ function addWithScrollTable() {
 function adjustDataTableColumns() {
 	$($.fn.dataTable.tables({ visible: true })).DataTable().columns.adjust();
 	if ($($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns) {
+		console.log($($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns());
 		$($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns().relayout();
 	}
 	addWithScrollTable();
@@ -1026,6 +1027,28 @@ function checkSize() {
 	}
 }
 
+function Utils() {
+
+}
+
+Utils.prototype = {
+	constructor: Utils,
+	isElementInView: function (element, fullyInView) {
+		var pageTop = $(window).scrollTop();
+		var pageBottom = pageTop + $(window).height();
+		var elementTop = $(element).offset().top;
+		var elementBottom = elementTop + $(element).height();
+
+		if (fullyInView === true) {
+			return ((pageTop < elementTop) && (pageBottom > elementBottom));
+		} else {
+			return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+		}
+	}
+};
+
+var Utils = new Utils();
+
 // Waves Effect
 Waves.init();
 
@@ -1035,7 +1058,7 @@ $(document).ready(function() {
 	$(window).resize(function() {
 		checkSize();
 		/*setMenuWidth();*/
-		if ($('.dataTable').length > 0) {
+		if ($($.fn.dataTable.tables()).length > 0) {
 			adjustDataTableColumns();
 		}
 	});
@@ -1043,8 +1066,7 @@ $(document).ready(function() {
 	if ($('#paste-excel-textarea').length > 0) {
 		TLN.append_line_numbers('paste-excel-textarea');
 	}
-
-	if ($('.dataTable').length > 0) {
+	if ($($.fn.dataTable.tables()).length > 0) {
 		addWithScrollTable();
 		$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 			adjustDataTableColumns();
@@ -1165,7 +1187,13 @@ $(document).ready(function() {
 	});
 
 	$('.confirm__btn').click(function() {
-		$(this).next('.confirm__modal').removeClass('d-none');
+		var modal = $(this).next('.confirm__modal');
+		var isElementInView = Utils.isElementInView(modal, true);
+
+		modal.removeClass('d-none');
+		if (!isElementInView) {
+			$(this)[0].nextElementSibling.scrollIntoView({ block: 'end',  behavior: 'smooth' });
+		}
 	});
 
 	$('.confirm__modal .btn').click(function() {
@@ -1363,27 +1391,31 @@ const setDataTableActions = (table) => {
 
 	$(tableWrapper).find('th input[type=checkbox]').click(function() {
 		if ($(this).is(':checked')) {
-			$(tableWrapper).find('td input[type=checkbox]').attr('checked', true);
+			$(tableWrapper).find('td input[type=checkbox]').prop('checked', true);
 		} else {
-			$(tableWrapper).find('td input[type=checkbox]').attr('checked', false);
+			$(tableWrapper).find('td input[type=checkbox]').prop('checked', false);
 		}
 	});
 };
 
-$(document).on({
-    mouseenter: function (event) {
-        var table = $(event.target).parents('.dataTables_wrapper').find('table.dataTable');
+$(document).on(
+	{
+		mouseenter: function(event) {
+			var table = $(event.target).parents('.dataTables_wrapper').find('table.dataTable');
 
-        trIndex = $(this).index();
-        table.find("tbody tr:eq(" + trIndex + ")").addClass("hover");
-    },
-    mouseleave: function (event) {
-        var table = $(event.target).parents('.dataTables_wrapper').find('table.dataTable');
+			trIndex = $(this).index();
+			table.find('tbody tr:eq(' + trIndex + ')').addClass('hover');
+		},
+		mouseleave: function(event) {
+			var table = $(event.target).parents('.dataTables_wrapper').find('table.dataTable');
 
-        trIndex = $(this).index();
-        table.find("tbody tr:eq(" + trIndex + ")").removeClass("hover");
-    }
-}, ".dataTables_wrapper tbody tr");
+			trIndex = $(this).index();
+			table.find('tbody tr:eq(' + trIndex + ')').removeClass('hover');
+		}
+	},
+	'.dataTables_wrapper tbody tr'
+);
+
 const createDataTable = (id, config, isFixedCollumns) => {
 	if (isFixedCollumns) {
 		config = { ...FIXED_DATA_TABLE_CONFIG, ...config };
