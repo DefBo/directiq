@@ -128,15 +128,21 @@ const createCustomDataTable = async (id, config, customConfig) => {
 		cancelController = cancel;
 		let responsedData = null;
 		await fetch(url, { signal: cancel.signal })
-			.then((response) => {
-				if (response.status !== 200) {
-					return;
+			.then((res) => {
+				if (res.status >= 200 && res.status < 300) {
+					return response.json().then((data) => {
+						responsedData = data;
+					});
+				} else {
+					let error = new Error(res.statusText);
+					error.response = res;
+					throw error;
 				}
-				return response.json().then((data) => {
-					responsedData = data;
-				});
 			})
-			.catch((err) => console.err(err));
+			.catch((e) => {
+				console.log('Error: ' + e.message);
+				console.log(e.response);
+			});
 		return responsedData;
 	};
 
@@ -400,36 +406,37 @@ const createCustomDataTable = async (id, config, customConfig) => {
 			tableWrapper.classList.remove('dataTables_wrapper--empty');
 		}
 
-		tableWrapper.classList.remove('loading');
-		addCustomColumn(fetchedData);
+		if (fetchedData.columns) {
+			addCustomColumn(fetchedData);
 
-		const tableData = getTableData(fetchedData);
+			const tableData = getTableData(fetchedData);
 
-		const fixedSorts = tableWrapper.querySelectorAll('.DTFC_Cloned .sorting');
+			const fixedSorts = tableWrapper.querySelectorAll('.DTFC_Cloned .sorting');
 
-		const draftfixedSorts = [];
+			const draftfixedSorts = [];
 
-		fixedSorts.length > 0 &&
-			fixedSorts.forEach((field) => {
-				draftfixedSorts.push({
-					element: field,
-					classes: field.className
+			fixedSorts.length > 0 &&
+				fixedSorts.forEach((field) => {
+					draftfixedSorts.push({
+						element: field,
+						classes: field.className
+					});
 				});
-			});
-		table.clear();
-		table.rows.add(tableData).draw();
+			table.clear();
+			table.rows.add(tableData).draw();
 
-		setCurrentPagination(fetchedData);
+			setCurrentPagination(fetchedData);
 
-		checkboxSelected = [];
-		setListnerToCheckboxes(tableWrapper.querySelectorAll('.checkbox-single input'));
+			checkboxSelected = [];
+			setListnerToCheckboxes(tableWrapper.querySelectorAll('.checkbox-single input'));
 
-		if (draftfixedSorts) {
-			draftfixedSorts.forEach((field) => {
-				field.classes.split(' ').forEach((className) => {
-					field.element.classList.add(className);
+			if (draftfixedSorts) {
+				draftfixedSorts.forEach((field) => {
+					field.classes.split(' ').forEach((className) => {
+						field.element.classList.add(className);
+					});
 				});
-			});
+			}
 		}
 		tableWrapper.classList.remove('loading');
 	};
