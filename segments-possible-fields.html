@@ -894,19 +894,32 @@
         <script src="assets/libs/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
 
         <script src="assets/libs/select2/js/select2.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
 
         <script>
             $(document).ready(function () {
-                $('._select2-lg').select2({
+
+                const select2Options = {
                     placeholder: 'Select an option',
                     allowClear: true,
                     minimumResultsForSearch: -1
-                });
+                }
+
+                const select2QualityOptions = {
+                    placeholder: {
+                        id: -1,
+                        text: 'Select Quality'
+                    },
+                    allowClear: true,
+                    minimumResultsForSearch: -1
+                }
+
+                createSelect2ByClass('._select2-lg', select2Options);
+                createSelect2ByClass('._select2-lg._quality', select2QualityOptions);
+
             });
         </script>
-
         <!-- App js -->
-        <script src="assets/js/app.min.js"></script>
-
+        
     </body>
 </html>

@@ -1726,20 +1726,21 @@
 
         <script src="assets/libs/select2/js/select2.min.js"></script>
 
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
         <script>
             $(document).ready(function () {
                 var table = createDataTable('#data-table', {}, true);
 
-                $('._select2-lg').select2({
+                const select2Options = {
                     placeholder: 'Select an option',
                     allowClear: true,
                     minimumResultsForSearch: -1
-                });
+                }
 
-                $("._select2-lg").on("change",function(){
-                    $(this).closest('.condition-col').next('.condition-col').removeClass('d-none');
-                });
-
+                createSelect2ByClass('._select2-lg', select2Options)
+                
                 $('#condition-text-input').on('change keyup', function() {
                     if ($(this).val().length > 0) {
                         $('#add-another-condition-btn').removeClass('_disabled');
@@ -1769,16 +1770,11 @@
                     $('._list-name-table').addClass('_hidden');
                     $('#save-segments-btn').addClass('d-none');
                     $(this).addClass('d-none');
-                    $('._select2-lg').val('').trigger('change');
                     $('.condition-col input').val('').trigger('change');
                     $('html,body').animate({scrollTop: 0});
                     $('.condition-col:not(:first-child)').addClass('d-none');
                 });
             });
         </script>
-
-        <!-- App js -->
-        <script src="assets/js/app.min.js"></script>
-
     </body>
 </html>
