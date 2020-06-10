@@ -63,6 +63,13 @@ const generateSimpleSelect = (state) => {
 	return data;
 };
 
+const generateInfoMessage = (wrapper, className) => {
+	const infoElement = document.createElement('div');
+	infoElement.innerHTML = 'No data available in table';
+	infoElement.classList.add(className);
+	wrapper.appendChild(infoElement);
+};
+
 const generateCustomSelect = (name, state) => {
 	if (SELECT_TEMPLATES[name]) return SELECT_TEMPLATES[name](state);
 	return generateSimpleSelect(state);
@@ -108,6 +115,7 @@ const createCustomDataTable = async (id, config, customConfig) => {
 						globalSearchParams = {
 							...globalSearchParams,
 							[tableOuterControls.dataset.filter]: button.dataset.filterValue,
+							email: 'zavada',
 							pageNumber: 1
 						};
 						filterCallback();
@@ -128,14 +136,14 @@ const createCustomDataTable = async (id, config, customConfig) => {
 		cancelController = cancel;
 		let responsedData = null;
 		await fetch(url, { signal: cancel.signal })
-			.then((res) => {
-				if (res.status >= 200 && res.status < 300) {
+			.then((response) => {
+				if (response.status >= 200 && response.status < 300) {
 					return response.json().then((data) => {
 						responsedData = data;
 					});
 				} else {
-					let error = new Error(res.statusText);
-					error.response = res;
+					let error = new Error(response.statusText);
+					error.response = response;
 					throw error;
 				}
 			})
@@ -508,6 +516,8 @@ const createCustomDataTable = async (id, config, customConfig) => {
 	tableElement.appendChild(tFoot);
 
 	var table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG, ...config });
+
+	generateInfoMessage(tableWrapper, 'dataTables_info-message');
 
 	const tableCheckboxActions = tableWrapper.querySelectorAll('[data-id="table-checkbox-actions"]');
 	const tFootInputsWrapper = tableWrapper.querySelectorAll('.diriq-table th');
