@@ -2280,7 +2280,7 @@ body[data-layout-mode="two-column"][data-layout-width="boxed"]:not([data-sidebar
   transition-duration: 0.075s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--squeeze .hamburger-inner::before {
-    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
   .hamburger--squeeze .hamburger-inner::after {
     transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
@@ -2291,7 +2291,7 @@ body[data-layout-mode="two-column"][data-layout-width="boxed"]:not([data-sidebar
   .hamburger--squeeze.is-active .hamburger-inner::before, .nav-is-toggled .hamburger--squeeze .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
   .hamburger--squeeze.is-active .hamburger-inner::after, .nav-is-toggled .hamburger--squeeze .hamburger-inner::after {
     bottom: 0;
     transform: rotate(-90deg);
@@ -6094,8 +6094,6 @@ body.nav-is-toggled:after {
     height: 14px;
     padding: 0;
     border-radius: 50%; }
-    .btn._sync-list + ._sync-list {
-      margin-left: 7px; }
   .btn._social-integration {
     display: flex;
     justify-content: center;
@@ -8727,16 +8725,15 @@ div.dataTables_wrapper div.dataTables_info {
     .datatable._contact-details-lists td:nth-child(3) {
       width: 28%;
       min-width: 130px; }
-  .datatable._sync-lists td, .datatable._fields td {
+  .datatable._sync-lists td {
     color: #454f5b;
     font-weight: 500;
     line-height: 31px; }
-    .datatable._sync-lists td:first-child, .datatable._fields td:first-child {
+    .datatable._sync-lists td:first-child {
       color: #212b35;
       font-weight: 600; }
   .datatable._sync-lists th,
-  .datatable._sync-lists td, .datatable._fields th,
-  .datatable._fields td {
+  .datatable._sync-lists td {
     padding: 0 25px;
     white-space: nowrap;
     overflow: hidden;
@@ -8744,63 +8741,53 @@ div.dataTables_wrapper div.dataTables_info {
     box-sizing: border-box;
     vertical-align: middle; }
     .datatable._sync-lists th:first-child,
-    .datatable._sync-lists td:first-child, .datatable._fields th:first-child,
-    .datatable._fields td:first-child {
+    .datatable._sync-lists td:first-child {
+      width: 24%;
       padding-left: 19px; }
-  .datatable._sync-lists .switcher__wrap, .datatable._fields .switcher__wrap {
+    .datatable._sync-lists th:nth-child(2),
+    .datatable._sync-lists td:nth-child(2) {
+      text-align: right;
+      width: 17%;
+      min-width: 150px; }
+    .datatable._sync-lists th:nth-child(3),
+    .datatable._sync-lists td:nth-child(3) {
+      width: 18%;
+      min-width: 170px; }
+    .datatable._sync-lists th:nth-child(4), .datatable._sync-lists th:nth-child(5),
+    .datatable._sync-lists td:nth-child(4),
+    .datatable._sync-lists td:nth-child(5) {
+      text-align: center; }
+    .datatable._sync-lists th:nth-child(4),
+    .datatable._sync-lists td:nth-child(4) {
+      width: 16%;
+      min-width: 170px; }
+    .datatable._sync-lists th:nth-child(5),
+    .datatable._sync-lists td:nth-child(5) {
+      width: 11%;
+      padding-right: 10px;
+      min-width: 100px; }
+    @media (min-width: 577px) {
+      .datatable._sync-lists th:first-child,
+      .datatable._sync-lists td:first-child {
+        width: 24% !important; }
+      .datatable._sync-lists th:nth-child(2),
+      .datatable._sync-lists td:nth-child(2) {
+        width: 17% !important; }
+      .datatable._sync-lists th:nth-child(3),
+      .datatable._sync-lists td:nth-child(3) {
+        width: 18% !important; }
+      .datatable._sync-lists th:nth-child(4),
+      .datatable._sync-lists td:nth-child(4) {
+        width: 16% !important; }
+      .datatable._sync-lists th:nth-child(5),
+      .datatable._sync-lists td:nth-child(5) {
+        width: 11% !important; } }
+    @media (max-width: 576px) {
+      .datatable._sync-lists th:first-child,
+      .datatable._sync-lists td:first-child {
+        max-width: 200px; } }
+  .datatable._sync-lists .switcher__wrap {
     justify-content: center; }
-  .datatable._sync-lists th:first-child, .datatable._sync-lists td:first-child {
-    width: 24%; }
-  .datatable._sync-lists th:nth-child(2), .datatable._sync-lists td:nth-child(2) {
-    text-align: right;
-    width: 17%;
-    min-width: 150px; }
-  .datatable._sync-lists th:nth-child(3), .datatable._sync-lists td:nth-child(3) {
-    width: 18%;
-    min-width: 170px; }
-  .datatable._sync-lists th:nth-child(4), .datatable._sync-lists th:nth-child(5), .datatable._sync-lists td:nth-child(4), .datatable._sync-lists td:nth-child(5) {
-    text-align: center; }
-  .datatable._sync-lists th:nth-child(4), .datatable._sync-lists td:nth-child(4) {
-    width: 16%;
-    min-width: 170px; }
-  .datatable._sync-lists th:nth-child(5), .datatable._sync-lists td:nth-child(5) {
-    width: 11%;
-    padding-right: 10px;
-    min-width: 100px; }
-  @media (min-width: 577px) {
-    .datatable._sync-lists th:first-child, .datatable._sync-lists td:first-child {
-      width: 24% !important; }
-    .datatable._sync-lists th:nth-child(2), .datatable._sync-lists td:nth-child(2) {
-      width: 17% !important; }
-    .datatable._sync-lists th:nth-child(3), .datatable._sync-lists td:nth-child(3) {
-      width: 18% !important; }
-    .datatable._sync-lists th:nth-child(4), .datatable._sync-lists td:nth-child(4) {
-      width: 16% !important; }
-    .datatable._sync-lists th:nth-child(5), .datatable._sync-lists td:nth-child(5) {
-      width: 11% !important; } }
-  @media (max-width: 576px) {
-    .datatable._sync-lists th:first-child, .datatable._sync-lists td:first-child {
-      max-width: 200px; } }
-  .datatable._fields th:first-child, .datatable._fields td:first-child {
-    width: 20.16% !important;
-    min-width: 250px !important; }
-  .datatable._fields th:nth-child(2), .datatable._fields td:nth-child(2) {
-    width: 25.11% !important;
-    min-width: 250px; }
-  .datatable._fields th:nth-child(3), .datatable._fields td:nth-child(3) {
-    width: 15.38% !important;
-    min-width: 250px; }
-  .datatable._fields th:nth-child(4), .datatable._fields td:nth-child(4) {
-    width: 15.22% !important;
-    text-align: right;
-    min-width: 250px; }
-  .datatable._fields th:nth-child(5), .datatable._fields td:nth-child(5) {
-    width: 12.065% !important;
-    min-width: 250px; }
-  .datatable._fields th:nth-child(6), .datatable._fields td:nth-child(6) {
-    width: 12.065% !important;
-    padding-right: 15px;
-    min-width: 250px; }
   .datatable__wrap table.dataTable thead th,
   .datatable__wrap table.dataTable thead td {
     padding: 1px;

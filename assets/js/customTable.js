@@ -38,8 +38,6 @@ const catchErrors = (fetchFunction) => {
 	fetchFunction.catch();
 };
 
-const getUserLink = (id) => `${LINK_TO_USER_PAGE || '/'}${id}`;
-
 const generateStatusSelect = (state) => {
 	let data = '';
 
@@ -163,20 +161,37 @@ const createCustomDataTable = async (id, config, customConfig) => {
 		});
 	};
 
-	const getSearchParams = () => {
+	const getSearchParams = (clearParams = false, withPrefix = false) => {
 		const params = { ...defaultSearchParams, ...globalSearchParams };
-		return Object.keys(params)
-			.map((keys) => {
-				if (keys === 'tags' && typeof params[keys] === 'object' && params[keys].length > 0) {
-					let tagsParams = [];
-					params[keys].forEach((key, index) => {
-						tagsParams.push(`${keys}=${key}`);
-					});
-					return tagsParams.join('&');
-				}
-				return `${keys}=${params[keys]}`;
-			})
-			.join('&');
+		let sortedParams = Object.keys(params).map((keys) => {
+			if (
+				clearParams &&
+				(params[keys] === '' ||
+					params[keys] === undefined ||
+					params[keys] === null ||
+					keys === 'pageNumber' ||
+					keys === 'pageSize' ||
+					keys === 'orderBy' ||
+					keys === 'orderDir')
+			)
+				return;
+			if (keys === 'tags' && typeof params[keys] === 'object' && params[keys].length > 0) {
+				let tagsParams = [];
+				params[keys].forEach((key, index) => {
+					tagsParams.push(`${keys}=${key}`);
+				});
+				return tagsParams.join('&');
+			}
+			return `${keys}=${params[keys]}`;
+		});
+
+		if (clearParams) sortedParams = sortedParams.filter((obj) => !!obj);
+		if (sortedParams.length > 0) {
+			if (withPrefix) return `&${sortedParams.join('&')}`;
+			return sortedParams.join('&');
+		} else {
+			return '';
+		}
 	};
 
 	const setListnerToCheckboxes = (inputs) => {
@@ -221,7 +236,11 @@ const createCustomDataTable = async (id, config, customConfig) => {
 				return {
 					title: column.displayName,
 					render: function(data, type, row, meta) {
-						return `<a href="${getUserLink(row[0])}" class="diriq-table__link">${data}</a>`;
+						return `<a href="${getUserLink(
+							row[0],
+							LINK_TO_USER_PAGE,
+							`listId=${LIST_ID}${getSearchParams(true, true)}`
+						)}" class="diriq-table__link">${data}</a>`;
 					}
 				};
 			}
@@ -253,7 +272,11 @@ const createCustomDataTable = async (id, config, customConfig) => {
 					ordering: false,
 					render: function(data, type, row, meta) {
 						return `<div class="d-flex">
-									<a href="${getUserLink(row[0])}" class="btn _sm _secondary">View</a>
+									<a href="${getUserLink(
+										row[0],
+										LINK_TO_USER_PAGE,
+										`listId=${LIST_ID}${getSearchParams(true, true)}`
+									)}" class="btn _sm _secondary">View</a>
 									<div class="dropdown _actions">
 										<button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
 											<svg width="2" height="10">

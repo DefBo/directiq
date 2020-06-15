@@ -1452,6 +1452,10 @@ const DEFAULT_SELECT_OPTIONS = {
 	status: [ 'active', 'passive' ]
 };
 
+const getUserLink = (id, url, searchParams = '') => {
+	return `/${url}/${id}${searchParams}`;
+};
+
 const generateQualitySelectDataTable = (data) => {
 	let qualityIcon = '';
 	DEFAULT_SELECT_OPTIONS.quality.forEach((item) => {
