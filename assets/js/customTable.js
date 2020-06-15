@@ -239,7 +239,7 @@ const createCustomDataTable = async (id, config, customConfig) => {
 						return `<a href="${getUserLink(
 							row[0],
 							LINK_TO_USER_PAGE,
-							`listId=${LIST_ID}${getSearchParams(true, true)}`
+							`?listId=${LIST_ID}${getSearchParams(true, true)}`
 						)}" class="diriq-table__link">${data}</a>`;
 					}
 				};
@@ -275,7 +275,7 @@ const createCustomDataTable = async (id, config, customConfig) => {
 									<a href="${getUserLink(
 										row[0],
 										LINK_TO_USER_PAGE,
-										`listId=${LIST_ID}${getSearchParams(true, true)}`
+										`?listId=${LIST_ID}${getSearchParams(true, true)}`
 									)}" class="btn _sm _secondary">View</a>
 									<div class="dropdown _actions">
 										<button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
