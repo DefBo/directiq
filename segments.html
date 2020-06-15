@@ -731,7 +731,7 @@
 
                                             </div>
 
-                                            <div class="diriq-table__wrapper _list-name-table mt-30 _hidden">
+                                            <div class="diriq-table__wrapper _list-name-table d-none disable-vertical-scroll _filter-hidden mt-30">
 
                                                 <table id="data-table" class="diriq-table" style="width:100%">
                                                     <thead>
@@ -1737,9 +1737,9 @@
                     placeholder: 'Select an option',
                     allowClear: true,
                     minimumResultsForSearch: -1
-                }
+                };
 
-                createSelect2ByClass('._select2-lg', select2Options)
+                createSelect2ByClass('._select2-lg', select2Options);
                 
                 $('#condition-text-input').on('change keyup', function() {
                     if ($(this).val().length > 0) {
@@ -1760,14 +1760,15 @@
                 });
 
                 $('#apply-conditions-btn').click(function() {
-                    $('._list-name-table').removeClass('_hidden');
+                    $('._list-name-table').removeClass('d-none');
+                    adjustDataTableColumns();
                     $('#save-segments-btn').removeClass('d-none');
                     $('#reset-conditions-btn').removeClass('d-none');
                     $('body,html').animate({scrollTop: $('.diriq-table__wrapper').offset().top}, 750);
                 });
 
                 $('#reset-conditions-btn').click(function() {
-                    $('._list-name-table').addClass('_hidden');
+                    $('._list-name-table').addClass('d-none');
                     $('#save-segments-btn').addClass('d-none');
                     $(this).addClass('d-none');
                     $('.condition-col input').val('').trigger('change');

@@ -635,7 +635,7 @@
                                             <div class="card connect__cards-main">
 
                                                 <div class="w-100">
-                                                    <table id="data-table" class="datatable datatable_small" style="width:100%">
+                                                    <table id="data-table" class="datatable datatable_small _fields" style="width:100%">
                                                         <thead>
                                                         <tr>
                                                             <th>Field Name</th>
@@ -661,19 +661,86 @@
                                                             <td>
                                                                 157,912
                                                             </td>
-                                                            <td>1</td>
-                                                            <td>1</td>
+                                                            <td></td>
+                                                            <td></td>
                                                         </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span class="color-primary font-weight-semibold">First Name</span>
+                                                            </td>
+                                                            <td>
+                                                                %%firstname%%
+                                                            </td>
+                                                            <td>
+                                                                Text
+                                                            </td>
+                                                            <td>
+                                                                83,053
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span class="color-primary font-weight-semibold">Last Name</span>
+                                                            </td>
+                                                            <td>
+                                                                %%lastname%%
+                                                            </td>
+                                                            <td>
+                                                                Text
+                                                            </td>
+                                                            <td>
+                                                                46,536
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span class="color-primary font-weight-semibold">Graduation Date</span>
+                                                            </td>
+                                                            <td>
+                                                                %%graduation_date%%
+                                                            </td>
+                                                            <td>
+                                                                Date
+                                                            </td>
+                                                            <td>
+                                                                974
+                                                            </td>
+                                                            <td>
+                                                                <div class="switcher__wrap">
+                                                                    <input type="checkbox" id="switch-5" class="switcher">
+                                                                    <label for="switch-5" class="switcher__toggle"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <button class="btn _secondary _sync-list">
+                                                                    <svg width="7" height="7">
+                                                                        <use xlink:href="assets/images/sprite.svg#edit"></use>
+                                                                    </svg>
+                                                                </button>
 
-                                                        <!--<tr>
+                                                                <button class="btn _primary _sync-list">
+                                                                    <svg width="7" height="7.78">
+                                                                        <use xlink:href="assets/images/sprite.svg#trashcan"></use>
+                                                                    </svg>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
                                                             <td>
-                                                                Jonathan Bagel list
+                                                                <span class="color-primary font-weight-semibold">Marital Status</span>
                                                             </td>
                                                             <td>
-                                                                9,536
+                                                                %%marital_status%%
                                                             </td>
                                                             <td>
-                                                                Sep 29, 2019
+                                                                Boolean
+                                                            </td>
+                                                            <td>
+                                                                0
                                                             </td>
                                                             <td>
                                                                 <div class="switcher__wrap">
@@ -683,12 +750,18 @@
                                                             </td>
                                                             <td>
                                                                 <button class="btn _secondary _sync-list">
-                                                                    <svg width="6.545" height="9">
-                                                                        <use xlink:href="assets/images/sprite.svg#sync"></use>
+                                                                    <svg width="7" height="7">
+                                                                        <use xlink:href="assets/images/sprite.svg#edit"></use>
+                                                                    </svg>
+                                                                </button>
+
+                                                                <button class="btn _primary _sync-list">
+                                                                    <svg width="7" height="7.78">
+                                                                        <use xlink:href="assets/images/sprite.svg#trashcan"></use>
                                                                     </svg>
                                                                 </button>
                                                             </td>
-                                                        </tr>-->
+                                                        </tr>
 
                                                         </tbody>
                                                     </table>
@@ -751,7 +824,7 @@
             // Datatables settings
             $(document).ready(function() {
                 $('#data-table').DataTable({
-                    scrollX:        true,
+                    sScrollX: "100%",
                     scrollCollapse: true,
                     paging:         false,
                     order: [],
@@ -760,6 +833,14 @@
                         aTargets: ['nosort']
                     }],
                     sDom: 't',
+                    aoColumns: [
+                        { "sWidth": "50px" },
+                        { "sWidth": "50px" },
+                        { "sWidth": "50px" },
+                        { "sWidth": "50px" },
+                        { "sWidth": "50px" },
+                        { "sWidth": "50px" },
+                    ]
                 });
             });
         </script>

@@ -29,6 +29,8 @@ function debounce(f, t) {
 const createEmptyTable = (id, tableWrapper) => {
 	tableWrapper.classList.remove('loading');
 	var table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG });
+
+	generateInfoMessage(tableWrapper, 'dataTables_info-message');
 	tableWrapper.classList.add('dataTables_wrapper--error');
 };
 
@@ -96,11 +98,6 @@ const SELECT_TEMPLATES = {
 	status: (state) => generateStatusSelect(state)
 };
 
-const DEFAULT_SELECT_OPTIONS = {
-	quality: [ 1, 2, 3, 4, 5 ],
-	status: [ 'active', 'passive' ]
-};
-
 const createCustomDataTable = async (id, config, customConfig) => {
 	const { isFixedColumns, withViewButton } = customConfig;
 
@@ -115,7 +112,6 @@ const createCustomDataTable = async (id, config, customConfig) => {
 						globalSearchParams = {
 							...globalSearchParams,
 							[tableOuterControls.dataset.filter]: button.dataset.filterValue,
-							email: 'zavada',
 							pageNumber: 1
 						};
 						filterCallback();
@@ -411,7 +407,7 @@ const createCustomDataTable = async (id, config, customConfig) => {
 			};
 		} else {
 			fetchedData = draftfetchedData;
-			tableWrapper.classList.remove('dataTables_wrapper--empty');
+			tableWrapper.classList.remove([ 'dataTables_wrapper--empty', 'dataTables_wrapper--error' ]);
 		}
 
 		if (fetchedData.columns) {
@@ -464,7 +460,6 @@ const createCustomDataTable = async (id, config, customConfig) => {
 
 	const tableElement = document.querySelector(id);
 	const tableWrapper = tableElement.closest('.diriq-table__wrapper');
-
 	if (tableWrapper) {
 		tableWrapper.classList.add('loading');
 	}

@@ -1352,11 +1352,13 @@ const setDataTableActions = (table) => {
 };
 
 const createSelect2ByClass = (className, selectOptions) => {
-	if (className === '._select2-lg' && $('._select2-lg._quality').length > 0) {
-		$('._select2-lg').select2(selectOptions);
+	if ($(className).length > 0) {
+		$(className).each(function() {
+			$(this).select2(selectOptions);
+		});
 	}
 
-	if (className === '._select2-lg._quality' && $('._select2-lg._quality').length > 0) {
+	if (className === '._select2-lg._quality' && $(className).length > 0) {
 		const QUALITY_OPTIONS = [ 1, 2, 3, 4, 5 ];
 
 		const createQualityIcons = (state) => {
@@ -1376,7 +1378,7 @@ const createSelect2ByClass = (className, selectOptions) => {
 			return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
 		};
 
-		const qualitySelect = document.querySelectorAll('._select2-lg._quality');
+		const qualitySelect = document.querySelectorAll(className);
 
 		qualitySelect.forEach((select) => {
 			const defaultOption = document.createElement('option');
@@ -1396,7 +1398,7 @@ const createSelect2ByClass = (className, selectOptions) => {
 			});
 		});
 
-		$('._select2-lg._quality').select2({
+		$(className).select2({
 			...selectOptions,
 			templateResult: (state) => createQualityIcons(state),
 			escapeMarkup: function(markup) {
@@ -1446,10 +1448,11 @@ $(document).on(
 );
 
 const DEFAULT_SELECT_OPTIONS = {
-	quality: [ 1, 2, 3, 4, 5 ]
+	quality: [ 1, 2, 3, 4, 5 ],
+	status: [ 'active', 'passive' ]
 };
 
-const generateQualitySelect = (data) => {
+const generateQualitySelectDataTable = (data) => {
 	let qualityIcon = '';
 	DEFAULT_SELECT_OPTIONS.quality.forEach((item) => {
 		qualityIcon += `<span></span>`;

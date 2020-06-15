@@ -2394,16 +2394,18 @@
                             </svg>
                         </button>
                         <div class="modal-body">
-                            <h4 class="mb-13">Add Tag</h4>
+                            <h4 class="mb-13">Enter Your Tag</h4>
                             <div class="form-control__wrap mb-19">
                                 <select class="form-control _select2-lg" multiple="multiple" required>
                                     <option></option>
-                                    <option value="test-1">Custom tag 1</option>
-                                    <option value="test-2">Custom tag 2</option>
-                                    <option value="test-3">Custom tag 3</option>
+                                    <option value="test-1">vip</option>
+                                    <option value="test-2">Custom tag 1</option>
+                                    <option value="test-3">Custom tag 2</option>
+                                    <option value="test-4">Custom tag 3</option>
+                                    <option value="test-5">Custom tag 4</option>
                                 </select>
                             </div>
-                            <button class="btn _lg _primary">Add</button>
+                            <button class="btn _lg _primary">Save</button>
                         </div>
                     </div>
                 </div>
@@ -2471,12 +2473,14 @@
 
         <script>
             $(document).ready(function () {
-                $('._select2-lg').select2({
-                    placeholder: 'Select tag',
+                const select2Options = {
+                    placeholder: 'Start typing or select from list',
                     allowClear: true,
                     minimumResultsForSearch: -1,
                     tags: true,
-                });
+                };
+
+                createSelect2ByClass('._select2-lg', select2Options);
             });
 
             // Datatables settings
