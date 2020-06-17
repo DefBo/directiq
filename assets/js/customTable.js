@@ -49,7 +49,14 @@ const generateStatusSelect = (state) => {
 		data = state;
 	}
 
-	return `<span class="table-status _${data.toLowerCase() === 'active' ? 'success' : 'danger'}">${data}</span>`;
+	if (data === data.toLowerCase()) {
+		// locale keys are case-sensitive, this is done for table header
+		data = data[0].toUpperCase() + data.slice(1);
+	}
+
+	return `<span class="table-status _${data.toLowerCase() === 'active' ? 'success' : 'danger'}">${locales[
+		data
+	]}</span>`;
 };
 
 const generateSimpleSelect = (state) => {
@@ -98,6 +105,8 @@ const SELECT_TEMPLATES = {
 
 const createCustomDataTable = async (id, config, customConfig) => {
 	const { isFixedColumns, withViewButton } = customConfig;
+	const { isList = false, listId = 0 } = customConfig;
+	const { isTag = false, tagId = 0 } = customConfig;
 
 	const generateOuterControls = (filterCallback) => {
 		const tableOuterControls = document.querySelector('.js-dataTable-control');
@@ -236,11 +245,7 @@ const createCustomDataTable = async (id, config, customConfig) => {
 				return {
 					title: column.displayName,
 					render: function(data, type, row, meta) {
-						return `<a href="${getUserLink(
-							row[0],
-							LINK_TO_USER_PAGE,
-							`?listId=${LIST_ID}${getSearchParams(true, true)}`
-						)}" class="diriq-table__link">${data}</a>`;
+						return `<a href="${getUserPageUrl(row[0])}" class="diriq-table__link">${data}</a>`;
 					}
 				};
 			}
@@ -271,12 +276,10 @@ const createCustomDataTable = async (id, config, customConfig) => {
 					sorting: false,
 					ordering: false,
 					render: function(data, type, row, meta) {
+						const isEnabled = row[5] === 'Active';
+
 						return `<div class="d-flex">
-									<a href="${getUserLink(
-										row[0],
-										LINK_TO_USER_PAGE,
-										`?listId=${LIST_ID}${getSearchParams(true, true)}`
-									)}" class="btn _sm _secondary">View</a>
+									<a href="${getUserPageUrl(row[0])}" class="btn _sm _secondary">View</a>
 									<div class="dropdown _actions">
 										<button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
 											<svg width="2" height="10">
@@ -287,9 +290,24 @@ const createCustomDataTable = async (id, config, customConfig) => {
 										<div class="dropdown-menu dropdown-menu-right _actions mt-5"
 											aria-labelledby="moreMenuButton">
 											<div class="dropdown-menu-inner">
-												<a class="dropdown-item" href="#">Action Item 1</a>
-												<a class="dropdown-item" href="#">Action Item 2</a>
-												<a class="dropdown-item" href="#">Action Item 3</a>
+												${!isEnabled
+													? ``
+													: `<button type="button" data-id="${row[0]}" data-toggle="modal" data-target="#confirm-popup" class="dropdown-item btn-contact-disable" data-action="disable">${locales[
+															'Disable'
+														]}</button>`}
+                                                ${!isList
+													? ``
+													: `<button type="button" data-id="${row[0]}" data-listid=${listId} data-toggle="modal" data-target="#confirm-popup" class="dropdown-item btn-contact-remove-list" data-action="removeFromList">${locales[
+															'RemoveFromList'
+														]}</button>`}
+                                                ${!isTag
+													? ``
+													: `<button type="button" data-id="${row[0]}" data-tagid=${tagId} data-toggle="modal" data-target="#confirm-popup" class="dropdown-item btn-contact-remove-tag" data-action="removeFromTag">${locales[
+															'RemoveFromTag'
+														]}</button>`}
+												<button type="button" data-id="${row[0]}" data-toggle="modal" data-target="#confirm-popup" data-action="delete" class="dropdown-item btn-contact-delete">${locales[
+							`Delete`
+						]}</button>
 											</div>
 										</div>
 									</div>
@@ -299,6 +317,28 @@ const createCustomDataTable = async (id, config, customConfig) => {
 			}
 			return { title: column.displayName };
 		});
+	};
+
+	const getUserPageUrl = (userId) => {
+		let searchParams = getSearchParams(true, true);
+		let userDetailsPage = LINK_TO_USER_PAGE;
+		userDetailsPage = userDetailsPage.replace('/contactdetails/0', `/contactdetails/${userId}`); // add contact id in here
+		if (searchParams) {
+			// push extra params at the end
+			if (userDetailsPage.indexOf('?') !== -1) {
+				// means there is already a query param, other params are just appended in the end
+				userDetailsPage = `${userDetailsPage}${searchParams}`;
+			} else {
+				// means the url has no query params, first char should be '?'
+				if (searchParams.startsWith('&')) {
+					// drop the first '&' if is present
+					searchParams = searchParams.substring(1);
+				}
+				// join original url with extra params
+				userDetailsPage = `${userDetailsPage}?${searchParams}`;
+			}
+		}
+		return userDetailsPage;
 	};
 
 	const setCurrentPagination = ({ pageSize, pageNumber, totalCount }) => {
@@ -686,7 +726,9 @@ const createCustomDataTable = async (id, config, customConfig) => {
 			dropdownItems.forEach((item) => {
 				if (item.dataset.action) {
 					item.addEventListener('click', () => {
-						TABLE_CHECKBOX_ACTIONS[item.dataset.action]({ data: checkboxSelected });
+						TABLE_CHECKBOX_ACTIONS[item.dataset.action]({
+							data: checkboxSelected
+						});
 					});
 				}
 			});

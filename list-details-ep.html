@@ -956,11 +956,13 @@
                                                 >
                                                     <a
                                                         class="dropdown-item"
+                                                        data-toggle="modal" data-target="#confirm-popup"
                                                         href="#"
                                                         >Action Item 2</a
                                                     >
                                                     <a
                                                         class="dropdown-item"
+                                                        data-toggle="modal" data-target="#confirm-popup"
                                                         href="#"
                                                         >Action Item 3</a
                                                     >
@@ -1331,6 +1333,35 @@
             </a>
         </div>
 
+        <div
+            id="confirm-popup"
+            class="modal fade"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="myModalLabel"
+            aria-hidden="true"
+            style="display: none;"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4 class="mb-13">
+                            Do you really want to do this?
+                        </h4>
+                        <button class="btn _lg _primary">Confirm</button>
+                        <button
+                            class="btn _lg _secondary"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-hidden="true"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- END wrapper -->
 
         <!-- Vendor js -->
@@ -1351,7 +1382,14 @@
             // Datatable settings and initialisation
             const TABLE_API =
                 'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/custom';
-
+            const locales = {
+                Disable: 'Disable',
+                RemoveFromList: 'RemoveFromList',
+                RemoveFromTag: 'RemoveFromTag',
+                Delete: 'Delete',
+                Active: 'Active',
+                Passive: 'Passive',
+            };
             const LIST_ID = 30;
             const RESPONCE_URL = `${TABLE_API}/${LIST_ID}`;
             //add window.location.host for table load in andriiv.com because site located in folder directiq but my link is absolutely

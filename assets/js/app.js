@@ -1319,16 +1319,22 @@ $('.nav-tabs a').on('shown.bs.tab', function(e) {
 });
 
 const setDropdownActions = (tableWrapper) => {
-	$(tableWrapper).find('.dropdown._actions, .dropdown._more').each(function() {
-		if (!$(this).hasClass('js-withShowListner')) {
-			$(this).on('show.bs.dropdown', function() {
-				$('body').addClass('actions-visible');
-			});
-		}
+	const confirModal = document.querySelector('#confirm-popup');
+
+	$(confirModal).on('shown.bs.modal', function(e) {
+		const btn = e.relatedTarget;
+		const { id = '', action = '' } = btn.dataset;
+		console.log(e.target);
+		e.target.dataset.id = id;
+		e.target.dataset.action = action;
+		console.log(e.target.dataset);
 	});
 
 	$(tableWrapper).find('.dropdown._actions, .dropdown._more').each(function() {
 		if (!$(this).hasClass('js-withShowListner')) {
+			$(this).on('show.bs.dropdown', function(e) {
+				$('body').addClass('actions-visible');
+			});
 			$(this).on('hide.bs.dropdown', function() {
 				$('body').removeClass('actions-visible');
 			});
@@ -1358,7 +1364,7 @@ const createSelect2ByClass = (className, selectOptions) => {
 		});
 	}
 
-	if (className === '._select2-lg._quality' && $(className).length > 0) {
+	if (/_quality/.test(className) && $(className).length > 0) {
 		const QUALITY_OPTIONS = [ 1, 2, 3, 4, 5 ];
 
 		const createQualityIcons = (state) => {
@@ -1454,58 +1460,4 @@ const DEFAULT_SELECT_OPTIONS = {
 
 const getUserLink = (id, url, searchParams = '') => {
 	return `/${url}/${id}${searchParams}`;
-};
-
-const generateQualitySelectDataTable = (data) => {
-	let qualityIcon = '';
-	DEFAULT_SELECT_OPTIONS.quality.forEach((item) => {
-		qualityIcon += `<span></span>`;
-	});
-
-	return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
-};
-
-const createDataTable = (id, config, isFixedCollumns) => {
-	if (isFixedCollumns) {
-		config = { ...FIXED_DATA_TABLE_CONFIG, ...config };
-	}
-
-	var table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG, ...config });
-
-	$(table.table().container()).find('tfoot').each(function() {
-		$(this).find('th').each(function(i) {
-			$(this).find('input').attr('data-index', i);
-		});
-	});
-
-	var canSearch = false;
-
-	function filterTable(element, value) {
-		if (table.settings()[0].jqXHR) table.settings()[0].jqXHR.abort();
-		table.column($(element).data('index')).search(value).draw();
-	}
-
-	$(table.table().container()).on('keyup', 'tfoot input', function() {
-		var input = this;
-
-		if ($(this).val().length > 2) {
-			canSearch = true;
-			filterTable(input, input.value);
-		} else if (canSearch) {
-			filterTable(input, '');
-			canSearch = false;
-		}
-	});
-
-	$(table.table().container())
-		.find('thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)')
-		.append(
-			'<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'
-		);
-
-	$('.diriq-table__filter-btn').click(function() {
-		$(this).closest('.diriq-table__wrapper').toggleClass('_filter-hidden');
-	});
-
-	setDataTableActions(table);
 };

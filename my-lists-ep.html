@@ -854,7 +854,7 @@
                                         id="home-b1"
                                     >
                                         <div
-                                            class="diriq-table__wrapper _my-lists-table _with-endpoint disable-vertical-scroll _filter-hidden"
+                                            class="diriq-table__wrapper _my-lists-table _with-endpoint disable-vertical-scroll _filter-hidden loading"
                                         >
                                             <table
                                                 id="data-table"
@@ -894,106 +894,46 @@
                                                             <input
                                                                 class="filter-input"
                                                                 type="text"
-                                                                placeholder="Search"
+                                                                placeholder="Search Name"
+                                                                data-index="1"
                                                             />
                                                         </th>
-                                                        <th>
+                                                        <th class="nosort"></th>
+                                                        <th class="nosort"></th>
+                                                        <th class="nosort"></th>
+                                                        <th class="nosort">
                                                             <select
-                                                                class="form-control"
-                                                                data-toggle="select2"
+                                                                class="form-control _quality"
                                                                 required
-                                                            >
-                                                                <option
-                                                                    class="d-none"
-                                                                    value=""
-                                                                    disabled
-                                                                    selected
-                                                                    >Select</option
-                                                                >
-                                                                <option
-                                                                    value="test-1"
-                                                                    >Option
-                                                                    1</option
-                                                                >
-                                                                <option
-                                                                    value="test-2"
-                                                                    >Option
-                                                                    2</option
-                                                                >
-                                                            </select>
+                                                                data-index="5"
+                                                            ></select>
                                                         </th>
-                                                        <th>
+                                                        <th class="nosort">
                                                             <select
-                                                                class="form-control"
-                                                                data-toggle="select2"
+                                                                class="form-control _lastModified"
                                                                 required
+                                                                data-index="6"
                                                             >
                                                                 <option
-                                                                    class="d-none"
                                                                     value=""
-                                                                    disabled
                                                                     selected
-                                                                    >Select</option
+                                                                    >Select Last
+                                                                    Modified</option
                                                                 >
                                                                 <option
-                                                                    value="test-1"
-                                                                    >Option
-                                                                    1</option
+                                                                    value="week"
+                                                                    >Last
+                                                                    Week</option
                                                                 >
                                                                 <option
-                                                                    value="test-2"
-                                                                    >Option
-                                                                    2</option
-                                                                >
-                                                            </select>
-                                                        </th>
-                                                        <th>
-                                                            <select
-                                                                class="form-control"
-                                                                data-toggle="select2"
-                                                                required
-                                                            >
-                                                                <option
-                                                                    class="d-none"
-                                                                    value=""
-                                                                    disabled
-                                                                    selected
-                                                                    >Select</option
+                                                                    value="month"
+                                                                    >Last
+                                                                    Month</option
                                                                 >
                                                                 <option
-                                                                    value="test-1"
-                                                                    >Option
-                                                                    1</option
-                                                                >
-                                                                <option
-                                                                    value="test-2"
-                                                                    >Option
-                                                                    2</option
-                                                                >
-                                                            </select>
-                                                        </th>
-                                                        <th>
-                                                            <select
-                                                                class="form-control"
-                                                                data-toggle="select2"
-                                                                required
-                                                            >
-                                                                <option
-                                                                    class="d-none"
-                                                                    value=""
-                                                                    disabled
-                                                                    selected
-                                                                    >Select</option
-                                                                >
-                                                                <option
-                                                                    value="test-1"
-                                                                    >Option
-                                                                    1</option
-                                                                >
-                                                                <option
-                                                                    value="test-2"
-                                                                    >Option
-                                                                    2</option
+                                                                    value="year"
+                                                                    >Last
+                                                                    Year</option
                                                                 >
                                                             </select>
                                                         </th>
@@ -1085,16 +1025,19 @@
                                                     >
                                                         <a
                                                             class="dropdown-item"
+                                                            data-toggle="modal" data-target="#confirm-popup"
                                                             href="#"
                                                             >Action Item 1</a
                                                         >
                                                         <a
                                                             class="dropdown-item"
+                                                            data-toggle="modal" data-target="#confirm-popup"
                                                             href="#"
                                                             >Action Item 2</a
                                                         >
                                                         <a
                                                             class="dropdown-item"
+                                                            data-toggle="modal" data-target="#confirm-popup"
                                                             href="#"
                                                             >Action Item 3</a
                                                         >
@@ -1127,6 +1070,35 @@
             </a>
         </div>
 
+        <div
+            id="confirm-popup"
+            class="modal fade"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="myModalLabel"
+            aria-hidden="true"
+            style="display: none;"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4 class="mb-13">
+                            Do you really want to do this?
+                        </h4>
+                        <button class="btn _lg _primary">Confirm</button>
+                        <button
+                            class="btn _lg _secondary"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-hidden="true"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- END wrapper -->
 
         <!-- Vendor js -->
@@ -1139,10 +1111,35 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/dataTable.js"></script>
 
         <script>
             // Datatables settings
             $(document).ready(function () {
+                const LINK_TO_USER_PAGE = `/contactdetails/0`;
+
+                const select2QualityOptions = {
+                    placeholder: {
+                        id: -1,
+                        text: 'Select Quality',
+                    },
+                    allowClear: true,
+                    minimumResultsForSearch: -1,
+                };
+
+                createSelect2ByClass('._quality', select2QualityOptions);
+
+                const select2Options = {
+                    placeholder: {
+                        id: -1,
+                        text: 'Select Last Modified',
+                    },
+                    allowClear: true,
+                    minimumResultsForSearch: -1,
+                    tags: true,
+                };
+                createSelect2ByClass('._lastModified', select2Options);
+
                 const absolutelyLinks =
                     window.location.host === 'andriiv.com'
                         ? 'http://andriiv.com/directiq/'
@@ -1155,6 +1152,7 @@
                         crossDomain: true,
                     },
                     serverSide: true,
+                    order: [[6, 'desc']],
                     columns: [
                         {
                             name: 'id',
@@ -1166,42 +1164,48 @@
                             name: 'firstName',
                             title: 'List Name',
                             render: (data, type, row, meta) => {
-                                return `<a href="/${row.id}" class="diriq-table__link">${row.name}</a>`;
+                                console.log(row);
+                                return `<a href="${getUserPageUrl(
+                                    row.id,
+                                    LINK_TO_USER_PAGE
+                                )}" class="diriq-table__link">${row.name}</a>`;
                             },
                         },
                         {
                             name: 'listSize',
                             title: 'List Size',
                             render: (data, type, row, meta) => {
-                                return `<div class="diriq-table__list-size-number">${row.listSize}</div>`;
+                                return `<div class="diriq-table__list-size-number">${row.listSizeUI}</div>`;
                             },
                         },
                         {
                             name: 'subscribed',
                             title: 'Subscribed',
                             render: (data, type, row, meta) => {
-                                return `${row.subscribed}`;
+                                return `${row.subscribedUI}`;
                             },
                         },
                         {
                             name: 'disabled',
                             title: 'Disabled',
                             render: (data, type, row, meta) => {
-                                return `${row.disabled}`;
+                                return `${row.disabledUI}`;
                             },
                         },
                         {
                             name: 'rating',
                             title: 'List Quality',
                             render: function (data, type, row, meta) {
-                                return generateQualitySelectDataTable(row.rating);
+                                return generateQualitySelectDataTable(
+                                    row.rating
+                                );
                             },
                         },
                         {
                             name: 'lastModified',
                             title: 'Last Modified',
                             render: (data, type, row, meta) => {
-                                return `${row.lastModified}`;
+                                return `${row.lastModifiedUI}`;
                             },
                         },
                         {
@@ -1210,7 +1214,10 @@
                             ordering: false,
                             render: function (data, type, row, meta) {
                                 return `<div class="d-flex">
-									<a href="/${row.id}" class="btn _sm _secondary">View</a>
+									<a href="${getUserPageUrl(
+                                        row.id,
+                                        LINK_TO_USER_PAGE
+                                    )}" class="btn _sm _secondary">View</a>
 									<div class="dropdown _actions">
 										<button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
 											<svg width="2" height="10">
@@ -1221,9 +1228,9 @@
 										<div class="dropdown-menu dropdown-menu-right _actions mt-5"
 											aria-labelledby="moreMenuButton">
 											<div class="dropdown-menu-inner">
-												<a class="dropdown-item" href="#">Action Item 1</a>
-												<a class="dropdown-item" href="#">Action Item 2</a>
-												<a class="dropdown-item" href="#">Action Item 3</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirm-popup" data-id="${row.id}" data-action="action">Action Item 1</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirm-popup" data-id="${row.id}" data-action="action">Action Item 2</a>
+												<a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirm-popup" data-id="${row.id}" data-action="action">Action Item 3</a>
 											</div>
 										</div>
 									</div>
