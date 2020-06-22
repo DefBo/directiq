@@ -9,6 +9,30 @@ const generateQualitySelectDataTable = (data) => {
   return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
 };
 
+const setConfirmModals = () => {
+  $('.confirm__btn').click(function () {
+    const modal = $(this).next('.confirm__modal');
+    const isElementInView = Utils.isElementInView(modal, true);
+    modal.removeClass('d-none');
+    if (!isElementInView) {
+      $(this)[0].nextElementSibling.scrollIntoView({
+        block: 'end',
+        behavior: 'smooth',
+      });
+    }
+
+    $(document).on('click', '.confirm__btn', function (e) {
+      e.stopPropagation();
+    });
+  });
+
+  $('.confirm__modal .btn').click(function () {
+    $(this).closest('.confirm__modal').addClass('d-none');
+  });
+
+  setDropdownActions('.diriq-table__wrapper');
+};
+
 const getUserPageUrl = (userId, url) => {
   let searchParams = tableSearchParams;
   let userDetailsPage = url;
@@ -35,12 +59,20 @@ const getUserPageUrl = (userId, url) => {
 };
 
 const createDataTable = (id, restConfig, isFixedCollumns) => {
-  let config = { ...restConfig };
+  let config = {
+    ...restConfig,
+    initComplete(settings, json) {
+      setConfirmModals();
+    },
+  };
 
   const tableElement = document.querySelector(id);
+
   const tableWrapper =
     tableElement && tableElement.closest('.diriq-table__wrapper');
-  tableWrapper.classList.add('loading');
+  if (tableWrapper) {
+    tableWrapper.classList.add('loading');
+  }
 
   if (isFixedCollumns) {
     config = { ...FIXED_DATA_TABLE_CONFIG, ...config };
@@ -63,7 +95,7 @@ const createDataTable = (id, restConfig, isFixedCollumns) => {
         });
     });
 
-  if (filterButton) {
+  if (filterButton && tableWrapper) {
     filterButton.addEventListener('click', () => {
       tableWrapper.classList.toggle('_filter-hidden');
       if (tableWrapper.classList.contains('_filter-hidden')) {
@@ -91,10 +123,6 @@ const createDataTable = (id, restConfig, isFixedCollumns) => {
     table.column($(element).data('index')).search(value).draw();
   }
 
-  table.on('preXhr', function () {
-    tableWrapper.classList.add('loading');
-  });
-
   table.on('xhr', function () {
     const data = table.ajax.params();
     const draftSearchParams = [];
@@ -107,7 +135,10 @@ const createDataTable = (id, restConfig, isFixedCollumns) => {
     if (draftSearchParams.length > 0) {
       tableSearchParams = draftSearchParams.join('&');
     }
-    tableWrapper.classList.remove('loading');
+
+    tableWrapper && tableWrapper.classList.remove('loading');
+
+    setConfirmModals();
   });
 
   $(table.table().container()).on('keyup', 'tfoot input', function () {
@@ -126,32 +157,6 @@ const createDataTable = (id, restConfig, isFixedCollumns) => {
     const input = this;
 
     filterTable(input, input.value);
-  });
-
-  $(table)
-    .on('init.dt', function () {
-      tableWrapper.classList.remove('loading');
-    })
-    .dataTable();
-
-  $(table).on('draw', function () {
-    console.log('xhr');
-    $('.confirm__btn').click(function () {
-      const modal = $(this).next('.confirm__modal');
-      const isElementInView = Utils.isElementInView(modal, true);
-
-      modal.removeClass('d-none');
-      if (!isElementInView) {
-        $(this)[0].nextElementSibling.scrollIntoView({
-          block: 'end',
-          behavior: 'smooth',
-        });
-      }
-
-      $(document).on('click', '.confirm__btn', function (e) {
-        e.stopPropagation();
-      });
-    });
   });
 
   $(table.table().container())

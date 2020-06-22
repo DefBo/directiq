@@ -119,7 +119,7 @@ const SELECT_TEMPLATES = {
 };
 
 const createCustomDataTable = async (id, restConfig, customConfig) => {
-  const { isFixedColumns, withViewButton } = customConfig;
+  const { isFixedColumns, withViewButton, createFromForm } = customConfig;
   const { isList = false, listId = 0 } = customConfig;
   const { isTag = false, tagId = 0 } = customConfig;
 
@@ -134,7 +134,7 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
             globalSearchParams = {
               ...globalSearchParams,
               [tableOuterControls.dataset.filter]: button.dataset.filterValue,
-              pageNumber: 12332,
+              pageNumber: 1,
             };
             filterCallback();
             buttons.forEach((button2) => {
@@ -153,7 +153,20 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
     const cancel = new AbortController();
     cancelController = cancel;
     let responsedData = null;
-    await fetch(url, { signal: cancel.signal })
+
+    let dataParams = {
+      signal: cancel.signal,
+    };
+
+    if (createFromForm) {
+      const formData = new FormData(
+        document.querySelector(createFromForm.form)
+      );
+
+      dataParams = { ...dataParams, method: 'POST', body: formData };
+    }
+
+    await fetch(url, dataParams)
       .then((response) => {
         if (response.status >= 200 && response.status < 300) {
           return response.json().then((data) => {
@@ -284,7 +297,7 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
           render(data) {
             let elements = '';
             data.forEach((tag) => {
-              elements = `<span class="table-tag">${tag}</span>`;
+              elements += `<span class="table-tag">${tag}</span>`;
             });
             return elements;
           },
@@ -300,41 +313,92 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
             const isEnabled = row[5] === 'Active';
 
             return `<div class="d-flex">
-									<a href="${getUserPageUrl(row[0])}" class="btn _sm _secondary">View</a>
-									<div class="dropdown _actions">
-										<button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
-											<svg width="2" height="10">
-												<use xlink:href="${absolutelyLinks}assets/images/sprite.svg#more-dots"></use>
-											</svg>
-										</button>
-										
-										<div class="dropdown-menu dropdown-menu-right _actions mt-5"
-											aria-labelledby="moreMenuButton">
-											<div class="dropdown-menu-inner">
-												${
+            <a href="${getUserPageUrl(
+              row[0]
+            )}" class="btn _sm _secondary">View</a>
+            <div class="dropdown _actions">
+                <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
+                    <svg width="2" height="10">
+                        <use xlink:href="${absolutelyLinks}assets/images/sprite.svg#more-dots"></use>
+                    </svg>
+                </button>
+        
+                <div class="dropdown-menu dropdown-menu-right _actions mt-5" aria-labelledby="moreMenuButton">
+                    <div class="dropdown-menu-inner">
+                        ${
                           !isEnabled
                             ? ``
-                            : `<button type="button" data-id="${row[0]}" data-toggle="modal" data-target="#confirm-popup" class="dropdown-item btn-contact-disable" data-action="disable">${locales.Disable}</button>`
+                            : `<div class="confirm__wrap"><button type="button" data-id="${row[0]}"
+                            class="dropdown-item confirm__btn btn-contact-disable" data-action="disable">${locales.Disable}</button>
+                            <div class="confirm__modal _to-left d-none">
+                                <div class="confirm__content">
+                                    <p class="confirm__text">
+                                        You sure you want to delete this tag?
+                                    </p>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn _lg _secondary">Nope</button>
+                                    <button class="btn _lg _primary">Sure</button>
+                                </div>
+                            </div></div>`
                         }
-                                                ${
-                                                  !isList
-                                                    ? ``
-                                                    : `<button type="button" data-id="${row[0]}" data-listid=${listId} data-toggle="modal" data-target="#confirm-popup" class="dropdown-item btn-contact-remove-list" data-action="removeFromList">${locales.RemoveFromList}</button>`
-                                                }
-                                                ${
-                                                  !isTag
-                                                    ? ``
-                                                    : `<button type="button" data-id="${row[0]}" data-tagid=${tagId} data-toggle="modal" data-target="#confirm-popup" class="dropdown-item btn-contact-remove-tag" data-action="removeFromTag">${locales.RemoveFromTag}</button>`
-                                                }
-												<button type="button" data-id="${
-                          row[0]
-                        }" data-toggle="modal" data-target="#confirm-popup" data-action="delete" class="dropdown-item btn-contact-delete">${
-              locales.Delete
-            }</button>
-											</div>
-										</div>
-									</div>
-								</div>`;
+                        ${
+                          !isList
+                            ? ``
+                            : `<div class="confirm__wrap"><button type="button" data-id="${row[0]}" data-listid=${listId} class="dropdown-item confirm__btn btn-contact-remove-list"
+                            data-action="removeFromList">${locales.RemoveFromList}</button>
+                            <div class="confirm__modal _to-left d-none">
+                                <div class="confirm__content">
+                                    <p class="confirm__text">
+                                        You sure you want to delete this tag?
+                                    </p>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn _lg _secondary">Nope</button>
+                                    <button class="btn _lg _primary">Sure</button>
+                                </div>
+                            </div></div>`
+                        }
+                        ${
+                          !isTag
+                            ? ``
+                            : `<div class="confirm__wrap"><button type="button" data-id="${row[0]}" data-tagid=${tagId} class="dropdown-item confirm__btn btn-contact-remove-tag"
+                            data-action="removeFromTag">${locales.RemoveFromTag}</button>
+                            <div class="confirm__modal _to-left d-none">
+                                <div class="confirm__content">
+                                    <p class="confirm__text">
+                                        You sure you want to delete this tag?
+                                    </p>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn _lg _secondary">Nope</button>
+                                    <button class="btn _lg _primary">Sure</button>
+                                </div>
+                            </div></div>`
+                        }
+                        <div class="confirm__wrap">
+                            <button type="button" data-id="${
+                              row[0]
+                            }"  data-action="delete"
+                                class="dropdown-item confirm__btn btn-contact-delete">${
+                                  locales.Delete
+                                }</button>
+                            <div class="confirm__modal _to-left d-none">
+                                <div class="confirm__content">
+                                    <p class="confirm__text">
+                                        You sure you want to delete this tag?
+                                    </p>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn _lg _secondary">Nope</button>
+                                    <button class="btn _lg _primary">Sure</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
           },
         };
       }
@@ -508,11 +572,12 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
       };
     } else {
       fetchedData = draftfetchedData;
-      console.log();
-      tableWrapper.classList.remove(
-        'dataTables_wrapper--empty',
-        'dataTables_wrapper--error'
-      );
+      if (fetchedData.rows === []) {
+        tableWrapper.classList.add('dataTables_wrapper--empty');
+      } else {
+        tableWrapper.classList.remove('dataTables_wrapper--empty');
+      }
+      tableWrapper.classList.remove('dataTables_wrapper--error');
     }
 
     if (fetchedData.columns) {
@@ -552,6 +617,63 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
     tableWrapper.classList.remove('loading');
   };
 
+  const generateTable = async () => {
+    fetchedData = await getData(RESPONCE_URL);
+
+    if (!fetchedData) {
+      return createEmptyTable(id, tableWrapper);
+    }
+    if (fetchedData.rows.length === 0) {
+      tableWrapper.classList.add('dataTables_wrapper--empty');
+    }
+    tableWrapper.classList.remove('dataTables_wrapper--error');
+    fetchedData && addCustomColumn(fetchedData);
+
+    defaultSearchParams = fetchedData.columns.reduce((accumulator, column) => {
+      const columnName =
+        column.keyId === 0 ? column.name : `extra[${column.keyId}]`;
+      return { ...accumulator, [columnName]: '' };
+    }, {});
+
+    config = {
+      ...config,
+      ordering: false,
+      data: getTableData(fetchedData),
+      columns: getColumnTitles(fetchedData),
+    };
+
+    const tFoot = document.createElement('tfoot');
+    const tFootTr = document.createElement('tr');
+
+    for (const column of fetchedData.columns) {
+      const th = document.createElement('th');
+      if (
+        Object.keys(DEFAULT_SELECT_OPTIONS).some((item) => column.name === item)
+      ) {
+        generateSearchSelect(column, th, false, true);
+      } else if (column.name === 'tags') {
+        // eslint-disable-next-line no-await-in-loop
+        await generateMultipleSelect(column, th, TAGS_API);
+      } else if (COLUMN_WITHOUT_SEARCH.every((item) => column.name !== item)) {
+        const input = document.createElement('input');
+        input.classList.add('filter-input');
+        input.placeholder = `Search`;
+        input.type = 'text';
+        input.autocomplete = 'none';
+        input.dataset.name =
+          column.keyId === 0 ? column.name : `extra[${column.keyId}]`;
+        th.appendChild(input);
+      }
+
+      tFootTr.appendChild(th);
+    }
+
+    tFoot.appendChild(tFootTr);
+    tableElement.appendChild(tFoot);
+
+    table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG, ...config });
+  };
+
   const filterTable = debounce(() => filterDataTable(), 300);
 
   let config = { ...restConfig };
@@ -569,278 +691,250 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
 
   const tableElement = document.querySelector(id);
   const tableWrapper = tableElement.closest('.diriq-table__wrapper');
-  if (tableWrapper) {
-    tableWrapper.classList.add('loading');
-  }
 
-  fetchedData = await getData(RESPONCE_URL);
+  let table = null;
 
-  if (!fetchedData) {
-    return createEmptyTable(id, tableWrapper);
-  }
-
-  tableWrapper.classList.remove('dataTables_wrapper--error');
-  fetchedData && addCustomColumn(fetchedData);
-
-  defaultSearchParams = fetchedData.columns.reduce((accumulator, column) => {
-    const columnName =
-      column.keyId === 0 ? column.name : `extra[${column.keyId}]`;
-    return { ...accumulator, [columnName]: '' };
-  }, {});
-
-  config = {
-    ...config,
-    ordering: false,
-    data: getTableData(fetchedData),
-    columns: getColumnTitles(fetchedData),
-  };
-
-  const tFoot = document.createElement('tfoot');
-  const tFootTr = document.createElement('tr');
-
-  for (const column of fetchedData.columns) {
-    const th = document.createElement('th');
-    if (
-      Object.keys(DEFAULT_SELECT_OPTIONS).some((item) => column.name === item)
-    ) {
-      generateSearchSelect(column, th, false, true);
-    } else if (column.name === 'tags') {
-      // eslint-disable-next-line no-await-in-loop
-      await generateMultipleSelect(column, th, TAGS_API);
-    } else if (COLUMN_WITHOUT_SEARCH.every((item) => column.name !== item)) {
-      const input = document.createElement('input');
-      input.classList.add('filter-input');
-      input.placeholder = `Search`;
-      input.type = 'text';
-      input.autocomplete = 'none';
-      input.dataset.name =
-        column.keyId === 0 ? column.name : `extra[${column.keyId}]`;
-      th.appendChild(input);
-    }
-
-    tFootTr.appendChild(th);
-  }
-
-  tFoot.appendChild(tFootTr);
-  tableElement.appendChild(tFoot);
-
-  const table = $(id).DataTable({ ...DEFAULT_DATA_TABLE_CONFIG, ...config });
-
-  generateInfoMessage(tableWrapper, 'dataTables_info-message');
-
-  const tableCheckboxActions = tableWrapper.querySelectorAll(
-    '[data-id="table-checkbox-actions"]'
-  );
-  const tFootInputsWrapper = tableWrapper.querySelectorAll('.diriq-table th');
-  const tableHeads = tableWrapper.querySelectorAll('thead');
-  const lengthSelect = tableWrapper.querySelector('.dataTables_length select');
-  const filterButton = tableWrapper.querySelector('.diriq-table__filter-btn');
-  const allSortElements = tableWrapper.querySelectorAll('.sorting_disabled');
-
-  $(
-    'thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)'
-  ).append(
-    '<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'
-  );
-
-  setListnerToCheckboxes(
-    tableWrapper.querySelectorAll('.checkbox-single input')
-  );
-  tableHeads.forEach((head) => {
-    const thSort = head.querySelectorAll('.sorting_disabled');
-
-    thSort.forEach((th, index) => {
-      if (
-        COLLUMN_WITHOUT_ORDERING_NOT_EXTRA.every(
-          (item) =>
-            fetchedData.columns[index].name !== item &&
-            !fetchedData.columns[index].isExtra
-        )
-      ) {
-        th.classList.remove('sorting_disabled');
-        th.classList.add('sorting');
-        if (fetchedData.columns[index].name === COLLUMN_DEFAULT_SORT.name) {
-          th.classList.add(`sorting_${COLLUMN_DEFAULT_SORT.dir}`);
+  if (createFromForm) {
+    const button = document.querySelector(createFromForm.button);
+    button.addEventListener('click', async () => {
+      if (table) {
+        filterTable();
+      } else {
+        if (tableWrapper) {
+          tableWrapper.classList.add('loading');
         }
-        th.addEventListener('click', () => {
-          if (th.classList.contains('sorting_asc')) {
-            allSortElements.forEach((th2) => {
-              th2.classList.remove('sorting_desc');
-              th2.classList.remove('sorting_asc');
-            });
-
-            th.classList.add('sorting_desc');
-
-            globalSearchParams = {
-              ...globalSearchParams,
-              orderBy: fetchedData.columns[index].name,
-              orderDir: 'desc',
-            };
-            filterTable();
-          } else if (!th.classList.contains('sorting_asc')) {
-            allSortElements.forEach((th3) => {
-              th3.classList.remove('sorting_desc');
-              th3.classList.remove('sorting_asc');
-            });
-
-            th.classList.add('sorting_asc');
-
-            globalSearchParams = {
-              ...globalSearchParams,
-              orderBy: fetchedData.columns[index].name,
-              orderDir: 'asc',
-            };
-            filterTable();
-          }
-        });
+        await generateTable();
+        addCustomSettingsToTable();
       }
     });
-  });
-
-  $('.diriq-table__wrapper select[data-toggle="select2"]').each(function () {
-    const select = this;
-    $(select).select2({
-      templateResult: (state) => generateCustomSelect(this.id, state),
-      minimumResultsForSearch: -1,
-      escapeMarkup(markup) {
-        return markup;
-      },
-      placeholder: {
-        id: '-1',
-        text: `Select`,
-      },
-      allowClear: true,
-    });
-    $(select).on('select2:select', (e) => {
-      const value = $(e.target).val();
-      globalSearchParams = {
-        ...globalSearchParams,
-        [e.target.name]: value,
-        pageNumber: 1,
-      };
-
-      filterTable();
-    });
-    $(select).on('select2:unselect', (e) => {
-      const value = $(e.target).val();
-      globalSearchParams = {
-        ...globalSearchParams,
-        [e.target.name]: value,
-        pageNumber: 1,
-      };
-
-      filterTable();
-    });
-  });
-
-  tFootInputsWrapper.forEach((inputWrapper, i) => {
-    const input = inputWrapper.querySelector('input.filter-input');
-    if (input) {
-      let canSearch = false;
-
-      input.dataset.id = i;
-
-      input.addEventListener('input', () => {
-        if (input.value.length > 2) {
-          canSearch = true;
-          globalSearchParams = {
-            ...globalSearchParams,
-            [input.dataset.name]: input.value,
-            pageNumber: 1,
-          };
-          filterTable();
-        } else if (canSearch) {
-          globalSearchParams = {
-            ...globalSearchParams,
-            [input.dataset.name]: '',
-            pageNumber: 1,
-          };
-          filterTable();
-          canSearch = false;
-        }
-      });
+  } else {
+    if (tableWrapper) {
+      tableWrapper.classList.add('loading');
     }
-  });
+    await generateTable();
+  }
 
-  setCurrentPagination(fetchedData);
+  const addCustomSettingsToTable = () => {
+    generateInfoMessage(tableWrapper, 'dataTables_info-message');
 
-  lengthSelect.addEventListener('change', (e) => {
-    const value = Number.parseInt(e.target.value, 10);
+    const tableCheckboxActions = tableWrapper.querySelectorAll(
+      '[data-id="table-checkbox-actions"]'
+    );
+    const tFootInputsWrapper = tableWrapper.querySelectorAll('.diriq-table th');
+    const tableHeads = tableWrapper.querySelectorAll('thead');
+    const lengthSelect = tableWrapper.querySelector(
+      '.dataTables_length select'
+    );
+    const filterButton = tableWrapper.querySelector('.diriq-table__filter-btn');
+    const allSortElements = tableWrapper.querySelectorAll('.sorting_disabled');
 
-    globalSearchParams = {
-      ...globalSearchParams,
-      pageSize: value,
-      pageNumber:
-        value * fetchedData.pageNumber > fetchedData.totalCount
-          ? Math.round(fetchedData.totalCount / value)
-          : fetchedData.pageNumber,
-    };
+    $(
+      'thead th, .DTFC_LeftHeadWrapper th:not(.nosort), .DTFC_RightHeadWrapper th:not(.nosort)'
+    ).append(
+      '<svg class="sort-arrow" xmlns="http://www.w3.org/2000/svg" width="4.211" height="10" viewBox="0 0 4.211 10"><path d="M13,10.105,10.895,8V9.579H3v1.053h7.895v1.579Z" transform="translate(12.211 -3) rotate(90)" fill="#212b35"/></svg>'
+    );
 
-    filterTable();
-  });
+    setListnerToCheckboxes(
+      tableWrapper.querySelectorAll('.checkbox-single input')
+    );
 
-  if (tableCheckboxActions.length > 0) {
-    tableCheckboxActions.forEach((checkBoxWrapper) => {
-      const dropdownItems = checkBoxWrapper.querySelectorAll('.dropdown-item');
-      dropdownItems.forEach((item) => {
-        if (item.dataset.action) {
-          item.addEventListener('click', () => {
-            TABLE_CHECKBOX_ACTIONS[item.dataset.action]({
-              data: checkboxSelected,
-            });
+    tableHeads.forEach((head) => {
+      const thSort = head.querySelectorAll('.sorting_disabled');
+
+      thSort.forEach((th, index) => {
+        if (
+          COLLUMN_WITHOUT_ORDERING_NOT_EXTRA.every(
+            (item) =>
+              fetchedData.columns[index].name !== item &&
+              !fetchedData.columns[index].isExtra
+          )
+        ) {
+          th.classList.remove('sorting_disabled');
+          th.classList.add('sorting');
+          if (fetchedData.columns[index].name === COLLUMN_DEFAULT_SORT.name) {
+            th.classList.add(`sorting_${COLLUMN_DEFAULT_SORT.dir}`);
+          }
+          th.addEventListener('click', () => {
+            if (th.classList.contains('sorting_asc')) {
+              allSortElements.forEach((th2) => {
+                th2.classList.remove('sorting_desc');
+                th2.classList.remove('sorting_asc');
+              });
+
+              th.classList.add('sorting_desc');
+
+              globalSearchParams = {
+                ...globalSearchParams,
+                orderBy: fetchedData.columns[index].name,
+                orderDir: 'desc',
+              };
+              filterTable();
+            } else if (!th.classList.contains('sorting_asc')) {
+              allSortElements.forEach((th3) => {
+                th3.classList.remove('sorting_desc');
+                th3.classList.remove('sorting_asc');
+              });
+
+              th.classList.add('sorting_asc');
+
+              globalSearchParams = {
+                ...globalSearchParams,
+                orderBy: fetchedData.columns[index].name,
+                orderDir: 'asc',
+              };
+              filterTable();
+            }
           });
         }
       });
     });
-  }
 
-  if ($('.diriq-table__wrapper._with-endpoint').length > 0) {
-    $('.diriq-table__wrapper._with-endpoint').each(function () {
-      const tableWrapper = this;
-      $(tableWrapper).addClass('loading');
-    });
-  }
-
-  adjustDataTableColumns();
-
-  $('.datatable._contact-details-lists input:checkbox').change(function () {
-    if ($(this).is(':checked')) {
-      $(this).closest('tr').addClass('_active');
-    } else {
-      $(this).closest('tr').removeClass('_active');
-    }
-  });
-
-  tableWrapper.classList.toggle('_filter-hidden');
-
-  filterButton.addEventListener('click', () => {
-    tableWrapper.classList.toggle('_filter-hidden');
-    if (tableWrapper.classList.contains('_filter-hidden')) {
-      tFootInputsWrapper.forEach((th) => {
-        const input = th.querySelector('input');
-
-        if (input) input.value = '';
-
-        const select = th.querySelector('select');
-        if (select) {
-          $(select).val(null).trigger('change');
-        }
+    $('.diriq-table__wrapper select[data-toggle="select2"]').each(function () {
+      const select = this;
+      $(select).select2({
+        templateResult: (state) => generateCustomSelect(this.id, state),
+        minimumResultsForSearch: -1,
+        escapeMarkup(markup) {
+          return markup;
+        },
+        placeholder: {
+          id: '-1',
+          text: `Select`,
+        },
+        allowClear: true,
       });
+      $(select).on('select2:select', (e) => {
+        const value = $(e.target).val();
+        globalSearchParams = {
+          ...globalSearchParams,
+          [e.target.name]: value,
+          pageNumber: 1,
+        };
+
+        filterTable();
+      });
+      $(select).on('select2:unselect', (e) => {
+        const value = $(e.target).val();
+        globalSearchParams = {
+          ...globalSearchParams,
+          [e.target.name]: value,
+          pageNumber: 1,
+        };
+
+        filterTable();
+      });
+    });
+
+    tFootInputsWrapper.forEach((inputWrapper, i) => {
+      const input = inputWrapper.querySelector('input.filter-input');
+      if (input) {
+        let canSearch = false;
+
+        input.dataset.id = i;
+
+        input.addEventListener('input', () => {
+          if (input.value.length > 2) {
+            canSearch = true;
+            globalSearchParams = {
+              ...globalSearchParams,
+              [input.dataset.name]: input.value,
+              pageNumber: 1,
+            };
+            filterTable();
+          } else if (canSearch) {
+            globalSearchParams = {
+              ...globalSearchParams,
+              [input.dataset.name]: '',
+              pageNumber: 1,
+            };
+            filterTable();
+            canSearch = false;
+          }
+        });
+      }
+    });
+
+    setCurrentPagination(fetchedData);
+
+    lengthSelect.addEventListener('change', (e) => {
+      const value = Number.parseInt(e.target.value, 10);
 
       globalSearchParams = {
-        pageNumber: 1,
-        pageSize: globalSearchParams.pageSize
-          ? globalSearchParams.pageSize
-          : '',
-        orderBy: globalSearchParams.orderBy ? globalSearchParams.orderBy : '',
-        orderDir: globalSearchParams.orderDir
-          ? globalSearchParams.orderDir
-          : '',
+        ...globalSearchParams,
+        pageSize: value,
+        pageNumber:
+          value * fetchedData.pageNumber > fetchedData.totalCount
+            ? Math.round(fetchedData.totalCount / value)
+            : fetchedData.pageNumber,
       };
 
       filterTable();
-    }
-  });
+    });
 
-  setDataTableActions(table);
+    if (tableCheckboxActions.length > 0) {
+      tableCheckboxActions.forEach((checkBoxWrapper) => {
+        const dropdownItems = checkBoxWrapper.querySelectorAll(
+          '.dropdown-item'
+        );
+        dropdownItems.forEach((item) => {
+          if (item.dataset.action) {
+            item.addEventListener('click', () => {
+              TABLE_CHECKBOX_ACTIONS[item.dataset.action]({
+                data: checkboxSelected,
+              });
+            });
+          }
+        });
+      });
+    }
+
+    if ($('.diriq-table__wrapper._with-endpoint').length > 0) {
+      $('.diriq-table__wrapper._with-endpoint').each(function () {
+        const tableWrapper = this;
+        $(tableWrapper).addClass('loading');
+      });
+    }
+
+    // adjustDataTableColumns();
+
+    $('.datatable._contact-details-lists input:checkbox').change(function () {
+      if ($(this).is(':checked')) {
+        $(this).closest('tr').addClass('_active');
+      } else {
+        $(this).closest('tr').removeClass('_active');
+      }
+    });
+
+    filterButton.addEventListener('click', () => {
+      tableWrapper.classList.toggle('_filter-hidden');
+      if (tableWrapper.classList.contains('_filter-hidden')) {
+        tFootInputsWrapper.forEach((th) => {
+          const input = th.querySelector('input');
+
+          if (input) input.value = '';
+
+          const select = th.querySelector('select');
+          if (select) {
+            $(select).val(null).trigger('change');
+          }
+        });
+
+        globalSearchParams = {
+          pageNumber: 1,
+          pageSize: globalSearchParams.pageSize
+            ? globalSearchParams.pageSize
+            : '',
+          orderBy: globalSearchParams.orderBy ? globalSearchParams.orderBy : '',
+          orderDir: globalSearchParams.orderDir
+            ? globalSearchParams.orderDir
+            : '',
+        };
+
+        filterTable();
+      }
+    });
+
+    setDataTableActions(table);
+  };
+  if (table) addCustomSettingsToTable();
 };

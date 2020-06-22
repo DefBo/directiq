@@ -1459,17 +1459,6 @@ $('.nav-tabs a').on('shown.bs.tab', function (e) {
 });
 
 const setDropdownActions = (tableWrapper) => {
-  const confirModal = document.querySelector('#confirm-popup');
-
-  $(confirModal).on('shown.bs.modal', function (e) {
-    const btn = e.relatedTarget;
-    const { id = '', action = '' } = btn.dataset;
-    console.log(e.target);
-    e.target.dataset.id = id;
-    e.target.dataset.action = action;
-    console.log(e.target.dataset);
-  });
-
   $(tableWrapper)
     .find('.dropdown._actions, .dropdown._more')
     .each(function () {

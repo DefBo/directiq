@@ -16304,8 +16304,6 @@ a.text-blue:hover, a.text-blue:focus {
     color: #758796; }
   .form-control:hover, .form-control:focus {
     border-color: #0000ff !important; }
-  .form-control:-ms-input-placeholder {
-    border-color: #a0b1ba; }
   .form-control:placeholder-shown {
     border-color: #a0b1ba; }
 
@@ -16523,7 +16521,12 @@ button.close {
     color: #fff !important; }
 
 .modal-dialog {
-  margin: 1.7em auto; }
+  margin: 1.7em auto;
+  width: calc(100% - 40px); }
+
+@media (max-width: 479px) {
+  .modal-body {
+    padding: 20px; } }
 
 .nav-tabs > li > a,
 .nav-pills > li > a {

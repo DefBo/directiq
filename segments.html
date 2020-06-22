@@ -790,23 +790,35 @@
                       <div class="card bg-light-grey mb-0">
                         <h5 class="mb-29">Conditions</h5>
 
-                        <div class="row pr-46">
+                        <form class="row pr-46" id="segmentForm">
                           <div class="col-md-3 condition-col">
-                            <select class="form-control _select2-lg" required>
+                            <select
+                              class="form-control _select2-lg"
+                              name="field1"
+                              required
+                            >
                               <option></option>
                               <option value="test-1">Fields</option>
                               <option value="test-2">Option 2</option>
                             </select>
                           </div>
                           <div class="col-md-3 condition-col d-none">
-                            <select class="form-control _select2-lg" required>
+                            <select
+                              class="form-control _select2-lg"
+                              name="field2"
+                              required
+                            >
                               <option></option>
                               <option value="test-1">Email Address</option>
                               <option value="test-2">Option 2</option>
                             </select>
                           </div>
                           <div class="col-md-3 condition-col d-none">
-                            <select class="form-control _select2-lg" required>
+                            <select
+                              class="form-control _select2-lg"
+                              name="field3"
+                              required
+                            >
                               <option></option>
                               <option value="test-1">Contains</option>
                               <option value="test-2">Option 2</option>
@@ -815,12 +827,13 @@
                           <div class="col-md-3 condition-col d-none">
                             <input
                               type="text"
+                              name="field4"
                               placeholder="Type Text"
                               class="form-control mt-16 mt-md-0"
                               id="condition-text-input"
                             />
                           </div>
-                        </div>
+                        </form>
 
                         <div class="pr-46 d-none" id="show-more-fields-row">
                           <div class="row mt-30">
@@ -848,21 +861,33 @@
                           </div>
                           <div class="row mt-30 more-conditions">
                             <div class="col-md-3 condition-col">
-                              <select class="form-control _select2-lg" required>
+                              <select
+                                class="form-control _select2-lg"
+                                name="field1"
+                                required
+                              >
                                 <option></option>
                                 <option value="test-1">Fields</option>
                                 <option value="test-2">Option 2</option>
                               </select>
                             </div>
                             <div class="col-md-3 condition-col d-none">
-                              <select class="form-control _select2-lg" required>
+                              <select
+                                class="form-control _select2-lg"
+                                name="field2"
+                                required
+                              >
                                 <option></option>
                                 <option value="test-1">Email Address</option>
                                 <option value="test-2">Option 2</option>
                               </select>
                             </div>
                             <div class="col-md-3 condition-col d-none">
-                              <select class="form-control _select2-lg" required>
+                              <select
+                                class="form-control _select2-lg"
+                                name="field3"
+                                required
+                              >
                                 <option></option>
                                 <option value="test-1">Contains</option>
                                 <option value="test-2">Option 2</option>
@@ -871,6 +896,7 @@
                             <div class="col-md-3 condition-col d-none">
                               <input
                                 type="text"
+                                name="field4"
                                 placeholder="Type Text"
                                 class="form-control mt-16 mt-md-0"
                               />
@@ -932,1096 +958,7 @@
                           id="data-table"
                           class="diriq-table"
                           style="width: 100%;"
-                        >
-                          <thead>
-                            <tr>
-                              <th class="nosort">
-                                <i>
-                                  <svg width="10.16" height="6">
-                                    <use
-                                      xlink:href="assets/images/sprite.svg#check-col"
-                                    ></use>
-                                  </svg>
-                                </i>
-                              </th>
-                              <th>Email Address</th>
-                              <th>Quality</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
-                              <th>Status</th>
-                              <th>Tags</th>
-                              <th class="nosort"></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >barisergin@gmail.com</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Baris</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Ergin</span>
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">member</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >steve.48masc@darknet.org</a
-                                >
-                              </td>
-                              <td>
-                                <i class="list-quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Steve</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Wozniakov</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td></td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >chadokoch72@mirkelam.co.uk</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Chado</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Kochiko</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _danger"
-                                  >disabled</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">vip</span>
-                                <span class="table-tag">best work</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >alfrikanski@hotmail.com</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Alfredo</span
-                                >
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Magento</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">vip</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >barisergin@gmail.com</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Baris</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Ergin</span>
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">member</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >steve.48masc@darknet.org</a
-                                >
-                              </td>
-                              <td>
-                                <i class="list-quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Steve</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Wozniakov</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td></td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >chadokoch72@mirkelam.co.uk</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Chado</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Kochiko</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _danger"
-                                  >disabled</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">vip</span>
-                                <span class="table-tag">best work</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >alfrikanski@hotmail.com</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Alfredo</span
-                                >
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Magento</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">vip</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >barisergin@gmail.com</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Baris</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Ergin</span>
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">member</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >steve.48masc@darknet.org</a
-                                >
-                              </td>
-                              <td>
-                                <i class="list-quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Steve</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Wozniakov</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td></td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >chadokoch72@mirkelam.co.uk</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Chado</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Kochiko</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _danger"
-                                  >disabled</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">vip</span>
-                                <span class="table-tag">best work</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >alfrikanski@hotmail.com</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Alfredo</span
-                                >
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Magento</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">vip</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >barisergin@gmail.com</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Baris</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Ergin</span>
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">member</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >steve.48masc@darknet.org</a
-                                >
-                              </td>
-                              <td>
-                                <i class="list-quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Steve</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Wozniakov</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td></td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >chadokoch72@mirkelam.co.uk</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold">Chado</span>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Kochiko</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _danger"
-                                  >disabled</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">vip</span>
-                                <span class="table-tag">best work</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="checkbox checkbox-single">
-                                  <input
-                                    type="checkbox"
-                                    value="option1"
-                                    aria-label="Single checkbox One"
-                                  />
-                                  <label></label>
-                                </div>
-                              </td>
-                              <td>
-                                <a href="#" class="diriq-table__link"
-                                  >alfrikanski@hotmail.com</a
-                                >
-                              </td>
-                              <td>
-                                <i class="quality-icon _2">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                </i>
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Alfredo</span
-                                >
-                              </td>
-                              <td>
-                                <span class="font-weight-semibold"
-                                  >Magento</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-status _success"
-                                  >subscriber</span
-                                >
-                              </td>
-                              <td>
-                                <span class="table-tag">vip</span>
-                              </td>
-                              <td>
-                                <div class="d-flex">
-                                  <button
-                                    type="button"
-                                    class="btn _sm _secondary"
-                                  >
-                                    View
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="btn _sm _primary ml-4 px-6"
-                                  >
-                                    <svg width="2" height="10">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#more-dots"
-                                      ></use>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                          <tfoot>
-                            <tr>
-                              <th class="nosort"></th>
-                              <th>
-                                <input
-                                  class="filter-input"
-                                  type="text"
-                                  placeholder="Type Email Address"
-                                />
-                              </th>
-                              <th>
-                                <select
-                                  class="form-control"
-                                  data-toggle="select2"
-                                  required
-                                >
-                                  <option
-                                    class="d-none"
-                                    value=""
-                                    disabled
-                                    selected
-                                    >Select Quality</option
-                                  >
-                                  <option value="test-1">Option 1</option>
-                                  <option value="test-2">Option 2</option>
-                                </select>
-                              </th>
-                              <th>
-                                <input
-                                  class="filter-input"
-                                  type="text"
-                                  placeholder="Type First Name"
-                                />
-                              </th>
-                              <th>
-                                <input
-                                  class="filter-input"
-                                  type="text"
-                                  placeholder="Type Last Name"
-                                />
-                              </th>
-                              <th>
-                                <select
-                                  class="form-control"
-                                  data-toggle="select2"
-                                  required
-                                >
-                                  <option
-                                    class="d-none"
-                                    value=""
-                                    disabled
-                                    selected
-                                    >Select Status</option
-                                  >
-                                  <option value="test-1">Option 1</option>
-                                  <option value="test-2">Option 2</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select
-                                  class="form-control"
-                                  data-toggle="select2"
-                                  required
-                                >
-                                  <option
-                                    class="d-none"
-                                    value=""
-                                    disabled
-                                    selected
-                                    >Select Tags</option
-                                  >
-                                  <option value="test-1">Option 1</option>
-                                  <option value="test-2">Option 2</option>
-                                </select>
-                              </th>
-                              <th class="nosort"></th>
-                            </tr>
-                          </tfoot>
-                        </table>
+                        ></table>
 
                         <!-- Table loader -->
                         <div class="lds-ellipsis__wrap">
@@ -2352,12 +1289,47 @@
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
-    <script src="assets/js/dataTable.js"></script>
+    <script src="assets/js/customTable.js"></script>
 
     <script>
-      $(document).ready(function () {
-        var table = createDataTable('#data-table', {}, true);
+      const TABLE_API = '/assets/js/allContactsMock.json';
+      const locales = {
+        Disable: 'Disable',
+        RemoveFromList: 'RemoveFromList',
+        RemoveFromTag: 'RemoveFromTag',
+        Delete: 'Delete',
+        Active: 'Active',
+        Passive: 'Passive',
+      };
+      const LIST_ID = 30;
+      const RESPONCE_URL = `${TABLE_API}`;
+      //add window.location.host for table load in andriiv.com because site located in folder directiq but my link is absolutely
 
+      const absolutelyLinks =
+        window.location.host === 'andriiv.com'
+          ? 'http://andriiv.com/directiq/'
+          : '/';
+
+      const TAGS_API = `${absolutelyLinks}assets/js/tagsMock.json`;
+
+      const LINK_TO_USER_PAGE = `contactdetails`;
+
+      const COLUMN_WITHOUT_SEARCH = ['id', 'viewButton', 'createdDate'];
+
+      const COLLUMN_WITHOUT_ORDERING_NOT_EXTRA = ['id', 'tags'];
+
+      const COLLUMN_DEFAULT_SORT = { name: 'createdDate', dir: 'desc' };
+
+      const CUSTOM_CONFIG = {
+        isFixedColumns: true,
+        withViewButton: true,
+        createFromForm: {
+          button: '#apply-conditions-btn',
+          form: '#segmentForm',
+        },
+      };
+
+      $(document).ready(function () {
         const select2Options = {
           placeholder: 'Select an option',
           allowClear: true,
@@ -2403,6 +1375,9 @@
           $('html,body').animate({ scrollTop: 0 });
           $('.condition-col:not(:first-child)').addClass('d-none');
         });
+
+        // Datatable settings and initialisation
+        createCustomDataTable('#data-table', {}, CUSTOM_CONFIG);
       });
     </script>
   </body>

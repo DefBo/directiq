@@ -3,24 +3,57 @@
     <head>
         <meta charset="utf-8" />
         <title>Add Contacts | DirectIQ</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta content="Direct IQ frontend development version" name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png?v=M4K2b5JM9m">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png?v=M4K2b5JM9m">
-        <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m">
-        <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m" color="#5bbad5">
-        <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m">
-        <meta name="msapplication-TileColor" content="#0000ff">
-        <meta name="msapplication-config" content="assets/images/browserconfig.xml?v=M4K2b5JM9m">
-        <meta name="theme-color" content="#ffffff">
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+        />
+        <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+        <link
+          rel="mask-icon"
+          href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+          color="#5bbad5"
+        />
+        <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+        <meta name="msapplication-TileColor" content="#0000ff" />
+        <meta
+          name="msapplication-config"
+          content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+        />
+        <meta name="theme-color" content="#ffffff" />
+
         <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 	    <!-- App css -->
-	    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
-	    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+	    <link
+	      href="assets/css/bootstrap.min.css"
+	      rel="stylesheet"
+	      type="text/css"
+	      id="bs-default-stylesheet"
+	    />
+	    <link
+	      href="assets/css/app.min.css"
+	      rel="stylesheet"
+	      type="text/css"
+	      id="app-default-stylesheet"
+	    />
+
     </head>
 
     <body data-layout-mode="two-column" class="animation-stopper">
@@ -589,17 +622,16 @@
                         <div class="row">
                             <div class="col-12">
 
-                                <div class="card mt-14 mb-28">
-                                    <div class="d-flex justify-content-between">
-                                        <div>
+                                <div class="card mt-14 mb-16">
+                                    <div class="d-sm-flex justify-content-between">
+                                        <div class="mb-12 mb-sm-0">
                                             <h4 class="mt-n4">Manage Your Fields</h4>
                                             <div class="font-12 color-secondary font-weight-medium mt-12">
                                                 You can create <span class="color-primary font-weight-bold">Custom Fields</span> to better personalize your contacts. <a href="#" class="link">Learn more</a>.
                                             </div>
                                         </div>
-                                        <button class="btn _lg _secondary">Create Custom Field</button>
+                                        <button class="btn _lg _secondary" data-toggle="modal" data-target="#create-custom-field">Create Custom Field</button>
                                     </div>
-
                                 </div>
 
                                 <ul class="nav nav-tabs nav-bordered">
@@ -635,7 +667,7 @@
                                             <div class="card connect__cards-main">
 
                                                 <div class="w-100">
-                                                    <table id="data-table" class="datatable datatable_small _fields" style="width:100%">
+                                                    <table id="data-table-all-fields" class="datatable datatable_small _fields" style="width:100%">
                                                         <thead>
                                                         <tr>
                                                             <th>Field Name</th>
@@ -711,12 +743,12 @@
                                                             </td>
                                                             <td>
                                                                 <div class="switcher__wrap">
-                                                                    <input type="checkbox" id="switch-5" class="switcher">
-                                                                    <label for="switch-5" class="switcher__toggle"></label>
+                                                                    <input type="checkbox" id="switch5" class="switcher">
+                                                                    <label for="switch5" class="switcher__toggle"></label>
                                                                 </div>
                                                             </td>
                                                             <td>
-                                                                <button class="btn _secondary _sync-list">
+                                                                <button class="btn _secondary _sync-list" data-toggle="modal" data-target="#edit-custom-field">
                                                                     <svg width="7" height="7">
                                                                         <use xlink:href="assets/images/sprite.svg#edit"></use>
                                                                     </svg>
@@ -744,12 +776,12 @@
                                                             </td>
                                                             <td>
                                                                 <div class="switcher__wrap">
-                                                                    <input type="checkbox" id="switch-5" class="switcher" checked="">
-                                                                    <label for="switch-5" class="switcher__toggle"></label>
+                                                                    <input type="checkbox" id="switch6" class="switcher" checked="">
+                                                                    <label for="switch6" class="switcher__toggle"></label>
                                                                 </div>
                                                             </td>
                                                             <td>
-                                                                <button class="btn _secondary _sync-list">
+                                                                <button class="btn _secondary _sync-list" data-toggle="modal" data-target="#edit-custom-field">
                                                                     <svg width="7" height="7">
                                                                         <use xlink:href="assets/images/sprite.svg#edit"></use>
                                                                     </svg>
@@ -790,7 +822,110 @@
                                             class="tab-pane"
                                             id="custom-fields"
                                     >
+                                        <div class="connect__cards-wrap">
+                                            <div class="card connect__cards-main">
 
+                                                <div class="w-100">
+                                                    <table id="data-table-custom-fields" class="datatable datatable_small _fields" style="width:100%">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Field Name</th>
+                                                            <th>Shortcode</th>
+                                                            <th>Data Type</th>
+                                                            <th>Usage</th>
+                                                            <th class="nosort">Public</th>
+                                                            <th class="nosort">Action</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        <tr>
+                                                            <td>
+                                                                <span class="color-primary font-weight-semibold">Graduation Date</span>
+                                                            </td>
+                                                            <td>
+                                                                %%graduation_date%%
+                                                            </td>
+                                                            <td>
+                                                                Date
+                                                            </td>
+                                                            <td>
+                                                                974
+                                                            </td>
+                                                            <td>
+                                                                <div class="switcher__wrap">
+                                                                    <input type="checkbox" id="switch7" class="switcher">
+                                                                    <label for="switch7" class="switcher__toggle"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <button class="btn _secondary _sync-list" data-toggle="modal" data-target="#edit-custom-field">
+                                                                    <svg width="7" height="7">
+                                                                        <use xlink:href="assets/images/sprite.svg#edit"></use>
+                                                                    </svg>
+                                                                </button>
+
+                                                                <button class="btn _primary _sync-list">
+                                                                    <svg width="7" height="7.78">
+                                                                        <use xlink:href="assets/images/sprite.svg#trashcan"></use>
+                                                                    </svg>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span class="color-primary font-weight-semibold">Marital Status</span>
+                                                            </td>
+                                                            <td>
+                                                                %%marital_status%%
+                                                            </td>
+                                                            <td>
+                                                                Boolean
+                                                            </td>
+                                                            <td>
+                                                                0
+                                                            </td>
+                                                            <td>
+                                                                <div class="switcher__wrap">
+                                                                    <input type="checkbox" id="switch8" class="switcher" checked="">
+                                                                    <label for="switch8" class="switcher__toggle"></label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <button class="btn _secondary _sync-list" data-toggle="modal" data-target="#edit-custom-field">
+                                                                    <svg width="7" height="7">
+                                                                        <use xlink:href="assets/images/sprite.svg#edit"></use>
+                                                                    </svg>
+                                                                </button>
+
+                                                                <button class="btn _primary _sync-list">
+                                                                    <svg width="7" height="7.78">
+                                                                        <use xlink:href="assets/images/sprite.svg#trashcan"></use>
+                                                                    </svg>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <div class="connect__cards-aside">
+                                                <div class="card connect__card-aside">
+                                                    <i class="mb-22">
+                                                        <svg width="57.91" height="50" >
+                                                            <use xlink:href="assets/images/sprite.svg#cat-book"></use>
+                                                        </svg>
+                                                    </i>
+                                                    <h5 class="mb-5">How to Use Custom Fields</h5>
+                                                    <p class="font-12 color-secondary font-weight-medium mb-21">
+                                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
+                                                    </p>
+                                                    <button class="btn _sm _secondary">Learn More</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -810,6 +945,72 @@
                 </svg>
             </a>
 
+            <div id="create-custom-field" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <svg width="8" height="8">
+                                <use xlink:href="assets/images/sprite.svg#cross"></use>
+                            </svg>
+                        </button>
+                        <div class="modal-body">
+                            <h4 class="mb-13">New Custom Field</h4>
+                            <div class="new-field-inputs">
+                                <div class="form-control__wrap">
+                                    <input type="text" placeholder="Name Your Field" class="form-control">
+                                </div>
+                                <select class="form-control _select2-lg mb-14" required>
+                                    <option></option>
+                                    <option value="test-1" >Campaign</option>
+                                    <option value="test-2">Option 2</option>
+                                </select>
+                            </div>
+                            <div class="switcher__wrap mb-20">
+                                <label for="switch1" class="switcher__label">
+                                    <span>Make this field public</span>
+                                </label>
+                                <input type="checkbox" id="switch1" class="switcher" checked>
+                                <label for="switch1" class="switcher__toggle"></label>
+                            </div>
+                            <button class="btn _lg _primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal -->
+
+            <div id="edit-custom-field" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <svg width="8" height="8">
+                                <use xlink:href="assets/images/sprite.svg#cross"></use>
+                            </svg>
+                        </button>
+                        <div class="modal-body">
+                            <h4 class="mb-13">Edit Custom Field</h4>
+                            <div class="new-field-inputs">
+                                <div class="form-control__wrap">
+                                    <input type="text" placeholder="Name Your Field" class="form-control" value="Custom Field Name">
+                                </div>
+                                <select class="form-control _select2-lg mb-14" required>
+                                    <option></option>
+                                    <option value="test-1" selected>Text</option>
+                                    <option value="test-2">Date</option>
+                                </select>
+                            </div>
+                            <div class="switcher__wrap mb-20">
+                                <label for="switch3" class="switcher__label">
+                                    <span>Make this field public</span>
+                                </label>
+                                <input type="checkbox" id="switch3" class="switcher" checked>
+                                <label for="switch3" class="switcher__toggle"></label>
+                            </div>
+                            <button class="btn _lg _primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal -->
+
         </div>
         <!-- END wrapper -->
 
@@ -820,11 +1021,15 @@
         <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
         <script src="assets/libs/select2/js/select2.min.js"></script>
 
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/dataTable.js"></script>
+
         <script>
             // Datatables settings
-            $(document).ready(function() {
-                $('#data-table').DataTable({
-                    sScrollX: "100%",
+            $(document).ready(function () {
+                const tableConfig = {
+                    scrollX:        true,
                     scrollCollapse: true,
                     paging:         false,
                     order: [],
@@ -833,20 +1038,18 @@
                         aTargets: ['nosort']
                     }],
                     sDom: 't',
-                    aoColumns: [
-                        { "sWidth": "50px" },
-                        { "sWidth": "50px" },
-                        { "sWidth": "50px" },
-                        { "sWidth": "50px" },
-                        { "sWidth": "50px" },
-                        { "sWidth": "50px" },
-                    ]
-                });
+                };
+                const select2Options = {
+                    placeholder: 'Select Data Type',
+                    allowClear: true,
+                    minimumResultsForSearch: -1
+                };
+
+                createDataTable('#data-table-all-fields', tableConfig, false);
+                createDataTable('#data-table-custom-fields', tableConfig, false);
+                createSelect2ByClass('._select2-lg', select2Options);
             });
         </script>
-
-        <!-- App js -->
-        <script src="assets/js/app.min.js"></script>
 
     </body>
 </html>
