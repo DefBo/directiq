@@ -1293,6 +1293,17 @@
 
     <script>
       const TABLE_API = '/assets/js/allContactsMock.json';
+
+      const DEFAULT_SELECT_OPTIONS = {
+        quality: [1, 2, 3, 4, 5],
+        status: ['active', 'passive'],
+        createdDate: [
+          { label: 'Last Week', value: 'week' },
+          { label: 'Last Month', value: 'month' },
+          { label: 'Last Year', value: 'year' },
+        ],
+      };
+
       const locales = {
         Disable: 'Disable',
         RemoveFromList: 'RemoveFromList',

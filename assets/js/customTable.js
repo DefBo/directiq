@@ -26,7 +26,7 @@ const generateCreatedDateSelect = (state) => {
     data = state;
   }
 
-  return `Last ${data[0].toUpperCase() + data.slice(1)}`;
+  return data;
 };
 
 function debounce(f, t) {
@@ -519,9 +519,15 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
     draftOptions.forEach((item) => {
       const option = document.createElement('option');
 
-      option.value = isMuliple ? item.id : item;
-      option.title = ' ';
-      option.text = generateCustomSelect(name, isMuliple ? item.text : item);
+      if (item.value && item.label) {
+        option.value = item.value;
+        option.title = ' ';
+        option.text = generateCustomSelect(name, item.label);
+      } else {
+        option.value = isMuliple ? item.id : item;
+        option.title = ' ';
+        option.text = generateCustomSelect(name, isMuliple ? item.text : item);
+      }
 
       select.options.add(option);
     });
@@ -559,6 +565,13 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
   const filterDataTable = async () => {
     tableWrapper.classList.add('loading');
     draftfetchedData = await getData(`${RESPONCE_URL}?${getSearchParams()}`);
+
+    if (createFromForm && draftfetchedData) {
+      const { value } = draftfetchedData;
+      if (value) {
+        draftfetchedData = JSON.parse(value);
+      }
+    }
 
     if (!draftfetchedData || draftfetchedData.rows.length === 0) {
       tableWrapper.classList.add('dataTables_wrapper--empty');
@@ -619,6 +632,13 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
 
   const generateTable = async () => {
     fetchedData = await getData(RESPONCE_URL);
+
+    if (createFromForm && fetchedData) {
+      const { value } = fetchedData;
+      if (value) {
+        fetchedData = JSON.parse(value);
+      }
+    }
 
     if (!fetchedData) {
       return createEmptyTable(id, tableWrapper);

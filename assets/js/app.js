@@ -1269,13 +1269,18 @@ $(document).ready(function () {
   $('.confirm__btn').click(function () {
     const modal = $(this).next('.confirm__modal');
     const isElementInView = Utils.isElementInView(modal, true);
+    const modalParentTable = $(this).closest('.dataTables_scrollBody');
 
     modal.removeClass('d-none');
-    if (!isElementInView) {
+    if (!isElementInView && modalParentTable.length === 0) {
       $(this)[0].nextElementSibling.scrollIntoView({
         block: 'end',
         behavior: 'smooth',
       });
+    }
+
+    if (modalParentTable.length > 0) {
+      $(this).closest('td').addClass('table-confirm-show');
     }
 
     $(document).on('click', '.confirm__btn', function (e) {
@@ -1285,6 +1290,7 @@ $(document).ready(function () {
 
   $('.confirm__modal .btn').click(function () {
     $(this).closest('.confirm__modal').addClass('d-none');
+    $(this).closest('td').removeClass('table-confirm-show');
   });
 
   $('._add-new-list').click(function () {
@@ -1501,7 +1507,17 @@ const createSelect2ByClass = (className, selectOptions) => {
   }
 
   if (/_quality/.test(className) && $(className).length > 0) {
-    const QUALITY_OPTIONS = [1, 2, 3, 4, 5];
+    let QUALITY_OPTIONS = [1, 2, 3, 4, 5];
+
+    if ($(className).find('option').length > 0) {
+      QUALITY_OPTIONS = [];
+      $(className)
+        .find('option')
+        .each(function () {
+          this.remove();
+          QUALITY_OPTIONS.push(this.value);
+        });
+    }
 
     const createQualityIcons = (state) => {
       let data = '';
@@ -1599,12 +1615,6 @@ $(document).on(
   },
   '.dataTables_wrapper tbody tr'
 );
-
-const DEFAULT_SELECT_OPTIONS = {
-  quality: [1, 2, 3, 4, 5],
-  status: ['active', 'passive'],
-  createdDate: ['week', 'month', 'year'],
-};
 
 const getUserLink = (id, url, searchParams = '') => {
   return `/${url}/${id}${searchParams}`;

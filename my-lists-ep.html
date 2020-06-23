@@ -843,7 +843,9 @@
                                 class="form-control _quality"
                                 required
                                 data-index="5"
-                              ></select>
+                              >
+                            <option value="1">1</option>
+                            </select>
                             </th>
                             <th class="nosort">
                               <select
@@ -1043,6 +1045,16 @@
 
     <script>
       // Datatables settings
+      const DEFAULT_SELECT_OPTIONS = {
+        quality: [1, 2, 3, 4, 5],
+        status: ['active', 'passive'],
+        createdDate: [
+          { label: 'Last Week', value: 'week' },
+          { label: 'Last Month', value: 'month' },
+          { label: 'Last Year', value: 'year' },
+        ],
+      };
+
       $(document).ready(function () {
         const LINK_TO_USER_PAGE = `/contactdetails/0`;
 

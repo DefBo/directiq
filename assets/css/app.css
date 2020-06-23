@@ -7646,7 +7646,7 @@ body.nav-is-toggled:after {
   top: 0;
   right: 0;
   width: 300px;
-  z-index: 1002; }
+  z-index: 1003; }
   .confirm__modal._to-right {
     right: auto;
     left: 0; }
@@ -8316,12 +8316,12 @@ body.nav-is-toggled:after {
   cursor: pointer;
   transition: 0.25s; }
   .segments__item:hover,
-  .show .segments__item {
+  .dropdown.show .segments__item {
     border-color: #0000ff;
     background: #0000ff;
     color: #fff; }
     .segments__item:hover .segments__item-more,
-    .show .segments__item .segments__item-more {
+    .dropdown.show .segments__item .segments__item-more {
       border-color: #0000ff; }
 
 .segments__item-more {
@@ -8384,7 +8384,8 @@ table.dataTable.diriq-table tbody td {
     font-size: 0; }
   .diriq-table tfoot tr {
     height: 46px; }
-  ._list-name-table.with-scroll:not(.dataTables_wrapper--empty) .diriq-table th:nth-child(2):before {
+  ._list-name-table.with-scroll:not(.dataTables_wrapper--empty)
+.diriq-table th:nth-child(2):before {
     content: '';
     position: absolute;
     right: 0;
@@ -8546,7 +8547,7 @@ table.dataTable.diriq-table tbody td {
     position: relative;
     z-index: 1; }
     .diriq-table__cell-title::after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       bottom: 2px;
@@ -8772,7 +8773,7 @@ select.filter-input {
   background-size: 6px 3.7px; }
   select.filter-input:required:invalid {
     color: #758796; }
-  select.filter-input option[value=""][disabled] {
+  select.filter-input option[value=''][disabled] {
     display: none; }
   select.filter-input option {
     color: #212b35; }
@@ -8879,55 +8880,75 @@ div.dataTables_wrapper div.dataTables_info {
       padding-left: 19px; }
   .datatable._sync-lists .switcher__wrap, .datatable._fields .switcher__wrap {
     justify-content: center; }
-  .datatable._sync-lists th:first-child, .datatable._sync-lists td:first-child {
+  .datatable._sync-lists th:first-child,
+  .datatable._sync-lists td:first-child {
     width: 24%; }
-  .datatable._sync-lists th:nth-child(2), .datatable._sync-lists td:nth-child(2) {
+  .datatable._sync-lists th:nth-child(2),
+  .datatable._sync-lists td:nth-child(2) {
     text-align: right;
     width: 17%;
     min-width: 150px; }
-  .datatable._sync-lists th:nth-child(3), .datatable._sync-lists td:nth-child(3) {
+  .datatable._sync-lists th:nth-child(3),
+  .datatable._sync-lists td:nth-child(3) {
     width: 18%;
     min-width: 170px; }
-  .datatable._sync-lists th:nth-child(4), .datatable._sync-lists th:nth-child(5), .datatable._sync-lists td:nth-child(4), .datatable._sync-lists td:nth-child(5) {
+  .datatable._sync-lists th:nth-child(4), .datatable._sync-lists th:nth-child(5),
+  .datatable._sync-lists td:nth-child(4),
+  .datatable._sync-lists td:nth-child(5) {
     text-align: center; }
-  .datatable._sync-lists th:nth-child(4), .datatable._sync-lists td:nth-child(4) {
+  .datatable._sync-lists th:nth-child(4),
+  .datatable._sync-lists td:nth-child(4) {
     width: 16%;
     min-width: 170px; }
-  .datatable._sync-lists th:nth-child(5), .datatable._sync-lists td:nth-child(5) {
+  .datatable._sync-lists th:nth-child(5),
+  .datatable._sync-lists td:nth-child(5) {
     width: 11%;
     padding-right: 10px;
     min-width: 100px; }
   @media (min-width: 577px) {
-    .datatable._sync-lists th:first-child, .datatable._sync-lists td:first-child {
+    .datatable._sync-lists th:first-child,
+    .datatable._sync-lists td:first-child {
       width: 24% !important; }
-    .datatable._sync-lists th:nth-child(2), .datatable._sync-lists td:nth-child(2) {
+    .datatable._sync-lists th:nth-child(2),
+    .datatable._sync-lists td:nth-child(2) {
       width: 17% !important; }
-    .datatable._sync-lists th:nth-child(3), .datatable._sync-lists td:nth-child(3) {
+    .datatable._sync-lists th:nth-child(3),
+    .datatable._sync-lists td:nth-child(3) {
       width: 18% !important; }
-    .datatable._sync-lists th:nth-child(4), .datatable._sync-lists td:nth-child(4) {
+    .datatable._sync-lists th:nth-child(4),
+    .datatable._sync-lists td:nth-child(4) {
       width: 16% !important; }
-    .datatable._sync-lists th:nth-child(5), .datatable._sync-lists td:nth-child(5) {
+    .datatable._sync-lists th:nth-child(5),
+    .datatable._sync-lists td:nth-child(5) {
       width: 11% !important; } }
   @media (max-width: 576px) {
-    .datatable._sync-lists th:first-child, .datatable._sync-lists td:first-child {
+    .datatable._sync-lists th:first-child,
+    .datatable._sync-lists td:first-child {
       max-width: 200px; } }
   .datatable._fields {
     table-layout: auto; }
-    .datatable._fields th:first-child, .datatable._fields td:first-child {
+    .datatable._fields th:first-child,
+    .datatable._fields td:first-child {
       width: 20.16% !important; }
-    .datatable._fields th:nth-child(2), .datatable._fields td:nth-child(2) {
+    .datatable._fields th:nth-child(2),
+    .datatable._fields td:nth-child(2) {
       width: 25.11% !important; }
-    .datatable._fields th:nth-child(3), .datatable._fields td:nth-child(3) {
+    .datatable._fields th:nth-child(3),
+    .datatable._fields td:nth-child(3) {
       width: 15.38% !important; }
-    .datatable._fields th:nth-child(4), .datatable._fields td:nth-child(4) {
+    .datatable._fields th:nth-child(4),
+    .datatable._fields td:nth-child(4) {
       width: 15.22% !important;
       text-align: right; }
-    .datatable._fields th:nth-child(5), .datatable._fields td:nth-child(5) {
+    .datatable._fields th:nth-child(5),
+    .datatable._fields td:nth-child(5) {
       width: 12.065% !important;
       text-align: center; }
-    .datatable._fields th:nth-child(6), .datatable._fields td:nth-child(6) {
+    .datatable._fields th:nth-child(6),
+    .datatable._fields td:nth-child(6) {
       width: 12.065% !important;
-      padding-right: 15px; }
+      padding-right: 15px;
+      overflow: visible; }
   .datatable__wrap table.dataTable thead th,
   .datatable__wrap table.dataTable thead td {
     padding: 1px;
@@ -9141,6 +9162,9 @@ div.dataTables_wrapper div.dataTables_info {
 
 .show-assigned tbody tr:not(.assigned) {
   display: none; }
+
+.datatable._fields td.table-confirm-show .confirm__wrap {
+  height: 82px; }
 
 @media (max-width: 1124px) {
   .navbar-search {

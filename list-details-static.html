@@ -3026,6 +3026,15 @@
 
     <script>
       // Datatable settings and initialisation
+      const DEFAULT_SELECT_OPTIONS = {
+        quality: [1, 2, 3, 4, 5],
+        status: ['active', 'passive'],
+        createdDate: [
+          { label: 'Last Week', value: 'week' },
+          { label: 'Last Month', value: 'month' },
+          { label: 'Last Year', value: 'year' },
+        ],
+      };
       $(document).ready(function () {
         var table = createDataTable('#data-table', {}, true);
         var table2 = createDataTable('#data-table-2', {}, true);
