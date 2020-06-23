@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>All Pages | DirectIQ</title>
+    <title>Add Contacts | DirectIQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Direct IQ frontend development version" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -39,13 +39,11 @@
     />
     <meta name="theme-color" content="#ffffff" />
 
-
     <link
       href="assets/libs/select2/css/select2.min.css"
       rel="stylesheet"
       type="text/css"
     />
-
     <!-- App css -->
     <link
       href="assets/css/bootstrap.min.css"
@@ -79,8 +77,11 @@
             </div>
 
             <ol class="breadcrumbs">
+              <li class="breadcrumb-item">
+                <a href="./contacts-home-static.html">Contacts</a>
+              </li>
               <li class="breadcrumb-item active">
-                Home
+                Suppression Lists
                 <button class="btn_icon d-none d-md-inline ml-18">
                   <i class="add-to-fav-icon">
                     <svg
@@ -322,7 +323,6 @@
       <!-- end Topbar -->
 
       <!-- ========== Left Sidebar Start ========== -->
-
       <button class="hamburger hamburger--squeeze" id="ham" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
@@ -349,10 +349,10 @@
                 Home
               </span>
             </a>
-            <ul class="nav-items nav-expand-content active">
+            <ul class="nav-items nav-expand-content">
               <li class="nav-title">Home</li>
               <li class="nav-item">
-                <a class="nav-item-link active" href="./">
+                <a class="nav-item-link" href="./">
                   Home
                 </a>
               </li>
@@ -534,7 +534,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item nav-expand">
+          <li class="nav-item nav-expand active">
             <a class="nav-item-link nav-expand-link" href="#">
               <i>
                 <svg width="17.894" height="24">
@@ -548,43 +548,26 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Integrations</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
+                <a
+                  class="nav-item-link active"
+                  href="contact-integrations.html"
+                >
+                  Contact Integrations
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="social-media-integrations.html">
+                  Social Media Integrations
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-item-link" href="#">
-                  Test Item 2
+                  Plugins & Apps
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
+                  API
                 </a>
               </li>
             </ul>
@@ -724,7 +707,6 @@
           </button>
         </div>
       </nav>
-
       <!-- Left Sidebar End -->
 
       <!-- ============================================================== -->
@@ -735,178 +717,345 @@
         <div class="content">
           <!-- Start Content-->
           <div class="container-fluid">
-            <div class="card mb-0 mt-15">
-              <h3 class="mb-16">Pages</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="card mt-14 mb-50">
+                  <div class="d-sm-flex justify-content-between">
+                    <div class="mb-12 mb-sm-0">
+                      <h4 class="mt-n4">Suppression Lists (491 Contacts)</h4>
+                    </div>
+                    <a
+                      class="btn _lg _primary"
+                      href="add-suppression-lists.html"
+                    >
+                      Add Suppression List
+                    </a>
+                  </div>
+                </div>
 
-              <p class="sub-header">
-                All pages that are implemented or currently in progress.
-              </p>
+                <div class="connect__cards-wrap">
+                  <div class="card connect__cards-main">
+                    <div class="w-100">
+                      <table
+                        id="data-table-all-fields"
+                        class="datatable datatable_small _suppression-lists"
+                        style="width: 100%;"
+                      >
+                        <thead>
+                          <tr>
+                            <th>List Name</th>
+                            <th>List Size</th>
+                            <th>Upload Date</th>
+                            <th class="nosort">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <a
+                                href="suppression-list-details.html"
+                                class="link"
+                                >Supression List 4</a
+                              >
+                            </td>
+                            <td>
+                              157,912
+                            </td>
+                            <td>
+                              June 10, 2020
+                            </td>
+                            <td>
+                              <button
+                                class="btn _secondary _sync-list"
+                                data-toggle="modal"
+                                data-target="#edit-custom-field"
+                              >
+                                <svg width="7" height="7">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#edit"
+                                  ></use>
+                                </svg>
+                              </button>
 
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-static.html">My Lists</a>
-                (static)
-              </h4>
+                              <div class="confirm__wrap d-inline-block ml-7">
+                                <button
+                                  class="btn _primary _sync-list confirm__btn"
+                                >
+                                  <svg width="7" height="7.78">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#trashcan"
+                                    ></use>
+                                  </svg>
+                                </button>
 
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-ep.html">My Lists</a> (endpoint
-                integrated)
-              </h4>
+                                <div class="confirm__modal d-none" style="">
+                                  <div class="confirm__content">
+                                    <p class="confirm__text">
+                                      Are you sure you want to delete list?
+                                    </p>
+                                  </div>
+                                  <div class="d-flex">
+                                    <button class="btn _lg _secondary">
+                                      Nope
+                                    </button>
+                                    <button class="btn _lg _primary">
+                                      Sure
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a
+                                href="suppression-list-details.html"
+                                class="link"
+                                >Supression List 3</a
+                              >
+                            </td>
+                            <td>
+                              3
+                            </td>
+                            <td>
+                              Apr 8, 2020
+                            </td>
+                            <td>
+                              <button
+                                class="btn _secondary _sync-list"
+                                data-toggle="modal"
+                                data-target="#edit-custom-field"
+                              >
+                                <svg width="7" height="7">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#edit"
+                                  ></use>
+                                </svg>
+                              </button>
 
-              <h4 class="mb-16">
-                <a class="link" href="list-details-static.html">List Details</a>
-                (static)
-              </h4>
+                              <div class="confirm__wrap d-inline-block ml-7">
+                                <button
+                                  class="btn _primary _sync-list confirm__btn"
+                                >
+                                  <svg width="7" height="7.78">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#trashcan"
+                                    ></use>
+                                  </svg>
+                                </button>
 
-              <h4 class="mb-16">
-                <a class="link" href="list-details-ep.html">List Details</a>
-                (endpoint integrated)
-              </h4>
+                                <div class="confirm__modal d-none" style="">
+                                  <div class="confirm__content">
+                                    <p class="confirm__text">
+                                      Are you sure you want to delete list?
+                                    </p>
+                                  </div>
+                                  <div class="d-flex">
+                                    <button class="btn _lg _secondary">
+                                      Nope
+                                    </button>
+                                    <button class="btn _lg _primary">
+                                      Sure
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a
+                                href="suppression-list-details.html"
+                                class="link"
+                                >Supression List 2</a
+                              >
+                            </td>
+                            <td>
+                              9,536
+                            </td>
+                            <td>
+                              Sep 29, 2019
+                            </td>
+                            <td>
+                              <button
+                                class="btn _secondary _sync-list"
+                                data-toggle="modal"
+                                data-target="#edit-custom-field"
+                              >
+                                <svg width="7" height="7">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#edit"
+                                  ></use>
+                                </svg>
+                              </button>
 
-              <h4 class="mb-16">
-                <a class="link" href="contacts-home-static.html"
-                  >Contacts Home</a
-                >
-              </h4>
+                              <div class="confirm__wrap d-inline-block ml-7">
+                                <button
+                                  class="btn _primary _sync-list confirm__btn"
+                                >
+                                  <svg width="7" height="7.78">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#trashcan"
+                                    ></use>
+                                  </svg>
+                                </button>
 
-              <h4 class="mb-16">
-                <a class="link" href="contact-details.html">Contact Details</a>
-              </h4>
+                                <div class="confirm__modal d-none" style="">
+                                  <div class="confirm__content">
+                                    <p class="confirm__text">
+                                      Are you sure you want to delete list?
+                                    </p>
+                                  </div>
+                                  <div class="d-flex">
+                                    <button class="btn _lg _secondary">
+                                      Nope
+                                    </button>
+                                    <button class="btn _lg _primary">
+                                      Sure
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a
+                                href="suppression-list-details.html"
+                                class="link"
+                                >Supression List 1</a
+                              >
+                            </td>
+                            <td>
+                              10,974
+                            </td>
+                            <td>
+                              Dec 4, 2019
+                            </td>
+                            <td>
+                              <button
+                                class="btn _secondary _sync-list"
+                                data-toggle="modal"
+                                data-target="#edit-custom-field"
+                              >
+                                <svg width="7" height="7">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#edit"
+                                  ></use>
+                                </svg>
+                              </button>
 
-              <h4 class="mb-16">
-                <a class="link" href="add-contacts.html">Add Contacts</a>
-              </h4>
+                              <div class="confirm__wrap d-inline-block ml-7">
+                                <button
+                                  class="btn _primary _sync-list confirm__btn"
+                                >
+                                  <svg width="7" height="7.78">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#trashcan"
+                                    ></use>
+                                  </svg>
+                                </button>
 
-              <h4 class="mb-16">
-                <a class="link" href="form-validation-examples.html"
-                  >Form Validation Example</a
-                >
-              </h4>
+                                <div class="confirm__modal d-none" style="">
+                                  <div class="confirm__content">
+                                    <p class="confirm__text">
+                                      Are you sure you want to delete list?
+                                    </p>
+                                  </div>
+                                  <div class="d-flex">
+                                    <button class="btn _lg _secondary">
+                                      Nope
+                                    </button>
+                                    <button class="btn _lg _primary">
+                                      Sure
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a
+                                href="suppression-list-details.html"
+                                class="link"
+                                >Supression List 1</a
+                              >
+                            </td>
+                            <td>
+                              10,974
+                            </td>
+                            <td>
+                              Dec 4, 2019
+                            </td>
+                            <td>
+                              <button
+                                class="btn _secondary _sync-list"
+                                data-toggle="modal"
+                                data-target="#edit-custom-field"
+                              >
+                                <svg width="7" height="7">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#edit"
+                                  ></use>
+                                </svg>
+                              </button>
 
-              <h4 class="mb-16">
-                <a class="link" href="save-list-new-user.html">Save List</a>
-                (new user)
-              </h4>
+                              <div class="confirm__wrap d-inline-block ml-7">
+                                <button
+                                  class="btn _primary _sync-list confirm__btn"
+                                >
+                                  <svg width="7" height="7.78">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#trashcan"
+                                    ></use>
+                                  </svg>
+                                </button>
 
-              <h4 class="mb-16">
-                <a class="link" href="save-list-few-lists.html">Save List</a>
-                (select from few lists)
-              </h4>
+                                <div class="confirm__modal d-none" style="">
+                                  <div class="confirm__content">
+                                    <p class="confirm__text">
+                                      Are you sure you want to delete list?
+                                    </p>
+                                  </div>
+                                  <div class="d-flex">
+                                    <button class="btn _lg _secondary">
+                                      Nope
+                                    </button>
+                                    <button class="btn _lg _primary">
+                                      Sure
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="save-list-many-lists.html">Save List</a>
-                (select from many lists)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="confirm-modals.html"
-                  >Confirmation Modals</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="import-from-other-service.html"
-                  >Add Contacts</a
-                >
-                (import from other service)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="connect-service-not-connected.html"
-                  >Add Contacts</a
-                >
-                (import from other service - not connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="toggle-columns.html"
-                  >Toggle Columns Modal</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations.html"
-                  >Contact Integrations</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-not-connected.html"
-                  >Contact Integrations</a
-                >
-                (not connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-connected.html"
-                  >Contact Integrations</a
-                >
-                (connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a
-                  class="link"
-                  href="contact-integrations-connected-no-list.html"
-                  >Contact Integrations</a
-                >
-                (connected - no list)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="social-media-integrations.html"
-                  >Social Media Integrations</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="api.html">Integrations - API</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="confirmation.html"
-                  >Confirmation Notification</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="negative.html">Negative Notification</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments.html">Segments</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments-possible-fields.html"
-                  >Segments - Possible Fields</a
-                >
-              </h4>
-
-              <h4 class="mb-16"><a class="link" href="tags.html">Tags</a></h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="plugins-and-apps.html"
-                  >Integrations - Plugins & Apps</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-fields.html">Contacts - Fields</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="suppression-lists.html"
-                  >Contacts - Suppression Lists</a
-                >
-              </h4>
-
-              <hr />
-
-              <h4 class="mb-16">
-                <a class="link" href="list-details-new-table.html"
-                  >Custom Table</a
-                >
-              </h4>
+                  <div class="connect__cards-aside">
+                    <div class="card connect__card-aside">
+                      <i class="mb-22">
+                        <svg width="49.883" height="50">
+                          <use
+                            xlink:href="assets/images/sprite.svg#cat-epic"
+                          ></use>
+                        </svg>
+                      </i>
+                      <h5 class="mb-5">What is a Suppression Lists?</h5>
+                      <p
+                        class="font-12 color-secondary font-weight-medium mb-21"
+                      >
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        sed diam nonumy eirmod.
+                      </p>
+                      <button class="btn _sm _secondary">Learn More</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- container -->
@@ -923,16 +1072,96 @@
           <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
         </svg>
       </a>
-    </div>
 
+      <div
+        id="edit-custom-field"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+        style="display: none;"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              <svg width="8" height="8">
+                <use xlink:href="assets/images/sprite.svg#cross"></use>
+              </svg>
+            </button>
+            <div class="modal-body">
+              <h4 class="mb-13">Rename Suppression List</h4>
+              <div class="form-control__wrap mb-20">
+                <input
+                  type="text"
+                  placeholder="Name Your List"
+                  class="form-control"
+                  value="Old Name"
+                />
+              </div>
+              <button class="btn _lg _primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.modal -->
+    </div>
     <!-- END wrapper -->
 
-    <!-- Vendor js -->
+    <!-- App js -->
     <script src="assets/js/vendor.min.js"></script>
 
+    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="assets/libs/select2/js/select2.min.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/dataTable.js"></script>
+
+    <script>
+      // Datatables settings
+
+      const DEFAULT_SELECT_OPTIONS = {
+        quality: [1, 2, 3, 4, 5],
+        status: ['active', 'passive'],
+        createdDate: [
+          { label: 'Last Week', value: 'week' },
+          { label: 'Last Month', value: 'month' },
+          { label: 'Last Year', value: 'year' },
+        ],
+      };
+
+      $(document).ready(function () {
+        const tableConfig = {
+          scrollX: true,
+          scrollY: 127,
+          scrollCollapse: true,
+          paging: false,
+          order: [[2, 'desc']],
+          aoColumnDefs: [
+            {
+              bSortable: false,
+              aTargets: ['nosort'],
+            },
+          ],
+          sDom: 't',
+        };
+        const select2Options = {
+          placeholder: 'Select Data Type',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createDataTable('#data-table-all-fields', tableConfig, false);
+        createDataTable('#data-table-custom-fields', tableConfig, false);
+        createSelect2ByClass('._select2-lg', select2Options);
+      });
+    </script>
   </body>
 </html>
