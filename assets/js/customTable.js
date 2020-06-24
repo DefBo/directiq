@@ -667,14 +667,20 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
 
     for (const column of fetchedData.columns) {
       const th = document.createElement('th');
+      const isSearchEnabled = COLUMN_WITHOUT_SEARCH.every(
+        (item) => column.name !== item
+      );
       if (
-        Object.keys(DEFAULT_SELECT_OPTIONS).some((item) => column.name === item)
+        Object.keys(DEFAULT_SELECT_OPTIONS).some(
+          (item) => column.name === item
+        ) &&
+        isSearchEnabled
       ) {
         generateSearchSelect(column, th, false, true);
-      } else if (column.name === 'tags') {
+      } else if (column.name === 'tags' && isSearchEnabled) {
         // eslint-disable-next-line no-await-in-loop
         await generateMultipleSelect(column, th, TAGS_API);
-      } else if (COLUMN_WITHOUT_SEARCH.every((item) => column.name !== item)) {
+      } else if (isSearchEnabled) {
         const input = document.createElement('input');
         input.classList.add('filter-input');
         input.placeholder = `Search`;
@@ -715,18 +721,28 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
   let table = null;
 
   if (createFromForm) {
-    const button = document.querySelector(createFromForm.button);
-    button.addEventListener('click', async () => {
-      if (table) {
-        filterTable();
-      } else {
-        if (tableWrapper) {
-          tableWrapper.classList.add('loading');
+    const {
+      button: buttonSelector,
+      buttonSave: buttonSaveSelector,
+    } = createFromForm;
+    const button = document.querySelector(buttonSelector);
+    const buttonSave = document.querySelector(buttonSaveSelector);
+    if (button) {
+      button.addEventListener('click', async () => {
+        if (table) {
+          filterTable();
+        } else {
+          if (tableWrapper) {
+            tableWrapper.classList.add('loading');
+          }
+          await generateTable();
+          if (buttonSave) {
+            buttonSave.innerHTML = `${buttonSave.innerHTML} (${fetchedData.totalCount})`;
+          }
+          addCustomSettingsToTable();
         }
-        await generateTable();
-        addCustomSettingsToTable();
-      }
-    });
+      });
+    }
   } else {
     if (tableWrapper) {
       tableWrapper.classList.add('loading');
@@ -915,8 +931,6 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
       });
     }
 
-    // adjustDataTableColumns();
-
     $('.datatable._contact-details-lists input:checkbox').change(function () {
       if ($(this).is(':checked')) {
         $(this).closest('tr').addClass('_active');
@@ -955,6 +969,7 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
     });
 
     setDataTableActions(table);
+    adjustDataTableColumns();
   };
   if (table) addCustomSettingsToTable();
 };

@@ -864,13 +864,15 @@
                             <div class="row pr-46">
                               <div class="col-md-3">
                                 <select
-                                  class="form-control _select2-lg"
+                                  class="form-control _select2-lg _quality"
                                   name="field1"
                                   required
                                 >
-                                  <option></option>
-                                  <option value="test-1">Option 1</option>
-                                  <option value="test-2">Option 2</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
                                 </select>
                               </div>
                               <div class="col-md-3 field-filter-container">
@@ -1239,7 +1241,17 @@
           minimumResultsForSearch: -1,
         };
 
+        const select2QualityOptions = {
+          placeholder: {
+            id: -1,
+            text: 'Select Quality',
+          },
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
         createSelect2ByClass('._select2-lg', select2Options);
+        createSelect2ByClass('._select2-lg._quality', select2QualityOptions);
       });
     </script>
   </body>

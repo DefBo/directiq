@@ -1116,12 +1116,13 @@ function adjustDataTableColumns() {
     $($.fn.dataTable.tables({ visible: true }))
       .DataTable()
       .columns.adjust();
-    if ($($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns) {
-      $($.fn.dataTable.tables({ visible: true }))
-        .DataTable()
-        .fixedColumns()
-        .relayout();
-    }
+    // not need now because all tables create not in tabs but in another page
+    // if ($($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns) {
+    //   $($.fn.dataTable.tables({ visible: true }))
+    //     .DataTable()
+    //     .fixedColumns()
+    //     .relayout();
+    // }
     addWithScrollTable();
   }
 }
@@ -1317,6 +1318,10 @@ $(document).ready(function () {
     $('.hamburger').addClass('_with-overlay');
   });
 
+  $('.btn_icon._fav').click(function () {
+    $(this).toggleClass('active');
+  });
+
   $(document).click(function (event) {
     $target = $(event.target);
 
@@ -1497,15 +1502,33 @@ const setDataTableActions = (table) => {
         $(tableWrapper).find('td input[type=checkbox]').prop('checked', false);
       }
     });
+
+  $(tableWrapper)
+    .find('tr .confirm__btn')
+    .click(function () {
+      const modal = $(this).next('.confirm__modal');
+      const isElementInView = Utils.isElementInView(modal, true);
+      const modalParentTable = $(this).closest('.dataTables_scrollBody');
+
+      modal.removeClass('d-none');
+      if (!isElementInView && modalParentTable.length === 0) {
+        $(this)[0].nextElementSibling.scrollIntoView({
+          block: 'end',
+          behavior: 'smooth',
+        });
+      }
+
+      if (modalParentTable.length > 0) {
+        $(this).closest('td').addClass('table-confirm-show');
+      }
+
+      $(document).on('click', '.confirm__btn', function (e) {
+        e.stopPropagation();
+      });
+    });
 };
 
 const createSelect2ByClass = (className, selectOptions) => {
-  if ($(className).length > 0) {
-    $(className).each(function () {
-      $(this).select2(selectOptions);
-    });
-  }
-
   if (/_quality/.test(className) && $(className).length > 0) {
     let QUALITY_OPTIONS = [1, 2, 3, 4, 5];
 
@@ -1562,6 +1585,10 @@ const createSelect2ByClass = (className, selectOptions) => {
       escapeMarkup(markup) {
         return markup;
       },
+    });
+  } else if ($(className).length > 0) {
+    $(className).each(function () {
+      $(this).select2(selectOptions);
     });
   }
 

@@ -783,8 +783,8 @@
                       <div
                         class="d-flex justify-content-between align-items-center"
                       >
-                        <div class="d-flex">
-                          <div class="d-flex align-items-center mr-30">
+                        <div class="d-flex flex-wrap">
+                          <div class="templates__filter">
                             <span
                               class="font-12 font-weight-bold text-nowrap mr-12"
                               >Filter by Tags</span
@@ -795,7 +795,7 @@
                               <option value="test-2">Option 2</option>
                             </select>
                           </div>
-                          <div class="d-flex align-items-center mr-30">
+                          <div class="templates__filter">
                             <span
                               class="font-12 font-weight-bold text-nowrap mr-12"
                               >Sort Order</span
@@ -808,7 +808,7 @@
                               <option value="test-2">Old to New</option>
                             </select>
                           </div>
-                          <div class="d-flex align-items-center mr-30">
+                          <div class="templates__filter">
                             <span
                               class="font-12 font-weight-bold text-nowrap mr-12"
                               >Template Name</span
@@ -832,7 +832,11 @@
 
                     <div class="templates">
                       <div class="templates__item">
-                        <div class="templates__item-preview">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
                           <img
                             src="assets/images/template-1.jpg"
                             alt="Template Preview"
@@ -923,10 +927,34 @@
                             </div>
                           </div>
                         </div>
+                        <div class="templates__item-tags">
+                          <div class="templates__item-type">
+                            <svg width="9.2" height="9.2">
+                              <use
+                                xlink:href="assets/images/sprite.svg#drag-n-drop"
+                              ></use>
+                            </svg>
+                            Drag'n Drop
+                          </div>
+                          <div class="btn _sm _tag-del">
+                            vip
+                            <button class="btn_icon ml-11">
+                              <svg width="8" height="8">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#cross"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="templates__item">
-                        <div class="templates__item-preview">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
                           <img
                             src="assets/images/template-2.jpg"
                             alt="Template Preview"
@@ -951,7 +979,7 @@
                                 ></use>
                               </svg>
                             </button>
-                            <button class="btn_icon ml-6 _fav selected">
+                            <button class="btn_icon ml-6 _fav active">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="28.384"
@@ -1017,10 +1045,24 @@
                             </div>
                           </div>
                         </div>
+                        <div class="templates__item-tags">
+                          <div class="templates__item-type">
+                            <svg width="9.2" height="9.2">
+                              <use
+                                xlink:href="assets/images/sprite.svg#drag-n-drop"
+                              ></use>
+                            </svg>
+                            Drag'n Drop
+                          </div>
+                        </div>
                       </div>
 
                       <div class="templates__item">
-                        <div class="templates__item-preview">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
                           <img
                             src="assets/images/template-3.jpg"
                             alt="Template Preview"
@@ -1111,10 +1153,44 @@
                             </div>
                           </div>
                         </div>
+                        <div class="templates__item-tags">
+                          <div class="templates__item-type">
+                            <svg width="9.2" height="9.2">
+                              <use
+                                xlink:href="assets/images/sprite.svg#drag-n-drop"
+                              ></use>
+                            </svg>
+                            Drag'n Drop
+                          </div>
+                          <div class="btn _sm _tag-del">
+                            vip
+                            <button class="btn_icon ml-11">
+                              <svg width="8" height="8">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#cross"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="btn _sm _tag-del">
+                            weekly
+                            <button class="btn_icon ml-11">
+                              <svg width="8" height="8">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#cross"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="templates__item">
-                        <div class="templates__item-preview">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
                           <img
                             src="assets/images/template-4.jpg"
                             alt="Template Preview"
@@ -1139,7 +1215,7 @@
                                 ></use>
                               </svg>
                             </button>
-                            <button class="btn_icon ml-6 _fav">
+                            <button class="btn_icon ml-6 _fav active">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="28.384"
@@ -1205,10 +1281,34 @@
                             </div>
                           </div>
                         </div>
+                        <div class="templates__item-tags">
+                          <div class="templates__item-type">
+                            <svg width="10.002" height="8">
+                              <use
+                                xlink:href="assets/images/sprite.svg#code"
+                              ></use>
+                            </svg>
+                            HTML
+                          </div>
+                          <div class="btn _sm _tag-del">
+                            weekly
+                            <button class="btn_icon ml-11">
+                              <svg width="8" height="8">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#cross"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="templates__item">
-                        <div class="templates__item-preview">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
                           <img
                             src="assets/images/template-5.jpg"
                             alt="Template Preview"
@@ -1299,20 +1399,779 @@
                             </div>
                           </div>
                         </div>
+                        <div class="templates__item-tags">
+                          <div class="templates__item-type">
+                            <svg width="9.2" height="9.2">
+                              <use
+                                xlink:href="assets/images/sprite.svg#drag-n-drop"
+                              ></use>
+                            </svg>
+                            Drag'n Drop
+                          </div>
+                        </div>
                       </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-40">
+                      <button class="btn _secondary _lg _wide">
+                        Load More
+                      </button>
                     </div>
                   </div>
 
                   <div class="tab-pane" id="recently-used-templates">
-                    2
+                    <div class="card _templates-filter">
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="d-flex flex-wrap">
+                          <div class="templates__filter">
+                            <span
+                              class="font-12 font-weight-bold text-nowrap mr-12"
+                              >Filter by Tags</span
+                            >
+                            <select class="form-control _select2-lg" required>
+                              <option></option>
+                              <option value="test-1">Option 1</option>
+                              <option value="test-2">Option 2</option>
+                            </select>
+                          </div>
+                          <div class="templates__filter">
+                            <span
+                              class="font-12 font-weight-bold text-nowrap mr-12"
+                              >Sort Order</span
+                            >
+                            <select class="form-control _select2-lg" required>
+                              <option></option>
+                              <option value="test-1" selected
+                                >New to Old</option
+                              >
+                              <option value="test-2">Old to New</option>
+                            </select>
+                          </div>
+                          <div class="templates__filter">
+                            <span
+                              class="font-12 font-weight-bold text-nowrap mr-12"
+                              >Template Name</span
+                            >
+                            <input
+                              type="text"
+                              placeholder="Start Typing"
+                              class="form-control"
+                            />
+                          </div>
+                        </div>
+                        <button class="btn _sm _secondary _check">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="templates">
+                      <div class="templates__item">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
+                          <img
+                            src="assets/images/template-1.jpg"
+                            alt="Template Preview"
+                          />
+                        </div>
+                        <div class="templates__item-name">
+                          Happy New Year
+                        </div>
+                        <div class="templates__item-buttons">
+                          <div>
+                            <button class="btn _sm _secondary _check ml-10">
+                              <svg width="14" height="8.75">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#eye"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn _sm _secondary _check">
+                              <svg width="11" height="11">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#edit"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn_icon ml-6 _fav">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="28.384"
+                                height="26.04232"
+                                viewBox="0 0 32 29.36"
+                              >
+                                <g
+                                  class="fav-body"
+                                  transform="translate(-3 -4.5)"
+                                  fill="#B6FFE8"
+                                >
+                                  <path
+                                    d="M 19.00127792358398 33.18501281738281 L 17.0165901184082 31.37826156616211 L 16.99559020996094 31.35921287536621 C 8.868840217590332 23.98991203308105 3.5 19.1214714050293 3.5 13.3000020980835 C 3.5 8.645792007446289 7.145790100097656 5.000002384185791 11.80000019073486 5.000002384185791 C 14.38070964813232 5.000002384185791 16.92999076843262 6.184362411499023 18.61931991577148 8.168171882629395 L 19 8.615201950073242 L 19.38068008422852 8.168171882629395 C 21.07000923156738 6.184362411499023 23.61928939819336 5.000002384185791 26.20000076293945 5.000002384185791 C 30.85420989990234 5.000002384185791 34.5 8.645792007446289 34.5 13.3000020980835 C 34.5 19.11129188537598 29.1480598449707 23.97477149963379 21.04689979553223 31.33656311035156 L 20.98373985290527 31.39396286010742 L 19.00127792358398 33.18501281738281 Z"
+                                    stroke="none"
+                                  />
+                                  <path
+                                    class="fav-border"
+                                    d="M 19.00255584716797 32.5100212097168 L 20.64747047424316 31.0239315032959 L 20.71063995361328 30.96653175354004 C 28.71319961547852 23.69433212280273 34 18.89004135131836 34 13.3000020980835 C 34 8.926172256469727 30.57382965087891 5.500002384185791 26.20000076293945 5.500002384185791 C 23.76390075683594 5.500002384185791 21.35692977905273 6.618632316589355 19.76135063171387 8.492341995239258 L 19 9.386402130126953 L 18.23864936828613 8.492341995239258 C 16.64307022094727 6.618632316589355 14.23610019683838 5.500002384185791 11.80000019073486 5.500002384185791 C 7.426169872283936 5.500002384185791 4 8.926172256469727 4 13.3000020980835 C 4 18.89991188049316 9.303540229797363 23.70914268493652 17.33146095275879 30.98882293701172 L 17.35317993164062 31.00852203369141 L 19.00255584716797 32.5100212097168 M 19 33.86000061035156 L 16.68000030517578 31.74800300598145 C 8.439999580383301 24.27600288391113 3 19.34800148010254 3 13.3000020980835 C 3 8.372002601623535 6.872000217437744 4.500002384185791 11.80000019073486 4.500002384185791 C 14.58399963378906 4.500002384185791 17.25600051879883 5.796002388000488 19 7.844002246856689 C 20.74399948120117 5.796002388000488 23.41599082946777 4.500002384185791 26.20000076293945 4.500002384185791 C 31.12800025939941 4.500002384185791 35 8.372002601623535 35 13.3000020980835 C 35 19.34800148010254 29.55999946594238 24.27600288391113 21.31999969482422 31.76400184631348 L 19 33.86000061035156 Z"
+                                    stroke="none"
+                                    fill="none"
+                                  />
+                                </g>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="dropdown _more">
+                            <a
+                              class="dropdown-toggle _more"
+                              data-toggle="dropdown"
+                              href="#"
+                              role="button"
+                              aria-haspopup="false"
+                              aria-expanded="false"
+                            >
+                              <svg width="5.8" height="25">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#more-dots"
+                                ></use>
+                              </svg>
+                            </a>
+
+                            <div
+                              class="dropdown-menu dropdown-menu-right _actions mt-3"
+                              aria-labelledby="moreMenuButton"
+                            >
+                              <div class="dropdown-menu-inner">
+                                <a class="dropdown-item" href="#">Duplicate</a>
+                                <a class="dropdown-item" href="#"
+                                  >Send Campaign</a
+                                >
+                                <a class="dropdown-item" href="#">Send Test</a>
+                                <a class="dropdown-item" href="#"
+                                  >Inbox Preview</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                  >Spam Doctor</a
+                                >
+                                <a class="dropdown-item" href="#">Add Tag</a>
+                                <a class="dropdown-item" href="#">Archive</a>
+                                <a class="dropdown-item" href="#">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="templates__item-tags">
+                          <div class="templates__item-type">
+                            <svg width="9.2" height="9.2">
+                              <use
+                                xlink:href="assets/images/sprite.svg#drag-n-drop"
+                              ></use>
+                            </svg>
+                            Drag'n Drop
+                          </div>
+                          <div class="btn _sm _tag-del">
+                            vip
+                            <button class="btn_icon ml-11">
+                              <svg width="8" height="8">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#cross"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="templates__item">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
+                          <img
+                            src="assets/images/template-3.jpg"
+                            alt="Template Preview"
+                          />
+                        </div>
+                        <div class="templates__item-name">
+                          Film Festival
+                        </div>
+                        <div class="templates__item-buttons">
+                          <div>
+                            <button class="btn _sm _secondary _check ml-10">
+                              <svg width="14" height="8.75">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#eye"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn _sm _secondary _check">
+                              <svg width="11" height="11">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#edit"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn_icon ml-6 _fav">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="28.384"
+                                height="26.04232"
+                                viewBox="0 0 32 29.36"
+                              >
+                                <g
+                                  class="fav-body"
+                                  transform="translate(-3 -4.5)"
+                                  fill="#B6FFE8"
+                                >
+                                  <path
+                                    d="M 19.00127792358398 33.18501281738281 L 17.0165901184082 31.37826156616211 L 16.99559020996094 31.35921287536621 C 8.868840217590332 23.98991203308105 3.5 19.1214714050293 3.5 13.3000020980835 C 3.5 8.645792007446289 7.145790100097656 5.000002384185791 11.80000019073486 5.000002384185791 C 14.38070964813232 5.000002384185791 16.92999076843262 6.184362411499023 18.61931991577148 8.168171882629395 L 19 8.615201950073242 L 19.38068008422852 8.168171882629395 C 21.07000923156738 6.184362411499023 23.61928939819336 5.000002384185791 26.20000076293945 5.000002384185791 C 30.85420989990234 5.000002384185791 34.5 8.645792007446289 34.5 13.3000020980835 C 34.5 19.11129188537598 29.1480598449707 23.97477149963379 21.04689979553223 31.33656311035156 L 20.98373985290527 31.39396286010742 L 19.00127792358398 33.18501281738281 Z"
+                                    stroke="none"
+                                  />
+                                  <path
+                                    class="fav-border"
+                                    d="M 19.00255584716797 32.5100212097168 L 20.64747047424316 31.0239315032959 L 20.71063995361328 30.96653175354004 C 28.71319961547852 23.69433212280273 34 18.89004135131836 34 13.3000020980835 C 34 8.926172256469727 30.57382965087891 5.500002384185791 26.20000076293945 5.500002384185791 C 23.76390075683594 5.500002384185791 21.35692977905273 6.618632316589355 19.76135063171387 8.492341995239258 L 19 9.386402130126953 L 18.23864936828613 8.492341995239258 C 16.64307022094727 6.618632316589355 14.23610019683838 5.500002384185791 11.80000019073486 5.500002384185791 C 7.426169872283936 5.500002384185791 4 8.926172256469727 4 13.3000020980835 C 4 18.89991188049316 9.303540229797363 23.70914268493652 17.33146095275879 30.98882293701172 L 17.35317993164062 31.00852203369141 L 19.00255584716797 32.5100212097168 M 19 33.86000061035156 L 16.68000030517578 31.74800300598145 C 8.439999580383301 24.27600288391113 3 19.34800148010254 3 13.3000020980835 C 3 8.372002601623535 6.872000217437744 4.500002384185791 11.80000019073486 4.500002384185791 C 14.58399963378906 4.500002384185791 17.25600051879883 5.796002388000488 19 7.844002246856689 C 20.74399948120117 5.796002388000488 23.41599082946777 4.500002384185791 26.20000076293945 4.500002384185791 C 31.12800025939941 4.500002384185791 35 8.372002601623535 35 13.3000020980835 C 35 19.34800148010254 29.55999946594238 24.27600288391113 21.31999969482422 31.76400184631348 L 19 33.86000061035156 Z"
+                                    stroke="none"
+                                    fill="none"
+                                  />
+                                </g>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="dropdown _more">
+                            <a
+                              class="dropdown-toggle _more"
+                              data-toggle="dropdown"
+                              href="#"
+                              role="button"
+                              aria-haspopup="false"
+                              aria-expanded="false"
+                            >
+                              <svg width="5.8" height="25">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#more-dots"
+                                ></use>
+                              </svg>
+                            </a>
+
+                            <div
+                              class="dropdown-menu dropdown-menu-right _actions mt-3"
+                              aria-labelledby="moreMenuButton"
+                            >
+                              <div class="dropdown-menu-inner">
+                                <a class="dropdown-item" href="#">Duplicate</a>
+                                <a class="dropdown-item" href="#"
+                                  >Send Campaign</a
+                                >
+                                <a class="dropdown-item" href="#">Send Test</a>
+                                <a class="dropdown-item" href="#"
+                                  >Inbox Preview</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                  >Spam Doctor</a
+                                >
+                                <a class="dropdown-item" href="#">Add Tag</a>
+                                <a class="dropdown-item" href="#">Archive</a>
+                                <a class="dropdown-item" href="#">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="templates__item-tags">
+                          <div class="templates__item-type">
+                            <svg width="9.2" height="9.2">
+                              <use
+                                xlink:href="assets/images/sprite.svg#drag-n-drop"
+                              ></use>
+                            </svg>
+                            Drag'n Drop
+                          </div>
+                          <div class="btn _sm _tag-del">
+                            vip
+                            <button class="btn_icon ml-11">
+                              <svg width="8" height="8">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#cross"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="btn _sm _tag-del">
+                            weekly
+                            <button class="btn_icon ml-11">
+                              <svg width="8" height="8">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#cross"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="templates__item">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
+                          <img
+                            src="assets/images/template-4.jpg"
+                            alt="Template Preview"
+                          />
+                        </div>
+                        <div class="templates__item-name">
+                          E-Commerce
+                        </div>
+                        <div class="templates__item-buttons">
+                          <div>
+                            <button class="btn _sm _secondary _check ml-10">
+                              <svg width="14" height="8.75">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#eye"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn _sm _secondary _check">
+                              <svg width="11" height="11">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#edit"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn_icon ml-6 _fav active">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="28.384"
+                                height="26.04232"
+                                viewBox="0 0 32 29.36"
+                              >
+                                <g
+                                  class="fav-body"
+                                  transform="translate(-3 -4.5)"
+                                  fill="#B6FFE8"
+                                >
+                                  <path
+                                    d="M 19.00127792358398 33.18501281738281 L 17.0165901184082 31.37826156616211 L 16.99559020996094 31.35921287536621 C 8.868840217590332 23.98991203308105 3.5 19.1214714050293 3.5 13.3000020980835 C 3.5 8.645792007446289 7.145790100097656 5.000002384185791 11.80000019073486 5.000002384185791 C 14.38070964813232 5.000002384185791 16.92999076843262 6.184362411499023 18.61931991577148 8.168171882629395 L 19 8.615201950073242 L 19.38068008422852 8.168171882629395 C 21.07000923156738 6.184362411499023 23.61928939819336 5.000002384185791 26.20000076293945 5.000002384185791 C 30.85420989990234 5.000002384185791 34.5 8.645792007446289 34.5 13.3000020980835 C 34.5 19.11129188537598 29.1480598449707 23.97477149963379 21.04689979553223 31.33656311035156 L 20.98373985290527 31.39396286010742 L 19.00127792358398 33.18501281738281 Z"
+                                    stroke="none"
+                                  />
+                                  <path
+                                    class="fav-border"
+                                    d="M 19.00255584716797 32.5100212097168 L 20.64747047424316 31.0239315032959 L 20.71063995361328 30.96653175354004 C 28.71319961547852 23.69433212280273 34 18.89004135131836 34 13.3000020980835 C 34 8.926172256469727 30.57382965087891 5.500002384185791 26.20000076293945 5.500002384185791 C 23.76390075683594 5.500002384185791 21.35692977905273 6.618632316589355 19.76135063171387 8.492341995239258 L 19 9.386402130126953 L 18.23864936828613 8.492341995239258 C 16.64307022094727 6.618632316589355 14.23610019683838 5.500002384185791 11.80000019073486 5.500002384185791 C 7.426169872283936 5.500002384185791 4 8.926172256469727 4 13.3000020980835 C 4 18.89991188049316 9.303540229797363 23.70914268493652 17.33146095275879 30.98882293701172 L 17.35317993164062 31.00852203369141 L 19.00255584716797 32.5100212097168 M 19 33.86000061035156 L 16.68000030517578 31.74800300598145 C 8.439999580383301 24.27600288391113 3 19.34800148010254 3 13.3000020980835 C 3 8.372002601623535 6.872000217437744 4.500002384185791 11.80000019073486 4.500002384185791 C 14.58399963378906 4.500002384185791 17.25600051879883 5.796002388000488 19 7.844002246856689 C 20.74399948120117 5.796002388000488 23.41599082946777 4.500002384185791 26.20000076293945 4.500002384185791 C 31.12800025939941 4.500002384185791 35 8.372002601623535 35 13.3000020980835 C 35 19.34800148010254 29.55999946594238 24.27600288391113 21.31999969482422 31.76400184631348 L 19 33.86000061035156 Z"
+                                    stroke="none"
+                                    fill="none"
+                                  />
+                                </g>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="dropdown _more">
+                            <a
+                              class="dropdown-toggle _more"
+                              data-toggle="dropdown"
+                              href="#"
+                              role="button"
+                              aria-haspopup="false"
+                              aria-expanded="false"
+                            >
+                              <svg width="5.8" height="25">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#more-dots"
+                                ></use>
+                              </svg>
+                            </a>
+
+                            <div
+                              class="dropdown-menu dropdown-menu-right _actions mt-3"
+                              aria-labelledby="moreMenuButton"
+                            >
+                              <div class="dropdown-menu-inner">
+                                <a class="dropdown-item" href="#">Duplicate</a>
+                                <a class="dropdown-item" href="#"
+                                  >Send Campaign</a
+                                >
+                                <a class="dropdown-item" href="#">Send Test</a>
+                                <a class="dropdown-item" href="#"
+                                  >Inbox Preview</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                  >Spam Doctor</a
+                                >
+                                <a class="dropdown-item" href="#">Add Tag</a>
+                                <a class="dropdown-item" href="#">Archive</a>
+                                <a class="dropdown-item" href="#">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="templates__item-tags">
+                          <div class="templates__item-type">
+                            <svg width="10.002" height="8">
+                              <use
+                                xlink:href="assets/images/sprite.svg#code"
+                              ></use>
+                            </svg>
+                            HTML
+                          </div>
+                          <div class="btn _sm _tag-del">
+                            weekly
+                            <button class="btn_icon ml-11">
+                              <svg width="8" height="8">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#cross"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <div class="tab-pane" id="favorite-templates">
-                    3
+                    <div class="card _templates-filter">
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="d-flex flex-wrap">
+                          <div class="templates__filter">
+                            <span
+                              class="font-12 font-weight-bold text-nowrap mr-12"
+                              >Filter by Tags</span
+                            >
+                            <select class="form-control _select2-lg" required>
+                              <option></option>
+                              <option value="test-1">Option 1</option>
+                              <option value="test-2">Option 2</option>
+                            </select>
+                          </div>
+                          <div class="templates__filter">
+                            <span
+                              class="font-12 font-weight-bold text-nowrap mr-12"
+                              >Sort Order</span
+                            >
+                            <select class="form-control _select2-lg" required>
+                              <option></option>
+                              <option value="test-1" selected
+                                >New to Old</option
+                              >
+                              <option value="test-2">Old to New</option>
+                            </select>
+                          </div>
+                          <div class="templates__filter">
+                            <span
+                              class="font-12 font-weight-bold text-nowrap mr-12"
+                              >Template Name</span
+                            >
+                            <input
+                              type="text"
+                              placeholder="Start Typing"
+                              class="form-control"
+                            />
+                          </div>
+                        </div>
+                        <button class="btn _sm _secondary _check">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="templates">
+                      <div class="templates__item">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
+                          <img
+                            src="assets/images/template-2.jpg"
+                            alt="Template Preview"
+                          />
+                        </div>
+                        <div class="templates__item-name">
+                          Crowdfunding
+                        </div>
+                        <div class="templates__item-buttons">
+                          <div>
+                            <button class="btn _sm _secondary _check ml-10">
+                              <svg width="14" height="8.75">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#eye"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn _sm _secondary _check">
+                              <svg width="11" height="11">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#edit"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn_icon ml-6 _fav active">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="28.384"
+                                height="26.04232"
+                                viewBox="0 0 32 29.36"
+                              >
+                                <g
+                                  class="fav-body"
+                                  transform="translate(-3 -4.5)"
+                                  fill="#B6FFE8"
+                                >
+                                  <path
+                                    d="M 19.00127792358398 33.18501281738281 L 17.0165901184082 31.37826156616211 L 16.99559020996094 31.35921287536621 C 8.868840217590332 23.98991203308105 3.5 19.1214714050293 3.5 13.3000020980835 C 3.5 8.645792007446289 7.145790100097656 5.000002384185791 11.80000019073486 5.000002384185791 C 14.38070964813232 5.000002384185791 16.92999076843262 6.184362411499023 18.61931991577148 8.168171882629395 L 19 8.615201950073242 L 19.38068008422852 8.168171882629395 C 21.07000923156738 6.184362411499023 23.61928939819336 5.000002384185791 26.20000076293945 5.000002384185791 C 30.85420989990234 5.000002384185791 34.5 8.645792007446289 34.5 13.3000020980835 C 34.5 19.11129188537598 29.1480598449707 23.97477149963379 21.04689979553223 31.33656311035156 L 20.98373985290527 31.39396286010742 L 19.00127792358398 33.18501281738281 Z"
+                                    stroke="none"
+                                  />
+                                  <path
+                                    class="fav-border"
+                                    d="M 19.00255584716797 32.5100212097168 L 20.64747047424316 31.0239315032959 L 20.71063995361328 30.96653175354004 C 28.71319961547852 23.69433212280273 34 18.89004135131836 34 13.3000020980835 C 34 8.926172256469727 30.57382965087891 5.500002384185791 26.20000076293945 5.500002384185791 C 23.76390075683594 5.500002384185791 21.35692977905273 6.618632316589355 19.76135063171387 8.492341995239258 L 19 9.386402130126953 L 18.23864936828613 8.492341995239258 C 16.64307022094727 6.618632316589355 14.23610019683838 5.500002384185791 11.80000019073486 5.500002384185791 C 7.426169872283936 5.500002384185791 4 8.926172256469727 4 13.3000020980835 C 4 18.89991188049316 9.303540229797363 23.70914268493652 17.33146095275879 30.98882293701172 L 17.35317993164062 31.00852203369141 L 19.00255584716797 32.5100212097168 M 19 33.86000061035156 L 16.68000030517578 31.74800300598145 C 8.439999580383301 24.27600288391113 3 19.34800148010254 3 13.3000020980835 C 3 8.372002601623535 6.872000217437744 4.500002384185791 11.80000019073486 4.500002384185791 C 14.58399963378906 4.500002384185791 17.25600051879883 5.796002388000488 19 7.844002246856689 C 20.74399948120117 5.796002388000488 23.41599082946777 4.500002384185791 26.20000076293945 4.500002384185791 C 31.12800025939941 4.500002384185791 35 8.372002601623535 35 13.3000020980835 C 35 19.34800148010254 29.55999946594238 24.27600288391113 21.31999969482422 31.76400184631348 L 19 33.86000061035156 Z"
+                                    stroke="none"
+                                    fill="none"
+                                  />
+                                </g>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="dropdown _more">
+                            <a
+                              class="dropdown-toggle _more"
+                              data-toggle="dropdown"
+                              href="#"
+                              role="button"
+                              aria-haspopup="false"
+                              aria-expanded="false"
+                            >
+                              <svg width="5.8" height="25">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#more-dots"
+                                ></use>
+                              </svg>
+                            </a>
+
+                            <div
+                              class="dropdown-menu dropdown-menu-right _actions mt-3"
+                              aria-labelledby="moreMenuButton"
+                            >
+                              <div class="dropdown-menu-inner">
+                                <a class="dropdown-item" href="#">Duplicate</a>
+                                <a class="dropdown-item" href="#"
+                                  >Send Campaign</a
+                                >
+                                <a class="dropdown-item" href="#">Send Test</a>
+                                <a class="dropdown-item" href="#"
+                                  >Inbox Preview</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                  >Spam Doctor</a
+                                >
+                                <a class="dropdown-item" href="#">Add Tag</a>
+                                <a class="dropdown-item" href="#">Archive</a>
+                                <a class="dropdown-item" href="#">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="templates__item-tags">
+                          <div class="templates__item-type">
+                            <svg width="9.2" height="9.2">
+                              <use
+                                xlink:href="assets/images/sprite.svg#drag-n-drop"
+                              ></use>
+                            </svg>
+                            Drag'n Drop
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="templates__item">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
+                          <img
+                            src="assets/images/template-4.jpg"
+                            alt="Template Preview"
+                          />
+                        </div>
+                        <div class="templates__item-name">
+                          E-Commerce
+                        </div>
+                        <div class="templates__item-buttons">
+                          <div>
+                            <button class="btn _sm _secondary _check ml-10">
+                              <svg width="14" height="8.75">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#eye"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn _sm _secondary _check">
+                              <svg width="11" height="11">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#edit"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn_icon ml-6 _fav active">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="28.384"
+                                height="26.04232"
+                                viewBox="0 0 32 29.36"
+                              >
+                                <g
+                                  class="fav-body"
+                                  transform="translate(-3 -4.5)"
+                                  fill="#B6FFE8"
+                                >
+                                  <path
+                                    d="M 19.00127792358398 33.18501281738281 L 17.0165901184082 31.37826156616211 L 16.99559020996094 31.35921287536621 C 8.868840217590332 23.98991203308105 3.5 19.1214714050293 3.5 13.3000020980835 C 3.5 8.645792007446289 7.145790100097656 5.000002384185791 11.80000019073486 5.000002384185791 C 14.38070964813232 5.000002384185791 16.92999076843262 6.184362411499023 18.61931991577148 8.168171882629395 L 19 8.615201950073242 L 19.38068008422852 8.168171882629395 C 21.07000923156738 6.184362411499023 23.61928939819336 5.000002384185791 26.20000076293945 5.000002384185791 C 30.85420989990234 5.000002384185791 34.5 8.645792007446289 34.5 13.3000020980835 C 34.5 19.11129188537598 29.1480598449707 23.97477149963379 21.04689979553223 31.33656311035156 L 20.98373985290527 31.39396286010742 L 19.00127792358398 33.18501281738281 Z"
+                                    stroke="none"
+                                  />
+                                  <path
+                                    class="fav-border"
+                                    d="M 19.00255584716797 32.5100212097168 L 20.64747047424316 31.0239315032959 L 20.71063995361328 30.96653175354004 C 28.71319961547852 23.69433212280273 34 18.89004135131836 34 13.3000020980835 C 34 8.926172256469727 30.57382965087891 5.500002384185791 26.20000076293945 5.500002384185791 C 23.76390075683594 5.500002384185791 21.35692977905273 6.618632316589355 19.76135063171387 8.492341995239258 L 19 9.386402130126953 L 18.23864936828613 8.492341995239258 C 16.64307022094727 6.618632316589355 14.23610019683838 5.500002384185791 11.80000019073486 5.500002384185791 C 7.426169872283936 5.500002384185791 4 8.926172256469727 4 13.3000020980835 C 4 18.89991188049316 9.303540229797363 23.70914268493652 17.33146095275879 30.98882293701172 L 17.35317993164062 31.00852203369141 L 19.00255584716797 32.5100212097168 M 19 33.86000061035156 L 16.68000030517578 31.74800300598145 C 8.439999580383301 24.27600288391113 3 19.34800148010254 3 13.3000020980835 C 3 8.372002601623535 6.872000217437744 4.500002384185791 11.80000019073486 4.500002384185791 C 14.58399963378906 4.500002384185791 17.25600051879883 5.796002388000488 19 7.844002246856689 C 20.74399948120117 5.796002388000488 23.41599082946777 4.500002384185791 26.20000076293945 4.500002384185791 C 31.12800025939941 4.500002384185791 35 8.372002601623535 35 13.3000020980835 C 35 19.34800148010254 29.55999946594238 24.27600288391113 21.31999969482422 31.76400184631348 L 19 33.86000061035156 Z"
+                                    stroke="none"
+                                    fill="none"
+                                  />
+                                </g>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="dropdown _more">
+                            <a
+                              class="dropdown-toggle _more"
+                              data-toggle="dropdown"
+                              href="#"
+                              role="button"
+                              aria-haspopup="false"
+                              aria-expanded="false"
+                            >
+                              <svg width="5.8" height="25">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#more-dots"
+                                ></use>
+                              </svg>
+                            </a>
+
+                            <div
+                              class="dropdown-menu dropdown-menu-right _actions mt-3"
+                              aria-labelledby="moreMenuButton"
+                            >
+                              <div class="dropdown-menu-inner">
+                                <a class="dropdown-item" href="#">Duplicate</a>
+                                <a class="dropdown-item" href="#"
+                                  >Send Campaign</a
+                                >
+                                <a class="dropdown-item" href="#">Send Test</a>
+                                <a class="dropdown-item" href="#"
+                                  >Inbox Preview</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                  >Spam Doctor</a
+                                >
+                                <a class="dropdown-item" href="#">Add Tag</a>
+                                <a class="dropdown-item" href="#">Archive</a>
+                                <a class="dropdown-item" href="#">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="templates__item-tags">
+                          <div class="templates__item-type">
+                            <svg width="10.002" height="8">
+                              <use
+                                xlink:href="assets/images/sprite.svg#code"
+                              ></use>
+                            </svg>
+                            HTML
+                          </div>
+                          <div class="btn _sm _tag-del">
+                            weekly
+                            <button class="btn_icon ml-11">
+                              <svg width="8" height="8">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#cross"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <div class="tab-pane" id="archived-templates">
-                    4
+                    <div class="card _templates-filter">
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="d-flex flex-wrap">
+                          <div class="templates__filter">
+                            <span
+                              class="font-12 font-weight-bold text-nowrap mr-12"
+                              >Filter by Tags</span
+                            >
+                            <select class="form-control _select2-lg" required>
+                              <option></option>
+                              <option value="test-1">Option 1</option>
+                              <option value="test-2">Option 2</option>
+                            </select>
+                          </div>
+                          <div class="templates__filter">
+                            <span
+                              class="font-12 font-weight-bold text-nowrap mr-12"
+                              >Sort Order</span
+                            >
+                            <select class="form-control _select2-lg" required>
+                              <option></option>
+                              <option value="test-1" selected
+                                >New to Old</option
+                              >
+                              <option value="test-2">Old to New</option>
+                            </select>
+                          </div>
+                          <div class="templates__filter">
+                            <span
+                              class="font-12 font-weight-bold text-nowrap mr-12"
+                              >Template Name</span
+                            >
+                            <input
+                              type="text"
+                              placeholder="Start Typing"
+                              class="form-control"
+                            />
+                          </div>
+                        </div>
+                        <button class="btn _sm _secondary _check">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="templates"></div>
                   </div>
                 </div>
               </div>
@@ -1334,8 +2193,8 @@
       </a>
 
       <div
-        id="create-custom-field"
-        class="modal fade"
+        id="template-preview"
+        class="modal fade _template-preview"
         tabindex="-1"
         role="dialog"
         aria-labelledby="myModalLabel"
@@ -1354,82 +2213,33 @@
                 <use xlink:href="assets/images/sprite.svg#cross"></use>
               </svg>
             </button>
+            <button class="btn_icon _arrow-left">
+              <svg width="30.874" height="50">
+                <use xlink:href="assets/images/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+            <button class="btn_icon _arrow-right">
+              <svg width="30.874" height="50">
+                <use xlink:href="assets/images/sprite.svg#arrow"></use>
+              </svg>
+            </button>
             <div class="modal-body">
-              <h4 class="mb-13">New Custom Field</h4>
-              <div class="new-field-inputs">
-                <div class="form-control__wrap">
-                  <input
-                    type="text"
-                    placeholder="Name Your Field"
-                    class="form-control"
-                  />
+              <div class="template-preview">
+                <div class="template-preview__header">
+                  Film Festival
                 </div>
-                <select class="form-control _select2-lg mb-14" required>
-                  <option></option>
-                  <option value="test-1">Campaign</option>
-                  <option value="test-2">Option 2</option>
-                </select>
-              </div>
-              <div class="switcher__wrap mb-20">
-                <label for="switch1" class="switcher__label">
-                  <span>Make this field public</span>
-                </label>
-                <input type="checkbox" id="switch1" class="switcher" checked />
-                <label for="switch1" class="switcher__toggle"></label>
-              </div>
-              <button class="btn _lg _primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.modal -->
 
-      <div
-        id="edit-custom-field"
-        class="modal fade"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myModalLabel"
-        aria-hidden="true"
-        style="display: none;"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-            >
-              <svg width="8" height="8">
-                <use xlink:href="assets/images/sprite.svg#cross"></use>
-              </svg>
-            </button>
-            <div class="modal-body">
-              <h4 class="mb-13">Edit Custom Field</h4>
-              <div class="new-field-inputs">
-                <div class="form-control__wrap">
-                  <input
-                    type="text"
-                    placeholder="Name Your Field"
-                    class="form-control"
-                    value="Custom Field Name"
+                <div class="template-preview__body">
+                  <img
+                    src="assets/images/template-preview.jpg"
+                    alt="Template Preview"
                   />
                 </div>
-                <select class="form-control _select2-lg mb-14" required>
-                  <option></option>
-                  <option value="test-1" selected>Text</option>
-                  <option value="test-2">Date</option>
-                </select>
               </div>
-              <div class="switcher__wrap mb-20">
-                <label for="switch3" class="switcher__label">
-                  <span>Make this field public</span>
-                </label>
-                <input type="checkbox" id="switch3" class="switcher" checked />
-                <label for="switch3" class="switcher__toggle"></label>
+
+              <div class="d-flex justify-content-center mt-20">
+                <button class="btn _lg _secondary">Edit Template</button>
               </div>
-              <button class="btn _lg _primary">Save</button>
             </div>
           </div>
         </div>
@@ -1441,8 +2251,6 @@
     <!-- App js -->
     <script src="assets/js/vendor.min.js"></script>
 
-    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="assets/libs/select2/js/select2.min.js"></script>
 
     <!-- App js -->
