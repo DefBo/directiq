@@ -1563,7 +1563,7 @@ const createSelect2ByClass = (className, selectOptions) => {
 
     qualitySelect.forEach((select) => {
       const defaultOption = document.createElement('option');
-      defaultOption.text = `Select Quality`;
+      defaultOption.text = `Select`;
       defaultOption.value = '';
       defaultOption.selected = true;
       select.options.add(defaultOption);

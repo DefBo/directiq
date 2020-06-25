@@ -8474,7 +8474,8 @@ body.nav-is-toggled:after {
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  padding: 2px 0; }
+  padding: 2px 0;
+  min-height: 44px; }
 
 .templates__item-tags {
   margin: 0 -5px;
@@ -8648,6 +8649,20 @@ body.nav-is-toggled:after {
     .template-preview__body {
       width: 90vw;
       height: calc(100% - 40px); } }
+
+.create-template__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #212b35; }
+  .create-template__link svg {
+    transition: 0.25s; }
+  .create-template__link:hover svg {
+    transform: translateY(10px); }
+  .create-template__link:hover .btn {
+    border-color: #0000ff;
+    background: #0000ff;
+    color: #fff; }
 
 th,
 td {

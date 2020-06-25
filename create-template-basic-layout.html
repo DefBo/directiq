@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>All Pages | DirectIQ</title>
+    <title>Add Contacts | DirectIQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Direct IQ frontend development version" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -39,13 +39,11 @@
     />
     <meta name="theme-color" content="#ffffff" />
 
-
     <link
       href="assets/libs/select2/css/select2.min.css"
       rel="stylesheet"
       type="text/css"
     />
-
     <!-- App css -->
     <link
       href="assets/css/bootstrap.min.css"
@@ -79,8 +77,11 @@
             </div>
 
             <ol class="breadcrumbs">
+              <li class="breadcrumb-item">
+                <a href="./templates.html">Templates</a>
+              </li>
               <li class="breadcrumb-item active">
-                Home
+                Create Template
                 <button class="btn_icon d-none d-md-inline ml-18">
                   <i class="add-to-fav-icon">
                     <svg
@@ -322,7 +323,6 @@
       <!-- end Topbar -->
 
       <!-- ========== Left Sidebar Start ========== -->
-
       <button class="hamburger hamburger--squeeze" id="ham" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
@@ -349,10 +349,10 @@
                 Home
               </span>
             </a>
-            <ul class="nav-items nav-expand-content active">
+            <ul class="nav-items nav-expand-content">
               <li class="nav-title">Home</li>
               <li class="nav-item">
-                <a class="nav-item-link active" href="./">
+                <a class="nav-item-link" href="./">
                   Home
                 </a>
               </li>
@@ -534,7 +534,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item nav-expand">
+          <li class="nav-item nav-expand active">
             <a class="nav-item-link nav-expand-link" href="#">
               <i>
                 <svg width="17.894" height="24">
@@ -548,43 +548,26 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Integrations</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
+                <a
+                  class="nav-item-link active"
+                  href="contact-integrations.html"
+                >
+                  Contact Integrations
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="social-media-integrations.html">
+                  Social Media Integrations
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-item-link" href="#">
-                  Test Item 2
+                  Plugins & Apps
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
+                  API
                 </a>
               </li>
             </ul>
@@ -724,7 +707,6 @@
           </button>
         </div>
       </nav>
-
       <!-- Left Sidebar End -->
 
       <!-- ============================================================== -->
@@ -735,206 +717,250 @@
         <div class="content">
           <!-- Start Content-->
           <div class="container-fluid">
-            <div class="card mb-0 mt-15">
-              <h3 class="mb-16">Pages</h3>
+            <div class="row">
+              <div class="col-12">
+                <ul class="nav nav-tabs nav-bordered">
+                  <li class="nav-item">
+                    <a href="create-template-free.html" class="nav-link">
+                      Use Free Templates
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="create-template-basic-layout.html"
+                      class="nav-link active"
+                    >
+                      Start With Basic Layout
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="create-template-scratch.html" class="nav-link">
+                      Create From Scratch
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="create-template-import.html" class="nav-link">
+                      Import Your Design
+                    </a>
+                  </li>
+                </ul>
 
-              <p class="sub-header">
-                All pages that are implemented or currently in progress.
-              </p>
+                <div class="tab-content">
+                  <div class="tab-pane show active" id="basic-layout">
+                    <div class="templates">
+                      <div class="templates__item">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
+                          <img
+                            src="assets/images/e-flyer.jpg"
+                            alt="Template Preview"
+                          />
+                        </div>
+                        <div class="templates__item-name">
+                          E-Flyer
+                        </div>
+                        <div class="templates__item-buttons">
+                          <div>
+                            <button class="btn _sm _secondary _check ml-10">
+                              <svg width="14" height="8.75">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#eye"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn _sm _secondary _check">
+                              <svg width="11" height="11">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#edit"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-static.html">My Lists</a>
-                (static)
-              </h4>
+                          <i class="quality-icon _4 mr-10">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </i>
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-ep.html">My Lists</a> (endpoint
-                integrated)
-              </h4>
+                      <div class="templates__item">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
+                          <img
+                            src="assets/images/simple.jpg"
+                            alt="Template Preview"
+                          />
+                        </div>
+                        <div class="templates__item-name">
+                          Simple
+                        </div>
+                        <div class="templates__item-buttons">
+                          <div>
+                            <button class="btn _sm _secondary _check ml-10">
+                              <svg width="14" height="8.75">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#eye"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn _sm _secondary _check">
+                              <svg width="11" height="11">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#edit"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="list-details-static.html">List Details</a>
-                (static)
-              </h4>
+                          <i class="quality-icon _4 mr-10">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </i>
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="list-details-ep.html">List Details</a>
-                (endpoint integrated)
-              </h4>
+                      <div class="templates__item">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
+                          <img
+                            src="assets/images/basic.jpg"
+                            alt="Template Preview"
+                          />
+                        </div>
+                        <div class="templates__item-name">
+                          Basic Standard
+                        </div>
+                        <div class="templates__item-buttons">
+                          <div>
+                            <button class="btn _sm _secondary _check ml-10">
+                              <svg width="14" height="8.75">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#eye"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn _sm _secondary _check">
+                              <svg width="11" height="11">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#edit"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="contacts-home-static.html"
-                  >Contacts Home</a
-                >
-              </h4>
+                          <i class="quality-icon _4 mr-10">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </i>
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="contact-details.html">Contact Details</a>
-              </h4>
+                      <div class="templates__item">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
+                          <img
+                            src="assets/images/newsletter.jpg"
+                            alt="Template Preview"
+                          />
+                        </div>
+                        <div class="templates__item-name">
+                          Basic Newsletter
+                        </div>
+                        <div class="templates__item-buttons">
+                          <div>
+                            <button class="btn _sm _secondary _check ml-10">
+                              <svg width="14" height="8.75">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#eye"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn _sm _secondary _check">
+                              <svg width="11" height="11">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#edit"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="add-contacts.html">Add Contacts</a>
-              </h4>
+                          <i class="quality-icon _4 mr-10">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </i>
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="form-validation-examples.html"
-                  >Form Validation Example</a
-                >
-              </h4>
+                      <div class="templates__item">
+                        <div
+                          class="templates__item-preview"
+                          data-toggle="modal"
+                          data-target="#template-preview"
+                        >
+                          <img
+                            src="assets/images/ecommerce.jpg"
+                            alt="Template Preview"
+                          />
+                        </div>
+                        <div class="templates__item-name">
+                          Basic E-Commerce
+                        </div>
+                        <div class="templates__item-buttons">
+                          <div>
+                            <button class="btn _sm _secondary _check ml-10">
+                              <svg width="14" height="8.75">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#eye"
+                                ></use>
+                              </svg>
+                            </button>
+                            <button class="btn _sm _secondary _check">
+                              <svg width="11" height="11">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#edit"
+                                ></use>
+                              </svg>
+                            </button>
+                          </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="save-list-new-user.html">Save List</a>
-                (new user)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-few-lists.html">Save List</a>
-                (select from few lists)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-many-lists.html">Save List</a>
-                (select from many lists)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="confirm-modals.html"
-                  >Confirmation Modals</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="import-from-other-service.html"
-                  >Add Contacts</a
-                >
-                (import from other service)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="connect-service-not-connected.html"
-                  >Add Contacts</a
-                >
-                (import from other service - not connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="toggle-columns.html"
-                  >Toggle Columns Modal</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations.html"
-                  >Contact Integrations</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-not-connected.html"
-                  >Contact Integrations</a
-                >
-                (not connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-connected.html"
-                  >Contact Integrations</a
-                >
-                (connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a
-                  class="link"
-                  href="contact-integrations-connected-no-list.html"
-                  >Contact Integrations</a
-                >
-                (connected - no list)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="social-media-integrations.html"
-                  >Social Media Integrations</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="api.html">Integrations - API</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="confirmation.html"
-                  >Confirmation Notification</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="negative.html">Negative Notification</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments.html">Segments</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments-possible-fields.html"
-                  >Segments - Possible Fields</a
-                >
-              </h4>
-
-              <h4 class="mb-16"><a class="link" href="tags.html">Tags</a></h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="plugins-and-apps.html"
-                  >Integrations - Plugins & Apps</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-fields.html">Contacts - Fields</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="suppression-lists.html"
-                  >Contacts - Suppression Lists</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="templates-home.html">Templates - Home</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-free.html"
-                  >Create Template - Free Templates</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-basic-layout.html"
-                  >Create Template - Basic Layout</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-scratch.html"
-                  >Create Template - Create From Scratch</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-import.html"
-                  >Create Template - Import</a
-                >
-              </h4>
-
-              <hr />
-
-              <h4 class="mb-16">
-                <a class="link" href="list-details-new-table.html"
-                  >Custom Table</a
-                >
-              </h4>
+                          <i class="quality-icon _4 mr-10">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- container -->
@@ -951,16 +977,93 @@
           <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
         </svg>
       </a>
-    </div>
 
+      <div
+        id="template-preview"
+        class="modal fade _template-preview"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+        style="display: none;"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              <svg width="8" height="8">
+                <use xlink:href="assets/images/sprite.svg#cross"></use>
+              </svg>
+            </button>
+            <button class="btn_icon _arrow-left">
+              <svg width="30.874" height="50">
+                <use xlink:href="assets/images/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+            <button class="btn_icon _arrow-right">
+              <svg width="30.874" height="50">
+                <use xlink:href="assets/images/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+            <div class="modal-body">
+              <div class="template-preview">
+                <div class="template-preview__header">
+                  Film Festival
+                </div>
+
+                <div class="template-preview__body">
+                  <img
+                    src="assets/images/template-preview.jpg"
+                    alt="Template Preview"
+                  />
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center mt-20">
+                <button class="btn _lg _secondary">
+                  Get This Template (and Edit)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.modal -->
+    </div>
     <!-- END wrapper -->
 
-    <!-- Vendor js -->
+    <!-- App js -->
     <script src="assets/js/vendor.min.js"></script>
 
     <script src="assets/libs/select2/js/select2.min.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/dataTable.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+        const select2QualityOptions = {
+          placeholder: {
+            id: -1,
+            text: 'Select',
+          },
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+        createSelect2ByClass('._select2-lg._quality', select2QualityOptions);
+      });
+    </script>
   </body>
 </html>

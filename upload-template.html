@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>All Pages | DirectIQ</title>
+    <title>Add Contacts | DirectIQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Direct IQ frontend development version" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -39,6 +39,29 @@
     />
     <meta name="theme-color" content="#ffffff" />
 
+
+    <!-- Plugins css-->
+    <link
+      href="assets/libs/dropzone/min/dropzone.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/bootstrap-select/css/bootstrap-select.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <link
       href="assets/libs/select2/css/select2.min.css"
@@ -79,8 +102,11 @@
             </div>
 
             <ol class="breadcrumbs">
+              <li class="breadcrumb-item">
+                <a href="./templates-home.html">Templates</a>
+              </li>
               <li class="breadcrumb-item active">
-                Home
+                Create Template
                 <button class="btn_icon d-none d-md-inline ml-18">
                   <i class="add-to-fav-icon">
                     <svg
@@ -322,7 +348,6 @@
       <!-- end Topbar -->
 
       <!-- ========== Left Sidebar Start ========== -->
-
       <button class="hamburger hamburger--squeeze" id="ham" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
@@ -349,10 +374,10 @@
                 Home
               </span>
             </a>
-            <ul class="nav-items nav-expand-content active">
+            <ul class="nav-items nav-expand-content">
               <li class="nav-title">Home</li>
               <li class="nav-item">
-                <a class="nav-item-link active" href="./">
+                <a class="nav-item-link" href="./">
                   Home
                 </a>
               </li>
@@ -368,7 +393,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item nav-expand">
+          <li class="nav-item nav-expand active">
             <a class="nav-item-link nav-expand-link" href="#">
               <i>
                 <svg width="17.719" height="15.328">
@@ -392,7 +417,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="./add-contacts.html">
+                <a class="nav-item-link active" href="./add-contacts.html">
                   Add Contacts
                 </a>
               </li>
@@ -724,7 +749,6 @@
           </button>
         </div>
       </nav>
-
       <!-- Left Sidebar End -->
 
       <!-- ============================================================== -->
@@ -735,206 +759,149 @@
         <div class="content">
           <!-- Start Content-->
           <div class="container-fluid">
-            <div class="card mb-0 mt-15">
-              <h3 class="mb-16">Pages</h3>
+            <div class="row">
+              <div class="col-12">
+                <ul class="nav nav-tabs nav-bordered">
+                  <li class="nav-item">
+                    <a href="create-template-free.html" class="nav-link">
+                      Use Free Templates
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="create-template-basic-layout.html"
+                      class="nav-link"
+                    >
+                      Start With Basic Layout
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="create-template-scratch.html" class="nav-link">
+                      Create From Scratch
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="create-template-import.html"
+                      class="nav-link active"
+                    >
+                      Import Your Design
+                    </a>
+                  </li>
+                </ul>
 
-              <p class="sub-header">
-                All pages that are implemented or currently in progress.
-              </p>
+                <div class="tab-content">
+                  <div
+                    class="tab-pane show active"
+                    id="add-contact-upload-list"
+                  >
+                    <div class="upload-list__step">
+                      <div class="card mb-0">
+                        <div
+                          class="font-12 color-secondary font-weight-medium mt-12"
+                        >
+                          Use dropzone to upload your files. You can either
+                          upload a single HTML or a Zip file containing HTML +
+                          images.
+                          <a href="#" class="link">Learn more</a>.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-static.html">My Lists</a>
-                (static)
-              </h4>
+                      <div class="card pt-34 pb-2 pb-sm-22 mb-0 bg-light-grey">
+                        <form
+                          action="/"
+                          method="post"
+                          class="dropzone"
+                          id="myAwesomeDropzone"
+                          data-plugin="dropzone"
+                          data-previews-container="#file-previews"
+                          data-upload-preview-template="#uploadPreviewTemplate"
+                        >
+                          <div class="fallback">
+                            <input name="file" type="file" multiple />
+                          </div>
+                          <div class="dz-message needsclick">
+                            <div class="dropzone__error-message"></div>
+                            <h3
+                              class="font-16 color-black font-weight-medium mb-18 mt-0"
+                            >
+                              Drag and drop a file here (or click to upload)
+                            </h3>
+                            <i class="d-block">
+                              <svg width="66.71" height="50">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#dropzone-cloud-i"
+                                ></use>
+                              </svg>
+                            </i>
+                          </div>
+                        </form>
 
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-ep.html">My Lists</a> (endpoint
-                integrated)
-              </h4>
+                        <!-- Preview -->
+                        <div
+                          class="dropzone-previews mt-18"
+                          id="file-previews"
+                        ></div>
 
-              <h4 class="mb-16">
-                <a class="link" href="list-details-static.html">List Details</a>
-                (static)
-              </h4>
+                        <!-- file preview template -->
+                        <div class="d-none" id="uploadPreviewTemplate">
+                          <div
+                            class="card mt-6 mb-18 mb-sm-0 p-0 shadow-none border"
+                          >
+                            <div class="p-12">
+                              <div class="row align-items-center">
+                                <div class="col-auto">
+                                  <img
+                                    data-dz-thumbnail
+                                    src="#"
+                                    class="avatar-sm rounded bg-light"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="col pl-0">
+                                  <a
+                                    href="javascript:void(0);"
+                                    class="font-14 font-weight-medium color-primary"
+                                    data-dz-name
+                                  ></a>
+                                  <p
+                                    class="mb-0 color-secondary font-12"
+                                    data-dz-size
+                                  ></p>
+                                </div>
+                                <div class="col-auto">
+                                  <!-- Button -->
+                                  <a
+                                    href=""
+                                    class="btn_icon p-10"
+                                    data-dz-remove
+                                  >
+                                    <svg width="12" height="12">
+                                      <use
+                                        xlink:href="assets/images/sprite.svg#cross"
+                                      ></use>
+                                    </svg>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="list-details-ep.html">List Details</a>
-                (endpoint integrated)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contacts-home-static.html"
-                  >Contacts Home</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-details.html">Contact Details</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="add-contacts.html">Add Contacts</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="form-validation-examples.html"
-                  >Form Validation Example</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-new-user.html">Save List</a>
-                (new user)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-few-lists.html">Save List</a>
-                (select from few lists)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-many-lists.html">Save List</a>
-                (select from many lists)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="confirm-modals.html"
-                  >Confirmation Modals</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="import-from-other-service.html"
-                  >Add Contacts</a
-                >
-                (import from other service)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="connect-service-not-connected.html"
-                  >Add Contacts</a
-                >
-                (import from other service - not connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="toggle-columns.html"
-                  >Toggle Columns Modal</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations.html"
-                  >Contact Integrations</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-not-connected.html"
-                  >Contact Integrations</a
-                >
-                (not connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-connected.html"
-                  >Contact Integrations</a
-                >
-                (connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a
-                  class="link"
-                  href="contact-integrations-connected-no-list.html"
-                  >Contact Integrations</a
-                >
-                (connected - no list)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="social-media-integrations.html"
-                  >Social Media Integrations</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="api.html">Integrations - API</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="confirmation.html"
-                  >Confirmation Notification</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="negative.html">Negative Notification</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments.html">Segments</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments-possible-fields.html"
-                  >Segments - Possible Fields</a
-                >
-              </h4>
-
-              <h4 class="mb-16"><a class="link" href="tags.html">Tags</a></h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="plugins-and-apps.html"
-                  >Integrations - Plugins & Apps</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-fields.html">Contacts - Fields</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="suppression-lists.html"
-                  >Contacts - Suppression Lists</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="templates-home.html">Templates - Home</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-free.html"
-                  >Create Template - Free Templates</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-basic-layout.html"
-                  >Create Template - Basic Layout</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-scratch.html"
-                  >Create Template - Create From Scratch</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-import.html"
-                  >Create Template - Import</a
-                >
-              </h4>
-
-              <hr />
-
-              <h4 class="mb-16">
-                <a class="link" href="list-details-new-table.html"
-                  >Custom Table</a
-                >
-              </h4>
+                      <div
+                        class="d-flex flex-column flex-md-row justify-content-end align-items-center mt-12"
+                      >
+                        <button
+                          class="btn _lg _primary upload-list__next-step mt-16"
+                        >
+                          Ready? Go!
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- container -->
@@ -952,15 +919,113 @@
         </svg>
       </a>
     </div>
-
     <!-- END wrapper -->
 
-    <!-- Vendor js -->
+    <!-- App js -->
     <script src="assets/js/vendor.min.js"></script>
 
+    <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
+    <script src="assets/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="assets/libs/select2/js/select2.min.js"></script>
-
-    <!-- App js -->
+    <script src="assets/js/pages/tln.min.js"></script>
     <script src="assets/js/app.min.js"></script>
+    <script>
+      // Dropzone init and settings
+      function bytesToMb(bytes) {
+        return bytes / Math.pow(1024, 2);
+      }
+
+      var ERRORS_FILE_UPLOAD = {
+        fileType: 'This file type is not supported. Please, upload PDF or PNG.',
+        size: 'File Size must not exceed 1Mb. Please try again.',
+      };
+      var ACCEPTED_FILE_SIZE_IN_MB = 1;
+      var ACCEPTED_FILE_TYPE = 'application/pdf, image/png';
+
+      // Dropzone
+      !(function ($) {
+        'use strict';
+
+        var FileUpload = function () {
+          this.$body = $('body');
+        };
+
+        /* Initializing */
+        (FileUpload.prototype.init = function () {
+          // Disable auto discovery
+
+          Dropzone.autoDiscover = false;
+
+          $('[data-plugin="dropzone"]').each(function () {
+            var actionUrl = $(this).attr('action');
+            var previewContainer = $(this).data('previewsContainer');
+
+            var opts = {
+              url: actionUrl,
+              acceptedFiles: ACCEPTED_FILE_TYPE,
+              maxFilesize: ACCEPTED_FILE_SIZE_IN_MB,
+            };
+
+            if (previewContainer) {
+              opts['previewsContainer'] = previewContainer;
+            }
+
+            var uploadPreviewTemplate = $(this).data('uploadPreviewTemplate');
+            if (uploadPreviewTemplate) {
+              opts['previewTemplate'] = $(uploadPreviewTemplate).html();
+            }
+            var dropzoneEl = new Dropzone(this, opts);
+
+            var errorElement = dropzoneEl.element.querySelector(
+              '.dropzone__error-message'
+            );
+            dropzoneEl.on('addedfiles', function (files) {
+              files.forEach(function (file) {
+                errorElement.innerHTML = '';
+
+                dropzoneEl.element.classList.remove('dropzone_error');
+                if (!file.accepted) {
+                  if (
+                    !ACCEPTED_FILE_TYPE.split(',').some(
+                      (type) => type === file.type
+                    )
+                  )
+                    errorElement.innerHTML = ERRORS_FILE_UPLOAD.fileType;
+                  if (bytesToMb(file.size) > ACCEPTED_FILE_SIZE_IN_MB)
+                    errorElement.innerHTML = ERRORS_FILE_UPLOAD.size;
+
+                  dropzoneEl.element.classList.add('dropzone_error');
+                  return dropzoneEl.removeFile(file);
+                }
+              });
+            });
+          });
+        }),
+          //init fileupload
+          ($.FileUpload = new FileUpload()),
+          ($.FileUpload.Constructor = FileUpload);
+      })(window.jQuery),
+        //initializing FileUpload
+        (function ($) {
+          'use strict';
+
+          $.FileUpload.init();
+        })(window.jQuery);
+
+      if ($('[data-plugins="dropify"]').length > 0) {
+        // Dropify
+        $('[data-plugins="dropify"]').dropify({
+          messages: {
+            default: 'Drag and drop a file here or click',
+            replace: 'Drag and drop or click to replace',
+            remove: 'Remove',
+            error: 'Ooops, something wrong appended.',
+          },
+          error: {
+            fileSize: 'The file size is too big (1M max).',
+          },
+        });
+      }
+    </script>
   </body>
 </html>
