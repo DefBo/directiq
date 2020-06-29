@@ -614,8 +614,11 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
     } = createFromForm;
     const button = document.querySelector(buttonSelector);
     const buttonSave = document.querySelector(buttonSaveSelector);
-    if (button && buttonSave) {
-      buttonSave.innerHTML = `${buttonSave.innerHTML} (${fetchedData.totalCount})`;
+    if (button && buttonSave && fetchedData) {
+      buttonSave.innerHTML = buttonSave.innerHTML.replace(
+        /\(.*\)/g,
+        `(${fetchedData.totalCount})`
+      );
     }
   };
 
@@ -725,10 +728,12 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
             tableWrapper.classList.add('loading');
           }
           await generateTable();
-          if (buttonSave) {
-            buttonSave.innerHTML = `${buttonSave.innerHTML} (${fetchedData.totalCount})`;
+          if (fetchedData) {
+            if (buttonSave) {
+              buttonSave.innerHTML = `${buttonSave.innerHTML} (${fetchedData.totalCount})`;
+            }
+            addCustomSettingsToTable();
           }
-          addCustomSettingsToTable();
         }
       });
     }

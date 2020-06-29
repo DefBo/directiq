@@ -1639,10 +1639,13 @@ const getUserLink = (id, url, searchParams = '') => {
 const dateSelect = (className, selectOptions, selectData) => {
   const OPTIONS = selectData;
 
+  let selectedIndex = null;
+
   if ($(className).find('option').length > 0) {
     $(className)
       .find('option')
-      .each(function () {
+      .each(function (index, value) {
+        if ($(this).is(':selected')) selectedIndex = index;
         this.remove();
       });
   }
@@ -1650,18 +1653,20 @@ const dateSelect = (className, selectOptions, selectData) => {
   const selects = document.querySelectorAll(className);
 
   selects.forEach((select) => {
-    const defaultOption = document.createElement('option');
-    defaultOption.text = selectOptions.placeholder.text;
-    defaultOption.value = '';
-    defaultOption.selected = true;
-    select.options.add(defaultOption);
-
-    OPTIONS.forEach((item) => {
+    if (selectOptions.placeholder) {
+      const defaultOption = document.createElement('option');
+      defaultOption.text = selectOptions.placeholder.text;
+      defaultOption.value = '';
+      defaultOption.selected = true;
+      select.options.add(defaultOption);
+    }
+    OPTIONS.forEach((item, index) => {
       const option = document.createElement('option');
 
       if (item.value && item.label) {
         option.value = item.value;
         option.title = ' ';
+        if (index === selectedIndex) option.selected = true;
         option.text = generateSelectWithLabel(item.label);
       }
 
@@ -1679,13 +1684,13 @@ const dateSelect = (className, selectOptions, selectData) => {
 };
 
 const qualitySelect = (className, selectOptions, selectData) => {
-  let QUALITY_OPTIONS = selectData;
-
+  const QUALITY_OPTIONS = selectData;
+  let selectedIndex = null;
   if ($(className).find('option').length > 0) {
-    QUALITY_OPTIONS = [];
     $(className)
       .find('option')
-      .each(function () {
+      .each(function (index) {
+        if ($(this).is(':selected')) selectedIndex = index;
         this.remove();
       });
   }
@@ -1693,17 +1698,18 @@ const qualitySelect = (className, selectOptions, selectData) => {
   const qualitySelect = document.querySelectorAll(className);
 
   qualitySelect.forEach((select) => {
-    const defaultOption = document.createElement('option');
-    defaultOption.text = selectOptions.placeholder.text;
-    defaultOption.value = '';
-    defaultOption.selected = true;
-    select.options.add(defaultOption);
-
-    QUALITY_OPTIONS.forEach((item) => {
+    if (selectOptions.placeholder) {
+      const defaultOption = document.createElement('option');
+      defaultOption.text = selectOptions.placeholder.text;
+      defaultOption.value = '';
+      defaultOption.selected = true;
+      select.options.add(defaultOption);
+    }
+    QUALITY_OPTIONS.forEach((item, index) => {
       const option = document.createElement('option');
 
       option.value = item;
-
+      if (index === selectedIndex) option.selected = true;
       option.text = generateQualitySelect(item);
 
       select.options.add(option);
@@ -1718,6 +1724,7 @@ const qualitySelect = (className, selectOptions, selectData) => {
     },
   });
 };
+
 const generateQualitySelect = (state) => {
   let data = '';
   if (state.id) {
@@ -1734,6 +1741,7 @@ const generateQualitySelect = (state) => {
 
   return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
 };
+
 const generateSelectWithLabel = (state) => {
   let data = '';
 
@@ -1755,6 +1763,7 @@ const generateSelectWithLabel = (state) => {
 
   return data;
 };
+
 const simpleSelect = (className, selectOptions) => {
   $(className).each(function () {
     $(this).select2(selectOptions);

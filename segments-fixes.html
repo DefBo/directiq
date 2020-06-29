@@ -71,6 +71,7 @@
     />
 
   </head>
+
   <body data-layout-mode="two-column" class="animation-stopper">
     <!-- Begin page -->
     <div id="wrapper">
@@ -251,10 +252,10 @@
                   <a href="#" class="profile-dropdown__link mb-9">
                     <svg width="16" height="16">
                       <use xlink:href="/assets/images/sprite.svg#profile"></use>
-                      <span class="profile-dropdown__link-text">
-                        My Account
-                      </span>
                     </svg>
+                    <span class="profile-dropdown__link-text">
+                      My Account
+                    </span>
                   </a>
                   <div class="profile-dropdown__divider mb-13"></div>
                   <div class="profile-dropdown__progress">
@@ -277,26 +278,26 @@
                   </div>
                   <a href="#" class="profile-dropdown__link mb-4">
                     <svg width="13.375" height="16">
-                      <use xlink:href="/assets/images/sprite.svg#swap"></use>
-                      <span class="profile-dropdown__link-text">
-                        Change Plan
-                      </span>
+                      <use xlink:href="/assets/images/sprite.svg#swap" />
                     </svg>
+                    <span class="profile-dropdown__link-text">
+                      Change Plan </span
+                    >%
                   </a>
                   <div class="profile-dropdown__divider mb-5"></div>
                   <a class="profile-dropdown__link" href="/account/select">
                     <svg width="16" height="12.235">
-                      <use xlink:href="/assets/images/sprite.svg#group"></use>
-                      <span class="profile-dropdown__link-text">
-                        Switch Account
-                      </span>
+                      <use xlink:href="/assets/images/sprite.svg#group" />
                     </svg>
+                    <span class="profile-dropdown__link-text">
+                      Switch Account
+                    </span>
                   </a>
                   <a href="#" class="profile-dropdown__link">
                     <svg width="16" height="16">
-                      <use xlink:href="/assets/images/sprite.svg#support"></use>
-                      <span class="profile-dropdown__link-text">Support</span>
+                      <use xlink:href="/assets/images/sprite.svg#support" />
                     </svg>
+                    <span class="profile-dropdown__link-text">Support</span>
                   </a>
 
                   <form
@@ -458,10 +459,9 @@
             <a class="nav-item-link nav-expand-link" href="#">
               <i
                 ><svg width="18" height="18">
-                  <use
-                    xlink:href="/assets/images/sprite.svg#templates-i"
-                  ></use></svg
-              ></i>
+                  <use xlink:href="/assets/images/sprite.svg#templates-i" />
+                </svg>
+              </i>
               <span>Templates</span>
             </a>
             <ul class="nav-items nav-expand-content">
@@ -492,10 +492,9 @@
             <a class="nav-item-link nav-expand-link" href="#">
               <i
                 ><svg width="29.507" height="22">
-                  <use
-                    xlink:href="/assets/images/sprite.svg#campaigns-i"
-                  ></use></svg
-              ></i>
+                  <use xlink:href="/assets/images/sprite.svg#campaigns-i" />
+                </svg>
+              </i>
               <span>Campaigns</span>
             </a>
             <ul class="nav-items nav-expand-content">
@@ -546,10 +545,9 @@
             <a class="nav-item-link nav-expand-link" href="#">
               <i
                 ><svg width="17.894" height="24">
-                  <use
-                    xlink:href="/assets/images/sprite.svg#integrations-i"
-                  ></use></svg
-              ></i>
+                  <use xlink:href="/assets/images/sprite.svg#integrations-i" />
+                </svg>
+              </i>
               <span>Integrations</span>
             </a>
             <ul class="nav-items nav-expand-content">
@@ -860,7 +858,6 @@
                                   name="field1"
                                   required
                                 >
-                                  <option></option>
                                   <option value="test-1">Option 1</option>
                                   <option value="test-2">Option 2</option>
                                 </select>
@@ -957,7 +954,9 @@
                                 >
                                   <option></option>
                                   <option value="test-1">Option 1</option>
-                                  <option value="test-2">Option 2</option>
+                                  <option value="test-2" selected
+                                    >Option 2</option
+                                  >
                                 </select>
                               </div>
                               <div
@@ -1215,16 +1214,11 @@
         createCustomDataTable('#data-table', {}, CUSTOM_CONFIG);
 
         const select2Options = {
-          placeholder: 'Select an option',
           allowClear: true,
           minimumResultsForSearch: -1,
         };
 
         const select2QualityOptions = {
-          placeholder: {
-            id: -1,
-            text: 'Select Quality',
-          },
           allowClear: true,
           minimumResultsForSearch: -1,
         };

@@ -45,7 +45,7 @@
       type="text/css"
     />
 
-    <link href="assets/libs/emoji-picker/emoji.css" rel="stylesheet">
+    <link href="assets/libs/emoji-picker/emoji.css" rel="stylesheet" />
 
     <!-- App css -->
     <link
@@ -737,24 +737,45 @@
                       <h4 class="mb-22">Preview and Save</h4>
                       <div class="row mb-20">
                         <div class="col-md-4">
-                          <div class="font-12 font-weight-bold mb-8">Name Your Template*</div>
-                          <input type="text" placeholder="Template Name" class="form-control mb-10">
+                          <div class="font-12 font-weight-bold mb-8">
+                            Name Your Template*
+                          </div>
+                          <input
+                            type="text"
+                            placeholder="Template Name"
+                            class="form-control mb-10"
+                          />
                         </div>
 
                         <div class="col-md-8">
-                          <div class="font-12 font-weight-bold mb-8">Subject Line <span class="font-weight-medium color-secondary">(Optional)</span></div>
+                          <div class="font-12 font-weight-bold mb-8">
+                            Subject Line
+                            <span class="font-weight-medium color-secondary"
+                              >(Optional)</span
+                            >
+                          </div>
                           <div class="position-relative">
-                            <input type="text" placeholder="Write a compelling subject line" class="form-control mb-10" data-emojiable="true">
+                            <input
+                              type="text"
+                              placeholder="Write a compelling subject line"
+                              class="form-control mb-10"
+                              data-emojiable="true"
+                            />
                           </div>
                         </div>
                       </div>
 
-                      <button class="btn _primary _lg align-self-start">Save</button>
+                      <button class="btn _primary _lg align-self-start">
+                        Save
+                      </button>
                     </div>
 
-                    <div class="template-preview-save" id="template-preview-save">
-                      <iframe src="https://lavorium.com" frameborder="0"></iframe>
-                    </div>
+                    <iframe
+                      src="http://andriiv.com"
+                      id="ifrm"
+                      frameborder="0"
+                      class="template-preview-iframe"
+                    ></iframe>
                   </div>
                 </div>
               </div>
@@ -774,7 +795,6 @@
           <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
         </svg>
       </a>
-
     </div>
     <!-- END wrapper -->
 
@@ -814,18 +834,51 @@
         /*$('#template-preview-save').load("./dist/index.html");*/
       });
 
-      $(function() {
+      $(function () {
         // Initializes and creates emoji set from sprite sheet
         window.emojiPicker = new EmojiPicker({
           emojiable_selector: '[data-emojiable=true]',
           assetsPath: './assets/images/emoji/',
-          popupButtonClasses: 'fa fa-smile-o'
+          popupButtonClasses: 'fa fa-smile-o',
         });
         // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
         // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
         // It can be called as many times as necessary; previously converted input fields will not be converted again
         window.emojiPicker.discover();
       });
+
+      // modified from same-domain version at www.dyn-web.com/tutorials/iframes/height/
+      function setIframeHeightCO(id, ht) {
+        var ifrm = document.getElementById(id);
+        ifrm.style.visibility = 'hidden';
+        // some IE versions need a bit added or scrollbar appears
+        ifrm.style.height = ht + 4 + 'px';
+        ifrm.style.visibility = 'visible';
+      }
+
+      // iframed document sends its height using postMessage
+      function handleDocHeightMsg(e) {
+        // check origin
+        console.log(e);
+        if (e.origin === 'http://andriiv.com') {
+          // parse data
+          var data = JSON.parse(e.data);
+          // check data object
+          if (data['docHeight']) {
+            setIframeHeightCO('ifrm', data['docHeight']);
+          } else if (data['href']) {
+            setIframe('ifrm', data['href']);
+          }
+        }
+      }
+
+      // assign message handler
+      if (window.addEventListener) {
+        window.addEventListener('message', handleDocHeightMsg, false);
+      } else if (window.attachEvent) {
+        // ie8
+        window.attachEvent('onmessage', handleDocHeightMsg);
+      }
     </script>
   </body>
 </html>
