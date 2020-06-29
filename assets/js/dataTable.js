@@ -1,14 +1,5 @@
 let tableSearchParams = '';
 
-const generateQualitySelectDataTable = (data) => {
-  let qualityIcon = '';
-  DEFAULT_SELECT_OPTIONS.quality.forEach((item) => {
-    qualityIcon += `<span></span>`;
-  });
-
-  return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
-};
-
 const setConfirmModals = () => {
   $('.confirm__btn').click(function () {
     const modal = $(this).next('.confirm__modal');

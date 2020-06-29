@@ -398,12 +398,11 @@
           </li>
           <li class="nav-item nav-expand active">
             <a class="nav-item-link nav-expand-link" href="#">
-              <i
-                ><svg width="17.719" height="15.328">
-                  <use
-                    xlink:href="/assets/images/sprite.svg#contacts-i"
-                  ></use></svg
-              ></i>
+              <i>
+                <svg width="17.719" height="15.328">
+                  <use xlink:href="/assets/images/sprite.svg#contacts-i"></use>
+                </svg>
+              </i>
               <span>Contacts</span>
             </a>
             <ul class="nav-items nav-expand-content">
@@ -1231,7 +1230,12 @@
         };
 
         createSelect2ByClass('._select2-lg', select2Options);
-        createSelect2ByClass('._select2-lg._quality', select2QualityOptions);
+        createSelect2ByClass(
+          '._select2-lg._quality',
+          select2QualityOptions,
+          'quality',
+          DEFAULT_SELECT_OPTIONS.quality
+        );
       });
     </script>
   </body>

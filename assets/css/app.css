@@ -7362,6 +7362,9 @@ body.nav-is-toggled:after {
 .bg-dark-grey {
   background: #ecf1f8; }
 
+.bg-light-blue {
+  background: #DAE8F7; }
+
 .bg-white {
   background: #fff; }
 
@@ -8663,6 +8666,14 @@ body.nav-is-toggled:after {
     border-color: #0000ff;
     background: #0000ff;
     color: #fff; }
+
+.template-preview-save {
+  background: #fff;
+  height: calc(100vh - 456px);
+  overflow: hidden; }
+  .template-preview-save iframe {
+    width: 100%;
+    height: 100%; }
 
 th,
 td {

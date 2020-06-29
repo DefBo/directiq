@@ -1256,7 +1256,12 @@
         };
 
         createSelect2ByClass('._select2-lg', select2Options);
-        createSelect2ByClass('._select2-lg._quality', select2QualityOptions);
+        createSelect2ByClass(
+          '._select2-lg._quality',
+          select2QualityOptions,
+          'quality',
+          DEFAULT_SELECT_OPTIONS.quality
+        );
       });
     </script>
   </body>

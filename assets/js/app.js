@@ -1116,14 +1116,37 @@ function adjustDataTableColumns() {
     $($.fn.dataTable.tables({ visible: true }))
       .DataTable()
       .columns.adjust();
-    // not need now because all tables create not in tabs but in another page
-    // if ($($.fn.dataTable.tables({ visible: true })).DataTable().fixedColumns) {
+    addWithScrollTable();
+    // setTimeout(function () {
+    //   const tableWithNewScroll = document.querySelector('.new-scroll');
+    //   if (tableWithNewScroll) {
+    //     $(
+    //       '.dataTables_scrollBody td:first-child, .dataTables_scrollBody td:nth-child(2), .dataTables_scrollBody td:last-child, .dataTables_scrollBody th:first-child, .dataTables_scrollBody th:nth-child(2), .dataTables_scrollBody th:last-child'
+    //     ).css('display', 'table-cell');
+    //   }
     //   $($.fn.dataTable.tables({ visible: true }))
     //     .DataTable()
-    //     .fixedColumns()
-    //     .relayout();
-    // }
-    addWithScrollTable();
+    //     .columns.adjust();
+    //   if (tableWithNewScroll) {
+    //     $(
+    //       '.dataTables_scrollBody td:first-child, .dataTables_scrollBody td:nth-child(2), .dataTables_scrollBody td:last-child, .dataTables_scrollBody th:first-child, .dataTables_scrollBody th:nth-child(2), .dataTables_scrollBody th:last-child'
+    //     ).css('display', 'none');
+    //     const scrollBody = tableWithNewScroll.querySelector(
+    //       '.dataTables_scrollBody'
+    //     );
+    //     const leftFixed = tableWithNewScroll.querySelector(
+    //       '.DTFC_LeftBodyWrapper table'
+    //     );
+    //     const rightFixed = tableWithNewScroll.querySelector(
+    //       '.DTFC_RightBodyWrapper table'
+    //     );
+    //     scrollBody.style.width = `calc(100% - ${
+    //       rightFixed.clientWidth + leftFixed.clientWidth
+    //     }px)`;
+    //     scrollBody.style.marginLeft = `${leftFixed.clientWidth}px`;
+    //   }
+    //   addWithScrollTable();
+    // }, 250);
   }
 }
 
@@ -1528,69 +1551,35 @@ const setDataTableActions = (table) => {
     });
 };
 
-const createSelect2ByClass = (className, selectOptions) => {
-  if (/_quality/.test(className) && $(className).length > 0) {
-    let QUALITY_OPTIONS = [1, 2, 3, 4, 5];
+const createSelect2ByClass = (
+  className,
+  selectOptions,
+  selectType = 'simple',
+  selectData
+) => {
+  const selectTypeMap = [
+    {
+      type: 'quality',
+      generator: (className, selectOptions, selectData) =>
+        qualitySelect(className, selectOptions, selectData),
+    },
+    {
+      type: 'simple',
+      generator: (className, selectOptions) =>
+        simpleSelect(className, selectOptions),
+    },
+    {
+      type: 'date',
+      generator: (className, selectOptions, selectData) =>
+        dateSelect(className, selectOptions, selectData),
+    },
+  ];
 
-    if ($(className).find('option').length > 0) {
-      QUALITY_OPTIONS = [];
-      $(className)
-        .find('option')
-        .each(function () {
-          this.remove();
-          QUALITY_OPTIONS.push(this.value);
-        });
+  selectTypeMap.forEach((item) => {
+    if (item.type === selectType && $(className).length > 0) {
+      item.generator(className, selectOptions, selectData);
     }
-
-    const createQualityIcons = (state) => {
-      let data = '';
-      if (state.id) {
-        data = state.id;
-      } else if (state.text) {
-        return `<span class="select2-results__clear">${state.text}</span>`;
-      } else {
-        data = state;
-      }
-      let qualityIcon = '';
-      QUALITY_OPTIONS.forEach((item) => {
-        qualityIcon += `<span></span>`;
-      });
-
-      return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
-    };
-
-    const qualitySelect = document.querySelectorAll(className);
-
-    qualitySelect.forEach((select) => {
-      const defaultOption = document.createElement('option');
-      defaultOption.text = `Select`;
-      defaultOption.value = '';
-      defaultOption.selected = true;
-      select.options.add(defaultOption);
-
-      QUALITY_OPTIONS.forEach((item) => {
-        const option = document.createElement('option');
-
-        option.value = item;
-
-        option.text = createQualityIcons(item);
-
-        select.options.add(option);
-      });
-    });
-
-    $(className).select2({
-      ...selectOptions,
-      templateResult: (state) => createQualityIcons(state),
-      escapeMarkup(markup) {
-        return markup;
-      },
-    });
-  } else if ($(className).length > 0) {
-    $(className).each(function () {
-      $(this).select2(selectOptions);
-    });
-  }
+  });
 
   if ($(className).length > 0) {
     $(className).each(function () {
@@ -1645,4 +1634,129 @@ $(document).on(
 
 const getUserLink = (id, url, searchParams = '') => {
   return `/${url}/${id}${searchParams}`;
+};
+
+const dateSelect = (className, selectOptions, selectData) => {
+  const OPTIONS = selectData;
+
+  if ($(className).find('option').length > 0) {
+    $(className)
+      .find('option')
+      .each(function () {
+        this.remove();
+      });
+  }
+
+  const selects = document.querySelectorAll(className);
+
+  selects.forEach((select) => {
+    const defaultOption = document.createElement('option');
+    defaultOption.text = selectOptions.placeholder.text;
+    defaultOption.value = '';
+    defaultOption.selected = true;
+    select.options.add(defaultOption);
+
+    OPTIONS.forEach((item) => {
+      const option = document.createElement('option');
+
+      if (item.value && item.label) {
+        option.value = item.value;
+        option.title = ' ';
+        option.text = generateSelectWithLabel(item.label);
+      }
+
+      select.options.add(option);
+    });
+  });
+
+  $(className).select2({
+    ...selectOptions,
+    templateResult: (state) => generateSelectWithLabel(state),
+    escapeMarkup(markup) {
+      return markup;
+    },
+  });
+};
+
+const qualitySelect = (className, selectOptions, selectData) => {
+  let QUALITY_OPTIONS = selectData;
+
+  if ($(className).find('option').length > 0) {
+    QUALITY_OPTIONS = [];
+    $(className)
+      .find('option')
+      .each(function () {
+        this.remove();
+      });
+  }
+
+  const qualitySelect = document.querySelectorAll(className);
+
+  qualitySelect.forEach((select) => {
+    const defaultOption = document.createElement('option');
+    defaultOption.text = selectOptions.placeholder.text;
+    defaultOption.value = '';
+    defaultOption.selected = true;
+    select.options.add(defaultOption);
+
+    QUALITY_OPTIONS.forEach((item) => {
+      const option = document.createElement('option');
+
+      option.value = item;
+
+      option.text = generateQualitySelect(item);
+
+      select.options.add(option);
+    });
+  });
+
+  $(className).select2({
+    ...selectOptions,
+    templateResult: (state) => generateQualitySelect(state),
+    escapeMarkup(markup) {
+      return markup;
+    },
+  });
+};
+const generateQualitySelect = (state) => {
+  let data = '';
+  if (state.id) {
+    data = state.id;
+  } else if (state.text) {
+    return `<span class="select2-results__clear">${state.text}</span>`;
+  } else {
+    data = state;
+  }
+  let qualityIcon = '';
+  DEFAULT_SELECT_OPTIONS.quality.forEach((item) => {
+    qualityIcon += `<span></span>`;
+  });
+
+  return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
+};
+const generateSelectWithLabel = (state) => {
+  let data = '';
+
+  if (state.id) {
+    data = state.id;
+  } else if (state.text) {
+    return `<span class="select2-results__clear">${state.text}</span>`;
+  } else {
+    data = state;
+  }
+
+  const currentItem = DEFAULT_SELECT_OPTIONS.createdDate.find(
+    (item) => item.value === data
+  );
+
+  if (currentItem) {
+    return currentItem.label;
+  }
+
+  return data;
+};
+const simpleSelect = (className, selectOptions) => {
+  $(className).each(function () {
+    $(this).select2(selectOptions);
+  });
 };

@@ -1026,6 +1026,15 @@
     <script src="assets/js/dataTable.js"></script>
 
     <script>
+      const DEFAULT_SELECT_OPTIONS = {
+        quality: [1, 2, 3, 4, 5],
+        status: ['active', 'passive'],
+        createdDate: [
+          { label: 'Last Week', value: 'week' },
+          { label: 'Last Month', value: 'month' },
+          { label: 'Last Year', value: 'year' },
+        ],
+      };
       $(document).ready(function () {
         const select2Options = {
           placeholder: 'Select',
@@ -1042,7 +1051,12 @@
         };
 
         createSelect2ByClass('._select2-lg', select2Options);
-        createSelect2ByClass('._select2-lg._quality', select2QualityOptions);
+        createSelect2ByClass(
+          '._select2-lg._quality',
+          select2QualityOptions,
+          'quality',
+          DEFAULT_SELECT_OPTIONS.quality
+        );
       });
     </script>
   </body>

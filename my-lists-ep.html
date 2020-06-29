@@ -1046,7 +1046,12 @@
           minimumResultsForSearch: -1,
         };
 
-        createSelect2ByClass('._quality', select2QualityOptions);
+        createSelect2ByClass(
+          '._quality',
+          select2QualityOptions,
+          'quality',
+          DEFAULT_SELECT_OPTIONS.quality
+        );
 
         const select2Options = {
           placeholder: {
@@ -1057,7 +1062,12 @@
           minimumResultsForSearch: -1,
           tags: true,
         };
-        createSelect2ByClass('._lastModified', select2Options);
+        createSelect2ByClass(
+          '._lastModified',
+          select2Options,
+          'date',
+          DEFAULT_SELECT_OPTIONS.createdDate
+        );
 
         const absolutelyLinks =
           window.location.host === 'andriiv.com'
@@ -1136,7 +1146,7 @@
               name: 'rating',
               title: 'List Quality',
               render: function (data, type, row, meta) {
-                return generateQualitySelectDataTable(row.rating);
+                return generateQualitySelect(row.rating);
               },
             },
             {

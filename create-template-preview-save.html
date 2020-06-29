@@ -44,6 +44,9 @@
       rel="stylesheet"
       type="text/css"
     />
+
+    <link href="assets/libs/emoji-picker/emoji.css" rel="stylesheet">
+
     <!-- App css -->
     <link
       href="assets/css/bootstrap.min.css"
@@ -714,46 +717,43 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a
-                      href="create-template-scratch.html"
-                      class="nav-link active"
-                    >
+                    <a href="create-template-scratch.html" class="nav-link">
                       Create From Scratch
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="create-template-import.html" class="nav-link">
+                    <a
+                      href="create-template-import.html"
+                      class="nav-link active"
+                    >
                       Import Your Design
                     </a>
                   </li>
                 </ul>
 
                 <div class="tab-content">
-                  <div class="tab-pane show active" id="create-from-scratch">
-                    <div class="card bg-light-grey pt-44">
-                      <div class="d-flex justify-content-center">
-                        <a href="#" class="create-template__link">
-                          <svg width="76.494" height="75">
-                            <use
-                              xlink:href="assets/images/sprite.svg#drag-n-drop-editor"
-                            ></use>
-                          </svg>
-                          <div class="btn _sm _secondary mt-20">
-                            Drag'n Drop Editor
-                          </div>
-                        </a>
+                  <div class="tab-pane show active" id="create-template-import">
+                    <div class="card bg-light-blue mb-0">
+                      <h4 class="mb-22">Preview and Save</h4>
+                      <div class="row mb-20">
+                        <div class="col-md-4">
+                          <div class="font-12 font-weight-bold mb-8">Name Your Template*</div>
+                          <input type="text" placeholder="Template Name" class="form-control mb-10">
+                        </div>
 
-                        <a href="#" class="create-template__link ml-100">
-                          <svg width="76.494" height="75">
-                            <use
-                              xlink:href="assets/images/sprite.svg#text-editor"
-                            ></use>
-                          </svg>
-                          <div class="btn _sm _secondary mt-20">
-                            Rich Text Editor
+                        <div class="col-md-8">
+                          <div class="font-12 font-weight-bold mb-8">Subject Line <span class="font-weight-medium color-secondary">(Optional)</span></div>
+                          <div class="position-relative">
+                            <input type="text" placeholder="Write a compelling subject line" class="form-control mb-10" data-emojiable="true">
                           </div>
-                        </a>
+                        </div>
                       </div>
+
+                      <button class="btn _primary _lg align-self-start">Save</button>
+                    </div>
+
+                    <div class="template-preview-save" id="template-preview-save">
+                      <iframe src="https://lavorium.com" frameborder="0"></iframe>
                     </div>
                   </div>
                 </div>
@@ -775,61 +775,6 @@
         </svg>
       </a>
 
-      <div
-        id="template-preview"
-        class="modal fade _template-preview"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myModalLabel"
-        aria-hidden="true"
-        style="display: none;"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-            >
-              <svg width="8" height="8">
-                <use xlink:href="assets/images/sprite.svg#cross"></use>
-              </svg>
-            </button>
-            <button class="btn_icon _arrow-left">
-              <svg width="30.874" height="50">
-                <use xlink:href="assets/images/sprite.svg#arrow"></use>
-              </svg>
-            </button>
-            <button class="btn_icon _arrow-right">
-              <svg width="30.874" height="50">
-                <use xlink:href="assets/images/sprite.svg#arrow"></use>
-              </svg>
-            </button>
-            <div class="modal-body">
-              <div class="template-preview">
-                <div class="template-preview__header">
-                  Film Festival
-                </div>
-
-                <div class="template-preview__body">
-                  <img
-                    src="assets/images/template-preview.jpg"
-                    alt="Template Preview"
-                  />
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-center mt-20">
-                <button class="btn _lg _secondary">
-                  Get This Template (and Edit)
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.modal -->
     </div>
     <!-- END wrapper -->
 
@@ -837,6 +782,11 @@
     <script src="assets/js/vendor.min.js"></script>
 
     <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <script src="assets/libs/emoji-picker/config.js"></script>
+    <script src="assets/libs/emoji-picker/util.js"></script>
+    <script src="assets/libs/emoji-picker/jquery.emojiarea.js"></script>
+    <script src="assets/libs/emoji-picker/emoji-picker.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
@@ -859,12 +809,22 @@
         };
 
         createSelect2ByClass('._select2-lg', select2Options);
-        createSelect2ByClass(
-          '._select2-lg._quality',
-          select2QualityOptions,
-          'quality',
-          DEFAULT_SELECT_OPTIONS.quality
-        );
+        createSelect2ByClass('._select2-lg._quality', select2QualityOptions);
+
+        /*$('#template-preview-save').load("./dist/index.html");*/
+      });
+
+      $(function() {
+        // Initializes and creates emoji set from sprite sheet
+        window.emojiPicker = new EmojiPicker({
+          emojiable_selector: '[data-emojiable=true]',
+          assetsPath: './assets/images/emoji/',
+          popupButtonClasses: 'fa fa-smile-o'
+        });
+        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+        // It can be called as many times as necessary; previously converted input fields will not be converted again
+        window.emojiPicker.discover();
       });
     </script>
   </body>

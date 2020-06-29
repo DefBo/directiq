@@ -1,34 +1,3 @@
-const generateQualitySelect = (state) => {
-  let data = '';
-  if (state.id) {
-    data = state.id;
-  } else if (state.text) {
-    return `<span class="select2-results__clear">${state.text}</span>`;
-  } else {
-    data = state;
-  }
-  let qualityIcon = '';
-  DEFAULT_SELECT_OPTIONS.quality.forEach((item) => {
-    qualityIcon += `<span></span>`;
-  });
-
-  return `<div class="quality-icon _${data}">${qualityIcon}</div>`;
-};
-
-const generateCreatedDateSelect = (state) => {
-  let data = '';
-
-  if (state.id) {
-    data = state.id;
-  } else if (state.text) {
-    return `<span class="select2-results__clear">${state.text}</span>`;
-  } else {
-    data = state;
-  }
-
-  return data;
-};
-
 function debounce(f, t) {
   return function (args) {
     const previousCall = this.lastCall;
@@ -115,7 +84,7 @@ const TABLE_CHECKBOX_ACTIONS = {
 const SELECT_TEMPLATES = {
   quality: (state) => generateQualitySelect(state),
   status: (state) => generateStatusSelect(state),
-  createdDate: (state) => generateCreatedDateSelect(state),
+  createdDate: (state) => generateSelectWithLabel(state),
 };
 
 const createCustomDataTable = async (id, restConfig, customConfig) => {
@@ -186,11 +155,25 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
 
   const getTableData = (data) => {
     if (!data) return [];
-
+    const staticPositions = [];
+    for (let i = 0; i < data.columns.length; i++) {
+      if (data.columns[i].isExtra === false)
+        staticPositions.push(data.columns[i].position);
+    }
+    // formula for retrieving correct cell per column relies like this:
+    // if a column is standard (isExtra = false) then cell.position = column.position
+    // otherwise, cell position is Maximum Static Position + ExtraColumn.Position.
+    // reason behind this is that we want the user to be able to re-order columns
+    const maxStaticPosition = Math.max(...staticPositions);
     return data.rows.map((row) => {
       const draftData = [];
       data.columns.forEach((column, index) => {
-        const draftRow = row.cells.find((cell) => cell.position === index);
+        const extraIndex = maxStaticPosition + column.position;
+        const draftRow = row.cells.find((cell) =>
+          !column.isExtra
+            ? cell.position === index
+            : cell.position === extraIndex
+        );
         draftRow ? draftData.push(draftRow.value) : draftData.push('');
       });
       return draftData;
@@ -325,76 +308,72 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
         
                 <div class="dropdown-menu dropdown-menu-right _actions mt-5" aria-labelledby="moreMenuButton">
                     <div class="dropdown-menu-inner">
-                        ${
-                          !isEnabled
-                            ? ``
-                            : `<div class="confirm__wrap"><button type="button" data-id="${row[0]}"
-                            class="dropdown-item confirm__btn btn-contact-disable" data-action="disable">${locales.Disable}</button>
-                            <div class="confirm__modal _to-left d-none">
-                                <div class="confirm__content">
-                                    <p class="confirm__text">
-                                        You sure you want to delete this tag?
-                                    </p>
-                                </div>
-                                <div class="d-flex">
-                                    <button class="btn _lg _secondary">Nope</button>
-                                    <button class="btn _lg _primary">Sure</button>
-                                </div>
-                            </div></div>`
-                        }
-                        ${
-                          !isList
-                            ? ``
-                            : `<div class="confirm__wrap"><button type="button" data-id="${row[0]}" data-listid=${listId} class="dropdown-item confirm__btn btn-contact-remove-list"
-                            data-action="removeFromList">${locales.RemoveFromList}</button>
-                            <div class="confirm__modal _to-left d-none">
-                                <div class="confirm__content">
-                                    <p class="confirm__text">
-                                        You sure you want to delete this tag?
-                                    </p>
-                                </div>
-                                <div class="d-flex">
-                                    <button class="btn _lg _secondary">Nope</button>
-                                    <button class="btn _lg _primary">Sure</button>
-                                </div>
-                            </div></div>`
-                        }
-                        ${
-                          !isTag
-                            ? ``
-                            : `<div class="confirm__wrap"><button type="button" data-id="${row[0]}" data-tagid=${tagId} class="dropdown-item confirm__btn btn-contact-remove-tag"
-                            data-action="removeFromTag">${locales.RemoveFromTag}</button>
-                            <div class="confirm__modal _to-left d-none">
-                                <div class="confirm__content">
-                                    <p class="confirm__text">
-                                        You sure you want to delete this tag?
-                                    </p>
-                                </div>
-                                <div class="d-flex">
-                                    <button class="btn _lg _secondary">Nope</button>
-                                    <button class="btn _lg _primary">Sure</button>
-                                </div>
-                            </div></div>`
-                        }
-                        <div class="confirm__wrap">
-                            <button type="button" data-id="${
-                              row[0]
-                            }"  data-action="delete"
-                                class="dropdown-item confirm__btn btn-contact-delete">${
-                                  locales.Delete
-                                }</button>
-                            <div class="confirm__modal _to-left d-none">
-                                <div class="confirm__content">
-                                    <p class="confirm__text">
-                                        You sure you want to delete this tag?
-                                    </p>
-                                </div>
-                                <div class="d-flex">
-                                    <button class="btn _lg _secondary">Nope</button>
-                                    <button class="btn _lg _primary">Sure</button>
-                                </div>
+                    ${
+                      !isEnabled
+                        ? ``
+                        : `<div class="confirm__wrap"><button type="button" class="dropdown-item confirm__btn">${locales.Disable}</button>
+                        <div class="confirm__modal _to-left d-none">
+                            <div class="confirm__content">
+                                <p class="confirm__text">
+                                    You sure you want to delete this tag?
+                                </p>
+                            </div>
+                            <div class="d-flex">
+                                <button class="btn _lg _secondary">Nope</button>
+                                <button data-id="${row[0]}" data-action="disable" class="btn _lg _primary btn-contact-disable">Sure</button>
+                            </div>
+                        </div></div>`
+                    }
+                    ${
+                      !isList
+                        ? ``
+                        : `<div class="confirm__wrap"><button type="button" class="dropdown-item confirm__btn">${locales.RemoveFromList}</button>
+                        <div class="confirm__modal _to-left d-none">
+                            <div class="confirm__content">
+                                <p class="confirm__text">
+                                    You sure you want to delete this tag?
+                                </p>
+                            </div>
+                            <div class="d-flex">
+                                <button class="btn _lg _secondary">Nope</button>
+                                <button class="btn _lg _primary btn-contact-remove-list" data-id="${row[0]}" data-listid="${listId}" data-action="removeFromList">Sure</button>
+                            </div>
+                        </div></div>`
+                    }
+                    ${
+                      !isTag
+                        ? ``
+                        : `<div class="confirm__wrap"><button type="button" class="dropdown-item confirm__btn" data-action="removeFromTag">${locales.RemoveFromTag}</button>
+                        <div class="confirm__modal _to-left d-none">
+                            <div class="confirm__content">
+                                <p class="confirm__text">
+                                    You sure you want to delete this tag?
+                                </p>
+                            </div>
+                            <div class="d-flex">
+                                <button class="btn _lg _secondary">Nope</button>
+                                <button class="btn _lg _primary btn-contact-remove-tag" data-id="${row[0]}" data-tagid="${tagId}">Sure</button>
+                            </div>
+                        </div></div>`
+                    }
+                    <div class="confirm__wrap">
+                        <button type="button" class="dropdown-item confirm__btn">${
+                          locales.Delete
+                        }</button>
+                        <div class="confirm__modal _to-left d-none">
+                            <div class="confirm__content">
+                                <p class="confirm__text">
+                                    You sure you want to delete this tag?
+                                </p>
+                            </div>
+                            <div class="d-flex">
+                                <button class="btn _lg _secondary">Nope</button>
+                                <button class="btn _lg _primary btn-contact-delete"  data-id="${
+                                  row[0]
+                                }"  data-action="delete" >Sure</button>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -628,6 +607,16 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
       }
     }
     tableWrapper.classList.remove('loading');
+
+    const {
+      button: buttonSelector,
+      buttonSave: buttonSaveSelector,
+    } = createFromForm;
+    const button = document.querySelector(buttonSelector);
+    const buttonSave = document.querySelector(buttonSaveSelector);
+    if (button && buttonSave) {
+      buttonSave.innerHTML = `${buttonSave.innerHTML} (${fetchedData.totalCount})`;
+    }
   };
 
   const generateTable = async () => {
