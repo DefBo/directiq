@@ -7363,7 +7363,7 @@ body.nav-is-toggled:after {
   background: #ecf1f8; }
 
 .bg-light-blue {
-  background: #DAE8F7; }
+  background: #dae8f7; }
 
 .bg-white {
   background: #fff; }
@@ -8621,37 +8621,14 @@ body.nav-is-toggled:after {
 .template-preview__body {
   width: 64vw;
   height: 66.4vh;
-  background-color: rgba(218, 232, 247, 0.5);
-  overflow: auto;
-  color: #fff;
-  transition: color 0.25s; }
-  .template-preview__body:hover {
-    color: #b6ffe8; }
-    .template-preview__body:hover::-webkit-scrollbar-thumb {
-      background: #fff; }
-  .template-preview__body:active {
-    color: #fff; }
-  .template-preview__body::-webkit-scrollbar {
-    width: 20px;
-    background: currentColor;
-    -webkit-transition: 0.5s;
-    transition: 0.5s; }
-  .template-preview__body::-webkit-scrollbar-thumb {
-    background: #00eba8;
-    border: 5px solid currentColor;
-    border-radius: 20px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s; }
-  .template-preview__body::-webkit-scrollbar-thumb:active {
-    background: #0000ff; }
-  .template-preview__body img {
-    display: block;
-    width: 100%;
-    height: auto; }
+  background-color: rgba(218, 232, 247, 0.5); }
   @media (max-width: 479px) {
     .template-preview__body {
       width: 90vw;
       height: calc(100% - 40px); } }
+  .template-preview__body iframe {
+    width: 100%;
+    height: 100%; }
 
 .create-template__link {
   display: flex;

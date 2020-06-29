@@ -17203,6 +17203,9 @@ button.close {
   .modal-body {
     padding: 20px; } }
 
+.modal-backdrop.show {
+  opacity: 0.85; }
+
 .nav-tabs > li > a,
 .nav-pills > li > a {
   color: #212b35;
