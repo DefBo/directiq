@@ -859,7 +859,6 @@
       // iframed document sends its height using postMessage
       function handleDocHeightMsg(e) {
         // check origin
-        console.log(e);
         if (e.origin === 'http://andriiv.com') {
           // parse data
           var data = JSON.parse(e.data);
