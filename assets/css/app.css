@@ -5763,6 +5763,40 @@ span.flatpickr-weekday,
     .dropzone_error .dropzone__error-message {
       margin-bottom: 7px; }
 
+.dz-file-preview {
+  position: relative; }
+  .dz-file-preview img {
+    opacity: 0.4; }
+    .dz-complete .dz-file-preview img {
+      opacity: 1; }
+  .dz-complete .dz-file-preview .dz-loader {
+    display: none; }
+
+.dz-loader {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin: 6px;
+  border: 6px solid #0000ff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #0000ff transparent transparent transparent;
+  top: 0; }
+  .dz-loader:nth-child(1) {
+    animation-delay: -0.45s; }
+  .dz-loader:nth-child(2) {
+    animation-delay: -0.3s; }
+  .dz-loader:nth-child(3) {
+    animation-delay: -0.15s; }
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 @font-face {
   font-family: 'dropify';
   src: url("../fonts/dropify.eot");
