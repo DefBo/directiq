@@ -8601,7 +8601,8 @@ body.nav-is-toggled:after {
   .inbox-preview__item-body {
     height: 130px;
     background: #f6f9fc;
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
     .inbox-preview__item-body .loader {
       display: none;
       transform: translate(-50%, -50%) scale(0.615);
@@ -8637,6 +8638,23 @@ body.nav-is-toggled:after {
       height: 100%;
       object-fit: cover;
       object-position: center; }
+    .inbox-preview__item-body:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 255, 0.5);
+      background-image: url("../images/eye.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.15s; }
+    .inbox-preview__item-body:hover:after {
+      opacity: 1;
+      visibility: visible; }
 
 .templates {
   display: flex;
@@ -8760,6 +8778,7 @@ body.nav-is-toggled:after {
       height: 100%; } }
 
 .modal._template-preview .modal-body {
+  height: 100%;
   padding: 43px 105px; }
   @media (max-width: 767px) {
     .modal._template-preview .modal-body {
@@ -8850,6 +8869,29 @@ body.nav-is-toggled:after {
   width: 64vw;
   height: 66.4vh;
   background-color: rgba(218, 232, 247, 0.5); }
+  .template-preview__body._with-img {
+    overflow: auto;
+    color: #fff;
+    transition: color 0.25s; }
+    .template-preview__body._with-img:hover {
+      color: #b6ffe8; }
+      .template-preview__body._with-img:hover::-webkit-scrollbar-thumb {
+        background: #fff; }
+    .template-preview__body._with-img:active {
+      color: #fff; }
+    .template-preview__body._with-img::-webkit-scrollbar {
+      width: 20px;
+      background: currentColor;
+      -webkit-transition: 0.5s;
+      transition: 0.5s; }
+    .template-preview__body._with-img::-webkit-scrollbar-thumb {
+      background: #00eba8;
+      border: 5px solid currentColor;
+      border-radius: 20px;
+      -webkit-transition: 0.5s;
+      transition: 0.5s; }
+    .template-preview__body._with-img::-webkit-scrollbar-thumb:active {
+      background: #0000ff; }
   @media (max-width: 479px) {
     .template-preview__body {
       width: 90vw;
@@ -8857,6 +8899,10 @@ body.nav-is-toggled:after {
   .template-preview__body iframe {
     width: 100%;
     height: 100%; }
+  .template-preview__body img {
+    display: block;
+    width: 100%;
+    height: auto; }
 
 .create-template__link {
   display: flex;

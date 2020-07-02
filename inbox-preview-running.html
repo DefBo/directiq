@@ -871,7 +871,11 @@
                             </button>
                           </div>
                         </div>
-                        <div class="inbox-preview__item-body">
+                        <div
+                                class="inbox-preview__item-body"
+                                data-toggle="modal"
+                                data-target="#template-preview"
+                        >
                           <img
                             src="assets/images/template-3.jpg"
                             alt="Template Preview"
@@ -926,7 +930,11 @@
                             </button>
                           </div>
                         </div>
-                        <div class="inbox-preview__item-body">
+                        <div
+                                class="inbox-preview__item-body"
+                                data-toggle="modal"
+                                data-target="#template-preview"
+                        >
                           <img
                             src="assets/images/template-3.jpg"
                             alt="Template Preview"
@@ -956,7 +964,11 @@
                             </button>
                           </div>
                         </div>
-                        <div class="inbox-preview__item-body">
+                        <div
+                                class="inbox-preview__item-body"
+                                data-toggle="modal"
+                                data-target="#template-preview"
+                        >
                           <img
                             src="assets/images/template-3.jpg"
                             alt="Template Preview"
@@ -1117,21 +1129,21 @@
       </a>
 
       <div
-        id="template-preview"
-        class="modal fade _template-preview"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myModalLabel"
-        aria-hidden="true"
-        style="display: none;"
+              id="template-preview"
+              class="modal fade _template-preview"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="myModalLabel"
+              aria-hidden="true"
+              style="display: none;"
       >
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-hidden="true"
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true"
             >
               <svg width="8" height="8">
                 <use xlink:href="assets/images/sprite.svg#cross"></use>
@@ -1150,11 +1162,14 @@
             <div class="modal-body">
               <div class="template-preview">
                 <div class="template-preview__header">
-                  Film Festival
+                  iPad Pro 12.9 (iOs 13)
                 </div>
 
-                <div class="template-preview__body">
-                  <iframe src="https://lavorium.com" frameborder="0"></iframe>
+                <div class="template-preview__body _with-img">
+                  <img
+                          src="assets/images/template-preview.jpg"
+                          alt="Template Preview"
+                  />
                 </div>
               </div>
 
