@@ -92,6 +92,8 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
   const { isList = false, listId = 0 } = customConfig;
   const { isTag = false, tagId = 0 } = customConfig;
 
+  if (!document.querySelector(id)) return;
+
   const generateOuterControls = (filterCallback) => {
     const tableOuterControls = document.querySelector('.js-dataTable-control');
     if (tableOuterControls) {
@@ -608,17 +610,19 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
     }
     tableWrapper.classList.remove('loading');
 
-    const {
-      button: buttonSelector,
-      buttonSave: buttonSaveSelector,
-    } = createFromForm;
-    const button = document.querySelector(buttonSelector);
-    const buttonSave = document.querySelector(buttonSaveSelector);
-    if (button && buttonSave && fetchedData) {
-      buttonSave.innerHTML = buttonSave.innerHTML.replace(
-        /\(.*\)/g,
-        `(${fetchedData.totalCount})`
-      );
+    if (createFromForm) {
+      const {
+        button: buttonSelector,
+        buttonSave: buttonSaveSelector,
+      } = createFromForm;
+      const button = document.querySelector(buttonSelector);
+      const buttonSave = document.querySelector(buttonSaveSelector);
+      if (button && buttonSave && fetchedData) {
+        buttonSave.innerHTML = buttonSave.innerHTML.replace(
+          /\(.*\)/g,
+          `(${fetchedData.totalCount})`
+        );
+      }
     }
   };
 

@@ -6274,7 +6274,7 @@ body.nav-is-toggled:after {
         color: #fff; }
   .btn._loading {
     background: #0000ff;
-    border-color: #0000FF;
+    border-color: #0000ff;
     position: relative;
     color: transparent !important; }
     .btn._loading .loader {
@@ -7496,7 +7496,7 @@ body.nav-is-toggled:after {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #0000FF;
+    color: #0000ff;
     font-size: 24px;
     font-weight: 500; }
 
@@ -8901,7 +8901,7 @@ body.nav-is-toggled:after {
 
 .spam-doctor__message {
   position: relative;
-  color: #0000FF; }
+  color: #0000ff; }
   .spam-doctor__message .loader {
     display: none;
     transform: translate(-50%, 0) scale(0.3077);

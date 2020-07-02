@@ -1683,13 +1683,16 @@ const dateSelect = (className, selectOptions, selectData) => {
   });
 };
 
-const qualitySelect = (className, selectOptions, selectData) => {
-  const QUALITY_OPTIONS = selectData;
+const qualitySelect = (className, selectOptions, selectData = null) => {
+  let QUALITY_OPTIONS = selectData;
   let selectedIndex = null;
   if ($(className).find('option').length > 0) {
+    if (!selectData) QUALITY_OPTIONS = [];
     $(className)
       .find('option')
       .each(function (index) {
+        if (typeof QUALITY_OPTIONS === 'object' && !selectData)
+          QUALITY_OPTIONS.push(this.value);
         if ($(this).is(':selected')) selectedIndex = index;
         this.remove();
       });

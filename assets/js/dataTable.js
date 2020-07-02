@@ -56,6 +56,7 @@ const createDataTable = (id, restConfig, isFixedCollumns) => {
       setConfirmModals();
     },
   };
+  if (!document.querySelector(id)) return;
 
   const tableElement = document.querySelector(id);
 
