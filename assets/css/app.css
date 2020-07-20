@@ -6282,7 +6282,11 @@ body.nav-is-toggled:after {
     background: #0000ff;
     border-color: #0000ff;
     position: relative;
-    color: transparent !important; }
+    color: transparent !important;
+    pointer-events: none;
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
     .btn._loading .loader {
       display: block; }
     .btn._loading + .dropdown._actions {
