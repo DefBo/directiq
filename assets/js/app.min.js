@@ -1290,12 +1290,14 @@ $(document).ready(function () {
     $('.contact__finish').removeClass('_disabled');
   });
 
-  $('.confirm__btn').click(function () {
+  $(document).on('click', '.confirm__btn', function (e) {
+    e.stopPropagation();
+
     const modal = $(this).next('.confirm__modal');
     const isElementInView = Utils.isElementInView(modal, true);
     const modalParentTable = $(this).closest('.dataTables_scrollBody');
-
     modal.removeClass('d-none');
+
     if (!isElementInView && modalParentTable.length === 0) {
       $(this)[0].nextElementSibling.scrollIntoView({
         block: 'end',
@@ -1306,13 +1308,10 @@ $(document).ready(function () {
     if (modalParentTable.length > 0) {
       $(this).closest('td').addClass('table-confirm-show');
     }
-
-    $(document).on('click', '.confirm__btn', function (e) {
-      e.stopPropagation();
-    });
   });
 
-  $('.confirm__modal .btn').click(function () {
+  $(document).on('click', '.confirm__modal .btn', function (e) {
+    $('body').removeClass('actions-visible');
     $(this).closest('.confirm__modal').addClass('d-none');
     $(this).closest('td').removeClass('table-confirm-show');
   });
@@ -1524,30 +1523,6 @@ const setDataTableActions = (table) => {
       } else {
         $(tableWrapper).find('td input[type=checkbox]').prop('checked', false);
       }
-    });
-
-  $(tableWrapper)
-    .find('tr .confirm__btn')
-    .click(function () {
-      const modal = $(this).next('.confirm__modal');
-      const isElementInView = Utils.isElementInView(modal, true);
-      const modalParentTable = $(this).closest('.dataTables_scrollBody');
-
-      modal.removeClass('d-none');
-      if (!isElementInView && modalParentTable.length === 0) {
-        $(this)[0].nextElementSibling.scrollIntoView({
-          block: 'end',
-          behavior: 'smooth',
-        });
-      }
-
-      if (modalParentTable.length > 0) {
-        $(this).closest('td').addClass('table-confirm-show');
-      }
-
-      $(document).on('click', '.confirm__btn', function (e) {
-        e.stopPropagation();
-      });
     });
 };
 

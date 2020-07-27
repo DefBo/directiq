@@ -1,29 +1,5 @@
 let tableSearchParams = '';
 
-const setConfirmModals = () => {
-  $('.confirm__btn').click(function () {
-    const modal = $(this).next('.confirm__modal');
-    const isElementInView = Utils.isElementInView(modal, true);
-    modal.removeClass('d-none');
-    if (!isElementInView) {
-      $(this)[0].nextElementSibling.scrollIntoView({
-        block: 'end',
-        behavior: 'smooth',
-      });
-    }
-
-    $(document).on('click', '.confirm__btn', function (e) {
-      e.stopPropagation();
-    });
-  });
-
-  $('.confirm__modal .btn').click(function () {
-    $(this).closest('.confirm__modal').addClass('d-none');
-  });
-
-  setDropdownActions('.diriq-table__wrapper');
-};
-
 const getUserPageUrl = (userId, url) => {
   let searchParams = tableSearchParams;
   let userDetailsPage = url;
@@ -53,7 +29,7 @@ const createDataTable = (id, restConfig, isFixedCollumns) => {
   let config = {
     ...restConfig,
     initComplete(settings, json) {
-      setConfirmModals();
+      setDropdownActions('.diriq-table__wrapper');
     },
   };
   if (!document.querySelector(id)) return;
@@ -130,7 +106,7 @@ const createDataTable = (id, restConfig, isFixedCollumns) => {
 
     tableWrapper && tableWrapper.classList.remove('loading');
 
-    setConfirmModals();
+    setDropdownActions('.diriq-table__wrapper');
   });
 
   $(table.table().container()).on('keyup', 'tfoot input', function () {

@@ -66,6 +66,11 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link
+      href="assets/libs/datatables.net-fixedcolumns-dt/css/fixedColumns.dataTables.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
 
   <body data-layout-mode="two-column" class="animation-stopper">
@@ -1015,7 +1020,7 @@
 
     <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-
+    <script src="assets/libs/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
     <script src="assets/libs/select2/js/select2.min.js"></script>
 
     <!-- App js -->
@@ -1079,31 +1084,11 @@
             type: 'GET',
             crossDomain: true,
           },
+          fixedColumns: {
+            rightColumns: 1,
+          },
           serverSide: true,
           order: [[6, 'desc']],
-          initComplete: function (settings, json) {
-            $('.confirm__btn').click(function () {
-              const modal = $(this).next('.confirm__modal');
-              const isElementInView = Utils.isElementInView(modal, true);
-              $('body').addClass('actions-visible');
-              modal.removeClass('d-none');
-              if (!isElementInView) {
-                $(this)[0].nextElementSibling.scrollIntoView({
-                  block: 'end',
-                  behavior: 'smooth',
-                });
-              }
-
-              $(document).on('click', '.confirm__btn', function (e) {
-                e.stopPropagation();
-              });
-            });
-
-            $('.confirm__modal .btn').click(function () {
-              $('body').removeClass('actions-visible');
-              $(this).closest('.confirm__modal').addClass('d-none');
-            });
-          },
           columns: [
             {
               name: 'id',

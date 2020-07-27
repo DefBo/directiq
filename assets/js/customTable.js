@@ -345,7 +345,7 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
                     ${
                       !isTag
                         ? ``
-                        : `<div class="confirm__wrap"><button type="button" class="dropdown-item confirm__btn" data-action="removeFromTag">${locales.RemoveFromTag}</button>
+                        : `<div class="confirm__wrap"><button type="button" class="dropdown-item confirm__btn" >${locales.RemoveFromTag}</button>
                         <div class="confirm__modal _to-left d-none">
                             <div class="confirm__content">
                                 <p class="confirm__text">
@@ -354,7 +354,7 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
                             </div>
                             <div class="d-flex">
                                 <button class="btn _lg _secondary">Nope</button>
-                                <button class="btn _lg _primary btn-contact-remove-tag" data-id="${row[0]}" data-tagid="${tagId}">Sure</button>
+                                <button class="btn _lg _primary btn-contact-remove-tag" data-id="${row[0]}" data-action="removeFromTag" data-tagid="${tagId}">Sure</button>
                             </div>
                         </div></div>`
                     }
