@@ -1364,6 +1364,16 @@ $(document).ready(function () {
     $('.hamburger').removeClass('_with-overlay');
   });
 
+  if ($('.create-campaign__timing-col-radio').length > 0) {
+    $('.create-campaign__timing-col-radio input:checked')
+      .closest('.create-campaign__timing-col')
+      .addClass('_active');
+    $('.create-campaign__timing-col-radio input').change(function () {
+      $('.create-campaign__timing-col').removeClass('_active');
+      $(this).closest('.create-campaign__timing-col').addClass('_active');
+    });
+  }
+
   $('.nav-drill>.nav-items>.nav-item').hover(
     function () {
       $('body').addClass('navigation-hovered');
