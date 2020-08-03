@@ -6247,6 +6247,8 @@ body._overlayed {
       transform: scale(0.925); }
   .btn._wide {
     min-width: calc(20% - 24px); }
+  .btn._long {
+    min-width: 125px; }
   .btn._primary, .btn._primary:focus {
     background: #00eba8;
     border-color: #00eba8;
@@ -9297,7 +9299,7 @@ body._overlayed {
 .create-campaign__templates-item {
   width: 125px;
   height: 150px;
-  margin: 0 15px 15px;
+  margin: 15px;
   position: relative; }
   .create-campaign__templates-item img {
     display: block;
@@ -9336,6 +9338,41 @@ body._overlayed {
     margin-left: -20px; }
   .create-campaign__timing-col:not(._active) .create-campaign__timing-col-content {
     display: none; }
+
+.create-campaign__email-preview-col {
+  flex: 0 0 213px; }
+
+.create-campaign__email-preview-img {
+  height: 244px;
+  color: #b6ffe8;
+  cursor: pointer;
+  position: relative;
+  transition: 0.15s; }
+  .create-campaign__email-preview-img svg text {
+    fill: #000;
+    transition: 0.15s; }
+  .create-campaign__email-preview-img svg line {
+    stroke: #000;
+    transition: 0.15s; }
+  .create-campaign__email-preview-img:hover {
+    color: #0000ff; }
+    .create-campaign__email-preview-img:hover svg text {
+      fill: #fff; }
+    .create-campaign__email-preview-img:hover svg line {
+      stroke: #fff; }
+  .create-campaign__email-preview-img img,
+  .create-campaign__email-preview-img svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; }
+  .create-campaign__email-preview-img img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
 
 .flatpickr-calendar,
 .select2-container {
