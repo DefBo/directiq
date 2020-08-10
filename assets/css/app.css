@@ -7593,6 +7593,9 @@ body._overlayed {
 .mw-840 {
   max-width: 840px; }
 
+.highlight {
+  background-color: #ffff00; }
+
 .tln-active,
 .tln-wrapper,
 .tln-line {
@@ -9269,6 +9272,8 @@ body._overlayed {
     height: 100%;
     object-fit: cover;
     object-position: center top; }
+  .create-campaign__row-description-img + .create-campaign__row-description-img {
+    margin-left: 30px; }
 
 .create-campaign__fields {
   display: flex;
@@ -9449,7 +9454,9 @@ body._overlayed {
   position: relative;
   border: 1px solid #00eba8;
   border-radius: 50%;
-  margin: 9px auto 22.5px; }
+  margin: 9px auto 22.5px;
+  background: #fff;
+  transition: 0.15s; }
   .round-touchspin .input-group-append,
   .round-touchspin .input-group-prepend {
     position: absolute;
@@ -9460,7 +9467,8 @@ body._overlayed {
     z-index: 1; }
   .round-touchspin .input-group-append {
     right: 0;
-    transform: translate(50%, -50%); }
+    transform: translate(50%, -50%);
+    transition: 0.15s; }
   .round-touchspin .input-group {
     position: static; }
   .round-touchspin .input-group > .form-control {
@@ -9476,7 +9484,11 @@ body._overlayed {
     text-align: center;
     background: transparent;
     font-size: 36px;
-    color: #0000ff; }
+    color: #0000ff;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.15s;
+    pointer-events: none; }
   .round-touchspin .btn-primary {
     width: 24px;
     height: 24px;
@@ -9486,6 +9498,24 @@ body._overlayed {
     color: #000;
     padding: 0;
     font-size: 16px; }
+  .round-touchspin .bootstrap-touchspin-down {
+    transition: 0.15s; }
+  .round-touchspin:not(._with-value) {
+    border-color: transparent; }
+    .round-touchspin:not(._with-value) .input-group > .form-control,
+    .round-touchspin:not(._with-value) .bootstrap-touchspin-down {
+      opacity: 0;
+      visibility: hidden; }
+    .round-touchspin:not(._with-value) .input-group-append {
+      right: 50%;
+      top: 13px;
+      transform: translateX(50%) scale(1.4582); }
+  .round-touchspin._max .input-group-append {
+    z-index: -1;
+    opacity: 0.2; }
+  .round-touchspin._disabled {
+    opacity: 0.2;
+    pointer-events: none; }
 
 .percents-slider {
   margin-top: 52px; }
@@ -9604,6 +9634,18 @@ body._overlayed {
   font-weight: 700;
   line-height: 1.33;
   margin-bottom: 30px; }
+
+.marker-highlight {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffff00;
+  font-size: 12px;
+  font-weight: 700;
+  color: #212b35; }
 
 th,
 td {

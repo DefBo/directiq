@@ -1029,11 +1029,17 @@
                                 What would you like to test?
                               </p>
                               <p class="create-campaign__row-description">
-                                This campaign will be sent to
-                                <a href="#" class="link">784 recipients</a>.
-                                Email footer and forms will be delivered in
+                                We'll test
                                 <span class="color-primary font-weight-bold"
-                                  >English</span
+                                  >3 combination of From Names</span
+                                >. Test will send to
+                                <span class="color-primary font-weight-bold"
+                                  >20%</span
+                                >
+                                of recipients. Winning combination will be
+                                determined
+                                <span class="color-primary font-weight-bold"
+                                  >by opens after 2 hours</span
                                 >.
                               </p>
                             </div>
@@ -1064,6 +1070,7 @@
                                         data-toggle="touchspin"
                                         type="text"
                                         value="0"
+                                        data-bts-max="3"
                                       />
                                     </div>
                                   </div>
@@ -1076,6 +1083,7 @@
                                         data-toggle="touchspin"
                                         type="text"
                                         value="0"
+                                        data-bts-max="3"
                                       />
                                     </div>
                                   </div>
@@ -1088,6 +1096,7 @@
                                         data-toggle="touchspin"
                                         type="text"
                                         value="0"
+                                        data-bts-max="3"
                                       />
                                     </div>
                                   </div>
@@ -1249,7 +1258,21 @@
                               <p class="create-campaign__row-description">
                                 This campaign will be sent from
                                 <span class="color-primary font-weight-bold"
-                                  >Barbo Design / noreply@barbodesign.com</span
+                                  >noreply@barbodesign.com</span
+                                >
+                              </p>
+                              <p class="create-campaign__row-description">
+                                From Name A/B test will run for (A)
+                                <span class="color-primary font-weight-bold"
+                                  >Barbo Design</span
+                                >
+                                - (B)
+                                <span class="color-primary font-weight-bold"
+                                  >Weekly Discounts</span
+                                >
+                                - (C)
+                                <span class="color-primary font-weight-bold"
+                                  >Barbo Deals</span
                                 >
                               </p>
                             </div>
@@ -1266,77 +1289,96 @@
                           </div>
 
                           <div class="create-campaign__row-edit">
-                            <div class="create-campaign__fields">
-                              <div class="create-campaign__fields-col">
-                                <p class="font-14 font-weight-bold mb-7">
-                                  From Name
-                                </p>
-                                <div class="form-control__wrap mb-10">
+                            <h5 class="mb-7 mt-6">
+                              <span class="highlight"
+                                >From Names (A/B Test)</span
+                              >
+                            </h5>
+                            <div class="row">
+                              <div class="col-lg-4">
+                                <div class="form-control__wrap mb-10 d-flex">
+                                  <div class="marker-highlight mr-10">A</div>
                                   <input
                                     type="text"
-                                    placeholder="Your From Name Here"
+                                    placeholder="From Name Here"
                                     class="form-control"
                                     value="Barbo Design"
                                   />
                                 </div>
                               </div>
-                              <div class="create-campaign__fields-col">
-                                <form class="needs-validation mb-11" novalidate>
-                                  <p class="font-14 font-weight-bold mb-7">
-                                    From Address
-                                  </p>
-
-                                  <div class="form-control__wrap mb-10">
-                                    <select
-                                      class="form-control _select2-lg _select2-with-tags"
-                                      multiple="multiple"
-                                      required
-                                    >
-                                      <option></option>
-                                      <option value="test-1" selected
-                                        >noreply@barbodesign.com</option
-                                      >
-                                      <option value="test-3"
-                                        >Custom tag 2</option
-                                      >
-                                      <option value="test-4"
-                                        >Custom tag 3</option
-                                      >
-                                      <option value="test-5"
-                                        >Custom tag 4</option
-                                      >
-                                    </select>
-                                  </div>
-                                </form>
-                                <button
-                                  class="btn _sm _primary"
-                                  data-toggle="modal"
-                                  data-target="#verify-domain"
-                                  id="btn-verify-domain"
-                                >
-                                  Verify noreply@barbodesign.com
-                                </button>
-
-                                <div id="from-email-is-verified" class="d-none">
-                                  <p
-                                    class="font-12 font-weight-bold mb-5 mt-10"
-                                  >
-                                    Email address is verified!
-                                  </p>
-
-                                  <div class="mb-29">
-                                    <a href="#" class="link font-12"
-                                      >Connect Your Domain</a
-                                    >
-                                    <span
-                                      class="font-12 font-weight-medium color-secondary"
-                                      >- Optional (Improves inbox delivery
-                                      rates)</span
-                                    >
-                                  </div>
+                              <div class="col-lg-4">
+                                <div class="form-control__wrap mb-10 d-flex">
+                                  <div class="marker-highlight mr-10">B</div>
+                                  <input
+                                    type="text"
+                                    placeholder="From Name B Here"
+                                    class="form-control"
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-lg-4">
+                                <div class="form-control__wrap mb-10 d-flex">
+                                  <div class="marker-highlight mr-10">C</div>
+                                  <input
+                                    type="text"
+                                    placeholder="From Name C Here"
+                                    class="form-control"
+                                  />
                                 </div>
                               </div>
                             </div>
+
+                            <div
+                              class="font-12 font-weight-medium color-secondary mb-19"
+                            >
+                              <span
+                                class="highlight color-primary font-weight-bold"
+                                >Note:</span
+                              >
+                              We'll test 3 From Names and use winning
+                              combination with your campaign.
+                              <a href="#" class="link">Learn more.</a>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-lg-6">
+                                <p class="font-14 font-weight-bold mb-7">
+                                  From Address
+                                </p>
+
+                                <div class="form-control__wrap mb-10">
+                                  <select
+                                    class="form-control _select2-lg _select2-with-tags"
+                                    multiple="multiple"
+                                    required
+                                  >
+                                    <option></option>
+                                    <option value="test-1" selected
+                                      >noreply@barbodesign.com</option
+                                    >
+                                    <option value="test-3">Custom tag 2</option>
+                                    <option value="test-4">Custom tag 3</option>
+                                    <option value="test-5">Custom tag 4</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+
+                            <p class="font-12 font-weight-bold mb-5">
+                              Email address is verified!
+                            </p>
+
+                            <div class="mb-29">
+                              <a href="#" class="link font-12"
+                                >Connect Your Domain</a
+                              >
+                              <span
+                                class="font-12 font-weight-medium color-secondary"
+                                >- Optional (Improves inbox delivery
+                                rates)</span
+                              >
+                            </div>
+
                             <button class="btn _lg _primary _save">Save</button>
                           </div>
                         </div>
@@ -1382,19 +1424,42 @@
                                     >Good Days and Beatiful Flowers!</span
                                   >
                                 </div>
-                                <div class="mb-19">
+                                <div class="mb-4">
                                   Preheader:
                                   <span class="color-primary font-weight-bold"
                                     >Final Opportunity to Grab Discount…</span
                                   >
                                 </div>
-                                <div
-                                  class="create-campaign__row-description-img"
-                                >
-                                  <img
-                                    src="assets/images/template-3.jpg"
-                                    alt="Template Preview"
-                                  />
+                                <div class="mb-19">
+                                  Email Template A/B Test will run for 3
+                                  combinations:
+                                </div>
+
+                                <div class="d-flex">
+                                  <div
+                                    class="create-campaign__row-description-img"
+                                  >
+                                    <img
+                                      src="assets/images/template-3.jpg"
+                                      alt="Template Preview"
+                                    />
+                                  </div>
+                                  <div
+                                    class="create-campaign__row-description-img"
+                                  >
+                                    <img
+                                      src="assets/images/template-3.jpg"
+                                      alt="Template Preview"
+                                    />
+                                  </div>
+                                  <div
+                                    class="create-campaign__row-description-img"
+                                  >
+                                    <img
+                                      src="assets/images/template-3.jpg"
+                                      alt="Template Preview"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1485,8 +1550,500 @@
                                     />
                                   </div>
                                 </div>
-
                                 <div class="mt-20 mt-sm-0 ml-sm-29 w-100">
+                                  <h5 class="mb-7">Subject Line</h5>
+                                  <div class="position-relative">
+                                    <input
+                                      type="text"
+                                      placeholder="Write a compelling subject line"
+                                      class="form-control mb-8"
+                                      data-emojiable="true"
+                                      value="Good Days and Beautiful Flowers!"
+                                    />
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-16"
+                                  >
+                                    <div
+                                      class="font-12 color-secondary font-weight-medium"
+                                    >
+                                      Subject line quality:
+                                      <span
+                                        class="color-primary font-weight-bold"
+                                        >7/10</span
+                                      >
+                                    </div>
+                                    <a href="#" class="link font-12"
+                                      >How to write a good subject line?</a
+                                    >
+                                  </div>
+                                  <h5 class="mb-7">Preheader</h5>
+                                  <div class="form-control__wrap mb-9">
+                                    <input
+                                      type="text"
+                                      placeholder="Your Subject Here"
+                                      class="form-control"
+                                    />
+                                  </div>
+                                  <div
+                                    class="font-12 color-secondary font-weight-medium"
+                                  >
+                                    This’s the text many mobile, desktop, and
+                                    web email clients show readers to give them
+                                    an idea of what’s inside the before they
+                                    actually open it.
+                                    <a href="#" class="link font-12">More.</a>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Remove br when real app logic is implemented-->
+                              <br />
+
+                              <div class="d-flex mb-30 flex-column flex-sm-row">
+                                <div class="create-campaign__email-preview-col">
+                                  <h5 class="mb-7">Email Template</h5>
+                                  <div
+                                    class="create-campaign__email-preview-img"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 214.752 245.33"
+                                      width="214.752"
+                                      height="245.33"
+                                    >
+                                      <g transform="translate(0.376 0.5)">
+                                        <rect
+                                          width="213"
+                                          height="244"
+                                          transform="translate(0.5)"
+                                          fill="currentColor"
+                                          stroke="currentColor"
+                                          stroke-miterlimit="10"
+                                          stroke-width="1"
+                                        />
+                                        <text
+                                          transform="translate(107 128.5)"
+                                          font-size="16"
+                                          font-family="ProximaNova-Medium, Proxima Nova"
+                                          font-weight="500"
+                                        >
+                                          <tspan x="-56.432" y="0">
+                                            Select Template
+                                          </tspan>
+                                        </text>
+                                        <g transform="translate(-230.5 -548)">
+                                          <line
+                                            x2="85"
+                                            y2="97"
+                                            transform="translate(230.5 548.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                          <line
+                                            x1="85"
+                                            y2="97"
+                                            transform="translate(359.5 548.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                          <line
+                                            x2="85"
+                                            y2="97"
+                                            transform="translate(359.5 695.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                          <line
+                                            x1="85"
+                                            y2="97"
+                                            transform="translate(230.5 695.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                        </g>
+                                      </g>
+                                    </svg>
+
+                                    <!--Replace with an appropriate image-->
+                                    <img
+                                      src="assets/images/template-3.jpg"
+                                      alt="Template Preview"
+                                      class="create-campaign__template-preview d-none"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="mt-20 mt-sm-0 ml-sm-29 w-100">
+                                  <h5 class="mb-7">
+                                    <span class="highlight"
+                                      >Subject Lines (A/B Test)</span
+                                    >
+                                  </h5>
+                                  <div class="position-relative d-flex">
+                                    <div class="marker-highlight mr-10">A</div>
+                                    <input
+                                      type="text"
+                                      placeholder="Write a compelling subject line"
+                                      class="form-control mb-8"
+                                      data-emojiable="true"
+                                      value="Good Days and Beautiful Flowers!"
+                                    />
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-12"
+                                  >
+                                    <div
+                                      class="font-12 color-secondary font-weight-medium"
+                                    >
+                                      Subject line quality:
+                                      <span
+                                        class="color-primary font-weight-bold"
+                                        >7/10</span
+                                      >
+                                    </div>
+                                    <a href="#" class="link font-12"
+                                      >How to write a good subject line?</a
+                                    >
+                                  </div>
+                                  <div class="position-relative d-flex">
+                                    <div class="marker-highlight mr-10">B</div>
+                                    <input
+                                      type="text"
+                                      placeholder="Write a compelling subject line"
+                                      class="form-control mb-8"
+                                      data-emojiable="true"
+                                      value="Good Days and Beautiful Flowers!"
+                                    />
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-12"
+                                  >
+                                    <div
+                                      class="font-12 color-secondary font-weight-medium"
+                                    >
+                                      Subject line quality:
+                                      <span
+                                        class="color-primary font-weight-bold"
+                                        >N/A</span
+                                      >
+                                    </div>
+                                    <a href="#" class="link font-12"
+                                      >How to write a good subject line?</a
+                                    >
+                                  </div>
+                                  <div class="position-relative d-flex">
+                                    <div class="marker-highlight mr-10">C</div>
+                                    <input
+                                      type="text"
+                                      placeholder="Write a compelling subject line"
+                                      class="form-control mb-8"
+                                      data-emojiable="true"
+                                      value="Good Days and Beautiful Flowers!"
+                                    />
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-12"
+                                  >
+                                    <div
+                                      class="font-12 color-secondary font-weight-medium"
+                                    >
+                                      Subject line quality:
+                                      <span
+                                        class="color-primary font-weight-bold"
+                                        >N/A</span
+                                      >
+                                    </div>
+                                    <a href="#" class="link font-12"
+                                      >How to write a good subject line?</a
+                                    >
+                                  </div>
+                                  <div
+                                    class="font-12 font-weight-medium color-secondary mb-20"
+                                  >
+                                    <span
+                                      class="highlight color-primary font-weight-bold"
+                                      >Note:</span
+                                    >
+                                    We'll test 3 From Names and use winning
+                                    combination with your campaign.
+                                    <a href="#" class="link">Learn more.</a>
+                                  </div>
+
+                                  <h5 class="mb-7">Preheader</h5>
+                                  <div class="form-control__wrap mb-9">
+                                    <input
+                                      type="text"
+                                      placeholder="Your Subject Here"
+                                      class="form-control"
+                                    />
+                                  </div>
+                                  <div
+                                    class="font-12 color-secondary font-weight-medium"
+                                  >
+                                    This’s the text many mobile, desktop, and
+                                    web email clients show readers to give them
+                                    an idea of what’s inside the before they
+                                    actually open it.
+                                    <a href="#" class="link font-12">More.</a>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Remove br when real app logic is implemented-->
+                              <br />
+
+                              <div class="d-flex mb-30 flex-column">
+                                <div class="create-campaign__email-preview-col">
+                                  <h5 class="mb-15">
+                                    <span class="highlight"
+                                      >Email Templates (A/B Test)</span
+                                    >
+                                  </h5>
+                                  <div class="d-flex flex-column flex-md-row">
+                                    <div class="d-flex mr-0 mr-md-30">
+                                      <div class="marker-highlight mr-10">
+                                        A
+                                      </div>
+                                      <div
+                                        class="create-campaign__email-preview-img mb-16"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          viewBox="0 0 214.752 245.33"
+                                          width="214.752"
+                                          height="245.33"
+                                        >
+                                          <g transform="translate(0.376 0.5)">
+                                            <rect
+                                              width="213"
+                                              height="244"
+                                              transform="translate(0.5)"
+                                              fill="currentColor"
+                                              stroke="currentColor"
+                                              stroke-miterlimit="10"
+                                              stroke-width="1"
+                                            />
+                                            <text
+                                              transform="translate(107 128.5)"
+                                              font-size="16"
+                                              font-family="ProximaNova-Medium, Proxima Nova"
+                                              font-weight="500"
+                                            >
+                                              <tspan x="-56.432" y="0">
+                                                Select Template
+                                              </tspan>
+                                            </text>
+                                            <g
+                                              transform="translate(-230.5 -548)"
+                                            >
+                                              <line
+                                                x2="85"
+                                                y2="97"
+                                                transform="translate(230.5 548.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                              <line
+                                                x1="85"
+                                                y2="97"
+                                                transform="translate(359.5 548.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                              <line
+                                                x2="85"
+                                                y2="97"
+                                                transform="translate(359.5 695.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                              <line
+                                                x1="85"
+                                                y2="97"
+                                                transform="translate(230.5 695.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                            </g>
+                                          </g>
+                                        </svg>
+
+                                        <!--Replace with an appropriate image-->
+                                        <img
+                                          src="assets/images/template-3.jpg"
+                                          alt="Template Preview"
+                                          class="create-campaign__template-preview d-none"
+                                        />
+                                      </div>
+                                    </div>
+
+                                    <div class="d-flex mr-0 mr-md-30">
+                                      <div class="marker-highlight mr-10">
+                                        B
+                                      </div>
+                                      <div
+                                        class="create-campaign__email-preview-img mb-16"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          viewBox="0 0 214.752 245.33"
+                                          width="214.752"
+                                          height="245.33"
+                                        >
+                                          <g transform="translate(0.376 0.5)">
+                                            <rect
+                                              width="213"
+                                              height="244"
+                                              transform="translate(0.5)"
+                                              fill="currentColor"
+                                              stroke="currentColor"
+                                              stroke-miterlimit="10"
+                                              stroke-width="1"
+                                            />
+                                            <text
+                                              transform="translate(107 128.5)"
+                                              font-size="16"
+                                              font-family="ProximaNova-Medium, Proxima Nova"
+                                              font-weight="500"
+                                            >
+                                              <tspan x="-56.432" y="0">
+                                                Select Template
+                                              </tspan>
+                                            </text>
+                                            <g
+                                              transform="translate(-230.5 -548)"
+                                            >
+                                              <line
+                                                x2="85"
+                                                y2="97"
+                                                transform="translate(230.5 548.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                              <line
+                                                x1="85"
+                                                y2="97"
+                                                transform="translate(359.5 548.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                              <line
+                                                x2="85"
+                                                y2="97"
+                                                transform="translate(359.5 695.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                              <line
+                                                x1="85"
+                                                y2="97"
+                                                transform="translate(230.5 695.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                            </g>
+                                          </g>
+                                        </svg>
+
+                                        <!--Replace with an appropriate image-->
+                                        <img
+                                          src="assets/images/template-3.jpg"
+                                          alt="Template Preview"
+                                          class="create-campaign__template-preview d-none"
+                                        />
+                                      </div>
+                                    </div>
+
+                                    <div class="d-flex mr-0 mr-md-30">
+                                      <div class="marker-highlight mr-10">
+                                        C
+                                      </div>
+                                      <div
+                                        class="create-campaign__email-preview-img mb-16"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          viewBox="0 0 214.752 245.33"
+                                          width="214.752"
+                                          height="245.33"
+                                        >
+                                          <g transform="translate(0.376 0.5)">
+                                            <rect
+                                              width="213"
+                                              height="244"
+                                              transform="translate(0.5)"
+                                              fill="currentColor"
+                                              stroke="currentColor"
+                                              stroke-miterlimit="10"
+                                              stroke-width="1"
+                                            />
+                                            <text
+                                              transform="translate(107 128.5)"
+                                              font-size="16"
+                                              font-family="ProximaNova-Medium, Proxima Nova"
+                                              font-weight="500"
+                                            >
+                                              <tspan x="-56.432" y="0">
+                                                Select Template
+                                              </tspan>
+                                            </text>
+                                            <g
+                                              transform="translate(-230.5 -548)"
+                                            >
+                                              <line
+                                                x2="85"
+                                                y2="97"
+                                                transform="translate(230.5 548.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                              <line
+                                                x1="85"
+                                                y2="97"
+                                                transform="translate(359.5 548.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                              <line
+                                                x2="85"
+                                                y2="97"
+                                                transform="translate(359.5 695.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                              <line
+                                                x1="85"
+                                                y2="97"
+                                                transform="translate(230.5 695.5)"
+                                                fill="none"
+                                                stroke-width="1"
+                                              />
+                                            </g>
+                                          </g>
+                                        </svg>
+
+                                        <!--Replace with an appropriate image-->
+                                        <img
+                                          src="assets/images/template-3.jpg"
+                                          alt="Template Preview"
+                                          class="create-campaign__template-preview d-none"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="font-12 font-weight-medium color-secondary mb-20"
+                                  >
+                                    <span
+                                      class="highlight color-primary font-weight-bold"
+                                      >Note:</span
+                                    >
+                                    We'll test 3 From Names and use winning
+                                    combination with your campaign.
+                                    <a href="#" class="link">Learn more.</a>
+                                  </div>
+                                </div>
+                                <div class="mt-20 mt-sm-0 w-100">
                                   <h5 class="mb-7">Subject Line</h5>
                                   <div class="position-relative">
                                     <input
@@ -2170,10 +2727,16 @@
                               </p>
                               <div class="create-campaign__row-description">
                                 <div class="mb-4">
-                                  Your campaign will start sending on
+                                  A/B test will start on
                                   <span class="color-primary font-weight-bold"
                                     >June 25 - 7:45 PM (GMT -4)</span
                                   >
+                                  Rest of your email campaign will start sending
+                                  <span class="color-primary font-weight-bold"
+                                    >2 hours</span
+                                  >
+                                  following test run and will be based on
+                                  winning combination.
                                 </div>
                                 <div>
                                   Google Analytics tracking is
@@ -2723,6 +3286,25 @@
             $('.percents-slider').addClass('_full');
           } else {
             $('.percents-slider').removeClass('_full');
+          }
+        });
+
+        $('.round-touchspin .btn').click(function () {
+          let touchSpinWrap = $(this).closest('.round-touchspin');
+
+          if (touchSpinWrap.find('input').val() !== '0') {
+            $('.round-touchspin').addClass('_disabled');
+            touchSpinWrap.removeClass('_disabled');
+            touchSpinWrap.addClass('_with-value');
+
+            if (touchSpinWrap.find('input').val() === '3') {
+              touchSpinWrap.addClass('_max');
+            } else {
+              touchSpinWrap.removeClass('_max');
+            }
+          } else {
+            $('.round-touchspin').removeClass('_disabled');
+            touchSpinWrap.removeClass('_with-value');
           }
         });
       });
