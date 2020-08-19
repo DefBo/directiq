@@ -3271,6 +3271,19 @@
           },
         });
 
+        connectSlider.noUiSlider.on('change', function (values, handle) {
+          var unformattedValue = values[handle].substring(
+            0,
+            values[handle].length - 1
+          );
+
+          if (unformattedValue < 10) {
+            connectSlider.noUiSlider.set(10);
+          } else if (unformattedValue > 50) {
+            connectSlider.noUiSlider.set(50);
+          }
+        });
+
         $('.noUi-connect, .noUi-handle').hover(
           function () {
             $(this).closest('.noUi-target').addClass('_hovered');
