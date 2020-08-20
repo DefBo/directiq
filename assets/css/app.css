@@ -9416,6 +9416,11 @@ body._overlayed {
 .create-campaign__ab-test-step-col + .create-campaign__ab-test-step-col {
   margin-left: 30px; }
 
+.create-campaign__email-design-variant {
+  display: flex;
+  margin-bottom: 30px;
+  flex-direction: column; }
+
 .flatpickr-calendar,
 .select2-container {
   pointer-events: auto; }
