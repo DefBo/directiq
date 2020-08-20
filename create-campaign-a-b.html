@@ -1112,6 +1112,13 @@
                                     id="slider"
                                     class="percents-slider"
                                   ></div>
+                                  <input
+                                    type="number"
+                                    id="slider-input"
+                                    name="slider-input"
+                                    min="0"
+                                    max="100"
+                                  />
                                 </div>
                                 <div class="create-campaign__ab-test-step">
                                   <h5 class="mb-11">
@@ -1477,7 +1484,9 @@
 
                           <div class="create-campaign__row-edit mb-25">
                             <div class="create-campaign__templates-body">
-                              <div class="create-campaign__email-design-variant flex-sm-row">
+                              <div
+                                class="create-campaign__email-design-variant flex-sm-row"
+                              >
                                 <div class="create-campaign__email-preview-col">
                                   <h5 class="mb-7">Email Template</h5>
                                   <div
@@ -1600,7 +1609,9 @@
                               <!-- Remove br when real app logic is implemented-->
                               <br />
 
-                              <div class="create-campaign__email-design-variant flex-sm-row">
+                              <div
+                                class="create-campaign__email-design-variant flex-sm-row"
+                              >
                                 <div class="create-campaign__email-preview-col">
                                   <h5 class="mb-7">Email Template</h5>
                                   <div
@@ -1792,7 +1803,9 @@
                               <!-- Remove br when real app logic is implemented-->
                               <br />
 
-                              <div class="create-campaign__email-design-variant">
+                              <div
+                                class="create-campaign__email-design-variant"
+                              >
                                 <div class="create-campaign__email-preview-col">
                                   <h5 class="mb-15">
                                     <span class="highlight"
@@ -3271,6 +3284,11 @@
           },
         });
 
+        /* Get initial slider value and update it in slider input*/
+        let sliderValueOnLoad = +slider.noUiSlider.get().slice(0, -1);
+        $('#slider-input').val(sliderValueOnLoad);
+
+        /* Set slider soft limits (min - 10, max - 50) */
         connectSlider.noUiSlider.on('change', function (values, handle) {
           var unformattedValue = values[handle].substring(
             0,
@@ -3284,6 +3302,15 @@
           }
         });
 
+        /* Update slider input value on slider set */
+        slider.noUiSlider.on('set', function () {
+          let currentSliderValueString = slider.noUiSlider.get();
+          let currentSliderValueNumber = +currentSliderValueString.slice(0, -1);
+
+          $('#slider-input').val(currentSliderValueNumber);
+        });
+
+        /* Set up for slider hover */
         $('.noUi-connect, .noUi-handle').hover(
           function () {
             $(this).closest('.noUi-target').addClass('_hovered');
@@ -3292,15 +3319,6 @@
             $(this).closest('.noUi-target').removeClass('_hovered');
           }
         );
-
-        slider.noUiSlider.on('update', function () {
-          let currentSliderValue = slider.noUiSlider.get();
-          if (currentSliderValue === '100%') {
-            $('.percents-slider').addClass('_full');
-          } else {
-            $('.percents-slider').removeClass('_full');
-          }
-        });
 
         $('.round-touchspin .btn').click(function () {
           let touchSpinWrap = $(this).closest('.round-touchspin');
