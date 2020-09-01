@@ -747,8 +747,8 @@
 
                 <div class="tab-content mt-n6">
                   <div class="tab-pane show active" id="regular-campaign">
-                    <div class="card p-0 mb-0">
-                      <div class="create-campaign__row _filled _editing">
+                    <div class="card p-0 mb-0 flex-column-reverse">
+                      <div class="create-campaign__row pb-40">
                         <div class="d-flex flex-column">
                           <svg
                             width="30"
@@ -763,107 +763,9 @@
                               class="icon-edit"
                               xlink:href="assets/images/sprite.svg#round-edit"
                             ></use>
-                          </svg>
-                        </div>
-
-                        <div class="w-100">
-                          <div class="d-flex flex-column flex-sm-row pl-20">
-                            <div class="create-campaign__row-content">
-                              <h4 class="mb-4">Campaign Name</h4>
-                              <p
-                                class="font-12 font-weight-medium color-secondary m-0"
-                              >
-                                You named your campaign
-                                <span class="color-primary font-weight-bold"
-                                  >Dodo’s Big Adventure</span
-                                >. (You tagged it
-                                <span class="color-primary font-weight-bold"
-                                  >vip, important</span
-                                >.)
-                              </p>
-                            </div>
-                            <button
-                              class="btn _sm _primary _edit mt-10 mt-sm-0"
-                            >
-                              Add Name
-                            </button>
-                            <button
-                              class="btn _sm _secondary _edit mt-10 mt-sm-0"
-                            >
-                              Edit Name
-                            </button>
-                          </div>
-
-                          <div class="create-campaign__row-edit">
-                            <div class="create-campaign__fields">
-                              <div class="create-campaign__fields-col">
-                                <p class="font-14 font-weight-bold mb-7">
-                                  Rename Campaign
-                                </p>
-                                <div class="form-control__wrap mb-10">
-                                  <input
-                                    type="text"
-                                    placeholder="Your Campaign Name Here"
-                                    class="form-control"
-                                    value="Dodo’s Big Adventure"
-                                  />
-                                </div>
-                              </div>
-                              <div class="create-campaign__fields-col">
-                                <p class="font-14 font-weight-bold mb-7">
-                                  Tags (Optional)
-                                </p>
-                                <div class="form-control__wrap mb-10">
-                                  <select
-                                    class="form-control _select2-lg"
-                                    multiple="multiple"
-                                    required
-                                  >
-                                    <option></option>
-                                    <option value="test-1" selected>vip</option>
-                                    <option value="test-2" selected
-                                      >Important</option
-                                    >
-                                    <option value="test-3">Custom tag 2</option>
-                                    <option value="test-4">Custom tag 3</option>
-                                    <option value="test-5">Custom tag 4</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="error-info">
-                              Oops! Some sheep definately hopped. Hope it won’t
-                              hop next time. Will it?
-                            </div>
-
-                            <button class="btn _lg _primary _save">Save</button>
-                          </div>
-                        </div>
-
-                        <button type="button" class="close">
-                          <svg width="8" height="8">
                             <use
-                              xlink:href="assets/images/sprite.svg#cross"
-                            ></use>
-                          </svg>
-                        </button>
-                      </div>
-
-                      <div class="create-campaign__row">
-                        <div class="d-flex flex-column">
-                          <svg
-                            width="30"
-                            height="30"
-                            class="create-campaign__icon"
-                          >
-                            <use
-                              class="icon-check"
-                              xlink:href="assets/images/sprite.svg#round-checkmark"
-                            ></use>
-                            <use
-                              class="icon-edit"
-                              xlink:href="assets/images/sprite.svg#round-edit"
+                              class="icon-fill"
+                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
                             ></use>
                           </svg>
                         </div>
@@ -871,250 +773,253 @@
                         <div class="w-100">
                           <div class="d-flex flex-column flex-sm-row pl-20">
                             <div class="create-campaign__row-content">
-                              <h4 class="mb-4">To</h4>
+                              <h4 class="mb-4">Timing</h4>
                               <p class="create-campaign__row-placeholder">
-                                Who’ll get this email?
-                                <a href="#" class="link"
-                                  >More on setting campaign recipients.</a
-                                >
+                                When would you like to send this campaign?
                               </p>
-                              <p class="create-campaign__row-description">
-                                This campaign will be sent to
-                                <a href="#" class="link">784 recipients</a>.
-                                Email footer and forms will be delivered in
-                                <span class="color-primary font-weight-bold"
-                                  >English</span
-                                >.
-                              </p>
+                              <div class="create-campaign__row-description">
+                                <div class="mb-4">
+                                  Your campaign will start sending on
+                                  <span class="color-primary font-weight-bold"
+                                    >June 25 - 7:45 PM (GMT -4)</span
+                                  >
+                                </div>
+                                <div>
+                                  Google Analytics tracking is
+                                  <span class="color-primary font-weight-bold"
+                                    >ON</span
+                                  >
+                                </div>
+                              </div>
                             </div>
                             <button
                               class="btn _sm _primary _edit mt-10 mt-sm-0"
                             >
-                              Add Recipients
+                              Set Timing
                             </button>
                             <button
                               class="btn _sm _secondary _edit mt-10 mt-sm-0"
                             >
-                              Edit Recipients
+                              Change
                             </button>
                           </div>
 
                           <div class="create-campaign__row-edit">
-                            <div class="create-campaign__fields mb-10">
-                              <div class="create-campaign__fields-col">
-                                <p class="font-14 font-weight-bold mb-7">
-                                  Add Lists
-                                </p>
-                                <div class="form-control__wrap mb-20">
-                                  <select
-                                    class="form-control _select2-lg"
-                                    multiple="multiple"
-                                    required
-                                  >
-                                    <option></option>
-                                    <option value="test-1" selected
-                                      >Shopify List (1,410)</option
-                                    >
-                                    <option value="test-3">Custom tag 2</option>
-                                    <option value="test-4">Custom tag 3</option>
-                                    <option value="test-5">Custom tag 4</option>
-                                  </select>
-                                </div>
-                                <p class="font-14 font-weight-bold mb-7">
-                                  Add Tags
-                                </p>
-                                <div class="form-control__wrap mb-20">
-                                  <select
-                                    class="form-control _select2-lg"
-                                    multiple="multiple"
-                                    required
-                                  >
-                                    <option></option>
-                                    <option value="test-1" selected
-                                      >Members (38)</option
-                                    >
-                                    <option value="test-3">Custom tag 2</option>
-                                    <option value="test-4">Custom tag 3</option>
-                                    <option value="test-5">Custom tag 4</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class="create-campaign__fields-col">
-                                <p class="font-14 font-weight-bold mb-7">
-                                  Add Segments
-                                </p>
-                                <div class="form-control__wrap mb-20">
-                                  <select
-                                    class="form-control _select2-lg"
-                                    multiple="multiple"
-                                    required
-                                  >
-                                    <option></option>
-                                    <option value="test-1" selected
-                                      >My Friend’s Friends (278)</option
-                                    >
-                                    <option value="test-2"
-                                      >First Timers (12)</option
-                                    >
-                                    <option value="test-3">Custom tag 2</option>
-                                    <option value="test-4">Custom tag 3</option>
-                                    <option value="test-5">Custom tag 4</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                            <a href="#" class="link _lg mb-2">789</a>
-                            <p class="font-14 font-weight-bold mb-28">
-                              Total Unique Recipients
-                            </p>
-
-                            <p class="font-14 font-weight-bold mb-7">
-                              Language
-                            </p>
-                            <div class="mb-32">
-                              <div class="create-campaign__input-wrap">
-                                <select
-                                  class="form-control _select2-lg"
-                                  required
+                            <div class="d-flex">
+                              <div class="create-campaign__timing-col">
+                                <div
+                                  class="radio_inline radio create-campaign__timing-col-radio"
                                 >
-                                  <option></option>
-                                  <option value="test-1" selected
-                                    >English</option
-                                  >
-                                  <option value="test-2">Chinese</option>
-                                </select>
-                              </div>
-                            </div>
-                            <button class="btn _lg _primary _save">Save</button>
-                          </div>
-                        </div>
-
-                        <button type="button" class="close">
-                          <svg width="8" height="8">
-                            <use
-                              xlink:href="assets/images/sprite.svg#cross"
-                            ></use>
-                          </svg>
-                        </button>
-                      </div>
-
-                      <div class="create-campaign__row">
-                        <div class="d-flex flex-column">
-                          <svg
-                            width="30"
-                            height="30"
-                            class="create-campaign__icon"
-                          >
-                            <use
-                              class="icon-check"
-                              xlink:href="assets/images/sprite.svg#round-checkmark"
-                            ></use>
-                            <use
-                              class="icon-edit"
-                              xlink:href="assets/images/sprite.svg#round-edit"
-                            ></use>
-                          </svg>
-                        </div>
-
-                        <div class="w-100">
-                          <div class="d-flex flex-column flex-sm-row pl-20">
-                            <div class="create-campaign__row-content">
-                              <h4 class="mb-4">From</h4>
-                              <p class="create-campaign__row-placeholder">
-                                Who’s sending this email?
-                              </p>
-                              <p class="create-campaign__row-description">
-                                This campaign will be sent from
-                                <span class="color-primary font-weight-bold"
-                                  >Barbo Design / noreply@barbodesign.com</span
-                                >
-                              </p>
-                            </div>
-                            <button
-                              class="btn _sm _primary _edit mt-10 mt-sm-0"
-                            >
-                              Add From
-                            </button>
-                            <button
-                              class="btn _sm _secondary _edit mt-10 mt-sm-0"
-                            >
-                              Edit From
-                            </button>
-                          </div>
-
-                          <div class="create-campaign__row-edit">
-                            <div class="create-campaign__fields">
-                              <div class="create-campaign__fields-col">
-                                <p class="font-14 font-weight-bold mb-7">
-                                  From Name
-                                </p>
-                                <div class="form-control__wrap mb-10">
                                   <input
-                                    type="text"
-                                    placeholder="Your From Name Here"
-                                    class="form-control"
-                                    value="Barbo Design"
+                                    type="radio"
+                                    id="inlineRadio1"
+                                    value="option1"
+                                    name="radioInline"
+                                    checked
                                   />
+                                  <label
+                                    for="inlineRadio1"
+                                    class="font-14 font-weight-bold"
+                                  >
+                                    Schedule to a Later Time
+                                  </label>
                                 </div>
-                              </div>
-                              <div class="create-campaign__fields-col">
-                                <form class="needs-validation mb-11" novalidate>
+                                <div
+                                  class="font-12 color-secondary font-weight-medium mb-15"
+                                >
+                                  Set up a schedule to send your campaign at a
+                                  specific time
+                                </div>
+
+                                <div
+                                  class="create-campaign__timing-col-content"
+                                >
+                                  <div class="form-group mb-10">
+                                    <label class="font-weight-bold mb-7"
+                                      >Delivery Date</label
+                                    >
+                                    <div class="form-control__wrap _date">
+                                      <input
+                                        type="text"
+                                        id="basic-datepicker"
+                                        class="form-control"
+                                        placeholder="Select date"
+                                      />
+                                    </div>
+                                  </div>
                                   <p class="font-14 font-weight-bold mb-7">
-                                    From Address
+                                    Delivery Time
                                   </p>
-
-                                  <div class="form-control__wrap mb-10">
+                                  <div class="d-flex mb-20">
+                                    <div class="select-hours">
+                                      <select
+                                        class="form-control _select2-lg"
+                                        required
+                                      >
+                                        <option></option>
+                                        <option value="test-1">1</option>
+                                        <option value="test-2">2</option>
+                                        <option value="test-3">3</option>
+                                        <option value="test-4">4</option>
+                                        <option value="test-5">5</option>
+                                        <option value="test-6">6</option>
+                                        <option value="test-7">7</option>
+                                        <option value="test-8">8</option>
+                                        <option value="test-9">9</option>
+                                        <option value="test-10">10</option>
+                                        <option value="test-11" selected
+                                          >11</option
+                                        >
+                                        <option value="test-12">12</option>
+                                      </select>
+                                    </div>
+                                    <div class="ml-16">
+                                      <select
+                                        class="form-control _select2-lg"
+                                        required
+                                      >
+                                        <option></option>
+                                        <option value="test-13">00</option>
+                                        <option value="test-14">5</option>
+                                        <option value="test-15">10</option>
+                                        <option value="test-16">15</option>
+                                        <option value="test-17">20</option>
+                                        <option value="test-18" selected
+                                          >25</option
+                                        >
+                                        <option value="test-19">30</option>
+                                        <option value="test-20">35</option>
+                                        <option value="test-21">40</option>
+                                        <option value="test-22">45</option>
+                                        <option value="test-23">50</option>
+                                        <option value="test-24">55</option>
+                                      </select>
+                                    </div>
+                                    <div class="ml-6">
+                                      <select
+                                        class="form-control _select2-lg"
+                                        required
+                                      >
+                                        <option></option>
+                                        <option value="test-25">AM</option>
+                                        <option value="test-26" selected
+                                          >PM</option
+                                        >
+                                      </select>
+                                    </div>
+                                    <div class="switcher__wrap ml-20">
+                                      <label
+                                        for="switch-1"
+                                        class="switcher__label font-weight-medium color-secondary"
+                                      >
+                                        Suggest time
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        id="switch-1"
+                                        class="switcher"
+                                        checked
+                                      />
+                                      <label
+                                        for="switch-1"
+                                        class="switcher__toggle"
+                                      ></label>
+                                    </div>
+                                  </div>
+                                  <p class="font-14 font-weight-bold mb-7">
+                                    Time Zone
+                                  </p>
+                                  <div class="mb-20">
                                     <select
-                                      class="form-control _select2-lg _select2-with-tags"
-                                      multiple="multiple"
+                                      class="form-control _select2-lg"
                                       required
                                     >
                                       <option></option>
                                       <option value="test-1" selected
-                                        >noreply@barbodesign.com</option
+                                        >(GMT -04:00) Eastern Daylight Time (US
+                                        & Canada)</option
                                       >
-                                      <option value="test-3"
-                                        >Custom tag 2</option
-                                      >
-                                      <option value="test-4"
-                                        >Custom tag 3</option
-                                      >
-                                      <option value="test-5"
-                                        >Custom tag 4</option
-                                      >
+                                      <option value="test-2">Test Itme</option>
                                     </select>
-                                  </div>
-                                </form>
-                                <button
-                                  class="btn _sm _primary"
-                                  data-toggle="modal"
-                                  data-target="#verify-domain"
-                                  id="btn-verify-domain"
-                                >
-                                  Verify noreply@barbodesign.com
-                                </button>
-
-                                <div id="from-email-is-verified" class="d-none">
-                                  <p
-                                    class="font-12 font-weight-bold mb-5 mt-10"
-                                  >
-                                    Email address is verified!
-                                  </p>
-
-                                  <div class="mb-29">
-                                    <a href="#" class="link font-12"
-                                      >Connect Your Domain</a
-                                    >
-                                    <span
-                                      class="font-12 font-weight-medium color-secondary"
-                                      >- Optional (Improves inbox delivery
-                                      rates)</span
-                                    >
                                   </div>
                                 </div>
                               </div>
+                              <div class="create-campaign__timing-col ml-30">
+                                <div
+                                  class="radio_inline radio create-campaign__timing-col-radio"
+                                >
+                                  <input
+                                    type="radio"
+                                    id="inlineRadio2"
+                                    value="option2"
+                                    name="radioInline"
+                                  />
+                                  <label
+                                    for="inlineRadio2"
+                                    class="font-14 font-weight-bold"
+                                  >
+                                    Send Now
+                                  </label>
+                                </div>
+                                <div
+                                  class="font-12 color-secondary font-weight-medium mb-15"
+                                >
+                                  Immediately send your campaign
+                                </div>
+                              </div>
                             </div>
-                            <button class="btn _lg _primary _save">Save</button>
+
+                            <p class="font-14 font-weight-bold mb-20">
+                              Additional Optimization
+                            </p>
+
+                            <div class="switcher__wrap mb-20">
+                              <a href="#" class="link font-12 order-2"
+                                >Learn More.</a
+                              >
+                              <label
+                                for="switch-2"
+                                class="switcher__label font-weight-medium color-secondary"
+                              >
+                                Gradual send over several hours (20% per hour).
+                              </label>
+                              <input
+                                type="checkbox"
+                                id="switch-2"
+                                class="switcher"
+                                checked
+                              />
+                              <label
+                                for="switch-2"
+                                class="switcher__toggle"
+                              ></label>
+                            </div>
+
+                            <div class="switcher__wrap mb-30">
+                              <a href="#" class="link font-12 order-2"
+                                >Learn More.</a
+                              >
+                              <label
+                                for="switch-3"
+                                class="switcher__label font-weight-medium color-secondary"
+                              >
+                                Add Google Analytics link tracking.
+                              </label>
+                              <input
+                                type="checkbox"
+                                id="switch-3"
+                                class="switcher"
+                                checked
+                              />
+                              <label
+                                for="switch-3"
+                                class="switcher__toggle"
+                              ></label>
+                            </div>
+
+                            <button class="btn _lg _primary _save">
+                              Save
+                            </button>
                           </div>
                         </div>
 
@@ -1141,6 +1046,10 @@
                             <use
                               class="icon-edit"
                               xlink:href="assets/images/sprite.svg#round-edit"
+                            ></use>
+                            <use
+                              class="icon-fill"
+                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
                             ></use>
                           </svg>
                         </div>
@@ -1183,7 +1092,7 @@
                             <button
                               class="btn _sm _secondary _edit mt-10 mt-sm-0"
                             >
-                              Edit Email
+                              Change
                             </button>
                           </div>
 
@@ -1920,7 +1829,7 @@
                         </button>
                       </div>
 
-                      <div class="create-campaign__row pb-40">
+                      <div class="create-campaign__row">
                         <div class="d-flex flex-column">
                           <svg
                             width="30"
@@ -1935,259 +1844,374 @@
                               class="icon-edit"
                               xlink:href="assets/images/sprite.svg#round-edit"
                             ></use>
+                            <use
+                              class="icon-fill"
+                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                            ></use>
                           </svg>
                         </div>
 
                         <div class="w-100">
                           <div class="d-flex flex-column flex-sm-row pl-20">
                             <div class="create-campaign__row-content">
-                              <h4 class="mb-4">Timing</h4>
+                              <h4 class="mb-4">From</h4>
                               <p class="create-campaign__row-placeholder">
-                                When would you like to send this campaign?
+                                Who’s sending this email?
                               </p>
-                              <div class="create-campaign__row-description">
-                                <div class="mb-4">
-                                  Your campaign will start sending on
-                                  <span class="color-primary font-weight-bold"
-                                    >June 25 - 7:45 PM (GMT -4)</span
-                                  >
-                                </div>
-                                <div>
-                                  Google Analytics tracking is
-                                  <span class="color-primary font-weight-bold"
-                                    >ON</span
-                                  >
-                                </div>
-                              </div>
+                              <p class="create-campaign__row-description">
+                                This campaign will be sent from
+                                <span class="color-primary font-weight-bold"
+                                  >Barbo Design / noreply@barbodesign.com</span
+                                >
+                              </p>
                             </div>
                             <button
                               class="btn _sm _primary _edit mt-10 mt-sm-0"
                             >
-                              Set Timing
+                              Add From
                             </button>
                             <button
                               class="btn _sm _secondary _edit mt-10 mt-sm-0"
                             >
-                              Edit Timing
+                              Change
                             </button>
                           </div>
 
                           <div class="create-campaign__row-edit">
-                            <div class="d-flex">
-                              <div class="create-campaign__timing-col">
-                                <div
-                                  class="radio_inline radio create-campaign__timing-col-radio"
-                                >
+                            <div class="create-campaign__fields">
+                              <div class="create-campaign__fields-col">
+                                <p class="font-14 font-weight-bold mb-7">
+                                  From Name
+                                </p>
+                                <div class="form-control__wrap mb-10">
                                   <input
-                                    type="radio"
-                                    id="inlineRadio1"
-                                    value="option1"
-                                    name="radioInline"
-                                    checked
+                                    type="text"
+                                    placeholder="Your From Name Here"
+                                    class="form-control"
+                                    value="Barbo Design"
                                   />
-                                  <label
-                                    for="inlineRadio1"
-                                    class="font-14 font-weight-bold"
-                                  >
-                                    Schedule to a Later Time
-                                  </label>
                                 </div>
-                                <div
-                                  class="font-12 color-secondary font-weight-medium mb-15"
-                                >
-                                  Set up a schedule to send your campaign at a
-                                  specific time
-                                </div>
+                              </div>
+                              <div class="create-campaign__fields-col">
+                                <form class="needs-validation mb-11" novalidate>
+                                  <p class="font-14 font-weight-bold mb-7">
+                                    From Address
+                                  </p>
 
-                                <div
-                                  class="create-campaign__timing-col-content"
-                                >
-                                  <div class="form-group mb-10">
-                                    <label class="font-weight-bold mb-7"
-                                      >Delivery Date</label
-                                    >
-                                    <div class="form-control__wrap _date">
-                                      <input
-                                        type="text"
-                                        id="basic-datepicker"
-                                        class="form-control"
-                                        placeholder="Select date"
-                                      />
-                                    </div>
-                                  </div>
-                                  <p class="font-14 font-weight-bold mb-7">
-                                    Delivery Time
-                                  </p>
-                                  <div class="d-flex mb-20">
-                                    <div class="select-hours">
-                                      <select
-                                        class="form-control _select2-lg"
-                                        required
-                                      >
-                                        <option></option>
-                                        <option value="test-1">1</option>
-                                        <option value="test-2">2</option>
-                                        <option value="test-3">3</option>
-                                        <option value="test-4">4</option>
-                                        <option value="test-5">5</option>
-                                        <option value="test-6">6</option>
-                                        <option value="test-7">7</option>
-                                        <option value="test-8">8</option>
-                                        <option value="test-9">9</option>
-                                        <option value="test-10">10</option>
-                                        <option value="test-11" selected
-                                          >11</option
-                                        >
-                                        <option value="test-12">12</option>
-                                      </select>
-                                    </div>
-                                    <div class="ml-16">
-                                      <select
-                                        class="form-control _select2-lg"
-                                        required
-                                      >
-                                        <option></option>
-                                        <option value="test-13">00</option>
-                                        <option value="test-14">5</option>
-                                        <option value="test-15">10</option>
-                                        <option value="test-16">15</option>
-                                        <option value="test-17">20</option>
-                                        <option value="test-18" selected
-                                          >25</option
-                                        >
-                                        <option value="test-19">30</option>
-                                        <option value="test-20">35</option>
-                                        <option value="test-21">40</option>
-                                        <option value="test-22">45</option>
-                                        <option value="test-23">50</option>
-                                        <option value="test-24">55</option>
-                                      </select>
-                                    </div>
-                                    <div class="ml-6">
-                                      <select
-                                        class="form-control _select2-lg"
-                                        required
-                                      >
-                                        <option></option>
-                                        <option value="test-25">AM</option>
-                                        <option value="test-26" selected
-                                          >PM</option
-                                        >
-                                      </select>
-                                    </div>
-                                    <div class="switcher__wrap ml-20">
-                                      <label
-                                        for="switch-1"
-                                        class="switcher__label font-weight-medium color-secondary"
-                                      >
-                                        Suggest time
-                                      </label>
-                                      <input
-                                        type="checkbox"
-                                        id="switch-1"
-                                        class="switcher"
-                                        checked
-                                      />
-                                      <label
-                                        for="switch-1"
-                                        class="switcher__toggle"
-                                      ></label>
-                                    </div>
-                                  </div>
-                                  <p class="font-14 font-weight-bold mb-7">
-                                    Time Zone
-                                  </p>
-                                  <div class="mb-20">
+                                  <div class="form-control__wrap mb-10">
                                     <select
-                                      class="form-control _select2-lg"
+                                      class="form-control _select2-lg _select2-with-tags"
+                                      multiple="multiple"
                                       required
                                     >
                                       <option></option>
                                       <option value="test-1" selected
-                                        >(GMT -04:00) Eastern Daylight Time (US
-                                        & Canada)</option
+                                        >noreply@barbodesign.com</option
                                       >
-                                      <option value="test-2">Test Itme</option>
+                                      <option value="test-3"
+                                        >Custom tag 2</option
+                                      >
+                                      <option value="test-4"
+                                        >Custom tag 3</option
+                                      >
+                                      <option value="test-5"
+                                        >Custom tag 4</option
+                                      >
                                     </select>
+                                  </div>
+                                </form>
+                                <button
+                                  class="btn _sm _primary"
+                                  data-toggle="modal"
+                                  data-target="#verify-domain"
+                                  id="btn-verify-domain"
+                                >
+                                  Verify noreply@barbodesign.com
+                                </button>
+
+                                <div id="from-email-is-verified" class="d-none">
+                                  <p
+                                    class="font-12 font-weight-bold mb-5 mt-10"
+                                  >
+                                    Email address is verified!
+                                  </p>
+
+                                  <div class="mb-29">
+                                    <a href="#" class="link font-12"
+                                      >Connect Your Domain</a
+                                    >
+                                    <span
+                                      class="font-12 font-weight-medium color-secondary"
+                                      >- Optional (Improves inbox delivery
+                                      rates)</span
+                                    >
                                   </div>
                                 </div>
                               </div>
-                              <div class="create-campaign__timing-col ml-30">
-                                <div
-                                  class="radio_inline radio create-campaign__timing-col-radio"
+                            </div>
+                            <button class="btn _lg _primary _save">Save</button>
+                          </div>
+                        </div>
+
+                        <button type="button" class="close">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+
+                      <div class="create-campaign__row">
+                        <div class="d-flex flex-column">
+                          <svg
+                            width="30"
+                            height="30"
+                            class="create-campaign__icon"
+                          >
+                            <use
+                              class="icon-check"
+                              xlink:href="assets/images/sprite.svg#round-checkmark"
+                            ></use>
+                            <use
+                              class="icon-edit"
+                              xlink:href="assets/images/sprite.svg#round-edit"
+                            ></use>
+                            <use
+                              class="icon-fill"
+                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                            ></use>
+                          </svg>
+                        </div>
+
+                        <div class="w-100">
+                          <div class="d-flex flex-column flex-sm-row pl-20">
+                            <div class="create-campaign__row-content">
+                              <h4 class="mb-4">To</h4>
+                              <p class="create-campaign__row-placeholder">
+                                Who’ll get this email?
+                                <a href="#" class="link"
+                                  >More on setting campaign recipients.</a
                                 >
-                                  <input
-                                    type="radio"
-                                    id="inlineRadio2"
-                                    value="option2"
-                                    name="radioInline"
-                                  />
-                                  <label
-                                    for="inlineRadio2"
-                                    class="font-14 font-weight-bold"
+                              </p>
+                              <p class="create-campaign__row-description">
+                                This campaign will be sent to
+                                <a href="#" class="link">784 recipients</a>.
+                                Email footer and forms will be delivered in
+                                <span class="color-primary font-weight-bold"
+                                  >English</span
+                                >.
+                              </p>
+                            </div>
+                            <button
+                              class="btn _sm _primary _edit mt-10 mt-sm-0"
+                            >
+                              Add Recipients
+                            </button>
+                            <button
+                              class="btn _sm _secondary _edit mt-10 mt-sm-0"
+                            >
+                              Change
+                            </button>
+                          </div>
+
+                          <div class="create-campaign__row-edit">
+                            <div class="create-campaign__fields mb-10">
+                              <div class="create-campaign__fields-col">
+                                <p class="font-14 font-weight-bold mb-7">
+                                  Add Lists
+                                </p>
+                                <div class="form-control__wrap mb-20">
+                                  <select
+                                    class="form-control _select2-lg"
+                                    multiple="multiple"
+                                    required
                                   >
-                                    Send Now
-                                  </label>
+                                    <option></option>
+                                    <option value="test-1" selected
+                                      >Shopify List (1,410)</option
+                                    >
+                                    <option value="test-3">Custom tag 2</option>
+                                    <option value="test-4">Custom tag 3</option>
+                                    <option value="test-5">Custom tag 4</option>
+                                  </select>
                                 </div>
-                                <div
-                                  class="font-12 color-secondary font-weight-medium mb-15"
+                                <p class="font-14 font-weight-bold mb-7">
+                                  Add Tags
+                                </p>
+                                <div class="form-control__wrap mb-20">
+                                  <select
+                                    class="form-control _select2-lg"
+                                    multiple="multiple"
+                                    required
+                                  >
+                                    <option></option>
+                                    <option value="test-1" selected
+                                      >Members (38)</option
+                                    >
+                                    <option value="test-3">Custom tag 2</option>
+                                    <option value="test-4">Custom tag 3</option>
+                                    <option value="test-5">Custom tag 4</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="create-campaign__fields-col">
+                                <p class="font-14 font-weight-bold mb-7">
+                                  Add Segments
+                                </p>
+                                <div class="form-control__wrap mb-20">
+                                  <select
+                                    class="form-control _select2-lg"
+                                    multiple="multiple"
+                                    required
+                                  >
+                                    <option></option>
+                                    <option value="test-1" selected
+                                      >My Friend’s Friends (278)</option
+                                    >
+                                    <option value="test-2"
+                                      >First Timers (12)</option
+                                    >
+                                    <option value="test-3">Custom tag 2</option>
+                                    <option value="test-4">Custom tag 3</option>
+                                    <option value="test-5">Custom tag 4</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <a href="#" class="link _lg mb-2">789</a>
+                            <p class="font-14 font-weight-bold mb-28">
+                              Total Unique Recipients
+                            </p>
+
+                            <p class="font-14 font-weight-bold mb-7">
+                              Language
+                            </p>
+                            <div class="mb-32">
+                              <div class="create-campaign__input-wrap">
+                                <select
+                                  class="form-control _select2-lg"
+                                  required
                                 >
-                                  Immediately send your campaign
+                                  <option></option>
+                                  <option value="test-1" selected
+                                    >English</option
+                                  >
+                                  <option value="test-2">Chinese</option>
+                                </select>
+                              </div>
+                            </div>
+                            <button class="btn _lg _primary _save">Save</button>
+                          </div>
+                        </div>
+
+                        <button type="button" class="close">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+
+                      <div class="create-campaign__row _editing">
+                        <div class="d-flex flex-column">
+                          <svg
+                            width="30"
+                            height="30"
+                            class="create-campaign__icon"
+                          >
+                            <use
+                              class="icon-check"
+                              xlink:href="assets/images/sprite.svg#round-checkmark"
+                            ></use>
+                            <use
+                              class="icon-edit"
+                              xlink:href="assets/images/sprite.svg#round-edit"
+                            ></use>
+                            <use
+                              class="icon-fill"
+                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                            ></use>
+                          </svg>
+                        </div>
+
+                        <div class="w-100">
+                          <div class="d-flex flex-column flex-sm-row pl-20">
+                            <div class="create-campaign__row-content">
+                              <h4 class="mb-4">Campaign Name</h4>
+                              <p class="create-campaign__row-placeholder">
+                                Choose a distinguishing campaign name. You can
+                                also add tags.
+                              </p>
+                              <p
+                                class="create-campaign__row-description font-12 font-weight-medium color-secondary m-0"
+                              >
+                                You named your campaign
+                                <span class="color-primary font-weight-bold"
+                                  >Dodo’s Big Adventure</span
+                                >. (You tagged it
+                                <span class="color-primary font-weight-bold"
+                                  >vip, important</span
+                                >.)
+                              </p>
+                            </div>
+                            <button
+                              class="btn _sm _primary _edit mt-10 mt-sm-0"
+                            >
+                              Add Name
+                            </button>
+                            <button
+                              class="btn _sm _secondary _edit mt-10 mt-sm-0"
+                            >
+                              Change
+                            </button>
+                          </div>
+
+                          <div class="create-campaign__row-edit">
+                            <div class="create-campaign__fields">
+                              <div class="create-campaign__fields-col">
+                                <p class="font-14 font-weight-bold mb-7">
+                                  Name Your Campaign
+                                </p>
+                                <div class="form-control__wrap mb-10">
+                                  <input
+                                    type="text"
+                                    placeholder="Your Campaign Name Here"
+                                    class="form-control"
+                                    value="Dodo’s Big Adventure"
+                                  />
+                                </div>
+                              </div>
+                              <div class="create-campaign__fields-col">
+                                <p class="font-14 font-weight-bold mb-7">
+                                  Tags (Optional)
+                                </p>
+                                <div class="form-control__wrap mb-10">
+                                  <select
+                                    class="form-control _select2-lg"
+                                    multiple="multiple"
+                                    required
+                                  >
+                                    <option></option>
+                                    <option value="test-1" selected>vip</option>
+                                    <option value="test-2" selected
+                                      >Important</option
+                                    >
+                                    <option value="test-3">Custom tag 2</option>
+                                    <option value="test-4">Custom tag 3</option>
+                                    <option value="test-5">Custom tag 4</option>
+                                  </select>
                                 </div>
                               </div>
                             </div>
 
-                            <p class="font-14 font-weight-bold mb-20">
-                              Additional Optimization
-                            </p>
-
-                            <div class="switcher__wrap mb-20">
-                              <a href="#" class="link font-12 order-2"
-                                >Learn More.</a
-                              >
-                              <label
-                                for="switch-2"
-                                class="switcher__label font-weight-medium color-secondary"
-                              >
-                                Gradual send over several hours (20% per hour).
-                              </label>
-                              <input
-                                type="checkbox"
-                                id="switch-2"
-                                class="switcher"
-                                checked
-                              />
-                              <label
-                                for="switch-2"
-                                class="switcher__toggle"
-                              ></label>
+                            <div class="error-info">
+                              Oops! Some sheep definately hopped. Hope it won’t
+                              hop next time. Will it?
                             </div>
 
-                            <div class="switcher__wrap mb-30">
-                              <a href="#" class="link font-12 order-2"
-                                >Learn More.</a
-                              >
-                              <label
-                                for="switch-3"
-                                class="switcher__label font-weight-medium color-secondary"
-                              >
-                                Add Google Analytics link tracking.
-                              </label>
-                              <input
-                                type="checkbox"
-                                id="switch-3"
-                                class="switcher"
-                                checked
-                              />
-                              <label
-                                for="switch-3"
-                                class="switcher__toggle"
-                              ></label>
-                            </div>
-
-                            <button class="btn _lg _primary _save">
-                              Save
-                            </button>
+                            <button class="btn _lg _primary _save">Save</button>
                           </div>
                         </div>
 
@@ -2411,6 +2435,13 @@
         });
 
         $('.create-campaign__row .btn._edit').click(function () {
+          var offset = $(this).offset();
+          $('html, body').animate(
+            {
+              scrollTop: offset.top - 100,
+            },
+            500
+          );
           $(this).closest('.create-campaign__row').addClass('_editing');
           $('body').addClass('_overlayed');
         });
