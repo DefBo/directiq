@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>All Pages | DirectIQ</title>
+    <title>Add Contacts | DirectIQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Direct IQ frontend development version" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -41,10 +41,36 @@
 
 
     <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
       href="assets/libs/select2/css/select2.min.css"
       rel="stylesheet"
       type="text/css"
     />
+
+    <link
+      href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/nouisliderribute/nouislider.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link href="assets/libs/emoji-picker/emoji.css" rel="stylesheet" />
 
     <!-- App css -->
     <link
@@ -79,8 +105,11 @@
             </div>
 
             <ol class="breadcrumbs">
+              <li class="breadcrumb-item">
+                <a href="./campaigns-home.html">Campaigns</a>
+              </li>
               <li class="breadcrumb-item active">
-                Home
+                Create Campaign
                 <button class="btn_icon d-none d-md-inline ml-18">
                   <i class="add-to-fav-icon">
                     <svg
@@ -322,7 +351,6 @@
       <!-- end Topbar -->
 
       <!-- ========== Left Sidebar Start ========== -->
-
       <button class="hamburger hamburger--squeeze" id="ham" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
@@ -349,10 +377,10 @@
                 Home
               </span>
             </a>
-            <ul class="nav-items nav-expand-content active">
+            <ul class="nav-items nav-expand-content">
               <li class="nav-title">Home</li>
               <li class="nav-item">
-                <a class="nav-item-link active" href="./">
+                <a class="nav-item-link" href="./">
                   Home
                 </a>
               </li>
@@ -440,7 +468,7 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Templates</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="templates-home.html">
+                <a class="nav-item-link active" href="templates-home.html">
                   My Templates
                 </a>
               </li>
@@ -461,7 +489,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item nav-expand">
+          <li class="nav-item nav-expand active">
             <a class="nav-item-link nav-expand-link" href="#">
               <i>
                 <svg width="29.507" height="22">
@@ -528,43 +556,23 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Integrations</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
+                <a class="nav-item-link" href="contact-integrations.html">
+                  Contact Integrations
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="social-media-integrations.html">
+                  Social Media Integrations
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-item-link" href="#">
-                  Test Item 2
+                  Plugins & Apps
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
+                  API
                 </a>
               </li>
             </ul>
@@ -704,7 +712,6 @@
           </button>
         </div>
       </nav>
-
       <!-- Left Sidebar End -->
 
       <!-- ============================================================== -->
@@ -715,291 +722,256 @@
         <div class="content">
           <!-- Start Content-->
           <div class="container-fluid">
-            <div class="card mb-0 mt-15">
-              <h3 class="mb-16">Pages</h3>
+            <div class="row">
+              <div class="col-12">
+                <ul class="nav nav-tabs nav-bordered">
+                  <li class="nav-item">
+                    <a href="./create-campaign.html" class="nav-link">
+                      Regular Campaign
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#automated-campaign"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link active"
+                    >
+                      Automated Campaign
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#a-b-campaign"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      A/B Campaign
+                    </a>
+                  </li>
+                </ul>
 
-              <p class="sub-header">
-                All pages that are implemented or currently in progress.
-              </p>
+                <div class="tab-content mt-n6">
+                  <div class="tab-pane" id="regular-campaign"></div>
 
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-static.html">My Lists</a>
-                (static)
-              </h4>
+                  <div class="tab-pane show active" id="automated-campaign">
+                    <div class="automated-overview">
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary"
+                            >Welcome Email</a
+                          >
 
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-ep.html">My Lists</a> (endpoint
-                integrated)
-              </h4>
+                          <svg width="50" height="50">
+                            <use
+                              xlink:href="assets/images/sprite.svg#girl-with-hand-risen"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="list-details-static.html">List Details</a>
-                (static)
-              </h4>
+                        <div class="automated-overview__item-description">
+                          Introduce yourself to your subscribers by
+                          automatically sending an email when they join to your
+                          list.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="list-details-ep.html">List Details</a>
-                (endpoint integrated)
-              </h4>
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary"
+                            >Happy Birthday</a
+                          >
 
-              <h4 class="mb-16">
-                <a class="link" href="contacts-home-static.html"
-                  >Contacts Home</a
-                >
-              </h4>
+                          <svg width="50.187" height="50">
+                            <use
+                              xlink:href="assets/images/sprite.svg#birthday-cake"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="contact-details.html">Contact Details</a>
-              </h4>
+                        <div class="automated-overview__item-description">
+                          Send an exclusive offer or celebrate your audience
+                          with an automated email on their birthday.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="add-contacts.html">Add Contacts</a>
-              </h4>
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary"
+                            >Onboarding Series</a
+                          >
 
-              <h4 class="mb-16">
-                <a class="link" href="form-validation-examples.html"
-                  >Form Validation Example</a
-                >
-              </h4>
+                          <svg width="51.724" height="50">
+                            <use
+                              xlink:href="assets/images/sprite.svg#onboarding-series"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="save-list-new-user.html">Save List</a>
-                (new user)
-              </h4>
+                        <div class="automated-overview__item-description">
+                          Impress your new subscribers by sending them a series
+                          of emails when they join your audience.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="save-list-few-lists.html">Save List</a>
-                (select from few lists)
-              </h4>
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary"
+                            >Lead Nurturing</a
+                          >
 
-              <h4 class="mb-16">
-                <a class="link" href="save-list-many-lists.html">Save List</a>
-                (select from many lists)
-              </h4>
+                          <svg width="50.063" height="50">
+                            <use
+                              xlink:href="assets/images/sprite.svg#magnet"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="confirm-modals.html"
-                  >Confirmation Modals</a
-                >
-              </h4>
+                        <div class="automated-overview__item-description">
+                          Start thrilling your new leads by sending them a
+                          series of automated nurturing emails.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="import-from-other-service.html"
-                  >Add Contacts</a
-                >
-                (import from other service)
-              </h4>
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary">Auto-Resend</a>
 
-              <h4 class="mb-16">
-                <a class="link" href="connect-service-not-connected.html"
-                  >Add Contacts</a
-                >
-                (import from other service - not connected)
-              </h4>
+                          <svg width="50.83" height="50">
+                            <use
+                              xlink:href="assets/images/sprite.svg#resend-arrow"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="toggle-columns.html"
-                  >Toggle Columns Modal</a
-                >
-              </h4>
+                        <div class="automated-overview__item-description">
+                          Automatically resend same email when your recipients
+                          do not engage first time.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations.html"
-                  >Contact Integrations</a
-                >
-              </h4>
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary">Recurring</a>
 
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-not-connected.html"
-                  >Contact Integrations</a
-                >
-                (not connected)
-              </h4>
+                          <svg
+                            width="75"
+                            height="37.172"
+                            style="margin-top: 12.828px;"
+                          >
+                            <use
+                              xlink:href="assets/images/sprite.svg#eternity"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-connected.html"
-                  >Contact Integrations</a
-                >
-                (connected)
-              </h4>
+                        <div class="automated-overview__item-description">
+                          Start a repeating email campaign based on a recurring
+                          pattern of your choice.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a
-                  class="link"
-                  href="contact-integrations-connected-no-list.html"
-                  >Contact Integrations</a
-                >
-                (connected - no list)
-              </h4>
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary">Date Based</a>
 
-              <h4 class="mb-16">
-                <a class="link" href="social-media-integrations.html"
-                  >Social Media Integrations</a
-                >
-              </h4>
+                          <svg width="66.504" height="50">
+                            <use
+                              xlink:href="assets/images/sprite.svg#clock"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="api.html">Integrations - API</a>
-              </h4>
+                        <div class="automated-overview__item-description">
+                          Send personalized emails to your contacts, auto
+                          triggered by date fields.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="confirmation.html"
-                  >Confirmation Notification</a
-                >
-              </h4>
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary"
+                            >RSS to Email</a
+                          >
 
-              <h4 class="mb-16">
-                <a class="link" href="negative.html">Negative Notification</a>
-              </h4>
+                          <svg width="50" height="50">
+                            <use
+                              xlink:href="assets/images/sprite.svg#envelop"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="segments.html">Segments</a>
-              </h4>
+                        <div class="automated-overview__item-description">
+                          Use RSS to email functionality to send new content to
+                          your subscribers.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="segments-fixes.html">Segments</a> (fixes)
-              </h4>
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary"
+                            >Follow-up Email</a
+                          >
 
-              <h4 class="mb-16">
-                <a class="link" href="segments-possible-fields.html"
-                  >Segments - Possible Fields</a
-                >
-              </h4>
+                          <svg
+                            width="54.992"
+                            height="55"
+                            style="margin-top: -5px;"
+                          >
+                            <use
+                              xlink:href="assets/images/sprite.svg#follow-up"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16"><a class="link" href="tags.html">Tags</a></h4>
+                        <div class="automated-overview__item-description">
+                          Send an email then send a new one as a follow-up,
+                          targeting openers or non-openers.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="plugins-and-apps.html"
-                  >Integrations - Plugins & Apps</a
-                >
-              </h4>
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary"
+                            >Education Series</a
+                          >
 
-              <h4 class="mb-16">
-                <a class="link" href="contact-fields.html">Contacts - Fields</a>
-              </h4>
+                          <svg width="50" height="50">
+                            <use
+                              xlink:href="assets/images/sprite.svg#envelop-edu"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="suppression-lists.html"
-                  >Contacts - Suppression Lists</a
-                >
-              </h4>
+                        <div class="automated-overview__item-description">
+                          Send a series of emails to inform or educate your
+                          audience.
+                        </div>
+                      </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="templates-home.html">Templates - Home</a>
-              </h4>
+                      <div class="automated-overview__item">
+                        <div class="automated-overview__item-top">
+                          <a href="#" class="btn _lg _secondary">Sales Pitch</a>
 
-              <h4 class="mb-16">
-                <a class="link" href="create-template-free.html"
-                  >Create Template - Free Templates</a
-                >
-              </h4>
+                          <svg width="50.02" height="50">
+                            <use
+                              xlink:href="assets/images/sprite.svg#pitch"
+                            ></use>
+                          </svg>
+                        </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="create-template-basic-layout.html"
-                  >Create Template - Basic Layout</a
-                >
-              </h4>
+                        <div class="automated-overview__item-description">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-              <h4 class="mb-16">
-                <a class="link" href="create-template-scratch.html"
-                  >Create Template - Create From Scratch</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-import.html"
-                  >Create Template - Import</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-preview-save.html"
-                  >Create Template - Preview and Save</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="inbox-preview-empty.html"
-                  >Templates - Inbox Preview</a
-                >
-                (empty)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="inbox-preview-running.html"
-                  >Templates - Inbox Preview</a
-                >
-                (running)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="inbox-preview-complete.html"
-                  >Templates - Inbox Preview</a
-                >
-                (complete)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="spam-doctor-empty.html"
-                  >Templates - Spam Doctor</a
-                >
-                (empty)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="spam-doctor-running.html"
-                  >Templates - Spam Doctor</a
-                >
-                (running)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="spam-doctor-complete.html"
-                  >Templates - Spam Doctor</a
-                >
-                (complete)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="templates-send-test.html"
-                  >Templates - Send Test</a
-                >
-                (modal)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="campaigns-home.html">Campaigns - Home</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign.html">Create Campaign</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="campaign-is-scheduled-modal.html"
-                  >Campaign is scheduled (modal)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-a-b.html"
-                  >Create Campaign - A/B</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-automated-overview.html"
-                  >Create Campaign - Automated (overview)
-                </a>
-              </h4>
-
-              <hr />
-
-              <h4 class="mb-16">
-                <a class="link" href="list-details-new-table.html"
-                  >Custom Table</a
-                >
-              </h4>
+                  <div class="tab-pane" id="a-b-campaign"></div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- container -->
@@ -1017,10 +989,107 @@
         </svg>
       </a>
     </div>
-
     <!-- END wrapper -->
 
-    <!-- Vendor js -->
+    <div
+      id="verify-domain"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+      style="display: none;"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <div class="modal-body">
+            <h4 class="mb-16">Verify Domain</h4>
+            <div class="form-control__wrap mb-11">
+              <input
+                type="text"
+                placeholder="Your Domain Name Here"
+                class="form-control"
+                value="koala@barbodesign.com"
+              />
+            </div>
+            <p class="font-12 font-weight-medium color-secondary mb-21">
+              We’ll send a verification email to above address. Please make sure
+              you entered an address you can access.
+            </p>
+            <button
+              class="btn _lg _primary"
+              data-toggle="modal"
+              data-target="#verification-sent"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              Send Verification
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal -->
+
+    <div
+      id="verification-sent"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+      style="display: none;"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <div class="modal-body">
+            <h4 class="mb-18">Verification Email Sent</h4>
+            <p class="font-12 font-weight-medium color-secondary mb-10">
+              We sent an email to
+              <span class="font-weight-bold color-primary"
+                >koala@barbodesign.com</span
+              >. Please copy and paste the verification code from that email.
+              <a href="#" class="link">Trouble finding the code? Resend.</a>
+            </p>
+            <h5 class="mb-7">Enter Verification Code</h5>
+            <div class="form-control__wrap mb-27">
+              <input
+                type="text"
+                placeholder="Your Verification Code Here"
+                class="form-control"
+                value="0917501108471"
+              />
+            </div>
+            <button id="from-email-verify-btn" class="btn _lg _primary">
+              Verify
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal -->
+
+    <!-- App js -->
     <script src="assets/js/vendor.min.js"></script>
 
     <script src="assets/libs/select2/js/select2.min.js"></script>

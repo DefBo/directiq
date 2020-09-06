@@ -9685,6 +9685,40 @@ body._overlayed {
   font-weight: 700;
   color: #212b35; }
 
+.automated-overview {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -9px -15px 0; }
+  .automated-overview__item {
+    background: yellow;
+    flex: 0 0 calc(33.3333% - 30px);
+    margin: 15px;
+    padding: 25px 25px 40px 40px; }
+    @media (max-width: 1110px) {
+      .automated-overview__item {
+        flex: 0 0 calc(50% - 30px); } }
+    @media (max-width: 648px) {
+      .automated-overview__item {
+        flex: 0 0 calc(100% - 30px);
+        padding: 25px; } }
+    .automated-overview__item:nth-child(odd) {
+      background: #fff; }
+    .automated-overview__item:nth-child(even) {
+      background: #f6f9fc; }
+  .automated-overview__item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 9px; }
+    .automated-overview__item-top .btn {
+      margin-bottom: 1px; }
+  .automated-overview__item-description {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: #454f5b;
+    margin-right: 15px; }
+
 th,
 td {
   white-space: nowrap !important; }
