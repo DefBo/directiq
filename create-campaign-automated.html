@@ -88,7 +88,7 @@
 
   </head>
 
-  <body data-layout-mode="two-column" class="animation-stopper _overlayed">
+  <body data-layout-mode="two-column" class="animation-stopper">
     <!-- Begin page -->
     <div id="wrapper">
       <!-- Topbar Start -->
@@ -756,6 +756,48 @@
                   <div class="tab-pane" id="regular-campaign"></div>
 
                   <div class="tab-pane show active" id="automated-campaign">
+                    <div class="automated-top">
+                      <div class="automated-top__image-wrap">
+                        <svg width="50" height="50">
+                          <use
+                            xlink:href="assets/images/sprite.svg#girl-with-hand-risen"
+                          ></use>
+                        </svg>
+                      </div>
+
+                      <div class="automated-top__content">
+                        <div>
+                          <h4 class="mt-3">Set Up Welcome Email Campaign</h4>
+                          <p
+                            class="font-12 color-secondary mt-2 mb-0 font-weight-medium"
+                          >
+                            Introduce yourself to your subscribers by
+                            automatically sending an email when they join to
+                            your list.
+                          </p>
+                        </div>
+
+                        <div class="confirm__wrap">
+                          <button class="btn _lg _secondary confirm__btn">
+                            Switch Automation
+                          </button>
+
+                          <div class="confirm__modal d-none" style="">
+                            <div class="confirm__content">
+                              <p class="confirm__text">
+                                Your campaign settings will be lost if you
+                                switch automation type. Are you sure?
+                              </p>
+                            </div>
+                            <div class="d-flex">
+                              <button class="btn _lg _secondary">Nope</button>
+                              <button class="btn _lg _primary">Sure</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="card p-0 mb-0 flex-column-reverse">
                       <div class="create-campaign__row pb-40">
                         <div class="d-flex flex-column">
@@ -788,22 +830,17 @@
                               </p>
                               <div class="create-campaign__row-description">
                                 <div class="mb-4">
-                                  A/B test will start on
+                                  This campaign will be sent based on below time
+                                  schedule. (Emails will wait until scheduled
+                                  time arrives).<br />
                                   <span class="color-primary font-weight-bold"
-                                    >June 25 - 7:45 PM (GMT -4)</span
+                                    >Mondays - Fridays</span
                                   >
-                                  Rest of your email campaign will start sending
+                                  / 10:30 AM to 9 PM<br />
                                   <span class="color-primary font-weight-bold"
-                                    >2 hours</span
+                                    >Saturdays</span
                                   >
-                                  following test run and will be based on
-                                  winning combination.
-                                </div>
-                                <div>
-                                  Google Analytics tracking is
-                                  <span class="color-primary font-weight-bold"
-                                    >ON</span
-                                  >
+                                  / 11:30 AM to 12 PM
                                 </div>
                               </div>
                             </div>
@@ -819,222 +856,272 @@
                             </button>
                           </div>
 
-                          <div class="create-campaign__row-edit">
-                            <div class="d-flex">
-                              <div class="create-campaign__timing-col">
-                                <div
-                                  class="radio_inline radio create-campaign__timing-col-radio"
-                                >
-                                  <input
-                                    type="radio"
-                                    id="inlineRadio1"
-                                    value="option1"
-                                    name="radioInline"
-                                    checked
-                                  />
-                                  <label
-                                    for="inlineRadio1"
-                                    class="font-14 font-weight-bold"
-                                  >
-                                    Schedule to a Later Time
-                                  </label>
-                                </div>
-                                <div
-                                  class="font-12 color-secondary font-weight-medium mb-15"
-                                >
-                                  Set up a schedule to send your campaign at a
-                                  specific time
-                                </div>
+                          <div class="create-campaign__row-edit mb-0">
+                            <div class="create-campaign__col">
+                              <p class="font-14 font-weight-bold mb-5">
+                                Schedule
+                              </p>
+                              <p
+                                class="font-12 font-weight-medium color-secondary mb-20"
+                              >
+                                Emails will only be sent on selected days and
+                                hours. We'll wait until scheduled time arrives.
+                                <a href="#" class="link">Learn More</a>.
+                              </p>
 
-                                <div
-                                  class="create-campaign__timing-col-content"
-                                >
-                                  <div class="form-group mb-10">
-                                    <label class="font-weight-bold mb-7"
-                                      >Delivery Date</label
-                                    >
-                                    <div class="form-control__wrap _date">
-                                      <input
-                                        type="text"
-                                        id="basic-datepicker"
-                                        class="form-control"
-                                        placeholder="Select date"
-                                      />
-                                    </div>
-                                  </div>
-                                  <p class="font-14 font-weight-bold mb-7">
-                                    Delivery Time
-                                  </p>
-                                  <div class="d-flex mb-20">
-                                    <div class="select-hours">
-                                      <select
-                                        class="form-control _select2-lg"
-                                        required
-                                      >
-                                        <option></option>
-                                        <option value="test-1">1</option>
-                                        <option value="test-2">2</option>
-                                        <option value="test-3">3</option>
-                                        <option value="test-4">4</option>
-                                        <option value="test-5">5</option>
-                                        <option value="test-6">6</option>
-                                        <option value="test-7">7</option>
-                                        <option value="test-8">8</option>
-                                        <option value="test-9">9</option>
-                                        <option value="test-10">10</option>
-                                        <option value="test-11" selected
-                                          >11</option
+                              <div class="automated-schedule">
+                                <form class="needs-validation" novalidate="">
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="mon"
+                                          id="mon"
+                                          checked
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="mon"
+                                          >Mon</label
                                         >
-                                        <option value="test-12">12</option>
-                                      </select>
-                                    </div>
-                                    <div class="ml-16">
-                                      <select
-                                        class="form-control _select2-lg"
-                                        required
-                                      >
-                                        <option></option>
-                                        <option value="test-13">00</option>
-                                        <option value="test-14">5</option>
-                                        <option value="test-15">10</option>
-                                        <option value="test-16">15</option>
-                                        <option value="test-17">20</option>
-                                        <option value="test-18" selected
-                                          >25</option
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
                                         >
-                                        <option value="test-19">30</option>
-                                        <option value="test-20">35</option>
-                                        <option value="test-21">40</option>
-                                        <option value="test-22">45</option>
-                                        <option value="test-23">50</option>
-                                        <option value="test-24">55</option>
-                                      </select>
+                                      </div>
                                     </div>
-                                    <div class="ml-6">
-                                      <select
-                                        class="form-control _select2-lg"
-                                        required
-                                      >
-                                        <option></option>
-                                        <option value="test-25">AM</option>
-                                        <option value="test-26" selected
-                                          >PM</option
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="tue"
+                                          id="tue"
+                                          checked
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="tue"
+                                          >Tue</label
                                         >
-                                      </select>
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
                                     </div>
-                                    <div class="switcher__wrap ml-20">
-                                      <label
-                                        for="switch-1"
-                                        class="switcher__label font-weight-medium color-secondary"
-                                      >
-                                        Suggest time
-                                      </label>
-                                      <input
-                                        type="checkbox"
-                                        id="switch-1"
-                                        class="switcher"
-                                        checked
-                                      />
-                                      <label
-                                        for="switch-1"
-                                        class="switcher__toggle"
-                                      ></label>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="wed"
+                                          id="wed"
+                                          checked
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="wed"
+                                          >Wed</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
                                     </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
                                   </div>
-                                  <p class="font-14 font-weight-bold mb-7">
-                                    Time Zone
-                                  </p>
-                                  <div class="mb-20">
-                                    <select
-                                      class="form-control _select2-lg"
-                                      required
-                                    >
-                                      <option></option>
-                                      <option value="test-1" selected
-                                        >(GMT -04:00) Eastern Daylight Time (US
-                                        & Canada)</option
-                                      >
-                                      <option value="test-2">Test Itme</option>
-                                    </select>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="thu"
+                                          id="thu"
+                                          checked
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="thu"
+                                          >Thu</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
                                   </div>
-                                </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="fri"
+                                          id="fri"
+                                          checked
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="fri"
+                                          >Fri</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="sat"
+                                          id="sat"
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="sat"
+                                          >Sat</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="san"
+                                          id="san"
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="san"
+                                          >Sun</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                </form>
                               </div>
-                              <div class="create-campaign__timing-col ml-30">
-                                <div
-                                  class="radio_inline radio create-campaign__timing-col-radio"
+
+                              <p class="font-14 font-weight-bold mb-7">
+                                Time Zone
+                              </p>
+                              <div class="mb-20 mw-320">
+                                <select
+                                  class="form-control _select2-lg"
+                                  required
                                 >
-                                  <input
-                                    type="radio"
-                                    id="inlineRadio2"
-                                    value="option2"
-                                    name="radioInline"
-                                  />
-                                  <label
-                                    for="inlineRadio2"
-                                    class="font-14 font-weight-bold"
+                                  <option></option>
+                                  <option value="test-1" selected
+                                    >(GMT -04:00) Eastern Daylight Time (US &
+                                    Canada)</option
                                   >
-                                    Send Now
-                                  </label>
-                                </div>
-                                <div
-                                  class="font-12 color-secondary font-weight-medium mb-15"
-                                >
-                                  Immediately send your campaign
-                                </div>
+                                  <option value="test-2">Test Itme</option>
+                                </select>
                               </div>
+
+                              <p class="font-14 font-weight-bold mb-20">
+                                Additional Optimization
+                              </p>
+
+                              <div class="switcher__wrap mb-30">
+                                <a href="#" class="link font-12 order-2"
+                                  >Learn More.</a
+                                >
+                                <label
+                                  for="switch-3"
+                                  class="switcher__label font-weight-medium color-secondary"
+                                >
+                                  Add Google Analytics link tracking.
+                                </label>
+                                <input
+                                  type="checkbox"
+                                  id="switch-3"
+                                  class="switcher"
+                                  checked
+                                />
+                                <label
+                                  for="switch-3"
+                                  class="switcher__toggle"
+                                ></label>
+                              </div>
+
+                              <button class="btn _lg _primary _save">
+                                Save
+                              </button>
                             </div>
-
-                            <p class="font-14 font-weight-bold mb-20">
-                              Additional Optimization
-                            </p>
-
-                            <div class="switcher__wrap mb-20">
-                              <a href="#" class="link font-12 order-2"
-                                >Learn More.</a
-                              >
-                              <label
-                                for="switch-2"
-                                class="switcher__label font-weight-medium color-secondary"
-                              >
-                                Gradual send over several hours (20% per hour).
-                              </label>
-                              <input
-                                type="checkbox"
-                                id="switch-2"
-                                class="switcher"
-                                checked
-                              />
-                              <label
-                                for="switch-2"
-                                class="switcher__toggle"
-                              ></label>
-                            </div>
-
-                            <div class="switcher__wrap mb-30">
-                              <a href="#" class="link font-12 order-2"
-                                >Learn More.</a
-                              >
-                              <label
-                                for="switch-3"
-                                class="switcher__label font-weight-medium color-secondary"
-                              >
-                                Add Google Analytics link tracking.
-                              </label>
-                              <input
-                                type="checkbox"
-                                id="switch-3"
-                                class="switcher"
-                                checked
-                              />
-                              <label
-                                for="switch-3"
-                                class="switcher__toggle"
-                              ></label>
-                            </div>
-
-                            <button class="btn _lg _primary _save">
-                              Save
-                            </button>
                           </div>
                         </div>
 
@@ -2556,255 +2643,24 @@
                         <div class="w-100">
                           <div class="d-flex flex-column flex-sm-row pl-20">
                             <div class="create-campaign__row-content">
-                              <h4 class="mb-4">A/B Test Rules</h4>
-                              <p class="create-campaign__row-placeholder">
-                                What would you like to test?
-                              </p>
-                              <p class="create-campaign__row-description">
-                                We'll test
-                                <span class="color-primary font-weight-bold"
-                                  >3 combination of From Names</span
-                                >. Test will send to
-                                <span class="color-primary font-weight-bold"
-                                  >20%</span
-                                >
-                                of recipients. Winning combination will be
-                                determined
-                                <span class="color-primary font-weight-bold"
-                                  >by opens after 2 hours</span
-                                >.
-                              </p>
-                            </div>
-                            <button
-                              class="btn _sm _primary _edit mt-10 mt-sm-0"
-                            >
-                              Add Recipients
-                            </button>
-                            <button
-                              class="btn _sm _secondary _edit mt-10 mt-sm-0"
-                            >
-                              Change
-                            </button>
-                          </div>
-
-                          <div class="create-campaign__row-edit">
-                            <div class="create-campaign__ab-test">
-                              <div class="create-campaign__ab-test-main">
-                                <div
-                                  class="create-campaign__ab-test-step d-flex"
-                                >
-                                  <div
-                                    class="create-campaign__ab-test-step-col"
-                                  >
-                                    <h5>Test Subject Lines</h5>
-                                    <div class="form-group round-touchspin">
-                                      <input
-                                        data-toggle="touchspin"
-                                        type="text"
-                                        value="1"
-                                        data-bts-max="3"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="create-campaign__ab-test-step-col"
-                                  >
-                                    <h5>Test From Name</h5>
-                                    <div class="form-group round-touchspin">
-                                      <input
-                                        data-toggle="touchspin"
-                                        type="text"
-                                        value="1"
-                                        data-bts-max="3"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="create-campaign__ab-test-step-col"
-                                  >
-                                    <h5>Test Email Template</h5>
-                                    <div class="form-group round-touchspin">
-                                      <input
-                                        data-toggle="touchspin"
-                                        type="text"
-                                        value="1"
-                                        data-bts-max="3"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="create-campaign__ab-test-step pb-52"
-                                >
-                                  <h5>
-                                    Chose the percentage of recipients to
-                                    receive test
-                                  </h5>
-                                  <div
-                                    id="slider"
-                                    class="percents-slider"
-                                  ></div>
-                                  <input
-                                    type="number"
-                                    id="slider-input"
-                                    name="slider-input"
-                                    min="0"
-                                    max="100"
-                                  />
-                                </div>
-                                <div class="create-campaign__ab-test-step">
-                                  <h5 class="mb-11">
-                                    How to decide winning combination
-                                  </h5>
-                                  <div class="d-flex align-items-center mb-15">
-                                    <div class="create-campaign__input-wrap">
-                                      <select
-                                        class="form-control _select2-lg"
-                                        required
-                                      >
-                                        <option></option>
-                                        <option value="test-1" selected
-                                          >By open rate</option
-                                        >
-                                        <option value="test-2"
-                                          >test item</option
-                                        >
-                                      </select>
-                                    </div>
-                                    <div class="mx-10">after</div>
-                                    <div class="form-control__wrap mr-10 mw-60">
-                                      <input
-                                        type="text"
-                                        class="form-control"
-                                        value=""
-                                      />
-                                    </div>
-                                    <div class="create-campaign__input-wrap">
-                                      <select
-                                        class="form-control _select2-lg"
-                                        required
-                                      >
-                                        <option></option>
-                                        <option value="test-1" selected
-                                          >hours</option
-                                        >
-                                        <option value="test-2">minutes</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="create-campaign__ab-test-aside">
-                                <div class="card connect__card-aside">
-                                  <i class="mb-19">
-                                    <svg width="45" height="50">
-                                      <use
-                                        xlink:href="assets/images/sprite.svg#cat-sherlock"
-                                      ></use>
-                                    </svg>
-                                  </i>
-                                  <h5 class="mb-5">Summary</h5>
-                                  <div
-                                    class="font-12 color-secondary font-weight-medium"
-                                  >
-                                    <div>
-                                      Test Cobinations (max 3):
-                                      <span
-                                        class="font-weight-bold color-danger"
-                                        >not decided yet</span
-                                      >
-                                    </div>
-                                    <div>
-                                      Total Recipients:
-                                      <span class="font-weight-bold">1070</span>
-                                    </div>
-                                    <div>
-                                      Test Percentage (min 10%, max 50%):
-                                      <span class="font-weight-bold">20%</span>
-                                    </div>
-                                    <div>
-                                      Test Recipients:
-                                      <span class="font-weight-bold">214</span>
-                                    </div>
-                                    <div>
-                                      Campaign Percentage:
-                                      <span class="font-weight-bold">80%</span>
-                                    </div>
-                                    <div>
-                                      Campaign Recipients:
-                                      <span class="font-weight-bold">896</span>
-                                    </div>
-                                    <div>
-                                      Win Criteria:
-                                      <span
-                                        class="font-weight-bold color-danger"
-                                        >not decided yet</span
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div
-                              class="font-12 color-secondary font-weight-medium mb-30 ml-38 mw-840"
-                            >
-                              We'll first send each combination to a portion of
-                              your recipients to see which combination wins most
-                              engagement. Then we'll continue by sending the
-                              winning combination to the rest of the recipients.
-                              <a href="#" class="link">Learn more.</a>
-                            </div>
-
-                            <button class="btn _lg _primary _save">Save</button>
-                          </div>
-                        </div>
-
-                        <button type="button" class="close">
-                          <svg width="8" height="8">
-                            <use
-                              xlink:href="assets/images/sprite.svg#cross"
-                            ></use>
-                          </svg>
-                        </button>
-                      </div>
-
-                      <div class="create-campaign__row">
-                        <div class="d-flex flex-column">
-                          <svg
-                            width="30"
-                            height="30"
-                            class="create-campaign__icon"
-                          >
-                            <use
-                              class="icon-check"
-                              xlink:href="assets/images/sprite.svg#round-checkmark"
-                            ></use>
-                            <use
-                              class="icon-edit"
-                              xlink:href="assets/images/sprite.svg#round-edit"
-                            ></use>
-                            <use
-                              class="icon-fill"
-                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
-                            ></use>
-                          </svg>
-                        </div>
-
-                        <div class="w-100">
-                          <div class="d-flex flex-column flex-sm-row pl-20">
-                            <div class="create-campaign__row-content">
                               <h4 class="mb-4">To</h4>
                               <p class="create-campaign__row-placeholder">
                                 Who’ll get this email?
-                                <a href="#" class="link"
-                                  >More on setting campaign recipients.</a
-                                >
+                                <span class="color-primary font-weight-bold">
+                                  Anybody who joins below lists will receive
+                                  your Welcome Email.
+                                </span>
                               </p>
                               <p class="create-campaign__row-description">
-                                This campaign will be sent to
-                                <a href="#" class="link">784 recipients</a>.
-                                Email footer and forms will be delivered in
+                                This campaign will automatically be sent to all
+                                <span class="color-primary font-weight-bold"
+                                  >new subscribers</span
+                                >
+                                of
+                                <a href="#" class="link">Shopify Customers</a>
+                                list. (Only first-time subscribers will get this
+                                email). <br />Email footer and forms will be
+                                delivered in
                                 <span class="color-primary font-weight-bold"
                                   >English</span
                                 >.
@@ -2823,7 +2679,9 @@
                           </div>
 
                           <div class="create-campaign__row-edit">
-                            <div class="create-campaign__fields mb-10">
+                            <div
+                              class="create-campaign__fields mb-10 flex-column flex-lg-row"
+                            >
                               <div class="create-campaign__fields-col">
                                 <p class="font-14 font-weight-bold mb-7">
                                   Add Lists
@@ -2843,53 +2701,31 @@
                                     <option value="test-5">Custom tag 4</option>
                                   </select>
                                 </div>
-                                <p class="font-14 font-weight-bold mb-7">
-                                  Add Tags
-                                </p>
-                                <div class="form-control__wrap mb-20">
-                                  <select
-                                    class="form-control _select2-lg"
-                                    multiple="multiple"
-                                    required
-                                  >
-                                    <option></option>
-                                    <option value="test-1" selected
-                                      >Members (38)</option
-                                    >
-                                    <option value="test-3">Custom tag 2</option>
-                                    <option value="test-4">Custom tag 3</option>
-                                    <option value="test-5">Custom tag 4</option>
-                                  </select>
-                                </div>
                               </div>
                               <div class="create-campaign__fields-col">
-                                <p class="font-14 font-weight-bold mb-7">
-                                  Add Segments
-                                </p>
-                                <div class="form-control__wrap mb-20">
-                                  <select
-                                    class="form-control _select2-lg"
-                                    multiple="multiple"
-                                    required
+                                <div class="switcher__wrap mt-lg-32">
+                                  <a href="#" class="link font-12 order-2 ml-3"
+                                    >Learn More.</a
                                   >
-                                    <option></option>
-                                    <option value="test-1" selected
-                                      >My Friend’s Friends (278)</option
-                                    >
-                                    <option value="test-2"
-                                      >First Timers (12)</option
-                                    >
-                                    <option value="test-3">Custom tag 2</option>
-                                    <option value="test-4">Custom tag 3</option>
-                                    <option value="test-5">Custom tag 4</option>
-                                  </select>
+                                  <label
+                                    for="switch-10"
+                                    class="switcher__label font-weight-medium color-secondary"
+                                  >
+                                    Send only to first-time subscribers.
+                                  </label>
+                                  <input
+                                    type="checkbox"
+                                    id="switch-10"
+                                    class="switcher"
+                                    checked
+                                  />
+                                  <label
+                                    for="switch-10"
+                                    class="switcher__toggle"
+                                  ></label>
                                 </div>
                               </div>
                             </div>
-                            <a href="#" class="link _lg mb-2">789</a>
-                            <p class="font-14 font-weight-bold mb-28">
-                              Total Unique Recipients
-                            </p>
 
                             <p class="font-14 font-weight-bold mb-7">
                               Language
@@ -2921,7 +2757,7 @@
                         </button>
                       </div>
 
-                      <div class="create-campaign__row _editing">
+                      <div class="create-campaign__row">
                         <div class="d-flex flex-column">
                           <svg
                             width="30"
@@ -2979,7 +2815,7 @@
                             <div class="create-campaign__fields">
                               <div class="create-campaign__fields-col">
                                 <p class="font-14 font-weight-bold mb-7">
-                                  Rename Campaign
+                                  Name Your Campaign
                                 </p>
                                 <div class="form-control__wrap mb-10">
                                   <input
@@ -3218,34 +3054,6 @@
           window.emojiPicker.discover();
         });
 
-        !(function ($) {
-          'use strict';
-
-          var FormAdvanced = function () {};
-          // touchspin
-          (FormAdvanced.prototype.initTouchspin = function () {
-            var defaultOptions = {};
-
-            // touchspin
-            $('[data-toggle="touchspin"]').each(function (idx, obj) {
-              var objOptions = $.extend({}, defaultOptions, $(obj).data());
-              $(obj).TouchSpin(objOptions);
-            });
-          }),
-            //initilizing
-            (FormAdvanced.prototype.init = function () {
-              var $this = this;
-              this.initTouchspin();
-            }),
-            ($.FormAdvanced = new FormAdvanced()),
-            ($.FormAdvanced.Constructor = FormAdvanced);
-        })(window.jQuery),
-          //initializing main application module
-          (function ($) {
-            'use strict';
-            $.FormAdvanced.init();
-          })(window.jQuery);
-
         // Will be replaced with the real app logics
         $(
           '.create-campaign__row .btn._save, .create-campaign__row .close'
@@ -3295,55 +3103,149 @@
           $('.create-campaign__email-preview-img img').removeClass('d-none');
         });
 
-        var connectSlider = document.getElementById('slider');
-
-        noUiSlider.create(connectSlider, {
-          start: 20,
-          connect: 'lower',
-          tooltips: true,
-          format: wNumb({
-            decimals: 0,
-            postfix: '%',
-          }),
-          step: 1,
-          range: {
-            min: 0,
-            max: 100,
-          },
-          pips: {
-            mode: 'values',
-            values: [10, 50],
-            format: wNumb({
-              postfix: '%',
-            }),
-          },
-        });
-
-        /* Get initial slider value and update it in slider input*/
-        let sliderValueOnLoad = +slider.noUiSlider.get().slice(0, -1);
-        $('#slider-input').val(sliderValueOnLoad);
-
-        /* Set slider soft limits (min - 10, max - 50) */
-        connectSlider.noUiSlider.on('change', function (values, handle) {
-          var unformattedValue = values[handle].substring(
-            0,
-            values[handle].length - 1
-          );
-
-          if (unformattedValue < 10) {
-            connectSlider.noUiSlider.set(10);
-          } else if (unformattedValue > 50) {
-            connectSlider.noUiSlider.set(50);
+        class RangeTimePickers {
+          constructor(
+            timePickers,
+            initialValues,
+            step,
+            margin,
+            pipsValues,
+            pipsDensity,
+            rangeMinValue,
+            rangeMaxValue
+          ) {
+            this.timePickers = timePickers;
+            this.initialValues = initialValues;
+            this.step = step;
+            this.margin = margin;
+            this.pipsValues = pipsValues;
+            this.pipsDensity = pipsDensity;
+            this.rangeMinValue = rangeMinValue;
+            this.rangeMaxValue = rangeMaxValue;
           }
-        });
 
-        /* Update slider input value on slider set */
-        slider.noUiSlider.on('set', function () {
-          let currentSliderValueString = slider.noUiSlider.get();
-          let currentSliderValueNumber = +currentSliderValueString.slice(0, -1);
+          convertMinutesToHoursAndMinutes = function (date) {
+            let hours = Math.floor(date / 60);
+            let minutes = date - hours * 60;
+            const ampm = hours >= 12 && hours !== 24 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            if (minutes === '00') {
+              return hours + '\n' + ampm;
+            }
+            return hours + ':' + minutes + '\n' + ampm;
+          };
 
-          $('#slider-input').val(currentSliderValueNumber);
-        });
+          converTooltips = {
+            to: (value) => {
+              return this.convertMinutesToHoursAndMinutes(+value.toFixed(2));
+            },
+            from: (value) => {
+              return value;
+            },
+          };
+
+          recountVal = (val) => {
+            switch (val) {
+              case 60:
+                return '1 AM';
+                break;
+              case 360:
+                return '6 AM';
+                break;
+              case 720:
+                return '12 PM';
+                break;
+              case 1080:
+                return '6 PM';
+                break;
+              case 1440:
+                return '12 AM';
+                break;
+            }
+          };
+
+          gen = () => {
+            this.timePickers.forEach((item) => {
+              const elements = document.querySelectorAll(item);
+
+              if (elements.length > 0) {
+                elements.forEach((element) => {
+                  const hasPips = element.classList.contains('_withPips');
+
+                  const newPicker = noUiSlider.create(element, {
+                    start: this.initialValues,
+                    connect: true,
+                    step: this.step,
+                    margin: this.margin,
+                    tooltips: [this.converTooltips, this.converTooltips],
+                    format: wNumb({
+                      decimals: 0,
+                    }),
+                    pips: hasPips
+                      ? {
+                          mode: 'values',
+                          values: this.pipsValues,
+                          density: this.pipsDensity,
+                        }
+                      : undefined,
+                    range: {
+                      min: this.rangeMinValue,
+                      max: this.rangeMaxValue,
+                    },
+                  });
+
+                  if (hasPips) {
+                    const pips = element.querySelectorAll(
+                      '.noUi-value.noUi-value-horizontal.noUi-value-large'
+                    );
+                    if (pips.length > 0) {
+                      pips.forEach((pip) => {
+                        pip.innerHTML = this.recountVal(
+                          parseInt(pip.innerHTML)
+                        );
+                      });
+                    }
+                  }
+                  if (element.dataset.inputname) {
+                    const inputStart = document.createElement('input');
+                    inputStart.type = 'hidden';
+                    inputStart.name = `${element.dataset.inputname}-start`;
+                    inputStart.value = this.initialValues[0];
+
+                    const inputEnd = document.createElement('input');
+                    inputEnd.type = 'hidden';
+                    inputEnd.name = `${element.dataset.inputname}-end`;
+                    inputEnd.value = this.initialValues[1];
+
+                    newPicker.on('update', (values, handle) => {
+                      if (handle === 0) {
+                        inputStart.value = values[handle];
+                      } else {
+                        inputEnd.value = values[handle];
+                      }
+                    });
+
+                    element.appendChild(inputStart);
+                    element.appendChild(inputEnd);
+                  }
+                });
+              }
+            });
+          };
+        }
+
+        const rangePickers = new RangeTimePickers(
+          ['#slider'],
+          [540, 1110],
+          15,
+          15,
+          [60, 360, 720, 1080, 1440],
+          360,
+          0,
+          1440
+        ).gen();
 
         /* Set up for slider hover */
         $('.noUi-connect, .noUi-handle').hover(
@@ -3355,26 +3257,11 @@
           }
         );
 
-        $('.round-touchspin .btn').click(function () {
-          let touchSpinWrap = $(this).closest('.round-touchspin');
-          let touchSpinContainer = $(this).closest(
-            '.create-campaign__ab-test-step-col'
-          );
-
-          if (touchSpinWrap.find('input').val() !== '1') {
-            $('.create-campaign__ab-test-step-col').addClass('_disabled');
-            touchSpinContainer.removeClass('_disabled');
-            touchSpinWrap.addClass('_with-value');
-
-            if (touchSpinWrap.find('input').val() === '3') {
-              touchSpinWrap.addClass('_max');
-            } else {
-              touchSpinWrap.removeClass('_max');
-            }
-          } else {
-            $('.create-campaign__ab-test-step-col').removeClass('_disabled');
-            touchSpinWrap.removeClass('_with-value');
-          }
+        $('.automated-schedule__row .checkbox input:checked')
+          .closest('.automated-schedule__row')
+          .addClass('_checked');
+        $('.automated-schedule__row .checkbox input').change(function () {
+          $(this).closest('.automated-schedule__row').toggleClass('_checked');
         });
       });
     </script>
