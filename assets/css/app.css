@@ -9407,7 +9407,7 @@ body._overlayed {
 .create-campaign__email-preview-col {
   flex: 0 0 213px; }
   .create-campaign__email-preview-col .btn {
-    white-space: pre-wrap; }
+    display: block; }
 
 .create-campaign__email-preview-img {
   height: 244px;
@@ -9429,6 +9429,8 @@ body._overlayed {
     font-weight: 500;
     color: #000000;
     transition: 0.15s; }
+  .create-campaign__row-edit._multiple .create-campaign__email-preview-img:hover:after {
+    color: #fff; }
   .create-campaign__email-preview-img svg text {
     fill: #000;
     transition: 0.15s; }
@@ -9441,8 +9443,6 @@ body._overlayed {
       fill: #fff; }
     .create-campaign__email-preview-img:hover svg line {
       stroke: #fff; }
-    .create-campaign__email-preview-img:hover:after {
-      color: #fff; }
   .create-campaign__email-preview-img img,
   .create-campaign__email-preview-img svg {
     display: block;
