@@ -760,6 +760,7 @@
                               placeholder="Write a compelling subject line"
                               class="form-control mb-10"
                               data-emojiable="true"
+                              data-emoji-input="unicode"
                             />
                           </div>
                         </div>
@@ -840,6 +841,7 @@
           emojiable_selector: '[data-emojiable=true]',
           assetsPath: './assets/images/emoji/',
           popupButtonClasses: 'fa fa-smile-o',
+          inputMethod: 'unicode'
         });
         // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
         // You may want to delay this step if you have dynamically created input fields that appear later in the loading process

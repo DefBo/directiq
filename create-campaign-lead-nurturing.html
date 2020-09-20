@@ -1,0 +1,3131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/nouisliderribute/nouislider.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link href="assets/libs/emoji-picker/emoji.css" rel="stylesheet" />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+  </head>
+
+  <body data-layout-mode="two-column" class="animation-stopper">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- Topbar Start -->
+      <div class="navbar-custom">
+        <div class="container-fluid navbar-custom__inner">
+          <div>
+            <!-- LOGO -->
+            <div class="logo-box">
+              <a href="./" class="logo">
+                <svg width="44.834" height="45">
+                  <use xlink:href="assets/images/sprite.svg#logo"></use>
+                </svg>
+              </a>
+            </div>
+
+            <ol class="breadcrumbs">
+              <li class="breadcrumb-item">
+                <a href="./campaigns-home.html">Campaigns</a>
+              </li>
+              <li class="breadcrumb-item active">
+                Create Campaign
+                <button class="btn_icon d-none d-md-inline ml-18">
+                  <i class="add-to-fav-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19.5"
+                      height="17.805"
+                      viewBox="0 0 19.5 17.805"
+                    >
+                      <g transform="translate(0.75 0.75)">
+                        <path
+                          class="add-to-fav-icon__bg"
+                          d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13"
+                          transform="translate(-1972.5 -1089.5)"
+                          fill="none"
+                          stroke="blue"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          class="add-to-fav-icon__plus"
+                          d="M1986.5,1093.5v8m4-4h-8"
+                          transform="translate(-1972.5 -1089.5)"
+                          fill="none"
+                          stroke="#00eba8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </g>
+                    </svg>
+                  </i>
+                </button>
+              </li>
+            </ol>
+          </div>
+
+          <div class="align-items-center d-flex">
+            <!--App Search-->
+            <form class="app-search d-none d-md-table">
+              <div class="app-search-box">
+                <div class="input-group">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Start typing and search"
+                    id="top-search"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn" type="submit">
+                      <svg width="19.955" height="20.061">
+                        <use xlink:href="assets/images/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class="dropdown d-none d-sm-block">
+              <a
+                class="dropdown-toggle _outline _lg"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                Create
+                <svg width="13.545" height="8">
+                  <use
+                    xlink:href="assets/images/sprite.svg#dropdown-arrow"
+                  ></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown ml-14 d-none d-md-block">
+              <a
+                class="dropdown-toggle _icon"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <svg width="18.261" height="30">
+                  <use xlink:href="assets/images/sprite.svg#bulb"></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown d-none d-md-block">
+              <a
+                class="dropdown-toggle _icon"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <svg width="21.073" height="21.264">
+                  <use xlink:href="assets/images/sprite.svg#bell"></use>
+                </svg>
+                <span class="badge">9</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown ml-10 _user mr-20">
+              <a
+                class="dropdown-toggle _user d-none d-md-inline-block"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <span class="user-avatar">
+                  <img src="assets/images/user.png" alt="User Avatar" />
+                </span>
+                <svg width="5.8" height="25">
+                  <use xlink:href="assets/images/sprite.svg#empty-dots"></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+                <div class="profile-dropdown__inner">
+                  <div class="profile-dropdown__email">
+                    barisergin@gmail.com
+                  </div>
+                  <div class="profile-dropdown__id">Account ID #123456</div>
+                  <a href="#" class="profile-dropdown__link mb-9">
+                    <svg width="16" height="16">
+                      <use xlink:href="assets/images/sprite.svg#profile"></use>
+                      <span class="profile-dropdown__link-text">
+                        My Account
+                      </span>
+                    </svg>
+                  </a>
+                  <div class="profile-dropdown__divider mb-13"></div>
+                  <div class="profile-dropdown__progress">
+                    <div class="d-flex justify-content-between mb-5">
+                      <span class="font-weight-bold">Free</span>
+                      <span class="color-secondary font-weight-medium"
+                        >25/1500</span
+                      >
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 25%;"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-dropdown__link mb-4">
+                    <svg width="13.375" height="16">
+                      <use xlink:href="assets/images/sprite.svg#swap"></use>
+                      <span class="profile-dropdown__link-text">
+                        Change Plan
+                      </span>
+                    </svg>
+                  </a>
+                  <div class="profile-dropdown__divider mb-5"></div>
+                  <a href="#" class="profile-dropdown__link">
+                    <svg width="16" height="12.235">
+                      <use xlink:href="assets/images/sprite.svg#group"></use>
+                      <span class="profile-dropdown__link-text">
+                        Switch Account
+                      </span>
+                    </svg>
+                  </a>
+                  <a href="#" class="profile-dropdown__link">
+                    <svg width="16" height="16">
+                      <use xlink:href="assets/images/sprite.svg#support"></use>
+                      <span class="profile-dropdown__link-text">Support</span>
+                    </svg>
+                  </a>
+
+                  <select
+                    class="form-control _select2-lg"
+                    data-toggle="select2"
+                    required
+                  >
+                    <option value="test-1">English</option>
+                    <option value="test-2">Chinese</option>
+                    <option value="test-2">Spanish</option>
+                    <option value="test-2">Portugese</option>
+                    <option value="test-2">Italian</option>
+                  </select>
+
+                  <div class="profile-dropdown__divider mb-22"></div>
+                  <button class="profile-dropdown__btn">Log-out</button>
+
+                  <div class="profile-dropdown__discount">
+                    <div class="font-14 font-weight-bold">Hey Baris!</div>
+                    <div class="font-36">30%</div>
+                    <div
+                      class="font-12 color-secondary font-weight-medium mb-10"
+                    >
+                      <span class="text-nowrap"
+                        >Upgrade in 12 hours and use</span
+                      >
+                      <br />
+                      <span class="font-weight-bold color-primary"
+                        >30% personal discount!</span
+                      >
+                    </div>
+                    <button class="btn _lg _primary">Redeem Now</button>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true"
+                  >
+                    <svg width="8" height="8">
+                      <use xlink:href="assets/images/sprite.svg#cross"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end Topbar -->
+
+      <!-- ========== Left Sidebar Start ========== -->
+      <button class="hamburger hamburger--squeeze" id="ham" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+
+      <nav class="nav-drill">
+        <ul class="nav-items">
+          <li class="nav-item d-md-none">
+            <a class="nav-item-link _logo" href="./index.html">
+              <svg width="39.852" height="40">
+                <use xlink:href="assets/images/sprite.svg#logo-mobile"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="20.193" height="17.999">
+                  <use xlink:href="assets/images/sprite.svg#home-i"></use>
+                </svg>
+              </i>
+              <span>
+                Home
+              </span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Home</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 2
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 3
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="17.719" height="15.328">
+                  <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
+                </svg>
+              </i>
+              <span>
+                Contacts
+              </span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Contacts</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./contacts-home-static.html">
+                  Overview
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./my-lists-static.html">
+                  My Lists
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./add-contacts.html">
+                  Add Contacts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Tags
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="segments.html">
+                  Segments
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Custom Fields
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Signup Forms
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Suppression Lists
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Cleaning Service
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand active">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="18" height="18">
+                  <use xlink:href="assets/images/sprite.svg#templates-i"></use>
+                </svg>
+              </i>
+              <span>Templates</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Templates</li>
+              <li class="nav-item">
+                <a class="nav-item-link active" href="templates-home.html">
+                  My Templates
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="create-template-free.html">
+                  Create Template
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="spam-doctor.html">
+                  Spam Doctor
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="inbox-preview.html">
+                  Inbox Preview
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="29.507" height="22">
+                  <use xlink:href="assets/images/sprite.svg#campaigns-i"></use>
+                </svg>
+              </i>
+              <span>Campaigns</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Campaigns</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 1
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 2
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 3
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 4
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 5
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 6
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 7
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 8
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="17.894" height="24">
+                  <use
+                    xlink:href="assets/images/sprite.svg#integrations-i"
+                  ></use>
+                </svg>
+              </i>
+              <span>Integrations</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Integrations</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="contact-integrations.html">
+                  Contact Integrations
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="social-media-integrations.html">
+                  Social Media Integrations
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Plugins & Apps
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  API
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="21.515" height="18.91">
+                  <use xlink:href="assets/images/sprite.svg#settings-i"></use>
+                </svg>
+              </i>
+              <span>Settings</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Settings</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 1
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 2
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 3
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 4
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 5
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 6
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 7
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 8
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="15.29" height="20">
+                  <use xlink:href="assets/images/sprite.svg#bookmarks-i"></use>
+                </svg>
+              </i>
+              <span>Bookmarks</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Bookmarks</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 1
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 2
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 3
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 4
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 5
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 6
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 7
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#">
+                  Test Item 8
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="nav-drill__icons">
+          <button class="btn_icon">
+            <svg width="42.182" height="42.414">
+              <use xlink:href="assets/images/sprite.svg#mobile-search"></use>
+            </svg>
+          </button>
+
+          <button class="btn_icon">
+            <svg width="24.354" height="40">
+              <use xlink:href="assets/images/sprite.svg#mobile-bulb"></use>
+            </svg>
+          </button>
+
+          <button class="btn_icon">
+            <svg width="41.62" height="42">
+              <use xlink:href="assets/images/sprite.svg#mobile-bell"></use>
+            </svg>
+          </button>
+
+          <button
+            class="btn_icon user-avatar-mobile"
+            id="user-profile-btn-mobile"
+          >
+            <img src="assets/images/user.png" alt="User Avatar" />
+          </button>
+        </div>
+      </nav>
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <ul class="nav nav-tabs nav-bordered">
+                  <li class="nav-item">
+                    <a href="./create-campaign.html" class="nav-link">
+                      Regular Campaign
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#automated-campaign"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link active"
+                    >
+                      Automated Campaign
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#a-b-campaign"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      A/B Campaign
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="tab-content mt-n6">
+                  <div class="tab-pane" id="regular-campaign"></div>
+
+                  <div class="tab-pane show active" id="automated-campaign">
+                    <div class="automated-top">
+                      <div class="automated-top__image-wrap">
+                        <svg width="50.063" height="50">
+                          <use
+                            xlink:href="assets/images/sprite.svg#magnet"
+                          ></use>
+                        </svg>
+                      </div>
+
+                      <div class="automated-top__content">
+                        <div>
+                          <h4 class="mt-3">
+                            Set Up Lead Nurturing Campaign
+                          </h4>
+                          <p
+                            class="font-12 color-secondary mt-2 mb-0 font-weight-medium"
+                          >
+                            Impress your new subscribers by sending them a
+                            series of emails when they join your audience.
+                          </p>
+                        </div>
+
+                        <div class="confirm__wrap">
+                          <button class="btn _lg _secondary confirm__btn">
+                            Switch Automation
+                          </button>
+
+                          <div class="confirm__modal d-none" style="">
+                            <div class="confirm__content">
+                              <p class="confirm__text">
+                                Your campaign settings will be lost if you
+                                switch automation type. Are you sure?
+                              </p>
+                            </div>
+                            <div class="d-flex">
+                              <button class="btn _lg _secondary">Nope</button>
+                              <button class="btn _lg _primary">Sure</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card p-0 mb-0 flex-column-reverse">
+                      <div class="create-campaign__row pb-40">
+                        <div class="d-flex flex-column">
+                          <svg
+                            width="30"
+                            height="30"
+                            class="create-campaign__icon"
+                          >
+                            <use
+                              class="icon-check"
+                              xlink:href="assets/images/sprite.svg#round-checkmark"
+                            ></use>
+                            <use
+                              class="icon-edit"
+                              xlink:href="assets/images/sprite.svg#round-edit"
+                            ></use>
+                            <use
+                              class="icon-fill"
+                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                            ></use>
+                          </svg>
+                        </div>
+
+                        <div class="w-100">
+                          <div class="d-flex flex-column flex-sm-row pl-20">
+                            <div class="create-campaign__row-content">
+                              <h4 class="mb-4">Timing</h4>
+                              <p class="create-campaign__row-placeholder">
+                                When would you like to send this campaign?
+                              </p>
+                              <div class="create-campaign__row-description">
+                                <div class="mb-4">
+                                  This campaign will be sent based on below time
+                                  schedule. (Emails will wait until scheduled
+                                  time arrives).<br />
+                                  <span class="color-primary font-weight-bold"
+                                    >Mondays - Fridays</span
+                                  >
+                                  / 10:30 AM to 9 PM<br />
+                                  <span class="color-primary font-weight-bold"
+                                    >Saturdays</span
+                                  >
+                                  / 11:30 AM to 12 PM
+                                </div>
+                              </div>
+                            </div>
+                            <button
+                              class="btn _sm _primary _edit mt-10 mt-sm-0"
+                            >
+                              Set Timing
+                            </button>
+                            <button
+                              class="btn _sm _secondary _edit mt-10 mt-sm-0"
+                            >
+                              Change
+                            </button>
+                          </div>
+
+                          <div class="create-campaign__row-edit mb-0">
+                            <div class="create-campaign__col">
+                              <p class="font-14 font-weight-bold mb-5">
+                                Schedule
+                              </p>
+                              <p
+                                class="font-12 font-weight-medium color-secondary mb-11"
+                              >
+                                How long should we wait before sending each
+                                email in the series?
+                              </p>
+                              <div class="mb-30 mw-160">
+                                <select
+                                  class="form-control _select2-lg"
+                                  required
+                                >
+                                  <option></option>
+                                  <option value="test-1" selected
+                                    >3 days</option
+                                  >
+                                  <option value="test-2">4 days</option>
+                                </select>
+                              </div>
+
+                              <p
+                                class="font-12 font-weight-medium color-secondary mb-20"
+                              >
+                                Emails will only be sent on selected days and
+                                hours. We'll wait until scheduled time arrives.
+                                <a href="#" class="link">Learn More</a>.
+                              </p>
+
+                              <div class="automated-schedule">
+                                <form class="needs-validation" novalidate="">
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="mon"
+                                          id="mon"
+                                          checked
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="mon"
+                                          >Mon</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="tue"
+                                          id="tue"
+                                          checked
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="tue"
+                                          >Tue</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="wed"
+                                          id="wed"
+                                          checked
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="wed"
+                                          >Wed</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="thu"
+                                          id="thu"
+                                          checked
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="thu"
+                                          >Thu</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="fri"
+                                          id="fri"
+                                          checked
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="fri"
+                                          >Fri</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="sat"
+                                          id="sat"
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="sat"
+                                          >Sat</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                  <div class="automated-schedule__row">
+                                    <div class="form-control__wrap">
+                                      <div class="checkbox">
+                                        <input
+                                          type="checkbox"
+                                          value="san"
+                                          id="san"
+                                        />
+                                        <label
+                                          class="custom-control-label"
+                                          for="san"
+                                          >Sun</label
+                                        >
+                                        <span
+                                          class="text-danger field-validation-error"
+                                          ><span class=""
+                                            >The field is required.</span
+                                          ></span
+                                        >
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id="slider"
+                                      class="percents-slider _withPips"
+                                      data-inputname="monday-time-picker"
+                                    ></div>
+                                  </div>
+                                </form>
+                              </div>
+
+                              <p class="font-14 font-weight-bold mb-7">
+                                Time Zone
+                              </p>
+                              <div class="mb-20 mw-320">
+                                <select
+                                  class="form-control _select2-lg"
+                                  required
+                                >
+                                  <option></option>
+                                  <option value="test-1" selected
+                                    >(GMT -04:00) Eastern Daylight Time (US &
+                                    Canada)</option
+                                  >
+                                  <option value="test-2">Test Itme</option>
+                                </select>
+                              </div>
+
+                              <p class="font-14 font-weight-bold mb-20">
+                                Additional Optimization
+                              </p>
+
+                              <div class="switcher__wrap mb-20">
+                                <a href="#" class="link font-12 order-2"
+                                  >Learn More.</a
+                                >
+                                <label
+                                  for="switch-13"
+                                  class="switcher__label font-weight-medium color-secondary"
+                                >
+                                  Gradual send over several hours (20% per
+                                  hour).
+                                </label>
+                                <input
+                                  type="checkbox"
+                                  id="switch-13"
+                                  class="switcher"
+                                  checked
+                                />
+                                <label
+                                  for="switch-13"
+                                  class="switcher__toggle"
+                                ></label>
+                              </div>
+
+                              <div class="switcher__wrap mb-30">
+                                <a href="#" class="link font-12 order-2"
+                                  >Learn More.</a
+                                >
+                                <label
+                                  for="switch-3"
+                                  class="switcher__label font-weight-medium color-secondary"
+                                >
+                                  Add Google Analytics link tracking.
+                                </label>
+                                <input
+                                  type="checkbox"
+                                  id="switch-3"
+                                  class="switcher"
+                                  checked
+                                />
+                                <label
+                                  for="switch-3"
+                                  class="switcher__toggle"
+                                ></label>
+                              </div>
+
+                              <button class="btn _lg _primary _save">
+                                Save
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button type="button" class="close">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+
+                      <div class="create-campaign__row">
+                        <div class="d-flex flex-column">
+                          <svg
+                            width="30"
+                            height="30"
+                            class="create-campaign__icon"
+                          >
+                            <use
+                              class="icon-check"
+                              xlink:href="assets/images/sprite.svg#round-checkmark"
+                            ></use>
+                            <use
+                              class="icon-edit"
+                              xlink:href="assets/images/sprite.svg#round-edit"
+                            ></use>
+                            <use
+                              class="icon-fill"
+                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                            ></use>
+                          </svg>
+                        </div>
+
+                        <div class="w-100">
+                          <div class="d-flex flex-column flex-sm-row pl-20">
+                            <div class="create-campaign__row-content">
+                              <h4 class="mb-4">Email Design</h4>
+                              <p class="create-campaign__row-placeholder">
+                                Which email template to send with your campaign?
+                              </p>
+                              <div class="create-campaign__row-description">
+                                <div class="mb-30">
+                                  You set up
+                                  <span class="color-primary font-weight-bold"
+                                    >3 consecutive emails</span
+                                  >
+                                  to send with your Onboarding Series campaign.
+                                </div>
+
+                                <div>
+                                  <div
+                                    class="create-campaign__row-description-inner"
+                                  >
+                                    <div
+                                      class="create-campaign__row-description-img"
+                                    >
+                                      <img
+                                        src="assets/images/template-3.jpg"
+                                        alt="Template Preview"
+                                      />
+                                    </div>
+
+                                    <div
+                                      class="create-campaign__row-description-content"
+                                    >
+                                      <h4 class="mb-8">#1</h4>
+                                      <div class="mb-4">
+                                        Subject Line:
+                                        <span
+                                          class="color-primary font-weight-bold"
+                                          >Good Days and Beatiful Flowers!</span
+                                        >
+                                      </div>
+                                      <div class="mb-0">
+                                        Preheader:
+                                        <span
+                                          class="color-primary font-weight-bold"
+                                          >Final Opportunity to Grab
+                                          Discount…</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="create-campaign__row-description-inner"
+                                  >
+                                    <div
+                                      class="create-campaign__row-description-img"
+                                    >
+                                      <img
+                                        src="assets/images/template-3.jpg"
+                                        alt="Template Preview"
+                                      />
+                                    </div>
+
+                                    <div
+                                      class="create-campaign__row-description-content"
+                                    >
+                                      <h4 class="mb-8">#2</h4>
+                                      <div class="mb-4">
+                                        Subject Line:
+                                        <span
+                                          class="color-primary font-weight-bold"
+                                          >Hey did you feel lucky?</span
+                                        >
+                                      </div>
+                                      <div class="mb-0">
+                                        Preheader:
+                                        <span
+                                          class="color-primary font-weight-bold"
+                                          >Second chance to become a
+                                          champion</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="create-campaign__row-description-inner"
+                                  >
+                                    <div
+                                      class="create-campaign__row-description-img"
+                                    >
+                                      <img
+                                        src="assets/images/template-3.jpg"
+                                        alt="Template Preview"
+                                      />
+                                    </div>
+
+                                    <div
+                                      class="create-campaign__row-description-content"
+                                    >
+                                      <h4 class="mb-8">#3</h4>
+                                      <div class="mb-4">
+                                        Subject Line:
+                                        <span
+                                          class="color-primary font-weight-bold"
+                                          >Our final offer waiting for
+                                          you!</span
+                                        >
+                                      </div>
+                                      <div class="mb-0">
+                                        Preheader:
+                                        <span
+                                          class="color-primary font-weight-bold"
+                                          >Final Opportunity to Grab
+                                          Discount…</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button
+                              class="btn _sm _primary _edit mt-10 mt-sm-0"
+                            >
+                              Choose Email Template
+                            </button>
+                            <button
+                              class="btn _sm _secondary _edit mt-10 mt-sm-0"
+                            >
+                              Change
+                            </button>
+                          </div>
+
+                          <div
+                            class="create-campaign__row-edit _multiple mb-25"
+                          >
+                            <div class="create-campaign__templates-body">
+                              <div
+                                class="create-campaign__email-design-variant flex-sm-row"
+                              >
+                                <div class="create-campaign__email-preview-col">
+                                  <h5 class="mb-7">Email Template</h5>
+                                  <div
+                                    class="create-campaign__email-preview-img"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 214.752 245.33"
+                                      width="214.752"
+                                      height="245.33"
+                                    >
+                                      <g transform="translate(0.376 0.5)">
+                                        <rect
+                                          width="213"
+                                          height="244"
+                                          transform="translate(0.5)"
+                                          fill="currentColor"
+                                          stroke="currentColor"
+                                          stroke-miterlimit="10"
+                                          stroke-width="1"
+                                        />
+                                        <g transform="translate(-230.5 -548)">
+                                          <line
+                                            x2="85"
+                                            y2="97"
+                                            transform="translate(230.5 548.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                          <line
+                                            x1="85"
+                                            y2="97"
+                                            transform="translate(359.5 548.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                          <line
+                                            x2="85"
+                                            y2="97"
+                                            transform="translate(359.5 695.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                          <line
+                                            x1="85"
+                                            y2="97"
+                                            transform="translate(230.5 695.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                        </g>
+                                      </g>
+                                    </svg>
+
+                                    <!--Replace with an appropriate image-->
+                                    <img
+                                      src="assets/images/template-3.jpg"
+                                      alt="Template Preview"
+                                      class="create-campaign__template-preview d-none"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="mt-20 mt-sm-0 ml-sm-29 w-100">
+                                  <h5 class="mb-7">Subject Line</h5>
+                                  <div class="position-relative">
+                                    <input
+                                      type="text"
+                                      placeholder="Write a compelling subject line"
+                                      class="form-control mb-8"
+                                      data-emojiable="true"
+                                      value="Good Days and Beautiful Flowers!"
+                                    />
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-16"
+                                  >
+                                    <div
+                                      class="font-12 color-secondary font-weight-medium"
+                                    >
+                                      Subject line quality:
+                                      <span
+                                        class="color-primary font-weight-bold"
+                                        >7/10</span
+                                      >
+                                    </div>
+                                    <a href="#" class="link font-12"
+                                      >How to write a good subject line?</a
+                                    >
+                                  </div>
+                                  <h5 class="mb-7">Preheader</h5>
+                                  <div class="form-control__wrap mb-9">
+                                    <input
+                                      type="text"
+                                      placeholder="Your Preheader Here"
+                                      class="form-control"
+                                    />
+                                  </div>
+                                  <div
+                                    class="font-12 color-secondary font-weight-medium"
+                                  >
+                                    This’s the text many mobile, desktop, and
+                                    web email clients show readers to give them
+                                    an idea of what’s inside the before they
+                                    actually open it.
+                                    <a href="#" class="link font-12">More.</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="create-campaign__email-design-variant flex-sm-row"
+                              >
+                                <div class="create-campaign__email-preview-col">
+                                  <h5 class="mb-7">Email Template</h5>
+                                  <div
+                                    class="create-campaign__email-preview-img"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 214.752 245.33"
+                                      width="214.752"
+                                      height="245.33"
+                                    >
+                                      <g transform="translate(0.376 0.5)">
+                                        <rect
+                                          width="213"
+                                          height="244"
+                                          transform="translate(0.5)"
+                                          fill="currentColor"
+                                          stroke="currentColor"
+                                          stroke-miterlimit="10"
+                                          stroke-width="1"
+                                        />
+                                        <g transform="translate(-230.5 -548)">
+                                          <line
+                                            x2="85"
+                                            y2="97"
+                                            transform="translate(230.5 548.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                          <line
+                                            x1="85"
+                                            y2="97"
+                                            transform="translate(359.5 548.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                          <line
+                                            x2="85"
+                                            y2="97"
+                                            transform="translate(359.5 695.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                          <line
+                                            x1="85"
+                                            y2="97"
+                                            transform="translate(230.5 695.5)"
+                                            fill="none"
+                                            stroke-width="1"
+                                          />
+                                        </g>
+                                      </g>
+                                    </svg>
+
+                                    <!--Replace with an appropriate image-->
+                                    <img
+                                      src="assets/images/template-3.jpg"
+                                      alt="Template Preview"
+                                      class="create-campaign__template-preview d-none"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="mt-20 mt-sm-0 ml-sm-29 w-100">
+                                  <h5 class="mb-7">Subject Line</h5>
+                                  <div class="position-relative">
+                                    <input
+                                      type="text"
+                                      placeholder="Write a compelling subject line"
+                                      class="form-control mb-8"
+                                      data-emojiable="true"
+                                      value="Good Days and Beautiful Flowers!"
+                                    />
+                                  </div>
+                                  <div
+                                    class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-16"
+                                  >
+                                    <div
+                                      class="font-12 color-secondary font-weight-medium"
+                                    >
+                                      Subject line quality:
+                                      <span
+                                        class="color-primary font-weight-bold"
+                                        >7/10</span
+                                      >
+                                    </div>
+                                    <a href="#" class="link font-12"
+                                      >How to write a good subject line?</a
+                                    >
+                                  </div>
+                                  <h5 class="mb-7">Preheader</h5>
+                                  <div class="form-control__wrap mb-9">
+                                    <input
+                                      type="text"
+                                      placeholder="Your Preheader Here"
+                                      class="form-control"
+                                    />
+                                  </div>
+                                  <div
+                                    class="font-12 color-secondary font-weight-medium"
+                                  >
+                                    This’s the text many mobile, desktop, and
+                                    web email clients show readers to give them
+                                    an idea of what’s inside the before they
+                                    actually open it.
+                                    <a href="#" class="link font-12">More.</a>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div
+                                class="create-campaign__email-design-variant flex-sm-row"
+                              >
+                                <div class="create-campaign__email-preview-col">
+                                  <button
+                                    class="btn _sm _secondary w-100"
+                                    id="add-template-btn"
+                                  >
+                                    Add Template
+                                  </button>
+                                </div>
+                              </div>
+
+                              <button class="btn _lg _primary _save">
+                                Save
+                              </button>
+                            </div>
+
+                            <div class="create-campaign__templates-item-edit">
+                              <ul class="nav nav-tabs nav-bordered">
+                                <li class="nav-item">
+                                  <a
+                                    href="#all-designs"
+                                    data-toggle="tab"
+                                    aria-expanded="false"
+                                    class="nav-link active"
+                                  >
+                                    All (28)
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a
+                                    href="#recently-used-designs"
+                                    data-toggle="tab"
+                                    aria-expanded="true"
+                                    class="nav-link"
+                                  >
+                                    Recently Used (3)
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a
+                                    href="#favorite-designs"
+                                    data-toggle="tab"
+                                    aria-expanded="true"
+                                    class="nav-link"
+                                  >
+                                    Favorites (2)
+                                  </a>
+                                </li>
+                              </ul>
+
+                              <div class="tab-content pt-3">
+                                <div
+                                  class="tab-pane show active"
+                                  id="all-designs"
+                                >
+                                  <div class="create-campaign__templates">
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-3.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-4.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-1.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-3.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-4.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-1.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-3.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-4.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-1.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-3.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-4.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-1.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-3.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="create-campaign__templates-item"
+                                    >
+                                      <img
+                                        src="assets/images/template-4.jpg"
+                                        alt="Template Preview"
+                                      />
+
+                                      <div
+                                        class="create-campaign__templates-item-buttons"
+                                      >
+                                        <button
+                                          class="btn _sm _secondary mb-12 px-10"
+                                        >
+                                          Choose
+                                        </button>
+                                        <div class="d-flex">
+                                          <button
+                                            class="btn _sm _secondary _check"
+                                          >
+                                            <svg width="14" height="8.75">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#eye"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                          <button
+                                            class="btn _sm _secondary _check ml-13 _edit-template"
+                                          >
+                                            <svg width="11" height="11">
+                                              <use
+                                                xlink:href="assets/images/sprite.svg#edit"
+                                              ></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="d-flex justify-content-center mt-16 mb-10 w-100"
+                                    >
+                                      <button class="btn _sm _secondary _long">
+                                        Load More
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div
+                                  class="tab-pane"
+                                  id="recently-used-designs"
+                                ></div>
+
+                                <div
+                                  class="tab-pane"
+                                  id="favorite-designs"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button type="button" class="close">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+
+                      <div class="create-campaign__row">
+                        <div class="d-flex flex-column">
+                          <svg
+                            width="30"
+                            height="30"
+                            class="create-campaign__icon"
+                          >
+                            <use
+                              class="icon-check"
+                              xlink:href="assets/images/sprite.svg#round-checkmark"
+                            ></use>
+                            <use
+                              class="icon-edit"
+                              xlink:href="assets/images/sprite.svg#round-edit"
+                            ></use>
+                            <use
+                              class="icon-fill"
+                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                            ></use>
+                          </svg>
+                        </div>
+
+                        <div class="w-100">
+                          <div class="d-flex flex-column flex-sm-row pl-20">
+                            <div class="create-campaign__row-content">
+                              <h4 class="mb-4">From</h4>
+                              <p class="create-campaign__row-placeholder">
+                                Who’s sending this email?
+                              </p>
+                              <p class="create-campaign__row-description">
+                                This campaign will be sent from
+                                <span class="color-primary font-weight-bold"
+                                  >noreply@barbodesign.com</span
+                                >
+                              </p>
+                              <p class="create-campaign__row-description">
+                                From Name A/B test will run for (A)
+                                <span class="color-primary font-weight-bold"
+                                  >Barbo Design</span
+                                >
+                                - (B)
+                                <span class="color-primary font-weight-bold"
+                                  >Weekly Discounts</span
+                                >
+                                - (C)
+                                <span class="color-primary font-weight-bold"
+                                  >Barbo Deals</span
+                                >
+                              </p>
+                            </div>
+                            <button
+                              class="btn _sm _primary _edit mt-10 mt-sm-0"
+                            >
+                              Add From
+                            </button>
+                            <button
+                              class="btn _sm _secondary _edit mt-10 mt-sm-0"
+                            >
+                              Change
+                            </button>
+                          </div>
+
+                          <div class="create-campaign__row-edit">
+                            <h5 class="mb-7 mt-6">
+                              <span class="highlight"
+                                >From Names (A/B Test)</span
+                              >
+                            </h5>
+                            <div class="row">
+                              <div class="col-lg-4">
+                                <div class="form-control__wrap mb-10 d-flex">
+                                  <div class="marker-highlight mr-10">A</div>
+                                  <input
+                                    type="text"
+                                    placeholder="From Name Here"
+                                    class="form-control"
+                                    value="Barbo Design"
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-lg-4">
+                                <div class="form-control__wrap mb-10 d-flex">
+                                  <div class="marker-highlight mr-10">B</div>
+                                  <input
+                                    type="text"
+                                    placeholder="From Name B Here"
+                                    class="form-control"
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-lg-4">
+                                <div class="form-control__wrap mb-10 d-flex">
+                                  <div class="marker-highlight mr-10">C</div>
+                                  <input
+                                    type="text"
+                                    placeholder="From Name C Here"
+                                    class="form-control"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="font-12 font-weight-medium color-secondary mb-19"
+                            >
+                              <span
+                                class="highlight color-primary font-weight-bold"
+                                >Note:</span
+                              >
+                              We'll test 3 From Names and use winning
+                              combination with your campaign.
+                              <a href="#" class="link">Learn more.</a>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-lg-6">
+                                <p class="font-14 font-weight-bold mb-7">
+                                  From Address
+                                </p>
+
+                                <div class="form-control__wrap mb-10">
+                                  <select
+                                    class="form-control _select2-lg _select2-with-tags"
+                                    multiple="multiple"
+                                    required
+                                  >
+                                    <option></option>
+                                    <option value="test-1" selected
+                                      >noreply@barbodesign.com</option
+                                    >
+                                    <option value="test-3">Custom tag 2</option>
+                                    <option value="test-4">Custom tag 3</option>
+                                    <option value="test-5">Custom tag 4</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+
+                            <p class="font-12 font-weight-bold mb-5">
+                              Email address is verified!
+                            </p>
+
+                            <div class="mb-29">
+                              <a href="#" class="link font-12"
+                                >Connect Your Domain</a
+                              >
+                              <span
+                                class="font-12 font-weight-medium color-secondary"
+                                >- Optional (Improves inbox delivery
+                                rates)</span
+                              >
+                            </div>
+
+                            <button class="btn _lg _primary _save">Save</button>
+                          </div>
+                        </div>
+
+                        <button type="button" class="close">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+
+                      <div class="create-campaign__row">
+                        <div class="d-flex flex-column">
+                          <svg
+                            width="30"
+                            height="30"
+                            class="create-campaign__icon"
+                          >
+                            <use
+                              class="icon-check"
+                              xlink:href="assets/images/sprite.svg#round-checkmark"
+                            ></use>
+                            <use
+                              class="icon-edit"
+                              xlink:href="assets/images/sprite.svg#round-edit"
+                            ></use>
+                            <use
+                              class="icon-fill"
+                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                            ></use>
+                          </svg>
+                        </div>
+
+                        <div class="w-100">
+                          <div class="d-flex flex-column flex-sm-row pl-20">
+                            <div class="create-campaign__row-content">
+                              <h4 class="mb-4">To</h4>
+                              <p class="create-campaign__row-placeholder">
+                                Who’ll get this email?
+                                <span class="color-primary font-weight-bold">
+                                  Anybody who joins below lists will receive
+                                  your Welcome Email.
+                                </span>
+                              </p>
+                              <p class="create-campaign__row-description">
+                                This campaign will automatically be sent to all
+                                <span class="color-primary font-weight-bold"
+                                  >new subscribers</span
+                                >
+                                of
+                                <a href="#" class="link">Shopify Customers</a>
+                                list. (Only first-time subscribers will get this
+                                email). <br />Email footer and forms will be
+                                delivered in
+                                <span class="color-primary font-weight-bold"
+                                  >English</span
+                                >.
+                              </p>
+                            </div>
+                            <button
+                              class="btn _sm _primary _edit mt-10 mt-sm-0"
+                            >
+                              Add Recipients
+                            </button>
+                            <button
+                              class="btn _sm _secondary _edit mt-10 mt-sm-0"
+                            >
+                              Change
+                            </button>
+                          </div>
+
+                          <div class="create-campaign__row-edit">
+                            <div
+                              class="create-campaign__fields mb-10 flex-column flex-lg-row"
+                            >
+                              <div class="create-campaign__fields-col">
+                                <p class="font-14 font-weight-bold mb-7">
+                                  Add Lists
+                                </p>
+                                <div class="form-control__wrap mb-20">
+                                  <select
+                                    class="form-control _select2-lg"
+                                    multiple="multiple"
+                                    required
+                                  >
+                                    <option></option>
+                                    <option value="test-1" selected
+                                      >Shopify List (1,410)</option
+                                    >
+                                    <option value="test-3">Custom tag 2</option>
+                                    <option value="test-4">Custom tag 3</option>
+                                    <option value="test-5">Custom tag 4</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="create-campaign__fields-col">
+                                <div class="switcher__wrap mt-lg-32">
+                                  <a href="#" class="link font-12 order-2 ml-3"
+                                    >Learn More.</a
+                                  >
+                                  <label
+                                    for="switch-10"
+                                    class="switcher__label font-weight-medium color-secondary"
+                                  >
+                                    Send only to first-time subscribers.
+                                  </label>
+                                  <input
+                                    type="checkbox"
+                                    id="switch-10"
+                                    class="switcher"
+                                    checked
+                                  />
+                                  <label
+                                    for="switch-10"
+                                    class="switcher__toggle"
+                                  ></label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <p class="font-14 font-weight-bold mb-7">
+                              Language
+                            </p>
+                            <div class="mb-32">
+                              <div class="create-campaign__input-wrap">
+                                <select
+                                  class="form-control _select2-lg"
+                                  required
+                                >
+                                  <option></option>
+                                  <option value="test-1" selected
+                                    >English</option
+                                  >
+                                  <option value="test-2">Chinese</option>
+                                </select>
+                              </div>
+                            </div>
+                            <button class="btn _lg _primary _save">Save</button>
+                          </div>
+                        </div>
+
+                        <button type="button" class="close">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+
+                      <div class="create-campaign__row">
+                        <div class="d-flex flex-column">
+                          <svg
+                            width="30"
+                            height="30"
+                            class="create-campaign__icon"
+                          >
+                            <use
+                              class="icon-check"
+                              xlink:href="assets/images/sprite.svg#round-checkmark"
+                            ></use>
+                            <use
+                              class="icon-edit"
+                              xlink:href="assets/images/sprite.svg#round-edit"
+                            ></use>
+                            <use
+                              class="icon-fill"
+                              xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                            ></use>
+                          </svg>
+                        </div>
+
+                        <div class="w-100">
+                          <div class="d-flex flex-column flex-sm-row pl-20">
+                            <div class="create-campaign__row-content">
+                              <h4 class="mb-4">Campaign Name</h4>
+                              <p class="create-campaign__row-placeholder">
+                                Choose a distinguishing campaign name. You can
+                                also add tags.
+                              </p>
+                              <p
+                                class="create-campaign__row-description font-12 font-weight-medium color-secondary m-0"
+                              >
+                                You named your campaign
+                                <span class="color-primary font-weight-bold"
+                                  >Dodo’s Big Adventure</span
+                                >. (You tagged it
+                                <span class="color-primary font-weight-bold"
+                                  >vip, important</span
+                                >.)
+                              </p>
+                            </div>
+                            <button
+                              class="btn _sm _primary _edit mt-10 mt-sm-0"
+                            >
+                              Add Name
+                            </button>
+                            <button
+                              class="btn _sm _secondary _edit mt-10 mt-sm-0"
+                            >
+                              Change
+                            </button>
+                          </div>
+
+                          <div class="create-campaign__row-edit">
+                            <div class="create-campaign__fields">
+                              <div class="create-campaign__fields-col">
+                                <p class="font-14 font-weight-bold mb-7">
+                                  Name Your Campaign
+                                </p>
+                                <div class="form-control__wrap mb-10">
+                                  <input
+                                    type="text"
+                                    placeholder="Your Campaign Name Here"
+                                    class="form-control"
+                                    value="Dodo’s Big Adventure"
+                                  />
+                                </div>
+                              </div>
+                              <div class="create-campaign__fields-col">
+                                <p class="font-14 font-weight-bold mb-7">
+                                  Tags (Optional)
+                                </p>
+                                <div class="form-control__wrap mb-10">
+                                  <select
+                                    class="form-control _select2-lg"
+                                    multiple="multiple"
+                                    required
+                                  >
+                                    <option></option>
+                                    <option value="test-1" selected>vip</option>
+                                    <option value="test-2" selected
+                                      >Important</option
+                                    >
+                                    <option value="test-3">Custom tag 2</option>
+                                    <option value="test-4">Custom tag 3</option>
+                                    <option value="test-5">Custom tag 4</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="btn _lg _primary _save">Save</button>
+                          </div>
+                        </div>
+
+                        <button type="button" class="close">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div
+                      id="ready-to-start-campaign"
+                      class="card bg-light-grey align-items-center mb-0 d-none"
+                    >
+                      <button class="btn _lg _primary">
+                        You’re Good to Go! Start Your Campaign
+                      </button>
+                    </div>
+
+                    <button class="btn _lg _secondary mt-17">
+                      Finish Later (Save as Draft)
+                    </button>
+                  </div>
+
+                  <div class="tab-pane" id="a-b-campaign"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+
+      <a href="#" class="btn_back">
+        <svg width="8" height="8">
+          <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
+        </svg>
+      </a>
+    </div>
+    <!-- END wrapper -->
+
+    <div
+      id="verify-domain"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+      style="display: none;"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <div class="modal-body">
+            <h4 class="mb-16">Verify Domain</h4>
+            <div class="form-control__wrap mb-11">
+              <input
+                type="text"
+                placeholder="Your Domain Name Here"
+                class="form-control"
+                value="koala@barbodesign.com"
+              />
+            </div>
+            <p class="font-12 font-weight-medium color-secondary mb-21">
+              We’ll send a verification email to above address. Please make sure
+              you entered an address you can access.
+            </p>
+            <button
+              class="btn _lg _primary"
+              data-toggle="modal"
+              data-target="#verification-sent"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              Send Verification
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal -->
+
+    <div
+      id="verification-sent"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+      style="display: none;"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <div class="modal-body">
+            <h4 class="mb-18">Verification Email Sent</h4>
+            <p class="font-12 font-weight-medium color-secondary mb-10">
+              We sent an email to
+              <span class="font-weight-bold color-primary"
+                >koala@barbodesign.com</span
+              >. Please copy and paste the verification code from that email.
+              <a href="#" class="link">Trouble finding the code? Resend.</a>
+            </p>
+            <h5 class="mb-7">Enter Verification Code</h5>
+            <div class="form-control__wrap mb-27">
+              <input
+                type="text"
+                placeholder="Your Verification Code Here"
+                class="form-control"
+                value="0917501108471"
+              />
+            </div>
+            <button id="from-email-verify-btn" class="btn _lg _primary">
+              Verify
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+    <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+
+    <script src="assets/libs/emoji-picker/config.js"></script>
+    <script src="assets/libs/emoji-picker/util.js"></script>
+    <script src="assets/libs/emoji-picker/jquery.emojiarea.js"></script>
+    <script src="assets/libs/emoji-picker/emoji-picker.js"></script>
+
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="assets/libs/nouisliderribute/nouislider.min.js"></script>
+    <script src="assets/libs/wnumb/wNumb.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/dataTable.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $('#basic-datepicker').flatpickr();
+
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+
+        const select2OptionsWithTags = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+          tags: true,
+          maximumSelectionLength: 1,
+          multiple: true,
+        };
+
+        createSelect2ByClass('._select2-with-tags', select2OptionsWithTags);
+
+        $(function () {
+          // Initializes and creates emoji set from sprite sheet
+          window.emojiPicker = new EmojiPicker({
+            emojiable_selector: '[data-emojiable=true]',
+            assetsPath: './assets/images/emoji/',
+            popupButtonClasses: 'fa fa-smile-o',
+          });
+          // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+          // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+          // It can be called as many times as necessary; previously converted input fields will not be converted again
+          window.emojiPicker.discover();
+        });
+
+        // Will be replaced with the real app logics
+        $(
+          '.create-campaign__row .btn._save, .create-campaign__row .close'
+        ).click(function () {
+          $(this).closest('.create-campaign__row').removeClass('_editing');
+          $('body').removeClass('_overlayed');
+        });
+
+        $('.create-campaign__row .btn._save').click(function () {
+          $(this).closest('.create-campaign__row').addClass('_filled');
+
+          if (
+            $('.create-campaign__row._filled').length ==
+            $('.create-campaign__row').length
+          ) {
+            $('#ready-to-start-campaign').removeClass('d-none');
+          }
+        });
+
+        $('.create-campaign__row .btn._edit').click(function () {
+          var offset = $(this).offset();
+          $('html, body').animate(
+            {
+              scrollTop: offset.top - 100,
+            },
+            500
+          );
+          $(this).closest('.create-campaign__row').addClass('_editing');
+          $('body').addClass('_overlayed');
+        });
+
+        $('#from-email-verify-btn').click(function () {
+          $('#from-email-is-verified').removeClass('d-none');
+          $('#verification-sent').modal('hide');
+          $('.needs-validation input').removeClass('input-validation-error');
+          $('#btn-verify-domain').addClass('d-none');
+        });
+
+        $('.create-campaign__email-preview-img svg').click(function () {
+          $('.create-campaign__templates-body').addClass('d-none');
+          $('.create-campaign__templates-item-edit').addClass('d-block');
+        });
+
+        $('.create-campaign__templates-item-buttons .btn').click(function () {
+          $('.create-campaign__templates-item-edit').removeClass('d-block');
+          $('.create-campaign__templates-body').removeClass('d-none');
+          $('.create-campaign__email-preview-img img').removeClass('d-none');
+        });
+
+        class RangeTimePickers {
+          constructor(
+            timePickers,
+            initialValues,
+            step,
+            margin,
+            pipsValues,
+            pipsDensity,
+            rangeMinValue,
+            rangeMaxValue
+          ) {
+            this.timePickers = timePickers;
+            this.initialValues = initialValues;
+            this.step = step;
+            this.margin = margin;
+            this.pipsValues = pipsValues;
+            this.pipsDensity = pipsDensity;
+            this.rangeMinValue = rangeMinValue;
+            this.rangeMaxValue = rangeMaxValue;
+          }
+
+          convertMinutesToHoursAndMinutes = function (date) {
+            let hours = Math.floor(date / 60);
+            let minutes = date - hours * 60;
+            const ampm = hours >= 12 && hours !== 24 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            if (minutes === '00') {
+              return hours + '\n' + ampm;
+            }
+            return hours + ':' + minutes + '\n' + ampm;
+          };
+
+          converTooltips = {
+            to: (value) => {
+              return this.convertMinutesToHoursAndMinutes(+value.toFixed(2));
+            },
+            from: (value) => {
+              return value;
+            },
+          };
+
+          recountVal = (val) => {
+            switch (val) {
+              case 60:
+                return '1 AM';
+                break;
+              case 360:
+                return '6 AM';
+                break;
+              case 720:
+                return '12 PM';
+                break;
+              case 1080:
+                return '6 PM';
+                break;
+              case 1440:
+                return '12 AM';
+                break;
+            }
+          };
+
+          gen = () => {
+            this.timePickers.forEach((item) => {
+              const elements = document.querySelectorAll(item);
+
+              if (elements.length > 0) {
+                elements.forEach((element) => {
+                  const hasPips = element.classList.contains('_withPips');
+
+                  const newPicker = noUiSlider.create(element, {
+                    start: this.initialValues,
+                    connect: true,
+                    step: this.step,
+                    margin: this.margin,
+                    tooltips: [this.converTooltips, this.converTooltips],
+                    format: wNumb({
+                      decimals: 0,
+                    }),
+                    pips: hasPips
+                      ? {
+                          mode: 'values',
+                          values: this.pipsValues,
+                          density: this.pipsDensity,
+                        }
+                      : undefined,
+                    range: {
+                      min: this.rangeMinValue,
+                      max: this.rangeMaxValue,
+                    },
+                  });
+
+                  if (hasPips) {
+                    const pips = element.querySelectorAll(
+                      '.noUi-value.noUi-value-horizontal.noUi-value-large'
+                    );
+                    if (pips.length > 0) {
+                      pips.forEach((pip) => {
+                        pip.innerHTML = this.recountVal(
+                          parseInt(pip.innerHTML)
+                        );
+                      });
+                    }
+                  }
+                  if (element.dataset.inputname) {
+                    const inputStart = document.createElement('input');
+                    inputStart.type = 'hidden';
+                    inputStart.name = `${element.dataset.inputname}-start`;
+                    inputStart.value = this.initialValues[0];
+
+                    const inputEnd = document.createElement('input');
+                    inputEnd.type = 'hidden';
+                    inputEnd.name = `${element.dataset.inputname}-end`;
+                    inputEnd.value = this.initialValues[1];
+
+                    newPicker.on('update', (values, handle) => {
+                      if (handle === 0) {
+                        inputStart.value = values[handle];
+                      } else {
+                        inputEnd.value = values[handle];
+                      }
+                    });
+
+                    element.appendChild(inputStart);
+                    element.appendChild(inputEnd);
+                  }
+                });
+              }
+            });
+          };
+        }
+
+        const rangePickers = new RangeTimePickers(
+          ['#slider'],
+          [540, 1110],
+          15,
+          15,
+          [60, 360, 720, 1080, 1440],
+          360,
+          0,
+          1440
+        ).gen();
+
+        /* Set up for slider hover */
+        $('.noUi-connect, .noUi-handle').hover(
+          function () {
+            $(this).closest('.noUi-target').addClass('_hovered');
+          },
+          function () {
+            $(this).closest('.noUi-target').removeClass('_hovered');
+          }
+        );
+
+        $('.automated-schedule__row .checkbox input:checked')
+          .closest('.automated-schedule__row')
+          .addClass('_checked');
+        $('.automated-schedule__row .checkbox input').change(function () {
+          $(this).closest('.automated-schedule__row').toggleClass('_checked');
+        });
+
+        // TODO: Replace with real-app logics
+        $('#add-template-btn').click(function () {
+          $(this)
+            .closest('.create-campaign__email-design-variant')
+            .before(
+              '<div\n' +
+                '                                      class="create-campaign__email-design-variant flex-sm-row"\n' +
+                '                              >\n' +
+                '                                <div class="create-campaign__email-preview-col">\n' +
+                '                                  <h5 class="mb-7">Email Template</h5>\n' +
+                '                                  <div\n' +
+                '                                          class="create-campaign__email-preview-img"\n' +
+                '                                  >\n' +
+                '                                    <svg\n' +
+                '                                            xmlns="http://www.w3.org/2000/svg"\n' +
+                '                                            viewBox="0 0 214.752 245.33"\n' +
+                '                                            width="214.752"\n' +
+                '                                            height="245.33"\n' +
+                '                                    >\n' +
+                '                                      <g transform="translate(0.376 0.5)">\n' +
+                '                                        <rect\n' +
+                '                                                width="213"\n' +
+                '                                                height="244"\n' +
+                '                                                transform="translate(0.5)"\n' +
+                '                                                fill="currentColor"\n' +
+                '                                                stroke="currentColor"\n' +
+                '                                                stroke-miterlimit="10"\n' +
+                '                                                stroke-width="1"\n' +
+                '                                        />\n' +
+                '                                        <g transform="translate(-230.5 -548)">\n' +
+                '                                          <line\n' +
+                '                                                  x2="85"\n' +
+                '                                                  y2="97"\n' +
+                '                                                  transform="translate(230.5 548.5)"\n' +
+                '                                                  fill="none"\n' +
+                '                                                  stroke-width="1"\n' +
+                '                                          />\n' +
+                '                                          <line\n' +
+                '                                                  x1="85"\n' +
+                '                                                  y2="97"\n' +
+                '                                                  transform="translate(359.5 548.5)"\n' +
+                '                                                  fill="none"\n' +
+                '                                                  stroke-width="1"\n' +
+                '                                          />\n' +
+                '                                          <line\n' +
+                '                                                  x2="85"\n' +
+                '                                                  y2="97"\n' +
+                '                                                  transform="translate(359.5 695.5)"\n' +
+                '                                                  fill="none"\n' +
+                '                                                  stroke-width="1"\n' +
+                '                                          />\n' +
+                '                                          <line\n' +
+                '                                                  x1="85"\n' +
+                '                                                  y2="97"\n' +
+                '                                                  transform="translate(230.5 695.5)"\n' +
+                '                                                  fill="none"\n' +
+                '                                                  stroke-width="1"\n' +
+                '                                          />\n' +
+                '                                        </g>\n' +
+                '                                      </g>\n' +
+                '                                    </svg>\n' +
+                '\n' +
+                '                                    <!--Replace with an appropriate image-->\n' +
+                '                                    <img\n' +
+                '                                            src="assets/images/template-3.jpg"\n' +
+                '                                            alt="Template Preview"\n' +
+                '                                            class="create-campaign__template-preview d-none"\n' +
+                '                                    />\n' +
+                '                                  </div>\n' +
+                '                                </div>\n' +
+                '                                <div class="mt-20 mt-sm-0 ml-sm-29 w-100">\n' +
+                '                                  <h5 class="mb-7">Subject Line</h5>\n' +
+                '                                  <div class="position-relative">\n' +
+                '                                    <input\n' +
+                '                                            type="text"\n' +
+                '                                            placeholder="Write a compelling subject line"\n' +
+                '                                            class="form-control mb-8"\n' +
+                '                                            data-emojiable="true"\n' +
+                '                                            value="Good Days and Beautiful Flowers!"\n' +
+                '                                    />\n' +
+                '                                  </div>\n' +
+                '                                  <div\n' +
+                '                                          class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-16"\n' +
+                '                                  >\n' +
+                '                                    <div\n' +
+                '                                            class="font-12 color-secondary font-weight-medium"\n' +
+                '                                    >\n' +
+                '                                      Subject line quality:\n' +
+                '                                      <span\n' +
+                '                                              class="color-primary font-weight-bold"\n' +
+                '                                      >7/10</span\n' +
+                '                                      >\n' +
+                '                                    </div>\n' +
+                '                                    <a href="#" class="link font-12"\n' +
+                '                                    >How to write a good subject line?</a\n' +
+                '                                    >\n' +
+                '                                  </div>\n' +
+                '                                  <h5 class="mb-7">Preheader</h5>\n' +
+                '                                  <div class="form-control__wrap mb-9">\n' +
+                '                                    <input\n' +
+                '                                            type="text"\n' +
+                '                                            placeholder="Your Preheader Here"\n' +
+                '                                            class="form-control"\n' +
+                '                                    />\n' +
+                '                                  </div>\n' +
+                '                                  <div\n' +
+                '                                          class="font-12 color-secondary font-weight-medium"\n' +
+                '                                  >\n' +
+                '                                    This’s the text many mobile, desktop, and\n' +
+                '                                    web email clients show readers to give them\n' +
+                '                                    an idea of what’s inside the before they\n' +
+                '                                    actually open it.\n' +
+                '                                    <a href="#" class="link font-12">More.</a>\n' +
+                '                                  </div>\n' +
+                '                                </div>\n' +
+                '\n' +
+                '                                <button class="create-campaign__minus">\n' +
+                '                                  <span>–</span>\n' +
+                '                                </button>\n' +
+                '\n' +
+                '                                <svg width="7.76" height="267.36" class="create-campaign__minus-bracket">\n' +
+                '                                  <use\n' +
+                '                                          xlink:href="assets/images/sprite.svg#minus-bracket"\n' +
+                '                                  ></use>\n' +
+                '                                </svg>\n' +
+                '                              </div>'
+            );
+        });
+
+        $(document).on('click', '.create-campaign__minus', function () {
+          $(this).closest('.create-campaign__email-design-variant').remove();
+        });
+      });
+    </script>
+  </body>
+</html>

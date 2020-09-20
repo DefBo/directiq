@@ -7596,8 +7596,17 @@ body._overlayed {
 .mw-840 {
   max-width: 840px; }
 
+.mw-265 {
+  max-width: 265px; }
+
 .mw-320 {
   max-width: 320px; }
+
+.miw-160 {
+  min-width: 160px; }
+
+.miw-320 {
+  min-width: 320px; }
 
 .highlight {
   background-color: #ffff00; }
@@ -9524,6 +9533,19 @@ body._overlayed {
   left: -10px;
   transform: translate(-100%, 0); }
 
+.create-campaign__day-switchers {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 330px;
+  margin: 0 -11px; }
+  .create-campaign__day-switchers .form-control__wrap {
+    margin: 0 11px;
+    min-width: 44px; }
+  .create-campaign__day-switchers._dates {
+    min-width: 617px; }
+    .create-campaign__day-switchers._dates .form-control__wrap {
+      min-width: 34px; }
+
 .create-campaign__row-edit._multiple .create-campaign__email-design-variant h5:after,
 .create-campaign__row-edit._multiple .create-campaign__email-preview-col .btn:after {
   content: " #" counter(myIndex); }
@@ -9559,6 +9581,23 @@ body._overlayed {
     top: 50%;
     right: -9.5px;
     transform: translateY(-50%); }
+
+.form-control__wrap._valid {
+  position: relative; }
+  .form-control__wrap._valid:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18.36px;
+    height: 14px;
+    background-image: url("../images/validation-checkmark.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; }
+  .form-control__wrap._valid input {
+    padding-right: 38px; }
 
 .round-touchspin {
   width: 75px;
