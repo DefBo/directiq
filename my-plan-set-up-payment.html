@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>All Pages | DirectIQ</title>
+    <title>Add Contacts | DirectIQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Direct IQ frontend development version" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -46,6 +46,12 @@
       type="text/css"
     />
 
+    <link
+      href="assets/libs/nouisliderribute/nouislider.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
     <!-- App css -->
     <link
       href="assets/css/bootstrap.min.css"
@@ -79,8 +85,14 @@
             </div>
 
             <ol class="breadcrumbs">
+              <li class="breadcrumb-item">
+                <a href="./campaigns-home.html">Settings</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="./campaigns-home.html">My Account</a>
+              </li>
               <li class="breadcrumb-item active">
-                Home
+                My Plan
                 <button class="btn_icon d-none d-md-inline ml-18">
                   <i class="add-to-fav-icon">
                     <svg
@@ -322,7 +334,6 @@
       <!-- end Topbar -->
 
       <!-- ========== Left Sidebar Start ========== -->
-
       <button class="hamburger hamburger--squeeze" id="ham" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
@@ -345,26 +356,18 @@
                   <use xlink:href="assets/images/sprite.svg#home-i"></use>
                 </svg>
               </i>
-              <span>
-                Home
-              </span>
+              <span> Home </span>
             </a>
-            <ul class="nav-items nav-expand-content active">
+            <ul class="nav-items nav-expand-content">
               <li class="nav-title">Home</li>
               <li class="nav-item">
-                <a class="nav-item-link active" href="./">
-                  Home
-                </a>
+                <a class="nav-item-link" href="./"> Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 2
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
               </li>
             </ul>
           </li>
@@ -375,9 +378,7 @@
                   <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
                 </svg>
               </i>
-              <span>
-                Contacts
-              </span>
+              <span> Contacts </span>
             </a>
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Contacts</li>
@@ -397,34 +398,22 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Tags
-                </a>
+                <a class="nav-item-link" href="#"> Tags </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="segments.html">
-                  Segments
-                </a>
+                <a class="nav-item-link" href="segments.html"> Segments </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Custom Fields
-                </a>
+                <a class="nav-item-link" href="#"> Custom Fields </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Signup Forms
-                </a>
+                <a class="nav-item-link" href="#"> Signup Forms </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Suppression Lists
-                </a>
+                <a class="nav-item-link" href="#"> Suppression Lists </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Cleaning Service
-                </a>
+                <a class="nav-item-link" href="#"> Cleaning Service </a>
               </li>
             </ul>
           </li>
@@ -473,44 +462,28 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Campaigns</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 2
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
               </li>
             </ul>
           </li>
@@ -528,48 +501,24 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Integrations</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
+                <a class="nav-item-link" href="contact-integrations.html">
+                  Contact Integrations
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 2
+                <a class="nav-item-link" href="social-media-integrations.html">
+                  Social Media Integrations
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
+                <a class="nav-item-link" href="#"> Plugins & Apps </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
-                </a>
+                <a class="nav-item-link" href="#"> API </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item nav-expand">
+          <li class="nav-item nav-expand active">
             <a class="nav-item-link nav-expand-link" href="#">
               <i>
                 <svg width="21.515" height="18.91">
@@ -581,44 +530,28 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Settings</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
-                </a>
+                <a class="nav-item-link active" href="#"> Test Item 1 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 2
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
               </li>
             </ul>
           </li>
@@ -634,44 +567,28 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Bookmarks</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 2
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
               </li>
             </ul>
           </li>
@@ -704,7 +621,6 @@
           </button>
         </div>
       </nav>
-
       <!-- Left Sidebar End -->
 
       <!-- ============================================================== -->
@@ -715,373 +631,215 @@
         <div class="content">
           <!-- Start Content-->
           <div class="container-fluid">
-            <div class="card mb-0 mt-15">
-              <h3 class="mb-16">Pages</h3>
-
-              <p class="sub-header">
-                All pages that are implemented or currently in progress.
-              </p>
-
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-static.html">My Lists</a>
-                (static)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-ep.html">My Lists</a> (endpoint
-                integrated)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="list-details-static.html">List Details</a>
-                (static)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="list-details-ep.html">List Details</a>
-                (endpoint integrated)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contacts-home-static.html"
-                  >Contacts Home</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-details.html">Contact Details</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="add-contacts.html">Add Contacts</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="form-validation-examples.html"
-                  >Form Validation Example</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-new-user.html">Save List</a>
-                (new user)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-few-lists.html">Save List</a>
-                (select from few lists)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-many-lists.html">Save List</a>
-                (select from many lists)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="confirm-modals.html"
-                  >Confirmation Modals</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="import-from-other-service.html"
-                  >Add Contacts</a
-                >
-                (import from other service)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="connect-service-not-connected.html"
-                  >Add Contacts</a
-                >
-                (import from other service - not connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="toggle-columns.html"
-                  >Toggle Columns Modal</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations.html"
-                  >Contact Integrations</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-not-connected.html"
-                  >Contact Integrations</a
-                >
-                (not connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-connected.html"
-                  >Contact Integrations</a
-                >
-                (connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a
-                  class="link"
-                  href="contact-integrations-connected-no-list.html"
-                  >Contact Integrations</a
-                >
-                (connected - no list)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="social-media-integrations.html"
-                  >Social Media Integrations</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="api.html">Integrations - API</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="confirmation.html"
-                  >Confirmation Notification</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="negative.html">Negative Notification</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments.html">Segments</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments-fixes.html">Segments</a> (fixes)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments-possible-fields.html"
-                  >Segments - Possible Fields</a
-                >
-              </h4>
-
-              <h4 class="mb-16"><a class="link" href="tags.html">Tags</a></h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="plugins-and-apps.html"
-                  >Integrations - Plugins & Apps</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-fields.html">Contacts - Fields</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="suppression-lists.html"
-                  >Contacts - Suppression Lists</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="templates-home.html">Templates - Home</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-free.html"
-                  >Create Template - Free Templates</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-basic-layout.html"
-                  >Create Template - Basic Layout</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-scratch.html"
-                  >Create Template - Create From Scratch</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-import.html"
-                  >Create Template - Import</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-preview-save.html"
-                  >Create Template - Preview and Save</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="inbox-preview-empty.html"
-                  >Templates - Inbox Preview</a
-                >
-                (empty)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="inbox-preview-running.html"
-                  >Templates - Inbox Preview</a
-                >
-                (running)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="inbox-preview-complete.html"
-                  >Templates - Inbox Preview</a
-                >
-                (complete)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="spam-doctor-empty.html"
-                  >Templates - Spam Doctor</a
-                >
-                (empty)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="spam-doctor-running.html"
-                  >Templates - Spam Doctor</a
-                >
-                (running)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="spam-doctor-complete.html"
-                  >Templates - Spam Doctor</a
-                >
-                (complete)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="templates-send-test.html"
-                  >Templates - Send Test</a
-                >
-                (modal)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="campaigns-home.html">Campaigns - Home</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign.html">Create Campaign</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="campaign-is-scheduled-modal.html"
-                  >Campaign is scheduled (modal)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-a-b.html"
-                  >Create Campaign - A/B</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-automated-overview.html"
-                  >Create Campaign - Automated (overview)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-automated.html"
-                  >Create Campaign - Automated (Welcome Email)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-onboarding-series.html"
-                  >Create Campaign - Automated (Onboarding Series)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-lead-nurturing.html"
-                  >Create Campaign - Automated (Lead Nurturing)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-happy-birthday.html"
-                  >Create Campaign - Automated (Happy Birthday)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-date-based.html"
-                  >Create Campaign - Automated (Date Based)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-auto-resend.html"
-                  >Create Campaign - Automated (Auto-Resend)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-rss.html"
-                  >Create Campaign - Automated (RSS)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-recurring.html"
-                  >Create Campaign - Automated (Recurring)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-education-series.html"
-                  >Create Campaign - Automated (Education Series)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-sales-pitch.html"
-                  >Create Campaign - Automated (Sales Pitch)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-follow-up.html"
-                  >Create Campaign - Automated (Follow Up)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="my-plan.html">My Plan </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="my-plan-set-up-payment.html"
-                  >My Plan (Set-Up Payment Modal)</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="my-plan-success.html"
-                  >My Plan (Success Modal)</a
-                >
-              </h4>
-
-              <hr />
-
-              <h4 class="mb-16">
-                <a class="link" href="list-details-new-table.html"
-                  >Custom Table</a
-                >
-              </h4>
+            <div class="row">
+              <div class="col-12">
+                <div class="setup-payment">
+                  <div class="setup-payment__modal">
+                    <div class="setup-payment__row">
+                      <div class="setup-payment__main">
+                        <div class="d-flex justify-content-between mb-20">
+                          <h1 id="month-payment-heading">
+                            Pay $4.21 (for 5 days)
+                          </h1>
+                          <h1 id="annual-payment-heading" class="d-none">
+                            Pay <span>$216</span> $172.80 (for 365 days)
+                          </h1>
+
+                          <div class="switcher__wrap">
+                            <label
+                              for="annual-checkbox"
+                              class="switcher__label font-weight-bold font-14"
+                            >
+                              Annual (20% OFF)
+                            </label>
+                            <input
+                              type="checkbox"
+                              id="annual-checkbox"
+                              class="switcher"
+                            />
+                            <label
+                              for="annual-checkbox"
+                              class="switcher__toggle"
+                            ></label>
+                          </div>
+                        </div>
+
+                        <div class="mb-20 d-none" id="annual-payment">
+                          <p class="setup-payment__date">Sep 25</p>
+
+                          <svg width="451.692" height="12" class="mb-6">
+                            <use
+                              xlink:href="assets/images/sprite.svg#purchase-plan-arrow-annual"
+                            ></use>
+                          </svg>
+
+                          <div class="setup-payment__description">
+                            Today you’ll pay for 365 days for your new plan with
+                            a 20% discount<br />
+                            (You’ll also get credited for 23 unused days of your
+                            old plan)
+                          </div>
+                        </div>
+
+                        <div class="mb-20" id="month-payment">
+                          <div class="d-flex">
+                            <p class="setup-payment__date">Sep 25</p>
+
+                            <p class="setup-payment__date">Sep 30</p>
+                          </div>
+
+                          <svg width="451.692" height="12" class="mb-6">
+                            <use
+                              xlink:href="assets/images/sprite.svg#purchase-plan-arrow"
+                            ></use>
+                          </svg>
+
+                          <div class="d-flex">
+                            <div class="setup-payment__description">
+                              Today you’ll pay for 5 days of plan upgrade
+                              difference.
+                            </div>
+                            <div class="setup-payment__description">
+                              That day monthly payments starts.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row mb-20">
+                          <div class="col">
+                            <p class="font-14 font-weight-bold mb-7">
+                              Country
+                            </p>
+                            <div>
+                              <select class="form-control _select2-lg" required>
+                                <option></option>
+                                <option value="test-1" selected
+                                  >United States</option
+                                >
+                                <option value="test-2">Canada</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <p class="font-14 font-weight-bold mb-7">
+                              State
+                            </p>
+                            <div>
+                              <select class="form-control _select2-lg" required>
+                                <option></option>
+                                <option value="test-1" selected
+                                  >New York</option
+                                >
+                                <option value="test-2">Florida</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="setup-payment__invoice mb-20">
+                          <div class="switcher__wrap">
+                            <label
+                              for="invoice-checkbox"
+                              class="switcher__label font-weight-bold font-14"
+                            >
+                              Send me an invoice
+                            </label>
+                            <input
+                              type="checkbox"
+                              id="invoice-checkbox"
+                              class="switcher"
+                            />
+                            <label
+                              for="invoice-checkbox"
+                              class="switcher__toggle"
+                            ></label>
+                          </div>
+
+                          <textarea
+                            name="invoice"
+                            id="invoice-textarea"
+                            rows="3"
+                            placeholder="Company name, tax info etc"
+                            class="form-control mt-6 d-none"
+                          ></textarea>
+                        </div>
+
+                        <div class="mb-20">
+                          <p class="font-14 font-weight-bold mb-8">Payment</p>
+
+                          <div class="setup-payment__payment-box"></div>
+                        </div>
+
+                        <button class="btn _primary _lg">Purchase</button>
+                      </div>
+
+                      <div class="setup-payment__aside">
+                        <h4 class="mb-20">Purchase Summary</h4>
+
+                        <p class="font-14 font-weight-bold mb-4">
+                          Unlimited Plan
+                        </p>
+
+                        <p class="font-12 mb-30 color-secondary">
+                          <span class="font-weight-bold color-primary"
+                            >2,500</span
+                          >
+                          contacts (<span class="font-weight-bold color-primary"
+                            >Unlimited</span
+                          >
+                          sends)<br />
+                          <span class="font-weight-bold color-primary"
+                            >$18/month</span
+                          ><br />
+                          Subtotal:
+                          <span class="font-weight-bold color-primary"
+                            >$3.97 (for 5 days)</span
+                          ><br />
+                          Tax:
+                          <span class="font-weight-bold color-primary"
+                            >$0.24 (%8)</span
+                          ><br />
+                          Total:
+                          <span class="font-weight-bold color-primary"
+                            >$4.21</span
+                          >
+                        </p>
+
+                        <div id="month-payment-description">
+                          <p class="font-14 font-weight-bold mb-4">
+                            What will happen?
+                          </p>
+
+                          <p class="font-12 mb-10 color-secondary">
+                            Today, you’ll only get charged for 5 days
+                            <span class="font-weight-bold color-primary"
+                              >($3.97)</span
+                            >
+                            until your next billing date
+                            <span class="font-weight-bold color-primary"
+                              >(Sep 30, 2020)</span
+                            >
+                          </p>
+
+                          <p class="font-12 color-secondary">
+                            On that date, we’ll start charging regular monthly
+                            payments for your new plan
+                            <span class="font-weight-bold color-primary"
+                              >($18)</span
+                            >
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button type="button" class="close">
+                      <svg width="8" height="8">
+                        <use xlink:href="assets/images/sprite.svg#cross"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- container -->
@@ -1099,15 +857,62 @@
         </svg>
       </a>
     </div>
-
     <!-- END wrapper -->
 
-    <!-- Vendor js -->
+    <!-- App js -->
     <script src="assets/js/vendor.min.js"></script>
 
     <script src="assets/libs/select2/js/select2.min.js"></script>
+    <script src="assets/libs/nouisliderribute/nouislider.min.js"></script>
+    <script src="assets/libs/wnumb/wNumb.min.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+
+        let invoiceCheckbox = $('#invoice-checkbox');
+
+        invoiceCheckbox.change(function () {
+          if ($(this).is(':checked')) {
+            $(this)
+              .closest('.setup-payment__invoice')
+              .find('#invoice-textarea')
+              .removeClass('d-none');
+          } else {
+            $(this)
+              .closest('.setup-payment__invoice')
+              .find('#invoice-textarea')
+              .addClass('d-none');
+          }
+        });
+
+        let annualCheckbox = $('#annual-checkbox');
+
+        annualCheckbox.change(function () {
+          if ($(this).is(':checked')) {
+            $('#annual-payment').removeClass('d-none');
+            $('#annual-payment-heading').removeClass('d-none');
+            $('#month-payment-heading').addClass('d-none');
+            $('#month-payment').addClass('d-none');
+            $('#month-payment-description').addClass('d-none');
+          } else {
+            $('#annual-payment').addClass('d-none');
+            $('#annual-payment-heading').addClass('d-none');
+            $('#month-payment-heading').removeClass('d-none');
+            $('#month-payment').removeClass('d-none');
+            $('#month-payment-description').removeClass('d-none');
+          }
+        });
+      });
+    </script>
   </body>
 </html>

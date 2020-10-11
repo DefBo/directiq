@@ -9922,6 +9922,389 @@ body._overlayed {
       right: 0;
       transform: translate(50%, -50%); }
 
+.plans__cards {
+  display: flex;
+  margin: 0 -15px;
+  padding-bottom: 200px;
+  position: relative; }
+  .plans__cards .noUi-horizontal .noUi-tooltip {
+    width: 54px;
+    height: 20px;
+    border-radius: 20px; }
+
+.plans__card {
+  margin: 0 15px;
+  background-color: #f6f9fc;
+  padding: 40px 40px 42px;
+  flex: 0 0 calc(25% - 30px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 417px; }
+  .plans__card._active {
+    border: 2px solid #0000ff;
+    background-color: #fff;
+    padding: 38px 38px 40px; }
+    .plans__card._active:after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translate(-50%, 50%) rotate(45deg);
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      border-bottom: 2px solid #0000ff;
+      border-right: 2px solid #0000ff; }
+  .plans__card._downgrade._active ~ .plans__card-info .plans__card-info-downgrade,
+  .plans__card._current._active ~ .plans__card-info .plans__card-info-current,
+  .plans__card._upgrade._active ~ .plans__card-info .plans__card-info-upgrade {
+    display: block; }
+
+.plans__card-info-downgrade, .plans__card-info-current, .plans__card-info-upgrade {
+  display: none; }
+
+.plans__plan-info {
+  position: absolute;
+  width: 85%;
+  left: 50%;
+  bottom: -35px;
+  transform: translate(-50%, 100%);
+  height: 167px;
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.15s linear;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  ._active .plans__plan-info {
+    visibility: visible;
+    opacity: 1; }
+  .plans__plan-info._lg {
+    width: 578px;
+    padding-top: 50px; }
+  .plans__plan-info .percents-slider {
+    width: 86%; }
+  .plans__plan-info .percents-slider-input {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; }
+
+.plans__card-info {
+  padding: 0 0 10px 10px;
+  margin: 0 15px;
+  flex: 0 0 calc(25% - 30px);
+  height: 417px; }
+
+.plans__card-info-content {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #0000ff;
+  position: relative;
+  padding: 40px 20px 0; }
+  .plans__card-info-content:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -10px;
+    top: 10px;
+    background-color: #0000ff;
+    z-index: -1; }
+
+.plans__card-info-new-plan {
+  padding: 20px; }
+  .plans__card-info-downgrade .plans__card-info-new-plan {
+    color: #ed1c24;
+    background-color: rgba(255, 207, 239, 0.5); }
+  .plans__card-info-upgrade .plans__card-info-new-plan {
+    background-color: #b6ffe8; }
+
+.plans__card-info-new-plan-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  height: 32px;
+  transition: 0.15s linear; }
+  .plans__card-info-downgrade .plans__card-info-new-plan-btn {
+    background-color: #ed1c24;
+    color: #fff !important; }
+    .plans__card-info-downgrade .plans__card-info-new-plan-btn:hover {
+      background-color: #f14b52 !important;
+      color: #fff !important; }
+  .plans__card-info-upgrade .plans__card-info-new-plan-btn {
+    background-color: #00eba8 !important; }
+    .plans__card-info-upgrade .plans__card-info-new-plan-btn:hover {
+      background-color: #1fffbf !important;
+      color: inherit !important; }
+
+.plans__checkbox-wrap {
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+
+.plans__checkbox {
+  position: relative; }
+
+.plans__checkbox-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none; }
+
+.plans__checkbox-label {
+  display: block;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #dae8f7;
+  transition: 0.15s linear; }
+
+.plans__checkbox-input:checked + .plans__checkbox-label {
+  background-color: #0000ff;
+  pointer-events: none; }
+
+.plans__checkbox-checkmark {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  transform: rotate(-45deg);
+  width: 14px;
+  height: 7px;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transition: 0.15s linear;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none; }
+
+.plans__checkbox-input:checked ~ .plans__checkbox-checkmark {
+  opacity: 1;
+  visibility: visible; }
+
+.plans__image-wrap {
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+  color: #454f5b;
+  transition: 0.15s linear; }
+  ._active .plans__image-wrap {
+    color: #0000ff; }
+
+.plans__content {
+  margin-top: 16px; }
+  ._active .plans__content {
+    color: #0000ff; }
+
+.plans__list {
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 0;
+  list-style-position: inside;
+  margin-left: 7px; }
+  .plans__list span {
+    position: relative;
+    left: -6px;
+    top: 1px; }
+
+.plans__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: #212b35; }
+  ._active .plans__info {
+    color: #0000ff; }
+
+.plans__price {
+  height: 44px;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center; }
+
+.plans__currency {
+  font-size: 24px;
+  margin-right: 3px;
+  margin-top: -3px; }
+
+.plans__price-sum {
+  font-size: 36px;
+  font-weight: 400; }
+
+.plans__month {
+  margin-top: 10px; }
+
+.plans__contacts {
+  height: 22px;
+  font-size: 18px; }
+
+.plans__contacts-text {
+  font-size: 14px; }
+
+.plans__sends {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 4px; }
+
+.plans__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 12px;
+  font-weight: 700; }
+  .plans__cards .plans__button {
+    position: absolute;
+    right: 0;
+    bottom: 8px; }
+  .plans__button span {
+    margin-top: 3px;
+    display: inline-block;
+    position: relative;
+    z-index: 1; }
+    .plans__button span:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 3px;
+      width: 100%;
+      height: 3px;
+      background-color: #00eba8;
+      z-index: -1; }
+
+.plans__button-wrap {
+  display: flex;
+  justify-content: flex-end; }
+
+.plans__table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  position: relative; }
+
+.plans__table-marker, .plans__cards-marker {
+  position: absolute;
+  top: -100px;
+  left: 0; }
+
+.plans__table-row {
+  display: flex;
+  border-bottom: 1px solid #ecf1f8; }
+  .plans__table-row:first-child .plans__table-cell {
+    font-size: 18px;
+    font-weight: 600; }
+  .plans__table-row:not(:first-child) .plans__table-cell:first-child {
+    background-color: #dae8f7;
+    font-size: 14px;
+    font-weight: 700; }
+
+.plans__table-cell {
+  flex: 1;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  padding: 0 2vw;
+  font-size: 12px;
+  font-weight: 500;
+  color: #454f5b;
+  justify-content: space-between; }
+  .plans__table-cell:nth-child(2), .plans__table-cell:nth-child(4) {
+    background-color: #fff; }
+  .plans__table-cell:nth-child(3) {
+    background-color: #f6f9fc; }
+  .plans__table-cell svg {
+    margin-right: 2vw; }
+
+.plans__status {
+  position: absolute;
+  top: 18px;
+  left: 17px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 4px 1px; }
+  .plans__status._green {
+    background-color: #b6ffe8; }
+  .plans__status._yellow {
+    background-color: #fffe00; }
+  .plans__status._pink {
+    background-color: #ffe7f7; }
+
+.plans__positive {
+  color: #00eba8; }
+
+.setup-payment {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #dae8f7;
+  z-index: 1003;
+  padding: 90px 16px 60px; }
+  .setup-payment__modal {
+    max-width: 795px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #fff; }
+  .setup-payment__row {
+    display: flex; }
+  .setup-payment__main {
+    flex: 1;
+    background-color: #f6f9fc;
+    padding: 40px; }
+  .setup-payment__aside {
+    width: 264px;
+    padding: 40px; }
+  .setup-payment__date {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0000ff;
+    margin-bottom: 6px;
+    flex: 1; }
+  .setup-payment__description {
+    color: #454f5b;
+    font-size: 12px;
+    font-weight: 500;
+    flex: 1;
+    padding: 0 16px 0 0; }
+  .setup-payment .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: #00eba8; }
+    .setup-payment .close svg {
+      width: 20px;
+      height: 20px; }
+  .setup-payment h1 {
+    font-size: 18px; }
+    .setup-payment h1 span {
+      color: #758796 !important;
+      text-decoration: line-through; }
+  .setup-payment textarea {
+    resize: none; }
+
 th,
 td {
   white-space: nowrap !important; }
