@@ -6052,35 +6052,46 @@ span.flatpickr-weekday,
     font-family: 'Material Design Icons';
     position: absolute; }
 
-body:after {
-  content: '';
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: transparent;
-  pointer-events: none;
-  z-index: 1001;
-  transition: 0.4s; }
+html,
+body {
+  display: flex;
+  flex-direction: column; }
 
-body.nav-is-toggled:after {
-  background: rgba(0, 0, 255, 0.2); }
-  @media (min-width: 768px) {
-    body.nav-is-toggled:after {
-      display: none; } }
-
-body._overlayed {
-  pointer-events: none; }
-  body._overlayed:after {
+body {
+  flex: 1;
+  margin: 0; }
+  body:after {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
     bottom: 0;
     left: 0;
-    background: #dae8f7;
-    z-index: 1003; }
+    right: 0;
+    background: transparent;
+    pointer-events: none;
+    z-index: 1001;
+    transition: 0.4s; }
+  body.nav-is-toggled:after {
+    background: rgba(0, 0, 255, 0.2); }
+    @media (min-width: 768px) {
+      body.nav-is-toggled:after {
+        display: none; } }
+  body._overlayed {
+    pointer-events: none; }
+    body._overlayed:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #dae8f7;
+      z-index: 1003; }
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
 
 .animation-stopper * {
   animation: none !important;
@@ -6095,6 +6106,32 @@ body._overlayed {
   right: 0;
   background: rgba(218, 232, 247, 0.2);
   z-index: 2; }
+
+.content-page._no-sidebar {
+  margin-left: 0 !important;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 26px;
+  margin-top: 80px;
+  background-color: #fff; }
+  @media (min-width: 768px) {
+    .content-page._no-sidebar .content {
+      margin-top: -40px; } }
+  @media (max-width: 767px) {
+    .content-page._no-sidebar {
+      margin-top: 60px; } }
+
+.navbar-custom._login {
+  background-color: #0000ff;
+  box-shadow: none; }
+  .navbar-custom._login .container-fluid {
+    padding: 0 40px;
+    height: 100%; }
+    @media (max-width: 767px) {
+      .navbar-custom._login .container-fluid {
+        padding: 0 20px; } }
 
 .btn {
   display: inline-flex;
@@ -6333,6 +6370,21 @@ body._overlayed {
     .btn .loader-dot:nth-child(4) {
       left: 56px;
       animation: lds-ellipsis3 0.6s infinite; }
+  .btn._login {
+    border: 1px solid #00eba8;
+    padding: 0;
+    margin: 0 10px;
+    width: 32px;
+    height: 32px; }
+    .btn._login svg {
+      transition: 0.15s ease-in-out; }
+    .btn._login:hover {
+      border-color: #0000ff;
+      background-color: #0000ff; }
+      .btn._login:hover svg {
+        transform: scale(0.8); }
+      .btn._login:hover path {
+        fill: #fff; }
 
 @keyframes lds-ellipsis1 {
   0% {
@@ -6667,6 +6719,13 @@ body._overlayed {
     border: 1px solid #ed1c24; }
     .confirmation._negative:after {
       background: #ed1c24; }
+  .confirmation._login {
+    margin: 10px 0 40px; }
+    .confirmation._login:before {
+      display: none; }
+    @media (min-width: 768px) {
+      .confirmation._login {
+        width: 400px; } }
 
 .card._contact {
   padding: 0;
@@ -7601,6 +7660,9 @@ body._overlayed {
 
 .mw-320 {
   max-width: 320px; }
+
+.mw-1105 {
+  max-width: 1105px; }
 
 .miw-160 {
   min-width: 160px; }
@@ -10304,6 +10366,53 @@ body._overlayed {
       text-decoration: line-through; }
   .setup-payment textarea {
     resize: none; }
+
+.form-control__wrap._languages {
+  display: flex;
+  align-items: center; }
+  .form-control__wrap._languages ._select2-lg + .select2-container .select2-selection--multiple,
+  .form-control__wrap._languages ._select2-lg + .select2-container .select2-selection--single {
+    border: none !important;
+    background-color: transparent;
+    background-image: url(../images/dropdown-arrow-lg-white.svg);
+    padding: 0 20px 0 10px; }
+  .form-control__wrap._languages .select2-container .select2-selection--single .select2-selection__rendered {
+    color: #fff; }
+
+.form-control__wrap._password {
+  position: relative;
+  cursor: pointer; }
+  .form-control__wrap._password i {
+    position: absolute;
+    top: 3px;
+    right: 10px; }
+
+._login-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+@media (max-width: 767px) {
+  ._login-figure {
+    display: none; } }
+
+.login__logo-link {
+  display: block;
+  width: 188.035px;
+  height: 40.004px; }
+  @media (max-width: 767px) {
+    .login__logo-link {
+      width: 131.6245px;
+      height: 28.0028px; } }
+  .login__logo-link svg {
+    display: block;
+    width: 100%;
+    height: 100%; }
+
+.login__form .form-control {
+  border-color: #a0b1ba; }
 
 th,
 td {
