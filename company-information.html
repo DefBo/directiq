@@ -93,71 +93,102 @@
       <!-- Start Page Content here -->
       <!-- ============================================================== -->
 
-      <div class="content-page _no-sidebar">
+      <div class="content-page _no-sidebar _set-password">
         <div class="content">
           <!-- Start Content-->
-          <div class="container-fluid mw-1360">
-            <div class="row">
-              <div class="col _login-content">
-                <div class="d-flex flex-column align-items-center pt-10">
-                  <h1 class="font-weight-normal mb-10">Reset Password</h1>
-                  <p class="font-12 mb-30 text-center">
-                    Enter your new password and you’re good to go!
+          <div class="container-fluid">
+            <div class="d-flex justify-content-center mb-40">
+              <div class="set-password__dot"></div>
+              <div class="set-password__dot _active"></div>
+              <div class="set-password__dot"></div>
+            </div>
+            <h1 class="mb-30 font-weight-normal text-center">
+              Company Information
+            </h1>
+            <form class="needs-validation login__form" novalidate>
+              <p class="font-14 font-weight-bold mb-7">
+                Business Name
+              </p>
+              <div class="form-control__wrap mb-20">
+                <input
+                  type="text"
+                  placeholder=""
+                  class="form-control"
+                  value=""
+                />
+                <span class="text-danger field-validation-error">
+                  <span class="">Field is required.</span>
+                </span>
+              </div>
+              <p class="font-14 font-weight-bold mb-7">
+                Website URL
+              </p>
+              <div class="form-control__wrap mb-20">
+                <input
+                  type="text"
+                  placeholder="https://"
+                  class="form-control"
+                  value=""
+                />
+                <span class="text-danger field-validation-error">
+                  <span class="">Field is required.</span>
+                </span>
+              </div>
+              <div class="row mb-30">
+                <div class="col-md-6">
+                  <p class="font-14 font-weight-bold mb-7">
+                    Company Size
                   </p>
-                  <div class="mw-320 w-100">
-                    <form class="needs-validation login__form" novalidate>
-                      <p class="font-14 font-weight-bold mb-7">
-                        New Password
-                      </p>
-                      <div class="form-control__wrap mb-20 _password">
-                        <input
-                          type="password"
-                          placeholder=""
-                          class="form-control"
-                          value=""
-                          id="register-password"
-                        />
-                        <span class="text-danger field-validation-error">
-                          <span class="">Field is required.</span>
-                        </span>
-                        <i id="register-password-eye">
-                          <svg width="14" height="8.75">
-                            <use
-                              xlink:href="assets/images/sprite.svg#eye"
-                            ></use>
-                          </svg>
-                        </i>
-                      </div>
-                      <p class="font-14 font-weight-bold mb-7">
-                        Confirm New Password
-                      </p>
-                      <div class="form-control__wrap mb-20">
-                        <input
-                          type="text"
-                          placeholder=""
-                          class="form-control"
-                          value=""
-                        />
-                        <span class="text-danger field-validation-error">
-                          <span class="">Field is required.</span>
-                        </span>
-                      </div>
-                    </form>
-
-                    <a href="#" class="btn _lg _primary w-100 mb-30"
-                      >Continue</a
-                    >
+                  <div class="mb-20">
+                    <select class="form-control _select2-lg" required>
+                      <option></option>
+                      <option value="test-1">Test 1</option>
+                      <option value="test-2">Test 2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <p class="font-14 font-weight-bold mb-7">
+                    Industry
+                  </p>
+                  <div class="mb-20">
+                    <select class="form-control _select2-lg" required>
+                      <option></option>
+                      <option value="test-1">Test 1</option>
+                      <option value="test-2">Test 2</option>
+                    </select>
                   </div>
                 </div>
               </div>
-              <div class="col _login-figure">
-                <div class="d-flex justify-content-center">
-                  <img src="assets/images/reset-login.svg" alt="Man Figure" />
-                </div>
-              </div>
-            </div>
+            </form>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn _lg _primary">Continue</a>
+            <a href="#" class="btn _lg _secondary">Skip</a>
           </div>
           <!-- container -->
+
+          <img
+            src="assets/images/set-password-cloud-1.svg"
+            alt="Decoration Cloud"
+            class="set-password__cloud"
+          />
+          <img
+            src="assets/images/set-password-cloud-2.svg"
+            alt="Decoration Cloud"
+            class="set-password__cloud"
+          />
+          <img
+            src="assets/images/set-password-cloud-3.svg"
+            alt="Decoration Cloud"
+            class="set-password__cloud"
+          />
+          <img
+            src="assets/images/set-password-cloud-4.svg"
+            alt="Decoration Cloud"
+            class="set-password__cloud"
+          />
         </div>
         <!-- content -->
       </div>
@@ -180,7 +211,7 @@
     <script>
       $(document).ready(function () {
         const select2Options = {
-          placeholder: 'Select an option',
+          placeholder: 'Select',
           allowClear: true,
           minimumResultsForSearch: -1,
         };

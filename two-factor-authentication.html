@@ -100,41 +100,25 @@
             <div class="row">
               <div class="col _login-content">
                 <div class="d-flex flex-column align-items-center pt-10">
-                  <h1 class="font-weight-normal mb-10">Reset Password</h1>
+                  <h1 class="font-weight-normal mb-10 text-center lh-1-195">
+                    Two-Factor<br />Authentication
+                  </h1>
                   <p class="font-12 mb-30 text-center">
-                    Enter your new password and you’re good to go!
+                    Use Google Authenticator on your mobile phone to get the
+                    code.<br />
+                    You can also use your
+                    <a href="#" class="link">backup codes</a> if you’re in
+                    trouble.
                   </p>
                   <div class="mw-320 w-100">
                     <form class="needs-validation login__form" novalidate>
                       <p class="font-14 font-weight-bold mb-7">
-                        New Password
-                      </p>
-                      <div class="form-control__wrap mb-20 _password">
-                        <input
-                          type="password"
-                          placeholder=""
-                          class="form-control"
-                          value=""
-                          id="register-password"
-                        />
-                        <span class="text-danger field-validation-error">
-                          <span class="">Field is required.</span>
-                        </span>
-                        <i id="register-password-eye">
-                          <svg width="14" height="8.75">
-                            <use
-                              xlink:href="assets/images/sprite.svg#eye"
-                            ></use>
-                          </svg>
-                        </i>
-                      </div>
-                      <p class="font-14 font-weight-bold mb-7">
-                        Confirm New Password
+                        Verification Code
                       </p>
                       <div class="form-control__wrap mb-20">
                         <input
                           type="text"
-                          placeholder=""
+                          placeholder="6-digit code"
                           class="form-control"
                           value=""
                         />
@@ -145,14 +129,25 @@
                     </form>
 
                     <a href="#" class="btn _lg _primary w-100 mb-30"
-                      >Continue</a
+                      >Verify and continue</a
                     >
+
+                    <div class="switcher__wrap justify-content-center">
+                      <label
+                        for="switch-2"
+                        class="switcher__label font-weight-medium color-secondary"
+                      >
+                        Don’t ask me for 1 month
+                      </label>
+                      <input type="checkbox" id="switch-2" class="switcher" />
+                      <label for="switch-2" class="switcher__toggle"></label>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="col _login-figure">
                 <div class="d-flex justify-content-center">
-                  <img src="assets/images/reset-login.svg" alt="Man Figure" />
+                  <img src="assets/images/two-factor.svg" alt="Man Figure" />
                 </div>
               </div>
             </div>

@@ -6123,6 +6123,49 @@ body {
     .content-page._no-sidebar {
       margin-top: 60px; } }
 
+.content-page._set-password {
+  background-color: #b6ffe8; }
+  .content-page._set-password .content {
+    width: 750px;
+    align-self: center;
+    padding: 40px;
+    background-color: #fff;
+    position: relative; }
+    @media (max-width: 767px) {
+      .content-page._set-password .content {
+        width: 100%;
+        flex: 1;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 20px; } }
+  .content-page._set-password .container-fluid .login__form {
+    margin: 0 auto;
+    width: 384px; }
+    @media (max-width: 767px) {
+      .content-page._set-password .container-fluid .login__form {
+        width: auto; } }
+  @media (max-width: 767px) {
+    .content-page._set-password .container-fluid {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: auto;
+      padding: 0;
+      margin: 0; } }
+  @media (max-width: 767px) {
+    .content-page._set-password {
+      padding: 0; }
+      .content-page._set-password p br {
+        display: none; } }
+
+.content-page._ready-to-go {
+  align-items: center;
+  padding-top: 118px;
+  padding-bottom: 0;
+  justify-content: flex-start; }
+
 .navbar-custom._login {
   background-color: #0000ff;
   box-shadow: none; }
@@ -7661,8 +7704,8 @@ body {
 .mw-320 {
   max-width: 320px; }
 
-.mw-1105 {
-  max-width: 1105px; }
+.mw-1360 {
+  max-width: 1360px; }
 
 .miw-160 {
   min-width: 160px; }
@@ -10413,6 +10456,48 @@ body {
 
 .login__form .form-control {
   border-color: #a0b1ba; }
+
+.check-email-timer {
+  border: 1px solid #00eba8;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 500; }
+
+.set-password__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #b6ffe8;
+  margin: 0 7px; }
+  .set-password__dot._active {
+    transform: scale(1.1667);
+    background-color: #00eba8; }
+
+.set-password__cloud {
+  position: absolute; }
+  .set-password__cloud:nth-of-type(1) {
+    left: 0;
+    top: 50%;
+    transform: translate(-80%, -50%); }
+  .set-password__cloud:nth-of-type(2) {
+    left: 0;
+    bottom: 0;
+    transform: translate(-110%, -50%); }
+  .set-password__cloud:nth-of-type(3) {
+    right: 0;
+    top: 0;
+    transform: translate(85%, 100%); }
+  .set-password__cloud:nth-of-type(4) {
+    right: 0;
+    bottom: 0;
+    transform: translate(96%, -94%); }
+  @media (max-width: 767px) {
+    .set-password__cloud {
+      display: none; } }
 
 th,
 td {

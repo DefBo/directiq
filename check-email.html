@@ -100,59 +100,46 @@
             <div class="row">
               <div class="col _login-content">
                 <div class="d-flex flex-column align-items-center pt-10">
-                  <h1 class="font-weight-normal mb-10">Reset Password</h1>
-                  <p class="font-12 mb-30 text-center">
-                    Enter your new password and you’re good to go!
-                  </p>
-                  <div class="mw-320 w-100">
-                    <form class="needs-validation login__form" novalidate>
-                      <p class="font-14 font-weight-bold mb-7">
-                        New Password
-                      </p>
-                      <div class="form-control__wrap mb-20 _password">
-                        <input
-                          type="password"
-                          placeholder=""
-                          class="form-control"
-                          value=""
-                          id="register-password"
-                        />
-                        <span class="text-danger field-validation-error">
-                          <span class="">Field is required.</span>
-                        </span>
-                        <i id="register-password-eye">
-                          <svg width="14" height="8.75">
-                            <use
-                              xlink:href="assets/images/sprite.svg#eye"
-                            ></use>
-                          </svg>
-                        </i>
-                      </div>
-                      <p class="font-14 font-weight-bold mb-7">
-                        Confirm New Password
-                      </p>
-                      <div class="form-control__wrap mb-20">
-                        <input
-                          type="text"
-                          placeholder=""
-                          class="form-control"
-                          value=""
-                        />
-                        <span class="text-danger field-validation-error">
-                          <span class="">Field is required.</span>
-                        </span>
-                      </div>
-                    </form>
+                  <h1 class="font-weight-normal mb-10">Check Your Email</h1>
 
-                    <a href="#" class="btn _lg _primary w-100 mb-30"
-                      >Continue</a
+                  <div class="confirmation _positive _login">
+                    <div
+                      class="d-flex justify-content-between px-36 py-20 bg-white"
                     >
+                      <p
+                        class="mb-0 font-12 color-secondary font-weight-medium"
+                      >
+                        We sent you an email with a confirmation link.
+                        <span class="font-weight-bold color-primary"
+                          >Please click It!</span
+                        >
+                      </p>
+                    </div>
                   </div>
+
+                  <p class="font-12 mb-30 text-center">
+                    If the email doesn’t arrive soon, check your spam folder.
+                  </p>
+
+                  <div class="check-email-timer" id="check-email-timer">
+                    You can resend in&nbsp;<span id="count">30</span>&nbsp;sec
+                  </div>
+
+                  <button
+                    class="btn _lg _primary mb-30 d-none"
+                    id="resend-email-btn"
+                  >
+                    Resend link
+                  </button>
+
+                  <a href="./login.html" class="btn _sm _secondary"
+                    >Back to login</a
+                  >
                 </div>
               </div>
               <div class="col _login-figure">
                 <div class="d-flex justify-content-center">
-                  <img src="assets/images/reset-login.svg" alt="Man Figure" />
+                  <img src="assets/images/check-email.svg" alt="Man Figure" />
                 </div>
               </div>
             </div>
@@ -186,15 +173,28 @@
         };
 
         createSelect2ByClass('._select2-lg', select2Options);
-
-        $('#register-password-eye').mousedown(function () {
-          $('#register-password').prop('type', 'text');
-        });
-
-        $('#register-password-eye').mouseup(function () {
-          $('#register-password').prop('type', 'password');
-        });
       });
+
+      window.onload = function () {
+        (function () {
+          let counter = 30;
+
+          setInterval(function () {
+            counter--;
+
+            if (counter >= 0) {
+              span = document.getElementById('count');
+              span.innerHTML = counter;
+            }
+
+            if (counter === 0) {
+              clearInterval(counter);
+              $('#check-email-timer').addClass('d-none');
+              $('#resend-email-btn').removeClass('d-none');
+            }
+          }, 1000);
+        })();
+      };
     </script>
   </body>
 </html>
