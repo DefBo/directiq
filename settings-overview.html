@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>All Pages | DirectIQ</title>
+    <title>Add Contacts | DirectIQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Direct IQ frontend development version" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -46,6 +46,12 @@
       type="text/css"
     />
 
+    <link
+      href="assets/libs/nouisliderribute/nouislider.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
     <!-- App css -->
     <link
       href="assets/css/bootstrap.min.css"
@@ -79,8 +85,11 @@
             </div>
 
             <ol class="breadcrumbs">
+              <li class="breadcrumb-item">
+                <a href="./campaigns-home.html">Settings</a>
+              </li>
               <li class="breadcrumb-item active">
-                Home
+                Overview
                 <button class="btn_icon d-none d-md-inline ml-18">
                   <i class="add-to-fav-icon">
                     <svg
@@ -322,7 +331,6 @@
       <!-- end Topbar -->
 
       <!-- ========== Left Sidebar Start ========== -->
-
       <button class="hamburger hamburger--squeeze" id="ham" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
@@ -345,26 +353,18 @@
                   <use xlink:href="assets/images/sprite.svg#home-i"></use>
                 </svg>
               </i>
-              <span>
-                Home
-              </span>
+              <span> Home </span>
             </a>
-            <ul class="nav-items nav-expand-content active">
+            <ul class="nav-items nav-expand-content">
               <li class="nav-title">Home</li>
               <li class="nav-item">
-                <a class="nav-item-link active" href="./">
-                  Home
-                </a>
+                <a class="nav-item-link" href="./"> Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 2
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
               </li>
             </ul>
           </li>
@@ -375,9 +375,7 @@
                   <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
                 </svg>
               </i>
-              <span>
-                Contacts
-              </span>
+              <span> Contacts </span>
             </a>
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Contacts</li>
@@ -397,34 +395,22 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Tags
-                </a>
+                <a class="nav-item-link" href="#"> Tags </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="segments.html">
-                  Segments
-                </a>
+                <a class="nav-item-link" href="segments.html"> Segments </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Custom Fields
-                </a>
+                <a class="nav-item-link" href="#"> Custom Fields </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Signup Forms
-                </a>
+                <a class="nav-item-link" href="#"> Signup Forms </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Suppression Lists
-                </a>
+                <a class="nav-item-link" href="#"> Suppression Lists </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Cleaning Service
-                </a>
+                <a class="nav-item-link" href="#"> Cleaning Service </a>
               </li>
             </ul>
           </li>
@@ -473,44 +459,28 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Campaigns</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 2
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
               </li>
             </ul>
           </li>
@@ -528,48 +498,24 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Integrations</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
+                <a class="nav-item-link" href="contact-integrations.html">
+                  Contact Integrations
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 2
+                <a class="nav-item-link" href="social-media-integrations.html">
+                  Social Media Integrations
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
+                <a class="nav-item-link" href="#"> Plugins & Apps </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
-                </a>
+                <a class="nav-item-link" href="#"> API </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item nav-expand">
+          <li class="nav-item nav-expand active">
             <a class="nav-item-link nav-expand-link" href="#">
               <i>
                 <svg width="21.515" height="18.91">
@@ -581,44 +527,28 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Settings</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
-                </a>
+                <a class="nav-item-link active" href="#"> Test Item 1 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 2
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
               </li>
             </ul>
           </li>
@@ -634,44 +564,28 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Bookmarks</li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 1
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 2
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 3
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 4
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 5
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 6
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 7
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-item-link" href="#">
-                  Test Item 8
-                </a>
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
               </li>
             </ul>
           </li>
@@ -704,7 +618,6 @@
           </button>
         </div>
       </nav>
-
       <!-- Left Sidebar End -->
 
       <!-- ============================================================== -->
@@ -715,443 +628,354 @@
         <div class="content">
           <!-- Start Content-->
           <div class="container-fluid">
-            <div class="card mb-0 mt-15">
-              <h3 class="mb-16">Pages</h3>
-
-              <p class="sub-header">
-                All pages that are implemented or currently in progress.
-              </p>
-
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-static.html">My Lists</a>
-                (static)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="my-lists-ep.html">My Lists</a> (endpoint
-                integrated)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="list-details-static.html">List Details</a>
-                (static)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="list-details-ep.html">List Details</a>
-                (endpoint integrated)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contacts-home-static.html"
-                  >Contacts Home</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-details.html">Contact Details</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="add-contacts.html">Add Contacts</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="form-validation-examples.html"
-                  >Form Validation Example</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-new-user.html">Save List</a>
-                (new user)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-few-lists.html">Save List</a>
-                (select from few lists)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="save-list-many-lists.html">Save List</a>
-                (select from many lists)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="confirm-modals.html"
-                  >Confirmation Modals</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="import-from-other-service.html"
-                  >Add Contacts</a
-                >
-                (import from other service)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="connect-service-not-connected.html"
-                  >Add Contacts</a
-                >
-                (import from other service - not connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="toggle-columns.html"
-                  >Toggle Columns Modal</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations.html"
-                  >Contact Integrations</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-not-connected.html"
-                  >Contact Integrations</a
-                >
-                (not connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-integrations-connected.html"
-                  >Contact Integrations</a
-                >
-                (connected)
-              </h4>
-
-              <h4 class="mb-16">
-                <a
-                  class="link"
-                  href="contact-integrations-connected-no-list.html"
-                  >Contact Integrations</a
-                >
-                (connected - no list)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="social-media-integrations.html"
-                  >Social Media Integrations</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="api.html">Integrations - API</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="confirmation.html"
-                  >Confirmation Notification</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="negative.html">Negative Notification</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments.html">Segments</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments-fixes.html">Segments</a> (fixes)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="segments-possible-fields.html"
-                  >Segments - Possible Fields</a
-                >
-              </h4>
-
-              <h4 class="mb-16"><a class="link" href="tags.html">Tags</a></h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="plugins-and-apps.html"
-                  >Integrations - Plugins & Apps</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="contact-fields.html">Contacts - Fields</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="suppression-lists.html"
-                  >Contacts - Suppression Lists</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="templates-home.html">Templates - Home</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-free.html"
-                  >Create Template - Free Templates</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-basic-layout.html"
-                  >Create Template - Basic Layout</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-scratch.html"
-                  >Create Template - Create From Scratch</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-import.html"
-                  >Create Template - Import</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-template-preview-save.html"
-                  >Create Template - Preview and Save</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="inbox-preview-empty.html"
-                  >Templates - Inbox Preview</a
-                >
-                (empty)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="inbox-preview-running.html"
-                  >Templates - Inbox Preview</a
-                >
-                (running)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="inbox-preview-complete.html"
-                  >Templates - Inbox Preview</a
-                >
-                (complete)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="spam-doctor-empty.html"
-                  >Templates - Spam Doctor</a
-                >
-                (empty)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="spam-doctor-running.html"
-                  >Templates - Spam Doctor</a
-                >
-                (running)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="spam-doctor-complete.html"
-                  >Templates - Spam Doctor</a
-                >
-                (complete)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="templates-send-test.html"
-                  >Templates - Send Test</a
-                >
-                (modal)
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="campaigns-home.html">Campaigns - Home</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign.html">Create Campaign</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="campaign-is-scheduled-modal.html"
-                  >Campaign is scheduled (modal)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-a-b.html"
-                  >Create Campaign - A/B</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-automated-overview.html"
-                  >Create Campaign - Automated (overview)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-automated.html"
-                  >Create Campaign - Automated (Welcome Email)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-onboarding-series.html"
-                  >Create Campaign - Automated (Onboarding Series)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-lead-nurturing.html"
-                  >Create Campaign - Automated (Lead Nurturing)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-happy-birthday.html"
-                  >Create Campaign - Automated (Happy Birthday)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-date-based.html"
-                  >Create Campaign - Automated (Date Based)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-auto-resend.html"
-                  >Create Campaign - Automated (Auto-Resend)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-rss.html"
-                  >Create Campaign - Automated (RSS)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-recurring.html"
-                  >Create Campaign - Automated (Recurring)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-education-series.html"
-                  >Create Campaign - Automated (Education Series)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-sales-pitch.html"
-                  >Create Campaign - Automated (Sales Pitch)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="create-campaign-follow-up.html"
-                  >Create Campaign - Automated (Follow Up)
-                </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="my-plan.html">My Plan </a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="my-plan-set-up-payment.html"
-                  >My Plan (Set-Up Payment Modal)</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="my-plan-success.html"
-                  >My Plan (Success Modal)</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="login.html">Login</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="reset-password.html">Reset Password</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="reset-password-success.html"
-                  >Reset Password Success</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="reset-password-failure.html"
-                  >Reset Password Failure</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="reset-password-new-password.html"
-                  >Reset Password - New Password</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="two-factor-authentication.html"
-                  >Two-Factor Authentication</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="two-factor-authentication-failure.html"
-                  >Two-Factor Authentication Failure</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="sign-up.html">Sign Up</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="check-email.html">Check Email</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="set-password.html">Set Your Password</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="company-information.html"
-                  >Company Information</a
-                >
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="add-address.html">Add Your Address</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="ready-to-go.html">You're ready to go</a>
-              </h4>
-
-              <h4 class="mb-16">
-                <a class="link" href="settings-overview.html"
-                  >Settings - Overview</a
-                >
-              </h4>
-
-              <hr />
-
-              <h4 class="mb-16">
-                <a class="link" href="list-details-new-table.html"
-                  >Custom Table</a
-                >
-              </h4>
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="card">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-17"
+                  >
+                    <h4>My Account</h4>
+                    <a href="#" class="btn _lg _secondary">Edit Account</a>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-md-row align-items-md-center mb-md-20"
+                  >
+                    <div class="settings__account-item">
+                      <div class="settings__user-avatar">
+                        <img src="assets/images/user.png" alt="User Avatar" />
+                      </div>
+                    </div>
+
+                    <div class="settings__account-item">
+                      <div class="font-weight-bold font-12">Name</div>
+                      <div class="color-secondary font-12">Oscar Sheybein</div>
+                    </div>
+
+                    <div class="settings__account-item">
+                      <div class="font-weight-bold font-12">Email</div>
+                      <div class="color-secondary font-12">
+                        oscar.sheybein@chobani.com
+                      </div>
+                    </div>
+
+                    <div class="settings__account-item">
+                      <div class="font-weight-bold font-12">Phone</div>
+                      <div class="color-secondary font-12">
+                        +1-789-124-01-95
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-md-row align-items-md-center mb-md-20"
+                  >
+                    <div class="settings__account-item">
+                      <div class="font-weight-bold font-12">Language</div>
+                      <div class="color-secondary font-12">English</div>
+                    </div>
+
+                    <div class="settings__account-item ml-md-45">
+                      <div class="font-weight-bold font-12">Locale</div>
+                      <div class="color-secondary font-12">United States</div>
+                    </div>
+
+                    <div class="settings__account-item">
+                      <div class="font-weight-bold font-12">Timezone</div>
+                      <div class="color-secondary font-12">
+                        (GMT -04:00) Eastern Daylight Time (US & Canada)
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-md-row align-items-md-center mb-7"
+                  >
+                    <div class="settings__account-item">
+                      <div class="font-weight-bold font-12">Password</div>
+                      <div class="color-secondary font-12">*************</div>
+                    </div>
+
+                    <div class="settings__account-item">
+                      <div class="font-weight-bold font-12">
+                        Email Preferences
+                      </div>
+                      <div class="color-secondary font-12">
+                        Edit account to view
+                      </div>
+                    </div>
+
+                    <div class="settings__account-item">
+                      <div class="font-weight-bold font-12">
+                        Notification Preferences
+                      </div>
+                      <div class="color-secondary font-12">
+                        Edit account to view
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="card bg-light-grey">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-20"
+                  >
+                    <h4>My Plan (Essential)</h4>
+                    <a href="#" class="btn _lg _primary">Modify Plan</a>
+                  </div>
+
+                  <div class="font-14 font-weight-bold mb-3">Contacts</div>
+
+                  <div class="progress mb-3">
+                    <div
+                      class="progress-bar _primary"
+                      role="progressbar"
+                      style="width: 71%;"
+                      aria-valuenow="71"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-md-row justify-content-between mb-20"
+                  >
+                    <div class="font-12 font-weight-bold">
+                      728
+                      <span class="font-weight-normal color-secondary"
+                        >contacts remaining on your plan</span
+                      >
+                    </div>
+                    <div class="font-12 font-weight-bold">
+                      1,772
+                      <span class="font-weight-normal color-secondary">of</span>
+                      2,500
+                    </div>
+                  </div>
+
+                  <div class="font-14 font-weight-bold mb-3">Sends</div>
+
+                  <div class="progress mb-3">
+                    <div
+                      class="progress-bar _secondary"
+                      role="progressbar"
+                      style="width: 17%;"
+                      aria-valuenow="17"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-md-row justify-content-between"
+                  >
+                    <div class="font-12 font-weight-bold">
+                      2410
+                      <span class="font-weight-normal color-secondary"
+                        >send remaining on your plan</span
+                      >
+                    </div>
+                    <div class="font-12 font-weight-bold">
+                      590
+                      <span class="font-weight-normal color-secondary">of</span>
+                      10,000
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card bg-light-grey mb-0">
+              <h4 class="mb-12">Settings Checklist</h4>
+
+              <div class="row">
+                <div class="col-lg-6 pr-lg-24 pr-xl-36">
+                  <div class="font-12 font-weight-bold mb-26 mt-7">
+                    Important
+                  </div>
+
+                  <div class="settings__checklist-item _filled mb-20">
+                    <svg width="30" height="30">
+                      <use
+                        class="icon-check"
+                        xlink:href="assets/images/sprite.svg#round-checkmark"
+                      ></use>
+                      <use
+                        class="icon-fill"
+                        xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                      ></use>
+                    </svg>
+
+                    <div class="font-12 font-weight-bold mx-12 flex-grow-1">
+                      Connect Your Domains
+                      <span class="font-weight-normal color-secondary"
+                        >(1 domain connected)</span
+                      >
+                    </div>
+
+                    <a href="#" class="btn _sm _secondary">Manage</a>
+                  </div>
+
+                  <div class="settings__checklist-item _filled mb-27">
+                    <svg width="30" height="30">
+                      <use
+                        class="icon-check"
+                        xlink:href="assets/images/sprite.svg#round-checkmark"
+                      ></use>
+                      <use
+                        class="icon-fill"
+                        xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                      ></use>
+                    </svg>
+
+                    <div class="font-12 font-weight-bold mx-12 flex-grow-1">
+                      Verify Senders
+                      <span class="font-weight-normal color-secondary"
+                        >(2 senders verified)</span
+                      >
+                    </div>
+
+                    <a href="#" class="btn _sm _secondary">Manage</a>
+                  </div>
+
+                  <div class="font-12 font-weight-bold mb-26">Nice to Have</div>
+
+                  <div class="settings__checklist-item _filled">
+                    <svg width="30" height="30">
+                      <use
+                        class="icon-check"
+                        xlink:href="assets/images/sprite.svg#round-checkmark"
+                      ></use>
+                      <use
+                        class="icon-fill"
+                        xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                      ></use>
+                    </svg>
+
+                    <div class="font-12 font-weight-bold mx-12 flex-grow-1">
+                      Complete Company Profile
+                      <span class="font-weight-normal color-secondary"
+                        >(profile completed)</span
+                      >
+                    </div>
+
+                    <a href="#" class="btn _sm _secondary">Manage</a>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 pl-lg-24 pl-xl-36 mt-20 mt-lg-0">
+                  <div class="settings__checklist-item mb-20">
+                    <svg width="30" height="30">
+                      <use
+                        class="icon-check"
+                        xlink:href="assets/images/sprite.svg#round-checkmark"
+                      ></use>
+                      <use
+                        class="icon-fill"
+                        xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                      ></use>
+                    </svg>
+
+                    <div class="font-12 font-weight-bold mx-12 flex-grow-1">
+                      Connect Social Media Accounts
+                      <span class="font-weight-normal color-secondary"
+                        >(none connected)</span
+                      >
+                    </div>
+
+                    <a href="#" class="btn _sm _primary">Connect Accounts</a>
+                  </div>
+
+                  <div class="settings__checklist-item mb-20">
+                    <svg width="30" height="30">
+                      <use
+                        class="icon-check"
+                        xlink:href="assets/images/sprite.svg#round-checkmark"
+                      ></use>
+                      <use
+                        class="icon-fill"
+                        xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                      ></use>
+                    </svg>
+
+                    <div class="font-12 font-weight-bold mx-12 flex-grow-1">
+                      Upload Logo, Set Brand Colors
+                      <span class="font-weight-normal color-secondary"
+                        >(colors not set)</span
+                      >
+                    </div>
+
+                    <a href="#" class="btn _sm _primary">Complete</a>
+                  </div>
+
+                  <div class="settings__checklist-item _filled mb-20">
+                    <svg width="30" height="30">
+                      <use
+                        class="icon-check"
+                        xlink:href="assets/images/sprite.svg#round-checkmark"
+                      ></use>
+                      <use
+                        class="icon-fill"
+                        xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                      ></use>
+                    </svg>
+
+                    <div class="font-12 font-weight-bold mx-12 flex-grow-1">
+                      Add Staff Accounts
+                      <span class="font-weight-normal color-secondary"
+                        >(2 users in total)</span
+                      >
+                    </div>
+
+                    <a href="#" class="btn _sm _secondary">Manage</a>
+                  </div>
+
+                  <div class="settings__checklist-item mb-20">
+                    <svg width="30" height="30">
+                      <use
+                        class="icon-check"
+                        xlink:href="assets/images/sprite.svg#round-checkmark"
+                      ></use>
+                      <use
+                        class="icon-fill"
+                        xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                      ></use>
+                    </svg>
+
+                    <div class="font-12 font-weight-bold mx-12 flex-grow-1">
+                      Complete Footer
+                      <span class="font-weight-normal color-secondary"
+                        >(Footer in English, no custom footer)</span
+                      >
+                    </div>
+
+                    <a href="#" class="btn _sm _primary">Complete</a>
+                  </div>
+
+                  <div class="settings__checklist-item">
+                    <svg width="30" height="30">
+                      <use
+                        class="icon-check"
+                        xlink:href="assets/images/sprite.svg#round-checkmark"
+                      ></use>
+                      <use
+                        class="icon-fill"
+                        xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                      ></use>
+                    </svg>
+
+                    <div class="font-12 font-weight-bold mx-12 flex-grow-1">
+                      Create API Keys
+                      <span class="font-weight-normal color-secondary"
+                        >(No API keys created yet)</span
+                      >
+                    </div>
+
+                    <a href="#" class="btn _sm _primary">Create Key</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- container -->
@@ -1169,15 +993,20 @@
         </svg>
       </a>
     </div>
-
     <!-- END wrapper -->
 
-    <!-- Vendor js -->
+    <!-- App js -->
     <script src="assets/js/vendor.min.js"></script>
 
     <script src="assets/libs/select2/js/select2.min.js"></script>
+    <script src="assets/libs/nouisliderribute/nouislider.min.js"></script>
+    <script src="assets/libs/wnumb/wNumb.min.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
+
+    <script>
+      $(document).ready(function () {});
+    </script>
   </body>
 </html>

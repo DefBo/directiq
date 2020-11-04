@@ -10499,6 +10499,77 @@ body {
     .set-password__cloud {
       display: none; } }
 
+.settings__user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden; }
+  .settings__user-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.settings__account-item {
+  margin-top: 10px; }
+  @media (min-width: 768px) {
+    .settings__account-item + .settings__account-item {
+      margin-left: 30px; } }
+  @media (min-width: 768px) {
+    .settings__account-item {
+      margin-top: 0; } }
+
+.settings__checklist-item {
+  display: flex;
+  align-items: center; }
+  .settings__checklist-item svg {
+    flex-shrink: 0; }
+  .settings__checklist-item .icon-check {
+    display: none; }
+  .settings__checklist-item._filled .icon-check {
+    display: block; }
+  .settings__checklist-item._filled .icon-fill {
+    display: none; }
+  @media (max-width: 767.98px) {
+    .settings__checklist-item {
+      flex-wrap: wrap; }
+      .settings__checklist-item .btn {
+        flex: 0 0 100%;
+        margin-top: 10px; }
+      .settings__checklist-item > div {
+        flex: 0 0 calc(100% - 54px) !important; } }
+
+.progress {
+  border-radius: 0;
+  background-color: #fff;
+  height: 20px; }
+
+.progress-bar {
+  height: 6px;
+  margin: auto 0;
+  position: relative;
+  overflow: visible; }
+  .progress-bar._primary {
+    background-color: #00eba8; }
+  .progress-bar._secondary {
+    background-color: #b6ffe8; }
+  .progress-bar:after, .progress-bar:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 7px;
+    left: 0;
+    right: 0;
+    background-color: #f6f9fc;
+    z-index: 1;
+    flex-shrink: 0; }
+  .progress-bar:before {
+    top: 0;
+    transform: translateY(-3px); }
+  .progress-bar:after {
+    bottom: 0;
+    transform: translateY(3px); }
+
 th,
 td {
   white-space: nowrap !important; }
