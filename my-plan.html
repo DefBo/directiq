@@ -1151,17 +1151,14 @@
 
     <script>
       $(document).ready(function () {
-        let plansCheckbox = $('.plans__checkbox-input');
-
-        plansCheckbox.change(function () {
-          if ($(this).is(':checked')) {
-            plansCheckbox.not(this).prop('checked', false);
-            plansCheckbox
-              .not(this)
-              .closest('.plans__card')
-              .removeClass('_active');
-            $(this).closest('.plans__card').addClass('_active');
-          }
+        $('.plans__card').click(function () {
+          $('.plans__card')
+            .not(this)
+            .find('.plans__checkbox-input')
+            .attr('checked', false);
+          $('.plans__card').not(this).removeClass('_active');
+          $(this).addClass('_active');
+          $(this).find('.plans__checkbox-input').attr('checked', true);
         });
 
         var connectSlider = document.getElementById('slider');
