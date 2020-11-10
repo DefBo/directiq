@@ -6087,6 +6087,8 @@ body {
       left: 0;
       background: #dae8f7;
       z-index: 1003; }
+  body._step {
+    background: #dae8f7; }
 
 #wrapper {
   display: flex;
@@ -10356,59 +10358,56 @@ body {
 .plans__positive {
   color: #00eba8; }
 
-.setup-payment {
-  position: fixed;
+.setup-payment__modal {
+  position: relative;
+  background-color: #fff; }
+
+.setup-payment__row {
+  display: flex; }
+
+.setup-payment__main {
+  flex: 1;
+  background-color: #f6f9fc;
+  padding: 40px; }
+
+.setup-payment__aside {
+  width: 264px;
+  padding: 40px; }
+
+.setup-payment__date {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0000ff;
+  margin-bottom: 6px;
+  flex: 1; }
+
+.setup-payment__description {
+  color: #454f5b;
+  font-size: 12px;
+  font-weight: 500;
+  flex: 1;
+  padding: 0 16px 0 0; }
+
+.setup-payment .close {
+  position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
-  left: 0;
-  background: #dae8f7;
-  z-index: 1003;
-  padding: 90px 16px 60px; }
-  .setup-payment__modal {
-    max-width: 795px;
-    margin: 0 auto;
-    position: relative;
-    background-color: #fff; }
-  .setup-payment__row {
-    display: flex; }
-  .setup-payment__main {
-    flex: 1;
-    background-color: #f6f9fc;
-    padding: 40px; }
-  .setup-payment__aside {
-    width: 264px;
-    padding: 40px; }
-  .setup-payment__date {
-    font-size: 14px;
-    font-weight: 700;
-    color: #0000ff;
-    margin-bottom: 6px;
-    flex: 1; }
-  .setup-payment__description {
-    color: #454f5b;
-    font-size: 12px;
-    font-weight: 500;
-    flex: 1;
-    padding: 0 16px 0 0; }
-  .setup-payment .close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(50%, -50%);
-    width: 50px;
-    height: 50px;
-    background: #00eba8; }
-    .setup-payment .close svg {
-      width: 20px;
-      height: 20px; }
-  .setup-payment h1 {
-    font-size: 18px; }
-    .setup-payment h1 span {
-      color: #758796 !important;
-      text-decoration: line-through; }
-  .setup-payment textarea {
-    resize: none; }
+  transform: translate(50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: #00eba8; }
+  .setup-payment .close svg {
+    width: 20px;
+    height: 20px; }
+
+.setup-payment h1 {
+  font-size: 18px; }
+  .setup-payment h1 span {
+    color: #758796 !important;
+    text-decoration: line-through; }
+
+.setup-payment textarea {
+  resize: none; }
 
 .form-control__wrap._languages {
   display: flex;
