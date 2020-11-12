@@ -685,24 +685,26 @@
                     </div>
 
                     <div class="plans__plan-info">
-                      <svg width="17.645" height="30">
-                        <use xlink:href="assets/images/sprite.svg#hand"></use>
-                      </svg>
+                      <div class="plans__plan-info-wrap">
+                        <svg width="17.645" height="30">
+                          <use xlink:href="assets/images/sprite.svg#hand"></use>
+                        </svg>
 
-                      <h4 class="mt-7 mb-4">Free Plan is limited</h4>
+                        <h4 class="mt-7 mb-4">Free Plan is limited</h4>
 
-                      <p
-                        class="font-12 color-secondary font-weight-medium mw-160 text-center"
-                      >
-                        If you need more then go with
-                        <span class="font-weight-bold color-primary"
-                          >Essential</span
+                        <p
+                          class="font-12 color-secondary font-weight-medium mw-160 text-center"
                         >
-                        or
-                        <span class="font-weight-bold color-primary"
-                          >Unlimited</span
-                        >
-                      </p>
+                          If you need more then go with
+                          <span class="font-weight-bold color-primary"
+                            >Essential</span
+                          >
+                          or
+                          <span class="font-weight-bold color-primary"
+                            >Unlimited</span
+                          >
+                        </p>
+                      </div>
                     </div>
 
                     <div class="plans__status d-none _pink">
@@ -748,9 +750,17 @@
 
                     <div class="plans__info">
                       <div class="plans__price">
-                        <div class="plans__currency">$</div>
-                        <div class="plans__price-sum">12</div>
-                        <div class="plans__month">/mo</div>
+                        <div class="plans__price-regular">
+                          <div class="plans__currency">$</div>
+                          <div class="plans__price-sum">12</div>
+                          <div class="plans__month">/mo</div>
+                        </div>
+
+                        <div class="plans__price-discount">
+                          <div class="plans__currency">$</div>
+                          <div class="plans__price-sum">9,60</div>
+                          <div class="plans__month">/mo</div>
+                        </div>
                       </div>
 
                       <div class="plans__contacts">
@@ -761,17 +771,19 @@
                     </div>
 
                     <div class="plans__plan-info _lg">
-                      <h4>Select number of contacts to modify this plan!</h4>
+                      <div class="plans__plan-info-wrap">
+                        <h4>Select number of contacts to modify this plan!</h4>
 
-                      <div id="slider" class="percents-slider"></div>
-                      <input
-                        type="number"
-                        id="slider-input"
-                        name="slider-input"
-                        min="0"
-                        max="100"
-                        class="percents-slider-input"
-                      />
+                        <div id="slider" class="percents-slider"></div>
+                        <input
+                          type="number"
+                          id="slider-input"
+                          name="slider-input"
+                          min="0"
+                          max="100"
+                          class="percents-slider-input"
+                        />
+                      </div>
                     </div>
 
                     <div class="plans__status _green">
@@ -817,9 +829,17 @@
 
                     <div class="plans__info">
                       <div class="plans__price">
-                        <div class="plans__currency">$</div>
-                        <div class="plans__price-sum">18</div>
-                        <div class="plans__month">/mo</div>
+                        <div class="plans__price-regular">
+                          <div class="plans__currency">$</div>
+                          <div class="plans__price-sum">18</div>
+                          <div class="plans__month">/mo</div>
+                        </div>
+
+                        <div class="plans__price-discount">
+                          <div class="plans__currency">$</div>
+                          <div class="plans__price-sum">14,40</div>
+                          <div class="plans__month">/mo</div>
+                        </div>
                       </div>
 
                       <div class="plans__contacts">
@@ -830,16 +850,18 @@
                     </div>
 
                     <div class="plans__plan-info _lg">
-                      <h4>Select number of contacts to modify this plan!</h4>
-                      <div id="slider2" class="percents-slider"></div>
-                      <input
-                        type="number"
-                        id="slider-input2"
-                        name="slider-input2"
-                        min="0"
-                        max="100"
-                        class="percents-slider-input"
-                      />
+                      <div class="plans__plan-info-wrap">
+                        <h4>Select number of contacts to modify this plan!</h4>
+                        <div id="slider2" class="percents-slider"></div>
+                        <input
+                          type="number"
+                          id="slider-input2"
+                          name="slider-input2"
+                          min="0"
+                          max="100"
+                          class="percents-slider-input"
+                        />
+                      </div>
                     </div>
 
                     <div class="plans__status _yellow">
@@ -871,6 +893,16 @@
                         </div>
 
                         <div class="plans__card-info-new-plan">
+                          <svg
+                            width="13.501"
+                            height="30.243"
+                            class="plans__card-info-arrow"
+                          >
+                            <use
+                              xlink:href="assets/images/sprite.svg#plan-arrow"
+                            ></use>
+                          </svg>
+
                           <p class="font-14 font-weight-bold mb-4">
                             New Plan: Free
                           </p>
@@ -966,6 +998,16 @@
                         </div>
 
                         <div class="plans__card-info-new-plan">
+                          <svg
+                            width="13.501"
+                            height="30.243"
+                            class="plans__card-info-arrow"
+                          >
+                            <use
+                              xlink:href="assets/images/sprite.svg#plan-arrow"
+                            ></use>
+                          </svg>
+
                           <p class="font-14 font-weight-bold mb-4">
                             New Plan: Unlimited
                           </p>
@@ -988,12 +1030,24 @@
                         <p class="font-12 font-weight-bold px-20">
                           <span
                             class="color-secondary font-weight-medium color-secondary"
-                            >You’ll only get charged for 3 days until your next
-                            billing date</span
+                            >You can select annual payment on next page to
+                            get</span
                           >
-                          (Nov 26, 2020)
+                          20% discount.
                         </p>
                       </div>
+                    </div>
+                  </div>
+
+                  <div class="annual-off-btn" id="annual-off-btn">
+                    <div class="annual-off-btn__wrap">
+                      <div>Annual</div>
+                      <div class="annual-off-btn__percents">20%</div>
+                      <div>off!</div>
+
+                      <svg width="15.625" height="25">
+                        <use xlink:href="assets/images/sprite.svg#cursor"></use>
+                      </svg>
                     </div>
                   </div>
 
@@ -1008,6 +1062,8 @@
                 </div>
 
                 <div class="plans__table">
+                  <div class="plans__table-marker" id="plans-table"></div>
+
                   <div class="plans__table-row">
                     <div class="plans__table-cell">
                       Compare Plans
@@ -1117,8 +1173,6 @@
                     <span>Plans</span>
                   </a>
                 </div>
-
-                <div class="plans__table-marker" id="plans-table"></div>
               </div>
             </div>
           </div>
@@ -1215,7 +1269,7 @@
             '83%': 250000,
             '91%': 500000,
             '99%': 1000000,
-            max: 1000000,
+            max: 1001000,
           },
           pips: {
             mode: 'values',
@@ -1246,8 +1300,8 @@
             '75%': 150000,
             '83%': 250000,
             '91%': 500000,
-            '100%': 1000000,
-            max: 1000000,
+            '99%': 1000000,
+            max: 1001000,
           },
           pips: {
             mode: 'values',
@@ -1275,6 +1329,22 @@
           });
         }
 
+        connectSlider.noUiSlider.on('change', function (values, handle) {
+          if (values[handle] < 1000) {
+            connectSlider.noUiSlider.set(1000);
+          } else if (values[handle] > 1000000) {
+            connectSlider.noUiSlider.set(1000000);
+          }
+        });
+
+        connectSlider2.noUiSlider.on('change', function (values, handle) {
+          if (values[handle] < 1000) {
+            connectSlider2.noUiSlider.set(1000);
+          } else if (values[handle] > 1000000) {
+            connectSlider2.noUiSlider.set(1000000);
+          }
+        });
+
         /* Get initial slider value and update it in slider input*/
         let sliderValueOnLoad = +slider.noUiSlider.get().slice(0, -1);
         $('#slider-input').val(sliderValueOnLoad);
@@ -1294,6 +1364,26 @@
           },
           function () {
             $(this).closest('.noUi-target').removeClass('_hovered');
+          }
+        );
+
+        // Smooth anchor scroll
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth',
+            });
+          });
+        });
+
+        $('#annual-off-btn').hover(
+          function () {
+            $('body').addClass('_off-button-hovered');
+          },
+          function () {
+            $('body').removeClass('_off-button-hovered');
           }
         );
       });

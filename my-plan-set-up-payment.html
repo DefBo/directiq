@@ -75,219 +75,201 @@
       <!-- Start Page Content here -->
       <!-- ============================================================== -->
 
-      <div class="content-page">
+      <div class="content-page _modal">
         <div class="content">
           <!-- Start Content-->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-12">
-                <div class="setup-payment">
-                  <div class="setup-payment__modal">
-                    <div class="setup-payment__row">
-                      <div class="setup-payment__main">
-                        <div class="d-flex justify-content-between mb-20">
-                          <h1 id="month-payment-heading">
-                            Pay $4.21 (for 5 days)
-                          </h1>
-                          <h1 id="annual-payment-heading" class="d-none">
-                            Pay <span>$216</span> $172.80 (for 365 days)
-                          </h1>
+          <div class="setup-payment">
+            <div class="setup-payment__modal">
+              <div class="setup-payment__row">
+                <div class="setup-payment__main">
+                  <div class="d-flex justify-content-between mb-20">
+                    <h1 id="month-payment-heading">
+                      Pay $4.21 (for 5 days)
+                    </h1>
+                    <h1 id="annual-payment-heading" class="d-none">
+                      Pay <span>$216</span> $172.80 (for 365 days)
+                    </h1>
 
-                          <div class="switcher__wrap">
-                            <label
-                              for="annual-checkbox"
-                              class="switcher__label font-weight-bold font-14"
-                            >
-                              Annual (20% OFF)
-                            </label>
-                            <input
-                              type="checkbox"
-                              id="annual-checkbox"
-                              class="switcher"
-                            />
-                            <label
-                              for="annual-checkbox"
-                              class="switcher__toggle"
-                            ></label>
-                          </div>
-                        </div>
+                    <div class="switcher__wrap">
+                      <label
+                        for="annual-checkbox"
+                        class="switcher__label font-weight-bold font-14"
+                      >
+                        Annual (20% OFF)
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="annual-checkbox"
+                        class="switcher"
+                      />
+                      <label
+                        for="annual-checkbox"
+                        class="switcher__toggle"
+                      ></label>
+                    </div>
+                  </div>
 
-                        <div class="mb-20 d-none" id="annual-payment">
-                          <p class="setup-payment__date">Sep 25</p>
+                  <div class="mb-20 d-none" id="annual-payment">
+                    <p class="setup-payment__date">Sep 25</p>
 
-                          <svg width="451.692" height="12" class="mb-6">
-                            <use
-                              xlink:href="assets/images/sprite.svg#purchase-plan-arrow-annual"
-                            ></use>
-                          </svg>
+                    <svg width="451.692" height="12" class="mb-6">
+                      <use
+                        xlink:href="assets/images/sprite.svg#purchase-plan-arrow-annual"
+                      ></use>
+                    </svg>
 
-                          <div class="setup-payment__description">
-                            Today you’ll pay for 365 days for your new plan with
-                            a 20% discount<br />
-                            (You’ll also get credited for 23 unused days of your
-                            old plan)
-                          </div>
-                        </div>
+                    <div class="setup-payment__description">
+                      Today you’ll pay for 365 days for your new plan with a 20%
+                      discount<br />
+                      (You’ll also get credited for 23 unused days of your old
+                      plan)
+                    </div>
+                  </div>
 
-                        <div class="mb-20" id="month-payment">
-                          <div class="d-flex">
-                            <p class="setup-payment__date">Sep 25</p>
+                  <div class="mb-20" id="month-payment">
+                    <div class="d-flex">
+                      <p class="setup-payment__date">Sep 25</p>
 
-                            <p class="setup-payment__date">Sep 30</p>
-                          </div>
-
-                          <div class="setup-payment__arrow">
-                            <div class="setup-payment__arrow-progress"></div>
-                            <div class="setup-payment__arrow-dot"></div>
-                            <div class="setup-payment__arrow-dot"></div>
-                          </div>
-
-                          <div class="d-flex">
-                            <div class="setup-payment__description">
-                              Today you’ll pay for 5 days of plan upgrade
-                              difference.
-                            </div>
-                            <div class="setup-payment__description">
-                              That day monthly payments starts.
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="row mb-20">
-                          <div class="col">
-                            <p class="font-14 font-weight-bold mb-7">
-                              Country
-                            </p>
-                            <div>
-                              <select class="form-control _select2-lg" required>
-                                <option></option>
-                                <option value="test-1" selected
-                                  >United States</option
-                                >
-                                <option value="test-2">Canada</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col">
-                            <p class="font-14 font-weight-bold mb-7">
-                              State
-                            </p>
-                            <div>
-                              <select class="form-control _select2-lg" required>
-                                <option></option>
-                                <option value="test-1" selected
-                                  >New York</option
-                                >
-                                <option value="test-2">Florida</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="setup-payment__invoice mb-20">
-                          <div class="switcher__wrap">
-                            <label
-                              for="invoice-checkbox"
-                              class="switcher__label font-weight-bold font-14"
-                            >
-                              Send me an invoice
-                            </label>
-                            <input
-                              type="checkbox"
-                              id="invoice-checkbox"
-                              class="switcher"
-                            />
-                            <label
-                              for="invoice-checkbox"
-                              class="switcher__toggle"
-                            ></label>
-                          </div>
-
-                          <textarea
-                            name="invoice"
-                            id="invoice-textarea"
-                            rows="3"
-                            placeholder="Company name, tax info etc"
-                            class="form-control mt-6 d-none"
-                          ></textarea>
-                        </div>
-
-                        <div class="mb-20">
-                          <p class="font-14 font-weight-bold mb-8">Payment</p>
-
-                          <div class="setup-payment__payment-box"></div>
-                        </div>
-
-                        <button class="btn _primary _lg">Purchase</button>
-                      </div>
-
-                      <div class="setup-payment__aside">
-                        <h4 class="mb-20">Purchase Summary</h4>
-
-                        <p class="font-14 font-weight-bold mb-4">
-                          Unlimited Plan
-                        </p>
-
-                        <p class="font-12 mb-30 color-secondary">
-                          <span class="font-weight-bold color-primary"
-                            >2,500</span
-                          >
-                          contacts (<span class="font-weight-bold color-primary"
-                            >Unlimited</span
-                          >
-                          sends)<br />
-                          <span class="font-weight-bold color-primary"
-                            >$18/month</span
-                          ><br />
-                          Subtotal:
-                          <span class="font-weight-bold color-primary"
-                            >$3.97 (for 5 days)</span
-                          ><br />
-                          Tax:
-                          <span class="font-weight-bold color-primary"
-                            >$0.24 (%8)</span
-                          ><br />
-                          Total:
-                          <span class="font-weight-bold color-primary"
-                            >$4.21</span
-                          >
-                        </p>
-
-                        <div id="month-payment-description">
-                          <p class="font-14 font-weight-bold mb-4">
-                            What will happen?
-                          </p>
-
-                          <p class="font-12 mb-10 color-secondary">
-                            Today, you’ll only get charged for 5 days
-                            <span class="font-weight-bold color-primary"
-                              >($3.97)</span
-                            >
-                            until your next billing date
-                            <span class="font-weight-bold color-primary"
-                              >(Sep 30, 2020)</span
-                            >
-                          </p>
-
-                          <p class="font-12 color-secondary">
-                            On that date, we’ll start charging regular monthly
-                            payments for your new plan
-                            <span class="font-weight-bold color-primary"
-                              >($18)</span
-                            >
-                          </p>
-                        </div>
-                      </div>
+                      <p class="setup-payment__date">Sep 30</p>
                     </div>
 
-                    <button type="button" class="close">
-                      <svg width="8" height="8">
-                        <use xlink:href="assets/images/sprite.svg#cross"></use>
-                      </svg>
-                    </button>
+                    <div class="setup-payment__arrow">
+                      <div class="setup-payment__arrow-progress"></div>
+                      <div class="setup-payment__arrow-dot"></div>
+                      <div class="setup-payment__arrow-dot"></div>
+                    </div>
+
+                    <div class="d-flex">
+                      <div class="setup-payment__description">
+                        Today you’ll pay for 5 days of plan upgrade difference.
+                      </div>
+                      <div class="setup-payment__description">
+                        That day monthly payments starts.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-20">
+                    <div class="col">
+                      <p class="font-14 font-weight-bold mb-7">
+                        Country
+                      </p>
+                      <div>
+                        <select class="form-control _select2-lg" required>
+                          <option></option>
+                          <option value="test-1" selected>United States</option>
+                          <option value="test-2">Canada</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="font-14 font-weight-bold mb-7">
+                        State
+                      </p>
+                      <div>
+                        <select class="form-control _select2-lg" required>
+                          <option></option>
+                          <option value="test-1" selected>New York</option>
+                          <option value="test-2">Florida</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="setup-payment__invoice mb-20">
+                    <div class="switcher__wrap">
+                      <label
+                        for="invoice-checkbox"
+                        class="switcher__label font-weight-bold font-14"
+                      >
+                        Send me an invoice
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="invoice-checkbox"
+                        class="switcher"
+                      />
+                      <label
+                        for="invoice-checkbox"
+                        class="switcher__toggle"
+                      ></label>
+                    </div>
+
+                    <textarea
+                      name="invoice"
+                      id="invoice-textarea"
+                      rows="3"
+                      placeholder="Company name, tax info etc"
+                      class="form-control mt-6 d-none"
+                    ></textarea>
+                  </div>
+
+                  <div class="mb-20">
+                    <p class="font-14 font-weight-bold mb-8">Payment</p>
+
+                    <div class="setup-payment__payment-box"></div>
+                  </div>
+
+                  <button class="btn _primary _lg">Purchase</button>
+                </div>
+
+                <div class="setup-payment__aside">
+                  <h4 class="mb-20">Purchase Summary</h4>
+
+                  <p class="font-14 font-weight-bold mb-4">
+                    Unlimited Plan
+                  </p>
+
+                  <p class="font-12 mb-30 color-secondary">
+                    <span class="font-weight-bold color-primary">2,500</span>
+                    contacts (<span class="font-weight-bold color-primary"
+                      >Unlimited</span
+                    >
+                    sends)<br />
+                    <span class="font-weight-bold color-primary">$18/month</span
+                    ><br />
+                    Subtotal:
+                    <span class="font-weight-bold color-primary"
+                      >$3.97 (for 5 days)</span
+                    ><br />
+                    Tax:
+                    <span class="font-weight-bold color-primary"
+                      >$0.24 (%8)</span
+                    ><br />
+                    Total:
+                    <span class="font-weight-bold color-primary">$4.21</span>
+                  </p>
+
+                  <div id="month-payment-description">
+                    <p class="font-14 font-weight-bold mb-4">
+                      What will happen?
+                    </p>
+
+                    <p class="font-12 mb-10 color-secondary">
+                      Today, you’ll only get charged for 5 days
+                      <span class="font-weight-bold color-primary"
+                        >($3.97)</span
+                      >
+                      until your next billing date
+                      <span class="font-weight-bold color-primary"
+                        >(Sep 30, 2020)</span
+                      >
+                    </p>
+
+                    <p class="font-12 color-secondary">
+                      On that date, we’ll start charging regular monthly
+                      payments for your new plan
+                      <span class="font-weight-bold color-primary">($18)</span>
+                    </p>
                   </div>
                 </div>
               </div>
+
+              <button type="button" class="close">
+                <svg width="8" height="8">
+                  <use xlink:href="assets/images/sprite.svg#cross"></use>
+                </svg>
+              </button>
             </div>
           </div>
           <!-- container -->
@@ -329,11 +311,13 @@
               .closest('.setup-payment__invoice')
               .find('#invoice-textarea')
               .removeClass('d-none');
+            $(this).closest('.switcher__wrap').addClass('_active');
           } else {
             $(this)
               .closest('.setup-payment__invoice')
               .find('#invoice-textarea')
               .addClass('d-none');
+            $(this).closest('.switcher__wrap').removeClass('_active');
           }
         });
 
@@ -346,12 +330,14 @@
             $('#month-payment-heading').addClass('d-none');
             $('#month-payment').addClass('d-none');
             $('#month-payment-description').addClass('d-none');
+            $(this).closest('.switcher__wrap').addClass('_active');
           } else {
             $('#annual-payment').addClass('d-none');
             $('#annual-payment-heading').addClass('d-none');
             $('#month-payment-heading').removeClass('d-none');
             $('#month-payment').removeClass('d-none');
             $('#month-payment-description').removeClass('d-none');
+            $(this).closest('.switcher__wrap').removeClass('_active');
           }
         });
       });
