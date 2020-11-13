@@ -12086,6 +12086,16 @@ body {
     right: 0px;
     top: -2.5px; }
 
+button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+[type=button], [type=reset], [type=submit], button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
 th,
 td {
   white-space: nowrap !important; }
