@@ -12760,6 +12760,21 @@ div.dataTables_wrapper div.dataTables_info {
     padding: 1px; }
   .datatable__wrap .dataTables_wrapper.no-footer .dataTables_scrollBody {
     border-bottom: none; }
+  .datatable_domains.datatable_small thead th {
+    line-height: 30px; }
+    .datatable_domains.datatable_small thead th:nth-child(4) {
+      text-align: center; }
+    .datatable_domains.datatable_small thead th:nth-child(5) {
+      text-align: center; }
+  .datatable_domains.datatable_small tbody td:nth-child(2) span {
+    padding-left: 6px;
+    width: 18px;
+    height: 18px;
+    margin-right: 9px; }
+  .datatable_domains.datatable_small tbody td:nth-child(4) {
+    text-align: center; }
+  .datatable_domains.datatable_small tbody td:nth-child(5) {
+    text-align: center; }
 
 .sort-arrow {
   display: none;
