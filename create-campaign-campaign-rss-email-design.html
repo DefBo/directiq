@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+  </head>
+
+  <body data-layout-mode="two-column" class="animation-stopper _step">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page _modal">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="pseudo-modal">
+            <div class="pseudo-modal__body">
+              <div class="d-flex flex-column">
+                <svg width="30" height="30" class="create-campaign__icon">
+                  <use
+                    class="icon-fill"
+                    xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                  ></use>
+                </svg>
+              </div>
+
+              <div class="w-100">
+                <div class="d-flex flex-column flex-sm-row pl-20">
+                  <div class="create-campaign__row-content">
+                    <h4 class="mb-4">Email Design</h4>
+                    <p class="create-campaign__row-placeholder">
+                      What RSS feed to fetch the content from? Which template to
+                      send with your campaign?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="create-campaign__row-edit mb-25">
+                  <div class="create-campaign__templates-body">
+                    <h5 class="mb-7">RSS Feed URL</h5>
+                    <div class="d-flex align-items-center mb-9">
+                      <div class="form-control__wrap flex-grow-1 _valid">
+                        <input
+                          type="text"
+                          placeholder="https://"
+                          class="form-control"
+                          value="https://www.altyazi.org/feed/"
+                        />
+                      </div>
+                      <button class="btn _sm _secondary ml-15">
+                        Check Validity
+                      </button>
+                    </div>
+                    <div
+                      class="font-12 color-secondary font-weight-medium mb-30"
+                    >
+                      Enter your blog’s RSS feed URL above and we’ll fetch new
+                      content from there. (Frequency set on Timing section).
+                      <a href="#" class="link font-12">More on RSS to Email.</a>
+                    </div>
+
+                    <div class="d-flex mb-30 flex-column flex-sm-row">
+                      <div class="create-campaign__email-preview-col">
+                        <h5 class="mb-7">Email Template</h5>
+                        <div class="create-campaign__email-preview-img">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 214.752 245.33"
+                            width="214.752"
+                            height="245.33"
+                          >
+                            <g transform="translate(0.376 0.5)">
+                              <rect
+                                width="213"
+                                height="244"
+                                transform="translate(0.5)"
+                                fill="currentColor"
+                                stroke="currentColor"
+                                stroke-miterlimit="10"
+                                stroke-width="1"
+                              />
+                              <text
+                                transform="translate(107 128.5)"
+                                font-size="16"
+                                font-family="ProximaNova-Medium, Proxima Nova"
+                                font-weight="500"
+                              >
+                                <tspan x="-56.432" y="0">
+                                  Select Template
+                                </tspan>
+                              </text>
+                              <g transform="translate(-230.5 -548)">
+                                <line
+                                  x2="85"
+                                  y2="97"
+                                  transform="translate(230.5 548.5)"
+                                  fill="none"
+                                  stroke-width="1"
+                                />
+                                <line
+                                  x1="85"
+                                  y2="97"
+                                  transform="translate(359.5 548.5)"
+                                  fill="none"
+                                  stroke-width="1"
+                                />
+                                <line
+                                  x2="85"
+                                  y2="97"
+                                  transform="translate(359.5 695.5)"
+                                  fill="none"
+                                  stroke-width="1"
+                                />
+                                <line
+                                  x1="85"
+                                  y2="97"
+                                  transform="translate(230.5 695.5)"
+                                  fill="none"
+                                  stroke-width="1"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+
+                          <!--Replace with an appropriate image-->
+                          <img
+                            src="assets/images/template-3.jpg"
+                            alt="Template Preview"
+                            class="create-campaign__template-preview d-none"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="mt-20 mt-sm-0 ml-sm-29 w-100">
+                        <h5 class="mb-7">Subject Line</h5>
+                        <div class="position-relative">
+                          <input
+                            type="text"
+                            placeholder="Write a compelling subject line"
+                            class="form-control mb-8"
+                            data-emojiable="true"
+                            value="Good Days and Beautiful Flowers!"
+                          />
+                        </div>
+                        <div
+                          class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-16"
+                        >
+                          <div
+                            class="font-12 color-secondary font-weight-medium"
+                          >
+                            Subject line quality:
+                            <span class="color-primary font-weight-bold"
+                              >7/10</span
+                            >
+                          </div>
+                          <a href="#" class="link font-12"
+                            >How to write a good subject line?</a
+                          >
+                        </div>
+                        <h5 class="mb-7">Preheader</h5>
+                        <div class="form-control__wrap mb-9">
+                          <input
+                            type="text"
+                            placeholder="Your Subject Here"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="font-12 color-secondary font-weight-medium">
+                          This’s the text many mobile, desktop, and web email
+                          clients show readers to give them an idea of what’s
+                          inside the before they actually open it.
+                          <a href="#" class="link font-12">More.</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button class="btn _lg _primary _save">
+                      Save
+                    </button>
+                  </div>
+
+                  <div class="create-campaign__templates-item-edit">
+                    <ul class="nav nav-tabs nav-bordered">
+                      <li class="nav-item">
+                        <a
+                          href="#all-designs"
+                          data-toggle="tab"
+                          aria-expanded="false"
+                          class="nav-link active"
+                        >
+                          All (28)
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          href="#recently-used-designs"
+                          data-toggle="tab"
+                          aria-expanded="true"
+                          class="nav-link"
+                        >
+                          Recently Used (3)
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          href="#favorite-designs"
+                          data-toggle="tab"
+                          aria-expanded="true"
+                          class="nav-link"
+                        >
+                          Favorites (2)
+                        </a>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content pt-3">
+                      <div class="tab-pane show active" id="all-designs">
+                        <div class="create-campaign__templates">
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-3.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-4.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-1.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-3.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-4.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-1.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-3.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-4.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-1.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-3.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-4.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-1.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-3.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="create-campaign__templates-item">
+                            <img
+                              src="assets/images/template-4.jpg"
+                              alt="Template Preview"
+                            />
+
+                            <div
+                              class="create-campaign__templates-item-buttons"
+                            >
+                              <button class="btn _sm _secondary mb-12 px-10">
+                                Choose
+                              </button>
+                              <div class="d-flex">
+                                <button class="btn _sm _secondary _check">
+                                  <svg width="14" height="8.75">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#eye"
+                                    ></use>
+                                  </svg>
+                                </button>
+                                <button
+                                  class="btn _sm _secondary _check ml-13 _edit-template"
+                                >
+                                  <svg width="11" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#edit"
+                                    ></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="d-flex justify-content-center mt-16 mb-10 w-100"
+                          >
+                            <button class="btn _sm _secondary _long">
+                              Load More
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="tab-pane" id="recently-used-designs"></div>
+
+                      <div class="tab-pane" id="favorite-designs"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="close">
+                <svg width="8" height="8">
+                  <use xlink:href="assets/images/sprite.svg#cross"></use>
+                </svg>
+              </button>
+            </div>
+
+            <button type="button" class="close">
+              <svg width="8" height="8">
+                <use xlink:href="assets/images/sprite.svg#cross"></use>
+              </svg>
+            </button>
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+
+        $('.create-campaign__email-preview-img svg').click(function () {
+          $('.create-campaign__templates-body').addClass('d-none');
+          $('.create-campaign__templates-item-edit').addClass('d-block');
+        });
+
+        $('.create-campaign__templates-item-buttons .btn').click(function () {
+          $('.create-campaign__templates-item-edit').removeClass('d-block');
+          $('.create-campaign__templates-body').removeClass('d-none');
+          $('.create-campaign__email-preview-img img').removeClass('d-none');
+        });
+      });
+    </script>
+  </body>
+</html>

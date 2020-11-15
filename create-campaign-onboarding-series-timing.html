@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/nouisliderribute/nouislider.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+  </head>
+
+  <body data-layout-mode="two-column" class="animation-stopper _step">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page _modal">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="pseudo-modal">
+            <div class="pseudo-modal__body">
+              <div class="d-flex flex-column">
+                <svg width="30" height="30" class="create-campaign__icon">
+                  <use
+                    class="icon-fill"
+                    xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                  ></use>
+                </svg>
+              </div>
+
+              <div class="w-100">
+                <div class="d-flex flex-column flex-sm-row pl-20">
+                  <div class="create-campaign__row-content">
+                    <h4 class="mb-4">Timing</h4>
+                    <p class="create-campaign__row-placeholder">
+                      When would you like to send this campaign?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="create-campaign__row-edit">
+                  <div class="create-campaign__col">
+                    <p class="font-14 font-weight-bold mb-5">
+                      Schedule
+                    </p>
+                    <p class="font-12 font-weight-medium color-secondary mb-11">
+                      How long should we wait before sending each email in the
+                      series?
+                    </p>
+                    <div class="mb-30 mw-160">
+                      <select class="form-control _select2-lg" required>
+                        <option></option>
+                        <option value="test-1" selected>3 days</option>
+                        <option value="test-2">4 days</option>
+                      </select>
+                    </div>
+
+                    <p class="font-12 font-weight-medium color-secondary mb-20">
+                      Emails will only be sent on selected days and hours. We'll
+                      wait until scheduled time arrives.
+                      <a href="#" class="link">Learn More</a>.
+                    </p>
+
+                    <div class="automated-schedule">
+                      <form class="needs-validation" novalidate="">
+                        <div class="automated-schedule__row">
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="mon"
+                                id="mon"
+                                checked
+                              />
+                              <label class="custom-control-label" for="mon"
+                                >Mon</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div
+                            id="slider"
+                            class="percents-slider _withPips"
+                            data-inputname="monday-time-picker"
+                          ></div>
+                        </div>
+                        <div class="automated-schedule__row">
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="tue"
+                                id="tue"
+                                checked
+                              />
+                              <label class="custom-control-label" for="tue"
+                                >Tue</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div
+                            id="slider"
+                            class="percents-slider _withPips"
+                            data-inputname="monday-time-picker"
+                          ></div>
+                        </div>
+                        <div class="automated-schedule__row">
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="wed"
+                                id="wed"
+                                checked
+                              />
+                              <label class="custom-control-label" for="wed"
+                                >Wed</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div
+                            id="slider"
+                            class="percents-slider _withPips"
+                            data-inputname="monday-time-picker"
+                          ></div>
+                        </div>
+                        <div class="automated-schedule__row">
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="thu"
+                                id="thu"
+                                checked
+                              />
+                              <label class="custom-control-label" for="thu"
+                                >Thu</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div
+                            id="slider"
+                            class="percents-slider _withPips"
+                            data-inputname="monday-time-picker"
+                          ></div>
+                        </div>
+                        <div class="automated-schedule__row">
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="fri"
+                                id="fri"
+                                checked
+                              />
+                              <label class="custom-control-label" for="fri"
+                                >Fri</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div
+                            id="slider"
+                            class="percents-slider _withPips"
+                            data-inputname="monday-time-picker"
+                          ></div>
+                        </div>
+                        <div class="automated-schedule__row">
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input type="checkbox" value="sat" id="sat" />
+                              <label class="custom-control-label" for="sat"
+                                >Sat</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div
+                            id="slider"
+                            class="percents-slider _withPips"
+                            data-inputname="monday-time-picker"
+                          ></div>
+                        </div>
+                        <div class="automated-schedule__row">
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input type="checkbox" value="san" id="san" />
+                              <label class="custom-control-label" for="san"
+                                >Sun</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div
+                            id="slider"
+                            class="percents-slider _withPips"
+                            data-inputname="monday-time-picker"
+                          ></div>
+                        </div>
+                      </form>
+                    </div>
+
+                    <p class="font-14 font-weight-bold mb-7">
+                      Time Zone
+                    </p>
+                    <div class="mb-20 mw-320">
+                      <select class="form-control _select2-lg" required>
+                        <option></option>
+                        <option value="test-1" selected
+                          >(GMT -04:00) Eastern Daylight Time (US &
+                          Canada)</option
+                        >
+                        <option value="test-2">Test Itme</option>
+                      </select>
+                    </div>
+
+                    <p class="font-14 font-weight-bold mb-20">
+                      Additional Optimization
+                    </p>
+
+                    <div class="switcher__wrap mb-20">
+                      <a href="#" class="link font-12 order-2">Learn More.</a>
+                      <label
+                        for="switch-13"
+                        class="switcher__label font-weight-medium color-secondary"
+                      >
+                        Gradual send over several hours (20% per hour).
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="switch-13"
+                        class="switcher"
+                        checked
+                      />
+                      <label for="switch-13" class="switcher__toggle"></label>
+                    </div>
+
+                    <div class="switcher__wrap mb-30">
+                      <a href="#" class="link font-12 order-2">Learn More.</a>
+                      <label
+                        for="switch-3"
+                        class="switcher__label font-weight-medium color-secondary"
+                      >
+                        Add Google Analytics link tracking.
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="switch-3"
+                        class="switcher"
+                        checked
+                      />
+                      <label for="switch-3" class="switcher__toggle"></label>
+                    </div>
+
+                    <button class="btn _lg _primary _save">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="close">
+                <svg width="8" height="8">
+                  <use xlink:href="assets/images/sprite.svg#cross"></use>
+                </svg>
+              </button>
+            </div>
+
+            <button type="button" class="close">
+              <svg width="8" height="8">
+                <use xlink:href="assets/images/sprite.svg#cross"></use>
+              </svg>
+            </button>
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="assets/libs/nouisliderribute/nouislider.min.js"></script>
+    <script src="assets/libs/wnumb/wNumb.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+
+        class RangeTimePickers {
+          constructor(
+            timePickers,
+            initialValues,
+            step,
+            margin,
+            pipsValues,
+            pipsDensity,
+            rangeMinValue,
+            rangeMaxValue
+          ) {
+            this.timePickers = timePickers;
+            this.initialValues = initialValues;
+            this.step = step;
+            this.margin = margin;
+            this.pipsValues = pipsValues;
+            this.pipsDensity = pipsDensity;
+            this.rangeMinValue = rangeMinValue;
+            this.rangeMaxValue = rangeMaxValue;
+          }
+
+          convertMinutesToHoursAndMinutes = function (date) {
+            let hours = Math.floor(date / 60);
+            let minutes = date - hours * 60;
+            const ampm = hours >= 12 && hours !== 24 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            if (minutes === '00') {
+              return hours + '\n' + ampm;
+            }
+            return hours + ':' + minutes + '\n' + ampm;
+          };
+
+          converTooltips = {
+            to: (value) => {
+              return this.convertMinutesToHoursAndMinutes(+value.toFixed(2));
+            },
+            from: (value) => {
+              return value;
+            },
+          };
+
+          recountVal = (val) => {
+            switch (val) {
+              case 60:
+                return '1 AM';
+                break;
+              case 360:
+                return '6 AM';
+                break;
+              case 720:
+                return '12 PM';
+                break;
+              case 1080:
+                return '6 PM';
+                break;
+              case 1440:
+                return '12 AM';
+                break;
+            }
+          };
+
+          gen = () => {
+            this.timePickers.forEach((item) => {
+              const elements = document.querySelectorAll(item);
+
+              if (elements.length > 0) {
+                elements.forEach((element) => {
+                  const hasPips = element.classList.contains('_withPips');
+
+                  const newPicker = noUiSlider.create(element, {
+                    start: this.initialValues,
+                    connect: true,
+                    step: this.step,
+                    margin: this.margin,
+                    tooltips: [this.converTooltips, this.converTooltips],
+                    format: wNumb({
+                      decimals: 0,
+                    }),
+                    pips: hasPips
+                      ? {
+                          mode: 'values',
+                          values: this.pipsValues,
+                          density: this.pipsDensity,
+                        }
+                      : undefined,
+                    range: {
+                      min: this.rangeMinValue,
+                      max: this.rangeMaxValue,
+                    },
+                  });
+
+                  if (hasPips) {
+                    const pips = element.querySelectorAll(
+                      '.noUi-value.noUi-value-horizontal.noUi-value-large'
+                    );
+                    if (pips.length > 0) {
+                      pips.forEach((pip) => {
+                        pip.innerHTML = this.recountVal(
+                          parseInt(pip.innerHTML)
+                        );
+                      });
+                    }
+                  }
+                  if (element.dataset.inputname) {
+                    const inputStart = document.createElement('input');
+                    inputStart.type = 'hidden';
+                    inputStart.name = `${element.dataset.inputname}-start`;
+                    inputStart.value = this.initialValues[0];
+
+                    const inputEnd = document.createElement('input');
+                    inputEnd.type = 'hidden';
+                    inputEnd.name = `${element.dataset.inputname}-end`;
+                    inputEnd.value = this.initialValues[1];
+
+                    newPicker.on('update', (values, handle) => {
+                      if (handle === 0) {
+                        inputStart.value = values[handle];
+                      } else {
+                        inputEnd.value = values[handle];
+                      }
+                    });
+
+                    element.appendChild(inputStart);
+                    element.appendChild(inputEnd);
+                  }
+                });
+              }
+            });
+          };
+        }
+
+        const rangePickers = new RangeTimePickers(
+          ['#slider'],
+          [540, 1110],
+          15,
+          15,
+          [60, 360, 720, 1080, 1440],
+          360,
+          0,
+          1440
+        ).gen();
+
+        /* Set up for slider hover */
+        $('.noUi-connect, .noUi-handle').hover(
+          function () {
+            $(this).closest('.noUi-target').addClass('_hovered');
+          },
+          function () {
+            $(this).closest('.noUi-target').removeClass('_hovered');
+          }
+        );
+
+        $('.automated-schedule__row .checkbox input:checked')
+          .closest('.automated-schedule__row')
+          .addClass('_checked');
+        $('.automated-schedule__row .checkbox input').change(function () {
+          $(this).closest('.automated-schedule__row').toggleClass('_checked');
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+  </head>
+
+  <body data-layout-mode="two-column" class="animation-stopper _step">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page _modal">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="pseudo-modal">
+            <div class="pseudo-modal__body">
+              <div class="d-flex flex-column">
+                <svg width="30" height="30" class="create-campaign__icon">
+                  <use
+                    class="icon-fill"
+                    xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                  ></use>
+                </svg>
+              </div>
+
+              <div class="w-100">
+                <div class="d-flex flex-column flex-sm-row pl-20">
+                  <div class="create-campaign__row-content">
+                    <h4 class="mb-4">Campaign Name</h4>
+                    <p class="create-campaign__row-placeholder">
+                      Choose a distinguishing campaign name. You can also add
+                      tags.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="create-campaign__row-edit">
+                  <div class="create-campaign__fields">
+                    <div class="create-campaign__fields-col">
+                      <p class="font-14 font-weight-bold mb-7">
+                        Name Your Campaign
+                      </p>
+                      <div class="form-control__wrap mb-10">
+                        <input
+                          type="text"
+                          placeholder="Your Campaign Name Here"
+                          class="form-control"
+                          value="Dodo’s Big Adventure"
+                        />
+                      </div>
+                    </div>
+                    <div class="create-campaign__fields-col">
+                      <p class="font-14 font-weight-bold mb-7">
+                        Tags (Optional)
+                      </p>
+                      <div class="form-control__wrap mb-10">
+                        <select
+                          class="form-control _select2-lg"
+                          multiple="multiple"
+                          required
+                        >
+                          <option></option>
+                          <option value="test-1" selected>vip</option>
+                          <option value="test-2" selected>Important</option>
+                          <option value="test-3">Custom tag 2</option>
+                          <option value="test-4">Custom tag 3</option>
+                          <option value="test-5">Custom tag 4</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="error-info">
+                    Oops! Some sheep definately hopped. Hope it won’t hop next
+                    time. Will it?
+                  </div>
+
+                  <button class="btn _lg _primary _save">Save</button>
+                </div>
+              </div>
+
+              <button type="button" class="close">
+                <svg width="8" height="8">
+                  <use xlink:href="assets/images/sprite.svg#cross"></use>
+                </svg>
+              </button>
+            </div>
+
+            <button type="button" class="close">
+              <svg width="8" height="8">
+                <use xlink:href="assets/images/sprite.svg#cross"></use>
+              </svg>
+            </button>
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+      });
+    </script>
+  </body>
+</html>

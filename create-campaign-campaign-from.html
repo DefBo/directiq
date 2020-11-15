@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+  </head>
+
+  <body data-layout-mode="two-column" class="animation-stopper _step">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page _modal">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="pseudo-modal">
+            <div class="pseudo-modal__body">
+              <div class="d-flex flex-column">
+                <svg width="30" height="30" class="create-campaign__icon">
+                  <use
+                    class="icon-fill"
+                    xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                  ></use>
+                </svg>
+              </div>
+
+              <div class="w-100">
+                <div class="d-flex flex-column flex-sm-row pl-20">
+                  <div class="create-campaign__row-content">
+                    <h4 class="mb-4">From</h4>
+                    <p class="create-campaign__row-placeholder">
+                      Who’s sending this email?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="create-campaign__row-edit">
+                  <div class="create-campaign__fields">
+                    <div class="create-campaign__fields-col">
+                      <p class="font-14 font-weight-bold mb-7">
+                        From Name
+                      </p>
+                      <div class="form-control__wrap mb-10">
+                        <input
+                          type="text"
+                          placeholder="Your From Name Here"
+                          class="form-control"
+                          value="Barbo Design"
+                        />
+                      </div>
+                    </div>
+                    <div class="create-campaign__fields-col">
+                      <form class="needs-validation mb-11" novalidate>
+                        <p class="font-14 font-weight-bold mb-7">
+                          From Address
+                        </p>
+
+                        <div class="form-control__wrap mb-10">
+                          <select
+                            class="form-control _select2-lg _select2-with-tags"
+                            multiple="multiple"
+                            required
+                          >
+                            <option></option>
+                            <option value="test-1" selected
+                              >noreply@barbodesign.com</option
+                            >
+                            <option value="test-3">Custom tag 2</option>
+                            <option value="test-4">Custom tag 3</option>
+                            <option value="test-5">Custom tag 4</option>
+                          </select>
+                        </div>
+                      </form>
+                      <button
+                        class="btn _sm _primary"
+                        data-toggle="modal"
+                        data-target="#verify-domain"
+                        id="btn-verify-domain"
+                      >
+                        Verify noreply@barbodesign.com
+                      </button>
+
+                      <div id="from-email-is-verified" class="d-none">
+                        <p class="font-12 font-weight-bold mb-5 mt-10">
+                          Email address is verified!
+                        </p>
+
+                        <div class="mb-29">
+                          <a href="#" class="link font-12"
+                            >Connect Your Domain</a
+                          >
+                          <span
+                            class="font-12 font-weight-medium color-secondary"
+                            >- Optional (Improves inbox delivery rates)</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn _lg _primary _save">Save</button>
+                </div>
+              </div>
+
+              <button type="button" class="close">
+                <svg width="8" height="8">
+                  <use xlink:href="assets/images/sprite.svg#cross"></use>
+                </svg>
+              </button>
+            </div>
+
+            <button type="button" class="close">
+              <svg width="8" height="8">
+                <use xlink:href="assets/images/sprite.svg#cross"></use>
+              </svg>
+            </button>
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <div
+      id="verify-domain"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+      style="display: none;"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <div class="modal-body">
+            <h4 class="mb-16">Verify Domain</h4>
+            <div class="form-control__wrap mb-11">
+              <input
+                type="text"
+                placeholder="Your Domain Name Here"
+                class="form-control"
+                value="koala@barbodesign.com"
+              />
+            </div>
+            <p class="font-12 font-weight-medium color-secondary mb-21">
+              We’ll send a verification email to above address. Please make sure
+              you entered an address you can access.
+            </p>
+            <button
+              class="btn _lg _primary"
+              data-toggle="modal"
+              data-target="#verification-sent"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              Send Verification
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal -->
+
+    <div
+      id="verification-sent"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+      style="display: none;"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <div class="modal-body">
+            <h4 class="mb-18">Verification Email Sent</h4>
+            <p class="font-12 font-weight-medium color-secondary mb-10">
+              We sent an email to
+              <span class="font-weight-bold color-primary"
+                >koala@barbodesign.com</span
+              >. Please copy and paste the verification code from that email.
+              <a href="#" class="link">Trouble finding the code? Resend.</a>
+            </p>
+            <h5 class="mb-7">Enter Verification Code</h5>
+            <div class="form-control__wrap mb-27">
+              <input
+                type="text"
+                placeholder="Your Verification Code Here"
+                class="form-control"
+                value="0917501108471"
+              />
+            </div>
+            <button id="from-email-verify-btn" class="btn _lg _primary">
+              Verify
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+
+        $('#from-email-verify-btn').click(function () {
+          $('#from-email-is-verified').removeClass('d-none');
+          $('#verification-sent').modal('hide');
+          $('.needs-validation input').removeClass('input-validation-error');
+          $('#btn-verify-domain').addClass('d-none');
+        });
+      });
+    </script>
+  </body>
+</html>

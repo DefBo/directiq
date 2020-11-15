@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+  </head>
+
+  <body data-layout-mode="two-column" class="animation-stopper _step">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page _modal">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="pseudo-modal">
+            <div class="pseudo-modal__body">
+              <div class="d-flex flex-column">
+                <svg width="30" height="30" class="create-campaign__icon">
+                  <use
+                    class="icon-fill"
+                    xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                  ></use>
+                </svg>
+              </div>
+
+              <div class="w-100">
+                <div class="d-flex flex-column flex-sm-row pl-20">
+                  <div class="create-campaign__row-content">
+                    <h4 class="mb-4">Timing</h4>
+                    <p class="create-campaign__row-placeholder">
+                      When would you like to send this campaign? What’s the
+                      sending pattern?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="create-campaign__row-edit">
+                  <div class="d-flex align-items-end mb-14">
+                    <div class="form-group miw-320">
+                      <label class="font-weight-bold mb-7">Start Date</label>
+                      <div class="form-control__wrap _date">
+                        <input
+                          type="text"
+                          id="basic-datepicker"
+                          class="form-control"
+                          placeholder="Select date"
+                        />
+                      </div>
+                    </div>
+                    <div class="mx-10 mb-20">–</div>
+                    <div class="form-group miw-320">
+                      <label class="font-weight-bold mb-7">End Date</label>
+                      <div class="form-control__wrap _date">
+                        <input
+                          type="text"
+                          id="basic-datepicker"
+                          class="form-control"
+                          placeholder="Select date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex mb-22">
+                    <div class="create-campaign__timing-col flex-grow-0">
+                      <div
+                        class="radio_inline radio create-campaign__timing-col-radio"
+                      >
+                        <input
+                          type="radio"
+                          id="inlineRadio1"
+                          value="option1"
+                          name="radioInline"
+                          checked
+                        />
+                        <label
+                          for="inlineRadio1"
+                          class="font-14 font-weight-bold"
+                        >
+                          Each
+                        </label>
+                      </div>
+                      <div class="create-campaign__timing-col-content">
+                        <div class="mt-10 mw-160 miw-160">
+                          <select class="form-control _select2-lg" required>
+                            <option></option>
+                            <option value="test-1" selected>1 day</option>
+                            <option value="test-2">Option 2</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="create-campaign__timing-col ml-30 flex-grow-0">
+                      <div
+                        class="radio_inline radio create-campaign__timing-col-radio"
+                      >
+                        <input
+                          type="radio"
+                          id="inlineRadio2"
+                          value="option2"
+                          name="radioInline"
+                        />
+                        <label
+                          for="inlineRadio2"
+                          class="font-14 font-weight-bold"
+                        >
+                          Days of the Week
+                        </label>
+                      </div>
+
+                      <div class="create-campaign__timing-col-content">
+                        <div
+                          class="font-12 color-secondary font-weight-medium mb-10 mt-5"
+                        >
+                          Repeat on these days:
+                        </div>
+                        <form
+                          class="needs-validation create-campaign__day-switchers"
+                          novalidate=""
+                        >
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="mon"
+                                id="mon"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="mon"
+                                >Mon</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="tue"
+                                id="tue"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="tue"
+                                >Tue</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="wed"
+                                id="wed"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="wed"
+                                >Wed</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="thu"
+                                id="thu"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="thu"
+                                >Thu</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="fri"
+                                id="fri"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="fri"
+                                >Fri</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="sat"
+                                id="sat"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="sat"
+                                >Sat</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="sun"
+                                id="sun"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="sun"
+                                >Sun</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="create-campaign__timing-col ml-30 flex-grow-0">
+                      <div
+                        class="radio_inline radio create-campaign__timing-col-radio"
+                      >
+                        <input
+                          type="radio"
+                          id="inlineRadio3"
+                          value="option3"
+                          name="radioInline"
+                        />
+                        <label
+                          for="inlineRadio3"
+                          class="font-14 font-weight-bold"
+                        >
+                          Days of the Month
+                        </label>
+                      </div>
+
+                      <div class="create-campaign__timing-col-content">
+                        <div
+                          class="font-12 color-secondary font-weight-medium mb-10 mt-5"
+                        >
+                          Repeat on these days:
+                        </div>
+                        <form
+                          class="needs-validation create-campaign__day-switchers _dates"
+                          novalidate=""
+                        >
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-1"
+                                id="d-1"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-1"
+                                >1</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-2"
+                                id="d-2"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-2"
+                                >2</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-3"
+                                id="d-3"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-3"
+                                >3</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-4"
+                                id="d-4"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-4"
+                                >4</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-5"
+                                id="d-5"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-5"
+                                >5</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-6"
+                                id="d-6"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-6"
+                                >6</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-7"
+                                id="d-7"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-7"
+                                >7</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-8"
+                                id="d-8"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-8"
+                                >8</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-9"
+                                id="d-9"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-9"
+                                >9</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-10"
+                                id="d-10"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-10"
+                                >10</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-11"
+                                id="d-11"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-11"
+                                >11</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-12"
+                                id="d-12"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-12"
+                                >12</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-13"
+                                id="d-13"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-13"
+                                >13</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-14"
+                                id="d-14"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-14"
+                                >14</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-15"
+                                id="d-15"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-15"
+                                >15</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-16"
+                                id="d-16"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-16"
+                                >16</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-17"
+                                id="d-17"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-17"
+                                >17</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-18"
+                                id="d-18"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-18"
+                                >18</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-19"
+                                id="d-19"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-19"
+                                >19</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-20"
+                                id="d-20"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-20"
+                                >20</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-21"
+                                id="d-21"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-21"
+                                >21</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-22"
+                                id="d-22"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-22"
+                                >22</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-23"
+                                id="d-23"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-23"
+                                >23</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-24"
+                                id="d-24"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-24"
+                                >24</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-25"
+                                id="d-25"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-25"
+                                >25</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-26"
+                                id="d-26"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-26"
+                                >26</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-27"
+                                id="d-27"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-27"
+                                >27</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-28"
+                                id="d-28"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-28"
+                                >28</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-29"
+                                id="d-29"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-29"
+                                >29</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-30"
+                                id="d-30"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-30"
+                                >30</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+
+                          <div class="form-control__wrap">
+                            <div class="checkbox">
+                              <input
+                                type="checkbox"
+                                value="d-31"
+                                id="d-31"
+                                checked=""
+                              />
+                              <label class="custom-control-label" for="d-31"
+                                >31</label
+                              >
+                              <span class="text-danger field-validation-error"
+                                ><span class=""
+                                  >The field is required.</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="font-14 font-weight-bold mb-7">
+                    Delivery Time
+                  </p>
+                  <div class="d-flex mb-20">
+                    <div class="select-hours">
+                      <select class="form-control _select2-lg" required>
+                        <option></option>
+                        <option value="test-1">1</option>
+                        <option value="test-2">2</option>
+                        <option value="test-3">3</option>
+                        <option value="test-4">4</option>
+                        <option value="test-5">5</option>
+                        <option value="test-6">6</option>
+                        <option value="test-7">7</option>
+                        <option value="test-8">8</option>
+                        <option value="test-9">9</option>
+                        <option value="test-10">10</option>
+                        <option value="test-11" selected>11</option>
+                        <option value="test-12">12</option>
+                      </select>
+                    </div>
+                    <div class="ml-16">
+                      <select class="form-control _select2-lg" required>
+                        <option></option>
+                        <option value="test-13">00</option>
+                        <option value="test-14">5</option>
+                        <option value="test-15">10</option>
+                        <option value="test-16">15</option>
+                        <option value="test-17">20</option>
+                        <option value="test-18" selected>25</option>
+                        <option value="test-19">30</option>
+                        <option value="test-20">35</option>
+                        <option value="test-21">40</option>
+                        <option value="test-22">45</option>
+                        <option value="test-23">50</option>
+                        <option value="test-24">55</option>
+                      </select>
+                    </div>
+                    <div class="ml-6">
+                      <select class="form-control _select2-lg" required>
+                        <option></option>
+                        <option value="test-25">AM</option>
+                        <option value="test-26" selected>PM</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="create-campaign__col">
+                    <p class="font-14 font-weight-bold mb-7">
+                      Time Zone
+                    </p>
+                    <div class="mb-20 mw-320">
+                      <select class="form-control _select2-lg" required>
+                        <option></option>
+                        <option value="test-1" selected
+                          >(GMT -04:00) Eastern Daylight Time (US &
+                          Canada)</option
+                        >
+                        <option value="test-2">Test Itme</option>
+                      </select>
+                    </div>
+
+                    <p class="font-14 font-weight-bold mb-20">
+                      Additional Optimization
+                    </p>
+
+                    <div class="switcher__wrap mb-20">
+                      <a href="#" class="link font-12 order-2">Learn More.</a>
+                      <label
+                        for="switch-2"
+                        class="switcher__label font-weight-medium color-secondary"
+                      >
+                        Gradual send over several hours (20% per hour).&nbsp;
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="switch-2"
+                        class="switcher"
+                        checked
+                      />
+                      <label for="switch-2" class="switcher__toggle"></label>
+                    </div>
+
+                    <div class="switcher__wrap mb-30">
+                      <a href="#" class="link font-12 order-2">Learn More.</a>
+                      <label
+                        for="switch-3"
+                        class="switcher__label font-weight-medium color-secondary"
+                      >
+                        Add Google Analytics link tracking.&nbsp;
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="switch-3"
+                        class="switcher"
+                        checked
+                      />
+                      <label for="switch-3" class="switcher__toggle"></label>
+                    </div>
+
+                    <button class="btn _lg _primary _save">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="close">
+                <svg width="8" height="8">
+                  <use xlink:href="assets/images/sprite.svg#cross"></use>
+                </svg>
+              </button>
+            </div>
+
+            <button type="button" class="close">
+              <svg width="8" height="8">
+                <use xlink:href="assets/images/sprite.svg#cross"></use>
+              </svg>
+            </button>
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+
+        $('.automated-schedule__row .checkbox input:checked')
+          .closest('.automated-schedule__row')
+          .addClass('_checked');
+        $('.automated-schedule__row .checkbox input').change(function () {
+          $(this).closest('.automated-schedule__row').toggleClass('_checked');
+        });
+
+        $('._date .form-control').flatpickr();
+      });
+    </script>
+  </body>
+</html>
