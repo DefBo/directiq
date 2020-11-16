@@ -12130,6 +12130,21 @@ button {
   display: flex;
   align-items: flex-start; }
 
+.modal-block {
+  position: relative; }
+
+.domain-search .form-control__wrap {
+  position: relative; }
+  .domain-search .form-control__wrap ._secondary {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    height: calc(100% - 2px); }
+
+.domain-status {
+  display: flex;
+  align-items: center; }
+
 th,
 td {
   white-space: nowrap !important; }
