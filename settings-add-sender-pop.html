@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+  </head>
+
+  <body data-layout-mode="two-column" class="animation-stopper">
+
+    <!-- /.modal -->
+
+    <div
+      id="templates-send-test"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+      style="display: none;"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <div class="modal-body">
+            <h4 class="mb-19">Verification Email Sent</h4>
+            <p class="font-12 font-weight-regular mb-12">
+                We sent an email to <b>koala@barbodesign.com</b>. Please copy and paste the verification code from that email. <b>Trouble finding the code?</b> <a href="#" class="link">Resend</a>.
+            </p>
+            
+            <p class="font-14 font-weight-medium mb-8">Enter Verification Code</p>
+            <div class="form-control__wrap mb-21">
+              <input
+                type="text"
+                placeholder="0917501108471"
+                class="form-control"
+              />
+            </div>
+            <button class="btn _lg _primary">Verify</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal -->
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+      });
+
+      $(window).on('load', function () {
+        $('#templates-send-test').modal('show');
+      });
+    </script>
+  </body>
+</html>

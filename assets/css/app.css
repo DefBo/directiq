@@ -12619,6 +12619,13 @@ div.dataTables_wrapper div.dataTables_info {
       font-weight: 600; }
     .datatable_small .sort-i__wrap {
       margin-left: 14px; }
+    .datatable_small._senders thead th:nth-child(3) {
+      text-align: center; }
+    .datatable_small._senders tbody td:nth-child(3) {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
   .datatable._contact-details-lists tr._active td:nth-child(2) {
     color: #0000ff; }
   .datatable._contact-details-lists td {

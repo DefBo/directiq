@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Settings - Connected Domains | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="assets/libs/nouisliderribute/nouislider.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+</head>
+
+<body data-layout-mode="two-column" class="animation-stopper">
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="confirmation _positive">
+                <div class="d-flex justify-content-between pl-16 py-40 pl-sm-40 pr-16 bg-white">
+                    <p class="font-12 font-weight-regular mb-0">
+                        Congratulations. Your bla bla balboa bla bla
+                    </p>
+
+                    <button type="button" class="close ml-16">
+                        <svg width="8" height="8">
+                            <use xlink:href="assets/images/sprite.svg#cross"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- content -->
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+    <script src="assets/libs/nouisliderribute/nouislider.min.js"></script>
+    <script src="assets/libs/wnumb/wNumb.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            let plansCheckbox = $('.plans__checkbox-input');
+
+            plansCheckbox.change(function () {
+                if ($(this).is(':checked')) {
+                    plansCheckbox.not(this).prop('checked', false);
+                    plansCheckbox
+                        .not(this)
+                        .closest('.plans__card')
+                        .removeClass('_active');
+                    $(this).closest('.plans__card').addClass('_active');
+                }
+            });
+
+            var connectSlider = document.getElementById('slider');
+            var connectSlider2 = document.getElementById('slider2');
+
+            const convertRangePickerData = function (n) {
+                let pow = Math.pow,
+                    floor = Math.floor,
+                    abs = Math.abs,
+                    log = Math.log;
+                let abbrev = 'kmb';
+
+                function round(n, precision) {
+                    var prec = Math.pow(10, precision);
+                    return Math.round(n * prec) / prec;
+                }
+
+                var base = floor(log(abs(n)) / log(1000));
+                var suffix = abbrev[Math.min(2, base - 1)];
+                base = abbrev.indexOf(suffix) + 1;
+                return suffix ? round(n / pow(1000, base), 2) + suffix : '' + n;
+            };
+
+            const converTooltips = {
+                to: (value) => {
+                    return convertRangePickerData(+value.toFixed(2));
+                },
+                from: (value) => {
+                    return value;
+                },
+            };
+
+            noUiSlider.create(connectSlider, {
+                start: 2500,
+                connect: 'lower',
+                // tooltips: converTooltips,
+                tooltips: true,
+                format: wNumb({
+                    decimals: 0,
+                }),
+                snap: true,
+                range: {
+                    min: 0,
+                    '1%': 1000,
+                    '8%': 2500,
+                    '16%': 7500,
+                    '24%': 15000,
+                    '32%': 20000,
+                    '41%': 30000,
+                    '50%': 40000,
+                    '58%': 75000,
+                    '67%': 100000,
+                    '75%': 150000,
+                    '83%': 250000,
+                    '91%': 500000,
+                    '99%': 1000000,
+                    max: 1000000,
+                },
+                pips: {
+                    mode: 'values',
+                    values: [1000, 7500, 20000, 40000, 100000, 250000, 1000000],
+                },
+            });
+
+            noUiSlider.create(connectSlider2, {
+                start: 2500,
+                connect: 'lower',
+                // tooltips: converTooltips,
+                tooltips: true,
+                format: wNumb({
+                    decimals: 0,
+                }),
+                snap: true,
+                range: {
+                    min: 0,
+                    '1%': 1000,
+                    '8%': 2500,
+                    '16%': 7500,
+                    '24%': 15000,
+                    '32%': 20000,
+                    '41%': 30000,
+                    '50%': 40000,
+                    '58%': 75000,
+                    '67%': 100000,
+                    '75%': 150000,
+                    '83%': 250000,
+                    '91%': 500000,
+                    '100%': 1000000,
+                    max: 1000000,
+                },
+                pips: {
+                    mode: 'values',
+                    values: [1000, 7500, 20000, 40000, 100000, 250000, 1000000],
+                },
+            });
+
+            const pips = connectSlider.querySelectorAll(
+                '.noUi-value.noUi-value-horizontal.noUi-value-large'
+            );
+
+            const pips2 = connectSlider2.querySelectorAll(
+                '.noUi-value.noUi-value-horizontal.noUi-value-large'
+            );
+
+            if (pips2.length > 0) {
+                pips2.forEach((pip) => {
+                    pip.innerHTML = convertRangePickerData(parseInt(pip.innerHTML));
+                });
+            }
+
+            if (pips.length > 0) {
+                pips.forEach((pip) => {
+                    pip.innerHTML = convertRangePickerData(parseInt(pip.innerHTML));
+                });
+            }
+
+            /* Get initial slider value and update it in slider input*/
+            let sliderValueOnLoad = +slider.noUiSlider.get().slice(0, -1);
+            $('#slider-input').val(sliderValueOnLoad);
+
+            /* Update slider input value on slider set */
+            slider.noUiSlider.on('set', function () {
+                let currentSliderValueString = slider.noUiSlider.get();
+                let currentSliderValueNumber = +currentSliderValueString.slice(0, -1);
+
+                $('#slider-input').val(currentSliderValueNumber);
+            });
+
+            /* Set up for slider hover */
+            $('.noUi-connect, .noUi-handle').hover(
+                function () {
+                    $(this).closest('.noUi-target').addClass('_hovered');
+                },
+                function () {
+                    $(this).closest('.noUi-target').removeClass('_hovered');
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>
