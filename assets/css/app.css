@@ -11883,6 +11883,9 @@ body {
   @media (min-width: 768px) {
     .settings__account-item + .settings__account-item {
       margin-left: 30px; } }
+  @media (max-width: 768px) {
+    .settings__account-item + .settings__account-item {
+      margin-left: 20px; } }
   @media (min-width: 768px) {
     .settings__account-item {
       margin-top: 0; } }
