@@ -7583,7 +7583,15 @@ body {
     width: 14px;
     height: 14px;
     padding: 0;
-    border-radius: 50%; }
+    border-radius: 50%;
+    position: relative; }
+    .btn._sync-list svg {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%); }
     .btn._sync-list + ._sync-list {
       margin-left: 7px; }
   .btn._social-integration {
@@ -12815,6 +12823,9 @@ div.dataTables_wrapper div.dataTables_info {
     color: #fff; }
     .dataTables_scrollBody:active::-webkit-scrollbar-track-piece {
       background-color: #fff !important; }
+    .dataTables_scrollBody:active::-webkit-scrollbar-thumb {
+      background: #0000ff;
+      border-color: #fff; }
   .dataTables_scrollBody::-webkit-scrollbar {
     width: 20px;
     background: #f6f9fc;
