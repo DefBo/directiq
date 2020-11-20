@@ -7397,6 +7397,13 @@ body {
   margin-top: 64px;
   margin-left: 0 !important; }
 
+.content-page._settings {
+  margin-top: 64px;
+  margin-left: 0 !important;
+  padding-left: 78px;
+  padding-right: 78px;
+  padding-bottom: 53px; }
+
 .navbar-custom._login {
   background-color: #0000ff;
   box-shadow: none; }
@@ -12128,7 +12135,8 @@ button {
     transform: translate(50%, -50%);
     width: 50px;
     height: 50px;
-    background: #00eba8; }
+    background: #00eba8;
+    transition: 0.25s; }
     .pseudo-modal .close svg {
       width: 20px;
       height: 20px; }

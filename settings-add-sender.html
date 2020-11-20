@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <title>Add Your Sender | DirectIQ</title>
+    <title>Settings - Add Sender | DirectIQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Direct IQ frontend development version" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -41,7 +40,11 @@
     <meta name="theme-color" content="#ffffff" />
 
 
-    <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- App css -->
     <link
@@ -57,143 +60,204 @@
       id="app-default-stylesheet"
     />
 
-</head>
+  </head>
 
-<body data-layout-mode='horizontal' class="animation-stopper _overlayed">
+  <body data-layout-mode="two-column" class="animation-stopper _step">
     <!-- Begin page -->
     <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-
-        <div class="content-page">
-            <div class="content">
-                <!-- Start Content-->
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="tab-content">
-                                <div class="card p-0 mb-0 flex-column-reverse">
-                                    <div class="bg-light-grey create-campaign__row _editing">
-                                        <div class="d-flex flex-column">
-                                            <svg width="30" height="30" class="create-campaign__icon">
-                                                <use class="icon-check" xlink:href="assets/images/sprite.svg#round-checkmark"></use>
-                                                <use class="icon-edit" xlink:href="assets/images/sprite.svg#round-edit"></use>
-                                                <use class="icon-fill" xlink:href="assets/images/sprite.svg#round-checkmark-fill"></use>
-                                            </svg>
-                                        </div>
-
-                                        <div class="w-100">
-                                            <div class="d-flex flex-column flex-sm-row pl-20 mb-30">
-                                                <div class="create-campaign__row-content">
-                                                    <h4 class="mb-4 font-weight-bold">Add Your Sender</h4>
-                                                    <p class="create-campaign__row-placeholder">
-                                                        Enter e-mail address and from name for your sender and start the verification.
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <form action="#" class="domain-search">
-                                                <div class="create-campaign__row-edit">
-                                                    <div class="create-campaign__row-content">
-                                                        <div class="row">
-                                                            <div class="col-md-10">
-
-                                                                <div class="row">
-                                                                    <div class="col-sm-6 mb-18 col-12 mb-15">
-                                                                        <p class="font-14 font-weight-medium mb-7">
-                                                                            Email Address
-                                                                        </p>
-                                                                        <div class="d-flex align-items-center w-100 mb-11">
-                                                                            <input type="text" placeholder="mail@yourdomain.com" value="mail@yourdomain.com" class="form-control" id="copy-api-input">
-                                                                        </div>
-                                                                        <p class="font-12 font-weight-regular mb-7 mw-320">We’ll send a verification email to above address. Please make sure you entered an address you can access.
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-sm-6 mb-18 col-12 mb-15">
-                                                                        <p class="font-14 font-weight-medium mb-7">
-                                                                            From Name
-                                                                        </p>
-                                                                        <div class="d-flex align-items-center w-100 mb-11">
-                                                                            <input type="text" placeholder="Sender name" value="Sender name" class="form-control" id="copy-api-input">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <a href="#" class="btn _lg _primary _save mt-4" type="submit">Start</a>
-                                                </div>
-                                            </form>
-
-                                            <button type="button" class="close">
-                                                <svg width="8" height="8">
-                                                    <use xlink:href="assets/images/sprite.svg#cross"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- container -->
-                </div>
-                <!-- content -->
-            </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
-            <a href="#" class="btn_back">
-                <svg width="8" height="8">
-                    <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
-                </svg>
-            </a>
-        </div>
-        <!-- END wrapper -->
-
-        <div id="verify-domain" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        <svg width="8" height="8">
-                            <use xlink:href="assets/images/sprite.svg#cross"></use>
+      <div class="content-page _settings">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="tab-content">
+                  <div class="card p-0 mb-0 flex-column-reverse">
+                    <div class="bg-light-grey create-campaign__row _editing">
+                      <div class="d-flex flex-column">
+                        <svg
+                          width="30"
+                          height="30"
+                          class="create-campaign__icon"
+                        >
+                          <use
+                            class="icon-check"
+                            xlink:href="assets/images/sprite.svg#round-checkmark"
+                          ></use>
+                          <use
+                            class="icon-edit"
+                            xlink:href="assets/images/sprite.svg#round-edit"
+                          ></use>
+                          <use
+                            class="icon-fill"
+                            xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                          ></use>
                         </svg>
-                    </button>
-                    <div class="modal-body">
-                        <h4 class="mb-16">Verify Domain</h4>
-                        <div class="form-control__wrap mb-11">
-                            <input type="text" placeholder="Your Domain Name Here" class="form-control" value="koala@barbodesign.com" />
+                      </div>
+
+                      <div class="w-100">
+                        <div class="d-flex flex-column flex-sm-row pl-20 mb-30">
+                          <div class="create-campaign__row-content">
+                            <h4 class="mb-4 font-weight-bold">
+                              Add Your Sender
+                            </h4>
+                            <p class="create-campaign__row-placeholder">
+                              Enter e-mail address and from name for your sender
+                              and start the verification.
+                            </p>
+                          </div>
                         </div>
-                        <p class="font-12 font-weight-medium color-secondary mb-21">
-                            We’ll send a verification email to above address. Please make sure
-                            you entered an address you can access.
-                        </p>
-                        <button class="btn _lg _primary" data-toggle="modal" data-target="#verification-sent" data-dismiss="modal" aria-hidden="true">
-                            Send Verification
-                        </button>
+
+                        <form action="#" class="domain-search">
+                          <div class="create-campaign__row-edit">
+                            <div class="create-campaign__row-content">
+                              <div class="row">
+                                <div class="col-md-10">
+                                  <div class="row">
+                                    <div class="col-sm-6 mb-18 col-12 mb-15">
+                                      <p
+                                        class="font-14 font-weight-medium mb-7"
+                                      >
+                                        Email Address
+                                      </p>
+                                      <div
+                                        class="d-flex align-items-center w-100 mb-11"
+                                      >
+                                        <input
+                                          type="text"
+                                          placeholder="mail@yourdomain.com"
+                                          value="mail@yourdomain.com"
+                                          class="form-control"
+                                          id="copy-api-input"
+                                        />
+                                      </div>
+                                      <p
+                                        class="font-12 font-weight-regular mb-7 mw-320"
+                                      >
+                                        We’ll send a verification email to above
+                                        address. Please make sure you entered an
+                                        address you can access.
+                                      </p>
+                                    </div>
+                                    <div class="col-sm-6 mb-18 col-12 mb-15">
+                                      <p
+                                        class="font-14 font-weight-medium mb-7"
+                                      >
+                                        From Name
+                                      </p>
+                                      <div
+                                        class="d-flex align-items-center w-100 mb-11"
+                                      >
+                                        <input
+                                          type="text"
+                                          placeholder="Sender name"
+                                          value="Sender name"
+                                          class="form-control"
+                                          id="copy-api-input"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <a
+                              href="#"
+                              class="btn _lg _primary _save mt-4"
+                              type="submit"
+                              >Start</a
+                            >
+                          </div>
+                        </form>
+
+                        <a href="#" class="close">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </a>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+            <!-- container -->
+          </div>
+          <!-- content -->
         </div>
-        <!-- /.modal -->
 
-        <!-- App js -->
-        <script src="assets/js/vendor.min.js"></script>
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+      </div>
+      <!-- END wrapper -->
 
-        <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+      <div
+        id="verify-domain"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+        style="display: none"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              <svg width="8" height="8">
+                <use xlink:href="assets/images/sprite.svg#cross"></use>
+              </svg>
+            </button>
+            <div class="modal-body">
+              <h4 class="mb-16">Verify Domain</h4>
+              <div class="form-control__wrap mb-11">
+                <input
+                  type="text"
+                  placeholder="Your Domain Name Here"
+                  class="form-control"
+                  value="koala@barbodesign.com"
+                />
+              </div>
+              <p class="font-12 font-weight-medium color-secondary mb-21">
+                We’ll send a verification email to above address. Please make
+                sure you entered an address you can access.
+              </p>
+              <button
+                class="btn _lg _primary"
+                data-toggle="modal"
+                data-target="#verification-sent"
+                data-dismiss="modal"
+                aria-hidden="true"
+              >
+                Send Verification
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.modal -->
+    </div>
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
 
-        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
-        <script src="assets/libs/wnumb/wNumb.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
-        <!-- App js -->
-        <script src="assets/js/app.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="assets/libs/wnumb/wNumb.min.js"></script>
 
-</body>
-
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+  </body>
 </html>
