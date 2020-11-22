@@ -9664,18 +9664,20 @@ body {
   background: rgba(218, 232, 247, 0.2); }
 
 @media (min-width: 768px) {
-  .navigation-hovered:after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: calc(100vw - 100px);
-    height: 100%;
-    background: rgba(218, 232, 247, 0.7);
-    transform: translateX(100px);
-    z-index: 1;
-    overflow: hidden;
-    transition: none; }
+  .navigation-hovered {
+    overflow: hidden; }
+    .navigation-hovered:after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: calc(100vw - 100px);
+      height: 100%;
+      background: rgba(218, 232, 247, 0.7);
+      transform: translateX(100px);
+      z-index: 1;
+      overflow: hidden;
+      transition: none; }
   body[data-layout-mode='two-column'] .content-page {
     margin-left: 100px; }
   .nav-item-link.active {
@@ -12177,6 +12179,53 @@ button {
   display: none; }
   .password-eye.active {
     display: block; }
+
+._home {
+  width: calc(100vw - 66px);
+  display: flex;
+  flex-direction: column;
+  background-color: #ebf0f7;
+  border-left: 20px solid #f6f9fc; }
+  @media (max-width: 768px) {
+    ._home {
+      background-color: blue;
+      padding: 75px 20px 0 40px;
+      border: none; } }
+  ._home.nav-items.nav-expand-content {
+    padding-top: 48px; }
+  ._home-item {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    max-width: 556px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500; }
+    @media (max-width: 768px) {
+      ._home-item {
+        padding: 17px 0;
+        color: #fff;
+        font-size: 26px;
+        line-height: 1;
+        font-weight: 500;
+        margin-bottom: 0px;
+        max-width: 100%; } }
+  @media (max-width: 768px) and (max-width: 360px) {
+    ._home-item {
+      font-size: 22px;
+      padding: 14px 0; } }
+    ._home-item__link {
+      color: #00f; }
+      @media (max-width: 768px) {
+        ._home-item__link {
+          color: #fff; } }
+      ._home-item__link:hover {
+        color: #00eba8; }
+      ._home-item__link span {
+        color: #00eba8;
+        margin-right: 10px;
+        font-weight: bold; }
 
 th,
 td {
