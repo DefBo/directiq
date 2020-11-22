@@ -7512,7 +7512,7 @@ body {
     border-color: #00eba8;
     color: #000;
     cursor: default !important;
-    margin: 16px 10px 0;
+    margin: 16px 20px 0px 0px;
     padding-right: 5px;
     white-space: nowrap; }
     .btn._tag-del .btn_icon {
@@ -7540,7 +7540,7 @@ body {
     background: #fff;
     border-color: #00eba8;
     color: #000;
-    margin: 16px 10px 0;
+    margin: 16px 20px 0px 0px;
     white-space: nowrap; }
     .btn._tag:hover, .btn._tag:focus {
       background: #0000ff;
@@ -9981,11 +9981,10 @@ body {
   font-size: 12px;
   font-weight: 500; }
 
-.segments__item-wrap + .segments__item-wrap {
-  margin-left: 20px; }
-
-.segments__item-wrap .dropdown-menu-right {
-  right: 4px !important; }
+.segments__item-wrap {
+  margin-right: 20px; }
+  .segments__item-wrap .dropdown-menu-right {
+    right: 4px !important; }
 
 .new-field-inputs {
   display: flex;
