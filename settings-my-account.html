@@ -308,7 +308,7 @@
                                     <input
                                       type="password"
                                       placeholder=""
-                                      class="form-control"
+                                      class="form-control form-control__password"
                                       value=""
                                       id="register-password"
                                     />
@@ -324,7 +324,7 @@
                                     <input
                                       type="password"
                                       placeholder=""
-                                      class="form-control"
+                                      class="form-control form-control__password"
                                       value=""
                                       id="register-password"
                                     />
@@ -334,7 +334,20 @@
                                       <span class="">Field is required.</span>
                                     </span>
                                     <i id="register-password-eye">
-                                      <svg width="14" height="8.75">
+                                      <svg
+                                        width="14"
+                                        height="11.861"
+                                        class="closeEye password-eye active"
+                                      >
+                                        <use
+                                          xlink:href="assets/images/sprite.svg#close-eye"
+                                        ></use>
+                                      </svg>
+                                      <svg
+                                        width="14"
+                                        height="11.861"
+                                        class="openEye password-eye"
+                                      >
                                         <use
                                           xlink:href="assets/images/sprite.svg#eye"
                                         ></use>
@@ -352,7 +365,7 @@
                                     <input
                                       type="password"
                                       placeholder=""
-                                      class="form-control"
+                                      class="form-control form-control__password"
                                       value=""
                                       id="register-password"
                                     />
@@ -768,6 +781,24 @@
         };
 
         createSelect2ByClass('._select2-with-tags', select2OptionsWithTags);
+
+        var inputs = $('.form-control__password');
+
+        $('#register-password-eye').mousedown(function () {
+          inputs.each(function () {
+            $(this).prop('type', 'text');
+          });
+          $('.closeEye').removeClass('active');
+          $('.openEye').addClass('active');
+        });
+
+        $('#register-password-eye').mouseup(function () {
+          inputs.each(function () {
+            $(this).prop('type', 'password');
+          });
+          $('.openEye').removeClass('active');
+          $('.closeEye').addClass('active');
+        });
       });
     </script>
 

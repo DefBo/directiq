@@ -107,9 +107,7 @@
                   </p>
                   <div class="mw-320 w-100">
                     <form class="needs-validation login__form" novalidate>
-                      <p class="font-14 font-weight-bold mb-7">
-                        Email Address
-                      </p>
+                      <p class="font-14 font-weight-bold mb-7">Email Address</p>
                       <div class="form-control__wrap mb-20">
                         <input
                           type="text"
@@ -121,9 +119,7 @@
                           <span class="">Field is required.</span>
                         </span>
                       </div>
-                      <p class="font-14 font-weight-bold mb-7">
-                        Password
-                      </p>
+                      <p class="font-14 font-weight-bold mb-7">Password</p>
                       <div class="form-control__wrap mb-20 _password">
                         <input
                           type="password"
@@ -136,7 +132,20 @@
                           <span class="">Field is required.</span>
                         </span>
                         <i id="register-password-eye">
-                          <svg width="14" height="8.75">
+                          <svg
+                            width="14"
+                            height="11.861"
+                            class="closeEye password-eye active"
+                          >
+                            <use
+                              xlink:href="assets/images/sprite.svg#close-eye"
+                            ></use>
+                          </svg>
+                          <svg
+                            width="14"
+                            height="11.861"
+                            class="openEye password-eye"
+                          >
                             <use
                               xlink:href="assets/images/sprite.svg#eye"
                             ></use>
@@ -257,10 +266,14 @@
 
         $('#register-password-eye').mousedown(function () {
           $('#register-password').prop('type', 'text');
+          $('.closeEye').removeClass('active');
+          $('.openEye').addClass('active');
         });
 
         $('#register-password-eye').mouseup(function () {
           $('#register-password').prop('type', 'password');
+          $('.openEye').removeClass('active');
+          $('.closeEye').addClass('active');
         });
       });
     </script>

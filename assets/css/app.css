@@ -11817,7 +11817,10 @@ body {
   cursor: pointer; }
   .form-control__wrap._password i {
     position: absolute;
-    top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: calc(50% - 6px);
     right: 10px; }
 
 ._login-content {
@@ -12170,6 +12173,11 @@ button {
 .domain-status {
   display: flex;
   align-items: center; }
+
+.password-eye {
+  display: none; }
+  .password-eye.active {
+    display: block; }
 
 th,
 td {

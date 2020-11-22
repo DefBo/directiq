@@ -1761,13 +1761,15 @@ const simpleSelect = (className, selectOptions) => {
   });
 };
 
-let disabledBtn = document.querySelector('.locked button');
+const disabledBtn = document.querySelector('.locked button');
 
-var checkbox = document.querySelector('.locked .switcher');
-checkbox.addEventListener('change', functionname, false);
+const checkbox = document.querySelector('.locked .switcher');
+if (checkbox) {
+  checkbox.addEventListener('change', functionname, false);
+}
 
 function functionname() {
-  var isChecked = checkbox.checked;
+  const isChecked = checkbox.checked;
   if (isChecked) {
     disabledBtn.classList.remove('_disabled');
   } else {
