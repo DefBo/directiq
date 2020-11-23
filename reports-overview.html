@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+  </head>
+
+  <body data-layout-mode="two-column" class="animation-stopper">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- Topbar Start -->
+      <div class="navbar-custom">
+        <div class="container-fluid navbar-custom__inner">
+          <div>
+            <!-- LOGO -->
+            <div class="logo-box">
+              <a href="./" class="logo">
+                <svg width="44.834" height="45">
+                  <use xlink:href="assets/images/sprite.svg#logo"></use>
+                </svg>
+              </a>
+            </div>
+
+            <ol class="breadcrumbs">
+              <li class="breadcrumb-item">
+                <a href="./contacts-home-static.html">Integrations</a>
+              </li>
+              <li class="breadcrumb-item active">
+                Contact Integrations
+                <button class="btn_icon d-none d-md-inline ml-18">
+                  <i class="add-to-fav-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19.5"
+                      height="17.805"
+                      viewBox="0 0 19.5 17.805"
+                    >
+                      <g transform="translate(0.75 0.75)">
+                        <path
+                          class="add-to-fav-icon__bg"
+                          d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13"
+                          transform="translate(-1972.5 -1089.5)"
+                          fill="none"
+                          stroke="blue"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          class="add-to-fav-icon__plus"
+                          d="M1986.5,1093.5v8m4-4h-8"
+                          transform="translate(-1972.5 -1089.5)"
+                          fill="none"
+                          stroke="#00eba8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </g>
+                    </svg>
+                  </i>
+                </button>
+              </li>
+            </ol>
+          </div>
+
+          <div class="align-items-center d-flex">
+            <!--App Search-->
+            <form class="app-search d-none d-md-table">
+              <div class="app-search-box">
+                <div class="input-group">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Start typing and search"
+                    id="top-search"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn" type="submit">
+                      <svg width="19.955" height="20.061">
+                        <use xlink:href="assets/images/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class="dropdown d-none d-sm-block">
+              <a
+                class="dropdown-toggle _outline _lg"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                Create
+                <svg width="13.545" height="8">
+                  <use
+                    xlink:href="assets/images/sprite.svg#dropdown-arrow"
+                  ></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown ml-14 d-none d-md-block">
+              <a
+                class="dropdown-toggle _icon"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <svg width="18.261" height="30">
+                  <use xlink:href="assets/images/sprite.svg#bulb"></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown d-none d-md-block">
+              <a
+                class="dropdown-toggle _icon"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <svg width="21.073" height="21.264">
+                  <use xlink:href="assets/images/sprite.svg#bell"></use>
+                </svg>
+                <span class="badge">9</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown ml-10 _user mr-20">
+              <a
+                class="dropdown-toggle _user d-none d-md-inline-block"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <span class="user-avatar">
+                  <img src="assets/images/user.png" alt="User Avatar" />
+                </span>
+                <svg width="5.8" height="25">
+                  <use xlink:href="assets/images/sprite.svg#empty-dots"></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+                <div class="profile-dropdown__inner">
+                  <div class="profile-dropdown__email">
+                    barisergin@gmail.com
+                  </div>
+                  <div class="profile-dropdown__id">Account ID #123456</div>
+                  <a href="#" class="profile-dropdown__link mb-9">
+                    <svg width="16" height="16">
+                      <use xlink:href="assets/images/sprite.svg#profile"></use>
+                      <span class="profile-dropdown__link-text">
+                        My Account
+                      </span>
+                    </svg>
+                  </a>
+                  <div class="profile-dropdown__divider mb-13"></div>
+                  <div class="profile-dropdown__progress">
+                    <div class="d-flex justify-content-between mb-5">
+                      <span class="font-weight-bold">Free</span>
+                      <span class="color-secondary font-weight-medium"
+                        >25/1500</span
+                      >
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 25%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-dropdown__link mb-4">
+                    <svg width="13.375" height="16">
+                      <use xlink:href="assets/images/sprite.svg#swap"></use>
+                      <span class="profile-dropdown__link-text">
+                        Change Plan
+                      </span>
+                    </svg>
+                  </a>
+                  <div class="profile-dropdown__divider mb-5"></div>
+                  <a href="#" class="profile-dropdown__link">
+                    <svg width="16" height="12.235">
+                      <use xlink:href="assets/images/sprite.svg#group"></use>
+                      <span class="profile-dropdown__link-text">
+                        Switch Account
+                      </span>
+                    </svg>
+                  </a>
+                  <a href="#" class="profile-dropdown__link">
+                    <svg width="16" height="16">
+                      <use xlink:href="assets/images/sprite.svg#support"></use>
+                      <span class="profile-dropdown__link-text">Support</span>
+                    </svg>
+                  </a>
+
+                  <select
+                    class="form-control _select2-lg"
+                    data-toggle="select2"
+                    required
+                  >
+                    <option value="test-1">English</option>
+                    <option value="test-2">Chinese</option>
+                    <option value="test-2">Spanish</option>
+                    <option value="test-2">Portugese</option>
+                    <option value="test-2">Italian</option>
+                  </select>
+
+                  <div class="profile-dropdown__divider mb-22"></div>
+                  <button class="profile-dropdown__btn">Log-out</button>
+
+                  <div class="profile-dropdown__discount">
+                    <div class="font-14 font-weight-bold">Hey Baris!</div>
+                    <div class="font-36">30%</div>
+                    <div
+                      class="font-12 color-secondary font-weight-medium mb-10"
+                    >
+                      <span class="text-nowrap"
+                        >Upgrade in 12 hours and use</span
+                      >
+                      <br />
+                      <span class="font-weight-bold color-primary"
+                        >30% personal discount!</span
+                      >
+                    </div>
+                    <button class="btn _lg _primary">Redeem Now</button>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true"
+                  >
+                    <svg width="8" height="8">
+                      <use xlink:href="assets/images/sprite.svg#cross"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end Topbar -->
+
+      <!-- ========== Left Sidebar Start ========== -->
+      <button class="hamburger hamburger--squeeze" id="ham" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+
+      <nav class="nav-drill">
+        <ul class="nav-items">
+          <li class="nav-item d-md-none">
+            <a class="nav-item-link _logo" href="./index.html">
+              <svg width="39.852" height="40">
+                <use xlink:href="assets/images/sprite.svg#logo-mobile"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="20.193" height="17.999">
+                  <use xlink:href="assets/images/sprite.svg#home-i"></use>
+                </svg>
+              </i>
+              <span> Home </span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Home</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./"> Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="17.719" height="15.328">
+                  <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
+                </svg>
+              </i>
+              <span> Contacts </span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Contacts</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./contacts-home-static.html">
+                  Overview
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./my-lists-static.html">
+                  My Lists
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./add-contacts.html">
+                  Add Contacts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Tags </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="segments.html"> Segments </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Custom Fields </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Signup Forms </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Suppression Lists </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Cleaning Service </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="18" height="18">
+                  <use xlink:href="assets/images/sprite.svg#templates-i"></use>
+                </svg>
+              </i>
+              <span>Templates</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Templates</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="templates-home.html">
+                  My Templates
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="create-template-free.html">
+                  Create Template
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="spam-doctor.html">
+                  Spam Doctor
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="inbox-preview.html">
+                  Inbox Preview
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="29.507" height="22">
+                  <use xlink:href="assets/images/sprite.svg#campaigns-i"></use>
+                </svg>
+              </i>
+              <span>Campaigns</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Campaigns</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand active">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="17.894" height="24">
+                  <use
+                    xlink:href="assets/images/sprite.svg#integrations-i"
+                  ></use>
+                </svg>
+              </i>
+              <span>Integrations</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Integrations</li>
+              <li class="nav-item">
+                <a
+                  class="nav-item-link active"
+                  href="contact-integrations.html"
+                >
+                  Contact Integrations
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="social-media-integrations.html">
+                  Social Media Integrations
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Plugins & Apps </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> API </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="21.515" height="18.91">
+                  <use xlink:href="assets/images/sprite.svg#settings-i"></use>
+                </svg>
+              </i>
+              <span>Settings</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Settings</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="15.29" height="20">
+                  <use xlink:href="assets/images/sprite.svg#bookmarks-i"></use>
+                </svg>
+              </i>
+              <span>Bookmarks</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Bookmarks</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="nav-drill__icons">
+          <button class="btn_icon">
+            <svg width="42.182" height="42.414">
+              <use xlink:href="assets/images/sprite.svg#mobile-search"></use>
+            </svg>
+          </button>
+
+          <button class="btn_icon">
+            <svg width="24.354" height="40">
+              <use xlink:href="assets/images/sprite.svg#mobile-bulb"></use>
+            </svg>
+          </button>
+
+          <button class="btn_icon">
+            <svg width="41.62" height="42">
+              <use xlink:href="assets/images/sprite.svg#mobile-bell"></use>
+            </svg>
+          </button>
+
+          <button
+            class="btn_icon user-avatar-mobile"
+            id="user-profile-btn-mobile"
+          >
+            <img src="assets/images/user.png" alt="User Avatar" />
+          </button>
+        </div>
+      </nav>
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card _connect mt-16">
+                  <div class="connect__icon-wrap">
+                    <i class="connect__icon">
+                      <svg>
+                        <use
+                          xlink:href="assets/images/sprite.svg#shopify"
+                        ></use>
+                      </svg>
+                    </i>
+                  </div>
+
+                  <div class="connect__content">
+                    <div class="connect__title-wrap">
+                      <h4>Shopify Integration</h4>
+                      <span class="table-status _small _success ml-20"
+                        >connected</span
+                      >
+                    </div>
+                    <div class="dropdown mt-10 mt-md-0 mr-md-8">
+                      <a
+                        class="dropdown-toggle _solid _lg"
+                        data-toggle="dropdown"
+                        href="#"
+                        role="button"
+                        aria-haspopup="false"
+                        aria-expanded="false"
+                      >
+                        Actions
+                        <svg width="13.545" height="8">
+                          <use
+                            xlink:href="assets/images/sprite.svg#dropdown-arrow"
+                          ></use>
+                        </svg>
+                      </a>
+
+                      <div class="dropdown-menu _actions">
+                        <div class="dropdown-menu-inner">
+                          <a class="dropdown-item" href="#">Reinvoke Access</a>
+                          <a class="dropdown-item" href="#">Remap Columns</a>
+                          <a class="dropdown-item" href="#">Disconnect</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="connect__cards-wrap">
+                  <div class="card connect__cards-main">
+                    <h5 class="mb-23 mt-2">
+                      Sync List To Import Contacts (You Can Also Toggle
+                      Auto-Sync) *
+                    </h5>
+
+                    <div class="w-100">
+                      <table
+                        id="data-table"
+                        class="datatable datatable_small _sync-lists"
+                        style="width: 100%"
+                      >
+                        <thead>
+                          <tr>
+                            <th>List Name</th>
+                            <th>List Size</th>
+                            <th>Last Sync</th>
+                            <th class="nosort">Auto-Sync</th>
+                            <th class="nosort">Sync</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>My First List</td>
+                            <td>157,912</td>
+                            <td>-</td>
+                            <td>
+                              <div class="switcher__wrap">
+                                <input
+                                  type="checkbox"
+                                  id="switch-1"
+                                  class="switcher"
+                                />
+                                <label
+                                  for="switch-1"
+                                  class="switcher__toggle"
+                                ></label>
+                              </div>
+                            </td>
+                            <td>
+                              <button class="btn _secondary _sync-list">
+                                <svg width="6.545" height="9">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#sync"
+                                  ></use>
+                                </svg>
+                              </button>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Dodogildo Subscribers</td>
+                            <td>3</td>
+                            <td>-</td>
+                            <td>
+                              <div class="switcher__wrap">
+                                <input
+                                  type="checkbox"
+                                  id="switch-2"
+                                  class="switcher"
+                                />
+                                <label
+                                  for="switch-2"
+                                  class="switcher__toggle"
+                                ></label>
+                              </div>
+                            </td>
+                            <td>
+                              <button class="btn _secondary _sync-list">
+                                <svg width="6.545" height="9">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#sync"
+                                  ></use>
+                                </svg>
+                              </button>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Jonathan Bagel list</td>
+                            <td>9,536</td>
+                            <td>Sep 29, 2019</td>
+                            <td>
+                              <div class="switcher__wrap">
+                                <input
+                                  type="checkbox"
+                                  id="switch-3"
+                                  class="switcher"
+                                  checked=""
+                                />
+                                <label
+                                  for="switch-3"
+                                  class="switcher__toggle"
+                                ></label>
+                              </div>
+                            </td>
+                            <td>
+                              <button class="btn _secondary _sync-list">
+                                <svg width="6.545" height="9">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#sync"
+                                  ></use>
+                                </svg>
+                              </button>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Filtered contacts by lorem ipsum lorem</td>
+                            <td>10,974</td>
+                            <td>Dec 4, 2019</td>
+                            <td>
+                              <div class="switcher__wrap">
+                                <input
+                                  type="checkbox"
+                                  id="switch-4"
+                                  class="switcher"
+                                />
+                                <label
+                                  for="switch-4"
+                                  class="switcher__toggle"
+                                ></label>
+                              </div>
+                            </td>
+                            <td>
+                              <button class="btn _secondary _sync-list">
+                                <svg width="6.545" height="9">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#sync"
+                                  ></use>
+                                </svg>
+                              </button>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Jonathan Bagel list</td>
+                            <td>9,536</td>
+                            <td>Sep 29, 2019</td>
+                            <td>
+                              <div class="switcher__wrap">
+                                <input
+                                  type="checkbox"
+                                  id="switch-5"
+                                  class="switcher"
+                                  checked=""
+                                />
+                                <label
+                                  for="switch-5"
+                                  class="switcher__toggle"
+                                ></label>
+                              </div>
+                            </td>
+                            <td>
+                              <button class="btn _secondary _sync-list">
+                                <svg width="6.545" height="9">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#sync"
+                                  ></use>
+                                </svg>
+                              </button>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Filtered contacts by lorem ipsum lorem</td>
+                            <td>10,974</td>
+                            <td>Dec 4, 2019</td>
+                            <td>
+                              <div class="switcher__wrap">
+                                <input
+                                  type="checkbox"
+                                  id="switch-6"
+                                  class="switcher"
+                                />
+                                <label
+                                  for="switch-6"
+                                  class="switcher__toggle"
+                                ></label>
+                              </div>
+                            </td>
+                            <td>
+                              <button class="btn _secondary _sync-list">
+                                <svg width="6.545" height="9">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#sync"
+                                  ></use>
+                                </svg>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <button class="btn _sm _secondary mt-7 ml-19 _add-new-list">
+                      Add a New List
+                    </button>
+                    <div class="add-new-list-input d-none w-100">
+                      <div class="d-flex align-items-center pl-19 mt-4">
+                        <div class="form-control__wrap mr-15 flex-grow-1">
+                          <input
+                            type="text"
+                            placeholder="E-mail Address"
+                            class="form-control"
+                          />
+                          <span class="text-danger field-validation-error"
+                            ><span class="">Your List Name Here</span></span
+                          >
+                        </div>
+
+                        <button class="btn _sm _primary _check">
+                          <svg width="11.805" height="9">
+                            <use
+                              xlink:href="assets/images/sprite.svg#check"
+                            ></use>
+                          </svg>
+                        </button>
+
+                        <button class="btn _sm _secondary _check">
+                          <svg width="8" height="8">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cross"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="connect__cards-aside">
+                    <div class="card connect__card-aside">
+                      <i class="mb-22">
+                        <svg width="42.343" height="50">
+                          <use
+                            xlink:href="assets/images/sprite.svg#cat-hug"
+                          ></use>
+                        </svg>
+                      </i>
+                      <h5 class="mb-5">* How Auto-sync Works</h5>
+                      <p
+                        class="font-12 color-secondary font-weight-medium mb-0"
+                      >
+                        With auto-sync turned on, DirectIQ will automatically
+                        fetch your new contacts daily and save them to your
+                        selected contact list.
+                        <a href="#" class="link"
+                          >Click here to learn more on auto-sync.</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+
+      <a href="#" class="btn_back">
+        <svg width="8" height="8">
+          <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
+        </svg>
+      </a>
+    </div>
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      // Datatables settings
+      $(document).ready(function () {
+        $('#data-table').DataTable({
+          scrollX: true,
+          scrollY: 127,
+          scrollCollapse: true,
+          paging: false,
+          order: [],
+          aoColumnDefs: [
+            {
+              bSortable: false,
+              aTargets: ['nosort'],
+            },
+          ],
+          sDom: 't',
+        });
+      });
+    </script>
+  </body>
+</html>
