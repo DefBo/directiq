@@ -8843,6 +8843,24 @@ body {
   height: 50px;
   background: #fff;
   border-radius: 50%; }
+  .knob-wrap_percent .knob-text {
+    position: absolute;
+    content: '';
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px; }
+    .knob-wrap_percent .knob-text p {
+      margin-bottom: 0px; }
+  .knob-wrap_percent:after {
+    display: none; }
+  .knob-wrap_percent.knob-wrap {
+    width: 75px;
+    height: 75px; }
   .knob-wrap_lg {
     display: block;
     position: relative;
@@ -12229,6 +12247,27 @@ button {
             color: #fff;
             display: none;
             margin-right: 0px; } }
+
+.campaign-tags {
+  padding: 1px 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  background-color: #ecf1f8;
+  border: 1px solid transparent; }
+  .campaign-tags.active {
+    border: 1px solid #0000ff;
+    background-color: transparent;
+    color: #0000ff; }
+
+.select-150 {
+  max-width: 150px !important;
+  width: 100%; }
+
+.report-calendar .date-range__input {
+  background-color: #f6f9fc; }
+  .report-calendar .date-range__input:hover {
+    background-color: #00f; }
 
 th,
 td {

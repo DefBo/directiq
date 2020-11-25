@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Add Contacts | DirectIQ</title>
+    <title>Reports Overview | DirectIQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Direct IQ frontend development version" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -39,11 +39,23 @@
     />
     <meta name="theme-color" content="#ffffff" />
 
+
+    <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link
       href="assets/libs/select2/css/select2.min.css"
       rel="stylesheet"
       type="text/css"
     />
+
     <!-- App css -->
     <link
       href="assets/css/bootstrap.min.css"
@@ -78,10 +90,10 @@
 
             <ol class="breadcrumbs">
               <li class="breadcrumb-item">
-                <a href="./contacts-home-static.html">Integrations</a>
+                <a href="#">Campaigns</a>
               </li>
               <li class="breadcrumb-item active">
-                Contact Integrations
+                Campaign #90809214
                 <button class="btn_icon d-none d-md-inline ml-18">
                   <i class="add-to-fav-icon">
                     <svg
@@ -628,9 +640,9 @@
                 <div class="card _connect mt-16">
                   <div class="connect__icon-wrap">
                     <i class="connect__icon">
-                      <svg>
+                      <svg width="50" height="41.117">
                         <use
-                          xlink:href="assets/images/sprite.svg#shopify"
+                          xlink:href="assets/images/sprite.svg#megaphone"
                         ></use>
                       </svg>
                     </i>
@@ -638,10 +650,10 @@
 
                   <div class="connect__content">
                     <div class="connect__title-wrap">
-                      <h4>Shopify Integration</h4>
-                      <span class="table-status _small _success ml-20"
-                        >connected</span
-                      >
+                      <h4 class="mr-24">Dodo’s Big Launch Campaign</h4>
+                      <span class="campaign-tags mr-14">member</span>
+                      <span class="campaign-tags mr-14">sale</span>
+                      <span class="campaign-tags active">regular</span>
                     </div>
                     <div class="dropdown mt-10 mt-md-0 mr-md-8">
                       <a
@@ -670,260 +682,581 @@
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="connect__cards-wrap">
-                  <div class="card connect__cards-main">
-                    <h5 class="mb-23 mt-2">
-                      Sync List To Import Contacts (You Can Also Toggle
-                      Auto-Sync) *
-                    </h5>
+              <div class="col-12">
+                <ul class="nav nav-tabs nav-bordered">
+                  <li class="nav-item">
+                    <a
+                      href="#overview"
+                      data-toggle="tab"
+                      aria-expanded="false"
+                      class="nav-link active"
+                    >
+                      Overview
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#recipients"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Recipients
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#opens"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Opens
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#clicks"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Clicks
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#clickmap"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Clickmap
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#bounces"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Bounces
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#unsubscribes"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Unsubscribes
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#complaints"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Complaints
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#social"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Social
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#locations"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Locations
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#email-clients"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Email Clients
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#domains"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Domains
+                    </a>
+                  </li>
+                </ul>
 
-                    <div class="w-100">
-                      <table
-                        id="data-table"
-                        class="datatable datatable_small _sync-lists"
-                        style="width: 100%"
-                      >
-                        <thead>
-                          <tr>
-                            <th>List Name</th>
-                            <th>List Size</th>
-                            <th>Last Sync</th>
-                            <th class="nosort">Auto-Sync</th>
-                            <th class="nosort">Sync</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>My First List</td>
-                            <td>157,912</td>
-                            <td>-</td>
-                            <td>
-                              <div class="switcher__wrap">
-                                <input
-                                  type="checkbox"
-                                  id="switch-1"
-                                  class="switcher"
-                                />
-                                <label
-                                  for="switch-1"
-                                  class="switcher__toggle"
-                                ></label>
+                <div class="tab-content">
+                  <div class="tab-pane show active" id="overview">
+                    <div
+                      class="card p-0 flex-row bg-light-grey align-items-center"
+                    >
+                      <div class="card__body px-40 pt-40 pb-30">
+                        <div class="row">
+                          <div class="col-md-10">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <p class="mb-8 font-12">
+                                  Subject Line:
+                                  <span class="font-weight-bold ml-12"
+                                    >Hey %%firstname%% how are you?</span
+                                  >
+                                </p>
+                                <p class="font-12">
+                                  Preheader:
+                                  <span class="font-weight-bold ml-12"
+                                    >Final Opportunity to Grab Discount</span
+                                  >
+                                </p>
                               </div>
-                            </td>
-                            <td>
-                              <button class="btn _secondary _sync-list">
-                                <svg width="6.545" height="9">
-                                  <use
-                                    xlink:href="assets/images/sprite.svg#sync"
-                                  ></use>
-                                </svg>
-                              </button>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>Dodogildo Subscribers</td>
-                            <td>3</td>
-                            <td>-</td>
-                            <td>
-                              <div class="switcher__wrap">
-                                <input
-                                  type="checkbox"
-                                  id="switch-2"
-                                  class="switcher"
-                                />
-                                <label
-                                  for="switch-2"
-                                  class="switcher__toggle"
-                                ></label>
+                              <div class="col-md-4">
+                                <p class="mb-8 font-12">
+                                  From:
+                                  <span class="font-weight-bold ml-12"
+                                    >Barbo Design /
+                                    noreply@barbodesign.com</span
+                                  >
+                                </p>
+                                <p class="font-12">
+                                  Footer and Forms:
+                                  <span class="font-weight-bold ml-12"
+                                    >English</span
+                                  >
+                                </p>
                               </div>
-                            </td>
-                            <td>
-                              <button class="btn _secondary _sync-list">
-                                <svg width="6.545" height="9">
-                                  <use
-                                    xlink:href="assets/images/sprite.svg#sync"
-                                  ></use>
-                                </svg>
-                              </button>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>Jonathan Bagel list</td>
-                            <td>9,536</td>
-                            <td>Sep 29, 2019</td>
-                            <td>
-                              <div class="switcher__wrap">
-                                <input
-                                  type="checkbox"
-                                  id="switch-3"
-                                  class="switcher"
-                                  checked=""
-                                />
-                                <label
-                                  for="switch-3"
-                                  class="switcher__toggle"
-                                ></label>
+                              <div class="col-md-4">
+                                <p class="mb-8 font-12">
+                                  Delivered:
+                                  <span class="font-weight-bold ml-12"
+                                    >Today 2:45 PM</span
+                                  >
+                                </p>
+                                <p class="font-12">
+                                  Google Analytics Tracking:
+                                  <span class="font-weight-bold ml-12">ON</span>
+                                </p>
                               </div>
-                            </td>
-                            <td>
-                              <button class="btn _secondary _sync-list">
-                                <svg width="6.545" height="9">
-                                  <use
-                                    xlink:href="assets/images/sprite.svg#sync"
-                                  ></use>
-                                </svg>
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div
+                              class="d-flex align-items-center justify-content-end"
+                            >
+                              <button type="button" class="btn _sm _secondary">
+                                PDF
                               </button>
-                            </td>
-                          </tr>
+                              <div class="dropdown _actions">
+                                <button
+                                  type="button"
+                                  class="btn _sm _primary ml-4 px-6"
+                                  data-toggle="dropdown"
+                                  aria-expanded="true"
+                                >
+                                  <svg width="2" height="10">
+                                    <use
+                                      xlink:href="/assets/images/sprite.svg#more-dots"
+                                    ></use>
+                                  </svg>
+                                </button>
 
-                          <tr>
-                            <td>Filtered contacts by lorem ipsum lorem</td>
-                            <td>10,974</td>
-                            <td>Dec 4, 2019</td>
-                            <td>
-                              <div class="switcher__wrap">
-                                <input
-                                  type="checkbox"
-                                  id="switch-4"
-                                  class="switcher"
-                                />
-                                <label
-                                  for="switch-4"
-                                  class="switcher__toggle"
-                                ></label>
+                                <div
+                                  class="dropdown-menu dropdown-menu-right _actions mt-5"
+                                >
+                                  <div class="dropdown-menu-inner">
+                                    <a class="dropdown-item" href="#"
+                                      >Action Item 1</a
+                                    >
+                                    <a class="dropdown-item" href="#"
+                                      >Action Item 2</a
+                                    >
+                                    <a class="dropdown-item" href="#"
+                                      >Action Item 3</a
+                                    >
+                                  </div>
+                                </div>
                               </div>
-                            </td>
-                            <td>
-                              <button class="btn _secondary _sync-list">
-                                <svg width="6.545" height="9">
-                                  <use
-                                    xlink:href="assets/images/sprite.svg#sync"
-                                  ></use>
-                                </svg>
-                              </button>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>Jonathan Bagel list</td>
-                            <td>9,536</td>
-                            <td>Sep 29, 2019</td>
-                            <td>
-                              <div class="switcher__wrap">
-                                <input
-                                  type="checkbox"
-                                  id="switch-5"
-                                  class="switcher"
-                                  checked=""
-                                />
-                                <label
-                                  for="switch-5"
-                                  class="switcher__toggle"
-                                ></label>
-                              </div>
-                            </td>
-                            <td>
-                              <button class="btn _secondary _sync-list">
-                                <svg width="6.545" height="9">
-                                  <use
-                                    xlink:href="assets/images/sprite.svg#sync"
-                                  ></use>
-                                </svg>
-                              </button>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>Filtered contacts by lorem ipsum lorem</td>
-                            <td>10,974</td>
-                            <td>Dec 4, 2019</td>
-                            <td>
-                              <div class="switcher__wrap">
-                                <input
-                                  type="checkbox"
-                                  id="switch-6"
-                                  class="switcher"
-                                />
-                                <label
-                                  for="switch-6"
-                                  class="switcher__toggle"
-                                ></label>
-                              </div>
-                            </td>
-                            <td>
-                              <button class="btn _secondary _sync-list">
-                                <svg width="6.545" height="9">
-                                  <use
-                                    xlink:href="assets/images/sprite.svg#sync"
-                                  ></use>
-                                </svg>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card__aside">
+                        <img
+                          src="assets/images/template-3.jpg"
+                          alt="Template Preview"
+                        />
+                      </div>
                     </div>
-
-                    <button class="btn _sm _secondary mt-7 ml-19 _add-new-list">
-                      Add a New List
-                    </button>
-                    <div class="add-new-list-input d-none w-100">
-                      <div class="d-flex align-items-center pl-19 mt-4">
-                        <div class="form-control__wrap mr-15 flex-grow-1">
-                          <input
-                            type="text"
-                            placeholder="E-mail Address"
-                            class="form-control"
-                          />
-                          <span class="text-danger field-validation-error"
-                            ><span class="">Your List Name Here</span></span
+                    <div class="row">
+                      <div
+                        class="col-md-4 d-md-flex flex-md-column flex-md-grow-1"
+                      >
+                        <div class="card mb-0 align-items-start flex-grow-1">
+                          <div class="font-36 lh-1 mt-n4">491</div>
+                          <h5 class="mt-10">Recipients</h5>
+                          <div
+                            class="font-12 color-secondary font-weight-medium mt-14"
+                          >
+                            <a href="#" class="link">491 unique contacts</a>
+                            accross <a href="#" class="link">2 lists</a> /
+                            <a href="#" class="link">1 segment</a> /
+                            <a href="#" class="link">3 tags</a>
+                          </div>
+                          <a href="#" class="btn _sm _secondary mt-13"
+                            >All Recipients</a
                           >
                         </div>
+                        <div
+                          class="card pt-20 pb-24 bg-light-grey align-items-start flex-grow-1"
+                        >
+                          <div class="row w-100">
+                            <div class="col-4">
+                              <div class="d-flex flex-column align-items-start">
+                                <p class="font-weight-semibold mb-3 font-18">
+                                  23
+                                </p>
+                                <a href="#" class="link">Bounces</a>
+                              </div>
+                            </div>
+                            <div class="col-4">
+                              <div class="d-flex flex-column align-items-start">
+                                <p
+                                  class="font-weight-semibold mb-3 font-18 color-danger"
+                                >
+                                  7
+                                </p>
+                                <a href="#" class="link">Unsubscribes</a>
+                              </div>
+                            </div>
+                            <div class="col-4">
+                              <div class="d-flex flex-column align-items-start">
+                                <p
+                                  class="font-weight-semibold mb-3 font-18 color-danger"
+                                >
+                                  3
+                                </p>
+                                <a href="#" class="link">Complaints</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col-md-4 d-md-flex flex-md-column flex-md-grow-1"
+                      >
+                        <div
+                          class="card mb-0 align-items-start flex-grow-1 bg-light-grey"
+                        >
+                          <div class="d-flex flex-row w-100">
+                            <div class="d-flex flex-column">
+                              <div class="font-36 lh-1 mt-n4">139</div>
+                              <h5 class="mt-10">Opens</h5>
+                              <div
+                                class="font-12 color-secondary font-weight-medium mt-14"
+                              >
+                                <a href="#" class="link">139 opens </a> and
+                                <a href="#" class="link">85 unique opens</a>
+                              </div>
+                              <a href="#" class="btn _sm _secondary mt-13"
+                                >All Opens</a
+                              >
+                            </div>
+                            <div class="d-flex ml-auto">
+                              <div
+                                class="knob-wrap knob-wrap_up knob-wrap_percent"
+                              >
+                                <input
+                                  data-plugin="knob"
+                                  data-width="75"
+                                  data-height="75"
+                                  data-linecap="round"
+                                  data-fgColor="#00EBA8"
+                                  value="73"
+                                  data-displayInput="false"
+                                  data-skin="tron"
+                                  data-angleOffset="0"
+                                  data-readOnly="true"
+                                  data-thickness=".1"
+                                  data-bgColor="#f6f9fc"
+                                />
+                                <div class="knob-text">
+                                  <p class="font-18 font-weight-semibold">
+                                    27<span class="font-18 font-weight-semibold"
+                                      >%</span
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="card pt-20 pb-24 align-items-start flex-grow-1"
+                        >
+                          <div
+                            class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100"
+                          >
+                            Audience Average: <b class="ml-12 mr-5">42.2%</b>
+                            <span
+                              class="d-flex align-items-center justify-content-center"
+                            >
+                              <svg width="7.026" height="8.197" class="up">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#arrow-blue-up"
+                                ></use>
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100"
+                          >
+                            Industry Average:
+                            <div class="select-150 ml-12">
+                              <select
+                                class="form-control _select2-lg"
+                                data-toggle="select2"
+                                required
+                              >
+                                <option value="test-1">Finance</option>
+                                <option value="test-2">Chinese</option>
+                                <option value="test-2">Spanish</option>
+                                <option value="test-2">Portugese</option>
+                                <option value="test-2">Italian</option>
+                              </select>
+                            </div>
 
-                        <button class="btn _sm _primary _check">
-                          <svg width="11.805" height="9">
-                            <use
-                              xlink:href="assets/images/sprite.svg#check"
-                            ></use>
-                          </svg>
-                        </button>
+                            <b class="ml-10 mr-5">23.9%</b>
+                            <span
+                              class="d-flex align-items-center justify-content-center"
+                            >
+                              <svg width="7.026" height="8.197" class="down">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#arrow-red-down"
+                                ></use>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col-md-4 d-md-flex flex-md-column flex-md-grow-1"
+                      >
+                        <div
+                          class="card mb-0 align-items-start flex-grow-1 bg-light-grey"
+                        >
+                          <div class="d-flex flex-row w-100">
+                            <div class="d-flex flex-column">
+                              <div class="font-36 lh-1 mt-n4">26</div>
+                              <h5 class="mt-10">Clicks</h5>
+                              <div
+                                class="font-12 color-secondary font-weight-medium mt-14"
+                              >
+                                <a href="#" class="link">26 clicks </a> and
+                                <a href="#" class="link">15 unique clicks</a>
+                              </div>
+                              <a href="#" class="btn _sm _secondary mt-13"
+                                >All Opens</a
+                              >
+                            </div>
+                            <div class="d-flex ml-auto">
+                              <div
+                                class="knob-wrap knob-wrap_up knob-wrap_percent"
+                              >
+                                <input
+                                  data-plugin="knob"
+                                  data-width="75"
+                                  data-height="75"
+                                  data-linecap="round"
+                                  data-fgColor="#001EF5"
+                                  value="9,7"
+                                  data-displayInput="false"
+                                  data-skin="tron"
+                                  data-angleOffset="0"
+                                  data-readOnly="true"
+                                  data-thickness=".1"
+                                  data-bgColor="#f6f9fc"
+                                />
+                                <div class="knob-text">
+                                  <p class="font-18 font-weight-semibold">
+                                    9,7<span
+                                      class="font-18 font-weight-semibold"
+                                      >%</span
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="card pt-20 pb-24 align-items-start flex-grow-1"
+                        >
+                          <div
+                            class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100"
+                          >
+                            Audience Average: <b class="ml-12 mr-5">11.2%</b>
+                            <span
+                              class="d-flex align-items-center justify-content-center"
+                            >
+                              <svg width="7.026" height="8.197" class="down">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#arrow-red-down"
+                                ></use>
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100"
+                          >
+                            Industry Average:
+                            <div class="select-150 ml-12">
+                              <select
+                                class="form-control _select2-lg"
+                                data-toggle="select2"
+                                required
+                              >
+                                <option value="test-1">Finance</option>
+                                <option value="test-2">Chinese</option>
+                                <option value="test-2">Spanish</option>
+                                <option value="test-2">Portugese</option>
+                                <option value="test-2">Italian</option>
+                              </select>
+                            </div>
 
-                        <button class="btn _sm _secondary _check">
-                          <svg width="8" height="8">
-                            <use
-                              xlink:href="assets/images/sprite.svg#cross"
-                            ></use>
-                          </svg>
-                        </button>
+                            <b class="ml-10 mr-5">10.5%</b>
+                            <span
+                              class="d-flex align-items-center justify-content-center"
+                            >
+                              <svg width="7.026" height="8.197" class="up">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#arrow-blue-up"
+                                ></use>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pr-0 pr-md-22 position-relative">
+                      <div class="row no-gutters chart-wrap">
+                        <div class="col-md-12">
+                          <div class="card align-content-start">
+                            <div
+                              class="d-flex justify-content-between align-items-center flex-wrap mb-35"
+                            >
+                              <h4 class="font-weight-semibold font-18">
+                                Engagement Timeline
+                              </h4>
+                              <div
+                                class="d-flex justify-content-end align-items-center report-calendar"
+                              >
+                                <p
+                                  class="font-12 color-secondary font-weight-medium mb-0"
+                                >
+                                  <span class="mr-20"
+                                    ><i class="circle-i circle-i_openers"></i>
+                                    Opens</span
+                                  >
+                                  <span class="mr-20"
+                                    ><i class="circle-i circle-i_clickers"></i>
+                                    Clicks</span
+                                  >
+                                </p>
+                                <div class="date-range__wrap">
+                                  <input
+                                    type="text"
+                                    id="range-datepicker"
+                                    class="date-range__input"
+                                    placeholder="Pick dates"
+                                    value="2020-03-31 – 2020-04-25"
+                                  />
+                                  <i class="date-range__icon">
+                                    <svg width="19.143" height="20">
+                                      <use
+                                        xlink:href="assets/images/sprite.svg#calendar"
+                                      ></use>
+                                    </svg>
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              id="morris-line-example"
+                              style="height: 349px"
+                              class="color-secondary"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="pr-0 pr-md-22 position-relative">
+                      <div class="row no-gutters chart-wrap">
+                        <div class="col-md-8">
+                          <div class="card align-content-start bg-light-grey">
+                            <div
+                              class="d-flex justify-content-between align-items-center flex-wrap mb-40"
+                            >
+                              <h4 class="font-weight-semibold font-18">
+                                Opens by Hours
+                              </h4>
+                              <div
+                                class="d-flex justify-content-end align-items-center report-calendar"
+                              >
+                                <p
+                                  class="font-12 color-secondary font-weight-medium mb-0"
+                                >
+                                  <span class="mr-0"
+                                    ><i class="circle-i circle-i_openers"></i>
+                                    Opens</span
+                                  >
+                                </p>
+                              </div>
+                            </div>
+                            <div
+                              id="morris-line-example-2"
+                              style="height: 148px"
+                              class="color-secondary"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="col-md-4"></div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="connect__cards-aside">
-                    <div class="card connect__card-aside">
-                      <i class="mb-22">
-                        <svg width="42.343" height="50">
-                          <use
-                            xlink:href="assets/images/sprite.svg#cat-hug"
-                          ></use>
-                        </svg>
-                      </i>
-                      <h5 class="mb-5">* How Auto-sync Works</h5>
-                      <p
-                        class="font-12 color-secondary font-weight-medium mb-0"
-                      >
-                        With auto-sync turned on, DirectIQ will automatically
-                        fetch your new contacts daily and save them to your
-                        selected contact list.
-                        <a href="#" class="link"
-                          >Click here to learn more on auto-sync.</a
-                        >
-                      </p>
-                    </div>
-                  </div>
+                  <div class="tab-pane show" id="recipients"></div>
+                  <div class="tab-pane show" id="opens"></div>
+                  <div class="tab-pane show" id="clicks"></div>
+                  <div class="tab-pane show" id="clickmap"></div>
+                  <div class="tab-pane show" id="bounces"></div>
+                  <div class="tab-pane show" id="unsubscribes"></div>
+                  <div class="tab-pane show" id="complaints"></div>
+                  <div class="tab-pane show" id="social"></div>
+                  <div class="tab-pane show" id="locations"></div>
+                  <div class="tab-pane show" id="email-clients"></div>
+                  <div class="tab-pane show" id="domains"></div>
                 </div>
               </div>
             </div>
@@ -945,34 +1278,147 @@
     </div>
     <!-- END wrapper -->
 
-    <!-- App js -->
+    <!-- Vendor js -->
     <script src="assets/js/vendor.min.js"></script>
 
-    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/libs/morris.js06/morris.min.js"></script>
+    <script src="assets/libs/raphael/raphael.min.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
     <script src="assets/libs/select2/js/select2.min.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
 
     <script>
-      // Datatables settings
-      $(document).ready(function () {
-        $('#data-table').DataTable({
-          scrollX: true,
-          scrollY: 127,
-          scrollCollapse: true,
-          paging: false,
-          order: [],
-          aoColumnDefs: [
-            {
-              bSortable: false,
-              aTargets: ['nosort'],
+      // Range date picker settings and initialisation
+      !(function ($) {
+        'use strict';
+
+        var FormPickers = function () {};
+
+        (FormPickers.prototype.init = function () {
+          $('#range-datepicker').flatpickr({
+            mode: 'range',
+            altInput: true,
+            altFormat: 'M j',
+            dateFormat: 'Y-m-d',
+            locale: {
+              rangeSeparator: ' – ',
             },
-          ],
-          sDom: 't',
-        });
-      });
+          });
+        }),
+          ($.FormPickers = new FormPickers()),
+          ($.FormPickers.Constructor = FormPickers);
+      })(window.jQuery),
+        (function ($) {
+          'use strict';
+          $.FormPickers.init();
+        })(window.jQuery);
+
+      // Morris chart settings and initialization
+      !(function ($) {
+        'use strict';
+
+        var MorrisCharts = function () {};
+
+        (MorrisCharts.prototype.createLineChart = function (
+          element,
+          data,
+          xkey,
+          ykeys,
+          labels,
+          opacity,
+          Pfillcolor,
+          Pstockcolor,
+          lineColors
+        ) {
+          Morris.Line({
+            element: element,
+            data: data,
+            xkey: xkey,
+            ykeys: ykeys,
+            labels: labels,
+            dataLabels: false,
+            fillOpacity: opacity,
+            pointFillColors: Pfillcolor,
+            pointStrokeColors: Pstockcolor,
+            behaveLikeLine: true,
+            gridLineColor: '#DAE8F7',
+            hideHover: 'auto',
+            lineWidth: '1.5px',
+            pointSize: 0,
+            resize: true,
+            lineColors: lineColors,
+            parseTime: false,
+          });
+        }),
+          (MorrisCharts.prototype.init = function () {
+            //create line chart
+            var $data = [
+              { y: 'June 15', a: 8, b: 25, c: 13 },
+              { y: 'June 16', a: 24, b: 60, c: 26 },
+              { y: 'June 17', a: 56, b: 27, c: 16 },
+              { y: 'June 18', a: 14, b: 29, c: 15 },
+              { y: 'June 19', a: 15, b: 36, c: 27 },
+              { y: 'June 20', a: 16, b: 32, c: 14 },
+              { y: 'June 21', a: 48, b: 44, c: 26 },
+            ];
+
+            this.createLineChart(
+              'morris-line-example',
+              $data,
+              'y',
+              ['a', 'b'],
+              ['Opens', 'Clicks'],
+              ['0.1'],
+              ['#ffffff'],
+              ['#999999'],
+              ['#00EBA8', '#0000FF']
+            );
+            var $time = [
+              { y: '1AM', a: 18 },
+              { y: '3AM', a: 10 },
+              { y: '6AM', a: 5 },
+              { y: '9AM', a: 2 },
+              { y: '12PM', a: 8 },
+              { y: '3PM', a: 10 },
+              { y: '6PM', a: 15 },
+              { y: '9PM', a: 28 },
+              { y: '12AM', a: 17 },
+            ];
+            this.createLineChart(
+              'morris-line-example-2',
+              $time,
+              'y',
+              ['a'],
+              ['Opens'],
+              ['0.1'],
+              ['#ffffff'],
+              ['#999999'],
+              ['#00EBA8']
+            );
+          }),
+          ($.MorrisCharts = new MorrisCharts()),
+          ($.MorrisCharts.Constructor = MorrisCharts);
+      })(window.jQuery),
+        (function ($) {
+          'use strict';
+          setTimeout(function () {
+            $.MorrisCharts.init();
+          }, 200);
+        })(window.jQuery);
+    </script>
+
+    <script>
+      const select2Options = {
+        placeholder: 'Select an option',
+        allowClear: true,
+        minimumResultsForSearch: -1,
+      };
+
+      createSelect2ByClass('._select2-lg', select2Options);
     </script>
   </body>
 </html>
