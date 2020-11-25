@@ -1332,7 +1332,8 @@
           opacity,
           Pfillcolor,
           Pstockcolor,
-          lineColors
+          lineColors,
+          numLines
         ) {
           Morris.Line({
             element: element,
@@ -1352,18 +1353,19 @@
             resize: true,
             lineColors: lineColors,
             parseTime: false,
+            numLines: numLines,
           });
         }),
           (MorrisCharts.prototype.init = function () {
             //create line chart
             var $data = [
-              { y: 'June 15', a: 8, b: 25, c: 13 },
-              { y: 'June 16', a: 24, b: 60, c: 26 },
-              { y: 'June 17', a: 56, b: 27, c: 16 },
-              { y: 'June 18', a: 14, b: 29, c: 15 },
-              { y: 'June 19', a: 15, b: 36, c: 27 },
-              { y: 'June 20', a: 16, b: 32, c: 14 },
-              { y: 'June 21', a: 48, b: 44, c: 26 },
+              { y: 'June 15', a: 8, b: 25 },
+              { y: 'June 16', a: 24, b: 60 },
+              { y: 'June 17', a: 56, b: 27 },
+              { y: 'June 18', a: 14, b: 29 },
+              { y: 'June 19', a: 15, b: 36 },
+              { y: 'June 20', a: 16, b: 32 },
+              { y: 'June 21', a: 48, b: 44 },
             ];
 
             this.createLineChart(
@@ -1375,7 +1377,8 @@
               ['0.1'],
               ['#ffffff'],
               ['#999999'],
-              ['#00EBA8', '#0000FF']
+              ['#00EBA8', '#0000FF'],
+              5
             );
             var $time = [
               { y: '1AM', a: 18 },
@@ -1392,12 +1395,13 @@
               'morris-line-example-2',
               $time,
               'y',
-              ['a'],
+              'a',
               ['Opens'],
               ['0.1'],
               ['#ffffff'],
               ['#999999'],
-              ['#00EBA8']
+              ['#00EBA8'],
+              3
             );
           }),
           ($.MorrisCharts = new MorrisCharts()),
