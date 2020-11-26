@@ -12269,6 +12269,15 @@ button {
   .report-calendar .date-range__input:hover {
     background-color: #00f; }
 
+.bs-no {
+  box-shadow: none !important; }
+
+.mt-n20 {
+  margin-top: -20px !important; }
+
+.mt-n5 {
+  margin-top: -5px !important; }
+
 th,
 td {
   white-space: nowrap !important; }
