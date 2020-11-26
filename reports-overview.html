@@ -1133,12 +1133,28 @@
         }, 200);
       })(window.jQuery);
 
+    const charts3data = [
+      { social: 'Instagram', nb: 2 },
+      { social: 'Twitter', nb: 3 },
+    ];
+
+    const charts4data = [
+      { social: 'Facebook', nb: 17 }
+    ];
+
+    let morisCommonSum = 0;
+
+    for (let obj of charts3data) {
+      morisCommonSum = morisCommonSum + obj.nb;
+    }
+
+    for (let obj of charts4data) {
+      morisCommonSum = morisCommonSum + obj.nb;
+    }
+
     Morris.Bar({
       element: 'morris-line-example-3',
-      data: [
-        { social: 'Instagram', nb: 2 },
-        { social: 'Twitter', nb: 3 },
-      ],
+      data: charts3data,
       xkey: 'social',
       ykeys: ['nb'],
       labels: ['Clicks'],
@@ -1150,7 +1166,7 @@
       hideHover: 'always',
       numLines: 1,
       grid: false,
-      ymax: 22, // 2 + 3 + 17 
+      ymax: morisCommonSum, // 2 + 3 + 17
       axes: 'x',
       barGap: 4,
       barSizeRatio: 0.3,
@@ -1159,7 +1175,7 @@
 
     Morris.Bar({
       element: 'morris-line-example-4',
-      data: [{ social: 'Facebook', nb: 17 }],
+      data: charts4data,
       xkey: 'social',
       ykeys: ['nb'],
       labels: ['Clicks'],
@@ -1170,7 +1186,7 @@
       barColors: ['#00EBA8'],
       hideHover: 'always',
       numLines: 1,
-      ymax: 22, // 2 + 3 + 17 
+      ymax: morisCommonSum, // 2 + 3 + 17
       grid: false,
       axes: 'x',
       barGap: 4,
@@ -1190,7 +1206,7 @@
 
     for (let obj of moris5data) {
       moris5sum = moris5sum + obj.nb;
-    };
+    }
 
     Morris.Bar({
       element: 'morris-line-example-5',
@@ -1211,9 +1227,10 @@
       barGap: 4,
       barSizeRatio: 0.3,
       dataLabelsWeight: ['bold'],
-      yLabelFormat: function (y) { return `${y} (${Math.round(y / moris5sum * 100)}%)` }
+      yLabelFormat: function (y) {
+        return `${y} (${Math.round((y / moris5sum) * 100)}%)`;
+      },
     });
-
 
     const moris6data = [
       { social: 'Gmail', nb: 95 },
@@ -1226,7 +1243,7 @@
 
     for (let obj of moris6data) {
       moris6sum = moris6sum + obj.nb;
-    };
+    }
 
     Morris.Bar({
       element: 'morris-line-example-6',
@@ -1246,7 +1263,9 @@
       axes: 'x',
       barGap: 4,
       barSizeRatio: 0.3,
-      yLabelFormat: function (y) { return `${y} (${Math.round(y / moris6sum * 100)}%)` }
+      yLabelFormat: function (y) {
+        return `${y} (${Math.round((y / moris6sum) * 100)}%)`;
+      },
     });
 
     const moris7data = [
@@ -1263,7 +1282,7 @@
 
     for (let obj of moris7data) {
       moris7sum = moris7sum + obj.nb;
-    };
+    }
 
     Morris.Bar({
       element: 'morris-line-example-7',
@@ -1284,7 +1303,9 @@
       barGap: 4,
       barSizeRatio: 0.3,
       dataLabelsWeight: ['bold'],
-      yLabelFormat: function (y) { return `${y} (${Math.round(y / moris7sum * 100)}%)` }
+      yLabelFormat: function (y) {
+        return `${y} (${Math.round((y / moris7sum) * 100)}%)`;
+      },
     });
   </script>
 
