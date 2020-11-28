@@ -12278,6 +12278,9 @@ button {
 .mt-n5 {
   margin-top: -5px !important; }
 
+.ml-n25 {
+  margin-left: -25px !important; }
+
 th,
 td {
   white-space: nowrap !important; }
