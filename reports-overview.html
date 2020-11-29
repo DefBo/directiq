@@ -1332,6 +1332,23 @@
                         </div>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div
+                          class="card align-items-start flex-grow-1 bg-light-grey d-flex flex-column vsc-initialized"
+                          style=""
+                        >
+                          <h4 class="font-weight-semibold font-18 mb-18">
+                            Opens by Domains
+                          </h4>
+                          <div id="venn"></div>
+                          <a href="#" class="btn _sm _secondary mt-20"
+                            >All Domains</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-md-8"></div>
+                    </div>
                   </div>
 
                   <div class="tab-pane show" id="recipients"></div>
@@ -1375,6 +1392,9 @@
     <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
     <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <script src="assets/js/d3.v4.min.js"></script>
+    <script src="assets/js/venn.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
@@ -1447,13 +1467,13 @@
           (MorrisCharts.prototype.init = function () {
             //create line chart
             var $data = [
-              { y: 'June 15', a: 8, b: 25 },
-              { y: 'June 16', a: 24, b: 60 },
-              { y: 'June 17', a: 56, b: 27 },
-              { y: 'June 18', a: 14, b: 29 },
-              { y: 'June 19', a: 15, b: 36 },
-              { y: 'June 20', a: 16, b: 32 },
-              { y: 'June 21', a: 48, b: 44 },
+              { y: 'June 15', a: 0, b: 0 },
+              { y: 'June 16', a: 3, b: 0 },
+              { y: 'June 17', a: 6, b: 2 },
+              { y: 'June 18', a: 0, b: 0 },
+              { y: 'June 19', a: 0, b: 0 },
+              { y: 'June 20', a: 0, b: 0 },
+              { y: 'June 21', a: 0, b: 0 },
             ];
 
             this.createLineChart(
@@ -1798,6 +1818,43 @@
       };
 
       createSelect2ByClass('._select2-lg', select2Options);
+    </script>
+
+    <script>
+      var sets = [
+        { sets: ['47%'], size: 3 },
+        { sets: ['31%'], size: 2 },
+        { sets: ['22%'], size: 1 },
+        { sets: ['47%', '22%'], size: 1 },
+        { sets: ['31%', '22%'], size: 1 },
+        { sets: ['47%', '31%'], size: 2 },
+      ];
+
+      var chart = venn.VennDiagram();
+      d3.select('#venn').datum(sets).call(chart);
+
+      d3.selectAll('#venn text')
+        .style('font-size', '14px')
+        .style('fill', '#212B35')
+        .style('font-weight', 'bold');
+
+      d3.select('#venn .venn-circle:nth-child(3) text').style('fill', '#fff');
+
+      d3.select('#venn .venn-circle:first-child path').style('fill', '#B6FFE8');
+
+      d3.select('#venn .venn-circle:nth-child(2) path').style(
+        'fill',
+        '#00EBA8'
+      );
+
+      d3.select('#venn .venn-circle:nth-child(3) path').style(
+        'fill',
+        '#0000FF'
+      );
+
+      d3.selectAll('#venn .venn-circle path').style('fill-opacity', '1');
+
+      d3.select('#venn .venn-circle:nth-child(3) tspan').attr('y', '84');
     </script>
   </body>
 </html>
