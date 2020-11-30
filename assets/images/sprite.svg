@@ -1168,4 +1168,22 @@
       <line x2="61" transform="translate(1080.5 1997.5)" fill="none" stroke="#b6ffe8" stroke-width="1"/>
     </g>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" id="mail">
+    <g transform="translate(-231 -231)">
+    <path d="M281,262.819V256.4l-5.675-3.954V238.877h-1.468v17.612h1.468v-2.254l3.407,2.373-17.773,7.145-4.959-4-4.959,4-17.773-7.144,3.407-2.374v2.254h1.468V241.714h-1.468v10.732L231,256.4V281h50V264.286h-1.468v14.446l-17.264-13.923,17.264-6.94v4.95Zm-2.813,16.713H233.813l4.642-3.743-.921-1.143-5.066,4.086V257.869l17.264,6.94-11.056,8.916.921,1.142L256,261.639Z" fill="#00eba8"/>
+    <path d="M238.143,232.468h8.366V231h-9.834v9.247h1.468Z" fill="#00eba8"/>
+    <path d="M273.857,237.409h1.468V231H247.977v1.468h25.881Z" fill="#00eba8"/>
+    <path d="M270.114,241.91l-14.6-6.178-14.6,6.178,6.042,2.556v9.273l.436.194a20.045,20.045,0,0,0,16.252,0l.435-.194v-9.273l2.936-1.242v6.1a2.206,2.206,0,0,0-1.468,2.075v3.572h4.4V251.4a2.2,2.2,0,0,0-1.467-2.075V242.6Zm-7.509,10.869a18.578,18.578,0,0,1-14.188,0v-7.692l7.094,3,7.094-3Zm-7.094-6.284-10.837-4.585,10.837-4.585,10.837,4.585Zm12.965,7.01h-1.468v-2.1a.734.734,0,0,1,1.468,0Z" fill="#00eba8"/>
+    <rect width="1.468" height="1.468" transform="translate(252.331 275.618)" fill="#00eba8"/>
+    <rect width="1.468" height="1.468" transform="translate(255.266 275.618)" fill="#00eba8"/>
+    <rect width="1.468" height="1.468" transform="translate(258.202 275.618)" fill="#00eba8"/>
+    <rect width="1.468" height="1.468" transform="matrix(0.778, -0.628, 0.628, 0.778, 236.657, 271.583)" fill="#00eba8"/>
+    <rect width="5.186" height="1.468" transform="matrix(0.778, -0.628, 0.628, 0.778, 238.941, 269.743)" fill="#00eba8"/>
+    <rect width="1.468" height="1.468" transform="translate(270.922 238.094)" fill="#00eba8"/>
+    <path d="M272.389,233.935H269.7V235.4h1.223v1.223h1.468Z" fill="#00eba8"/>
+    <rect data-name="Прямоугольник 422" width="1.468" height="1.468" transform="translate(266.763 233.935)" fill="#00eba8"/>
+    <rect width="1.468" height="1.468" transform="translate(259.061 242.013) rotate(-67.071)" fill="#00eba8"/>
+    <rect width="1.468" height="2.696" transform="translate(255.224 240.392) rotate(-67.071)" fill="#00eba8"/>
+  </g>
+  </symbol>
 </svg>
