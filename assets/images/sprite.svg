@@ -1144,4 +1144,28 @@
    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.026 8.197" id="arrow-red-down">
     <path d="M13.282,8.954l-2.928,2.928a.586.586,0,0,1-.828,0L6.6,8.954a.586.586,0,0,1,.828-.828l1.928,1.928V4.442a.586.586,0,1,1,1.171,0v5.613l1.928-1.928a.586.586,0,0,1,.828.828Z" transform="translate(-6.427 -3.856)" fill="#ed1c24"/>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 10" id="line-blue">
+   <g transform="translate(-1080.5 -2042.194)">
+    <g  transform="translate(1136.5 2042.194)">
+      <circle cx="5" cy="5" r="5" fill="blue"/>
+    </g>
+    <line x2="61" transform="translate(1080.5 2047.5)" fill="none" stroke="#001ef5" stroke-width="1"/>
+  </g>
+  </symbol>
+   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 10" id="line-dark-green">
+      <g transform="translate(-1080.5 -2016.194)">
+        <g transform="translate(1136.5 2016.194)">
+          <circle cx="5" cy="5" r="5" fill="#00eba8"/>
+        </g>
+      <line x2="61" transform="translate(1080.5 2021.5)" fill="none" stroke="#00eba8" stroke-width="1"/>
+    </g>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 10" id="line-light-green">
+    <g transform="translate(-1080.5 -1992.194)">
+      <g transform="translate(1136.5 1992.194)">
+        <circle cx="5" cy="5" r="5" fill="#b6ffe8"/>
+      </g>
+      <line x2="61" transform="translate(1080.5 1997.5)" fill="none" stroke="#b6ffe8" stroke-width="1"/>
+    </g>
+  </symbol>
 </svg>

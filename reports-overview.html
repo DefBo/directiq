@@ -1338,10 +1338,52 @@
                           class="card align-items-start flex-grow-1 bg-light-grey d-flex flex-column vsc-initialized"
                           style=""
                         >
-                          <h4 class="font-weight-semibold font-18 mb-18">
+                          <h4 class="font-weight-semibold font-18 mb-20">
                             Opens by Domains
                           </h4>
-                          <div id="venn"></div>
+                          <div
+                            class="venn-wrapper position-relative mw-240 w-100"
+                          >
+                            <div id="venn"></div>
+                            <div class="venn-wrapper__info">
+                              <div
+                                class="venn-wrapper__info-1 d-flex align-items-center mb-10"
+                              >
+                                <svg width="66" height="10">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#line-light-green"
+                                  ></use>
+                                </svg>
+                                <p class="mb-0 font-12 font-weight-medium ml-6">
+                                  gmail.com
+                                </p>
+                              </div>
+                              <div
+                                class="venn-wrapper__info-2 d-flex align-items-center mb-10"
+                              >
+                                <svg width="66" height="10">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#line-dark-green"
+                                  ></use>
+                                </svg>
+                                <p class="mb-0 font-12 font-weight-medium ml-6">
+                                  dodohousenyc.com
+                                </p>
+                              </div>
+                              <div
+                                class="venn-wrapper__info-3 d-flex align-items-center"
+                              >
+                                <svg width="66" height="10">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#line-blue"
+                                  ></use>
+                                </svg>
+                                <p class="mb-0 font-12 font-weight-medium ml-6">
+                                  Others
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                           <a href="#" class="btn _sm _secondary mt-20"
                             >All Domains</a
                           >
@@ -1822,12 +1864,12 @@
 
     <script>
       var sets = [
-        { sets: ['47%'], size: 3 },
-        { sets: ['31%'], size: 2 },
-        { sets: ['22%'], size: 1 },
-        { sets: ['47%', '22%'], size: 1 },
-        { sets: ['31%', '22%'], size: 1 },
-        { sets: ['47%', '31%'], size: 2 },
+        { sets: [`${47}%`], size: 3 },
+        { sets: [`${31}%`], size: 2 },
+        { sets: [`${22}%`], size: 1 },
+        { sets: [`${47}%`, `${22}%`], size: 1 },
+        { sets: [`${31}%`, `${22}%`], size: 1 },
+        { sets: [`${47}%`, `${31}%`], size: 2 },
       ];
 
       var chart = venn.VennDiagram();

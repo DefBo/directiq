@@ -12281,6 +12281,14 @@ button {
 .ml-n25 {
   margin-left: -25px !important; }
 
+.venn-wrapper__info {
+  position: absolute;
+  content: '';
+  top: 23px;
+  width: auto;
+  height: 100%;
+  left: 98px; }
+
 th,
 td {
   white-space: nowrap !important; }
