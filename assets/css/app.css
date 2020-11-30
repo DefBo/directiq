@@ -8095,9 +8095,8 @@ body {
 
 .card__aside {
   flex-shrink: 0;
-  width: 125px;
-  max-height: 150px;
-  height: auto; }
+  max-width: 125px;
+  width: 100%; }
   @media (max-width: 479px) {
     ._spam-doctor .card__aside {
       width: 100%;
@@ -12288,6 +12287,16 @@ button {
   width: auto;
   height: 100%;
   left: 98px; }
+
+.ab {
+  color: #00eba8; }
+
+.green-bg {
+  background-color: #b6ffe8;
+  padding: 40px 18px; }
+
+.font-weight-regular {
+  font-weight: 500 !important; }
 
 th,
 td {
