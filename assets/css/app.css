@@ -7899,7 +7899,8 @@ body {
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
-        border: 1px solid #00f; }
+        border: 1px solid #00f;
+        background-color: #fff; }
     .dropdown-toggle._user svg {
       position: absolute;
       right: 10px;
