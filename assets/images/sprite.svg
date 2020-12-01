@@ -166,7 +166,7 @@
       <text transform="translate(197.5 533.478)" fill="#fff" font-size="18" font-family="ProximaNova-Regular, Proxima Nova"><tspan x="-5.661" y="0">B</tspan></text>
     </g>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.8 25" fill="#00eba8" id="more-dots">
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.8 25" fill="#00eba8" id="dots">
     <g transform="translate(-3045.538 -1649.326)">
       <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3046.038 1649.826)" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>
       <circle cx="2.4" cy="2.4" r="2.4" transform="translate(3046.038 1659.426)" fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"/>

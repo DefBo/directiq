@@ -304,7 +304,7 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
             <div class="dropdown _actions">
                 <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown">
                     <svg width="2" height="10">
-                        <use xlink:href="${absolutelyLinks}assets/images/sprite.svg#more-dots"></use>
+                        <use xlink:href="${absolutelyLinks}assets/images/sprite.svg#dots"></use>
                     </svg>
                 </button>
         
