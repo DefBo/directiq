@@ -12320,6 +12320,14 @@ button {
     z-index: 2;
     position: absolute; }
 
+::selection {
+  background-color: #00f;
+  color: #fff;
+  fill: #fff; }
+
+#curve_chart text[text-anchor='middle'] {
+  transform: translateY(5px); }
+
 th,
 td {
   white-space: nowrap !important; }
