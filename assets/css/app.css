@@ -12289,14 +12289,6 @@ button {
 .ml-n25 {
   margin-left: -25px !important; }
 
-.venn-wrapper__info {
-  position: absolute;
-  content: '';
-  top: 23px;
-  width: auto;
-  height: 100%;
-  left: 98px; }
-
 .ab {
   color: #00eba8; }
 
@@ -12325,7 +12317,8 @@ button {
   color: #fff;
   fill: #fff; }
 
-#curve_chart text[text-anchor='middle'] {
+#curve_chart text[text-anchor='middle'],
+#curve_chart-2 text[text-anchor='middle'] {
   transform: translateY(5px); }
 
 th,
