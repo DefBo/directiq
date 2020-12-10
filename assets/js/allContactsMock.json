@@ -1,0 +1,95 @@
+{
+  "columns": [
+    {
+      "keyId": 0,
+      "isExtra": false,
+      "position": 0,
+      "name": "id",
+      "displayName": "Id",
+      "type": 2
+    },
+    {
+      "keyId": 0,
+      "isExtra": false,
+      "position": 1,
+      "name": "email",
+      "displayName": "Email Address",
+      "type": 1
+    },
+    {
+      "keyId": 0,
+      "isExtra": false,
+      "position": 2,
+      "name": "quality",
+      "displayName": "Quality",
+      "type": 2
+    },
+    {
+      "keyId": 0,
+      "isExtra": false,
+      "position": 3,
+      "name": "firstname",
+      "displayName": "First Name",
+      "type": 1
+    },
+    {
+      "keyId": 0,
+      "isExtra": false,
+      "position": 4,
+      "name": "lastname",
+      "displayName": "Last Name",
+      "type": 1
+    },
+    {
+      "keyId": 0,
+      "isExtra": false,
+      "position": 5,
+      "name": "status",
+      "displayName": "Status",
+      "type": 1
+    },
+    {
+      "keyId": 0,
+      "isExtra": false,
+      "position": 6,
+      "name": "tags",
+      "displayName": "Tags",
+      "type": 1
+    },
+    {
+      "keyId": 0,
+      "isExtra": false,
+      "position": 7,
+      "name": "createdDate",
+      "displayName": "Date Added",
+      "type": 3
+    }
+  ],
+  "rows": [
+    {
+      "cells": [
+        { "position": 0, "value": 1118485, "shouldLocalize": false },
+        {
+          "position": 1,
+          "value": "msagnak@gmail.com",
+          "shouldLocalize": false
+        },
+        { "position": 2, "value": 2, "shouldLocalize": false },
+        { "position": 3, "value": "MUSTAFA SAĞNAK", "shouldLocalize": false },
+        { "position": 4, "value": "BİNZET", "shouldLocalize": false },
+        { "position": 5, "value": "Active", "shouldLocalize": true },
+        {
+          "position": 6,
+          "value": ["asd", "asdasd", "sadqwd", "qwdqwd"],
+          "shouldLocalize": false
+        },
+        { "position": 7, "value": "19 Jun 2020", "shouldLocalize": false }
+      ]
+    }
+  ],
+  "totalCount": 81570,
+  "pageNumber": 5,
+  "pageSize": 1,
+  "pageCount": 846,
+  "hasNextPage": true
+}
