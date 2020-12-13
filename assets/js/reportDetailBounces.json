@@ -1,0 +1,133 @@
+{
+  "recordsTotal": 14,
+  "recordsFiltered": 14,
+  "draw": 1,
+  "data": [
+    {
+      "id": 1,
+      "email": "barisergin@gmail.com",
+      "bounceType": "subscriber",
+      "bounceClass": "_success",
+      "status": "Soft",
+      "bounceDetail": "Mailbox Full",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 2,
+      "email": "barisergin@gmail.com",
+      "bounceType": "disabled",
+      "bounceClass": "_danger",
+      "status": "Hard",
+      "bounceDetail": "Spam Related Block",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 3,
+      "email": "barisergin@gmail.com",
+      "bounceType": "disabled",
+      "bounceClass": "_danger",
+      "status": "Hard",
+      "bounceDetail": "Spam Related Block",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 4,
+      "email": "barisergin@gmail.com",
+      "bounceType": "subscriber",
+      "bounceClass": "_success",
+      "status": "Soft",
+      "bounceDetail": "Mailbox Full",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 5,
+      "email": "barisergin@gmail.com",
+      "bounceType": "disabled",
+      "bounceClass": "_danger",
+      "status": "Hard",
+      "bounceDetail": "Spam Related Block",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 6,
+      "email": "barisergin@gmail.com",
+      "bounceType": "disabled",
+      "bounceClass": "_danger",
+      "status": "Hard",
+      "bounceDetail": "Spam Related Block",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 7,
+      "email": "barisergin@gmail.com",
+      "bounceType": "subscriber",
+      "bounceClass": "_success",
+      "status": "Soft",
+      "bounceDetail": "Mailbox Full",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 8,
+      "email": "barisergin@gmail.com",
+      "bounceType": "disabled",
+      "bounceClass": "_danger",
+      "status": "Hard",
+      "bounceDetail": "Spam Related Block",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 9,
+      "email": "barisergin@gmail.com",
+      "bounceType": "subscriber",
+      "bounceClass": "_success",
+      "status": "Soft",
+      "bounceDetail": "Mailbox Full",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 10,
+      "email": "barisergin@gmail.com",
+      "bounceType": "disabled",
+      "bounceClass": "_danger",
+      "status": "Hard",
+      "bounceDetail": "Spam Related Block",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 11,
+      "email": "barisergin@gmail.com",
+      "bounceType": "subscriber",
+      "bounceClass": "_success",
+      "status": "Soft",
+      "bounceDetail": "Mailbox Full",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 12,
+      "email": "barisergin@gmail.com",
+      "bounceType": "disabled",
+      "bounceClass": "_danger",
+      "status": "Hard",
+      "bounceDetail": "Spam Related Block",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 13,
+      "email": "barisergin@gmail.com",
+      "bounceType": "subscriber",
+      "bounceClass": "_success",
+      "status": "Soft",
+      "bounceDetail": "Mailbox Full",
+      "bounceDate": "5/22/2019 11:31 AM"
+    },
+    {
+      "id": 14,
+      "email": "barisergin@gmail.com",
+      "bounceType": "disabled",
+      "bounceClass": "_danger",
+      "status": "Hard",
+      "bounceDetail": "Spam Related Block",
+      "bounceDate": "5/22/2019 11:31 AM"
+    }
+  ]
+}
