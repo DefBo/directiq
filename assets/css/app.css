@@ -8793,6 +8793,8 @@ body {
     background: #0000ff; }
   .circle-i_unsubscribers {
     background: #ed1c24; }
+  .circle-i_country {
+    background: #b6ffe8; }
 
 .date-range__wrap {
   position: relative; }
@@ -12334,6 +12336,18 @@ button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content; }
+
+.map-small {
+  width: 100%;
+  height: 264px; }
+
+.comparative-bars {
+  width: 240px;
+  height: 190px; }
+
+.donutchart {
+  width: 150px;
+  height: 150px; }
 
 th,
 td {
