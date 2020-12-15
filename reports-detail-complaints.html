@@ -642,22 +642,27 @@
               <div class="tab-content">
                 <div class="tab-pane show" id="overview"></div>
                 <div class="tab-pane show" id="recipients"></div>
-
-                <div class="tab-pane show active" id="opens">
+                <div class="tab-pane show" id="opens">
+                </div>
+                <div class="tab-pane show" id="clicks"></div>
+                <div class="tab-pane show" id="clickmap"></div>
+                <div class="tab-pane show" id="bounces"></div>
+                <div class="tab-pane show" id="unsubscribes"></div>
+                <div class="tab-pane show active" id="complaints">
                   <div class="row chart-wrap">
                     <div class="col-xl-2 col-md-3 pr-0 mb-28">
                       <div class="card align-items-center justify-content-center flex-column flex-grow-1 bg-light-grey mb-0 h-100">
-                        <div class="font-36 font-weight-regular">18,049</div>
+                        <div class="font-36 font-weight-regular">12</div>
                         <div class="font-18 font-weight-semibold mb-25">
-                          Opens
+                          Complaints
                         </div>
                         <div class="d-flex">
                           <div class="knob-wrap knob-wrap_up knob-wrap_percent">
-                            <input data-plugin="knob" data-width="75" data-height="75" data-linecap="round" data-fgColor="#001EF5" value="9,7" data-displayInput="false" data-skin="tron" data-angleOffset="0"
+                            <input data-plugin="knob" data-width="75" data-height="75" data-linecap="round" data-fgColor="#DA3732" value="6,7" data-displayInput="false" data-skin="tron" data-angleOffset="0"
                               data-readOnly="true" data-thickness=".1" data-bgColor="#f6f9fc" />
                             <div class="knob-text">
                               <p class="font-18 font-weight-semibold">
-                                9,7<span class="font-18 font-weight-semibold">%</span>
+                                6,7<span class="font-18 font-weight-semibold">%</span>
                               </p>
                             </div>
                           </div>
@@ -668,10 +673,10 @@
                       <div class="card mb-0 d-flex h-100">
                         <div class="d-flex justify-content-end align-items-center flex-wrap mb-10">
                           <h4 class="font-weight-semibold font-18 mr-15">
-                            Opens by Hours
+                            Complaints
                           </h4>
                         </div>
-                        <div id="curve_chart-2" style="height: 148px" class="color-secondary"></div>
+                        <div id="curve_chart" style="height: 148px" class="color-secondary"></div>
                       </div>
                     </div>
                   </div>
@@ -689,7 +694,8 @@
                           <th class="left">Email Address</th>
                           <th class="left">Name</th>
                           <th class="left">Last Name</th>
-                          <th class="left">Open Date</th>
+                          <th class="left">Complaint Type</th>
+                          <th class="left">Complaint Date</th>
                           <th class="nosort"></th>
                         </tr>
                       </thead>
@@ -700,6 +706,7 @@
                           <th>
                             <input class="filter-input" type="text" placeholder="Search Name" data-index="1" />
                           </th>
+                          <th class="nosort"></th>
                           <th class="nosort"></th>
                           <th class="nosort"></th>
                           <th class="nosort"></th>
@@ -803,11 +810,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane show" id="clicks"></div>
-                <div class="tab-pane show" id="clickmap"></div>
-                <div class="tab-pane show" id="bounces"></div>
-                <div class="tab-pane show" id="unsubscribes"></div>
-                <div class="tab-pane show" id="complaints"></div>
                 <div class="tab-pane show" id="social"></div>
                 <div class="tab-pane show" id="locations"></div>
                 <div class="tab-pane show" id="email-clients"></div>
@@ -851,26 +853,28 @@
   <script>
     // charts
 
-    google.charts.load('current', { packages: ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart2).then(() => { });
+    google.charts.load('current', {
+      packages: ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart).then(() => {});
 
-    function drawChart2() {
-      var data = new google.visualization.arrayToDataTable([
-        ['Date', 'Openers'],
-        [new Date(2020, 6, 6, 0), 8],
-        [new Date(2020, 6, 6, 3), 24],
-        [new Date(2020, 6, 6, 6), 10],
-        [new Date(2020, 6, 6, 9), 14],
-        [new Date(2020, 6, 6, 12), 15],
-        [new Date(2020, 6, 6, 15), 16],
-        [new Date(2020, 6, 6, 18), 28],
-        [new Date(2020, 6, 6, 21), 22],
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Date', 'Complaints'],
+        [new Date(2020, 6, 6), 1],
+        [new Date(2020, 6, 7), 3],
+        [new Date(2020, 6, 8), 2],
+        [new Date(2020, 6, 9), 0],
+        [new Date(2020, 6, 10), 1],
+        [new Date(2020, 6, 11), 3],
       ]);
 
       var options = {
         curveType: 'function',
         series: {
-          0: { color: '#00EBA8' },
+          0: {
+            color: '#DA3732'
+          },
         },
         chartArea: {
           height: '100%',
@@ -880,44 +884,40 @@
           bottom: 30,
           right: 16,
         },
-        height: 148,
+        height: 150,
         width: '100%',
         vAxis: {
           gridlines: {
             count: -1,
             color: '#eef0f2',
           },
-          minorGridlines: { color: 'transparent' },
-          textStyle: { color: '#888888', fontSize: 12 },
+          minorGridlines: {
+            color: 'transparent'
+          },
+          textStyle: {
+            color: '#888888',
+            fontSize: 12
+          },
           baselineColor: '#eef0f2',
           textPosition: 'out',
+          viewWindow: {
+            min: 0
+          }
         },
         hAxis: {
           textStyle: {
             color: '#888888',
             fontSize: 12,
           },
-
-          ticks: [
-            new Date(2020, 6, 6, 0),
-            new Date(2020, 6, 6, 3),
-            new Date(2020, 6, 6, 6),
-            new Date(2020, 6, 6, 9),
-            new Date(2020, 6, 6, 12),
-            new Date(2020, 6, 6, 15),
-            new Date(2020, 6, 6, 18),
-            new Date(2020, 6, 6, 21),
-          ],
-
+          minorGridlines: {
+            count: 0
+          },
           gridlines: {
             count: -1,
             color: 'transparent',
           },
-          minorGridlines: {
-            count: 0,
-          },
-          format: 'hha',
           baselineColor: '#eef0f2',
+          format: 'MMM dd',
           textPosition: 'out',
         },
         lineWidth: 1.5,
@@ -937,14 +937,11 @@
         },
       };
 
-      var formatter = new google.visualization.DateFormat({ pattern: 'hha' });
-      formatter.format(data, 0);
-
-      var chart2 = new google.visualization.LineChart(
-        document.getElementById('curve_chart-2')
+      var chart = new google.visualization.LineChart(
+        document.getElementById('curve_chart')
       );
 
-      chart2.draw(data, options);
+      chart.draw(data, options);
     }
   </script>
 
@@ -960,7 +957,7 @@
           : '/';
       var config = {
         ajax: {
-          url: absolutelyLinks + 'assets/js/reportDetailsMock.json',
+          url: absolutelyLinks + 'assets/js/reportComplaintsMock.json',
           type: 'GET',
           crossDomain: true,
         },
@@ -968,7 +965,7 @@
           rightColumns: 1,
         },
         serverSide: true,
-        order: [[4, 'desc']],
+        order: [[5, 'desc']],
         columns: [
           {
             name: 'id',
@@ -1001,10 +998,17 @@
             },
           },
           {
-            name: 'openDate',
-            title: 'Open Date',
+            name: 'complaintType',
+            title: 'Complaint Type',
             render: (data, type, row, meta) => {
-              return `<div class="d-flex justify-content-start">${row.openDate}</div>`;
+              return `<div class="d-flex justify-content-start">${row.complaintType}</div>`;
+            },
+          },
+          {
+            name: 'complaintDate',
+            title: 'Complaint Date',
+            render: (data, type, row, meta) => {
+              return `<div class="d-flex justify-content-start">${row.complaintDate}</div>`;
             },
           },
           {
