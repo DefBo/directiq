@@ -12356,6 +12356,10 @@ button {
   width: -moz-fit-content;
   width: fit-content; }
 
+.map-big {
+  width: 100%;
+  height: 522px; }
+
 .map-small {
   width: 100%;
   height: 264px; }
@@ -12381,6 +12385,12 @@ button {
 
 .bar-item__data {
   color: #212B35; }
+
+.col-chart._small {
+  width: 100px; }
+
+.col-chart._big {
+  width: calc(100% - 100px); }
 
 th,
 td {
