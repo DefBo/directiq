@@ -12392,6 +12392,35 @@ button {
 .col-chart._big {
   width: calc(100% - 100px); }
 
+.soc-col__small {
+  width: 60px; }
+
+.soc-col__big {
+  width: calc(100% - 60px); }
+
+.bars-desc {
+  margin-top: -1px; }
+
+.bars-column {
+  width: 59px; }
+
+.bars-item {
+  height: 120px; }
+  .bars-item__column {
+    width: 50px; }
+    .bars-item__column.light-green {
+      background-color: #B6FFE8; }
+    .bars-item__column.dark-green {
+      background-color: #00EBA8; }
+    .bars-item__column.blue {
+      background-color: #0000FF; }
+
+.center {
+  text-align: center; }
+
+.justify-content-evenly {
+  justify-content: space-evenly; }
+
 th,
 td {
   white-space: nowrap !important; }
@@ -12769,7 +12798,7 @@ table.dataTable tfoot td {
   ._my-lists-table table.dataTable tbody td:first-child,
   ._my-lists-table table.dataTable tbody th:first-child {
     padding-left: 29px !important;
-    padding-right: 11px !important; }
+    padding-right: 29px !important; }
 
 .dataTables_scrollBody tfoot {
   visibility: collapse; }
