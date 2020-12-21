@@ -12421,6 +12421,26 @@ button {
 .justify-content-evenly {
   justify-content: space-evenly; }
 
+.col-1-3 {
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+  width: 100%; }
+
+.pr-55 {
+  padding-right: 55px; }
+
+.pl-55 {
+  padding-left: 55px; }
+
+.pl-70 {
+  padding-left: 70px; }
+
+.col-5-3 {
+  width: calc(100% / 5 * 3); }
+
+.col-5-2 {
+  width: calc(100% / 5 * 2); }
+
 th,
 td {
   white-space: nowrap !important; }
@@ -12646,7 +12666,8 @@ table.dataTable.diriq-table tbody td {
     cursor: pointer;
     background: #f6f9fc; }
     ._filter-hidden .diriq-table__filter-btn {
-      background: #fff; }
+      background: #fff;
+      z-index: 11; }
   .diriq-table__filter-icon, .diriq-table__close-icon {
     transition: color 0.25s; }
   .diriq-table__filter-icon {
@@ -13279,6 +13300,10 @@ div.dataTables_wrapper div.dataTables_info {
 
 #data-table-all-fields_wrapper .dataTables_scrollHead {
   border-bottom: none !important; }
+
+.DTFC_RightBodyLiner {
+  padding-right: 0px !important;
+  z-index: 11; }
 
 @media (max-width: 1124px) {
   .navbar-search {
