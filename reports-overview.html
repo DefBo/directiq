@@ -1670,20 +1670,29 @@
 
     google.charts.load('current', {
       packages: ['corechart']
-    });
-    google.charts.setOnLoadCallback(drawChart).then(() => {});
+    }).then(function () {
 
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Date', 'Openers', 'Clickers'],
-        [new Date(2020, 6, 6), 8, 25],
-        [new Date(2020, 6, 7), 24, 60],
-        [new Date(2020, 6, 8), 56, 27],
-        [new Date(2020, 6, 9), 14, 29],
-        [new Date(2020, 6, 10), 15, 36],
-        [new Date(2020, 6, 11), 16, 32],
-        [new Date(2020, 6, 12), 48, 44],
-      ]);
+      var data = new google.visualization.DataTable();
+
+      var dataInfo = [
+        [new Date(2020, 6, 6), 0, 0],
+        [new Date(2020, 6, 7), 0, 0],
+      ];
+
+      data.addColumn('datetime', 'date');
+      data.addColumn('number', 'Openers');
+      data.addColumn('number', 'Clickers');
+      data.addRows(
+        dataInfo
+      );
+
+      var dateRange = data.getColumnRange(0);
+
+      var mindate = dateRange.min;
+      var maxdate = dateRange.max;
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
 
       var options = {
         curveType: 'function',
@@ -1719,10 +1728,7 @@
           },
           baselineColor: '#eef0f2',
           textPosition: 'out',
-          viewWindow: {
-            max: 60,
-            min: -1
-          },
+          minValue: 6,
         },
         hAxis: {
           textStyle: {
@@ -1734,11 +1740,16 @@
           },
           gridlines: {
             count: -1,
-            color: 'transparent',
+            color: 'transparent'
           },
           baselineColor: '#eef0f2',
           format: 'MMM dd',
           textPosition: 'out',
+          ticks: data.getDistinctValues(0),
+          viewWindow: {
+            min: mindate,
+            max: maxdate
+          },
         },
         lineWidth: 1.5,
         animation: {
@@ -1755,14 +1766,14 @@
           },
           showColorCode: true,
         },
+        
       };
 
-      var chart = new google.visualization.LineChart(
-        document.getElementById('curve_chart')
-      );
-
       chart.draw(data, options);
-    }
+
+    });
+
+    // hourly line charts
 
     google.charts.load('current', {
       packages: ['corechart']
@@ -1859,6 +1870,7 @@
           },
           showColorCode: true,
         },
+
       };
 
       var formatter = new google.visualization.DateFormat({
