@@ -599,7 +599,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#opens" data-toggle="tab" aria-expanded="true" class="nav-link" >
+                                    <a href="#opens" data-toggle="tab" aria-expanded="true" class="nav-link">
                                         Opens
                                     </a>
                                 </li>
@@ -667,7 +667,8 @@
 
                                     <div class="row">
                                         <div class="col-md-3 col-xl-2 pr-0 mb-28">
-                                            <div class="card d-flex bg-light-grey flex-column h-100 align-items-start justify-content-start mb-0">
+                                            <div
+                                                class="card d-flex bg-light-grey flex-column h-100 align-items-start justify-content-start mb-0">
                                                 <h4 class="font-weight-semibold font-18 mb-24">
                                                     Opens by Location
                                                 </h4>
@@ -699,7 +700,7 @@
                                             <div class="card mb-0 d-flex">
                                                 <div id="regions_div" class="map-big"></div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
 
@@ -887,11 +888,19 @@
                 mapsApiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY',
             })
             .then(function () {
-                var data = google.visualization.arrayToDataTable([
+                var dataMap = [
                     ['Country', 'Clicks'],
-                    ['United States', 47],
-                    ['Turkey', 32],
-                ]);
+                    ['United States', 1],
+                    ['Turkey', 1],
+                ];
+
+                if (dataMap[1][1] === dataMap[2][1]) {
+                    dataMap[1][1] = dataMap[1][1] + 0.1
+                }
+
+                var data = google.visualization.arrayToDataTable(
+                    dataMap
+                );
 
                 var options = {
                     colorAxis: {

@@ -1315,14 +1315,14 @@
                                 <span class="mr-0"><i class="circle-i circle-i_openers"></i>
                                   United States</span>
                                 <span class="data-click font-12 font-weight-regular ml-8">
-                                  <span class="mr-4 font-weight-bold">47</span> (34%)
+                                  <span class="mr-4 font-weight-bold">1</span> (34%)
                                 </span>
                               </p>
                               <p class="font-12 color-secondary font-weight-medium mb-10">
                                 <span class="mr-0"><i class="circle-i circle-i_clickers"></i>
                                   Turkey</span>
                                 <span class="data-click font-12 font-weight-regular ml-8">
-                                  <span class="mr-4 font-weight-bold">32</span> (28%)
+                                  <span class="mr-4 font-weight-bold">1</span> (28%)
                                 </span>
                               </p>
                               <p class="font-12 color-secondary font-weight-medium mb-0">
@@ -1551,15 +1551,24 @@
         mapsApiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY',
       })
       .then(function () {
-        var data = google.visualization.arrayToDataTable([
+
+        var dataMap = [
           ['Country', 'Clicks'],
-          ['United States', 47],
-          ['Turkey', 32],
-        ]);
+          ['United States', 1],
+          ['Turkey', 1],
+        ];
+
+        if (dataMap[1][1] === dataMap[2][1]) {
+          dataMap[1][1] = dataMap[1][1] + 0.1
+        }
+
+        var data = google.visualization.arrayToDataTable(
+          dataMap
+        );
 
         var options = {
           colorAxis: {
-            colors: ['#0000FF', '#00EBA8']
+            colors: ['#0000FF', '#00EBA8'],
           },
           backgroundColor: {
             fill: '#FFF',
@@ -1766,7 +1775,7 @@
           },
           showColorCode: true,
         },
-        
+
       };
 
       chart.draw(data, options);
