@@ -682,7 +682,7 @@
     });
 
     this.$menu.on('mouseup', 'a', function (e) {
-      self.hide();
+      // self.hide();
       e.stopPropagation();
       return false;
     });
@@ -703,7 +703,7 @@
           self.hide();
         }
       }, 0);
-      // self.hide();
+      self.hide();
       e.stopPropagation();
       return false;
     });
