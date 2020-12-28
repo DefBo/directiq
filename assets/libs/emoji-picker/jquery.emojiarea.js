@@ -703,7 +703,7 @@
           self.hide();
         }
       }, 0);
-      self.hide();
+      // self.hide();
       e.stopPropagation();
       return false;
     });
