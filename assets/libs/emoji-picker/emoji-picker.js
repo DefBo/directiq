@@ -19,7 +19,7 @@
       var isiOS;
       isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
       if (isiOS) {
-        return;
+        // return;
       }
       return $(this.options.emojiable_selector).emojiarea($.extend({
         emojiPopup: this,
