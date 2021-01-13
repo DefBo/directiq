@@ -12583,7 +12583,7 @@ button {
   z-index: 1; }
   .nonActive::after {
     position: absolute;
-    content: "";
+    content: '';
     top: -3px;
     left: 0px;
     width: 24px;
@@ -12599,10 +12599,10 @@ button {
     background-color: rgba(246, 249, 252, 0.5);
     z-index: 2;
     position: absolute;
-    content: ""; }
+    content: ''; }
 
 .white-bg {
-  background-color: #FFFFFF; }
+  background-color: #ffffff; }
 
 .list-item {
   line-height: 1.2; }
@@ -12612,6 +12612,21 @@ button {
 
 .ml-54 {
   margin-left: 54px; }
+
+.mr-54 {
+  margin-right: 54px; }
+
+.flex-wrap {
+  flex-wrap: wrap; }
+
+@media (min-width: 576px) {
+  .justify-content-sm-center {
+    justify-content: start; }
+  .mb-sm-0 {
+    margin-bottom: 0px; } }
+
+._branding {
+  display: flex; }
 
 th,
 td {
