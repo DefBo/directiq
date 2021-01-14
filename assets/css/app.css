@@ -8414,8 +8414,8 @@ body {
       .upload-list__match-wrap:hover::-webkit-scrollbar-thumb:vertical {
         background-color: transparent !important; }
   .upload-list__match-wrap:active {
-    color: #fff;
-    background: #0000ff; }
+    color: #00f;
+    background-color: #fff; }
   .upload-list__match-wrap::-webkit-scrollbar {
     height: 20px !important;
     background: currentColor;
@@ -10420,7 +10420,7 @@ body {
   background-color: rgba(218, 232, 247, 0.5);
   position: relative; }
   .template-preview__body._with-img {
-    overflow: auto;
+    overflow: hidden;
     color: #fff;
     transition: color 0.25s; }
     .template-preview__body._with-img:hover {
