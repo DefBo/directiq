@@ -7729,7 +7729,10 @@ body {
   line-height: 1;
   position: relative;
   z-index: 1;
-  white-space: nowrap; }
+  white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content; }
   @media (max-width: 768px) {
     .link {
       white-space: pre-wrap; } }
@@ -8071,6 +8074,13 @@ body {
   @media (max-width: 767.98px) {
     .card._contact {
       min-height: 170px; } }
+
+.card._search {
+  background-color: transparent;
+  box-shadow: none; }
+  .card._search .btn {
+    margin-left: auto;
+    margin-top: -25px; }
 
 .card._chosen {
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='blue' stroke-width='2' stroke-dasharray='7.5%2c 15' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); }
@@ -9399,9 +9409,7 @@ body {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default
-.select2-selection--single
-.select2-selection__placeholder {
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -9632,9 +9640,15 @@ body {
 
 .plugins-apps__aside {
   background: #f6f9fc; }
+  ._search .plugins-apps__aside {
+    background-color: transparent; }
 
 .plugins-apps__body {
   padding: 40px; }
+  ._search .plugins-apps__body {
+    background-color: #FFFFFF; }
+    ._search .plugins-apps__body.grey-bg {
+      background-color: #f6f9fc; }
 
 .plugins-apps__icon {
   width: 100px;
@@ -12772,6 +12786,47 @@ button {
     padding-right: 0px; }
   .w-1170.pl-55 {
     padding-left: 0px; } }
+
+.list-amount__leave {
+  color: #454F5B; }
+
+.non-active {
+  position: relative; }
+  .non-active:hover {
+    pointer-events: none !important; }
+  .non-active:disabled {
+    pointer-events: none !important; }
+  .non-active::after {
+    background-color: rgba(246, 249, 252, 0.8);
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    position: absolute;
+    content: "";
+    background-size: cover;
+    top: -1px;
+    left: -1px; }
+
+._user-row__image {
+  width: 50px;
+  height: 50px;
+  background-color: #DAE8F7;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  ._user-row__image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+._user-card {
+  flex-grow: 1;
+  min-height: 50px;
+  padding: 10px 20px;
+  background-color: #FFFFFF; }
+
+.grey-bg {
+  background-color: #F6F9FC; }
 
 th,
 td {
