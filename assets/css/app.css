@@ -12402,6 +12402,10 @@ button {
   max-width: 150px !important;
   width: 100%; }
 
+@media (max-width: 576px) {
+  .select-sm-100 {
+    max-width: 100% !important; } }
+
 .report-calendar .date-range__input {
   background-color: #f6f9fc; }
   .report-calendar .date-range__input:hover {
@@ -12469,6 +12473,12 @@ button {
 .map-big {
   width: 100%;
   height: 522px; }
+  @media (max-width: 576px) {
+    .map-big {
+      height: 322px; } }
+  @media (max-width: 420px) {
+    .map-big {
+      height: 280px; } }
 
 .map-small {
   width: 100%;
@@ -12513,17 +12523,32 @@ button {
 
 .bars-column {
   width: 59px; }
+  @media (max-width: 576px) {
+    .bars-column {
+      width: 35px; } }
 
 .bars-item {
   height: 120px; }
   .bars-item__column {
     width: 50px; }
+    @media (max-width: 576px) {
+      .bars-item__column {
+        width: 30px; } }
     .bars-item__column.light-green {
       background-color: #b6ffe8; }
     .bars-item__column.dark-green {
       background-color: #00eba8; }
     .bars-item__column.blue {
       background-color: #0000ff; }
+
+.font-10 {
+  font-size: 10px; }
+
+@media (min-width: 576px) {
+  .font-xs-12 {
+    font-size: 12px; }
+  .font-xs-14 {
+    font-size: 14px; } }
 
 .center {
   text-align: center; }
@@ -12904,7 +12929,7 @@ table.dataTable.diriq-table tbody td {
     .DTFC_LeftBodyLiner .diriq-table__link,
     .diriq-table__wrapper:not(._list-name-table) .diriq-table__link {
       position: relative;
-      z-index: 1; }
+      z-index: 0; }
       .DTFC_LeftBodyLiner .diriq-table__link:after,
       .diriq-table__wrapper:not(._list-name-table) .diriq-table__link:after {
         z-index: -1;
