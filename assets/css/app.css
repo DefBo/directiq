@@ -8078,6 +8078,12 @@ body {
 .card._search {
   background-color: transparent;
   box-shadow: none; }
+  .card._search .plugins-apps__icon {
+    fill: #00EBA8;
+    cursor: pointer; }
+    .card._search .plugins-apps__icon:hover {
+      fill: #fff;
+      background-color: #00f; }
   .card._search .btn {
     margin-left: auto;
     margin-top: -25px; }
