@@ -9409,7 +9409,9 @@ body {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default .select2-selection--single .select2-selection__placeholder {
+.select2-container--default
+.select2-selection--single
+.select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -9646,7 +9648,7 @@ body {
 .plugins-apps__body {
   padding: 40px; }
   ._search .plugins-apps__body {
-    background-color: #FFFFFF; }
+    background-color: #ffffff; }
     ._search .plugins-apps__body.grey-bg {
       background-color: #f6f9fc; }
 
@@ -12788,20 +12790,17 @@ button {
     padding-left: 0px; } }
 
 .list-amount__leave {
-  color: #454F5B; }
+  color: #454f5b; }
 
 .non-active {
-  position: relative; }
-  .non-active:hover {
-    pointer-events: none !important; }
-  .non-active:disabled {
-    pointer-events: none !important; }
+  position: relative;
+  pointer-events: none !important; }
   .non-active::after {
     background-color: rgba(246, 249, 252, 0.8);
     width: calc(100% + 2px);
     height: calc(100% + 2px);
     position: absolute;
-    content: "";
+    content: '';
     background-size: cover;
     top: -1px;
     left: -1px; }
@@ -12809,7 +12808,7 @@ button {
 ._user-row__image {
   width: 50px;
   height: 50px;
-  background-color: #DAE8F7;
+  background-color: #dae8f7;
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -12823,10 +12822,10 @@ button {
   flex-grow: 1;
   min-height: 50px;
   padding: 10px 20px;
-  background-color: #FFFFFF; }
+  background-color: #ffffff; }
 
 .grey-bg {
-  background-color: #F6F9FC; }
+  background-color: #f6f9fc; }
 
 th,
 td {
