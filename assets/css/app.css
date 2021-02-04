@@ -10574,6 +10574,9 @@ body {
 
 ._template-preview .modal-content {
   height: calc(100% - 80px); }
+  ._template-preview .modal-content.instructions-content {
+    min-height: 642px;
+    height: auto; }
 
 ._template-preview .modal-body {
   display: flex;
@@ -12589,6 +12592,11 @@ button {
   max-width: 66.66667%;
   width: 100%; }
 
+.col-1-2 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  width: 100%; }
+
 @media (max-width: 1200px) {
   .col-lg-1-2 {
     flex: 0 0 50%;
@@ -12913,7 +12921,8 @@ button {
     border-left: 1px solid #001EF5;
     display: flex;
     flex-direction: column;
-    height: 100%; }
+    height: 100%;
+    min-height: 120px; }
     .schedule-col__list-item {
       margin: 10px 0px;
       padding: 5px 10px;
@@ -12930,8 +12939,98 @@ button {
         background-color: #0000ff;
         color: #fff; }
 
-.stat-info .left, .stat-info .right {
+.stat-info .left,
+.stat-info .right {
   cursor: pointer; }
+
+.automation-not-active .stat-info__date {
+  position: relative; }
+  .automation-not-active .stat-info__date::after {
+    position: absolute;
+    content: "";
+    background-color: rgba(246, 249, 252, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px; }
+
+.automation-not-active .confirmation {
+  display: inline-flex;
+  position: absolute;
+  content: "";
+  left: calc(50% - 250px);
+  top: calc(50% - 56px); }
+  .automation-not-active .confirmation:before {
+    display: none; }
+
+.automation-not-active .schedule-carousel::after {
+  position: absolute;
+  content: "";
+  background-color: rgba(246, 249, 252, 0.8);
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+
+.status-default {
+  border: 2px solid #00EBA8;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+._done .status-default {
+  border-color: #00f; }
+  ._done .status-default__arrow {
+    position: absolute;
+    content: '';
+    bottom: -40px; }
+
+._done .checklist-row__text {
+  color: #758796; }
+
+.checklist-row__status {
+  width: 30px;
+  margin-right: 12px; }
+
+.checklist-row__video {
+  margin-left: 40px;
+  cursor: pointer;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content; }
+  .checklist-row__video-item {
+    width: 110px;
+    height: 72px;
+    pointer-events: none; }
+
+.checklist-row__text .position-relative::after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: 102%;
+  background-color: #00f;
+  top: 55%;
+  left: -1%; }
+
+.checklist-time {
+  color: #454F5B; }
+
+.checklist-title {
+  color: #212B35; }
+
+.instructions-preview {
+  width: 764px;
+  height: 500px; }
+  .instructions-preview iframe {
+    width: 100%;
+    height: 100%; }
+
+.w-200 {
+  max-width: 200px;
+  width: 100%; }
 
 th,
 td {
