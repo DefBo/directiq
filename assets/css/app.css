@@ -10581,7 +10581,12 @@ body {
   height: calc(100% - 80px); }
   ._template-preview .modal-content.instructions-content {
     min-height: 642px;
-    height: auto; }
+    height: auto;
+    max-width: 985px;
+    width: 100%; }
+    @media (max-width: 576px) {
+      ._template-preview .modal-content.instructions-content {
+        min-height: 462px; } }
 
 ._template-preview .modal-body {
   display: flex;
@@ -12630,6 +12635,12 @@ button {
     max-width: 100%;
     width: 100%; } }
 
+@media (max-width: 768px) {
+  .col-md-100 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%; } }
+
 .pr-55 {
   padding-right: 55px; }
 
@@ -13060,6 +13071,10 @@ button {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content; }
+  @media (max-width: 576px) {
+    .checklist-row__video {
+      margin-left: 0px;
+      margin-top: 20px; } }
   .checklist-row__video-item {
     width: 110px;
     height: 72px;
@@ -13081,9 +13096,16 @@ button {
   color: #212b35; }
 
 .instructions-preview {
-  width: 764px;
-  height: 500px; }
+  height: 500px;
+  max-width: 764px;
+  width: 100%;
+  position: relative; }
+  @media (max-width: 576px) {
+    .instructions-preview {
+      height: 320px; } }
   .instructions-preview iframe {
+    position: absolute;
+    content: '';
     width: 100%;
     height: 100%; }
 
