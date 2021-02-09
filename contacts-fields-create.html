@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <title>Settings - Add Sender Pop | DirectIQ</title>
+    <title>Contacts | DirectIQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Direct IQ frontend development version" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -40,7 +39,11 @@
     />
     <meta name="theme-color" content="#ffffff" />
 
-    <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!-- App css -->
     <link
       href="assets/css/bootstrap.min.css"
@@ -55,59 +58,82 @@
       id="app-default-stylesheet"
     />
 
-</head>
+  </head>
 
-<body data-layout-mode="two-column" class="animation-stopper">
+  <body data-layout-mode="two-column" class="animation-stopper">
     <!-- /.modal -->
 
-    <div id="templates-send-test" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true" style="display: none">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <svg width="8" height="8">
-                        <use xlink:href="assets/images/sprite.svg#cross"></use>
-                    </svg>
-                </button>
-                <div class="modal-body">
-                    <h4 class="mb-12">New Custom Field</h4>
+    <div
+      id="templates-send-test"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+      style="display: none"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <div class="modal-body">
+            <h4 class="mb-12">New Custom Field</h4>
 
-                    <div class="d-flex mb-14">
-                        <div class="form-control__wrap mr-20">
-                            <input type="text" placeholder="Name Your Field" class="form-control"
-                                value="Name Your Field" />
-                        </div>
-                        <select class="form-control _select2-lg" required>
-                            <option></option>
-                            <option value="test-1">Text 1</option>
-                            <option value="test-2">Text 2</option>
-                        </select>
-                    </div>
-
-                    <div class="d-flex align-items-center position-relative fit-content">
-                        <div class="switcher__wrap mr-8">
-                            <label for="switch-1" class="switcher__label font-weight-semibold ln-1">Make this field
-                                public</label>
-                            <input type="checkbox" id="switch-1" class="switcher" checked />
-                            <label for="switch-1" class="switcher__toggle"></label>
-                            
-                        </div>
-
-                        <div class="pop-up font-weight-bold">
-                            <div class="icon">?</div>
-                            <div class="pop-up__text pop-text font-12 color-secondary font-weight-regular">
-                                <b>Recepients</b> are people who fancy ice-cream
-                                and sendwiches as well as
-                                <span class="font-weight-bold">nice friendships</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <button class="btn _lg _primary mt-20">Create</button>
-                </div>
+            <div class="d-flex mb-14 w-100">
+              <div class="form-control__wrap pr-20 col-2-3">
+                <input
+                  type="text"
+                  placeholder="Name Your Field"
+                  class="form-control"
+                  value="Name Your Field"
+                />
+              </div>
+              <div class="d-flex align-items-center col-1-3">
+                <select class="form-control _select2-lg" required>
+                  <option></option>
+                  <option value="test-1">Text 1</option>
+                  <option value="test-2">Text 2</option>
+                </select>
+              </div>
             </div>
+
+            <div
+              class="d-flex align-items-center position-relative fit-content"
+            >
+              <div class="switcher__wrap mr-8">
+                <label
+                  for="switch-1"
+                  class="switcher__label font-weight-semibold ln-1"
+                  >Make this field public</label
+                >
+                <input type="checkbox" id="switch-1" class="switcher" checked />
+                <label for="switch-1" class="switcher__toggle"></label>
+              </div>
+
+              <div class="pop-up font-weight-bold">
+                <div class="icon">?</div>
+                <div
+                  class="pop-up__text pop-text font-12 color-secondary font-weight-regular"
+                >
+                  <b>Recepients</b> are people who fancy ice-cream and
+                  sendwiches as well as
+                  <span class="font-weight-bold">nice friendships</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn _lg _primary mt-20">Create</button>
+          </div>
         </div>
+      </div>
     </div>
     <!-- /.modal -->
     <!-- END wrapper -->
@@ -120,20 +146,19 @@
     <script src="assets/js/app.min.js"></script>
 
     <script>
-        $(document).ready(function () {
-            const select2Options = {
-                placeholder: 'Select',
-                allowClear: true,
-                minimumResultsForSearch: -1,
-            };
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
 
-            createSelect2ByClass('._select2-lg', select2Options);
-        });
+        createSelect2ByClass('._select2-lg', select2Options);
+      });
 
-        $(window).on('load', function () {
-            $('#templates-send-test').modal('show');
-        });
+      $(window).on('load', function () {
+        $('#templates-send-test').modal('show');
+      });
     </script>
-</body>
-
+  </body>
 </html>
