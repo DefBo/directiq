@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link href="assets/libs/emoji-picker/emoji.css" rel="stylesheet" />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+</head>
+
+<body data-layout-mode="two-column" class="animation-stopper _step">
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+            <div class="container-fluid navbar-custom__inner _editor-top">
+                <!-- LOGO -->
+                <div class="logo-box">
+                    <a href="./" class="logo">
+                        <svg width="44.834" height="45">
+                            <use xlink:href="assets/images/sprite.svg#logo"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="align-items-md-center align-items-start flex-column flex-md-row d-flex w-100">
+
+                    <div class="d-flex flex-sm-row flex-column align-items-center w-100">
+                        <div class="d-flex align-items-center col-1-2 pr-15 pl-15 col-sm-100 pl-md-0 pr-lg-30">
+                            <div class="font-12 font-weight-bold mr-10 text-nowrap">Template Name*</div>
+                            <input type="text" placeholder="Name your template" class="form-control"
+                                value="" />
+                        </div>
+
+                        <div class="d-flex align-items-center mt-12 mt-sm-0 col-1-2 pl-15 pl-sm-0 pr-15 col-sm-100 pr-lg-30">
+                            <div class="font-12 font-weight-bold mr-10 text-nowrap">Subject Line*</div>
+                            <div class="position-relative w-100">
+                                <input type="text" placeholder="Write a compelling subject line" class="form-control"
+                                    data-emojiable="true" value="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex ml-15 ml-md-0 ml-md-auto mt-12 mt-md-0">
+                        <a href="#" class="btn _lg _sm _primary mr-15 mr-lg-30">Preview</a>
+                        <a href="#" class="btn _lg _sm _secondary mr-30">Save and Exit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Topbar -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page _editor">
+            <div class="content">
+
+                <div class="pseudo-modal">
+                    <textarea name="editor1"></textarea>
+                </div>
+
+            </div>
+            <!-- content -->
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
+
+    <script src="assets/libs/emoji-picker/config.js"></script>
+    <script src="assets/libs/emoji-picker/util.js"></script>
+    <script src="assets/libs/emoji-picker/jquery.emojiarea.js"></script>
+    <script src="assets/libs/emoji-picker/emoji-picker.js"></script>
+
+    <script>
+        CKEDITOR.replace('editor1', {
+            language: 'fr',
+            uiColor: '#ECF1F8',
+            height: '605px'
+        });
+    </script>
+
+    <script>
+        $(function () {
+            window.emojiPicker = new EmojiPicker({
+                emojiable_selector: '[data-emojiable=true]',
+                assetsPath: './assets/images/emoji/',
+                popupButtonClasses: 'fa fa-smile-o',
+            });
+            window.emojiPicker.discover();
+        });
+    </script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+
+</body>
+
+</html>
