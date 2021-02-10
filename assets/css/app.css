@@ -13115,6 +13115,12 @@ button {
   ._editor-top .logo-box {
     background-color: #ecf1f8 !important; }
 
+.mr-54 {
+  margin-right: 54px; }
+
+.mr-48 {
+  margin-right: 48px; }
+
 th,
 td {
   white-space: nowrap !important; }
