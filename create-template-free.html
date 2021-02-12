@@ -524,7 +524,7 @@
           </svg>
         </button>
 
-        <button class="btn_icon user-avatar-mobile" id="user-profile-btn-mobile">
+        <button class="btn_icon user-avatar-mobile h-100" id="user-profile-btn-mobile">
           <img src="assets/images/user.png" alt="User Avatar" />
         </button>
       </div>
@@ -609,7 +609,8 @@
                   <div class="templates">
                     <div class="templates__item">
                       <div class="templates__item-preview" data-toggle="modal" data-target="#template-preview">
-                        <iframe src="http://ad.vashfundament.com/" frameborder="0" class="template-preview-iframe"></iframe>
+                        <iframe src="http://ad.vashfundament.com/" frameborder="0"
+                          class="template-preview-iframe"></iframe>
                       </div>
                       <div class="templates__item-name">Happy New Year</div>
                       <div class="templates__item-buttons">
@@ -929,7 +930,8 @@
               <div class="template-preview__header">Film Festival</div>
 
               <div class="template-preview__body _with-img">
-                <iframe src="http://ad.vashfundament.com/" frameborder="0" class="ifrm ifrm-popup" class="template-preview-iframe"></iframe>
+                <iframe src="http://ad.vashfundament.com/" frameborder="0" class="ifrm ifrm-popup"
+                  class="template-preview-iframe"></iframe>
               </div>
             </div>
 
@@ -966,7 +968,17 @@
       }, item)
     });
   </script> -->
+  <script>
+    $(document).ready(function () {
+      const select2Options = {
+        placeholder: 'Select',
+        allowClear: true,
+        minimumResultsForSearch: -1,
+      };
 
+      createSelect2ByClass('._select2-lg', select2Options);
+    });
+  </script>
 </body>
 
 </html>
