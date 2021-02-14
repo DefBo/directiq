@@ -9377,7 +9377,9 @@ body {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default .select2-selection--single .select2-selection__placeholder {
+.select2-container--default
+.select2-selection--single
+.select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -13094,21 +13096,24 @@ button {
   height: 100%;
   width: calc(100% - 94px);
   border: 0px;
-  background-color: #32373A; }
+  background-color: #32373a; }
   @media (max-width: 768px) {
     ._editor iframe {
       width: 100%; } }
 
-.column-error input ~ span, .column-error .position-relative.w-100 ~ span {
+.column-error input ~ span,
+.column-error .position-relative.w-100 ~ span {
   position: absolute;
-  content: "";
+  content: '';
   top: 24px;
   left: 0px; }
   @media (max-width: 1200px) {
-    .column-error input ~ span, .column-error .position-relative.w-100 ~ span {
+    .column-error input ~ span,
+    .column-error .position-relative.w-100 ~ span {
       font-size: 8px !important; } }
   @media (max-width: 991px) {
-    .column-error input ~ span:before, .column-error .position-relative.w-100 ~ span:before {
+    .column-error input ~ span:before,
+    .column-error .position-relative.w-100 ~ span:before {
       width: 6.75px;
       height: 9px; } }
 

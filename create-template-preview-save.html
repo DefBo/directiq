@@ -613,7 +613,7 @@
           </button>
 
           <button
-            class="btn_icon user-avatar-mobile"
+            class="btn_icon user-avatar-mobile h-100"
             id="user-profile-btn-mobile"
           >
             <img src="assets/images/user.png" alt="User Avatar" />
@@ -744,7 +744,6 @@
     <script src="assets/js/dataTable.js"></script>
 
     <script>
-
       $(document).ready(function () {
         const select2Options = {
           placeholder: 'Select',
@@ -790,27 +789,27 @@
       }
 
       // iframed document sends its height using postMessage
-      // function handleDocHeightMsg(e) {
-      //   // check origin
-      //   if (e.origin === 'http://andriiv.com') {
-      //     // parse data
-      //     var data = JSON.parse(e.data);
-      //     // check data object
-      //     if (data['docHeight']) {
-      //       setIframeHeightCO('ifrm', data['docHeight']);
-      //     } else if (data['href']) {
-      //       setIframe('ifrm', data['href']);
-      //     }
-      //   }
-      // }
+      function handleDocHeightMsg(e) {
+        // check origin
+        if (e.origin === 'http://andriiv.com') {
+          // parse data
+          var data = JSON.parse(e.data);
+          // check data object
+          if (data['docHeight']) {
+            setIframeHeightCO('ifrm', data['docHeight']);
+          } else if (data['href']) {
+            setIframe('ifrm', data['href']);
+          }
+        }
+      }
 
-      // assign message handler
-      // if (window.addEventListener) {
-      //   window.addEventListener('message', handleDocHeightMsg, false);
-      // } else if (window.attachEvent) {
-      //   // ie8
-      //   window.attachEvent('onmessage', handleDocHeightMsg);
-      // }
+      //assign message handler
+      if (window.addEventListener) {
+        window.addEventListener('message', handleDocHeightMsg, false);
+      } else if (window.attachEvent) {
+        // ie8
+        window.attachEvent('onmessage', handleDocHeightMsg);
+      }
 
       function anyName() {
         var varname = document.querySelector('.content-page').offsetHeight;
