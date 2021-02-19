@@ -9840,6 +9840,9 @@ body {
   padding: 0;
   animation-name: fade-in;
   transform: none !important; }
+  .navbar-custom .dropdown-menu.profile-dropdown._notifications {
+    top: 90% !important;
+    right: 4px !important; }
   @media (max-width: 767.98px) {
     .navbar-custom .dropdown-menu.profile-dropdown {
       position: fixed;
@@ -13116,6 +13119,9 @@ button {
     .column-error .position-relative.w-100 ~ span:before {
       width: 6.75px;
       height: 9px; } }
+
+.blue svg {
+  color: #0000ff; }
 
 th,
 td {
