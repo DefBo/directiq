@@ -13123,6 +13123,9 @@ button {
 .blue svg {
   color: #0000ff; }
 
+.grecaptcha-badge {
+  bottom: 94px !important; }
+
 th,
 td {
   white-space: nowrap !important; }
