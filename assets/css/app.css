@@ -7861,11 +7861,11 @@ body {
   .dropdown-toggle._icon {
     color: #00eba8;
     position: relative; }
-    .dropdown-toggle._icon:hover {
+    .dropdown-toggle._icon:hover, .show .dropdown-toggle._icon {
       color: #0000ff; }
-      .dropdown-toggle._icon:hover svg {
+      .dropdown-toggle._icon:hover svg, .show .dropdown-toggle._icon svg {
         transform: translateY(-3px); }
-      .dropdown-toggle._icon:hover .badge {
+      .dropdown-toggle._icon:hover .badge, .show .dropdown-toggle._icon .badge {
         transform: translateX(8px); }
     .dropdown-toggle._icon .badge {
       background-color: #ed1c24;
@@ -9825,6 +9825,9 @@ body {
     visibility: visible; }
   .nav-drill {
     width: auto; } }
+
+._notifications.show + ._user {
+  pointer-events: none; }
 
 .navbar-custom .dropdown-menu.profile-dropdown {
   border-radius: 0;
