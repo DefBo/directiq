@@ -1,395 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Settings - Free Account | DirectIQ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta content="Direct IQ frontend development version" name="description" />
-    <meta content="Coderthemes" name="author" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- App favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
-    />
-    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
-    <link
-      rel="mask-icon"
-      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
-      color="#5bbad5"
-    />
-    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
-    <meta name="msapplication-TileColor" content="#0000ff" />
-    <meta
-      name="msapplication-config"
-      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
-    />
-    <meta name="theme-color" content="#ffffff" />
+
+<head>
+  <meta charset="utf-8" />
+  <title>Settings - Free Account | DirectIQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content="Direct IQ frontend development version" name="description" />
+  <meta content="Coderthemes" name="author" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- App favicon -->
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+  />
+  <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+  <link
+    rel="mask-icon"
+    href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+    color="#5bbad5"
+  />
+  <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+  <meta name="msapplication-TileColor" content="#0000ff" />
+  <meta
+    name="msapplication-config"
+    content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+  />
+  <meta name="theme-color" content="#ffffff" />
 
 
-    <link
-      href="assets/libs/select2/css/select2.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+  <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- App css -->
-    <link
-      href="assets/css/bootstrap.min.css"
-      rel="stylesheet"
-      type="text/css"
-      id="bs-default-stylesheet"
-    />
-    <link
-      href="assets/css/app.min.css"
-      rel="stylesheet"
-      type="text/css"
-      id="app-default-stylesheet"
-    />
+  <!-- App css -->
+  <link
+    href="assets/css/bootstrap.min.css"
+    rel="stylesheet"
+    type="text/css"
+    id="bs-default-stylesheet"
+  />
+  <link
+    href="assets/css/app.min.css"
+    rel="stylesheet"
+    type="text/css"
+    id="app-default-stylesheet"
+  />
 
-  </head>
+</head>
 
-  <body data-layout-mode="two-column" class="animation-stopper _step">
-    <!-- Begin page -->
-    <div id="wrapper">
-      <!-- ============================================================== -->
-      <!-- Start Page Content here -->
-      <!-- ============================================================== -->
+<body data-layout-mode="two-column" class="animation-stopper _step">
+  <!-- Begin page -->
+  <div id="wrapper">
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
 
-      <div class="content-page _settings _emailFooter">
-        <div class="content w-100">
-          <!-- Start Content-->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-12">
-                <div class="tab-content">
-                  <div class="card p-0 mb-0 flex-column-reverse">
-                    <div class="bg-light-grey create-campaign__row _editing">
-                      <div class="d-flex flex-column">
-                        <svg
-                          width="30"
-                          height="30"
-                          class="create-campaign__icon"
-                        >
-                          <use
-                            class="icon-check"
-                            xlink:href="assets/images/sprite.svg#round-checkmark"
-                          ></use>
-                          <use
-                            class="icon-edit"
-                            xlink:href="assets/images/sprite.svg#round-edit"
-                          ></use>
-                          <use
-                            class="icon-fill"
-                            xlink:href="assets/images/sprite.svg#round-checkmark-fill"
-                          ></use>
-                        </svg>
-                      </div>
+    <div class="content-page _settings _emailFooter _modal">
+      <div class="content w-100">
 
-                      <div class="w-100">
-                        <div class="d-flex flex-column flex-sm-row pl-20 mb-32">
-                          <div class="create-campaign__row-content">
-                            <h4 class="mb-4 font-weight-semibold">
-                              Email Footer Settings
-                            </h4>
-                            <p class="create-campaign__row-placeholder">
-                              A footer will be added to all emails.
-                              <a href="#" class="link">Learn more.</a>
-                            </p>
-                          </div>
+        <div class="pseudo-modal">
+          <div class="pseudo-modal__body bg-light-grey create-campaign__row _editing">
+            <div class="d-flex flex-column">
+              <svg width="30" height="30" class="create-campaign__icon">
+                <use class="icon-check" xlink:href="assets/images/sprite.svg#round-checkmark"></use>
+                <use class="icon-edit" xlink:href="assets/images/sprite.svg#round-edit"></use>
+                <use class="icon-fill" xlink:href="assets/images/sprite.svg#round-checkmark-fill"></use>
+              </svg>
+            </div>
+
+            <div class="w-100">
+              <div class="d-flex flex-column flex-sm-row pl-20 mb-32">
+                <div class="create-campaign__row-content">
+                  <h4 class="mb-4 font-weight-semibold">
+                    Email Footer Settings
+                  </h4>
+                  <p class="create-campaign__row-placeholder">
+                    A footer will be added to all emails.
+                    <a href="#" class="link">Learn more.</a>
+                  </p>
+                </div>
+              </div>
+
+              <form action="#" class="profile">
+                <div class="create-campaign__row-edit">
+                  <div class="create-campaign__row-content">
+                    <div class="row">
+                      <div class="col-md-3 mb-30">
+                        <p class="font-14 font-weight-bold mb-8">
+                          Language
+                        </p>
+                        <div class="mw-320">
+                          <select class="form-control _select2-lg" required>
+                            <option></option>
+                            <option value="test-1" selected>
+                              English
+                            </option>
+                            <option value="test-2">Chinese</option>
+                            <option value="test-3">Dutch</option>
+                          </select>
                         </div>
-
-                        <form action="#" class="profile">
-                          <div class="create-campaign__row-edit">
-                            <div class="create-campaign__row-content">
-                              <div class="row">
-                                <div class="col-md-3 mb-30">
-                                  <p class="font-14 font-weight-bold mb-8">
-                                    Language
-                                  </p>
-                                  <div class="mw-320">
-                                    <select
-                                      class="form-control _select2-lg"
-                                      required
-                                    >
-                                      <option></option>
-                                      <option value="test-1" selected>
-                                        English
-                                      </option>
-                                      <option value="test-2">Chinese</option>
-                                      <option value="test-3">Dutch</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="col-md-9 mb-30">
-                                  <div class="ml-xl-34 d-flex flex-column">
-                                    <div
-                                      class="font-14 font-weight-bold mb-10 position-relative fit-content show-elements"
-                                    >
-                                      Elements to Show
-                                      <div class="pop-up font-weight-bold">
-                                        <div class="icon">?</div>
-                                        <div
-                                          class="pop-up__text pop-text font-12 color-secondary font-weight-regular"
-                                        >
-                                          <span class="font-weight-semibold"
-                                            >Only Paid Plans</span
-                                          >
-                                          can hide certain elements.
-                                          <a href="#" class="link"
-                                            >Review plans</a
-                                          >
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="d-flex flex-wrap">
-                                      <div
-                                        class="switcher__wrap justify-content-center mr-28 nonActive"
-                                      >
-                                        <label
-                                          for="switch-1"
-                                          class="switcher__label font-weight-regular color-secondary"
-                                        >
-                                          View in Browser
-                                        </label>
-                                        <input
-                                          type="checkbox"
-                                          id="switch-1"
-                                          class="switcher"
-                                          checked
-                                        />
-                                        <label
-                                          for="switch-1"
-                                          class="switcher__toggle"
-                                        ></label>
-                                      </div>
-                                      <div
-                                        class="switcher__wrap justify-content-center mr-28 nonActive"
-                                      >
-                                        <label
-                                          for="switch-2"
-                                          class="switcher__label font-weight-regular color-secondary"
-                                        >
-                                          Unsubscribe
-                                        </label>
-                                        <input
-                                          type="checkbox"
-                                          id="switch-2"
-                                          class="switcher"
-                                          checked
-                                        />
-                                        <label
-                                          for="switch-2"
-                                          class="switcher__toggle"
-                                        ></label>
-                                      </div>
-                                      <div
-                                        class="switcher__wrap justify-content-center mr-28 nonActive"
-                                      >
-                                        <label
-                                          for="switch-3"
-                                          class="switcher__label font-weight-regular color-secondary"
-                                        >
-                                          Report Spam
-                                        </label>
-                                        <input
-                                          type="checkbox"
-                                          id="switch-3"
-                                          class="switcher"
-                                          checked
-                                        />
-                                        <label
-                                          for="switch-3"
-                                          class="switcher__toggle"
-                                        ></label>
-                                      </div>
-                                      <div
-                                        class="switcher__wrap justify-content-center nonActive"
-                                      >
-                                        <label
-                                          for="switch-4"
-                                          class="switcher__label font-weight-regular color-secondary"
-                                        >
-                                          DirectIQ Branding
-                                        </label>
-                                        <input
-                                          type="checkbox"
-                                          id="switch-4"
-                                          class="switcher"
-                                          checked
-                                        />
-                                        <label
-                                          for="switch-4"
-                                          class="switcher__toggle"
-                                        ></label>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-12">
-                                  <p class="font-14 font-weight-bold mb-8">
-                                    Preview
-                                  </p>
-                                  <div
-                                    class="white-bg w-100 px-20 d-flex align-items-center justify-content-sm-center justify-content-start py-40 flex-wrap"
-                                  >
-                                    <div
-                                      class="list-item font-13 font-weight-regular mr-20 mb-sm-0 mb-8"
-                                    >
-                                      <a href="#">[ View in Browser ]</a>
-                                    </div>
-                                    <div
-                                      class="list-item font-13 font-weight-regular mr-20 mb-sm-0 mb-8"
-                                    >
-                                      <a href="#">[ Unsubscribe ]</a>
-                                    </div>
-                                    <div
-                                      class="list-item font-13 font-weight-regular mr-20 mb-sm-0 mb-8"
-                                    >
-                                      <a href="#">[ Report Spam ]</a>
-                                    </div>
-                                    <div
-                                      class="list-item _branding font-13 font-weight-regular align-items-center flex-wrap d-flex align-items-center mb-sm-0 mb-8"
-                                    >
-                                      <div
-                                        class="list-item__img d-flex align-items-center justify-content-center mr-6"
-                                      >
-                                        <img
-                                          src="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
-                                          alt="#"
-                                        />
-                                      </div>
-                                      Email Marketing by
-                                      <a href="#" class="ml-8">[ DirectIQ ]</a>
-                                    </div>
-                                  </div>
-                                </div>
+                      </div>
+                      <div class="col-md-9 mb-30">
+                        <div class="ml-xl-34 d-flex flex-column">
+                          <div class="font-14 font-weight-bold mb-10 position-relative fit-content show-elements">
+                            Elements to Show
+                            <div class="pop-up font-weight-bold">
+                              <div class="icon">?</div>
+                              <div class="pop-up__text pop-text font-12 color-secondary font-weight-regular">
+                                <span class="font-weight-semibold">Only Paid Plans</span>
+                                can hide certain elements.
+                                <a href="#" class="link">Review plans</a>
                               </div>
                             </div>
-
-                            <a
-                              href="#"
-                              class="btn _lg _primary _save mt-30"
-                              type="submit"
-                              >Save</a
-                            >
                           </div>
-                        </form>
-
-                        <a href="#" class="close">
-                          <svg width="8" height="8">
-                            <use
-                              xlink:href="assets/images/sprite.svg#cross"
-                            ></use>
-                          </svg>
-                        </a>
+                          <div class="d-flex flex-wrap">
+                            <div class="switcher__wrap justify-content-center mr-28 nonActive">
+                              <label for="switch-1" class="switcher__label font-weight-regular color-secondary">
+                                View in Browser
+                              </label>
+                              <input type="checkbox" id="switch-1" class="switcher" checked />
+                              <label for="switch-1" class="switcher__toggle"></label>
+                            </div>
+                            <div class="switcher__wrap justify-content-center mr-28 nonActive">
+                              <label for="switch-2" class="switcher__label font-weight-regular color-secondary">
+                                Unsubscribe
+                              </label>
+                              <input type="checkbox" id="switch-2" class="switcher" checked />
+                              <label for="switch-2" class="switcher__toggle"></label>
+                            </div>
+                            <div class="switcher__wrap justify-content-center mr-28 nonActive">
+                              <label for="switch-3" class="switcher__label font-weight-regular color-secondary">
+                                Report Spam
+                              </label>
+                              <input type="checkbox" id="switch-3" class="switcher" checked />
+                              <label for="switch-3" class="switcher__toggle"></label>
+                            </div>
+                            <div class="switcher__wrap justify-content-center nonActive">
+                              <label for="switch-4" class="switcher__label font-weight-regular color-secondary">
+                                DirectIQ Branding
+                              </label>
+                              <input type="checkbox" id="switch-4" class="switcher" checked />
+                              <label for="switch-4" class="switcher__toggle"></label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="font-14 font-weight-bold mb-8">
+                          Preview
+                        </p>
+                        <div
+                          class="white-bg w-100 px-20 d-flex align-items-center justify-content-sm-center justify-content-start py-40 flex-wrap">
+                          <div class="list-item font-13 font-weight-regular mr-20 mb-sm-0 mb-8">
+                            <a href="#">[ View in Browser ]</a>
+                          </div>
+                          <div class="list-item font-13 font-weight-regular mr-20 mb-sm-0 mb-8">
+                            <a href="#">[ Unsubscribe ]</a>
+                          </div>
+                          <div class="list-item font-13 font-weight-regular mr-20 mb-sm-0 mb-8">
+                            <a href="#">[ Report Spam ]</a>
+                          </div>
+                          <div
+                            class="list-item _branding font-13 font-weight-regular align-items-center flex-wrap d-flex align-items-center mb-sm-0 mb-8">
+                            <div class="list-item__img d-flex align-items-center justify-content-center mr-6">
+                              <img src="assets/images/favicon-16x16.png?v=M4K2b5JM9m" alt="#" />
+                            </div>
+                            Email Marketing by
+                            <a href="#" class="ml-8">[ DirectIQ ]</a>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  <a href="#" class="btn _lg _primary _save mt-30" type="submit">Save</a>
                 </div>
-              </div>
-            </div>
-            <!-- container -->
-          </div>
-          <!-- content -->
-        </div>
+              </form>
 
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
-      </div>
-      <!-- END wrapper -->
-
-      <div
-        id="verify-domain"
-        class="modal fade"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myModalLabel"
-        aria-hidden="true"
-        style="display: none"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-            >
-              <svg width="8" height="8">
-                <use xlink:href="assets/images/sprite.svg#cross"></use>
-              </svg>
-            </button>
-            <div class="modal-body">
-              <h4 class="mb-16">Verify Domain</h4>
-              <div class="form-control__wrap mb-11">
-                <input
-                  type="text"
-                  placeholder="Your Domain Name Here"
-                  class="form-control"
-                  value="koala@barbodesign.com"
-                />
-              </div>
-              <p class="font-12 font-weight-medium color-secondary mb-21">
-                We’ll send a verification email to above address. Please make
-                sure you entered an address you can access.
-              </p>
-              <button
-                class="btn _lg _primary"
-                data-toggle="modal"
-                data-target="#verification-sent"
-                data-dismiss="modal"
-                aria-hidden="true"
-              >
-                Send Verification
-              </button>
             </div>
           </div>
+
+          <button type="button" class="close">
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
         </div>
       </div>
-      <!-- /.modal -->
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
     </div>
+    <!-- END wrapper -->
 
-    <!-- App js -->
-    <script src="assets/js/vendor.min.js"></script>
-    <script src="assets/libs/select2/js/select2.min.js"></script>
-    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
-    <script src="assets/libs/wnumb/wNumb.min.js"></script>
+  </div>
 
-    <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
+  <!-- App js -->
+  <script src="assets/js/vendor.min.js"></script>
+  <script src="assets/libs/select2/js/select2.min.js"></script>
+  <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+  <script src="assets/libs/wnumb/wNumb.min.js"></script>
 
-    <script>
-      $(document).ready(function () {
-        const select2Options = {
-          placeholder: 'Select',
-          allowClear: true,
-          minimumResultsForSearch: -1,
-        };
-        createSelect2ByClass('._select2-lg', select2Options);
-      });
-    </script>
-  </body>
+  <!-- App js -->
+  <script src="assets/js/app.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const select2Options = {
+        placeholder: 'Select',
+        allowClear: true,
+        minimumResultsForSearch: -1,
+      };
+      createSelect2ByClass('._select2-lg', select2Options);
+    });
+  </script>
+</body>
+
 </html>
