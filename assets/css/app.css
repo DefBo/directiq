@@ -9380,9 +9380,7 @@ body {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default
-.select2-selection--single
-.select2-selection__placeholder {
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -9711,7 +9709,8 @@ body {
       flex: 0 0 100%; } }
 
 .connect__cards-aside {
-  flex: 0 0 calc(30% - 15px); }
+  flex: 0 0 calc(30% - 15px);
+  margin-left: auto; }
   @media (max-width: 1124px) {
     .connect__cards-aside {
       flex: 0 0 calc(40% - 15px); } }
@@ -9728,6 +9727,10 @@ body {
   @media (max-width: 1024px) {
     .connect__card-aside {
       margin-bottom: 28px; } }
+  @media (max-width: 576px) {
+    .connect__card-aside {
+      padding-left: 20px !important;
+      padding-bottom: 20px !important; } }
 
 .connect__store-name {
   width: 150px; }
