@@ -1,204 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Add Contacts | DirectIQ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta content="Direct IQ frontend development version" name="description" />
-  <meta content="Coderthemes" name="author" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- App favicon -->
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
-  />
-  <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
-  <link
-    rel="mask-icon"
-    href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
-    color="#5bbad5"
-  />
-  <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
-  <meta name="msapplication-TileColor" content="#0000ff" />
-  <meta
-    name="msapplication-config"
-    content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
-  />
-  <meta name="theme-color" content="#ffffff" />
 
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/libs/nouisliderribute/nouislider.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <link href="assets/libs/nouisliderribute/nouislider.min.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
 
-  <!-- App css -->
-  <link
-    href="assets/css/bootstrap.min.css"
-    rel="stylesheet"
-    type="text/css"
-    id="bs-default-stylesheet"
-  />
-  <link
-    href="assets/css/app.min.css"
-    rel="stylesheet"
-    type="text/css"
-    id="app-default-stylesheet"
-  />
+  </head>
 
-</head>
+  <body data-layout-mode="two-column" class="animation-stopper _step">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
-<body data-layout-mode="two-column" class="animation-stopper _step">
-  <!-- Begin page -->
-  <div id="wrapper">
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
-
-    <div class="content-page _modal">
-      <div class="content">
-        <!-- Start Content-->
-        <div class="pseudo-modal">
-          <div class="pseudo-modal__body">
-            <div class="d-flex flex-column">
-              <svg width="30" height="30" class="create-campaign__icon">
-                <use class="icon-fill" xlink:href="assets/images/sprite.svg#round-checkmark-fill"></use>
-              </svg>
-            </div>
-
-            <div class="w-100">
-              <div class="d-flex flex-column flex-sm-row pl-20">
-                <div class="create-campaign__row-content">
-                  <h4 class="mb-4">A/B Test Rules</h4>
-                  <p class="create-campaign__row-placeholder">
-                    What would you like to test?
-                  </p>
-                </div>
+      <div class="content-page _modal">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="pseudo-modal">
+            <div class="pseudo-modal__body">
+              <div class="d-flex flex-column">
+                <svg width="30" height="30" class="create-campaign__icon">
+                  <use
+                    class="icon-fill"
+                    xlink:href="assets/images/sprite.svg#round-checkmark-fill"
+                  ></use>
+                </svg>
               </div>
 
-              <div class="create-campaign__row-edit">
-                <div class="create-campaign__ab-test">
-                  <div class="create-campaign__ab-test-main">
-                    <div class="create-campaign__ab-test-step d-flex">
-                      <div class="create-campaign__ab-test-step-col">
-                        <h5>Test Subject Lines</h5>
-                        <div class="form-group round-touchspin">
-                          <input data-toggle="touchspin" type="text" value="1" data-bts-max="3" />
+              <div class="w-100">
+                <div class="d-flex flex-column flex-sm-row pl-20">
+                  <div class="create-campaign__row-content">
+                    <h4 class="mb-4">A/B Test Rules</h4>
+                    <p class="create-campaign__row-placeholder">
+                      What would you like to test?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="create-campaign__row-edit">
+                  <div class="create-campaign__ab-test">
+                    <div class="create-campaign__ab-test-main">
+                      <div class="create-campaign__ab-test-step d-flex">
+                        <div class="create-campaign__ab-test-step-col">
+                          <h5>Test Subject Lines</h5>
+                          <div class="form-group round-touchspin">
+                            <input
+                              data-toggle="touchspin"
+                              type="text"
+                              value="1"
+                              data-bts-max="3"
+                            />
+                          </div>
+                        </div>
+                        <div class="create-campaign__ab-test-step-col">
+                          <h5>Test From Name</h5>
+                          <div class="form-group round-touchspin">
+                            <input
+                              data-toggle="touchspin"
+                              type="text"
+                              value="1"
+                              data-bts-max="3"
+                            />
+                          </div>
+                        </div>
+                        <div class="create-campaign__ab-test-step-col">
+                          <h5>Test Email Template</h5>
+                          <div class="form-group round-touchspin">
+                            <input
+                              data-toggle="touchspin"
+                              type="text"
+                              value="1"
+                              data-bts-max="3"
+                            />
+                          </div>
                         </div>
                       </div>
-                      <div class="create-campaign__ab-test-step-col">
-                        <h5>Test From Name</h5>
-                        <div class="form-group round-touchspin">
-                          <input data-toggle="touchspin" type="text" value="1" data-bts-max="3" />
-                        </div>
+                      <div class="create-campaign__ab-test-step pb-52">
+                        <h5>
+                          Chose the percentage of recipients to receive test
+                        </h5>
+                        <div id="slider" class="percents-slider"></div>
+                        <input
+                          type="number"
+                          id="slider-input"
+                          name="slider-input"
+                          min="0"
+                          max="100"
+                        />
                       </div>
-                      <div class="create-campaign__ab-test-step-col">
-                        <h5>Test Email Template</h5>
-                        <div class="form-group round-touchspin">
-                          <input data-toggle="touchspin" type="text" value="1" data-bts-max="3" />
+                      <div class="create-campaign__ab-test-step">
+                        <h5 class="mb-11">How to decide winning combination</h5>
+                        <div class="d-flex align-items-center mb-15">
+                          <div class="create-campaign__input-wrap">
+                            <select class="form-control _select2-lg" required>
+                              <option></option>
+                              <option value="test-1" selected>
+                                By open rate
+                              </option>
+                              <option value="test-2">test item</option>
+                            </select>
+                          </div>
+                          <div class="mx-10">after</div>
+                          <div class="form-control__wrap mr-10 mw-60">
+                            <input type="text" class="form-control" value="" />
+                          </div>
+                          <div class="create-campaign__input-wrap">
+                            <select class="form-control _select2-lg" required>
+                              <option></option>
+                              <option value="test-1" selected>hours</option>
+                              <option value="test-2">minutes</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="create-campaign__ab-test-step pb-52">
-                      <h5>
-                        Chose the percentage of recipients to receive test
-                      </h5>
-                      <div id="slider" class="percents-slider"></div>
-                      <input type="number" id="slider-input" name="slider-input" min="0" max="100" />
-                    </div>
-                    <div class="create-campaign__ab-test-step">
-                      <h5 class="mb-11">
-                        How to decide winning combination
-                      </h5>
-                      <div class="d-flex align-items-center mb-15">
-                        <div class="create-campaign__input-wrap">
-                          <select class="form-control _select2-lg" required>
-                            <option></option>
-                            <option value="test-1" selected>By open rate</option>
-                            <option value="test-2">test item</option>
-                          </select>
-                        </div>
-                        <div class="mx-10">after</div>
-                        <div class="form-control__wrap mr-10 mw-60">
-                          <input type="text" class="form-control" value="" />
-                        </div>
-                        <div class="create-campaign__input-wrap">
-                          <select class="form-control _select2-lg" required>
-                            <option></option>
-                            <option value="test-1" selected>hours</option>
-                            <option value="test-2">minutes</option>
-                          </select>
+                    <div class="create-campaign__ab-test-aside">
+                      <div class="card connect__card-aside">
+                        <i class="mb-19">
+                          <svg width="45" height="50">
+                            <use
+                              xlink:href="assets/images/sprite.svg#cat-sherlock"
+                            ></use>
+                          </svg>
+                        </i>
+                        <h5 class="mb-5">Summary</h5>
+                        <div class="font-12 color-secondary font-weight-medium">
+                          <div>
+                            Test Cobinations (max 3):
+                            <span class="font-weight-bold color-danger"
+                              >not decided yet</span
+                            >
+                          </div>
+                          <div>
+                            Total Recipients:
+                            <span class="font-weight-bold">1070</span>
+                          </div>
+                          <div>
+                            Test Percentage (min 10%, max 50%):
+                            <span class="font-weight-bold">20%</span>
+                          </div>
+                          <div>
+                            Test Recipients:
+                            <span class="font-weight-bold">214</span>
+                          </div>
+                          <div>
+                            Campaign Percentage:
+                            <span class="font-weight-bold">80%</span>
+                          </div>
+                          <div>
+                            Campaign Recipients:
+                            <span class="font-weight-bold">896</span>
+                          </div>
+                          <div>
+                            Win Criteria:
+                            <span class="font-weight-bold color-danger"
+                              >not decided yet</span
+                            >
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="create-campaign__ab-test-aside">
-                    <div class="card connect__card-aside">
-                      <i class="mb-19">
-                        <svg width="45" height="50">
-                          <use xlink:href="assets/images/sprite.svg#cat-sherlock"></use>
-                        </svg>
-                      </i>
-                      <h5 class="mb-5">Summary</h5>
-                      <div class="font-12 color-secondary font-weight-medium">
-                        <div>
-                          Test Cobinations (max 3):
-                          <span class="font-weight-bold color-danger">not decided yet</span>
-                        </div>
-                        <div>
-                          Total Recipients:
-                          <span class="font-weight-bold">1070</span>
-                        </div>
-                        <div>
-                          Test Percentage (min 10%, max 50%):
-                          <span class="font-weight-bold">20%</span>
-                        </div>
-                        <div>
-                          Test Recipients:
-                          <span class="font-weight-bold">214</span>
-                        </div>
-                        <div>
-                          Campaign Percentage:
-                          <span class="font-weight-bold">80%</span>
-                        </div>
-                        <div>
-                          Campaign Recipients:
-                          <span class="font-weight-bold">896</span>
-                        </div>
-                        <div>
-                          Win Criteria:
-                          <span class="font-weight-bold color-danger">not decided yet</span>
-                        </div>
-                      </div>
-                    </div>
+
+                  <div
+                    class="font-12 color-secondary font-weight-medium mb-30 ml-38 mw-840"
+                  >
+                    We'll first send each combination to a portion of your
+                    recipients to see which combination wins most engagement.
+                    Then we'll continue by sending the winning combination to
+                    the rest of the recipients.
+                    <a href="#" class="link">Learn more.</a>
                   </div>
-                </div>
 
-                <div class="font-12 color-secondary font-weight-medium mb-30 ml-38 mw-840">
-                  We'll first send each combination to a portion of your
-                  recipients to see which combination wins most engagement.
-                  Then we'll continue by sending the winning combination to
-                  the rest of the recipients.
-                  <a href="#" class="link">Learn more.</a>
+                  <button class="btn _lg _primary _save">Save</button>
                 </div>
-
-                <button class="btn _lg _primary _save">Save</button>
               </div>
+
+              <button type="button" class="close">
+                <svg width="8" height="8">
+                  <use xlink:href="assets/images/sprite.svg#cross"></use>
+                </svg>
+              </button>
             </div>
 
             <button type="button" class="close">
@@ -207,162 +257,151 @@
               </svg>
             </button>
           </div>
-
-          <button type="button" class="close">
-            <svg width="8" height="8">
-              <use xlink:href="assets/images/sprite.svg#cross"></use>
-            </svg>
-          </button>
+          <!-- container -->
         </div>
-        <!-- container -->
+        <!-- content -->
       </div>
-      <!-- content -->
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
     </div>
+    <!-- END wrapper -->
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
-  </div>
-  <!-- END wrapper -->
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
 
-  <!-- App js -->
-  <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/libs/select2/js/select2.min.js"></script>
 
-  <script src="assets/libs/select2/js/select2.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="assets/libs/nouisliderribute/nouislider.min.js"></script>
+    <script src="assets/libs/wnumb/wNumb.min.js"></script>
 
-  <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
-  <script src="assets/libs/nouisliderribute/nouislider.min.js"></script>
-  <script src="assets/libs/wnumb/wNumb.min.js"></script>
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
 
-  <!-- App js -->
-  <script src="assets/js/app.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
 
-  <script>
-    $(document).ready(function () {
-      const select2Options = {
-        placeholder: 'Select',
-        allowClear: true,
-        minimumResultsForSearch: -1,
-      };
+        createSelect2ByClass('._select2-lg', select2Options);
 
-      createSelect2ByClass('._select2-lg', select2Options);
+        !(function ($) {
+          'use strict';
 
-      !(function ($) {
-        'use strict';
-
-        var FormAdvanced = function () {};
-        // touchspin
-        (FormAdvanced.prototype.initTouchspin = function () {
-          var defaultOptions = {};
-
+          var FormAdvanced = function () {};
           // touchspin
-          $('[data-toggle="touchspin"]').each(function (idx, obj) {
-            var objOptions = $.extend({}, defaultOptions, $(obj).data());
-            $(obj).TouchSpin(objOptions);
-          });
-        }),
-        //initilizing
-        (FormAdvanced.prototype.init = function () {
-          var $this = this;
-          this.initTouchspin();
-        }),
-        ($.FormAdvanced = new FormAdvanced()),
-        ($.FormAdvanced.Constructor = FormAdvanced);
-      })(window.jQuery),
-      //initializing main application module
-      (function ($) {
-        'use strict';
-        $.FormAdvanced.init();
-      })(window.jQuery);
+          (FormAdvanced.prototype.initTouchspin = function () {
+            var defaultOptions = {};
 
-      var connectSlider = document.getElementById('slider');
+            // touchspin
+            $('[data-toggle="touchspin"]').each(function (idx, obj) {
+              var objOptions = $.extend({}, defaultOptions, $(obj).data());
+              $(obj).TouchSpin(objOptions);
+            });
+          }),
+            //initilizing
+            (FormAdvanced.prototype.init = function () {
+              var $this = this;
+              this.initTouchspin();
+            }),
+            ($.FormAdvanced = new FormAdvanced()),
+            ($.FormAdvanced.Constructor = FormAdvanced);
+        })(window.jQuery),
+          //initializing main application module
+          (function ($) {
+            'use strict';
+            $.FormAdvanced.init();
+          })(window.jQuery);
 
-      noUiSlider.create(connectSlider, {
-        start: 20,
-        connect: 'lower',
-        tooltips: true,
-        format: wNumb({
-          decimals: 0,
-          postfix: '%',
-        }),
-        step: 1,
-        range: {
-          min: 0,
-          max: 100,
-        },
-        pips: {
-          mode: 'values',
-          values: [10, 50],
+        var connectSlider = document.getElementById('slider');
+
+        noUiSlider.create(connectSlider, {
+          start: 20,
+          connect: 'lower',
+          tooltips: true,
           format: wNumb({
+            decimals: 0,
             postfix: '%',
           }),
-        },
-      });
+          step: 1,
+          range: {
+            min: 0,
+            max: 100,
+          },
+          pips: {
+            mode: 'values',
+            values: [10, 50],
+            format: wNumb({
+              postfix: '%',
+            }),
+          },
+        });
 
-      /* Get initial slider value and update it in slider input*/
-      let sliderValueOnLoad = +slider.noUiSlider.get().slice(0, -1);
-      $('#slider-input').val(sliderValueOnLoad);
+        /* Get initial slider value and update it in slider input*/
+        let sliderValueOnLoad = +slider.noUiSlider.get().slice(0, -1);
+        $('#slider-input').val(sliderValueOnLoad);
 
-      /* Set slider soft limits (min - 10, max - 50) */
-      connectSlider.noUiSlider.on('change', function (values, handle) {
-        var unformattedValue = values[handle].substring(
-          0,
-          values[handle].length - 1
-        );
+        /* Set slider soft limits (min - 10, max - 50) */
+        connectSlider.noUiSlider.on('change', function (values, handle) {
+          var unformattedValue = values[handle].substring(
+            0,
+            values[handle].length - 1
+          );
 
-        if (unformattedValue < 10) {
-          connectSlider.noUiSlider.set(10);
-        } else if (unformattedValue > 50) {
-          connectSlider.noUiSlider.set(50);
-        }
-      });
-
-      /* Update slider input value on slider set */
-      slider.noUiSlider.on('set', function () {
-        let currentSliderValueString = slider.noUiSlider.get();
-        let currentSliderValueNumber = +currentSliderValueString.slice(0, -1);
-
-        $('#slider-input').val(currentSliderValueNumber);
-      });
-
-      /* Set up for slider hover */
-      $('.noUi-connect, .noUi-handle').hover(
-        function () {
-          $(this).closest('.noUi-target').addClass('_hovered');
-        },
-        function () {
-          $(this).closest('.noUi-target').removeClass('_hovered');
-        }
-      );
-
-      $('.round-touchspin .btn').click(function () {
-        let touchSpinWrap = $(this).closest('.round-touchspin');
-        let touchSpinContainer = $(this).closest(
-          '.create-campaign__ab-test-step-col'
-        );
-
-        if (touchSpinWrap.find('input').val() !== '1') {
-          touchSpinWrap.removeClass('_min');
-          $('.create-campaign__ab-test-step-col').addClass('_disabled');
-          touchSpinContainer.removeClass('_disabled');
-          touchSpinWrap.addClass('_with-value');
-
-          if (touchSpinWrap.find('input').val() === '3') {
-            touchSpinWrap.addClass('_max');
-          } else {
-            touchSpinWrap.removeClass('_max');
+          if (unformattedValue < 10) {
+            connectSlider.noUiSlider.set(10);
+          } else if (unformattedValue > 50) {
+            connectSlider.noUiSlider.set(50);
           }
+        });
 
-        } else {
+        /* Update slider input value on slider set */
+        slider.noUiSlider.on('set', function () {
+          let currentSliderValueString = slider.noUiSlider.get();
+          let currentSliderValueNumber = +currentSliderValueString.slice(0, -1);
 
-          touchSpinWrap.addClass('_min');
-          $('.create-campaign__ab-test-step-col').removeClass('_disabled');
-          touchSpinWrap.removeClass('_with-value');
+          $('#slider-input').val(currentSliderValueNumber);
+        });
 
-        }
+        /* Set up for slider hover */
+        $('.noUi-connect, .noUi-handle').hover(
+          function () {
+            $(this).closest('.noUi-target').addClass('_hovered');
+          },
+          function () {
+            $(this).closest('.noUi-target').removeClass('_hovered');
+          }
+        );
+
+        $('.round-touchspin .btn').click(function () {
+          let touchSpinWrap = $(this).closest('.round-touchspin');
+          let touchSpinContainer = $(this).closest(
+            '.create-campaign__ab-test-step-col'
+          );
+
+          if (touchSpinWrap.find('input').val() !== '1') {
+            touchSpinWrap.removeClass('_min');
+            $('.create-campaign__ab-test-step-col').addClass('_disabled');
+            touchSpinContainer.removeClass('_disabled');
+            touchSpinWrap.addClass('_with-value');
+
+            if (touchSpinWrap.find('input').val() === '3') {
+              touchSpinWrap.addClass('_max');
+            } else {
+              touchSpinWrap.removeClass('_max');
+            }
+          } else {
+            touchSpinWrap.addClass('_min');
+            $('.create-campaign__ab-test-step-col').removeClass('_disabled');
+            touchSpinWrap.removeClass('_with-value');
+          }
+        });
       });
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

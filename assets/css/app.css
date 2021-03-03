@@ -7968,17 +7968,29 @@ body {
   .knobs._triple {
     margin-top: 38px;
     padding-bottom: 14px; }
-    @media (max-width: 479px) {
+    @media (max-width: 767px) {
       .knobs._triple {
-        flex-direction: column; }
-        .knobs._triple > div + div {
-          margin-top: 22px; } }
+        width: 100%; } }
+    @media (max-width: 576px) {
+      .knobs._triple {
+        flex-wrap: wrap;
+        justify-content: space-between; }
+        .knobs._triple > div {
+          margin-bottom: 20px;
+          margin-right: 20px; } }
   .knobs._double {
     margin-top: 16px;
     align-items: center; }
     @media (min-width: 768px) {
       .knobs._double {
         padding: 30px 0; } }
+    @media (max-width: 576px) {
+      .knobs._double {
+        flex-wrap: wrap;
+        justify-content: space-between; }
+        .knobs._double > div {
+          margin-bottom: 20px;
+          margin-right: 20px; } }
     .knobs._double:after {
       content: '';
       height: 50px; }
@@ -8205,6 +8217,10 @@ button.close {
   align-items: center;
   flex: 1;
   padding: 23px 40px; }
+  @media (max-width: 991px) {
+    .contact__info {
+      padding-right: 20px;
+      padding-left: 20px; } }
   @media (max-width: 767.98px) {
     .contact__info {
       flex-direction: column;
@@ -9590,6 +9606,9 @@ button.close {
 .custom-list {
   padding-left: 9px;
   list-style: none; }
+  @media (max-width: 576px) {
+    .custom-list {
+      padding-left: 0px; } }
   .custom-list__item {
     font-size: 12px;
     font-weight: 500;
@@ -9771,6 +9790,10 @@ button.close {
     top: 50%;
     right: -35px;
     transform: translateY(-50%); }
+    @media (max-width: 767px) {
+      .more-conditions .btn {
+        top: 0px;
+        transform: none; } }
 
 .condition-additional-sign {
   position: absolute;
@@ -10148,6 +10171,9 @@ button.close {
     position: absolute;
     top: 1.5px;
     right: 0; }
+    @media (max-width: 767px) {
+      #conditions .row .remove-segment {
+        top: 0px; } }
 
 .inbox-preview {
   display: flex;
