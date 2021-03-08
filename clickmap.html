@@ -821,13 +821,10 @@
                     <div class="pr-0 pr-md-22 position-relative">
                       <div class="row no-gutters chart-wrap">
                         <div class="col-md-6">
-                          <div class="card align-content-start bs-no p-0 h-100">
-                            <iframe
-                              src="http://ad.vashfundament.com/"
-                              class="h-100 email-ifrm"
-                              frameborder="0"
-                            ></iframe>
-                          </div>
+                          <div
+                            class="card align-content-start bs-no p-0 h-100"
+                            id="clickmap-container"
+                          ></div>
                         </div>
                         <div class="col-md-6 d-flex flex-direction-column">
                           <div
@@ -857,6 +854,7 @@
                               <a
                                 href="https://www.apple.com/store/new-iphone-12-max/landing=01"
                                 class="link"
+                                data-id="clickmap"
                                 >https://www.apple.com/store/new-iphone-12-max/landing=01</a
                               >
                             </div>
@@ -881,6 +879,7 @@
                               <a
                                 href="https://www.apple.com/store/new-iphone-12-pro"
                                 class="link"
+                                data-id="clickmap"
                                 >https://www.apple.com/store/new-iphone-12-pro</a
                               >
                             </div>
@@ -905,6 +904,7 @@
                               <a
                                 href="https://www.apple.com/store/new-iphone-12-mini/new_colors_012491-11411-1111"
                                 class="link"
+                                data-id="clickmap"
                                 >https://www.apple.com/store/new-iphone-12-mini/new_colors_012491-11411-1111</a
                               >
                             </div>
@@ -929,6 +929,7 @@
                               <a
                                 href="https://www.apple.com/unsubscribe"
                                 class="link"
+                                data-id="clickmap"
                                 >https://www.apple.com/unsubscribe</a
                               >
                             </div>
@@ -999,6 +1000,7 @@
 
     <script src="assets/js/loader.js"></script>
     <script src="assets/libs/raphael/raphael.min.js"></script>
+    <script src="assets/libs/postmate/postmate.min.js"></script>
     <script src="assets/libs/select2/js/select2.min.js"></script>
 
     <!-- App js -->
@@ -1046,20 +1048,33 @@
     </script>
 
     <script>
-      let listItems = document.querySelectorAll('.list-items');
+      let listItemsLink = document.querySelectorAll('a[data-id="clickmap"]');
 
-      listItems.forEach((item) => {
-        let listItemsLink = item.querySelector('a');
+      const handshake = new Postmate({
+        container: document.getElementById('clickmap-container'), // Element to inject frame into
+        url: 'http://localhost:3000/clickmap-iframe-page/', // Page to load, must have postmate.js. This will also be the origin used for communication.
+        name: 'clickmap-iframe', // Set Iframe name attribute. Useful to get `window.name` in the child.
+        classListArray: ['h-100', 'email-ifrm'], //Classes to add to the iframe via classList, useful for styling.
+        debug: true,
+      });
 
+      listItemsLink.forEach((link) => {
         // This handler will be executed every time the cursor
         // is moved over a different list item
-        listItemsLink.addEventListener('mouseover', function (event) {
+        link.addEventListener('mouseover', function (event) {
           // highlight the mouseover target
           event.target.style.color = 'orange';
+
+          handshake.then((child) => {
+            child.call('hideLinks', link.href);
+          });
         });
 
-        listItemsLink.addEventListener('mouseleave', function (event) {
+        link.addEventListener('mouseleave', function (event) {
           event.target.style.color = '';
+          handshake.then((child) => {
+            child.call('showAllLinks');
+          });
         });
       });
     </script>
