@@ -18125,7 +18125,8 @@ button.close {
 .nav-tabs .nav-item {
   line-height: 19px;
   font-size: 14px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  position: relative; }
   .nav-tabs .nav-item li a.active {
     cursor: default;
     pointer-events: none; }
@@ -18136,20 +18137,19 @@ button.close {
 
 .nav-bordered {
   border-bottom: 2px solid transparent !important; }
-  .nav-bordered li a {
+  .nav-bordered li > a {
     border-width: 0 0 4px 0 !important;
     border-style: solid !important;
     border-color: transparent !important;
     padding: 10px 20px 6px;
     transition: 0.25s; }
-    .nav-bordered li a:hover {
+    .nav-bordered li > a:hover {
       border-color: #b6ffe8 !important;
       color: #0000ff; }
-    .nav-bordered li a.active {
+    .nav-bordered li > a.active {
+      border-bottom: 2px solid #6658dd !important;
       border-width: 0 0 4px 0 !important;
       border-color: #00eba8 !important; }
-  .nav-bordered a.active {
-    border-bottom: 2px solid #6658dd !important; }
 
 .tab-content {
   position: relative;
