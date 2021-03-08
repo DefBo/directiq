@@ -12833,7 +12833,8 @@ button {
   height: 6px; }
 
 .email-ifrm {
-  min-height: 760px; }
+  min-height: 760px;
+  border: none; }
 
 @media (max-width: 991px) {
   .flex-lg-column {
