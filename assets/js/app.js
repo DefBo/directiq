@@ -892,8 +892,8 @@ File: Main Js File
 })(window.jQuery),
   (function ($) {
     /**
-    Portlet Widget
-    */
+  Portlet Widget
+  */
     const Portlet = function () {
       (this.$body = $('body')),
         (this.$portletIdentifier = '.card'),
@@ -955,7 +955,8 @@ File: Main Js File
         $('body').toggleClass('fullscreen-enable');
         if (
           !document.fullscreenElement &&
-          /* alternative standard method */ !document.mozFullScreenElement &&
+          /* alternative standard method */
+          !document.mozFullScreenElement &&
           !document.webkitFullscreenElement
         ) {
           // current working methods
@@ -979,6 +980,7 @@ File: Main Js File
       document.addEventListener('fullscreenchange', exitHandler);
       document.addEventListener('webkitfullscreenchange', exitHandler);
       document.addEventListener('mozfullscreenchange', exitHandler);
+
       function exitHandler() {
         if (
           !document.webkitIsFullScreen &&
@@ -1037,7 +1039,9 @@ if ($('select[data-toggle=select2]').length > 0) {
     // initializing tooltip
     (FormAdvanced.prototype.initSelect2 = function () {
       // Select2
-      $('[data-toggle="select2"]').select2({ minimumResultsForSearch: -1 });
+      $('[data-toggle="select2"]').select2({
+        minimumResultsForSearch: -1,
+      });
     }),
       // initilizing
       (FormAdvanced.prototype.init = function () {
@@ -1113,7 +1117,11 @@ function addWithScrollTable() {
 
 function adjustDataTableColumns() {
   if ($($.fn.dataTable.tables()).length > 0) {
-    $($.fn.dataTable.tables({ visible: true }))
+    $(
+      $.fn.dataTable.tables({
+        visible: true,
+      })
+    )
       .DataTable()
       .columns.adjust();
     addWithScrollTable();
@@ -1316,6 +1324,12 @@ $(document).ready(function () {
     $(this).closest('td').removeClass('table-confirm-show');
   });
 
+  $(document).on('click', '.confirm__modal', function (e) {
+    if (e.target.classList.contains('confirm__modal')) {
+      $(this).closest('.confirm__modal').addClass('d-none');
+    }
+  });
+
   $('._add-new-list').click(function () {
     $(this).addClass('d-none');
     $(this).next('.add-new-list-input').removeClass('d-none');
@@ -1440,17 +1454,15 @@ $(window).on('load', function () {
 
   // add event for rendered select
   $('.selectpicker[data-live-search]').each(function () {
-    $(this).on('changed.bs.select', function (
-      e,
-      clickedIndex,
-      isSelected,
-      previousValue
-    ) {
-      $(this).closest('.tab-pane').find('.card._chosen ._save-list').val('');
-      $('.card').removeClass('_chosen');
-      $(this).closest('.card').addClass('_chosen');
-      $('.contact__finish').removeClass('_disabled');
-    });
+    $(this).on(
+      'changed.bs.select',
+      function (e, clickedIndex, isSelected, previousValue) {
+        $(this).closest('.tab-pane').find('.card._chosen ._save-list').val('');
+        $('.card').removeClass('_chosen');
+        $(this).closest('.card').addClass('_chosen');
+        $('.contact__finish').removeClass('_disabled');
+      }
+    );
   });
 });
 
