@@ -750,49 +750,36 @@
                             </div>
                           </div>
 
-                        <h5 class="mb-29">Conditions</h5>
-                        <div id="conditions">
-                          <div class="row pr-md-46 pr-30">
-                            <div class="col-md-6 col-lg-3">
-                              <select class="form-control _select2-lg _quality" name="field1" required>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select>
-                            </div>
-                            <div class="col-md-6 col-lg-3 field-filter-container mt-16 mt-md-0">
-                              <select class="form-control _select2-lg" name="field1" required>
-                                <option value="test-1">Option 1</option>
-                                <option value="test-2">Option 2</option>
-                              </select>
-                            </div>
-                            <div class="col-md-6 col-lg-3 field-filter-container mt-16 mt-lg-0">
-                              <select class="form-control _select2-lg" name="field1" required>
-                                <option></option>
-                                <option value="test-1">Option 1</option>
-                                <option value="test-2">Option 2</option>
-                              </select>
-                            </div>
-                            <div class="col-md-6 col-lg-3 field-filter-container mt-16 mt-lg-0">
-                              <input name="Segment[fbe11867-4c1e-4b56-a277-34f2250e7d93].FilterValue" type="text"
-                                placeholder="Type Text" class="form-control" />
-                            </div>
-                            <div class="row pr-46 mt-30">
-                              <div class="col-md-3">
+                          <h5 class="mb-29">Conditions</h5>
+                          <div id="conditions">
+                            <div class="row pr-md-46 pr-30">
+                              <div class="col-md-6 col-lg-3">
+                                <select
+                                  class="form-control _select2-lg _quality"
+                                  name="field1"
+                                  required
+                                >
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                </select>
+                              </div>
+                              <div
+                                class="col-md-6 col-lg-3 field-filter-container mt-16 mt-md-0"
+                              >
                                 <select
                                   class="form-control _select2-lg"
                                   name="field1"
                                   required
                                 >
-                                  <option></option>
                                   <option value="test-1">Option 1</option>
                                   <option value="test-2">Option 2</option>
                                 </select>
                               </div>
                               <div
-                                class="col-md-3 mt-16 mt-md-0 field-filter-container"
+                                class="col-md-6 col-lg-3 field-filter-container mt-16 mt-lg-0"
                               >
                                 <select
                                   class="form-control _select2-lg"
@@ -805,7 +792,84 @@
                                 </select>
                               </div>
                               <div
-                                class="col-md-3 mt-16 mt-md-0 field-filter-container"
+                                class="col-md-6 col-lg-3 field-filter-container mt-16 mt-lg-0"
+                              >
+                                <input
+                                  name="Segment[fbe11867-4c1e-4b56-a277-34f2250e7d93].FilterValue"
+                                  type="text"
+                                  placeholder="Type Text"
+                                  class="form-control"
+                                />
+                              </div>
+                              <div class="mt-30 addmore"></div>
+                              <button
+                                type="button"
+                                class="btn _sm _secondary _check remove-segment"
+                                data-id="fbe11867-4c1e-4b56-a277-34f2250e7d93"
+                              >
+                                <svg width="8" height="8">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#cross"
+                                  ></use>
+                                </svg>
+                              </button>
+                              <div class="ml-12 mt-30">
+                                <div class="radio_inline radio mr-34">
+                                  <input
+                                    type="radio"
+                                    value="Or"
+                                    id="Or[fbe11867-4c1e-4b56-a277-34f2250e7d93]"
+                                    name="Segment[fbe11867-4c1e-4b56-a277-34f2250e7d93].AndOr"
+                                    checked=""
+                                  />
+                                  <label
+                                    for="Or[fbe11867-4c1e-4b56-a277-34f2250e7d93]"
+                                  >
+                                    OR
+                                  </label>
+                                </div>
+                                <div class="radio_inline radio mr-0">
+                                  <input
+                                    type="radio"
+                                    value="And"
+                                    id="And[fbe11867-4c1e-4b56-a277-34f2250e7d93]"
+                                    name="Segment[fbe11867-4c1e-4b56-a277-34f2250e7d93].AndOr"
+                                  />
+                                  <label
+                                    for="And[fbe11867-4c1e-4b56-a277-34f2250e7d93]"
+                                  >
+                                    AND
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row pr-md-46 pr-30 mt-30">
+                              <div class="col-md-6 col-lg-3">
+                                <select
+                                  class="form-control _select2-lg"
+                                  name="field1"
+                                  required
+                                >
+                                  <option></option>
+                                  <option value="test-1">Option 1</option>
+                                  <option value="test-2">Option 2</option>
+                                </select>
+                              </div>
+                              <div
+                                class="col-md-6 col-lg-3 mt-16 mt-md-0 field-filter-container"
+                              >
+                                <select
+                                  class="form-control _select2-lg"
+                                  name="field1"
+                                  required
+                                >
+                                  <option></option>
+                                  <option value="test-1">Option 1</option>
+                                  <option value="test-2">Option 2</option>
+                                </select>
+                              </div>
+                              <div
+                                class="col-md-6 col-lg-3 mt-16 mt-lg-0 field-filter-container"
                               >
                                 <select
                                   class="form-control _select2-lg"
@@ -820,7 +884,7 @@
                                 </select>
                               </div>
                               <div
-                                class="col-md-3 field-filter-container"
+                                class="col-md-6 col-lg-3 field-filter-container"
                               ></div>
                               <div class="addmore">
                                 <button
@@ -844,35 +908,27 @@
                               </button>
                             </div>
                           </div>
-                          <div class="row pr-md-46 pr-30 mt-30">
-                            <div class="col-md-6 col-lg-3">
-                              <select class="form-control _select2-lg" name="field1" required>
-                                <option></option>
-                                <option value="test-1">Option 1</option>
-                                <option value="test-2">Option 2</option>
-                              </select>
-                            </div>
-                            <div class="col-md-6 col-lg-3 mt-16 mt-md-0 field-filter-container">
-                              <select class="form-control _select2-lg" name="field1" required>
-                                <option></option>
-                                <option value="test-1">Option 1</option>
-                                <option value="test-2">Option 2</option>
-                              </select>
-                            </div>
-                            <div class="col-md-6 col-lg-3 mt-16 mt-lg-0 field-filter-container">
-                              <select class="form-control _select2-lg" name="field1" required>
-                                <option></option>
-                                <option value="test-1">Option 1</option>
-                                <option value="test-2" selected>
-                                  Option 2
-                                </option>
-                              </select>
-                            </div>
-                            <div class="col-md-6 col-lg-3 field-filter-container"></div>
-                            <div class="addmore">
-                              <button type="button" class="btn _sm _secondary btn-add-condition mt-30 ml-10"
-                                data-id="2b5d686a-988c-4d17-8be3-3aeecc3db288">
-                                Add Another Condition
+                          <input
+                            name="__RequestVerificationToken"
+                            type="hidden"
+                            value="CfDJ8FS685tkfIxEnCxQS1koOVZJWy9uEs32nCllqxErYAe8ALMNvpLMnZs8GSi9z3LdBBnS7bgjqNIBe5l-SMZQxeuPS-t8h9X6JX9uQHsfJYEd0FeLSO7b3ST_bTSKRo6y5CPwij39U_nxGcBtPa8Mq_q0KfYXjBIWmhVAztSp3d3fLEZ5ro3WzuoJqs51XTPUoA"
+                          />
+                        </form>
+
+                        <div class="mt-30" id="conditions-buttons">
+                          <div class="d-flex justify-content-between">
+                            <div>
+                              <button
+                                id="apply-conditions-btn"
+                                class="btn _lg _primary"
+                              >
+                                Apply
+                              </button>
+                              <button
+                                class="btn _lg _secondary ml-20 d-none"
+                                id="btn-reset-segment"
+                              >
+                                Reset
                               </button>
                             </div>
 
@@ -998,107 +1054,8 @@
     <!-- Vendor js -->
     <script src="assets/js/vendor.min.js"></script>
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
-
-    <a href="#" class="btn_back">
-      <svg width="8" height="8">
-        <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
-      </svg>
-    </a>
-  </div>
-  <!-- END wrapper -->
-  <!-- Vendor js -->
-  <script src="assets/js/vendor.min.js"></script>
-
-  <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
-  <script src="assets/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
-
-  <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-  <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="assets/libs/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
-
-  <script src="assets/libs/morris.js06/morris.min.js"></script>
-  <script src="assets/libs/raphael/raphael.min.js"></script>
-
-  <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
-  <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-
-  <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
-  <script src="assets/js/pages/tln.min.js"></script>
-  <script src="assets/libs/select2/js/select2.min.js"></script>
-  <script src="assets/libs/dragula/dragula.min.js"></script>
-  <script src="assets/js/app.min.js"></script>
-  <script>
-    var rtc_hub_temp_token =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6InJhM0xFQmluVGxrSHJtdVVtMkN4a0EiLCJ0eXAiOiJhdCtqd3QifQ.eyJuYmYiOjE1OTI5MjQzMzYsImV4cCI6MTU5MjkyNzkzNiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kaXJlY3RpcS5jb20iLCJhdWQiOlsicmVhbHRpbWUuZGlyZWN0aXEuY29tIiwiZGlyZWN0aXEuaW50ZWdyYXRpb25zLmFwaSIsImNvbnRhY3RzLmRpcmVjdGlxLmNvbSJdLCJjbGllbnRfaWQiOiJhcHAuZGlyZWN0aXEuY29tIiwic3ViIjoiMjIzOTI3MjktN2MwMC00YzRlLWFjZTgtNzkzZWNlYzdlYjFhIiwiYXV0aF90aW1lIjoxNTkxNjA4NjYxLCJpZHAiOiJsb2NhbCIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiQjRIUzdRRk1HRFBGN1o2QkVIVVFHTkFWMjJaRzZDQzciLCJyb2xlIjpbInNhIiwiaXM0X2FkbWluIl0sInByZWZlcnJlZF91c2VybmFtZSI6ImJhcmlzQGRpcmVjdGlxLmNvbSIsIm5hbWUiOiJiYXJpc0BkaXJlY3RpcS5jb20iLCJlbWFpbCI6ImJhcmlzQGRpcmVjdGlxLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJkaXFfY2xpZW50aWQiOiIxIiwic2NvcGUiOlsicHJvZmlsZSIsIm9wZW5pZCIsInJlYWx0aW1lLmRpcmVjdGlxLmNvbSIsImRpcmVjdGlxLmludGVncmF0aW9ucy5hcGkiLCJjb250YWN0cy5kaXJlY3RpcS5jb20iLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsicHdkIl19.f1jskqAaoE8YeE2tCMqxz2eKER4Pt6LDQ6ksgXhBulW-2gmf8AUAiDinaCO_dVQLXBNZywm3CkZDFmhETMDOV9lxJYfvj931MsjYHRD3p8AhB3_iO0FKXKaw0RInbPaowvoJiHNGTnNbxALKeSqNVrwh56Neit4lxjj3_yjQGIp84XGxyMFgkRSlrIN9wwPBg15ZZbfd2doVtSo0FxTPOUEaK7wXbUJICxIfvFgk7EBympHRQIpmdJD6r8ofWnbFTovKeE2UjE8zr4tkIkSlT3DtZNUkuYrvJwYoWqH3UOcdgEUFzMCYuhcCRVMQxKhGu54_9T3ZMp7aapb7r8gWUA';
-  </script>
-
-  <script>
-    var locales = new Object();
-    locales['Active'] = 'подписчик';
-    locales['Passive'] = 'Отключено';
-    locales['Delete'] = 'удалять';
-    locales['Disable'] = 'Отключить';
-    locales['RemoveFromList'] = 'Убрать из списка';
-    locales['RemoveFromTag'] = 'Remove From Tag';
-  </script>
-
-  <script src="assets/js/customTable.js"></script>
-
-  <script>
-    const RESPONCE_URL = '/segments/getcontactdata';
-    const absolutelyLinks = '/';
-    const TAGS_API = `${absolutelyLinks}assets/js/tagsMock.json`;
-    const LINK_TO_USER_PAGE = `/contactdetails/0`;
-    const COLUMN_WITHOUT_SEARCH = ['id', 'viewButton', 'createdDate', 'tags'];
-    const COLLUMN_WITHOUT_ORDERING_NOT_EXTRA = ['id', 'tags'];
-    const COLLUMN_DEFAULT_SORT = {
-      name: 'createdDate',
-      dir: 'desc',
-    };
-
-    const CUSTOM_CONFIG = {
-      isFixedColumns: true,
-      withViewButton: true,
-      createFromForm: {
-        button: '#apply-conditions-btn',
-        form: '#formCreateSegment',
-        buttonSave: '#save-segments-btn',
-      },
-    };
-
-    const DEFAULT_SELECT_OPTIONS = {
-      quality: [1, 2, 3, 4, 5],
-      status: ['active', 'passive'],
-      createdDate: [{
-          label: 'Last Week',
-          value: 'week',
-        },
-        {
-          label: 'Last Month',
-          value: 'month',
-        },
-        {
-          label: 'Last Year',
-          value: 'year',
-        },
-      ],
-    };
-
-    $(document).ready(function () {
-      $('#apply-conditions-btn').click(function () {
-        $('._list-name-table').removeClass('d-none');
-        adjustDataTableColumns();
-        $('#save-segments-btn').removeClass('d-none');
-        $('#btn-reset-segment').removeClass('d-none');
-        $('body,html').animate({
-            scrollTop: $('.diriq-table__wrapper').offset().top,
-          },
-          750
-        );
-      });
+    <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
+    <script src="assets/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
 
     <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
