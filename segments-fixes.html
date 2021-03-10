@@ -606,8 +606,8 @@
 
                         <h5 class="mb-29">Conditions</h5>
                         <div id="conditions">
-                          <div class="row pr-46">
-                            <div class="col-md-3">
+                          <div class="row pr-md-46 pr-30">
+                            <div class="col-md-6 col-lg-3">
                               <select class="form-control _select2-lg _quality" name="field1" required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -616,22 +616,22 @@
                                 <option value="5">5</option>
                               </select>
                             </div>
-                            <div class="col-md-3 field-filter-container mt-16 mt-md-0">
+                            <div class="col-md-6 col-lg-3 field-filter-container mt-16 mt-md-0">
                               <select class="form-control _select2-lg" name="field1" required>
                                 <option value="test-1">Option 1</option>
                                 <option value="test-2">Option 2</option>
                               </select>
                             </div>
-                            <div class="col-md-3 field-filter-container mt-16 mt-md-0">
+                            <div class="col-md-6 col-lg-3 field-filter-container mt-16 mt-lg-0">
                               <select class="form-control _select2-lg" name="field1" required>
                                 <option></option>
                                 <option value="test-1">Option 1</option>
                                 <option value="test-2">Option 2</option>
                               </select>
                             </div>
-                            <div class="col-md-3 field-filter-container">
+                            <div class="col-md-6 col-lg-3 field-filter-container mt-16 mt-lg-0">
                               <input name="Segment[fbe11867-4c1e-4b56-a277-34f2250e7d93].FilterValue" type="text"
-                                placeholder="Type Text" class="form-control mt-16 mt-md-0" />
+                                placeholder="Type Text" class="form-control" />
                             </div>
                             <div class="mt-30 addmore"></div>
                             <button type="button" class="btn _sm _secondary _check remove-segment"
@@ -657,22 +657,22 @@
                               </div>
                             </div>
                           </div>
-                          <div class="row pr-46 mt-30">
-                            <div class="col-md-3">
+                          <div class="row pr-md-46 pr-30 mt-30">
+                            <div class="col-md-6 col-lg-3">
                               <select class="form-control _select2-lg" name="field1" required>
                                 <option></option>
                                 <option value="test-1">Option 1</option>
                                 <option value="test-2">Option 2</option>
                               </select>
                             </div>
-                            <div class="col-md-3 mt-16 mt-md-0 field-filter-container">
+                            <div class="col-md-6 col-lg-3 mt-16 mt-md-0 field-filter-container">
                               <select class="form-control _select2-lg" name="field1" required>
                                 <option></option>
                                 <option value="test-1">Option 1</option>
                                 <option value="test-2">Option 2</option>
                               </select>
                             </div>
-                            <div class="col-md-3 mt-16 mt-md-0 field-filter-container">
+                            <div class="col-md-6 col-lg-3 mt-16 mt-lg-0 field-filter-container">
                               <select class="form-control _select2-lg" name="field1" required>
                                 <option></option>
                                 <option value="test-1">Option 1</option>
@@ -681,7 +681,7 @@
                                 </option>
                               </select>
                             </div>
-                            <div class="col-md-3 field-filter-container"></div>
+                            <div class="col-md-6 col-lg-3 field-filter-container"></div>
                             <div class="addmore">
                               <button type="button" class="btn _sm _secondary btn-add-condition mt-30 ml-10"
                                 data-id="2b5d686a-988c-4d17-8be3-3aeecc3db288">
@@ -835,7 +835,7 @@
     const COLLUMN_WITHOUT_ORDERING_NOT_EXTRA = ['id', 'tags'];
     const COLLUMN_DEFAULT_SORT = {
       name: 'createdDate',
-      dir: 'desc'
+      dir: 'desc',
     };
 
     const CUSTOM_CONFIG = {
@@ -853,15 +853,15 @@
       status: ['active', 'passive'],
       createdDate: [{
           label: 'Last Week',
-          value: 'week'
+          value: 'week',
         },
         {
           label: 'Last Month',
-          value: 'month'
+          value: 'month',
         },
         {
           label: 'Last Year',
-          value: 'year'
+          value: 'year',
         },
       ],
     };
@@ -873,7 +873,7 @@
         $('#save-segments-btn').removeClass('d-none');
         $('#btn-reset-segment').removeClass('d-none');
         $('body,html').animate({
-            scrollTop: $('.diriq-table__wrapper').offset().top
+            scrollTop: $('.diriq-table__wrapper').offset().top,
           },
           750
         );
