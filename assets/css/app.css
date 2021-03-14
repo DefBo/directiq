@@ -7328,7 +7328,11 @@ body {
     width: 384px; }
     @media (max-width: 767px) {
       .content-page._set-password .container-fluid .login__form {
-        width: auto; } }
+        max-width: 500px;
+        width: 100%; } }
+    @media (max-width: 576px) {
+      .content-page._set-password .container-fluid .login__form {
+        width: 100%; } }
   @media (max-width: 767px) {
     .content-page._set-password .container-fluid {
       flex: 1;
@@ -7374,9 +7378,6 @@ body {
     .content-page._settings {
       padding-left: 12px;
       padding-right: 12px; } }
-  @media (max-width: 398px) {
-    .content-page._settings .create-campaign__row-content {
-      margin-right: 24px; } }
 
 .navbar-custom._login {
   background-color: #0000ff;
@@ -8049,7 +8050,8 @@ body {
       .confirmation._login {
         width: 400px; } }
   .confirmation button.close {
-    position: static;
+    position: absolute;
+    content: '';
     top: 16px;
     right: 14px; }
 
@@ -8141,9 +8143,16 @@ button.close {
 .card._with-icon {
   flex-direction: row;
   padding: 0 !important; }
+  @media (max-width: 575px) {
+    .card._with-icon {
+      flex-direction: column; } }
 
 .card__icon {
   background: #f6f9fc; }
+  @media (max-width: 575px) {
+    .card__icon {
+      justify-content: center;
+      padding: 20px !important; } }
 
 .card__aside {
   flex-shrink: 0;
@@ -10867,6 +10876,10 @@ button.close {
     position: relative;
     z-index: 1004;
     pointer-events: auto; }
+    @media (max-width: 575px) {
+      .create-campaign__row._editing.pseudo-modal__body > div:first-child {
+        position: absolute;
+        content: ''; } }
     .create-campaign__row._editing .icon-check,
     .create-campaign__row._editing .icon-fill,
     .create-campaign__row._editing .btn._edit {
@@ -10983,9 +10996,9 @@ button.close {
 .create-campaign__row-edit {
   margin: 14px 0 40px 20px;
   display: none; }
-  @media (max-width: 479px) {
+  @media (max-width: 576px) {
     .create-campaign__row-edit {
-      margin-left: -30px; } }
+      margin-left: 0px; } }
   .create-campaign__row-edit > .switcher__wrap > .link + .switcher__label:after {
     content: ' ';
     white-space: pre; }
@@ -11038,6 +11051,13 @@ button.close {
   padding-left: 20px;
   max-width: 340px;
   flex: 1; }
+  @media (max-width: 767px) {
+    .create-campaign__timing-col {
+      max-width: 100%; }
+      .create-campaign__timing-col:first-child {
+        order: 2; }
+      .create-campaign__timing-col:nth-child(2) {
+        order: 1; } }
   .create-campaign__timing-col .radio {
     margin-left: -20px; }
   .create-campaign__timing-col:not(._active) .create-campaign__timing-col-content {
@@ -11489,7 +11509,7 @@ button.close {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding: 28px; } }
+        padding: 20px; } }
     .automated-top__content .confirm__btn {
       margin: 0 0 0 16px; }
       @media (max-width: 767px) {
@@ -11935,6 +11955,9 @@ button.close {
 
 .plans__table-wrap {
   position: relative; }
+  @media (max-width: 632px) {
+    .plans__table-wrap {
+      width: 632px; } }
 
 .plans__table-marker, .plans__cards-marker {
   position: absolute;
@@ -11984,7 +12007,10 @@ button.close {
     background-color: #ffe7f7; }
 
 .plans__positive {
-  color: #00eba8; }
+  color: #00eba8;
+  height: 200px;
+  max-width: 358px;
+  width: 100%; }
 
 .setup-payment {
   display: flex;
@@ -11994,13 +12020,28 @@ button.close {
     background-color: #fff; }
   .setup-payment__row {
     display: flex; }
+    @media (max-width: 991px) {
+      .setup-payment__row {
+        flex-direction: column; } }
   .setup-payment__main {
     width: 531px;
     background-color: #f6f9fc;
     padding: 40px; }
+    @media (max-width: 991px) {
+      .setup-payment__main {
+        width: 100%; } }
+    @media (max-width: 576px) {
+      .setup-payment__main {
+        padding: 20px; } }
   .setup-payment__aside {
     width: 264px;
     padding: 40px; }
+    @media (max-width: 991px) {
+      .setup-payment__aside {
+        width: 100%; } }
+    @media (max-width: 576px) {
+      .setup-payment__aside {
+        padding: 20px; } }
   .setup-payment__date {
     font-size: 14px;
     font-weight: 700;
@@ -12060,6 +12101,9 @@ button.close {
     width: 50px;
     height: 50px;
     background: #00eba8; }
+    @media (max-width: 768px) {
+      .setup-payment .close {
+        right: 15px; } }
     .setup-payment .close svg {
       width: 20px;
       height: 20px; }
@@ -12411,6 +12455,13 @@ button {
   .pseudo-modal__body {
     display: flex;
     padding: 40px 40px 0; }
+    @media (max-width: 576px) {
+      .pseudo-modal__body {
+        padding: 40px 20px 0px; } }
+  @media (max-width: 575px) {
+    .pseudo-modal .create-campaign__icon {
+      position: absolute;
+      content: ''; } }
   .pseudo-modal .create-campaign__row-edit {
     display: block; }
   .pseudo-modal .close {
@@ -12423,7 +12474,7 @@ button {
     background: #00eba8;
     transition: 0.25s;
     z-index: 1005; }
-    @media (max-width: 576px) {
+    @media (max-width: 767px) {
       .pseudo-modal .close {
         right: 15px; } }
     .pseudo-modal .close svg {
@@ -13241,6 +13292,11 @@ button {
 
 .grecaptcha-badge {
   bottom: 94px !important; }
+
+@media (max-width: 1500px) {
+  .plans-overflow {
+    width: 1500px;
+    min-height: 660px; } }
 
 th,
 td {
