@@ -10892,7 +10892,11 @@ button.close {
     .create-campaign__row._editing .link {
       display: inline; }
   .create-campaign__row._filled {
-    position: relative; }
+    position: relative;
+    background-color: #f6f9fc;
+    padding-bottom: 20px; }
+    .create-campaign__row._filled .close {
+      background-color: #b6ffe8; }
     .create-campaign__row._filled .icon-fill {
       display: none; }
     .create-campaign__row._filled .icon-check {
@@ -12454,7 +12458,8 @@ button {
   margin: 0 auto; }
   .pseudo-modal__body {
     display: flex;
-    padding: 40px 40px 0; }
+    padding: 40px 40px 0;
+    z-index: 1; }
     @media (max-width: 576px) {
       .pseudo-modal__body {
         padding: 40px 20px 0px; } }
@@ -13297,6 +13302,15 @@ button {
   .plans-overflow {
     width: 1500px;
     min-height: 660px; } }
+
+.button-bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  content: '';
+  z-index: 2;
+  background-color: #fff; }
 
 th,
 td {

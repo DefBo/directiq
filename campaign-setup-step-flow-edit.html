@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+  </head>
+
+  <body data-layout-mode="two-column" class="animation-stopper _step">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page _modal">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="pseudo-modal">
+            <div class="pseudo-modal__body grey-bg pb-74">
+              <div class="d-flex flex-column">
+                <svg width="30" height="30" class="create-campaign__icon">
+                  <use
+                    class="icon-fill"
+                    xlink:href="assets/images/sprite.svg#round-edit"
+                  ></use>
+                </svg>
+              </div>
+
+              <div class="w-100">
+                <div class="d-flex flex-column flex-sm-row pl-sm-20 pl-40">
+                  <div class="create-campaign__row-content">
+                    <h4 class="mb-4">To</h4>
+                    <p class="create-campaign__row-placeholder">
+                      Who’ll get this email?
+                      <a href="#" class="link"
+                        >More on setting campaign recipients.</a
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <div class="create-campaign__row-edit">
+                  <div class="create-campaign__fields mb-10">
+                    <div class="create-campaign__fields-col">
+                      <p class="font-14 font-weight-bold mb-7">Add Lists</p>
+                      <div class="form-control__wrap mb-20">
+                        <select
+                          class="form-control _select2-lg"
+                          multiple="multiple"
+                          required
+                        >
+                          <option></option>
+                          <option value="test-1" selected>
+                            Shopify List (1,410)
+                          </option>
+                          <option value="test-3">Custom tag 2</option>
+                          <option value="test-4">Custom tag 3</option>
+                          <option value="test-5">Custom tag 4</option>
+                        </select>
+                      </div>
+                      <p class="font-14 font-weight-bold mb-7">Add Tags</p>
+                      <div class="form-control__wrap mb-20">
+                        <select
+                          class="form-control _select2-lg"
+                          multiple="multiple"
+                          required
+                        >
+                          <option></option>
+                          <option value="test-1" selected>Members (38)</option>
+                          <option value="test-3">Custom tag 2</option>
+                          <option value="test-4">Custom tag 3</option>
+                          <option value="test-5">Custom tag 4</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="create-campaign__fields-col">
+                      <p class="font-14 font-weight-bold mb-7">Add Segments</p>
+                      <div class="form-control__wrap mb-20">
+                        <select
+                          class="form-control _select2-lg"
+                          multiple="multiple"
+                          required
+                        >
+                          <option></option>
+                          <option value="test-1" selected>
+                            My Friend’s Friends (278)
+                          </option>
+                          <option value="test-2">First Timers (12)</option>
+                          <option value="test-3">Custom tag 2</option>
+                          <option value="test-4">Custom tag 3</option>
+                          <option value="test-5">Custom tag 4</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#" class="link _lg mb-2">789</a>
+                  <p class="font-14 font-weight-bold mb-28">
+                    Total Unique Recipients
+                  </p>
+
+                  <p class="font-14 font-weight-bold mb-7">Language</p>
+                  <div class="mb-32">
+                    <div class="create-campaign__input-wrap">
+                      <select class="form-control _select2-lg" required>
+                        <option></option>
+                        <option value="test-1" selected>English</option>
+                        <option value="test-2">Chinese</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="close">
+                <svg width="8" height="8">
+                  <use xlink:href="assets/images/sprite.svg#cross"></use>
+                </svg>
+              </button>
+              <div
+                class="button-bottom d-flex py-20 px-sm-40 px-20 align-items-center justify-content-between"
+              >
+                <button class="btn _lg _sm _secondary _save">
+                  ‹ Previous Step
+                </button>
+                <button class="btn _lg _sm _primary _save">
+                  Save & Continue
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+      });
+    </script>
+  </body>
+</html>
