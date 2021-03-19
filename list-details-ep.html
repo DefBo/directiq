@@ -1124,6 +1124,16 @@
       // Datatable settings and initialisation
       const TABLE_API =
         'http://directiqsampledatastore-dev.us-east-1.elasticbeanstalk.com/api/custom';
+
+      //add window.location.host for table load in andriiv.com because site located in folder directiq but my link is absolutely
+      const absolutelyLinks =
+        window.location.host === 'andriiv.com'
+          ? 'http://andriiv.com/directiq/'
+          : '/';
+
+      const RESPONCE_URL = `${absolutelyLinks}assets/js/allContactsMock.json`;
+      const TAGS_API = `${absolutelyLinks}assets/js/tagsMock.json`;
+
       const locales = {
         Disable: 'Disable',
         RemoveFromList: 'RemoveFromList',
@@ -1132,20 +1142,19 @@
         Active: 'Active',
         Passive: 'Passive',
       };
+
       const LIST_ID = 30;
-      const RESPONCE_URL = `${TABLE_API}/${LIST_ID}`;
-      //add window.location.host for table load in andriiv.com because site located in folder directiq but my link is absolutely
-
-      const absolutelyLinks =
-        window.location.host === 'andriiv.com'
-          ? 'http://andriiv.com/directiq/'
-          : '/';
-
-      const TAGS_API = `${absolutelyLinks}assets/js/tagsMock.json`;
 
       const LINK_TO_USER_PAGE = `contactdetails`;
 
-      const COLUMN_WITHOUT_SEARCH = ['id', 'viewButton', 'createdDate'];
+      const COLUMN_WITHOUT_SEARCH = [
+        'id',
+        'viewButton',
+        'createdDate',
+        'quality',
+        'status',
+        'tags',
+      ];
 
       const COLLUMN_WITHOUT_ORDERING_NOT_EXTRA = ['id', 'tags'];
 
