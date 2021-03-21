@@ -1577,15 +1577,11 @@ const createSelect2ByClass = (
 
   selectTypeMap.forEach((item) => {
     if (item.type === selectType && $(className).length > 0) {
-        $(className).each(function () {
-          console.log(className)
-          item.generator(className, selectOptions, selectData);
-        });
+      item.generator(className, selectOptions, selectData);
     }
   });
 
   if ($(className).length > 0) {
-    
     $(className).each(function () {
       $(this).data('select2').$dropdown.addClass('select2-container--lg');
     });
@@ -1774,10 +1770,16 @@ const generateSelectWithLabel = (state) => {
 const simpleSelect = (className, selectOptions) => {
   $(className).each(function () {
     $(this).select2(selectOptions);
-    $(this).on('select2:unselect', function (e) {
-      var data = e.params.data;
-      console.log(data);
-  });
+    $(this).on(
+      ('select2:unselect', 'select2:select', 'select2:clear', 'select2:close'),
+      function (e) {
+        if ($(this).val() === '' || $(this).val().length === 0) {
+          $(this).next().addClass('select2-container--empty');
+        } else {
+          $(this).next().removeClass('select2-container--empty');
+        }
+      }
+    );
   });
 };
 
