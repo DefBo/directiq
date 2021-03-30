@@ -1474,6 +1474,7 @@
                                       placeholder="Write a compelling subject line"
                                       class="form-control mb-8"
                                       data-emojiable="true"
+                                      data-shortcode="subject"
                                       value="Good Days and Beautiful Flowers!"
                                     />
                                   </div>
@@ -3202,6 +3203,25 @@
         $(document).on('click', '.create-campaign__minus', function () {
           $(this).closest('.create-campaign__email-design-variant').remove();
         });
+
+        const SHORTCODES = {
+          subject: [
+            {
+              label: 'First Name',
+              value: '%%fisrtName%%',
+            },
+            {
+              label: 'Last Name',
+              value: '%%lastName%%',
+            },
+            {
+              label: 'Email',
+              value: '%%email%%',
+            },
+          ],
+        };
+
+        createInputsWithShortcode('subject', SHORTCODES.subject);
       });
     </script>
   </body>

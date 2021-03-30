@@ -18093,6 +18093,63 @@ a.text-blue:hover, a.text-blue:focus {
   .dropdown-icon-item:hover {
     background-color: #f3f7f9; }
 
+.dropdown-shortcode {
+  position: absolute;
+  top: 1px;
+  right: 27px;
+  height: 26px;
+  transition: 0.25s; }
+  .parent-has-scroll ~ .dropdown-shortcode {
+    right: 56px; }
+  .dropdown-shortcode .dropdown-toggle {
+    text-align: center;
+    position: relative;
+    height: 100%;
+    color: transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: #fff;
+    width: 26px;
+    -webkit-user-select: none;
+            user-select: none;
+    line-height: 28px;
+    cursor: pointer;
+    transition: 0.25s;
+    padding: 0 10px;
+    text-transform: uppercase;
+    font-size: 9px;
+    font-weight: 600; }
+    .dropdown-shortcode .dropdown-toggle span:before {
+      content: '••';
+      position: absolute;
+      left: 9px;
+      top: 0;
+      line-height: 25px;
+      letter-spacing: 0.5px;
+      font-size: 10px;
+      transition: 0.25s;
+      opacity: 1;
+      color: #212b35; }
+    .dropdown-shortcode .dropdown-toggle:hover {
+      width: 80px;
+      color: #212b35; }
+      .dropdown-shortcode .dropdown-toggle:hover span:before {
+        opacity: 0; }
+    .dropdown-shortcode .dropdown-toggle:before, .dropdown-shortcode .dropdown-toggle:after {
+      content: '';
+      position: absolute;
+      width: 9px;
+      top: 9px;
+      height: 9px;
+      border-left: 2px solid #212b35;
+      border-top: 2px solid #212b35; }
+    .dropdown-shortcode .dropdown-toggle:before {
+      left: 4px;
+      transform: rotate(-45deg); }
+    .dropdown-shortcode .dropdown-toggle::after {
+      right: 4px;
+      transform: rotate(135deg); }
+
 @media (min-width: 992px) {
   .dropdown-mega-menu-xl {
     width: 40rem; }

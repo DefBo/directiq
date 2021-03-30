@@ -96,7 +96,7 @@
               </div>
 
               <div class="w-100">
-                <div class="d-flex flex-column flex-sm-row pl-20">
+                <div class="d-flex flex-column flex-sm-row pl-sm-20 pl-40">
                   <div class="create-campaign__row-content">
                     <h4 class="mb-4">Timing</h4>
                     <p class="create-campaign__row-placeholder">
@@ -107,8 +107,10 @@
                 </div>
 
                 <div class="create-campaign__row-edit">
-                  <div class="d-flex align-items-end mb-14">
-                    <div class="form-group miw-320">
+                  <div
+                    class="d-flex flex-lg-row flex-column align-items-lg-end mb-14"
+                  >
+                    <div class="form-group miw-sm-320">
                       <label class="font-weight-bold mb-7">Start Date</label>
                       <div class="form-control__wrap _date">
                         <input
@@ -120,7 +122,7 @@
                       </div>
                     </div>
                     <div class="mx-10 mb-20">–</div>
-                    <div class="form-group miw-320">
+                    <div class="form-group miw-sm-320">
                       <label class="font-weight-bold mb-7">End Date</label>
                       <div class="form-control__wrap _date">
                         <input
@@ -133,7 +135,7 @@
                     </div>
                   </div>
 
-                  <div class="d-flex mb-22">
+                  <div class="d-flex flex-md-row flex-column mb-22">
                     <div class="create-campaign__timing-col flex-grow-0">
                       <div
                         class="radio_inline radio create-campaign__timing-col-radio"
@@ -162,7 +164,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="create-campaign__timing-col ml-30 flex-grow-0">
+                    <div
+                      class="create-campaign__timing-col ml-md-30 flex-grow-0"
+                    >
                       <div
                         class="radio_inline radio create-campaign__timing-col-radio"
                       >
@@ -325,7 +329,9 @@
                         </form>
                       </div>
                     </div>
-                    <div class="create-campaign__timing-col ml-30 flex-grow-0">
+                    <div
+                      class="create-campaign__timing-col ml-md-30 flex-grow-0"
+                    >
                       <div
                         class="radio_inline radio create-campaign__timing-col-radio"
                       >
@@ -946,9 +952,7 @@
                     </div>
                   </div>
 
-                  <p class="font-14 font-weight-bold mb-7">
-                    Delivery Time
-                  </p>
+                  <p class="font-14 font-weight-bold mb-7">Delivery Time</p>
                   <div class="d-flex mb-20">
                     <div class="select-hours">
                       <select class="form-control _select2-lg" required>
@@ -994,16 +998,13 @@
                   </div>
 
                   <div class="create-campaign__col">
-                    <p class="font-14 font-weight-bold mb-7">
-                      Time Zone
-                    </p>
+                    <p class="font-14 font-weight-bold mb-7">Time Zone</p>
                     <div class="mb-20 mw-320">
                       <select class="form-control _select2-lg" required>
                         <option></option>
-                        <option value="test-1" selected
-                          >(GMT -04:00) Eastern Daylight Time (US &
-                          Canada)</option
-                        >
+                        <option value="test-1" selected>
+                          (GMT -04:00) Eastern Daylight Time (US & Canada)
+                        </option>
                         <option value="test-2">Test Itme</option>
                       </select>
                     </div>
@@ -1046,9 +1047,7 @@
                       <label for="switch-3" class="switcher__toggle"></label>
                     </div>
 
-                    <button class="btn _lg _primary _save">
-                      Save
-                    </button>
+                    <button class="btn _lg _primary _save">Save</button>
                   </div>
                 </div>
               </div>
