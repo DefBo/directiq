@@ -1431,15 +1431,21 @@ $(document).ready(function () {
     }, 400);
   });
 
-  $('.dropdown._actions, .dropdown._more').on('show.bs.dropdown', function () {
-    $('body').addClass('actions-visible');
-  });
-  $('.dropdown._actions, .dropdown._more').on('hide.bs.dropdown', function () {
-    $('body').removeClass('actions-visible');
-    $(
-      '.dropdown._actions .confirm__modal, .dropdown._more .confirm__modal'
-    ).addClass('d-none');
-  });
+  $('.dropdown._actions, .dropdown._more, .dropdown.dropdown-with-overlay').on(
+    'show.bs.dropdown',
+    function () {
+      $('body').addClass('actions-visible');
+    }
+  );
+  $('.dropdown._actions, .dropdown._more, .dropdown.dropdown-with-overlay').on(
+    'hide.bs.dropdown',
+    function () {
+      $('body').removeClass('actions-visible');
+      $(
+        '.dropdown._actions .confirm__modal, .dropdown._more .confirm__modal'
+      ).addClass('d-none');
+    }
+  );
   $('.dropdown._actions, .dropdown._more').addClass('js-withShowListner');
   // add spinner for table
 
@@ -1841,11 +1847,7 @@ const createInputsWithShortcode = (dataShortcodeKey, params) => {
     });
 
     const dropdownWrapper = document.createElement('div');
-    dropdownWrapper.classList.add(
-      'dropdown',
-      'dropdown-shortcode',
-      'js-withShowListner'
-    );
+    dropdownWrapper.classList.add('dropdown', 'dropdown-shortcode', '_user');
     dropdownWrapper.appendChild(dropdownToggle);
     dropdownWrapper.appendChild(dropdownMenu);
     elWrapper.appendChild(dropdownWrapper);

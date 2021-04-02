@@ -521,7 +521,7 @@ body[data-sidebar-icon='twotones'] #sidebar-menu > ul > li > a svg {
     font-size: 22px;
     text-transform: uppercase; }
   .logo svg {
-    transition: 0.25s; }
+    transition: 0.25s !important; }
   .logo:hover svg {
     transform: translateY(-5px); }
 
@@ -7755,6 +7755,8 @@ body {
 
 .dropdown._user {
   z-index: 4; }
+  .dropdown._user.dropdown-shortcode {
+    z-index: 101; }
 
 .dropdown._more.show [data-toggle='dropdown'], .dropdown._actions.show [data-toggle='dropdown'] {
   background: #00f;
@@ -7820,6 +7822,12 @@ body {
     border-radius: 23px;
     color: #000000;
     font-size: 18px; }
+    .dropdown-toggle._outline[aria-expanded='true'] {
+      background-color: #0000ff;
+      color: #fff;
+      transform: scale(0.9); }
+      .dropdown-toggle._outline[aria-expanded='true'] svg {
+        color: #fff; }
     @media (max-width: 991px) {
       .dropdown-toggle._outline {
         font-size: 14px; } }
@@ -8480,6 +8488,14 @@ button.close {
   overflow-y: hidden;
   max-height: 264px;
   height: 100%; }
+  .upload-list__match-wrap > div {
+    flex-basis: 287px;
+    max-width: 288px;
+    flex-shrink: 0; }
+    .upload-list__match-wrap > div:last-child {
+      max-width: none; }
+      .upload-list__match-wrap > div:last-child .dropdown {
+        max-width: 208px; }
   .upload-list__match-wrap::-webkit-scrollbar-thumb:vertical {
     background-color: transparent !important;
     width: 10px !important;
@@ -8588,10 +8604,9 @@ button.close {
         padding: 14px 0 10px;
         animation: none !important; }
   .bootstrap-select .dropdown-item {
-    padding: 6px 8px;
+    padding: 6px 15px;
     font-weight: 500;
     font-size: 12px;
-    text-align: center;
     transition: 0.25s; }
     .bootstrap-select .dropdown-item:hover {
       background: #f6f9fc;
@@ -10140,6 +10155,16 @@ button.close {
     color: #00eba8;
     fill: transparent; }
 
+.dropdown._user.dropdown-shortcode.show:after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(218, 232, 247, 0.7);
+  z-index: 0; }
+
 @keyframes discount-slide-in {
   0% {
     opacity: 0;
@@ -10733,7 +10758,8 @@ button.close {
 
 .campaign__preview {
   width: 125px;
-  height: 150px; }
+  height: 150px;
+  background-color: #fff; }
   @media (max-width: 768px) {
     .campaign__preview {
       height: auto; } }
