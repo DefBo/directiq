@@ -140,7 +140,7 @@
               </div>
             </form>
 
-            <div class="dropdown d-none d-sm-block">
+            <div class="dropdown _user d-none d-sm-block">
               <a
                 class="dropdown-toggle _outline _lg"
                 data-toggle="dropdown"
@@ -156,8 +156,33 @@
                   ></use>
                 </svg>
               </a>
-              <div class="dropdown-menu">
-                <p class="text-center">Sample Dropdown Content</p>
+              <div class="dropdown-menu dropdown-menu-right _actions">
+                <div class="dropdown-menu-inner">
+                  <a class="dropdown-item" href="#">View</a>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#rename-tag-modal"
+                    >Rename</a
+                  >
+
+                  <div class="confirm__wrap">
+                    <button class="dropdown-item confirm__btn">Delete</button>
+
+                    <div class="confirm__modal _to-right d-none">
+                      <div class="confirm__content">
+                        <p class="confirm__text">
+                          You sure you want to delete this tag?
+                        </p>
+                      </div>
+                      <div class="d-flex">
+                        <button class="btn _lg _secondary">Nope</button>
+                        <button class="btn _lg _primary">Sure</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -644,6 +669,11 @@
               <h4 class="mb-16">
                 <a class="link" href="my-lists-ep.html">My Lists</a> (endpoint
                 integrated)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="my-lists-list-upload.html">My Lists</a>
+                (upload list)
               </h4>
 
               <h4 class="mb-16">
@@ -1471,16 +1501,17 @@
               </h4>
 
               <h4 class="mb-16">
-                <a class="link" href="homepage-user-steps-with-stats.html">
-                  Home (New User Steps full - After 1st campaign -with stats)</a
+                <a class="link" href="homepage-user-steps-with-stats.html"
+                  >Home (New User Steps full - After 1st campaign - with
+                  stats)</a
                 >
               </h4>
 
               <hr />
 
               <h4 class="mb-16">
-                <a class="link" href="rich-text-editor.html">
-                  Rich Text Editor</a
+                <a class="link" href="rich-text-editor.html"
+                  >Rich Text Editor</a
                 >
               </h4>
               <h4 class="mb-16">
