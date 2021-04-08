@@ -8021,7 +8021,7 @@ body {
 .confirmation {
   position: relative;
   margin: 13px 12px 40px 22px;
-  z-index: 1003; }
+  z-index: 1006; }
   .confirmation:after {
     content: '';
     display: block;
@@ -9472,7 +9472,9 @@ button.close {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default .select2-selection--single .select2-selection__placeholder {
+.select2-container--default
+.select2-selection--single
+.select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -12974,7 +12976,7 @@ button {
     justify-content: center;
     z-index: 5; }
     .pop-up .icon:before {
-      content: "";
+      content: '';
       width: 100%;
       top: 0;
       left: 0;

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email in web</title>
+    <style>
+        @font-face {
+            font-family: 'Helvetica Neue';
+            src: local('Helvetica Neue Light'), local('Helvetica-Neue-Light'),
+                url('./fonts/HelveticaNeueCyr-Light.woff2') format('woff2'),
+                url('./fonts/HelveticaNeueCyr-Light.woff') format('woff'),
+                url('./fonts/HelveticaNeueCyr-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .body {
+            margin: 0px;
+            padding: 0px;
+            min-height: 100vh;
+            height: 100%;
+            font-family: 'Helvetica Neue';
+        }
+
+        #ifrm {
+            max-width: 600px;
+            width: 100%;
+            min-height: 100vh;
+            height: 100%;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .ifrm {
+            padding-top: 80px;
+        }
+
+        .wrapper {
+            min-height: 100vh;
+            height: 100%;
+        }
+
+        .top-wrapper {
+            margin-bottom: 30px;
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            min-height: 30px;
+            background-color: #F4F4F4;
+            border-bottom: 1px solid #CCCCCC;
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.16);
+            font-size: 18px;
+            color: #000000;
+            line-height: 1.2;
+            position: fixed;
+            width: 100%;
+        }
+
+        .copy {
+            position: absolute;
+            content: "";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #000000;
+            overflow: hidden;
+
+        }
+
+        ::focus {
+            outline: none;
+        }
+
+        .copy:hover .copy-text {
+            text-decoration: none;
+        }
+
+        .copy:hover {
+            transform: translateX(0%);
+        }
+
+        .copy {
+            transform: translateX(87%);
+            transition: 2s ease;
+        }
+
+        .copy-text {
+            font-size: 12px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            margin-left: 6px;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        @media(max-width: 576px) {
+            .top-line {
+                font-size: 16px;
+                padding-top: 8px;
+                padding-bottom: 30px;
+            }
+
+            .copy {
+                bottom: 8px;
+                transform: none
+            }
+
+            .copy:hover {
+                transform: none;
+            }
+
+            .ifrm {
+                padding-top: 112px;
+            }
+        }
+    </style>
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <div class="top-wrapper">
+            <div class="top-line">
+                Beat the Holiday Rush – 40% OFF! 🎁
+            </div>
+            <a href="#" class="copy">
+                <div class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16.663" viewBox="0 0 20 16.663">
+                        <path
+                            d="M24.325,13.748,16.977,6.875a.376.376,0,0,0-.292-.125c-.229.01-.521.172-.521.417v3.447a.223.223,0,0,1-.187.214C8.672,11.947,5.594,17.414,4.506,23.09c-.042.224.26.432.4.255,2.666-3.359,5.91-5.551,11.04-5.593a.258.258,0,0,1,.219.25v3.385a.447.447,0,0,0,.755.276l7.4-6.993a.575.575,0,0,0,.182-.437A.7.7,0,0,0,24.325,13.748Z"
+                            transform="translate(-4.502 -6.749)" />
+                    </svg>
+                </div>
+                <div class="copy-text">
+                    Copy Link
+                </div>
+            </a>
+        </div>
+        <div class="ifrm">
+            <iframe src="https://mailchi.mp/ebfa2970a96d/ya-hello-ha-mello?e=d64fe6dd40" id="ifrm"
+                frameborder="0"></iframe>
+        </div>
+    </div>
+</body>
+
+</html>
