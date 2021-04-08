@@ -1,0 +1,61 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="{{root}}css/app.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{{subject}}</title>
+
+  <style>
+    @font-face {
+      font-family: "Proxima Nova";
+      src: local("Cerebri-sans Light"), url("{{root}}assets/fonts/ProximaNova-Regular.woff") format("woff");
+      font-weight: 400;
+      mso-font-alt: Verdana, Georgia, sans-serif;
+    }
+
+    @font-face {
+      font-family: "Proxima Nova";
+      src: local("Cerebri-sans Light"), url("{{root}}assets/fonts/ProximaNova-Medium.woff") format("woff");
+      font-weight: 500;
+      mso-font-alt: Verdana, Georgia, sans-serif;
+    }
+
+    @font-face {
+      font-family: "Proxima Nova";
+      src: local("Cerebri-sans Light"), url("{{root}}assets/fonts/ProximaNova-Semibold.woff") format("woff");
+      font-weight: 600;
+      mso-font-alt: Verdana, Georgia, sans-serif;
+    }
+
+    @font-face {
+      font-family: "Proxima Nova";
+      src: local("Cerebri-sans Light"), url("{{root}}assets/fonts/ProximaNova-Bold.woff") format("woff");
+      font-weight: 700;
+      mso-font-alt: Verdana, Georgia, sans-serif;
+    }
+  </style>
+  <!-- <style> -->
+</head>
+<body>
+  <span class="preheader">{{description}}</span>
+  <table class="body">
+    <tr>
+      <td class="center" align="center" valign="top">
+        <center>
+
+            {{> body}}
+
+        </center>
+      </td>
+    </tr>
+  </table>
+  <!-- prevent Gmail on iOS font size manipulation -->
+  <div style="display:none; white-space:nowrap; font:15px courier; line-height:0;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
+</body>
+</html>
+

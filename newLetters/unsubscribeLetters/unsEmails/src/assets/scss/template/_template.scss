@@ -1,0 +1,134 @@
+// These are the styles to make some of the templates look extra nice.
+// Feel free to remove these styles for production!
+
+// Body Styles 
+
+body,
+html, 
+.body {
+  background: #ccc !important;
+}
+
+.container.header {
+  background: #ccc;
+}
+
+.body-drip {
+  border-top: 8px solid #663399;
+}
+
+// Full Width Headers
+.header {
+  background: #8a8a8a;
+}
+
+.header .columns {
+  padding-bottom: 0;
+}
+
+.header p {
+  color: #fff;
+  padding-top: 15px;
+}
+
+.header .wrapper-inner {
+  padding: 20px;
+}
+
+.header .container {
+  background: transparent;
+}
+
+// Social Media
+table.button.facebook table td {
+  background: #3B5998 !important;
+  border-color: #3B5998;
+}
+
+table.button.twitter table td {
+  background: #1daced !important;
+  border-color: #1daced;
+}
+
+table.button.google table td {
+  background: #DB4A39 !important;
+  border-color: #DB4A39;
+}
+
+.wrapper.secondary {
+  background: #ccc;
+}
+
+.container-list {
+  background-color: transparent!important;
+}
+
+.list-item {
+  list-style-type: none;
+}
+
+.list {
+  padding-left: 0px;
+}
+
+p {
+  margin-bottom: 0px!important;
+}
+
+p.font-22 {
+  font-size: 22px!important;
+  line-height: 1.2!important;
+  color: #333333!important;
+  font-weight: 600!important;
+}
+
+a {
+  color: #333333!important;
+  font-size: 22px!important;
+  line-height: 1.2!important;
+}
+
+.transparent {
+  background-color: transparent!important;
+}
+
+.top-row {
+  background-color: #FFFFFF!important;
+}
+
+.bottom-row {
+  background-color: #EEEEEE!important;
+}
+
+p.font-16 {
+  font-size: 16px!important;
+  line-height: 1.2!important;
+  font-weight: 400!important;
+}
+
+.row th.small-12 {
+  padding-left: 40px!important;
+  padding-right: 40px!important;
+  padding-bottom: 0px!important;
+}
+
+.logo {
+  height: 30px;
+  width: 142px;
+}
+
+p.font-12 {
+  font-size: 12px!important;
+  line-height: 1.6;
+}
+
+a.btn-link {
+  background-color: #00EBA8;
+  padding: 8px 12px!important;
+  color: #000;
+  line-height: 1.2;
+  font-size: 16px!important;
+  &:hover {
+    background-color: #00f;
+  }
+}
