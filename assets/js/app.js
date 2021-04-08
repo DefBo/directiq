@@ -1269,6 +1269,10 @@ $(document).ready(function () {
     $(this).closest('.confirmation').addClass('d-none');
   });
 
+  $('.confirmation .close-no-css').click(function () {
+    $(this).closest('.confirmation').addClass('d-none');
+  });
+
   $('.form-control._save-list').on('change keyup', function () {
     if ($(this).val().length > 0) {
       $('.card').removeClass('_chosen');
