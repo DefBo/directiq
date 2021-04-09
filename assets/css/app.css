@@ -9500,7 +9500,9 @@ button.close {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default .select2-selection--single .select2-selection__placeholder {
+.select2-container--default
+.select2-selection--single
+.select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -13485,7 +13487,21 @@ button {
   align-items: center;
   height: auto;
   width: 50px;
-  background-color: #B6FFE8; }
+  background-color: #b6ffe8;
+  transition: all 0.35s;
+  order: 1; }
+  .drag-bookmarks .dragula-handle + .d-flex {
+    border: 1px solid transparent;
+    min-height: 51px; }
+  .drag-bookmarks .dragula-handle:hover {
+    background-color: #00f; }
+    .drag-bookmarks .dragula-handle:hover svg {
+      fill: #fff; }
+    .drag-bookmarks .dragula-handle:hover + .d-flex {
+      background-color: transparent !important;
+      border: 1px dashed #00f; }
+      .drag-bookmarks .dragula-handle:hover + .d-flex .btn {
+        display: none; }
   @media (max-width: 768px) {
     .drag-bookmarks .dragula-handle {
       width: 60px; } }
@@ -13495,7 +13511,8 @@ button {
     width: 20px;
     height: 20px; }
   .drag-bookmarks .dragula-handle svg {
-    display: block; }
+    display: block;
+    fill: #000; }
 
 th,
 td {
