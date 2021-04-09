@@ -8021,11 +8021,17 @@ body {
 .confirmation {
   position: relative;
   margin: 13px 12px 40px 22px;
-  z-index: 100; }
+  z-index: 1006; }
   .confirmation.width-pseudo {
     background-color: #fff;
     max-width: 1186px;
     margin: 0 auto; }
+    .confirmation.width-pseudo .close {
+      background: #b6ffe8;
+      position: absolute;
+      content: '';
+      top: 16px;
+      right: 14px; }
   .confirmation:after {
     content: '';
     display: block;
@@ -8063,10 +8069,25 @@ body {
       .confirmation._login {
         width: 400px; } }
   .confirmation button.close {
-    position: absolute;
-    content: '';
-    top: 16px;
-    right: 14px; }
+    position: static;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0px, 0px);
+    width: 24px;
+    height: 24px;
+    background: #b6ffe8;
+    opacity: 1;
+    transition: .25s;
+    color: #000; }
+    .confirmation button.close:not(:disabled):not(.disabled):focus, .confirmation button.close:not(:disabled):not(.disabled):hover {
+      opacity: 0.75; }
+    .confirmation button.close:hover {
+      color: #fff; }
+    .confirmation button.close svg {
+      width: 8px;
+      height: 8px; }
 
 button.close {
   background: #b6ffe8; }
@@ -9476,9 +9497,7 @@ button.close {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default
-.select2-selection--single
-.select2-selection__placeholder {
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
