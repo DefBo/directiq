@@ -545,13 +545,15 @@ body[data-sidebar-icon='twotones'] #sidebar-menu > ul > li > a svg {
 
 .navbar-custom {
   background-color: #fff;
-  box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
   position: fixed;
   left: 0;
   right: 0;
   height: 80px;
   z-index: 1003;
   /* Search */ }
+  @media (max-width: 768px) {
+    .navbar-custom {
+      box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15); } }
   .navbar-custom__inner {
     position: relative;
     display: flex;
