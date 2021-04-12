@@ -1,1183 +1,1536 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Contact Details | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Contact Details | DirectIQ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta content="Direct IQ frontend development version" name="description" />
-  <meta content="Coderthemes" name="author" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- App favicon -->
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
-  />
-  <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
-  <link
-    rel="mask-icon"
-    href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
-    color="#5bbad5"
-  />
-  <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
-  <meta name="msapplication-TileColor" content="#0000ff" />
-  <meta
-    name="msapplication-config"
-    content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
-  />
-  <meta name="theme-color" content="#ffffff" />
 
+    <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/datatables.net-dt/css/jquery.dataTables.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/datatables.net-fixedcolumns-dt/css/fixedColumns.dataTables.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/datatables.net-fixedcolumns-dt/css/fixedColumns.dataTables.min.css" rel="stylesheet"
-    type="text/css" />
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
 
-  <!-- App css -->
-  <link
-    href="assets/css/bootstrap.min.css"
-    rel="stylesheet"
-    type="text/css"
-    id="bs-default-stylesheet"
-  />
-  <link
-    href="assets/css/app.min.css"
-    rel="stylesheet"
-    type="text/css"
-    id="app-default-stylesheet"
-  />
+  </head>
 
-</head>
+  <body data-layout-mode="two-column" class="animation-stopper">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- Topbar Start -->
+      <div class="navbar-custom">
+        <div class="container-fluid navbar-custom__inner">
+          <div>
+            <!-- LOGO -->
+            <div class="logo-box">
+              <a href="./" class="logo">
+                <svg width="44.834" height="45">
+                  <use xlink:href="assets/images/sprite.svg#logo"></use>
+                </svg>
+              </a>
+            </div>
 
-<body data-layout-mode="two-column" class="animation-stopper">
-  <!-- Begin page -->
-  <div id="wrapper">
-    <!-- Topbar Start -->
-    <div class="navbar-custom">
-      <div class="container-fluid navbar-custom__inner">
-        <div>
-          <!-- LOGO -->
-          <div class="logo-box">
-            <a href="./" class="logo">
-              <svg width="44.834" height="45">
-                <use xlink:href="assets/images/sprite.svg#logo"></use>
-              </svg>
-            </a>
+            <ol class="breadcrumbs">
+              <li class="breadcrumb-item">
+                <a href="./contacts-home-static.html">Contacts</a>
+              </li>
+              <li class="breadcrumb-item active">
+                Contact Details
+                <button class="btn_icon d-none d-md-inline ml-18">
+                  <i class="add-to-fav-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19.5"
+                      height="17.805"
+                      viewBox="0 0 19.5 17.805"
+                    >
+                      <g transform="translate(0.75 0.75)">
+                        <path
+                          class="add-to-fav-icon__bg"
+                          d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13"
+                          transform="translate(-1972.5 -1089.5)"
+                          fill="none"
+                          stroke="blue"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          class="add-to-fav-icon__plus"
+                          d="M1986.5,1093.5v8m4-4h-8"
+                          transform="translate(-1972.5 -1089.5)"
+                          fill="none"
+                          stroke="#00eba8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </g>
+                    </svg>
+                  </i>
+                </button>
+              </li>
+            </ol>
           </div>
 
-          <ol class="breadcrumbs">
-            <li class="breadcrumb-item">
-              <a href="./contacts-home-static.html">Contacts</a>
-            </li>
-            <li class="breadcrumb-item active">
-              Contact Details
-              <button class="btn_icon d-none d-md-inline ml-18">
-                <i class="add-to-fav-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
-                    <g transform="translate(0.75 0.75)">
-                      <path class="add-to-fav-icon__bg" d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13"
-                        transform="translate(-1972.5 -1089.5)" fill="none" stroke="blue" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="1.5" />
-                      <path class="add-to-fav-icon__plus" d="M1986.5,1093.5v8m4-4h-8"
-                        transform="translate(-1972.5 -1089.5)" fill="none" stroke="#00eba8" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="1.5" />
-                    </g>
-                  </svg>
-                </i>
-              </button>
-            </li>
-          </ol>
-        </div>
+          <div class="align-items-center d-flex">
+            <!--App Search-->
+            <form class="app-search d-none d-md-table">
+              <div class="app-search-box">
+                <div class="input-group">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Start typing and search"
+                    id="top-search"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn" type="submit">
+                      <svg width="19.955" height="20.061">
+                        <use xlink:href="assets/images/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
 
-        <div class="align-items-center d-flex">
-          <!--App Search-->
-          <form class="app-search d-none d-md-table">
-            <div class="app-search-box">
-              <div class="input-group">
-                <input type="search" class="form-control" placeholder="Start typing and search" id="top-search" />
-                <div class="input-group-append">
-                  <button class="btn" type="submit">
-                    <svg width="19.955" height="20.061">
-                      <use xlink:href="assets/images/sprite.svg#search"></use>
+            <div class="dropdown d-none d-sm-block">
+              <a
+                class="dropdown-toggle _outline _lg"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                Create
+                <svg width="13.545" height="8">
+                  <use
+                    xlink:href="assets/images/sprite.svg#dropdown-arrow"
+                  ></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown ml-14 d-none d-md-block">
+              <a
+                class="dropdown-toggle _icon"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <svg width="18.261" height="30">
+                  <use xlink:href="assets/images/sprite.svg#bulb"></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown d-none d-md-block">
+              <a
+                class="dropdown-toggle _icon"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <svg width="21.073" height="21.264">
+                  <use xlink:href="assets/images/sprite.svg#bell"></use>
+                </svg>
+                <span class="badge">9</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown ml-10 _user mr-20">
+              <a
+                class="dropdown-toggle _user d-none d-md-inline-block"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <span class="user-avatar">
+                  <img src="assets/images/user.png" alt="User Avatar" />
+                </span>
+                <svg width="5.8" height="25">
+                  <use xlink:href="assets/images/sprite.svg#empty-dots"></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+                <div class="profile-dropdown__inner">
+                  <div class="profile-dropdown__email">
+                    barisergin@gmail.com
+                  </div>
+                  <div class="profile-dropdown__id">Account ID #123456</div>
+                  <a href="#" class="profile-dropdown__link mb-9">
+                    <svg width="16" height="16">
+                      <use xlink:href="assets/images/sprite.svg#profile"></use>
+                      <span class="profile-dropdown__link-text">
+                        My Account
+                      </span>
+                    </svg>
+                  </a>
+                  <div class="profile-dropdown__divider mb-13"></div>
+                  <div class="profile-dropdown__progress">
+                    <div class="d-flex justify-content-between mb-5">
+                      <span class="font-weight-bold">Free</span>
+                      <span class="color-secondary font-weight-medium"
+                        >25/1500</span
+                      >
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 25%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-dropdown__link mb-4">
+                    <svg width="13.375" height="16">
+                      <use xlink:href="assets/images/sprite.svg#swap"></use>
+                      <span class="profile-dropdown__link-text">
+                        Change Plan
+                      </span>
+                    </svg>
+                  </a>
+                  <div class="profile-dropdown__divider mb-5"></div>
+                  <a href="#" class="profile-dropdown__link">
+                    <svg width="16" height="12.235">
+                      <use xlink:href="assets/images/sprite.svg#group"></use>
+                      <span class="profile-dropdown__link-text">
+                        Switch Account
+                      </span>
+                    </svg>
+                  </a>
+                  <a href="#" class="profile-dropdown__link">
+                    <svg width="16" height="16">
+                      <use xlink:href="assets/images/sprite.svg#support"></use>
+                      <span class="profile-dropdown__link-text">Support</span>
+                    </svg>
+                  </a>
+
+                  <select
+                    class="form-control _select2-lg"
+                    data-toggle="select2"
+                    required
+                  >
+                    <option value="test-1">English</option>
+                    <option value="test-2">Chinese</option>
+                    <option value="test-2">Spanish</option>
+                    <option value="test-2">Portugese</option>
+                    <option value="test-2">Italian</option>
+                  </select>
+
+                  <div class="profile-dropdown__divider mb-22"></div>
+                  <button class="profile-dropdown__btn">Log-out</button>
+
+                  <div class="profile-dropdown__discount">
+                    <div class="font-14 font-weight-bold">Hey Baris!</div>
+                    <div class="font-36">30%</div>
+                    <div
+                      class="font-12 color-secondary font-weight-medium mb-10"
+                    >
+                      <span class="text-nowrap"
+                        >Upgrade in 12 hours and use</span
+                      >
+                      <br />
+                      <span class="font-weight-bold color-primary"
+                        >30% personal discount!</span
+                      >
+                    </div>
+                    <button class="btn _lg _primary">Redeem Now</button>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true"
+                  >
+                    <svg width="8" height="8">
+                      <use xlink:href="assets/images/sprite.svg#cross"></use>
                     </svg>
                   </button>
                 </div>
               </div>
             </div>
-          </form>
-
-          <div class="dropdown d-none d-sm-block">
-            <a class="dropdown-toggle _outline _lg" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-              aria-expanded="false">
-              Create
-              <svg width="13.545" height="8">
-                <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
-              </svg>
-            </a>
-            <div class="dropdown-menu">
-              <p class="text-center">Sample Dropdown Content</p>
-            </div>
-          </div>
-
-          <div class="dropdown ml-14 d-none d-md-block">
-            <a class="dropdown-toggle _icon" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-              aria-expanded="false">
-              <svg width="18.261" height="30">
-                <use xlink:href="assets/images/sprite.svg#bulb"></use>
-              </svg>
-            </a>
-            <div class="dropdown-menu">
-              <p class="text-center">Sample Dropdown Content</p>
-            </div>
-          </div>
-
-          <div class="dropdown d-none d-md-block">
-            <a class="dropdown-toggle _icon" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-              aria-expanded="false">
-              <svg width="21.073" height="21.264">
-                <use xlink:href="assets/images/sprite.svg#bell"></use>
-              </svg>
-              <span class="badge">9</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-              <p class="text-center">Sample Dropdown Content</p>
-            </div>
-          </div>
-
-          <div class="dropdown ml-10 _user mr-20">
-            <a class="dropdown-toggle _user d-none d-md-inline-block" data-toggle="dropdown" href="#" role="button"
-              aria-haspopup="false" aria-expanded="false">
-              <span class="user-avatar">
-                <img src="assets/images/user.png" alt="User Avatar" />
-              </span>
-              <svg width="5.8" height="25">
-                <use xlink:href="assets/images/sprite.svg#empty-dots"></use>
-              </svg>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-              <div class="profile-dropdown__inner">
-                <div class="profile-dropdown__email">
-                  barisergin@gmail.com
-                </div>
-                <div class="profile-dropdown__id">Account ID #123456</div>
-                <a href="#" class="profile-dropdown__link mb-9">
-                  <svg width="16" height="16">
-                    <use xlink:href="assets/images/sprite.svg#profile"></use>
-                    <span class="profile-dropdown__link-text">
-                      My Account
-                    </span>
-                  </svg>
-                </a>
-                <div class="profile-dropdown__divider mb-13"></div>
-                <div class="profile-dropdown__progress">
-                  <div class="d-flex justify-content-between mb-5">
-                    <span class="font-weight-bold">Free</span>
-                    <span class="color-secondary font-weight-medium">25/1500</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <a href="#" class="profile-dropdown__link mb-4">
-                  <svg width="13.375" height="16">
-                    <use xlink:href="assets/images/sprite.svg#swap"></use>
-                    <span class="profile-dropdown__link-text">
-                      Change Plan
-                    </span>
-                  </svg>
-                </a>
-                <div class="profile-dropdown__divider mb-5"></div>
-                <a href="#" class="profile-dropdown__link">
-                  <svg width="16" height="12.235">
-                    <use xlink:href="assets/images/sprite.svg#group"></use>
-                    <span class="profile-dropdown__link-text">
-                      Switch Account
-                    </span>
-                  </svg>
-                </a>
-                <a href="#" class="profile-dropdown__link">
-                  <svg width="16" height="16">
-                    <use xlink:href="assets/images/sprite.svg#support"></use>
-                    <span class="profile-dropdown__link-text">Support</span>
-                  </svg>
-                </a>
-
-                <select class="form-control _select2-lg" data-toggle="select2" required>
-                  <option value="test-1">English</option>
-                  <option value="test-2">Chinese</option>
-                  <option value="test-2">Spanish</option>
-                  <option value="test-2">Portugese</option>
-                  <option value="test-2">Italian</option>
-                </select>
-
-                <div class="profile-dropdown__divider mb-22"></div>
-                <button class="profile-dropdown__btn">Log-out</button>
-
-                <div class="profile-dropdown__discount">
-                  <div class="font-14 font-weight-bold">Hey Baris!</div>
-                  <div class="font-36">30%</div>
-                  <div class="font-12 color-secondary font-weight-medium mb-10">
-                    <span class="text-nowrap">Upgrade in 12 hours and use</span>
-                    <br />
-                    <span class="font-weight-bold color-primary">30% personal discount!</span>
-                  </div>
-                  <button class="btn _lg _primary">Redeem Now</button>
-                </div>
-
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                  <svg width="8" height="8">
-                    <use xlink:href="assets/images/sprite.svg#cross"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- end Topbar -->
+      <!-- end Topbar -->
 
-    <!-- ========== Left Sidebar Start ========== -->
-    <button class="hamburger hamburger--squeeze" id="ham" type="button">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
+      <!-- ========== Left Sidebar Start ========== -->
+      <button class="hamburger hamburger--squeeze" id="ham" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
 
-    <nav class="nav-drill">
-      <ul class="nav-items">
-        <li class="nav-item d-md-none">
-          <a class="nav-item-link _logo" href="./index.html">
-            <svg width="39.852" height="40">
-              <use xlink:href="assets/images/sprite.svg#logo-mobile"></use>
+      <nav class="nav-drill">
+        <ul class="nav-items">
+          <li class="nav-item d-md-none">
+            <a class="nav-item-link _logo" href="./index.html">
+              <svg width="39.852" height="40">
+                <use xlink:href="assets/images/sprite.svg#logo-mobile"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="20.193" height="17.999">
+                  <use xlink:href="assets/images/sprite.svg#home-i"></use>
+                </svg>
+              </i>
+              <span> Home </span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Home</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./"> Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand active">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="17.719" height="15.328">
+                  <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
+                </svg>
+              </i>
+              <span> Contacts </span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Contacts</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./contacts-home-static.html">
+                  Overview
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./my-lists-static.html">
+                  My Lists
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./add-contacts.html">
+                  Add Contacts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Tags </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="segments.html"> Segments </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Custom Fields </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Signup Forms </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Suppression Lists </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Cleaning Service </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="18" height="18">
+                  <use xlink:href="assets/images/sprite.svg#templates-i"></use>
+                </svg>
+              </i>
+              <span>Templates</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Templates</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="templates-home.html">
+                  My Templates
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="create-template-free.html">
+                  Create Template
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="spam-doctor.html">
+                  Spam Doctor
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="inbox-preview.html">
+                  Inbox Preview
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="29.507" height="22">
+                  <use xlink:href="assets/images/sprite.svg#campaigns-i"></use>
+                </svg>
+              </i>
+              <span>Campaigns</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Campaigns</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="17.894" height="24">
+                  <use
+                    xlink:href="assets/images/sprite.svg#integrations-i"
+                  ></use>
+                </svg>
+              </i>
+              <span>Integrations</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Integrations</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="21.515" height="18.91">
+                  <use xlink:href="assets/images/sprite.svg#settings-i"></use>
+                </svg>
+              </i>
+              <span>Settings</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Settings</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="15.29" height="20">
+                  <use xlink:href="assets/images/sprite.svg#bookmarks-i"></use>
+                </svg>
+              </i>
+              <span>Bookmarks</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Bookmarks</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="nav-drill__icons">
+          <button class="btn_icon">
+            <svg width="42.182" height="42.414">
+              <use xlink:href="assets/images/sprite.svg#mobile-search"></use>
             </svg>
-          </a>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="20.193" height="17.999">
-                <use xlink:href="assets/images/sprite.svg#home-i"></use>
-              </svg>
-            </i>
-            <span> Home </span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Home</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./"> Home </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand active">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="17.719" height="15.328">
-                <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
-              </svg>
-            </i>
-            <span> Contacts </span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Contacts</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./contacts-home-static.html">
-                Overview
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./my-lists-static.html">
-                My Lists
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./add-contacts.html">
-                Add Contacts
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Tags </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="segments.html"> Segments </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Custom Fields </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Signup Forms </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Suppression Lists </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Cleaning Service </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="18" height="18">
-                <use xlink:href="assets/images/sprite.svg#templates-i"></use>
-              </svg>
-            </i>
-            <span>Templates</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Templates</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="templates-home.html">
-                My Templates
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="create-template-free.html">
-                Create Template
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="spam-doctor.html">
-                Spam Doctor
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="inbox-preview.html">
-                Inbox Preview
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="29.507" height="22">
-                <use xlink:href="assets/images/sprite.svg#campaigns-i"></use>
-              </svg>
-            </i>
-            <span>Campaigns</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Campaigns</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="17.894" height="24">
-                <use xlink:href="assets/images/sprite.svg#integrations-i"></use>
-              </svg>
-            </i>
-            <span>Integrations</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Integrations</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="21.515" height="18.91">
-                <use xlink:href="assets/images/sprite.svg#settings-i"></use>
-              </svg>
-            </i>
-            <span>Settings</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Settings</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="15.29" height="20">
-                <use xlink:href="assets/images/sprite.svg#bookmarks-i"></use>
-              </svg>
-            </i>
-            <span>Bookmarks</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Bookmarks</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+          </button>
 
-      <div class="nav-drill__icons">
-        <button class="btn_icon">
-          <svg width="42.182" height="42.414">
-            <use xlink:href="assets/images/sprite.svg#mobile-search"></use>
-          </svg>
-        </button>
+          <button class="btn_icon">
+            <svg width="24.354" height="40">
+              <use xlink:href="assets/images/sprite.svg#mobile-bulb"></use>
+            </svg>
+          </button>
 
-        <button class="btn_icon">
-          <svg width="24.354" height="40">
-            <use xlink:href="assets/images/sprite.svg#mobile-bulb"></use>
-          </svg>
-        </button>
+          <button class="btn_icon">
+            <svg width="41.62" height="42">
+              <use xlink:href="assets/images/sprite.svg#mobile-bell"></use>
+            </svg>
+          </button>
 
-        <button class="btn_icon">
-          <svg width="41.62" height="42">
-            <use xlink:href="assets/images/sprite.svg#mobile-bell"></use>
-          </svg>
-        </button>
+          <button
+            class="btn_icon user-avatar-mobile h-100"
+            id="user-profile-btn-mobile"
+          >
+            <img src="assets/images/user.png" alt="User Avatar" />
+          </button>
+        </div>
+      </nav>
+      <!-- Left Sidebar End -->
 
-        <button class="btn_icon user-avatar-mobile h-100" id="user-profile-btn-mobile">
-          <img src="assets/images/user.png" alt="User Avatar" />
-        </button>
-      </div>
-    </nav>
-    <!-- Left Sidebar End -->
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
+      <div class="content-page">
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col">
+                    <div class="card _contact">
+                      <div class="contact__avatar">
+                        <img
+                          class="contact__avatar-image"
+                          src="assets/images/user.png"
+                          alt="Contact Avatar"
+                        />
+                      </div>
 
-    <div class="content-page">
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <div class="row">
-                <div class="col">
-                  <div class="card _contact">
-                    <div class="contact__avatar">
-                      <img class="contact__avatar-image" src="assets/images/user.png" alt="Contact Avatar" />
-                    </div>
-
-                    <div class="contact__info">
-                      <div class="contact__info-inner">
-                        <p class="font-18 font-weight-semibold mb-5">
-                          elvira.amiga@gmail.com
-                        </p>
-                        <div class="contact__info-bottom">
-                          <p class="font-12 font-weight-medium color-secondary m-0">
-                            Elvira Amiga
+                      <div class="contact__info">
+                        <div class="contact__info-inner">
+                          <p class="font-18 font-weight-semibold mb-5">
+                            elvira.amiga@gmail.com
                           </p>
-                          <i class="quality-icon _3 ml-18">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                          </i>
-                          <span class="table-status _small _success ml-27">subscriber</span>
-                        </div>
-                      </div>
-
-                      <div class="dropdown mt-10 mt-md-0 mr-lg-8">
-                        <a class="dropdown-toggle _solid _lg" data-toggle="dropdown" href="#" role="button"
-                          aria-haspopup="false" aria-expanded="false">
-                          Actions
-                          <svg width="13.545" height="8">
-                            <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
-                          </svg>
-                        </a>
-                        <div class="dropdown-menu _actions mt-5">
-                          <div class="dropdown-menu-inner">
-                            <a class="dropdown-item" href="#">Reinvoke Access</a>
-                            <a class="dropdown-item" href="#">Remap Columns</a>
-                            <a class="dropdown-item" href="#">Disconnect</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="contact__arrows">
-                      <button class="btn_icon _arrow">
-                        <svg width="12.35" height="20">
-                          <use xlink:href="assets/images/sprite.svg#contacts-arrow-left"></use>
-                        </svg>
-                      </button>
-
-                      <button class="btn_icon _arrow">
-                        <svg width="12.35" height="20">
-                          <use xlink:href="assets/images/sprite.svg#contacts-arrow-right"></use>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <ul class="nav nav-tabs nav-bordered">
-                <li class="nav-item">
-                  <a href="#contact-details-overview" data-toggle="tab" aria-expanded="false" class="nav-link active">
-                    Overview
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#contact-details-activity-feed" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Activity Feed
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#contact-details-notes" data-toggle="tab" aria-expanded="false" class="nav-link">
-                    Notes
-                  </a>
-                </li>
-              </ul>
-
-              <div class="tab-content">
-                <div class="tab-pane show active" id="contact-details-overview">
-                  <div class="row">
-                    <div class="col-lg-4 col-md-6 d-md-flex flex-md-column flex-md-grow-1">
-                      <div class="card _stats bg-light-grey">
-                        <div class="font-36">12</div>
-                        <h5 class="mt-n2">Campaigns Sent</h5>
-                        <div class="font-12 color-secondary font-weight-medium mt-10">
-                          You’ve sent a total of
-                          <a href="#" class="link">12 campaigns</a>
-                          to this contract
-                        </div>
-                        <button class="btn _sm _secondary mt-11">
-                          View Campaigns
-                        </button>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 d-md-flex flex-md-column flex-md-grow-1">
-                      <div class="card _stats">
-                        <div class="font-36">7</div>
-                        <h5 class="mt-n2">Opened</h5>
-                        <div class="font-12 color-secondary font-weight-medium mt-10">
-                          This contact opened
-                          <a href="#" class="link">7 campaigns</a>
-                          so far
-                        </div>
-                        <button class="btn _sm _secondary mt-11">
-                          View Opens
-                        </button>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 d-md-flex flex-md-column flex-md-grow-1">
-                      <div class="card _stats bg-light-grey">
-                        <div class="font-36">2</div>
-                        <h5 class="mt-n2">Clicked</h5>
-                        <div class="font-12 color-secondary font-weight-medium mt-10">
-                          This contact clicked
-                          <a href="#" class="link">2 links</a>
-                          so far
-                        </div>
-                        <button class="btn _sm _secondary btn-primary mt-11">
-                          View Clicks
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-8 d-flex flex-column">
-                      <div class="card mb-30 flex-grow-1">
-                        <div id="contact-details-lists" class="show-assigned">
-                          <h4>Lists</h4>
-                          <div
-                            class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mt-12 mb-18">
-                            <div class="font-weight-medium font-12 font-secondary">
-                              Select lists you want your contact assigned to
-                            </div>
-                            <div class="d-flex align-items-center align-self-end align-self-md-center mt-10 mt-md-0">
-                              <div class="radio form-check-inline mr-19 ml-15">
-                                <input type="radio" id="show-assigned" value="option2" name="radioInline"
-                                  data-toggle="data-table" checked />
-                                <label for="show-assigned">
-                                  Show Assigned
-                                </label>
-                              </div>
-                              <div class="radio form-check-inline mr-0">
-                                <input type="radio" id="show-all" value="option2" data-toggle="data-table"
-                                  name="radioInline" />
-                                <label for="show-all"> Show All </label>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="datatable__wrap">
-                            <table id="data-table" class="datatable datatable_small _contact-details-lists"
-                              style="width: 100%">
-                              <thead>
-                                <tr>
-                                  <th class="nosort checkbox-col"></th>
-                                  <th>List Name</th>
-                                  <th>Last Modified</th>
-                                  <th>List Size</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>
-                                    <div class="checkbox checkbox-single">
-                                      <input type="checkbox" value="option1" aria-label="Single checkbox One" />
-                                      <label></label>
-                                    </div>
-                                  </td>
-                                  <td>My First List</td>
-                                  <td>Mar 31, 2020</td>
-                                  <td>12,1511</td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                    <div class="checkbox checkbox-single">
-                                      <input type="checkbox" value="option1" aria-label="Single checkbox One" />
-                                      <label></label>
-                                    </div>
-                                  </td>
-                                  <td>Dodogildo Subscribers</td>
-                                  <td>Jun 7, 2020</td>
-                                  <td>234</td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                    <div class="checkbox checkbox-single">
-                                      <input type="checkbox" value="option1" aria-label="Single checkbox One" />
-                                      <label></label>
-                                    </div>
-                                  </td>
-                                  <td>Jonathan Bagel list</td>
-                                  <td>Sep 29, 2019</td>
-                                  <td>880</td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                    <div class="checkbox checkbox-single">
-                                      <input type="checkbox" value="option1" aria-label="Single checkbox One" />
-                                      <label></label>
-                                    </div>
-                                  </td>
-                                  <td>Filtered contacts by name</td>
-                                  <td>Dec 4, 2019</td>
-                                  <td>14,914</td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                    <div class="checkbox checkbox-single">
-                                      <input type="checkbox" value="option1" aria-label="Single checkbox One" />
-                                      <label></label>
-                                    </div>
-                                  </td>
-                                  <td>My First List</td>
-                                  <td>Mar 31, 2020</td>
-                                  <td>12,1511</td>
-                                </tr>
-                                <tr class="assigned">
-                                  <td>
-                                    <div class="checkbox checkbox-single">
-                                      <input type="checkbox" value="option1" checked aria-label="Single checkbox One" />
-                                      <label></label>
-                                    </div>
-                                  </td>
-                                  <td>Dodogildo Subscribers</td>
-                                  <td>Jun 7, 2020</td>
-                                  <td>234</td>
-                                </tr>
-                                <tr class="assigned">
-                                  <td>
-                                    <div class="checkbox checkbox-single">
-                                      <input type="checkbox" value="option1" checked aria-label="Single checkbox One" />
-                                      <label></label>
-                                    </div>
-                                  </td>
-                                  <td>Jonathan Bagel list</td>
-                                  <td>Sep 29, 2019</td>
-                                  <td>880</td>
-                                </tr>
-                                <tr class="assigned">
-                                  <td>
-                                    <div class="checkbox checkbox-single">
-                                      <input type="checkbox" value="option1" checked aria-label="Single checkbox One" />
-                                      <label></label>
-                                    </div>
-                                  </td>
-                                  <td>Filtered contacts by name</td>
-                                  <td>Dec 4, 2019</td>
-                                  <td>14,914</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 d-flex flex-column">
-                      <div class="card mb-30 flex-grow-1">
-                        <h4>Tags</h4>
-                        <div class="font-12 color-secondary font-weight-medium mt-12">
-                          Organize your contact by tags.
-                        </div>
-                        <div class="d-flex mx-n10 flex-wrap">
-                          <div class="btn _sm _tag-del">
-                            vip
-                            <button class="btn_icon ml-11">
-                              <svg width="8" height="8">
-                                <use xlink:href="assets/images/sprite.svg#cross"></use>
-                              </svg>
-                            </button>
-                          </div>
-                          <div class="btn _sm _tag-del">
-                            staff
-                            <button class="btn_icon ml-11">
-                              <svg width="8" height="8">
-                                <use xlink:href="assets/images/sprite.svg#cross"></use>
-                              </svg>
-                            </button>
-                          </div>
-                          <button class="btn _sm _secondary mt-16" data-toggle="modal" data-target="#add-tag-modal">
-                            Add Tag
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="card mb-43">
-                        <h4>Segments</h4>
-                        <div class="font-12 color-secondary font-weight-medium mt-12">
-                          <span class="font-weight-bold color-primary">elvira.alvira@gmail.com</span>
-                          belongs to
-                          <span class="font-weight-bold color-primary">segments below</span>. Segments are defined by
-                          filters and rules.
-                          <a href="#" class="link">Learn more about segments.</a>
-                        </div>
-                        <div class="d-flex mx-n10 flex-wrap">
-                          <button class="btn _sm _tag">
-                            Top clickers from last year
-                          </button>
-                          <button class="btn _sm _tag">Baris deneme</button>
-                          <button class="btn _sm _tag">
-                            Users never clicked any campaing
-                          </button>
-                          <button class="btn _sm _tag">
-                            Top clickers from this year
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="card bg-light-grey mb-43">
-                        <h4>Profile Information</h4>
-                        <div class="row mt-14 no-gutters">
-                          <div class="col-md-6 col-lg-3">
-                            <div class="font-weight-bold font-12">
-                              First Name:
-                              <span class="font-weight-medium color-secondary">Elvira</span>
-                            </div>
-                            <div class="font-weight-bold font-12 mt-lg-10 mt-0">
-                              Phone:
-                              <span class="font-weight-medium color-secondary">+1-555-555-5555</span>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-3">
-                            <div class="font-weight-bold font-12">
-                              Last Name:
-                              <span class="font-weight-medium color-secondary">Amiga</span>
-                            </div>
-                            <div class="font-weight-bold font-12 mt-lg-10 mt-0">
-                              Address:
-                              <span class="font-weight-medium color-secondary">455 W 37th St New York, 10010</span>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-3">
-                            <div class="font-weight-bold font-12">
-                              Birthday:
-                              <span class="font-weight-medium color-secondary">Mar 31, 1990</span>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-3">
-                            <div class="font-weight-bold font-12">
-                              Email Address:
-                              <span class="font-weight-medium color-secondary">elvira.amiga@gmail.com</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <button class="btn _sm _primary mt-18 align-self-start">
-                          Edit Profile
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="pr-0 pr-md-22 position-relative">
-                    <div class="row no-gutters chart-wrap">
-                      <div class="col-md-8">
-                        <div class="card align-content-start pb-sm-30">
-                          <div class="d-flex justify-content-between align-items-center flex-wrap mb-20">
-                            <h4 class="mb-16">Performance</h4>
-                            <p class="font-12 color-secondary font-weight-medium mr-22 mr-md-0">
-                              <span><i class="circle-i circle-i_openers"></i>
-                                Openers</span>
-                              <span class="ml-25"><i class="circle-i circle-i_clickers"></i>
-                                Clickers</span>
+                          <div class="contact__info-bottom">
+                            <p
+                              class="font-12 font-weight-medium color-secondary m-0"
+                            >
+                              Elvira Amiga
                             </p>
-                          </div>
-                          <div id="curve_chart" style="height: 246px" class="color-secondary"></div>
-                          <div class="d-flex mx-n10 mt-10">
-                            <a href="./all-openers.html" class="btn _sm _secondary mt-13 mr-10 mx-sm-10">All Openers</a>
-                            <a href="./all-clickers.html" class="btn _sm _secondary mt-13 mx-10">All Clickers</a>
+                            <i class="quality-icon _3 ml-18">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                            </i>
+                            <span class="table-status _small _success ml-27"
+                              >subscriber</span
+                            >
                           </div>
                         </div>
-                      </div>
-                      <div class="col-md-4 d-flex flex-direction-column">
-                        <div class="card bg-light-grey flex-grow-1 align-items-center">
-                          <div class="d-flex flex-column justify-content-between flex-grow-1 w-100">
-                            <div class="d-flex justify-content-center w-100">
-                              <div class="date-range__wrap">
-                                <input type="text" id="range-datepicker" class="date-range__input _large"
-                                  placeholder="Pick dates" value="2020-03-31 – 2020-04-25" />
-                                <i class="date-range__icon">
-                                  <svg width="19.143" height="20">
-                                    <use xlink:href="assets/images/sprite.svg#calendar"></use>
-                                  </svg>
-                                </i>
-                              </div>
-                            </div>
 
-                            <div class="knobs _double">
-                              <div class="d-flex">
-                                <div class="knob-wrap knob-wrap_up">
-                                  <input data-plugin="knob" data-width="50" data-height="50" data-linecap="round"
-                                    data-fgColor="#00EBA8" value="75" data-displayInput="false" data-skin="tron"
-                                    data-angleOffset="180" data-readOnly="true" data-thickness=".1"
-                                    data-bgColor="#f6f9fc" />
-                                </div>
-                                <div class="knob-text">
-                                  <p>Openers</p>
-                                  <span><i class="circle-i circle-i_openers"></i>
-                                    12</span>
-                                </div>
-                              </div>
-
-                              <div class="d-flex">
-                                <div class="knob-wrap knob-wrap_down">
-                                  <input data-plugin="knob" data-width="50" data-height="50" data-linecap="round"
-                                    data-fgColor="#0000FF" value="35" data-displayInput="false" data-skin="tron"
-                                    data-angleOffset="180" data-readOnly="true" data-thickness=".1"
-                                    data-bgColor="#f6f9fc" />
-                                </div>
-                                <div class="knob-text">
-                                  <p>Clickers</p>
-                                  <span><i class="circle-i circle-i_clickers"></i>
-                                    2</span>
-                                </div>
-                              </div>
+                        <div class="dropdown mt-10 mt-md-0 mr-lg-8">
+                          <a
+                            class="dropdown-toggle _solid _lg"
+                            data-toggle="dropdown"
+                            href="#"
+                            role="button"
+                            aria-haspopup="false"
+                            aria-expanded="false"
+                          >
+                            Actions
+                            <svg width="13.545" height="8">
+                              <use
+                                xlink:href="assets/images/sprite.svg#dropdown-arrow"
+                              ></use>
+                            </svg>
+                          </a>
+                          <div class="dropdown-menu _actions mt-5">
+                            <div class="dropdown-menu-inner">
+                              <a class="dropdown-item" href="#"
+                                >Reinvoke Access</a
+                              >
+                              <a class="dropdown-item" href="#"
+                                >Remap Columns</a
+                              >
+                              <a class="dropdown-item" href="#">Disconnect</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="dropdown _more">
-                      <a class="dropdown-toggle _more" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="false" aria-expanded="false">
-                        <svg width="5.8" height="25">
-                          <use xlink:href="assets/images/sprite.svg#dots"></use>
-                        </svg>
-                      </a>
+                      <div class="contact__arrows">
+                        <button class="btn_icon _arrow">
+                          <svg width="12.35" height="20">
+                            <use
+                              xlink:href="assets/images/sprite.svg#contacts-arrow-left"
+                            ></use>
+                          </svg>
+                        </button>
 
-                      <div class="dropdown-menu dropdown-menu-right _actions" aria-labelledby="moreMenuButton">
-                        <div class="dropdown-menu-inner">
-                          <a class="dropdown-item" href="#">Action Item 1</a>
-                          <a class="dropdown-item" href="#">Action Item 2</a>
-                          <a class="dropdown-item" href="#">Action Item 3</a>
-                        </div>
+                        <button class="btn_icon _arrow">
+                          <svg width="12.35" height="20">
+                            <use
+                              xlink:href="assets/images/sprite.svg#contacts-arrow-right"
+                            ></use>
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="tab-pane" id="contact-details-activity-feed">
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="card mb-0">
-                        <div class="activity-feed__dropdowns">
-                          <div class="dropdown mb-16 mr-sm-20 mb-sm-20">
-                            <a class="dropdown-toggle _activity" data-toggle="dropdown" href="#" role="button"
-                              aria-haspopup="false" aria-expanded="false">
-                              All Activity
-                              <i class="float-right">
-                                <svg width="8" height="4.94">
-                                  <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
+                <ul class="nav nav-tabs nav-bordered">
+                  <li class="nav-item">
+                    <a
+                      href="#contact-details-overview"
+                      data-toggle="tab"
+                      aria-expanded="false"
+                      class="nav-link active"
+                    >
+                      Overview
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#contact-details-activity-feed"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Activity Feed
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#contact-details-notes"
+                      data-toggle="tab"
+                      aria-expanded="false"
+                      class="nav-link"
+                    >
+                      Notes
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="tab-content">
+                  <div
+                    class="tab-pane show active"
+                    id="contact-details-overview"
+                  >
+                    <div class="row">
+                      <div
+                        class="col-lg-4 col-md-6 d-md-flex flex-md-column flex-md-grow-1"
+                      >
+                        <div class="card _stats bg-light-grey">
+                          <div class="font-36">12</div>
+                          <h5 class="mt-n2">Campaigns Sent</h5>
+                          <div
+                            class="font-12 color-secondary font-weight-medium mt-10"
+                          >
+                            You’ve sent a total of
+                            <a href="#" class="link">12 campaigns</a>
+                            to this contract
+                          </div>
+                          <button class="btn _sm _secondary mt-11">
+                            View Campaigns
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        class="col-lg-4 col-md-6 d-md-flex flex-md-column flex-md-grow-1"
+                      >
+                        <div class="card _stats">
+                          <div class="font-36">7</div>
+                          <h5 class="mt-n2">Opened</h5>
+                          <div
+                            class="font-12 color-secondary font-weight-medium mt-10"
+                          >
+                            This contact opened
+                            <a href="#" class="link">7 campaigns</a>
+                            so far
+                          </div>
+                          <button class="btn _sm _secondary mt-11">
+                            View Opens
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        class="col-lg-4 col-md-6 d-md-flex flex-md-column flex-md-grow-1"
+                      >
+                        <div class="card _stats bg-light-grey">
+                          <div class="font-36">2</div>
+                          <h5 class="mt-n2">Clicked</h5>
+                          <div
+                            class="font-12 color-secondary font-weight-medium mt-10"
+                          >
+                            This contact clicked
+                            <a href="#" class="link">2 links</a>
+                            so far
+                          </div>
+                          <button class="btn _sm _secondary btn-primary mt-11">
+                            View Clicks
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-8 d-flex flex-column">
+                        <div class="card mb-30 flex-grow-1">
+                          <div id="contact-details-lists" class="show-assigned">
+                            <h4>Lists</h4>
+                            <div
+                              class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mt-12 mb-18"
+                            >
+                              <div
+                                class="font-weight-medium font-12 font-secondary"
+                              >
+                                Select lists you want your contact assigned to
+                              </div>
+                              <div
+                                class="d-flex align-items-center align-self-end align-self-md-center mt-10 mt-md-0"
+                              >
+                                <div
+                                  class="radio form-check-inline mr-19 ml-15"
+                                >
+                                  <input
+                                    type="radio"
+                                    id="show-assigned"
+                                    value="option2"
+                                    name="radioInline"
+                                    data-toggle="data-table"
+                                    checked
+                                  />
+                                  <label for="show-assigned">
+                                    Show Assigned
+                                  </label>
+                                </div>
+                                <div class="radio form-check-inline mr-0">
+                                  <input
+                                    type="radio"
+                                    id="show-all"
+                                    value="option2"
+                                    data-toggle="data-table"
+                                    name="radioInline"
+                                  />
+                                  <label for="show-all"> Show All </label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="datatable__wrap">
+                              <table
+                                id="data-table"
+                                class="datatable datatable_small _contact-details-lists"
+                                style="width: 100%"
+                              >
+                                <thead>
+                                  <tr>
+                                    <th class="nosort checkbox-col"></th>
+                                    <th>List Name</th>
+                                    <th>Last Modified</th>
+                                    <th>List Size</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox checkbox-single">
+                                        <input
+                                          type="checkbox"
+                                          value="option1"
+                                          aria-label="Single checkbox One"
+                                        />
+                                        <label></label>
+                                      </div>
+                                    </td>
+                                    <td>My First List</td>
+                                    <td>Mar 31, 2020</td>
+                                    <td>12,1511</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox checkbox-single">
+                                        <input
+                                          type="checkbox"
+                                          value="option1"
+                                          aria-label="Single checkbox One"
+                                        />
+                                        <label></label>
+                                      </div>
+                                    </td>
+                                    <td>Dodogildo Subscribers</td>
+                                    <td>Jun 7, 2020</td>
+                                    <td>234</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox checkbox-single">
+                                        <input
+                                          type="checkbox"
+                                          value="option1"
+                                          aria-label="Single checkbox One"
+                                        />
+                                        <label></label>
+                                      </div>
+                                    </td>
+                                    <td>Jonathan Bagel list</td>
+                                    <td>Sep 29, 2019</td>
+                                    <td>880</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox checkbox-single">
+                                        <input
+                                          type="checkbox"
+                                          value="option1"
+                                          aria-label="Single checkbox One"
+                                        />
+                                        <label></label>
+                                      </div>
+                                    </td>
+                                    <td>Filtered contacts by name</td>
+                                    <td>Dec 4, 2019</td>
+                                    <td>14,914</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox checkbox-single">
+                                        <input
+                                          type="checkbox"
+                                          value="option1"
+                                          aria-label="Single checkbox One"
+                                        />
+                                        <label></label>
+                                      </div>
+                                    </td>
+                                    <td>My First List</td>
+                                    <td>Mar 31, 2020</td>
+                                    <td>12,1511</td>
+                                  </tr>
+                                  <tr class="assigned">
+                                    <td>
+                                      <div class="checkbox checkbox-single">
+                                        <input
+                                          type="checkbox"
+                                          value="option1"
+                                          checked
+                                          aria-label="Single checkbox One"
+                                        />
+                                        <label></label>
+                                      </div>
+                                    </td>
+                                    <td>Dodogildo Subscribers</td>
+                                    <td>Jun 7, 2020</td>
+                                    <td>234</td>
+                                  </tr>
+                                  <tr class="assigned">
+                                    <td>
+                                      <div class="checkbox checkbox-single">
+                                        <input
+                                          type="checkbox"
+                                          value="option1"
+                                          checked
+                                          aria-label="Single checkbox One"
+                                        />
+                                        <label></label>
+                                      </div>
+                                    </td>
+                                    <td>Jonathan Bagel list</td>
+                                    <td>Sep 29, 2019</td>
+                                    <td>880</td>
+                                  </tr>
+                                  <tr class="assigned">
+                                    <td>
+                                      <div class="checkbox checkbox-single">
+                                        <input
+                                          type="checkbox"
+                                          value="option1"
+                                          checked
+                                          aria-label="Single checkbox One"
+                                        />
+                                        <label></label>
+                                      </div>
+                                    </td>
+                                    <td>Filtered contacts by name</td>
+                                    <td>Dec 4, 2019</td>
+                                    <td>14,914</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 d-flex flex-column">
+                        <div class="card mb-30 flex-grow-1">
+                          <h4>Tags</h4>
+                          <div
+                            class="font-12 color-secondary font-weight-medium mt-12"
+                          >
+                            Organize your contact by tags.
+                          </div>
+                          <div class="d-flex mx-n10 flex-wrap">
+                            <div class="btn _sm _tag-del">
+                              vip
+                              <button class="btn_icon ml-11">
+                                <svg width="8" height="8">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#cross"
+                                  ></use>
                                 </svg>
-                              </i>
-                              <span class="clearfix"></span>
-                            </a>
-                            <div class="dropdown-menu" style="">
-                              <p class="text-center">
-                                Sample Dropdown Content
+                              </button>
+                            </div>
+                            <div class="btn _sm _tag-del">
+                              staff
+                              <button class="btn_icon ml-11">
+                                <svg width="8" height="8">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#cross"
+                                  ></use>
+                                </svg>
+                              </button>
+                            </div>
+                            <button
+                              class="btn _sm _secondary mt-16"
+                              data-toggle="modal"
+                              data-target="#add-tag-modal"
+                            >
+                              Add Tag
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card mb-43">
+                          <h4>Segments</h4>
+                          <div
+                            class="font-12 color-secondary font-weight-medium mt-12"
+                          >
+                            <span class="font-weight-bold color-primary"
+                              >elvira.alvira@gmail.com</span
+                            >
+                            belongs to
+                            <span class="font-weight-bold color-primary"
+                              >segments below</span
+                            >. Segments are defined by filters and rules.
+                            <a href="#" class="link"
+                              >Learn more about segments.</a
+                            >
+                          </div>
+                          <div class="d-flex mx-n10 flex-wrap">
+                            <button class="btn _sm _tag">
+                              Top clickers from last year
+                            </button>
+                            <button class="btn _sm _tag">Baris deneme</button>
+                            <button class="btn _sm _tag">
+                              Users never clicked any campaing
+                            </button>
+                            <button class="btn _sm _tag">
+                              Top clickers from this year
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card bg-light-grey mb-43">
+                          <h4>Profile Information</h4>
+                          <div class="row mt-14 no-gutters">
+                            <div class="col-md-6 col-lg-3">
+                              <div class="font-weight-bold font-12">
+                                First Name:
+                                <span class="font-weight-medium color-secondary"
+                                  >Elvira</span
+                                >
+                              </div>
+                              <div
+                                class="font-weight-bold font-12 mt-lg-10 mt-0"
+                              >
+                                Phone:
+                                <span class="font-weight-medium color-secondary"
+                                  >+1-555-555-5555</span
+                                >
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                              <div class="font-weight-bold font-12">
+                                Last Name:
+                                <span class="font-weight-medium color-secondary"
+                                  >Amiga</span
+                                >
+                              </div>
+                              <div
+                                class="font-weight-bold font-12 mt-lg-10 mt-0"
+                              >
+                                Address:
+                                <span class="font-weight-medium color-secondary"
+                                  >455 W 37th St New York, 10010</span
+                                >
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                              <div class="font-weight-bold font-12">
+                                Birthday:
+                                <span class="font-weight-medium color-secondary"
+                                  >Mar 31, 1990</span
+                                >
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                              <div class="font-weight-bold font-12">
+                                Email Address:
+                                <span class="font-weight-medium color-secondary"
+                                  >elvira.amiga@gmail.com</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+
+                          <button
+                            class="btn _sm _primary mt-18 align-self-start"
+                          >
+                            Edit Profile
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="pr-0 pr-md-22 position-relative">
+                      <div class="row no-gutters chart-wrap">
+                        <div class="col-md-8">
+                          <div class="card align-content-start pb-sm-30">
+                            <div
+                              class="d-flex justify-content-between align-items-center flex-wrap mb-20"
+                            >
+                              <h4 class="mb-16">Performance</h4>
+                              <p
+                                class="font-12 color-secondary font-weight-medium mr-22 mr-md-0"
+                              >
+                                <span
+                                  ><i class="circle-i circle-i_openers"></i>
+                                  Openers</span
+                                >
+                                <span class="ml-25"
+                                  ><i class="circle-i circle-i_clickers"></i>
+                                  Clickers</span
+                                >
                               </p>
                             </div>
-                          </div>
-
-                          <div class="date-range__wrap mb-16 mb-sm-20">
-                            <input type="text" id="activity-range-datepicker" class="date-range__input _large _grey-bg"
-                              placeholder="Pick dates" value="2020-03-31 – 2020-04-25" />
-                            <i class="date-range__icon">
-                              <svg width="19.143" height="20">
-                                <use xlink:href="assets/images/sprite.svg#calendar"></use>
-                              </svg>
-                            </i>
+                            <div
+                              id="curve_chart"
+                              style="height: 246px"
+                              class="color-secondary"
+                            ></div>
+                            <div class="d-flex mx-n10 mt-10">
+                              <a
+                                href="./all-openers.html"
+                                class="btn _sm _secondary mt-13 mr-10 mx-sm-10"
+                                >All Openers</a
+                              >
+                              <a
+                                href="./all-clickers.html"
+                                class="btn _sm _secondary mt-13 mx-10"
+                                >All Clickers</a
+                              >
+                            </div>
                           </div>
                         </div>
+                        <div class="col-md-4 d-flex flex-direction-column">
+                          <div
+                            class="card bg-light-grey flex-grow-1 align-items-center"
+                          >
+                            <div
+                              class="d-flex flex-column justify-content-between flex-grow-1 w-100"
+                            >
+                              <div class="d-flex justify-content-center w-100">
+                                <div class="date-range__wrap">
+                                  <input
+                                    type="text"
+                                    id="range-datepicker"
+                                    class="date-range__input _large"
+                                    placeholder="Pick dates"
+                                    value="2020-03-31 – 2020-04-25"
+                                  />
+                                  <i class="date-range__icon">
+                                    <svg width="19.143" height="20">
+                                      <use
+                                        xlink:href="assets/images/sprite.svg#calendar"
+                                      ></use>
+                                    </svg>
+                                  </i>
+                                </div>
+                              </div>
 
-                        <div class="activity-feed">
-                          <div class="activity-feed__day">
-                            <p class="activity-feed__date">April 24, 2020</p>
-                            <div class="activity-feed__item">
-                              <i class="activity-feed__icon">
-                                <svg width="14" height="14">
-                                  <use xlink:href="assets/images/sprite.svg#activity-cross"></use>
-                                </svg>
-                              </i>
-                              <div class="activity-feed__time">10:21 AM</div>
-                              <div class="activity-feed__text">
-                                <span>Status</span>
-                                changed to
-                                <span>disabled</span>
+                              <div class="knobs _double">
+                                <div class="d-flex">
+                                  <div class="knob-wrap knob-wrap_up">
+                                    <input
+                                      data-plugin="knob"
+                                      data-width="50"
+                                      data-height="50"
+                                      data-linecap="round"
+                                      data-fgColor="#00EBA8"
+                                      value="75"
+                                      data-displayInput="false"
+                                      data-skin="tron"
+                                      data-angleOffset="180"
+                                      data-readOnly="true"
+                                      data-thickness=".1"
+                                      data-bgColor="#f6f9fc"
+                                    />
+                                  </div>
+                                  <div class="knob-text">
+                                    <p>Openers</p>
+                                    <span
+                                      ><i class="circle-i circle-i_openers"></i>
+                                      12</span
+                                    >
+                                  </div>
+                                </div>
+
+                                <div class="d-flex">
+                                  <div class="knob-wrap knob-wrap_down">
+                                    <input
+                                      data-plugin="knob"
+                                      data-width="50"
+                                      data-height="50"
+                                      data-linecap="round"
+                                      data-fgColor="#0000FF"
+                                      value="35"
+                                      data-displayInput="false"
+                                      data-skin="tron"
+                                      data-angleOffset="180"
+                                      data-readOnly="true"
+                                      data-thickness=".1"
+                                      data-bgColor="#f6f9fc"
+                                    />
+                                  </div>
+                                  <div class="knob-text">
+                                    <p>Clickers</p>
+                                    <span
+                                      ><i
+                                        class="circle-i circle-i_clickers"
+                                      ></i>
+                                      2</span
+                                    >
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
+                        </div>
+                      </div>
 
-                          <div class="activity-feed__day">
-                            <p class="activity-feed__date">Mar 31, 2020</p>
+                      <div class="dropdown _more">
+                        <a
+                          class="dropdown-toggle _more"
+                          data-toggle="dropdown"
+                          href="#"
+                          role="button"
+                          aria-haspopup="false"
+                          aria-expanded="false"
+                        >
+                          <svg width="5.8" height="25">
+                            <use
+                              xlink:href="assets/images/sprite.svg#dots"
+                            ></use>
+                          </svg>
+                        </a>
 
-                            <div class="activity-feed__item">
-                              <i class="activity-feed__icon">
-                                <svg width="18" height="18">
-                                  <use xlink:href="assets/images/sprite.svg#activity-edit"></use>
-                                </svg>
-                              </i>
-                              <div class="activity-feed__time">02:53 AM</div>
-                              <div class="activity-feed__text">
-                                <span>Edited</span>
-                                contact information
+                        <div
+                          class="dropdown-menu dropdown-menu-right _actions"
+                          aria-labelledby="moreMenuButton"
+                        >
+                          <div class="dropdown-menu-inner">
+                            <a class="dropdown-item" href="#">Action Item 1</a>
+                            <a class="dropdown-item" href="#">Action Item 2</a>
+                            <a class="dropdown-item" href="#">Action Item 3</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane" id="contact-details-activity-feed">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card mb-0">
+                          <div class="activity-feed__dropdowns">
+                            <div class="dropdown mb-16 mr-sm-20 mb-sm-20">
+                              <a
+                                class="dropdown-toggle _activity"
+                                data-toggle="dropdown"
+                                href="#"
+                                role="button"
+                                aria-haspopup="false"
+                                aria-expanded="false"
+                              >
+                                All Activity
+                                <i class="float-right">
+                                  <svg width="8" height="4.94">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#dropdown-arrow"
+                                    ></use>
+                                  </svg>
+                                </i>
+                                <span class="clearfix"></span>
+                              </a>
+                              <div class="dropdown-menu" style="">
+                                <p class="text-center">
+                                  Sample Dropdown Content
+                                </p>
                               </div>
                             </div>
 
-                            <div class="activity-feed__item">
-                              <i class="activity-feed__icon">
-                                <svg width="18" height="10.41">
-                                  <use xlink:href="assets/images/sprite.svg#activity-arrow"></use>
+                            <div class="date-range__wrap mb-16 mb-sm-20">
+                              <input
+                                type="text"
+                                id="activity-range-datepicker"
+                                class="date-range__input _large _grey-bg"
+                                placeholder="Pick dates"
+                                value="2020-03-31 – 2020-04-25"
+                              />
+                              <i class="date-range__icon">
+                                <svg width="19.143" height="20">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#calendar"
+                                  ></use>
                                 </svg>
                               </i>
-                              <div class="activity-feed__time">01:21 AM</div>
-                              <div class="activity-feed__text">
-                                <span>Soft bounced</span>
-                              </div>
-                            </div>
-
-                            <div class="activity-feed__item">
-                              <i class="activity-feed__icon">
-                                <svg width="18" height="18">
-                                  <use xlink:href="assets/images/sprite.svg#activity-sent"></use>
-                                </svg>
-                              </i>
-                              <div class="activity-feed__time">08:44 AM</div>
-                              <div class="activity-feed__text">
-                                <span>We sent</span>
-                                the email
-                                <a href="#" class="link">Latest News</a>
-                              </div>
                             </div>
                           </div>
 
-                          <div class="activity-feed__day">
-                            <p class="activity-feed__date">Mar 18, 2020</p>
-
-                            <div class="activity-feed__item">
-                              <i class="activity-feed__icon">
-                                <svg width="20" height="10">
-                                  <use xlink:href="assets/images/sprite.svg#activity-link"></use>
-                                </svg>
-                              </i>
-                              <div class="activity-feed__time">02:53 AM</div>
-                              <div class="activity-feed__text">
-                                <span>Clicked</span>
-                                a
-                                <a href="#" class="link">link</a>
-                                in email
-                                <a href="#" class="link">Hello did you see this?</a>
+                          <div class="activity-feed">
+                            <div class="activity-feed__day">
+                              <p class="activity-feed__date">April 24, 2020</p>
+                              <div class="activity-feed__item">
+                                <i class="activity-feed__icon">
+                                  <svg width="14" height="14">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#activity-cross"
+                                    ></use>
+                                  </svg>
+                                </i>
+                                <div class="activity-feed__time">10:21 AM</div>
+                                <div class="activity-feed__text">
+                                  <span>Status</span>
+                                  changed to
+                                  <span>disabled</span>
+                                </div>
                               </div>
                             </div>
 
-                            <div class="activity-feed__item">
-                              <i class="activity-feed__icon">
-                                <svg width="22" height="15.003">
-                                  <use xlink:href="assets/images/sprite.svg#activity-view"></use>
-                                </svg>
-                              </i>
-                              <div class="activity-feed__time">01:21 AM</div>
-                              <div class="activity-feed__text">
-                                <span>Opened</span>
-                                the email
-                                <a href="#" class="link">Hello did you see this?</a>
+                            <div class="activity-feed__day">
+                              <p class="activity-feed__date">Mar 31, 2020</p>
+
+                              <div class="activity-feed__item">
+                                <i class="activity-feed__icon">
+                                  <svg width="18" height="18">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#activity-edit"
+                                    ></use>
+                                  </svg>
+                                </i>
+                                <div class="activity-feed__time">02:53 AM</div>
+                                <div class="activity-feed__text">
+                                  <span>Edited</span>
+                                  contact information
+                                </div>
+                              </div>
+
+                              <div class="activity-feed__item">
+                                <i class="activity-feed__icon">
+                                  <svg width="18" height="10.41">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#activity-arrow"
+                                    ></use>
+                                  </svg>
+                                </i>
+                                <div class="activity-feed__time">01:21 AM</div>
+                                <div class="activity-feed__text">
+                                  <span>Soft bounced</span>
+                                </div>
+                              </div>
+
+                              <div class="activity-feed__item">
+                                <i class="activity-feed__icon">
+                                  <svg width="18" height="18">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#activity-sent"
+                                    ></use>
+                                  </svg>
+                                </i>
+                                <div class="activity-feed__time">08:44 AM</div>
+                                <div class="activity-feed__text">
+                                  <span>We sent</span>
+                                  the email
+                                  <a href="#" class="link">Latest News</a>
+                                </div>
                               </div>
                             </div>
 
-                            <div class="activity-feed__item">
-                              <i class="activity-feed__icon">
-                                <svg width="18" height="18">
-                                  <use xlink:href="assets/images/sprite.svg#activity-sent"></use>
-                                </svg>
-                              </i>
-                              <div class="activity-feed__time">08:44 AM</div>
-                              <div class="activity-feed__text">
-                                <span>Was sent</span>
-                                the email
-                                <a href="#" class="link">Hello did you see this?</a>
+                            <div class="activity-feed__day">
+                              <p class="activity-feed__date">Mar 18, 2020</p>
+
+                              <div class="activity-feed__item">
+                                <i class="activity-feed__icon">
+                                  <svg width="20" height="10">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#activity-link"
+                                    ></use>
+                                  </svg>
+                                </i>
+                                <div class="activity-feed__time">02:53 AM</div>
+                                <div class="activity-feed__text">
+                                  <span>Clicked</span>
+                                  a
+                                  <a href="#" class="link">link</a>
+                                  in email
+                                  <a href="#" class="link"
+                                    >Hello did you see this?</a
+                                  >
+                                </div>
+                              </div>
+
+                              <div class="activity-feed__item">
+                                <i class="activity-feed__icon">
+                                  <svg width="22" height="15.003">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#activity-view"
+                                    ></use>
+                                  </svg>
+                                </i>
+                                <div class="activity-feed__time">01:21 AM</div>
+                                <div class="activity-feed__text">
+                                  <span>Opened</span>
+                                  the email
+                                  <a href="#" class="link"
+                                    >Hello did you see this?</a
+                                  >
+                                </div>
+                              </div>
+
+                              <div class="activity-feed__item">
+                                <i class="activity-feed__icon">
+                                  <svg width="18" height="18">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#activity-sent"
+                                    ></use>
+                                  </svg>
+                                </i>
+                                <div class="activity-feed__time">08:44 AM</div>
+                                <div class="activity-feed__text">
+                                  <span>Was sent</span>
+                                  the email
+                                  <a href="#" class="link"
+                                    >Hello did you see this?</a
+                                  >
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          <div class="activity-feed__day">
-                            <p class="activity-feed__date">Dec 3, 2019</p>
+                            <div class="activity-feed__day">
+                              <p class="activity-feed__date">Dec 3, 2019</p>
 
-                            <div class="activity-feed__item">
-                              <i class="activity-feed__icon">
-                                <svg width="22" height="16">
-                                  <use xlink:href="assets/images/sprite.svg#activity-user"></use>
-                                </svg>
-                              </i>
-                              <div class="activity-feed__time">02:53 AM</div>
-                              <div class="activity-feed__text">
-                                <span>Added</span>
-                                to list
-                                <a href="#" class="link">Members VIP</a>
+                              <div class="activity-feed__item">
+                                <i class="activity-feed__icon">
+                                  <svg width="22" height="16">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#activity-user"
+                                    ></use>
+                                  </svg>
+                                </i>
+                                <div class="activity-feed__time">02:53 AM</div>
+                                <div class="activity-feed__text">
+                                  <span>Added</span>
+                                  to list
+                                  <a href="#" class="link">Members VIP</a>
+                                </div>
                               </div>
-                            </div>
 
-                            <div class="activity-feed__item">
-                              <i class="activity-feed__icon">
-                                <svg width="22" height="16">
-                                  <use xlink:href="assets/images/sprite.svg#activity-user"></use>
-                                </svg>
-                              </i>
-                              <div class="activity-feed__time">01:21 AM</div>
-                              <div class="activity-feed__text">
-                                Subscriber has been
-                                <span>imported</span>
+                              <div class="activity-feed__item">
+                                <i class="activity-feed__icon">
+                                  <svg width="22" height="16">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#activity-user"
+                                    ></use>
+                                  </svg>
+                                </i>
+                                <div class="activity-feed__time">01:21 AM</div>
+                                <div class="activity-feed__text">
+                                  Subscriber has been
+                                  <span>imported</span>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -1185,100 +1538,116 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="tab-pane" id="contact-details-notes">
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="card mb-0 align-items-start">
-                        <button class="btn _lg _secondary" data-toggle="modal" data-target="#create-list-modal">
-                          Add Note
-                        </button>
+                  <div class="tab-pane" id="contact-details-notes">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card mb-0 align-items-start">
+                          <button
+                            class="btn _lg _secondary"
+                            data-toggle="modal"
+                            data-target="#create-list-modal"
+                          >
+                            Add Note
+                          </button>
 
-                        <div class="contact__note mt-37">
-                          <p class="contact__note-date">
-                            <span>April 1, 2020</span>
-                            - 6:38 AM
-                          </p>
+                          <div class="contact__note mt-37">
+                            <p class="contact__note-date">
+                              <span>April 1, 2020</span>
+                              - 6:38 AM
+                            </p>
 
-                          <p class="contact__note-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Cras venenatis erat id ex varius, a lobortis
-                          </p>
+                            <p class="contact__note-text">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Cras venenatis erat id ex varius, a lobortis
+                            </p>
 
-                          <div class="d-flex">
-                            <button class="btn _sm _secondary _check">
-                              <svg width="10" height="10">
-                                <use xlink:href="assets/images/sprite.svg#edit"></use>
-                              </svg>
-                            </button>
-                            <div class="confirm__wrap ml-10">
-                              <button class="btn _sm _primary _check confirm__btn">
-                                <svg width="10" height="11">
-                                  <use xlink:href="assets/images/sprite.svg#trashcan"></use>
+                            <div class="d-flex">
+                              <button class="btn _sm _secondary _check">
+                                <svg width="10" height="10">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#edit"
+                                  ></use>
                                 </svg>
                               </button>
+                              <div class="confirm__wrap ml-10">
+                                <button
+                                  class="btn _sm _primary _check confirm__btn"
+                                >
+                                  <svg width="10" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#trashcan"
+                                    ></use>
+                                  </svg>
+                                </button>
 
-                              <div class="confirm__modal d-none _to-right">
-                                <div class="confirm__content">
-                                  <p class="confirm__text">
-                                    You sure you want to delete this note?
-                                  </p>
-                                </div>
-                                <div class="d-flex">
-                                  <button class="btn _lg _secondary">
-                                    Nope
-                                  </button>
-                                  <button class="btn _lg _primary">
-                                    Sure
-                                  </button>
+                                <div class="confirm__modal d-none _to-right">
+                                  <div class="confirm__content">
+                                    <p class="confirm__text">
+                                      You sure you want to delete this note?
+                                    </p>
+                                  </div>
+                                  <div class="d-flex">
+                                    <button class="btn _lg _secondary">
+                                      Nope
+                                    </button>
+                                    <button class="btn _lg _primary">
+                                      Sure
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
 
-                        <div class="contact__note">
-                          <p class="contact__note-date">
-                            <span>Mar 31, 2020</span>
-                            - 3:16 PM
-                          </p>
+                          <div class="contact__note">
+                            <p class="contact__note-date">
+                              <span>Mar 31, 2020</span>
+                              - 3:16 PM
+                            </p>
 
-                          <p class="contact__note-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Cras venenatis erat id ex varius, a lobortis
-                            nulla suscipit. Aliquam viverra tristique sapien
-                            non dapibus. Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Cras venenatis erat
-                            id ex varius, a lobortis nulla suscipit. Aliquam
-                            viverra tristique sapien non dapibus.
-                          </p>
+                            <p class="contact__note-text">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Cras venenatis erat id ex varius, a lobortis
+                              nulla suscipit. Aliquam viverra tristique sapien
+                              non dapibus. Lorem ipsum dolor sit amet,
+                              consectetur adipiscing elit. Cras venenatis erat
+                              id ex varius, a lobortis nulla suscipit. Aliquam
+                              viverra tristique sapien non dapibus.
+                            </p>
 
-                          <div class="d-flex">
-                            <button class="btn _sm _secondary _check">
-                              <svg width="10" height="10">
-                                <use xlink:href="assets/images/sprite.svg#edit"></use>
-                              </svg>
-                            </button>
-                            <div class="confirm__wrap ml-10">
-                              <button class="btn _sm _primary _check confirm__btn">
-                                <svg width="10" height="11">
-                                  <use xlink:href="assets/images/sprite.svg#trashcan"></use>
+                            <div class="d-flex">
+                              <button class="btn _sm _secondary _check">
+                                <svg width="10" height="10">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#edit"
+                                  ></use>
                                 </svg>
                               </button>
+                              <div class="confirm__wrap ml-10">
+                                <button
+                                  class="btn _sm _primary _check confirm__btn"
+                                >
+                                  <svg width="10" height="11">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#trashcan"
+                                    ></use>
+                                  </svg>
+                                </button>
 
-                              <div class="confirm__modal d-none _to-right">
-                                <div class="confirm__content">
-                                  <p class="confirm__text">
-                                    You sure you want to delete this note?
-                                  </p>
-                                </div>
-                                <div class="d-flex">
-                                  <button class="btn _lg _secondary">
-                                    Nope
-                                  </button>
-                                  <button class="btn _lg _primary">
-                                    Sure
-                                  </button>
+                                <div class="confirm__modal d-none _to-right">
+                                  <div class="confirm__content">
+                                    <p class="confirm__text">
+                                      You sure you want to delete this note?
+                                    </p>
+                                  </div>
+                                  <div class="d-flex">
+                                    <button class="btn _lg _secondary">
+                                      Nope
+                                    </button>
+                                    <button class="btn _lg _primary">
+                                      Sure
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1293,271 +1662,305 @@
           </div>
         </div>
       </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+
+      <div
+        id="add-tag-modal"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+        style="display: none"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              <svg width="8" height="8">
+                <use xlink:href="assets/images/sprite.svg#cross"></use>
+              </svg>
+            </button>
+            <div class="modal-body">
+              <h4 class="mb-13">Enter Your Tag</h4>
+              <div class="form-control__wrap mb-19">
+                <select
+                  class="form-control _select2-lg"
+                  multiple="multiple"
+                  required
+                >
+                  <option></option>
+                  <option value="test-1">vip</option>
+                  <option value="test-2">Custom tag 1</option>
+                  <option value="test-3">Custom tag 2</option>
+                  <option value="test-4">Custom tag 3</option>
+                  <option value="test-5">Custom tag 4</option>
+                </select>
+              </div>
+              <button class="btn _lg _primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.modal -->
+
+      <a href="#" class="btn_back">
+        <svg width="8" height="8">
+          <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
+        </svg>
+      </a>
     </div>
+    <!-- END wrapper -->
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
-
-    <div id="add-tag-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-      aria-hidden="true" style="display: none">
+    <div
+      id="create-list-modal"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+      style="display: none"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
             <svg width="8" height="8">
               <use xlink:href="assets/images/sprite.svg#cross"></use>
             </svg>
           </button>
           <div class="modal-body">
-            <h4 class="mb-13">Enter Your Tag</h4>
+            <h4 class="mb-13">Add Note</h4>
             <div class="form-control__wrap mb-19">
-              <select class="form-control _select2-lg" multiple="multiple" required>
-                <option></option>
-                <option value="test-1">vip</option>
-                <option value="test-2">Custom tag 1</option>
-                <option value="test-3">Custom tag 2</option>
-                <option value="test-4">Custom tag 3</option>
-                <option value="test-5">Custom tag 4</option>
-              </select>
+              <textarea
+                placeholder="Your Note Text Here"
+                class="form-control"
+                rows="5"
+                maxlength="500"
+              ></textarea>
             </div>
-            <button class="btn _lg _primary">Save</button>
+            <button class="btn _lg _primary">Create</button>
           </div>
         </div>
       </div>
     </div>
     <!-- /.modal -->
 
-    <a href="#" class="btn_back">
-      <svg width="8" height="8">
-        <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
-      </svg>
-    </a>
-  </div>
-  <!-- END wrapper -->
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
 
-  <div id="create-list-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true" style="display: none">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-          <svg width="8" height="8">
-            <use xlink:href="assets/images/sprite.svg#cross"></use>
-          </svg>
-        </button>
-        <div class="modal-body">
-          <h4 class="mb-13">Add Note</h4>
-          <div class="form-control__wrap mb-19">
-            <textarea placeholder="Your Note Text Here" class="form-control" rows="5" maxlength="500"></textarea>
-          </div>
-          <button class="btn _lg _primary">Create</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- /.modal -->
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/libs/raphael/raphael.min.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/libs/select2/js/select2.min.js"></script>
 
-  <!-- Vendor js -->
-  <script src="assets/js/vendor.min.js"></script>
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/dataTable.js"></script>
 
-  <script src="assets/js/loader.js"></script>
-  <script src="assets/libs/raphael/raphael.min.js"></script>
-  <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
-  <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
-  <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-  <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="assets/libs/select2/js/select2.min.js"></script>
-
-  <!-- App js -->
-  <script src="assets/js/app.min.js"></script>
-  <script src="assets/js/dataTable.js"></script>
-
-  <script>
-    const DEFAULT_SELECT_OPTIONS = {
-      quality: [1, 2, 3, 4, 5],
-      status: ['active', 'passive'],
-      createdDate: [{
-          label: 'Last Week',
-          value: 'week',
-        },
-        {
-          label: 'Last Month',
-          value: 'month',
-        },
-        {
-          label: 'Last Year',
-          value: 'year',
-        },
-      ],
-    };
-
-    $(document).ready(function () {
-      const select2Options = {
-        placeholder: 'Select an option',
-        allowClear: true,
-        minimumResultsForSearch: -1,
+    <script>
+      const DEFAULT_SELECT_OPTIONS = {
+        quality: [1, 2, 3, 4, 5],
+        status: ['active', 'passive'],
+        createdDate: [
+          {
+            label: 'Last Week',
+            value: 'week',
+          },
+          {
+            label: 'Last Month',
+            value: 'month',
+          },
+          {
+            label: 'Last Year',
+            value: 'year',
+          },
+        ],
       };
 
-      createSelect2ByClass('._select2-lg', select2Options);
-    });
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select an option',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
 
-    // Datatables settings
-    $(document).ready(function () {
-      var table = createDataTable('#data-table', {
-        scrollX: true,
-        scrollY: 127,
-        scrollCollapse: true,
-        paging: false,
-        order: [],
-        aoColumnDefs: [{
-          bSortable: false,
-          aTargets: ['nosort'],
-        }, ],
-        sDom: 't',
+        createSelect2ByClass('._select2-lg', select2Options);
       });
-      adjustDataTableColumns();
-      const contactLists = document.querySelector('#contact-details-lists');
 
-      const showAssigned = document.querySelector('#show-assigned');
-      showAssigned.addEventListener('change', () => {
-        if (contactLists.classList.contains('show-all')) {
-          contactLists.classList.remove('show-all');
-          contactLists.classList.add('show-assigned');
-          adjustDataTableColumns();
-        }
-      });
-      const showAll = document.querySelector('#show-all');
-      showAll.addEventListener('change', () => {
-        if (contactLists.classList.contains('show-assigned')) {
-          contactLists.classList.remove('show-assigned');
-          contactLists.classList.add('show-all');
-          adjustDataTableColumns();
-        }
-      });
-    });
-
-    // Range date picker settings and initialisation
-    !(function ($) {
-      'use strict';
-
-      var FormPickers = function () {};
-
-      (FormPickers.prototype.init = function () {
-        $('#range-datepicker, #activity-range-datepicker').flatpickr({
-          mode: 'range',
-          altInput: true,
-          altFormat: 'M j, Y',
-          dateFormat: 'Y-m-d',
-          locale: {
-            rangeSeparator: ' – ',
-          },
+      // Datatables settings
+      $(document).ready(function () {
+        var table = createDataTable('#data-table', {
+          scrollX: true,
+          scrollY: 127,
+          scrollCollapse: true,
+          paging: false,
+          order: [],
+          aoColumnDefs: [
+            {
+              bSortable: false,
+              aTargets: ['nosort'],
+            },
+          ],
+          sDom: 't',
         });
-      }),
-      ($.FormPickers = new FormPickers()),
-      ($.FormPickers.Constructor = FormPickers);
-    })(window.jQuery),
-    (function ($) {
-      'use strict';
-      $.FormPickers.init();
-    })(window.jQuery);
+        adjustDataTableColumns();
+        const contactLists = document.querySelector('#contact-details-lists');
 
-    // charts
+        const showAssigned = document.querySelector('#show-assigned');
+        showAssigned.addEventListener('change', () => {
+          if (contactLists.classList.contains('show-all')) {
+            contactLists.classList.remove('show-all');
+            contactLists.classList.add('show-assigned');
+            adjustDataTableColumns();
+          }
+        });
+        const showAll = document.querySelector('#show-all');
+        showAll.addEventListener('change', () => {
+          if (contactLists.classList.contains('show-assigned')) {
+            contactLists.classList.remove('show-assigned');
+            contactLists.classList.add('show-all');
+            adjustDataTableColumns();
+          }
+        });
+      });
 
-    google.charts.load('current', {
-      packages: ['corechart'],
-    });
-    google.charts.setOnLoadCallback(drawChart).then(() => {});
+      // Range date picker settings and initialisation
+      !(function ($) {
+        'use strict';
 
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Date', 'Openers', 'Clickers'],
-        [new Date(2020, 6, 6), 8, 25],
-        [new Date(2020, 6, 7), 24, 60],
-        [new Date(2020, 6, 8), 56, 27],
-        [new Date(2020, 6, 9), 14, 29],
-        [new Date(2020, 6, 10), 15, 36],
-        [new Date(2020, 6, 11), 16, 32],
-        [new Date(2020, 6, 12), 48, 44],
-      ]);
+        var FormPickers = function () {};
 
-      var options = {
-        curveType: 'function',
-        series: {
-          0: {
-            color: '#00EBA8',
+        (FormPickers.prototype.init = function () {
+          $('#range-datepicker, #activity-range-datepicker').flatpickr({
+            mode: 'range',
+            altInput: true,
+            altFormat: 'M j, Y',
+            dateFormat: 'Y-m-d',
+            locale: {
+              rangeSeparator: ' – ',
+            },
+          });
+        }),
+          ($.FormPickers = new FormPickers()),
+          ($.FormPickers.Constructor = FormPickers);
+      })(window.jQuery),
+        (function ($) {
+          'use strict';
+          $.FormPickers.init();
+        })(window.jQuery);
+
+      // charts
+
+      google.charts.load('current', {
+        packages: ['corechart'],
+      });
+      google.charts.setOnLoadCallback(drawChart).then(() => {});
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Date', 'Openers', 'Clickers'],
+          [new Date(2020, 6, 6), 8, 25],
+          [new Date(2020, 6, 7), 24, 60],
+          [new Date(2020, 6, 8), 56, 27],
+          [new Date(2020, 6, 9), 14, 29],
+          [new Date(2020, 6, 10), 15, 36],
+          [new Date(2020, 6, 11), 16, 32],
+          [new Date(2020, 6, 12), 48, 44],
+        ]);
+
+        var options = {
+          curveType: 'function',
+          series: {
+            0: {
+              color: '#00EBA8',
+            },
+            1: {
+              color: '#0000FF',
+            },
           },
-          1: {
-            color: '#0000FF',
+          chartArea: {
+            height: '100%',
+            width: '100%',
+            top: 10,
+            left: 32,
+            bottom: 30,
+            right: 16,
           },
-        },
-        chartArea: {
-          height: '100%',
+          height: 246,
           width: '100%',
-          top: 10,
-          left: 32,
-          bottom: 30,
-          right: 16,
-        },
-        height: 246,
-        width: '100%',
-        vAxis: {
-          gridlines: {
-            count: -1,
-            color: '#eef0f2',
+          vAxis: {
+            gridlines: {
+              count: -1,
+              color: '#eef0f2',
+            },
+            minorGridlines: {
+              color: 'transparent',
+            },
+            textStyle: {
+              color: '#888888',
+              fontSize: 12,
+            },
+            baselineColor: '#eef0f2',
+            textPosition: 'out',
+            viewWindow: {
+              max: 60,
+            },
           },
-          minorGridlines: {
-            color: 'transparent',
+          hAxis: {
+            textStyle: {
+              color: '#888888',
+              fontSize: 12,
+            },
+            minorGridlines: {
+              count: 0,
+            },
+            gridlines: {
+              count: -1,
+              color: 'transparent',
+            },
+            baselineColor: '#eef0f2',
+            format: 'MMM dd',
+            textPosition: 'out',
           },
-          textStyle: {
-            color: '#888888',
-            fontSize: 12,
+          lineWidth: 1.5,
+          animation: {
+            startup: true,
+            duration: 1000,
+            easing: 'out',
           },
-          baselineColor: '#eef0f2',
-          textPosition: 'out',
-          viewWindow: {
-            max: 60,
+          focusTarget: 'category',
+          tooltip: {
+            textStyle: {
+              color: '#454f5b',
+              fontName: 'Proxima Nova',
+              fontSize: '12',
+            },
+            showColorCode: true,
           },
-        },
-        hAxis: {
-          textStyle: {
-            color: '#888888',
-            fontSize: 12,
-          },
-          minorGridlines: {
-            count: 0,
-          },
-          gridlines: {
-            count: -1,
-            color: 'transparent',
-          },
-          baselineColor: '#eef0f2',
-          format: 'MMM dd',
-          textPosition: 'out',
-        },
-        lineWidth: 1.5,
-        animation: {
-          startup: true,
-          duration: 1000,
-          easing: 'out',
-        },
-        focusTarget: 'category',
-        tooltip: {
-          textStyle: {
-            color: '#454f5b',
-            fontName: 'Proxima Nova',
-            fontSize: '12',
-          },
-          showColorCode: true,
-        },
-      };
+        };
 
-      var chart = new google.visualization.LineChart(
-        document.getElementById('curve_chart')
-      );
+        var chart = new google.visualization.LineChart(
+          document.getElementById('curve_chart')
+        );
 
-      chart.draw(data, options);
-    }
-  </script>
-</body>
-
+        chart.draw(data, options);
+      }
+    </script>
+  </body>
 </html>
