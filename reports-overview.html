@@ -1,1734 +1,2447 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Reports Overview | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Reports Overview | DirectIQ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta content="Direct IQ frontend development version" name="description" />
-  <meta content="Coderthemes" name="author" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- App favicon -->
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
-  />
-  <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
-  <link
-    rel="mask-icon"
-    href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
-    color="#5bbad5"
-  />
-  <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
-  <meta name="msapplication-TileColor" content="#0000ff" />
-  <meta
-    name="msapplication-config"
-    content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
-  />
-  <meta name="theme-color" content="#ffffff" />
 
+    <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
 
-  <!-- App css -->
-  <link
-    href="assets/css/bootstrap.min.css"
-    rel="stylesheet"
-    type="text/css"
-    id="bs-default-stylesheet"
-  />
-  <link
-    href="assets/css/app.min.css"
-    rel="stylesheet"
-    type="text/css"
-    id="app-default-stylesheet"
-  />
+  </head>
 
-</head>
+  <body data-layout-mode="two-column" class="animation-stopper">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- Topbar Start -->
+      <div class="navbar-custom">
+        <div class="container-fluid navbar-custom__inner h-100">
+          <div>
+            <!-- LOGO -->
+            <div class="logo-box">
+              <a href="./" class="logo">
+                <svg width="44.834" height="45">
+                  <use xlink:href="assets/images/sprite.svg#logo"></use>
+                </svg>
+              </a>
+            </div>
 
-<body data-layout-mode="two-column" class="animation-stopper">
-  <!-- Begin page -->
-  <div id="wrapper">
-    <!-- Topbar Start -->
-    <div class="navbar-custom">
-      <div class="container-fluid navbar-custom__inner h-100">
-        <div>
-          <!-- LOGO -->
-          <div class="logo-box">
-            <a href="./" class="logo">
-              <svg width="44.834" height="45">
-                <use xlink:href="assets/images/sprite.svg#logo"></use>
-              </svg>
-            </a>
+            <ol class="breadcrumbs">
+              <li class="breadcrumb-item">
+                <a href="#">Campaigns</a>
+              </li>
+              <li class="breadcrumb-item active">
+                Campaign #90809214
+                <button class="btn_icon d-none d-md-inline ml-18">
+                  <i class="add-to-fav-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19.5"
+                      height="17.805"
+                      viewBox="0 0 19.5 17.805"
+                    >
+                      <g transform="translate(0.75 0.75)">
+                        <path
+                          class="add-to-fav-icon__bg"
+                          d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13"
+                          transform="translate(-1972.5 -1089.5)"
+                          fill="none"
+                          stroke="blue"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          class="add-to-fav-icon__plus"
+                          d="M1986.5,1093.5v8m4-4h-8"
+                          transform="translate(-1972.5 -1089.5)"
+                          fill="none"
+                          stroke="#00eba8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </g>
+                    </svg>
+                  </i>
+                </button>
+              </li>
+            </ol>
           </div>
 
-          <ol class="breadcrumbs">
-            <li class="breadcrumb-item">
-              <a href="#">Campaigns</a>
-            </li>
-            <li class="breadcrumb-item active">
-              Campaign #90809214
-              <button class="btn_icon d-none d-md-inline ml-18">
-                <i class="add-to-fav-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
-                    <g transform="translate(0.75 0.75)">
-                      <path class="add-to-fav-icon__bg" d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13"
-                        transform="translate(-1972.5 -1089.5)" fill="none" stroke="blue" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="1.5" />
-                      <path class="add-to-fav-icon__plus" d="M1986.5,1093.5v8m4-4h-8"
-                        transform="translate(-1972.5 -1089.5)" fill="none" stroke="#00eba8" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="1.5" />
-                    </g>
-                  </svg>
-                </i>
-              </button>
-            </li>
-          </ol>
-        </div>
+          <div class="align-items-center d-flex">
+            <!--App Search-->
+            <form class="app-search d-none d-md-table">
+              <div class="app-search-box">
+                <div class="input-group">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Start typing and search"
+                    id="top-search"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn" type="submit">
+                      <svg width="19.955" height="20.061">
+                        <use xlink:href="assets/images/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
 
-        <div class="align-items-center d-flex">
-          <!--App Search-->
-          <form class="app-search d-none d-md-table">
-            <div class="app-search-box">
-              <div class="input-group">
-                <input type="search" class="form-control" placeholder="Start typing and search" id="top-search" />
-                <div class="input-group-append">
-                  <button class="btn" type="submit">
-                    <svg width="19.955" height="20.061">
-                      <use xlink:href="assets/images/sprite.svg#search"></use>
+            <div class="dropdown d-none d-sm-block">
+              <a
+                class="dropdown-toggle _outline _lg"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                Create
+                <svg width="13.545" height="8">
+                  <use
+                    xlink:href="assets/images/sprite.svg#dropdown-arrow"
+                  ></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown ml-14 d-none d-md-block">
+              <a
+                class="dropdown-toggle _icon"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <svg width="18.261" height="30">
+                  <use xlink:href="assets/images/sprite.svg#bulb"></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown d-none d-md-block">
+              <a
+                class="dropdown-toggle _icon"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <svg width="21.073" height="21.264">
+                  <use xlink:href="assets/images/sprite.svg#bell"></use>
+                </svg>
+                <span class="badge">9</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown ml-10 _user mr-20">
+              <a
+                class="dropdown-toggle _user d-none d-md-inline-block"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <span class="user-avatar">
+                  <img src="assets/images/user.png" alt="User Avatar" />
+                </span>
+                <svg width="5.8" height="25">
+                  <use xlink:href="assets/images/sprite.svg#empty-dots"></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+                <div class="profile-dropdown__inner">
+                  <div class="profile-dropdown__email">
+                    barisergin@gmail.com
+                  </div>
+                  <div class="profile-dropdown__id">Account ID #123456</div>
+                  <a href="#" class="profile-dropdown__link mb-9">
+                    <svg width="16" height="16">
+                      <use xlink:href="assets/images/sprite.svg#profile"></use>
+                      <span class="profile-dropdown__link-text">
+                        My Account
+                      </span>
+                    </svg>
+                  </a>
+                  <div class="profile-dropdown__divider mb-13"></div>
+                  <div class="profile-dropdown__progress">
+                    <div class="d-flex justify-content-between mb-5">
+                      <span class="font-weight-bold">Free</span>
+                      <span class="color-secondary font-weight-medium"
+                        >25/1500</span
+                      >
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 25%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-dropdown__link mb-4">
+                    <svg width="13.375" height="16">
+                      <use xlink:href="assets/images/sprite.svg#swap"></use>
+                      <span class="profile-dropdown__link-text">
+                        Change Plan
+                      </span>
+                    </svg>
+                  </a>
+                  <div class="profile-dropdown__divider mb-5"></div>
+                  <a href="#" class="profile-dropdown__link">
+                    <svg width="16" height="12.235">
+                      <use xlink:href="assets/images/sprite.svg#group"></use>
+                      <span class="profile-dropdown__link-text">
+                        Switch Account
+                      </span>
+                    </svg>
+                  </a>
+                  <a href="#" class="profile-dropdown__link">
+                    <svg width="16" height="16">
+                      <use xlink:href="assets/images/sprite.svg#support"></use>
+                      <span class="profile-dropdown__link-text">Support</span>
+                    </svg>
+                  </a>
+
+                  <select
+                    class="form-control _select2-lg"
+                    data-toggle="select2"
+                    required
+                  >
+                    <option value="test-1">English</option>
+                    <option value="test-2">Chinese</option>
+                    <option value="test-2">Spanish</option>
+                    <option value="test-2">Portugese</option>
+                    <option value="test-2">Italian</option>
+                  </select>
+
+                  <div class="profile-dropdown__divider mb-22"></div>
+                  <button class="profile-dropdown__btn">Log-out</button>
+
+                  <div class="profile-dropdown__discount">
+                    <div class="font-14 font-weight-bold">Hey Baris!</div>
+                    <div class="font-36">30%</div>
+                    <div
+                      class="font-12 color-secondary font-weight-medium mb-10"
+                    >
+                      <span class="text-nowrap"
+                        >Upgrade in 12 hours and use</span
+                      >
+                      <br />
+                      <span class="font-weight-bold color-primary"
+                        >30% personal discount!</span
+                      >
+                    </div>
+                    <button class="btn _lg _primary">Redeem Now</button>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true"
+                  >
+                    <svg width="8" height="8">
+                      <use xlink:href="assets/images/sprite.svg#cross"></use>
                     </svg>
                   </button>
                 </div>
               </div>
             </div>
-          </form>
-
-          <div class="dropdown d-none d-sm-block">
-            <a class="dropdown-toggle _outline _lg" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-              aria-expanded="false">
-              Create
-              <svg width="13.545" height="8">
-                <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
-              </svg>
-            </a>
-            <div class="dropdown-menu">
-              <p class="text-center">Sample Dropdown Content</p>
-            </div>
-          </div>
-
-          <div class="dropdown ml-14 d-none d-md-block">
-            <a class="dropdown-toggle _icon" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-              aria-expanded="false">
-              <svg width="18.261" height="30">
-                <use xlink:href="assets/images/sprite.svg#bulb"></use>
-              </svg>
-            </a>
-            <div class="dropdown-menu">
-              <p class="text-center">Sample Dropdown Content</p>
-            </div>
-          </div>
-
-          <div class="dropdown d-none d-md-block">
-            <a class="dropdown-toggle _icon" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-              aria-expanded="false">
-              <svg width="21.073" height="21.264">
-                <use xlink:href="assets/images/sprite.svg#bell"></use>
-              </svg>
-              <span class="badge">9</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-              <p class="text-center">Sample Dropdown Content</p>
-            </div>
-          </div>
-
-          <div class="dropdown ml-10 _user mr-20">
-            <a class="dropdown-toggle _user d-none d-md-inline-block" data-toggle="dropdown" href="#" role="button"
-              aria-haspopup="false" aria-expanded="false">
-              <span class="user-avatar">
-                <img src="assets/images/user.png" alt="User Avatar" />
-              </span>
-              <svg width="5.8" height="25">
-                <use xlink:href="assets/images/sprite.svg#empty-dots"></use>
-              </svg>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-              <div class="profile-dropdown__inner">
-                <div class="profile-dropdown__email">
-                  barisergin@gmail.com
-                </div>
-                <div class="profile-dropdown__id">Account ID #123456</div>
-                <a href="#" class="profile-dropdown__link mb-9">
-                  <svg width="16" height="16">
-                    <use xlink:href="assets/images/sprite.svg#profile"></use>
-                    <span class="profile-dropdown__link-text">
-                      My Account
-                    </span>
-                  </svg>
-                </a>
-                <div class="profile-dropdown__divider mb-13"></div>
-                <div class="profile-dropdown__progress">
-                  <div class="d-flex justify-content-between mb-5">
-                    <span class="font-weight-bold">Free</span>
-                    <span class="color-secondary font-weight-medium">25/1500</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <a href="#" class="profile-dropdown__link mb-4">
-                  <svg width="13.375" height="16">
-                    <use xlink:href="assets/images/sprite.svg#swap"></use>
-                    <span class="profile-dropdown__link-text">
-                      Change Plan
-                    </span>
-                  </svg>
-                </a>
-                <div class="profile-dropdown__divider mb-5"></div>
-                <a href="#" class="profile-dropdown__link">
-                  <svg width="16" height="12.235">
-                    <use xlink:href="assets/images/sprite.svg#group"></use>
-                    <span class="profile-dropdown__link-text">
-                      Switch Account
-                    </span>
-                  </svg>
-                </a>
-                <a href="#" class="profile-dropdown__link">
-                  <svg width="16" height="16">
-                    <use xlink:href="assets/images/sprite.svg#support"></use>
-                    <span class="profile-dropdown__link-text">Support</span>
-                  </svg>
-                </a>
-
-                <select class="form-control _select2-lg" data-toggle="select2" required>
-                  <option value="test-1">English</option>
-                  <option value="test-2">Chinese</option>
-                  <option value="test-2">Spanish</option>
-                  <option value="test-2">Portugese</option>
-                  <option value="test-2">Italian</option>
-                </select>
-
-                <div class="profile-dropdown__divider mb-22"></div>
-                <button class="profile-dropdown__btn">Log-out</button>
-
-                <div class="profile-dropdown__discount">
-                  <div class="font-14 font-weight-bold">Hey Baris!</div>
-                  <div class="font-36">30%</div>
-                  <div class="font-12 color-secondary font-weight-medium mb-10">
-                    <span class="text-nowrap">Upgrade in 12 hours and use</span>
-                    <br />
-                    <span class="font-weight-bold color-primary">30% personal discount!</span>
-                  </div>
-                  <button class="btn _lg _primary">Redeem Now</button>
-                </div>
-
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                  <svg width="8" height="8">
-                    <use xlink:href="assets/images/sprite.svg#cross"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- end Topbar -->
+      <!-- end Topbar -->
 
-    <!-- ========== Left Sidebar Start ========== -->
-    <button class="hamburger hamburger--squeeze" id="ham" type="button">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
+      <!-- ========== Left Sidebar Start ========== -->
+      <button class="hamburger hamburger--squeeze" id="ham" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
 
-    <nav class="nav-drill">
-      <ul class="nav-items">
-        <li class="nav-item d-md-none">
-          <a class="nav-item-link _logo" href="./index.html">
-            <svg width="39.852" height="40">
-              <use xlink:href="assets/images/sprite.svg#logo-mobile"></use>
+      <nav class="nav-drill">
+        <ul class="nav-items">
+          <li class="nav-item d-md-none">
+            <a class="nav-item-link _logo" href="./index.html">
+              <svg width="39.852" height="40">
+                <use xlink:href="assets/images/sprite.svg#logo-mobile"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="20.193" height="17.999">
+                  <use xlink:href="assets/images/sprite.svg#home-i"></use>
+                </svg>
+              </i>
+              <span> Home </span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Home</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./"> Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="17.719" height="15.328">
+                  <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
+                </svg>
+              </i>
+              <span> Contacts </span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Contacts</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./contacts-home-static.html">
+                  Overview
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./my-lists-static.html">
+                  My Lists
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./add-contacts.html">
+                  Add Contacts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Tags </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="segments.html"> Segments </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Custom Fields </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Signup Forms </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Suppression Lists </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Cleaning Service </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="18" height="18">
+                  <use xlink:href="assets/images/sprite.svg#templates-i"></use>
+                </svg>
+              </i>
+              <span>Templates</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Templates</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="templates-home.html">
+                  My Templates
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="create-template-free.html">
+                  Create Template
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="spam-doctor.html">
+                  Spam Doctor
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="inbox-preview.html">
+                  Inbox Preview
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand active">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="29.507" height="22">
+                  <use xlink:href="assets/images/sprite.svg#campaigns-i"></use>
+                </svg>
+              </i>
+              <span>Campaigns</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Campaigns</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="17.894" height="24">
+                  <use
+                    xlink:href="assets/images/sprite.svg#integrations-i"
+                  ></use>
+                </svg>
+              </i>
+              <span>Integrations</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Integrations</li>
+              <li class="nav-item">
+                <a
+                  class="nav-item-link active"
+                  href="contact-integrations.html"
+                >
+                  Contact Integrations
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="social-media-integrations.html">
+                  Social Media Integrations
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Plugins & Apps </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> API </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="21.515" height="18.91">
+                  <use xlink:href="assets/images/sprite.svg#settings-i"></use>
+                </svg>
+              </i>
+              <span>Settings</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Settings</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="15.29" height="20">
+                  <use xlink:href="assets/images/sprite.svg#bookmarks-i"></use>
+                </svg>
+              </i>
+              <span>Bookmarks</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Bookmarks</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="nav-drill__icons">
+          <button class="btn_icon">
+            <svg width="42.182" height="42.414">
+              <use xlink:href="assets/images/sprite.svg#mobile-search"></use>
             </svg>
-          </a>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="20.193" height="17.999">
-                <use xlink:href="assets/images/sprite.svg#home-i"></use>
-              </svg>
-            </i>
-            <span> Home </span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Home</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./"> Home </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="17.719" height="15.328">
-                <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
-              </svg>
-            </i>
-            <span> Contacts </span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Contacts</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./contacts-home-static.html">
-                Overview
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./my-lists-static.html">
-                My Lists
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./add-contacts.html">
-                Add Contacts
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Tags </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="segments.html"> Segments </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Custom Fields </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Signup Forms </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Suppression Lists </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Cleaning Service </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="18" height="18">
-                <use xlink:href="assets/images/sprite.svg#templates-i"></use>
-              </svg>
-            </i>
-            <span>Templates</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Templates</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="templates-home.html">
-                My Templates
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="create-template-free.html">
-                Create Template
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="spam-doctor.html">
-                Spam Doctor
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="inbox-preview.html">
-                Inbox Preview
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand active">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="29.507" height="22">
-                <use xlink:href="assets/images/sprite.svg#campaigns-i"></use>
-              </svg>
-            </i>
-            <span>Campaigns</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Campaigns</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="17.894" height="24">
-                <use xlink:href="assets/images/sprite.svg#integrations-i"></use>
-              </svg>
-            </i>
-            <span>Integrations</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Integrations</li>
-            <li class="nav-item">
-              <a class="nav-item-link active" href="contact-integrations.html">
-                Contact Integrations
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="social-media-integrations.html">
-                Social Media Integrations
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Plugins & Apps </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> API </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="21.515" height="18.91">
-                <use xlink:href="assets/images/sprite.svg#settings-i"></use>
-              </svg>
-            </i>
-            <span>Settings</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Settings</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="15.29" height="20">
-                <use xlink:href="assets/images/sprite.svg#bookmarks-i"></use>
-              </svg>
-            </i>
-            <span>Bookmarks</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Bookmarks</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+          </button>
 
-      <div class="nav-drill__icons">
-        <button class="btn_icon">
-          <svg width="42.182" height="42.414">
-            <use xlink:href="assets/images/sprite.svg#mobile-search"></use>
-          </svg>
-        </button>
+          <button class="btn_icon">
+            <svg width="24.354" height="40">
+              <use xlink:href="assets/images/sprite.svg#mobile-bulb"></use>
+            </svg>
+          </button>
 
-        <button class="btn_icon">
-          <svg width="24.354" height="40">
-            <use xlink:href="assets/images/sprite.svg#mobile-bulb"></use>
-          </svg>
-        </button>
+          <button class="btn_icon">
+            <svg width="41.62" height="42">
+              <use xlink:href="assets/images/sprite.svg#mobile-bell"></use>
+            </svg>
+          </button>
 
-        <button class="btn_icon">
-          <svg width="41.62" height="42">
-            <use xlink:href="assets/images/sprite.svg#mobile-bell"></use>
-          </svg>
-        </button>
+          <button
+            class="btn_icon user-avatar-mobile h-100"
+            id="user-profile-btn-mobile"
+          >
+            <img src="assets/images/user.png" alt="User Avatar" />
+          </button>
+        </div>
+      </nav>
+      <!-- Left Sidebar End -->
 
-        <button class="btn_icon user-avatar-mobile h-100" id="user-profile-btn-mobile">
-          <img src="assets/images/user.png" alt="User Avatar" />
-        </button>
-      </div>
-    </nav>
-    <!-- Left Sidebar End -->
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
-
-    <div class="content-page">
-      <div class="content">
-        <!-- Start Content-->
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <div class="card _connect mt-16">
-                <div class="connect__icon-wrap">
-                  <i class="connect__icon">
-                    <svg width="50" height="41.117">
-                      <use xlink:href="assets/images/sprite.svg#megaphone"></use>
-                    </svg>
-                  </i>
-                </div>
-
-                <div class="connect__content flex-wrap">
-                  <div class="connect__title-wrap">
-                    <h4 class="mr-sm-24 mr-0">Dodo’s Big Launch Campaign</h4>
-                    <div class="d-flex mt-8 mt-lg-0">
-                      <span class="campaign-tags mr-14">member</span>
-                      <span class="campaign-tags mr-14">sale</span>
-                      <span class="campaign-tags active">regular</span>
-                    </div>
-                  </div>
-                  <div class="dropdown mt-10 mt-md-0 mr-md-8">
-                    <a class="dropdown-toggle _solid _lg" data-toggle="dropdown" href="#" role="button"
-                      aria-haspopup="false" aria-expanded="false">
-                      Actions
-                      <svg width="13.545" height="8">
-                        <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
+      <div class="content-page">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card _connect mt-16">
+                  <div class="connect__icon-wrap">
+                    <i class="connect__icon">
+                      <svg width="50" height="41.117">
+                        <use
+                          xlink:href="assets/images/sprite.svg#megaphone"
+                        ></use>
                       </svg>
-                    </a>
+                    </i>
+                  </div>
 
-                    <div class="dropdown-menu _actions">
-                      <div class="dropdown-menu-inner">
-                        <a class="dropdown-item" href="#">Reinvoke Access</a>
-                        <a class="dropdown-item" href="#">Remap Columns</a>
-                        <a class="dropdown-item" href="#">Disconnect</a>
+                  <div class="connect__content flex-wrap">
+                    <div class="connect__title-wrap">
+                      <h4 class="mr-sm-24 mr-0">Dodo’s Big Launch Campaign</h4>
+                      <div class="d-flex mt-8 mt-lg-0">
+                        <span class="campaign-tags mr-14">member</span>
+                        <span class="campaign-tags mr-14">sale</span>
+                        <span class="campaign-tags active">regular</span>
+                      </div>
+                    </div>
+                    <div class="dropdown mt-10 mt-md-0 mr-md-8">
+                      <a
+                        class="dropdown-toggle _solid _lg"
+                        data-toggle="dropdown"
+                        href="#"
+                        role="button"
+                        aria-haspopup="false"
+                        aria-expanded="false"
+                      >
+                        Actions
+                        <svg width="13.545" height="8">
+                          <use
+                            xlink:href="assets/images/sprite.svg#dropdown-arrow"
+                          ></use>
+                        </svg>
+                      </a>
+
+                      <div class="dropdown-menu _actions">
+                        <div class="dropdown-menu-inner">
+                          <a class="dropdown-item" href="#">Reinvoke Access</a>
+                          <a class="dropdown-item" href="#">Remap Columns</a>
+                          <a class="dropdown-item" href="#">Disconnect</a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-12">
-              <ul class="nav nav-tabs nav-bordered">
-                <li class="nav-item">
-                  <a href="#overview" data-toggle="tab" aria-expanded="false" class="nav-link active">
-                    Overview
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#recipients" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Recipients
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#opens" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Opens
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#clicks" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Clicks
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#clickmap" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Clickmap
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#bounces" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Bounces
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#unsubscribes" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Unsubscribes
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#complaints" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Complaints
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#social" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Social
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#locations" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Locations
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#email-clients" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Email Clients
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#domains" data-toggle="tab" aria-expanded="true" class="nav-link">
-                    Domains
-                  </a>
-                </li>
-              </ul>
+              <div class="col-12">
+                <ul class="nav nav-tabs nav-bordered">
+                  <li class="nav-item">
+                    <a
+                      href="#overview"
+                      data-toggle="tab"
+                      aria-expanded="false"
+                      class="nav-link active"
+                    >
+                      Overview
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#recipients"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Recipients
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#opens"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Opens
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#clicks"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Clicks
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#clickmap"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Clickmap
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#bounces"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Bounces
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#unsubscribes"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Unsubscribes
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#complaints"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Complaints
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#social"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Social
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#locations"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Locations
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#email-clients"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Email Clients
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="#domains"
+                      data-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      Domains
+                    </a>
+                  </li>
+                </ul>
 
-              <div class="tab-content">
-                <div class="tab-pane show active" id="overview">
-                  <div class="card p-0 flex-sm-row flex-column bg-light-grey">
-                    <div class="card__body px-sm-40 pt-sm-40 pb-sm-40 px-20 pt-20 pb-20 align-items-center d-flex">
-                      <div class="row w-100 flex-grow-1 mr-0">
-                        <div class="col-md-10 col-lg-11 order-md-1 order-2">
-                          <div class="row">
-                            <div class="col-12 col-xl-4 mb-xl-0 mb-8">
-                              <p class="mb-8 font-12">
-                                Subject Line:
-                                <span class="font-weight-bold ml-12">Hey %%firstname%% how are you?</span>
-                              </p>
-                              <p class="font-12 mb-0">
-                                Preheader:
-                                <span class="font-weight-bold ml-12">Final Opportunity to Grab Discount</span>
-                              </p>
-                            </div>
-                            <div class="col-12 col-xl-4 mb-xl-0 mb-8">
-                              <p class="mb-8 font-12">
-                                From:
-                                <span class="font-weight-bold ml-12">Barbo Design /
-                                  noreply@barbodesign.com</span>
-                              </p>
-                              <p class="font-12 mb-0">
-                                Footer and Forms:
-                                <span class="font-weight-bold ml-12">English</span>
-                              </p>
-                            </div>
-                            <div class="col-12 col-xl-4 mb-xl-0 mb-0">
-                              <p class="mb-8 font-12">
-                                Delivered:
-                                <span class="font-weight-bold ml-12">Today 2:45 PM</span>
-                              </p>
-                              <p class="font-12 mb-0">
-                                Google Analytics Tracking:
-                                <span class="font-weight-bold ml-12">ON</span>
-                              </p>
+                <div class="tab-content">
+                  <div class="tab-pane show active" id="overview">
+                    <div class="card p-0 flex-sm-row flex-column bg-light-grey">
+                      <div
+                        class="card__body px-sm-40 pt-sm-40 pb-sm-40 px-20 pt-20 pb-20 align-items-center d-flex"
+                      >
+                        <div class="row w-100 flex-grow-1 mr-0">
+                          <div class="col-md-10 col-lg-11 order-md-1 order-2">
+                            <div class="row">
+                              <div class="col-12 col-xl-4 mb-xl-0 mb-8">
+                                <p class="mb-8 font-12">
+                                  Subject Line:
+                                  <span class="font-weight-bold ml-12"
+                                    >Hey %%firstname%% how are you?</span
+                                  >
+                                </p>
+                                <p class="font-12 mb-0">
+                                  Preheader:
+                                  <span class="font-weight-bold ml-12"
+                                    >Final Opportunity to Grab Discount</span
+                                  >
+                                </p>
+                              </div>
+                              <div class="col-12 col-xl-4 mb-xl-0 mb-8">
+                                <p class="mb-8 font-12">
+                                  From:
+                                  <span class="font-weight-bold ml-12"
+                                    >Barbo Design /
+                                    noreply@barbodesign.com</span
+                                  >
+                                </p>
+                                <p class="font-12 mb-0">
+                                  Footer and Forms:
+                                  <span class="font-weight-bold ml-12"
+                                    >English</span
+                                  >
+                                </p>
+                              </div>
+                              <div class="col-12 col-xl-4 mb-xl-0 mb-0">
+                                <p class="mb-8 font-12">
+                                  Delivered:
+                                  <span class="font-weight-bold ml-12"
+                                    >Today 2:45 PM</span
+                                  >
+                                </p>
+                                <p class="font-12 mb-0">
+                                  Google Analytics Tracking:
+                                  <span class="font-weight-bold ml-12">ON</span>
+                                </p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-md-2 col-lg-1 pr-0 order-md-2 order-1 mb-md-0 mb-8">
-                          <div class="d-flex align-items-center justify-content-end h-100">
-                            <button type="button" class="btn _sm _secondary">
-                              PDF
-                            </button>
-                            <div class="dropdown _actions">
-                              <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
-                                aria-expanded="true">
-                                <svg width="2" height="10">
-                                  <use xlink:href="assets/images/sprite.svg#dots"></use>
-                                </svg>
+                          <div
+                            class="col-md-2 col-lg-1 pr-0 order-md-2 order-1 mb-md-0 mb-8"
+                          >
+                            <div
+                              class="d-flex align-items-center justify-content-end h-100"
+                            >
+                              <button type="button" class="btn _sm _secondary">
+                                PDF
                               </button>
-
-                              <div class="dropdown-menu dropdown-menu-right _actions mt-5">
-                                <div class="dropdown-menu-inner">
-                                  <a class="dropdown-item" href="#">Action Item 1</a>
-                                  <a class="dropdown-item" href="#">Action Item 2</a>
-                                  <a class="dropdown-item" href="#">Action Item 3</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card__aside">
-                      <img
-                        src="https://v3-templatethumbs.s3.amazonaws.com/diqclient-10100/4771904d-e90b-41ea-bfc5-d9b4b757401a.png"
-                        alt="Template Preview" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pr-15">
-                      <div class="card mb-0 align-items-start flex-grow-1 bs-no">
-                        <div class="font-36 lh-1 mt-n4">491</div>
-                        <h5 class="mt-10">Recipients</h5>
-                        <div class="font-12 color-secondary font-weight-medium mt-14">
-                          <a href="#" class="link">491 unique contacts</a>
-                          accross <a href="#" class="link">2 lists</a> /
-                          <a href="#" class="link">1 segment</a> /
-                          <a href="#" class="link">3 tags</a>
-                        </div>
-                        <a href="#" class="btn _sm _secondary mt-13">All Recipients</a>
-                      </div>
-                      <div class="card pt-20 pb-24 bg-light-grey align-items-start flex-grow-1 bs-no">
-                        <div class="row w-100">
-                          <div class="col-4">
-                            <div class="d-flex flex-column align-items-start">
-                              <p class="font-weight-semibold mb-3 font-18">
-                                23
-                              </p>
-                              <a href="#" class="link">Bounces</a>
-                            </div>
-                          </div>
-                          <div class="col-4 pl-0 pl-sm-12">
-                            <div class="d-flex flex-column align-items-start">
-                              <p class="font-weight-semibold mb-3 font-18 color-danger">
-                                7
-                              </p>
-                              <a href="#" class="link">Unsubscribes</a>
-                            </div>
-                          </div>
-                          <div class="col-4">
-                            <div class="d-flex flex-column align-items-start">
-                              <p class="font-weight-semibold mb-3 font-18 color-danger">
-                                3
-                              </p>
-                              <a href="#" class="link">Complaints</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pr-15 pl-15">
-                      <div class="card mb-0 align-items-start flex-grow-1 bg-light-grey bs-no">
-                        <div class="d-flex flex-row w-100">
-                          <div class="d-flex flex-column">
-                            <div class="font-36 lh-1 mt-n4">139</div>
-                            <h5 class="mt-10">Opens</h5>
-                            <div class="font-12 color-secondary font-weight-medium mt-14">
-                              <a href="#" class="link">139 opens </a> and
-                              <a href="#" class="link">85 unique opens</a>
-                            </div>
-                            <a href="#" class="btn _sm _secondary mt-13">All Opens</a>
-                          </div>
-                          <div class="d-flex ml-auto">
-                            <div class="knob-wrap knob-wrap_up knob-wrap_percent">
-                              <input data-plugin="knob" data-width="75" data-height="75" data-linecap="round"
-                                data-fgColor="#00EBA8" value="73" data-displayInput="false" data-skin="tron"
-                                data-angleOffset="0" data-readOnly="true" data-thickness=".1" data-bgColor="#f6f9fc" />
-                              <div class="knob-text">
-                                <p class="font-18 font-weight-semibold">
-                                  27<span class="font-18 font-weight-semibold">%</span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card pt-18 pb-20 align-items-start flex-grow-1 bs-no">
-                        <div class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100">
-                          Audience Average: <b class="ml-12 mr-5">42.2%</b>
-                          <span class="d-flex align-items-center justify-content-center">
-                            <svg width="7.026" height="8.197" class="up">
-                              <use xlink:href="assets/images/sprite.svg#arrow-blue-up"></use>
-                            </svg>
-                          </span>
-                        </div>
-                        <div class="mb-0 font-weight-regular font-12 d-flex align-items-center w-100">
-                          Industry Average:
-                          <div class="select-150 ml-12">
-                            <select class="form-control _select2-lg" data-toggle="select2" required>
-                              <option value="test-1">Finance</option>
-                              <option value="test-2">Chinese</option>
-                              <option value="test-2">Spanish</option>
-                              <option value="test-2">Portugese</option>
-                              <option value="test-2">Italian</option>
-                            </select>
-                          </div>
-
-                          <b class="ml-10 mr-5">23.9%</b>
-                          <span class="d-flex align-items-center justify-content-center">
-                            <svg width="7.026" height="8.197" class="down">
-                              <use xlink:href="assets/images/sprite.svg#arrow-red-down"></use>
-                            </svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pl-15">
-                      <div class="card mb-0 align-items-start flex-grow-1 bg-light-grey bs-no">
-                        <div class="d-flex flex-row w-100">
-                          <div class="d-flex flex-column">
-                            <div class="font-36 lh-1 mt-n4">26</div>
-                            <h5 class="mt-10">Clicks</h5>
-                            <div class="font-12 color-secondary font-weight-medium mt-14">
-                              <a href="#" class="link">26 clicks </a> and
-                              <a href="#" class="link">15 unique clicks</a>
-                            </div>
-                            <a href="#" class="btn _sm _secondary mt-13">All Opens</a>
-                          </div>
-                          <div class="d-flex ml-auto">
-                            <div class="knob-wrap knob-wrap_up knob-wrap_percent">
-                              <input data-plugin="knob" data-width="75" data-height="75" data-linecap="round"
-                                data-fgColor="#001EF5" value="9,7" data-displayInput="false" data-skin="tron"
-                                data-angleOffset="0" data-readOnly="true" data-thickness=".1" data-bgColor="#f6f9fc" />
-                              <div class="knob-text">
-                                <p class="font-18 font-weight-semibold">
-                                  9,7<span class="font-18 font-weight-semibold">%</span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card pt-18 pb-20 align-items-start flex-grow-1 bs-no">
-                        <div class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100">
-                          Audience Average: <b class="ml-12 mr-5">11.2%</b>
-                          <span class="d-flex align-items-center justify-content-center">
-                            <svg width="7.026" height="8.197" class="down">
-                              <use xlink:href="assets/images/sprite.svg#arrow-red-down"></use>
-                            </svg>
-                          </span>
-                        </div>
-                        <div class="mb-0 font-weight-regular font-12 d-flex align-items-center w-100">
-                          Industry Average:
-                          <div class="select-150 ml-12">
-                            <select class="form-control _select2-lg" data-toggle="select2" required>
-                              <option value="test-1">Finance</option>
-                              <option value="test-2">Chinese</option>
-                              <option value="test-2">Spanish</option>
-                              <option value="test-2">Portugese</option>
-                              <option value="test-2">Italian</option>
-                            </select>
-                          </div>
-
-                          <b class="ml-10 mr-5">10.5%</b>
-                          <span class="d-flex align-items-center justify-content-center">
-                            <svg width="7.026" height="8.197" class="up">
-                              <use xlink:href="assets/images/sprite.svg#arrow-blue-up"></use>
-                            </svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="position-relative">
-                    <div class="row no-gutters chart-wrap">
-                      <div class="col-md-12">
-                        <div class="card align-content-start">
-                          <div class="d-flex justify-content-between align-items-center flex-wrap mb-35">
-                            <h4 class="font-weight-semibold font-18 mb-8 mb-md-0 mr-8">
-                              Engagement Timeline
-                            </h4>
-                            <div class="d-flex justify-content-end align-items-center report-calendar">
-                              <p class="font-12 color-secondary font-weight-medium mb-0">
-                                <span class="mr-20"><i class="circle-i circle-i_openers"></i>
-                                  Opens</span>
-                                <span class="mr-20"><i class="circle-i circle-i_clickers"></i>
-                                  Clicks</span>
-                              </p>
-                              <div class="date-range__wrap">
-                                <input type="text" id="range-datepicker" class="date-range__input"
-                                  placeholder="Pick dates" value="2020-03-31 – 2020-04-25" />
-                                <i class="date-range__icon">
-                                  <svg width="19.143" height="20">
-                                    <use xlink:href="assets/images/sprite.svg#calendar"></use>
+                              <div class="dropdown _actions">
+                                <button
+                                  type="button"
+                                  class="btn _sm _primary ml-4 px-6"
+                                  data-toggle="dropdown"
+                                  aria-expanded="true"
+                                >
+                                  <svg width="2" height="10">
+                                    <use
+                                      xlink:href="assets/images/sprite.svg#dots"
+                                    ></use>
                                   </svg>
-                                </i>
-                              </div>
-                            </div>
-                          </div>
-                          <div id="curve_chart" style="height: 246px" class="color-secondary"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                                </button>
 
-                  <div class="position-relative">
-                    <div class="row chart-wrap">
-                      <div class="col-xl-8 pr-15 mb-28">
-                        <div class="card align-content-start h-100 bg-light-grey mb-0">
-                          <div class="d-flex justify-content-between align-items-center flex-wrap mb-40">
-                            <h4 class="font-weight-semibold font-18">
-                              Opens by Hours
-                            </h4>
-                            <div class="d-flex justify-content-end align-items-center report-calendar">
-                              <p class="font-12 color-secondary font-weight-medium mb-0">
-                                <span class="mr-0"><i class="circle-i circle-i_openers"></i>
-                                  Opens</span>
-                              </p>
-                            </div>
-                          </div>
-                          <div id="curve_chart-2" style="height: 148px" class="color-secondary"></div>
-                        </div>
-                      </div>
-                      <div class="col-xl-4 pl-15 mb-28 d-md-flex flex-md-column flex-md-grow-1">
-                        <div class="card align-items-start mb-0 flex-grow-1">
-                          <div class="d-flex flex-column w-100">
-                            <h4 class="font-weight-semibold font-18 mb-18">
-                              Social
-                            </h4>
-                            <h5 class="mb-10">Clicks From Your Newsletter</h5>
-                            <div class="d-flex w-100 mb-8" data-bar="social" data-id="instagram">
-                              <div class="soc-col__small mr-10">
-                                <div class="name-col text-right font-12 font-weight-regular">
-                                  Instagram
-                                </div>
-                              </div>
-                              <div class="soc-col__big">
-                                <div class="bar-item w-100 d-flex align-items-center">
-                                  <div class="grin-part"></div>
-                                  <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="d-flex w-100 mb-18" data-bar="social" data-id="twitter">
-                              <div class="soc-col__small mr-10">
-                                <div class="name-col text-right font-12 font-weight-regular">
-                                  Twitter
-                                </div>
-                              </div>
-                              <div class="soc-col__big">
-                                <div class="bar-item w-100 d-flex align-items-center">
-                                  <div class="grin-part"></div>
-                                  <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <h5 class="mb-8 mt-0">
-                              Clicks From Social Meda Integrations
-                            </h5>
-                            <div class="d-flex w-100 mb-18" data-bar="social" data-id="facebook">
-                              <div class="soc-col__small mr-10">
-                                <div class="name-col text-right font-12 font-weight-regular">
-                                  Facebook
-                                </div>
-                              </div>
-                              <div class="soc-col__big">
-                                <div class="bar-item w-100 d-flex align-items-center">
-                                  <div class="grin-part"></div>
-                                  <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
+                                <div
+                                  class="dropdown-menu dropdown-menu-right _actions mt-5"
+                                >
+                                  <div class="dropdown-menu-inner">
+                                    <a class="dropdown-item" href="#"
+                                      >Action Item 1</a
+                                    >
+                                    <a class="dropdown-item" href="#"
+                                      >Action Item 2</a
+                                    >
+                                    <a class="dropdown-item" href="#"
+                                      >Action Item 3</a
+                                    >
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <a href="#" class="btn _sm _secondary mt-n5">Manage Integrations</a>
                         </div>
                       </div>
+                      <div class="card__aside">
+                        <img
+                          src="https://v3-templatethumbs.s3.amazonaws.com/diqclient-10100/4771904d-e90b-41ea-bfc5-d9b4b757401a.png"
+                          alt="Template Preview"
+                        />
+                      </div>
                     </div>
-                  </div>
-
-                  <div class="card align-items-start">
-                    <div class="w-100 d-flex">
-                      <h4 class="font-weight-semibold font-18 mb-18">
-                        Opens by Email Clients
-                      </h4>
-                    </div>
-                    <div class="w-100 d-flex flex-wrap">
+                    <div class="row">
                       <div
-                        class="col-1-3 col-lg-1-2 col-w-100 pr-55 w-1170 d-flex flex-grow-1 mb-lg-0 mb-28 flex-column">
-                        <div class="d-flex flex-column">
-                          <h5 class="mb-8">Mobile Clients</h5>
-                          <div class="d-flex w-100 mb-8" data-type="mobile" data-name="appleIphone">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Apple iPhone
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
+                        class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pr-15"
+                      >
+                        <div
+                          class="card mb-0 align-items-start flex-grow-1 bs-no"
+                        >
+                          <div class="font-36 lh-1 mt-n4">491</div>
+                          <h5 class="mt-10">Recipients</h5>
+                          <div
+                            class="font-12 color-secondary font-weight-medium mt-14"
+                          >
+                            <a href="#" class="link">491 unique contacts</a>
+                            accross <a href="#" class="link">2 lists</a> /
+                            <a href="#" class="link">1 segment</a> /
+                            <a href="#" class="link">3 tags</a>
                           </div>
-                          <div class="d-flex w-100 mb-8" data-type="mobile" data-name="appleIpad">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Apple iPad
+                          <a href="#" class="btn _sm _secondary mt-13"
+                            >All Recipients</a
+                          >
+                        </div>
+                        <div
+                          class="card pt-20 pb-24 bg-light-grey align-items-start flex-grow-1 bs-no"
+                        >
+                          <div class="row w-100">
+                            <div class="col-4">
+                              <div class="d-flex flex-column align-items-start">
+                                <p class="font-weight-semibold mb-3 font-18">
+                                  23
+                                </p>
+                                <a href="#" class="link">Bounces</a>
                               </div>
                             </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
+                            <div class="col-4 pl-0 pl-sm-12">
+                              <div class="d-flex flex-column align-items-start">
+                                <p
+                                  class="font-weight-semibold mb-3 font-18 color-danger"
+                                >
+                                  7
+                                </p>
+                                <a href="#" class="link">Unsubscribes</a>
                               </div>
                             </div>
-                          </div>
-                          <div class="d-flex w-100 mb-8" data-type="mobile" data-name="googleAndroid">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Google Android
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-8" data-type="mobile" data-name="gmailApp">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Gmail App
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-0" data-type="mobile" data-name="samsungMail">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Samsung Mail
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
+                            <div class="col-4">
+                              <div class="d-flex flex-column align-items-start">
+                                <p
+                                  class="font-weight-semibold mb-3 font-18 color-danger"
+                                >
+                                  3
+                                </p>
+                                <a href="#" class="link">Complaints</a>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <a href="#" class="btn _sm _secondary mt-16 mb-28">All Mobile Opens</a>
-                        <div class="d-flex flex-column">
-                          <h5 class="mb-10">Webmail Clients</h5>
-                          <div class="d-flex w-100 mb-8" data-type="webmail" data-name="gmail">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Gmail
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-8" data-type="webmail" data-name="yahooMail">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Yahoo! Mail
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-8" data-type="webmail" data-name="outlook">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Outlook.com
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-0" data-type="webmail" data-name="aol">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                AOL
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <a href="#" class="btn _sm _secondary mt-20">All Webmail Opens</a>
-                      </div>
-                      <div class="col-1-3 col-lg-1-2 col-w-100 pr-sm-55 pl-sm-55 w-1170 d-flex flex-grow-1 flex-column">
-                        <div class="d-flex flex-column">
-                          <h5 class="mb-10">Desktop Clients</h5>
-                          <div class="d-flex w-100 mb-8" data-type="desktop" data-name="appleMail">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Apple Mail
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-8" data-type="desktop" data-name="outlookWin">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Outlook (Win)
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-8" data-type="desktop" data-name="windows">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Windows Live Mail
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-8" data-type="desktop" data-name="thunderbird">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Thunderbird
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-8" data-type="desktop" data-name="entourage">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Entourage
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-8" data-type="desktop" data-name="outlookMac">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Outlook (Mac)
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="d-flex w-100 mb-0" data-type="desktop" data-name="lotus">
-                            <div class="col-chart _small mr-10">
-                              <div class="name-col text-right font-12 font-weight-regular">
-                                Lotus / IBM Notes
-                              </div>
-                            </div>
-                            <div class="col-chart _big">
-                              <div class="bar-item w-100 d-flex align-items-center">
-                                <div class="grin-part"></div>
-                                <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <a href="#" class="btn _sm _secondary mt-20">All Desktop Opens</a>
                       </div>
                       <div
-                        class="col-1-3 col-lg-1-2 col-w-100 pl-sm-70 w-1170 _charts pr-0 d-flex flex-grow-1 flex-column">
-                        <div class="d-flex flex-column">
-                          <h5 class="mb-18">Clients by Medium</h5>
-                          <div class="d-flex bars">
-                            <div class="bars-column d-flex flex-column align-items-center mr-20" data-type="columnBars"
-                              data-name="mobile">
-                              <div class="bars-item d-flex flex-column align-content-center justify-content-end">
-                                <div
-                                  class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center">
-                                </div>
-                                <div class="bars-item__column light-green"></div>
-                              </div>
-                              <div class="bars-desc d-flex align-items-center flex-column justify-content-end">
-                                <img src="assets/images/line-light-green.svg" />
-                                <div class="center font-12 font-weight-regular mt-4">
-                                  Mobile
-                                </div>
-                              </div>
-                            </div>
-                            <div class="bars-column d-flex flex-column align-items-center mr-20" data-type="columnBars"
-                              data-name="webmail">
-                              <div class="bars-item d-flex flex-column align-content-center justify-content-end">
-                                <div
-                                  class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center">
-                                </div>
-                                <div class="bars-item__column dark-green"></div>
-                              </div>
-                              <div class="bars-desc d-flex align-items-center flex-column justify-content-end">
-                                <img src="assets/images/line-dark-green.svg" />
-                                <div class="center font-12 font-weight-regular mt-4">
-                                  Webmail
-                                </div>
-                              </div>
-                            </div>
-                            <div class="bars-column d-flex flex-column align-items-center" data-type="columnBars"
-                              data-name="desktop">
-                              <div class="bars-item d-flex flex-column align-content-center justify-content-end">
-                                <div
-                                  class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center">
-                                </div>
-                                <div class="bars-item__column blue"></div>
-                              </div>
-                              <div class="bars-desc d-flex align-items-center flex-column justify-content-end">
-                                <img src="assets/images/line-blue.svg" />
-                                <div class="center font-12 font-weight-regular mt-4">
-                                  Desktop
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xl-4 w-1170 col-lg-5 mb-28 pr-15">
-                      <div
-                        class="card align-items-start pr-28 flex-grow-1 bg-light-grey d-flex flex-column vsc-initialized mb-0 h-100">
-                        <h4 class="font-weight-semibold font-18 mb-20">
-                          Opens by Domains
-                        </h4>
-                        <div class="row w-100 d-flex align-items-center">
-                          <div class="col-lg-6">
-                            <div id="donutchart" class="donutchart"></div>
-                          </div>
-                          <div class="col-lg-6 pr-0">
+                        class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pr-15 pl-15"
+                      >
+                        <div
+                          class="card mb-0 align-items-start flex-grow-1 bg-light-grey bs-no"
+                        >
+                          <div class="d-flex flex-row w-100">
                             <div class="d-flex flex-column">
-                              <p class="font-12 color-secondary font-weight-medium mb-10">
-                                <span class="mr-0"><i class="circle-i circle-i_openers"></i>
-                                  <span class="mr-4 font-weight-bold">47%</span>
-                                  gmail.com</span>
-                              </p>
-                              <p class="font-12 color-secondary font-weight-medium mb-10">
-                                <span class="mr-0"><i class="circle-i circle-i_clickers"></i>
-                                  <span class="mr-4 font-weight-bold">31%</span>
-                                  dodohousenyc.com</span>
-                              </p>
-                              <p class="font-12 color-secondary font-weight-medium mb-0">
-                                <span class="mr-0"><i class="circle-i circle-i_country"></i>
-                                  <span class="mr-4 font-weight-bold">22%</span>
-                                  Others</span>
-                              </p>
+                              <div class="font-36 lh-1 mt-n4">139</div>
+                              <h5 class="mt-10">Opens</h5>
+                              <div
+                                class="font-12 color-secondary font-weight-medium mt-14"
+                              >
+                                <a href="#" class="link">139 opens </a> and
+                                <a href="#" class="link">85 unique opens</a>
+                              </div>
+                              <a href="#" class="btn _sm _secondary mt-13"
+                                >All Opens</a
+                              >
+                            </div>
+                            <div class="d-flex ml-auto">
+                              <div
+                                class="knob-wrap knob-wrap_up knob-wrap_percent"
+                              >
+                                <input
+                                  data-plugin="knob"
+                                  data-width="75"
+                                  data-height="75"
+                                  data-linecap="round"
+                                  data-fgColor="#00EBA8"
+                                  value="73"
+                                  data-displayInput="false"
+                                  data-skin="tron"
+                                  data-angleOffset="0"
+                                  data-readOnly="true"
+                                  data-thickness=".1"
+                                  data-bgColor="#f6f9fc"
+                                />
+                                <div class="knob-text">
+                                  <p class="font-18 font-weight-semibold">
+                                    27<span class="font-18 font-weight-semibold"
+                                      >%</span
+                                    >
+                                  </p>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <a href="#" class="btn _sm _secondary mt-22">All Domains</a>
+                        <div
+                          class="card pt-18 pb-20 align-items-start flex-grow-1 bs-no"
+                        >
+                          <div
+                            class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100"
+                          >
+                            Audience Average: <b class="ml-12 mr-5">42.2%</b>
+                            <span
+                              class="d-flex align-items-center justify-content-center"
+                            >
+                              <svg width="7.026" height="8.197" class="up">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#arrow-blue-up"
+                                ></use>
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            class="mb-0 font-weight-regular font-12 d-flex align-items-center w-100"
+                          >
+                            Industry Average:
+                            <div class="select-150 ml-12">
+                              <select
+                                class="form-control _select2-lg"
+                                data-toggle="select2"
+                                required
+                              >
+                                <option value="test-1">Finance</option>
+                                <option value="test-2">Chinese</option>
+                                <option value="test-2">Spanish</option>
+                                <option value="test-2">Portugese</option>
+                                <option value="test-2">Italian</option>
+                              </select>
+                            </div>
+
+                            <b class="ml-10 mr-5">23.9%</b>
+                            <span
+                              class="d-flex align-items-center justify-content-center"
+                            >
+                              <svg width="7.026" height="8.197" class="down">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#arrow-red-down"
+                                ></use>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pl-15"
+                      >
+                        <div
+                          class="card mb-0 align-items-start flex-grow-1 bg-light-grey bs-no"
+                        >
+                          <div class="d-flex flex-row w-100">
+                            <div class="d-flex flex-column">
+                              <div class="font-36 lh-1 mt-n4">26</div>
+                              <h5 class="mt-10">Clicks</h5>
+                              <div
+                                class="font-12 color-secondary font-weight-medium mt-14"
+                              >
+                                <a href="#" class="link">26 clicks </a> and
+                                <a href="#" class="link">15 unique clicks</a>
+                              </div>
+                              <a href="#" class="btn _sm _secondary mt-13"
+                                >All Opens</a
+                              >
+                            </div>
+                            <div class="d-flex ml-auto">
+                              <div
+                                class="knob-wrap knob-wrap_up knob-wrap_percent"
+                              >
+                                <input
+                                  data-plugin="knob"
+                                  data-width="75"
+                                  data-height="75"
+                                  data-linecap="round"
+                                  data-fgColor="#001EF5"
+                                  value="9,7"
+                                  data-displayInput="false"
+                                  data-skin="tron"
+                                  data-angleOffset="0"
+                                  data-readOnly="true"
+                                  data-thickness=".1"
+                                  data-bgColor="#f6f9fc"
+                                />
+                                <div class="knob-text">
+                                  <p class="font-18 font-weight-semibold">
+                                    9,7<span
+                                      class="font-18 font-weight-semibold"
+                                      >%</span
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="card pt-18 pb-20 align-items-start flex-grow-1 bs-no"
+                        >
+                          <div
+                            class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100"
+                          >
+                            Audience Average: <b class="ml-12 mr-5">11.2%</b>
+                            <span
+                              class="d-flex align-items-center justify-content-center"
+                            >
+                              <svg width="7.026" height="8.197" class="down">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#arrow-red-down"
+                                ></use>
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            class="mb-0 font-weight-regular font-12 d-flex align-items-center w-100"
+                          >
+                            Industry Average:
+                            <div class="select-150 ml-12">
+                              <select
+                                class="form-control _select2-lg"
+                                data-toggle="select2"
+                                required
+                              >
+                                <option value="test-1">Finance</option>
+                                <option value="test-2">Chinese</option>
+                                <option value="test-2">Spanish</option>
+                                <option value="test-2">Portugese</option>
+                                <option value="test-2">Italian</option>
+                              </select>
+                            </div>
+
+                            <b class="ml-10 mr-5">10.5%</b>
+                            <span
+                              class="d-flex align-items-center justify-content-center"
+                            >
+                              <svg width="7.026" height="8.197" class="up">
+                                <use
+                                  xlink:href="assets/images/sprite.svg#arrow-blue-up"
+                                ></use>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="col-xl-8 w-1170 col-lg-7 mb-28 pl-15">
-                      <div
-                        class="card flex-grow-1 justify-content-between d-flex flex-column vsc-initialized mb-0 h-100">
-                        <div class="row">
-                          <div class="col-md-8 col-lg-7 d-flex order-2 order-md-1">
-                            <div id="regions_div" class="map-small"></div>
-                          </div>
-                          <div class="col-md-4 col-lg-5 d-flex order-1 order-md-2">
-                            <div class="d-flex flex-column align-items-start justify-content-start">
-                              <h4 class="font-weight-semibold font-18 mb-18">
-                                Opens by Location
+                    <div class="position-relative">
+                      <div class="row no-gutters chart-wrap">
+                        <div class="col-md-12">
+                          <div class="card align-content-start">
+                            <div
+                              class="d-flex justify-content-between align-items-center flex-wrap mb-35"
+                            >
+                              <h4
+                                class="font-weight-semibold font-18 mb-8 mb-md-0 mr-8"
+                              >
+                                Engagement Timeline
                               </h4>
-                              <p class="font-12 color-secondary font-weight-medium mb-10">
-                                <span class="mr-0"><i class="circle-i circle-i_openers"></i>
-                                  United States</span>
-                                <span class="data-click font-12 font-weight-regular ml-8">
-                                  <span class="mr-4 font-weight-bold">1</span>
-                                  (34%)
-                                </span>
-                              </p>
-                              <p class="font-12 color-secondary font-weight-medium mb-10">
-                                <span class="mr-0"><i class="circle-i circle-i_clickers"></i>
-                                  Turkey</span>
-                                <span class="data-click font-12 font-weight-regular ml-8">
-                                  <span class="mr-4 font-weight-bold">1</span>
-                                  (28%)
-                                </span>
-                              </p>
-                              <p class="font-12 color-secondary font-weight-medium mb-0">
-                                <span class="mr-0"><i class="circle-i circle-i_country"></i>
-                                  Others</span>
-                                <span class="data-click font-12 font-weight-regular ml-8">
-                                  <span class="mr-4 font-weight-bold">21</span>
-                                  (18%)
-                                </span>
-                              </p>
-                              <a href="#" class="btn _sm _primary mt-20">All Locations</a>
+                              <div
+                                class="d-flex justify-content-end align-items-center report-calendar"
+                              >
+                                <p
+                                  class="font-12 color-secondary font-weight-medium mb-0"
+                                >
+                                  <span class="mr-20"
+                                    ><i class="circle-i circle-i_openers"></i>
+                                    Opens</span
+                                  >
+                                  <span class="mr-20"
+                                    ><i class="circle-i circle-i_clickers"></i>
+                                    Clicks</span
+                                  >
+                                </p>
+                                <div class="date-range__wrap">
+                                  <input
+                                    type="text"
+                                    id="range-datepicker"
+                                    class="date-range__input"
+                                    placeholder="Pick dates"
+                                    value="2020-03-31 – 2020-04-25"
+                                  />
+                                  <i class="date-range__icon">
+                                    <svg width="19.143" height="20">
+                                      <use
+                                        xlink:href="assets/images/sprite.svg#calendar"
+                                      ></use>
+                                    </svg>
+                                  </i>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              id="curve_chart"
+                              style="height: 246px"
+                              class="color-secondary"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="position-relative">
+                      <div class="row chart-wrap">
+                        <div class="col-xl-8 pr-15 mb-28">
+                          <div
+                            class="card align-content-start h-100 bg-light-grey mb-0"
+                          >
+                            <div
+                              class="d-flex justify-content-between align-items-center flex-wrap mb-40"
+                            >
+                              <h4 class="font-weight-semibold font-18">
+                                Opens by Hours
+                              </h4>
+                              <div
+                                class="d-flex justify-content-end align-items-center report-calendar"
+                              >
+                                <p
+                                  class="font-12 color-secondary font-weight-medium mb-0"
+                                >
+                                  <span class="mr-0"
+                                    ><i class="circle-i circle-i_openers"></i>
+                                    Opens</span
+                                  >
+                                </p>
+                              </div>
+                            </div>
+                            <div
+                              id="curve_chart-2"
+                              style="height: 148px"
+                              class="color-secondary"
+                            ></div>
+                          </div>
+                        </div>
+                        <div
+                          class="col-xl-4 pl-15 mb-28 d-md-flex flex-md-column flex-md-grow-1"
+                        >
+                          <div class="card align-items-start mb-0 flex-grow-1">
+                            <div class="d-flex flex-column w-100">
+                              <h4 class="font-weight-semibold font-18 mb-18">
+                                Social
+                              </h4>
+                              <h5 class="mb-10">Clicks From Your Newsletter</h5>
+                              <div
+                                class="d-flex w-100 mb-8"
+                                data-bar="social"
+                                data-id="instagram"
+                              >
+                                <div class="soc-col__small mr-10">
+                                  <div
+                                    class="name-col text-right font-12 font-weight-regular"
+                                  >
+                                    Instagram
+                                  </div>
+                                </div>
+                                <div class="soc-col__big">
+                                  <div
+                                    class="bar-item w-100 d-flex align-items-center"
+                                  >
+                                    <div class="grin-part"></div>
+                                    <div
+                                      class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                    ></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="d-flex w-100 mb-18"
+                                data-bar="social"
+                                data-id="twitter"
+                              >
+                                <div class="soc-col__small mr-10">
+                                  <div
+                                    class="name-col text-right font-12 font-weight-regular"
+                                  >
+                                    Twitter
+                                  </div>
+                                </div>
+                                <div class="soc-col__big">
+                                  <div
+                                    class="bar-item w-100 d-flex align-items-center"
+                                  >
+                                    <div class="grin-part"></div>
+                                    <div
+                                      class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                    ></div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <h5 class="mb-8 mt-0">
+                                Clicks From Social Meda Integrations
+                              </h5>
+                              <div
+                                class="d-flex w-100 mb-18"
+                                data-bar="social"
+                                data-id="facebook"
+                              >
+                                <div class="soc-col__small mr-10">
+                                  <div
+                                    class="name-col text-right font-12 font-weight-regular"
+                                  >
+                                    Facebook
+                                  </div>
+                                </div>
+                                <div class="soc-col__big">
+                                  <div
+                                    class="bar-item w-100 d-flex align-items-center"
+                                  >
+                                    <div class="grin-part"></div>
+                                    <div
+                                      class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                    ></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <a href="#" class="btn _sm _secondary mt-n5"
+                              >Manage Integrations</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card align-items-start">
+                      <div class="w-100 d-flex">
+                        <h4 class="font-weight-semibold font-18 mb-18">
+                          Opens by Email Clients
+                        </h4>
+                      </div>
+                      <div class="w-100 d-flex flex-wrap">
+                        <div
+                          class="col-1-3 col-lg-1-2 col-w-100 pr-55 w-1170 d-flex flex-grow-1 mb-lg-0 mb-28 flex-column"
+                        >
+                          <div class="d-flex flex-column">
+                            <h5 class="mb-8">Mobile Clients</h5>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="mobile"
+                              data-name="appleIphone"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Apple iPhone
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="mobile"
+                              data-name="appleIpad"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Apple iPad
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="mobile"
+                              data-name="googleAndroid"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Google Android
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="mobile"
+                              data-name="gmailApp"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Gmail App
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-0"
+                              data-type="mobile"
+                              data-name="samsungMail"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Samsung Mail
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <a href="#" class="btn _sm _secondary mt-16 mb-28"
+                            >All Mobile Opens</a
+                          >
+                          <div class="d-flex flex-column">
+                            <h5 class="mb-10">Webmail Clients</h5>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="webmail"
+                              data-name="gmail"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Gmail
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="webmail"
+                              data-name="yahooMail"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Yahoo! Mail
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="webmail"
+                              data-name="outlook"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Outlook.com
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-0"
+                              data-type="webmail"
+                              data-name="aol"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  AOL
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <a href="#" class="btn _sm _secondary mt-20"
+                            >All Webmail Opens</a
+                          >
+                        </div>
+                        <div
+                          class="col-1-3 col-lg-1-2 col-w-100 pr-sm-55 pl-sm-55 w-1170 d-flex flex-grow-1 flex-column"
+                        >
+                          <div class="d-flex flex-column">
+                            <h5 class="mb-10">Desktop Clients</h5>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="desktop"
+                              data-name="appleMail"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Apple Mail
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="desktop"
+                              data-name="outlookWin"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Outlook (Win)
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="desktop"
+                              data-name="windows"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Windows Live Mail
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="desktop"
+                              data-name="thunderbird"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Thunderbird
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="desktop"
+                              data-name="entourage"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Entourage
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-8"
+                              data-type="desktop"
+                              data-name="outlookMac"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Outlook (Mac)
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex w-100 mb-0"
+                              data-type="desktop"
+                              data-name="lotus"
+                            >
+                              <div class="col-chart _small mr-10">
+                                <div
+                                  class="name-col text-right font-12 font-weight-regular"
+                                >
+                                  Lotus / IBM Notes
+                                </div>
+                              </div>
+                              <div class="col-chart _big">
+                                <div
+                                  class="bar-item w-100 d-flex align-items-center"
+                                >
+                                  <div class="grin-part"></div>
+                                  <div
+                                    class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <a href="#" class="btn _sm _secondary mt-20"
+                            >All Desktop Opens</a
+                          >
+                        </div>
+                        <div
+                          class="col-1-3 col-lg-1-2 col-w-100 pl-sm-70 w-1170 _charts pr-0 d-flex flex-grow-1 flex-column"
+                        >
+                          <div class="d-flex flex-column">
+                            <h5 class="mb-18">Clients by Medium</h5>
+                            <div class="d-flex bars">
+                              <div
+                                class="bars-column d-flex flex-column align-items-center mr-20"
+                                data-type="columnBars"
+                                data-name="mobile"
+                              >
+                                <div
+                                  class="bars-item d-flex flex-column align-content-center justify-content-end"
+                                >
+                                  <div
+                                    class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center"
+                                  ></div>
+                                  <div
+                                    class="bars-item__column light-green"
+                                  ></div>
+                                </div>
+                                <div
+                                  class="bars-desc d-flex align-items-center flex-column justify-content-end"
+                                >
+                                  <img
+                                    src="assets/images/line-light-green.svg"
+                                  />
+                                  <div
+                                    class="center font-12 font-weight-regular mt-4"
+                                  >
+                                    Mobile
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="bars-column d-flex flex-column align-items-center mr-20"
+                                data-type="columnBars"
+                                data-name="webmail"
+                              >
+                                <div
+                                  class="bars-item d-flex flex-column align-content-center justify-content-end"
+                                >
+                                  <div
+                                    class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center"
+                                  ></div>
+                                  <div
+                                    class="bars-item__column dark-green"
+                                  ></div>
+                                </div>
+                                <div
+                                  class="bars-desc d-flex align-items-center flex-column justify-content-end"
+                                >
+                                  <img
+                                    src="assets/images/line-dark-green.svg"
+                                  />
+                                  <div
+                                    class="center font-12 font-weight-regular mt-4"
+                                  >
+                                    Webmail
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="bars-column d-flex flex-column align-items-center"
+                                data-type="columnBars"
+                                data-name="desktop"
+                              >
+                                <div
+                                  class="bars-item d-flex flex-column align-content-center justify-content-end"
+                                >
+                                  <div
+                                    class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center"
+                                  ></div>
+                                  <div class="bars-item__column blue"></div>
+                                </div>
+                                <div
+                                  class="bars-desc d-flex align-items-center flex-column justify-content-end"
+                                >
+                                  <img src="assets/images/line-blue.svg" />
+                                  <div
+                                    class="center font-12 font-weight-regular mt-4"
+                                  >
+                                    Desktop
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xl-4 w-1170 col-lg-5 mb-28 pr-15">
+                        <div
+                          class="card align-items-start pr-28 flex-grow-1 bg-light-grey d-flex flex-column vsc-initialized mb-0 h-100"
+                        >
+                          <h4 class="font-weight-semibold font-18 mb-20">
+                            Opens by Domains
+                          </h4>
+                          <div class="row w-100 d-flex align-items-center">
+                            <div class="col-lg-6">
+                              <div id="donutchart" class="donutchart"></div>
+                            </div>
+                            <div class="col-lg-6 pr-0">
+                              <div class="d-flex flex-column">
+                                <p
+                                  class="font-12 color-secondary font-weight-medium mb-10"
+                                >
+                                  <span class="mr-0"
+                                    ><i class="circle-i circle-i_openers"></i>
+                                    <span class="mr-4 font-weight-bold"
+                                      >47%</span
+                                    >
+                                    gmail.com</span
+                                  >
+                                </p>
+                                <p
+                                  class="font-12 color-secondary font-weight-medium mb-10"
+                                >
+                                  <span class="mr-0"
+                                    ><i class="circle-i circle-i_clickers"></i>
+                                    <span class="mr-4 font-weight-bold"
+                                      >31%</span
+                                    >
+                                    dodohousenyc.com</span
+                                  >
+                                </p>
+                                <p
+                                  class="font-12 color-secondary font-weight-medium mb-0"
+                                >
+                                  <span class="mr-0"
+                                    ><i class="circle-i circle-i_country"></i>
+                                    <span class="mr-4 font-weight-bold"
+                                      >22%</span
+                                    >
+                                    Others</span
+                                  >
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <a href="#" class="btn _sm _secondary mt-22"
+                            >All Domains</a
+                          >
+                        </div>
+                      </div>
+                      <div class="col-xl-8 w-1170 col-lg-7 mb-28 pl-15">
+                        <div
+                          class="card flex-grow-1 justify-content-between d-flex flex-column vsc-initialized mb-0 h-100"
+                        >
+                          <div class="row">
+                            <div
+                              class="col-md-8 col-lg-7 d-flex order-2 order-md-1"
+                            >
+                              <div id="regions_div" class="map-small"></div>
+                            </div>
+                            <div
+                              class="col-md-4 col-lg-5 d-flex order-1 order-md-2"
+                            >
+                              <div
+                                class="d-flex flex-column align-items-start justify-content-start"
+                              >
+                                <h4 class="font-weight-semibold font-18 mb-18">
+                                  Opens by Location
+                                </h4>
+                                <p
+                                  class="font-12 color-secondary font-weight-medium mb-10"
+                                >
+                                  <span class="mr-0"
+                                    ><i class="circle-i circle-i_openers"></i>
+                                    United States</span
+                                  >
+                                  <span
+                                    class="data-click font-12 font-weight-regular ml-8"
+                                  >
+                                    <span class="mr-4 font-weight-bold">1</span>
+                                    (34%)
+                                  </span>
+                                </p>
+                                <p
+                                  class="font-12 color-secondary font-weight-medium mb-10"
+                                >
+                                  <span class="mr-0"
+                                    ><i class="circle-i circle-i_clickers"></i>
+                                    Turkey</span
+                                  >
+                                  <span
+                                    class="data-click font-12 font-weight-regular ml-8"
+                                  >
+                                    <span class="mr-4 font-weight-bold">1</span>
+                                    (28%)
+                                  </span>
+                                </p>
+                                <p
+                                  class="font-12 color-secondary font-weight-medium mb-0"
+                                >
+                                  <span class="mr-0"
+                                    ><i class="circle-i circle-i_country"></i>
+                                    Others</span
+                                  >
+                                  <span
+                                    class="data-click font-12 font-weight-regular ml-8"
+                                  >
+                                    <span class="mr-4 font-weight-bold"
+                                      >21</span
+                                    >
+                                    (18%)
+                                  </span>
+                                </p>
+                                <a href="#" class="btn _sm _primary mt-20"
+                                  >All Locations</a
+                                >
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="tab-pane show" id="recipients"></div>
-                <div class="tab-pane show" id="opens"></div>
-                <div class="tab-pane show" id="clicks"></div>
-                <div class="tab-pane show" id="clickmap"></div>
-                <div class="tab-pane show" id="bounces"></div>
-                <div class="tab-pane show" id="unsubscribes"></div>
-                <div class="tab-pane show" id="complaints"></div>
-                <div class="tab-pane show" id="social"></div>
-                <div class="tab-pane show" id="locations"></div>
-                <div class="tab-pane show" id="email-clients"></div>
-                <div class="tab-pane show" id="domains"></div>
+                  <div class="tab-pane show" id="recipients"></div>
+                  <div class="tab-pane show" id="opens"></div>
+                  <div class="tab-pane show" id="clicks"></div>
+                  <div class="tab-pane show" id="clickmap"></div>
+                  <div class="tab-pane show" id="bounces"></div>
+                  <div class="tab-pane show" id="unsubscribes"></div>
+                  <div class="tab-pane show" id="complaints"></div>
+                  <div class="tab-pane show" id="social"></div>
+                  <div class="tab-pane show" id="locations"></div>
+                  <div class="tab-pane show" id="email-clients"></div>
+                  <div class="tab-pane show" id="domains"></div>
+                </div>
               </div>
             </div>
           </div>
+          <!-- container -->
         </div>
-        <!-- container -->
+        <!-- content -->
       </div>
-      <!-- content -->
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+
+      <a href="#" class="btn_back">
+        <svg width="8" height="8">
+          <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
+        </svg>
+      </a>
     </div>
+    <!-- END wrapper -->
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
 
-    <a href="#" class="btn_back">
-      <svg width="8" height="8">
-        <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
-      </svg>
-    </a>
-  </div>
-  <!-- END wrapper -->
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/libs/raphael/raphael.min.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+    <script src="assets/libs/select2/js/select2.min.js"></script>
 
-  <!-- Vendor js -->
-  <script src="assets/js/vendor.min.js"></script>
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
 
-  <script src="assets/js/loader.js"></script>
-  <script src="assets/libs/raphael/raphael.min.js"></script>
-  <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
-  <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
-  <script src="assets/libs/select2/js/select2.min.js"></script>
-
-  <!-- App js -->
-  <script src="assets/js/app.min.js"></script>
-
-  <script>
-    columnBarsInfo = {
-      mobile: {
-        percent: `${47}%`,
-      },
-      webmail: {
-        percent: `${31}%`,
-      },
-      desktop: {
-        percent: `${22}%`,
-      },
-    };
-
-    const columnBarsObj = document.querySelectorAll(
-      '[data-type="columnBars"]'
-    );
-
-    columnBarsObj.forEach((item) => {
-      const columnBarsAttribute = item.getAttribute('data-name');
-      const barsHeight = item.querySelector('.bars-item__column');
-      const barsNumber = item.querySelector('.bars-item__number');
-      barsHeight.style.height = columnBarsInfo[columnBarsAttribute].percent;
-      barsNumber.innerHTML = columnBarsInfo[columnBarsAttribute].percent;
-    });
-
-    const socialObj = {
-      instagram: {
-        number: 2,
-        percent: `${9}%`,
-      },
-      twitter: {
-        number: 3,
-        percent: `${13.6}%`,
-      },
-      facebook: {
-        number: 17,
-        percent: `${77}%`,
-      },
-    };
-
-    var social = document.querySelectorAll('[data-bar="social"]');
-
-    social.forEach((item) => {
-      const socialAttribute = item.getAttribute('data-id');
-      const amountClicks = item.querySelector('.grin-part');
-      const percentClicks = item.querySelector('.bar-item__data');
-      amountClicks.style.width = socialObj[socialAttribute].percent;
-      percentClicks.innerHTML = socialObj[socialAttribute].number;
-    });
-
-    const mobileClients = {
-      appleIphone: {
-        number: 195,
-        percent: `${75}%`,
-      },
-      appleIpad: {
-        number: 27,
-        percent: `${10}%`,
-      },
-      googleAndroid: {
-        number: 21,
-        percent: `${8}%`,
-      },
-      gmailApp: {
-        number: 12,
-        percent: `${4}%`,
-      },
-      samsungMail: {
-        number: 3,
-        percent: `${1.1}%`,
-      },
-    };
-
-    var mobile = document.querySelectorAll('[data-type="mobile"]');
-
-    mobile.forEach((item) => {
-      const mobileAttribute = item.getAttribute('data-name');
-      const amountClicks = item.querySelector('.grin-part');
-      const clicksInPercent = item.querySelector('.bar-item__data');
-      amountClicks.style.width = mobileClients[mobileAttribute].percent;
-      clicksInPercent.innerHTML =
-        `<span class="mr-4 font-weight-bold">${mobileClients[mobileAttribute].number}</span> (${mobileClients[mobileAttribute].percent})`;
-    });
-
-    const webmailClients = {
-      gmail: {
-        number: 195,
-        percent: `${79}%`,
-      },
-      yahooMail: {
-        number: 27,
-        percent: `${10}%`,
-      },
-      outlook: {
-        number: 21,
-        percent: `${8.5}%`,
-      },
-      aol: {
-        number: 3,
-        percent: `${1.2}%`,
-      },
-    };
-
-    var webmailObj = document.querySelectorAll('[data-type="webmail"]');
-
-    webmailObj.forEach((item) => {
-      const webmailAttribute = item.getAttribute('data-name');
-      const amountClicks = item.querySelector('.grin-part');
-      const clicksInPercent = item.querySelector('.bar-item__data');
-      amountClicks.style.width = webmailClients[webmailAttribute].percent;
-      clicksInPercent.innerHTML =
-        `<span class="mr-4 font-weight-bold">${webmailClients[webmailAttribute].number}</span> (${webmailClients[webmailAttribute].percent})`;
-    });
-
-    const desktopClients = {
-      appleMail: {
-        number: 47,
-        percent: `${35}%`,
-      },
-      outlookWin: {
-        number: 26,
-        percent: `${19}%`,
-      },
-      windows: {
-        number: 21,
-        percent: `${16}%`,
-      },
-      thunderbird: {
-        number: 21,
-        percent: `${16}%`,
-      },
-      entourage: {
-        number: 12,
-        percent: `${9}%`,
-      },
-      outlookMac: {
-        number: 3,
-        percent: `${1.4}%`,
-      },
-      lotus: {
-        number: 1,
-        percent: `${0.2}%`,
-      },
-    };
-
-    var desktopObj = document.querySelectorAll('[data-type="desktop"]');
-
-    desktopObj.forEach((item) => {
-      const webmailAttribute = item.getAttribute('data-name');
-      const amountClicks = item.querySelector('.grin-part');
-      const clicksInPercent = item.querySelector('.bar-item__data');
-      amountClicks.style.width = desktopClients[webmailAttribute].percent;
-      clicksInPercent.innerHTML =
-        `<span class="mr-4 font-weight-bold">${desktopClients[webmailAttribute].number}</span> (${desktopClients[webmailAttribute].percent})`;
-    });
-  </script>
-
-  <script>
-    google.charts
-      .load('current', {
-        packages: ['geochart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        mapsApiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY',
-      })
-      .then(function () {
-        var dataMap = [
-          ['Country', 'Clicks'],
-          ['United States', 1],
-          ['Turkey', 1],
-        ];
-
-        if (dataMap[1][1] === dataMap[2][1]) {
-          dataMap[1][1] = dataMap[1][1] + 0.1;
-        }
-
-        var data = google.visualization.arrayToDataTable(dataMap);
-
-        var options = {
-          colorAxis: {
-            colors: ['#0000FF', '#00EBA8'],
-          },
-          backgroundColor: {
-            fill: '#FFF',
-            strokeWidth: 0,
-          },
-          legend: 'none',
-          datalessRegionColor: '#B6FFE8',
-          defaultColor: '#B6FFE8',
-          tooltip: {
-            trigger: 'none',
-          },
-          enableRegionInteractivity: false,
-          domain: 'IN',
-        };
-
-        var container = document.getElementById('regions_div');
-        var chart = new google.visualization.GeoChart(container);
-
-        google.visualization.events.addListener(chart, 'ready', function () {
-          var countries = container.getElementsByTagName('path');
-          Array.prototype.forEach.call(countries, function (path) {
-            path.setAttribute('stroke', 'transparent');
-          });
-        });
-
-        chart.draw(data, options);
-      });
-  </script>
-
-  <script>
-    google.charts.load('current', {
-      packages: ['corechart'],
-    });
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Task', 'Percentage'],
-        ['gmail.com', 47],
-        ['dodohousenyc.com', 31],
-        ['Others', 22],
-      ]);
-
-      var options = {
-        pieHole: 0.6,
-        slices: {
-          0: {
-            color: '#B6FFE8',
-          },
-          1: {
-            color: '#00EBA8',
-          },
-          2: {
-            color: '#0000FF',
-          },
+    <script>
+      columnBarsInfo = {
+        mobile: {
+          percent: `${47}%`,
         },
-        legend: 'none',
-        tooltip: {
-          trigger: 'none',
+        webmail: {
+          percent: `${31}%`,
         },
-        backgroundColor: '#f6f9fc',
-        pieSliceText: 'none',
-        pieSliceBorderColor: 'transparent',
-        enableInteractivity: false,
-        chartArea: {
-          left: 0,
-          top: 0,
-          width: '100%',
-          height: '100%',
+        desktop: {
+          percent: `${22}%`,
         },
       };
 
-      var chart = new google.visualization.PieChart(
-        document.getElementById('donutchart')
+      const columnBarsObj = document.querySelectorAll(
+        '[data-type="columnBars"]'
       );
 
-      chart.draw(data, options);
-    }
-  </script>
+      columnBarsObj.forEach((item) => {
+        const columnBarsAttribute = item.getAttribute('data-name');
+        const barsHeight = item.querySelector('.bars-item__column');
+        const barsNumber = item.querySelector('.bars-item__number');
+        barsHeight.style.height = columnBarsInfo[columnBarsAttribute].percent;
+        barsNumber.innerHTML = columnBarsInfo[columnBarsAttribute].percent;
+      });
 
-  <script>
-    // Range date picker settings and initialisation
-    !(function ($) {
-      'use strict';
+      const socialObj = {
+        instagram: {
+          number: 2,
+          percent: `${9}%`,
+        },
+        twitter: {
+          number: 3,
+          percent: `${13.6}%`,
+        },
+        facebook: {
+          number: 17,
+          percent: `${77}%`,
+        },
+      };
 
-      var FormPickers = function () {};
+      var social = document.querySelectorAll('[data-bar="social"]');
 
-      (FormPickers.prototype.init = function () {
-        $('#range-datepicker').flatpickr({
-          mode: 'range',
-          altInput: true,
-          altFormat: 'M j',
-          dateFormat: 'Y-m-d',
-          locale: {
-            rangeSeparator: ' – ',
-          },
+      social.forEach((item) => {
+        const socialAttribute = item.getAttribute('data-id');
+        const amountClicks = item.querySelector('.grin-part');
+        const percentClicks = item.querySelector('.bar-item__data');
+        amountClicks.style.width = socialObj[socialAttribute].percent;
+        percentClicks.innerHTML = socialObj[socialAttribute].number;
+      });
+
+      const mobileClients = {
+        appleIphone: {
+          number: 195,
+          percent: `${75}%`,
+        },
+        appleIpad: {
+          number: 27,
+          percent: `${10}%`,
+        },
+        googleAndroid: {
+          number: 21,
+          percent: `${8}%`,
+        },
+        gmailApp: {
+          number: 12,
+          percent: `${4}%`,
+        },
+        samsungMail: {
+          number: 3,
+          percent: `${1.1}%`,
+        },
+      };
+
+      var mobile = document.querySelectorAll('[data-type="mobile"]');
+
+      mobile.forEach((item) => {
+        const mobileAttribute = item.getAttribute('data-name');
+        const amountClicks = item.querySelector('.grin-part');
+        const clicksInPercent = item.querySelector('.bar-item__data');
+        amountClicks.style.width = mobileClients[mobileAttribute].percent;
+        clicksInPercent.innerHTML = `<span class="mr-4 font-weight-bold">${mobileClients[mobileAttribute].number}</span> (${mobileClients[mobileAttribute].percent})`;
+      });
+
+      const webmailClients = {
+        gmail: {
+          number: 195,
+          percent: `${79}%`,
+        },
+        yahooMail: {
+          number: 27,
+          percent: `${10}%`,
+        },
+        outlook: {
+          number: 21,
+          percent: `${8.5}%`,
+        },
+        aol: {
+          number: 3,
+          percent: `${1.2}%`,
+        },
+      };
+
+      var webmailObj = document.querySelectorAll('[data-type="webmail"]');
+
+      webmailObj.forEach((item) => {
+        const webmailAttribute = item.getAttribute('data-name');
+        const amountClicks = item.querySelector('.grin-part');
+        const clicksInPercent = item.querySelector('.bar-item__data');
+        amountClicks.style.width = webmailClients[webmailAttribute].percent;
+        clicksInPercent.innerHTML = `<span class="mr-4 font-weight-bold">${webmailClients[webmailAttribute].number}</span> (${webmailClients[webmailAttribute].percent})`;
+      });
+
+      const desktopClients = {
+        appleMail: {
+          number: 47,
+          percent: `${35}%`,
+        },
+        outlookWin: {
+          number: 26,
+          percent: `${19}%`,
+        },
+        windows: {
+          number: 21,
+          percent: `${16}%`,
+        },
+        thunderbird: {
+          number: 21,
+          percent: `${16}%`,
+        },
+        entourage: {
+          number: 12,
+          percent: `${9}%`,
+        },
+        outlookMac: {
+          number: 3,
+          percent: `${1.4}%`,
+        },
+        lotus: {
+          number: 1,
+          percent: `${0.2}%`,
+        },
+      };
+
+      var desktopObj = document.querySelectorAll('[data-type="desktop"]');
+
+      desktopObj.forEach((item) => {
+        const webmailAttribute = item.getAttribute('data-name');
+        const amountClicks = item.querySelector('.grin-part');
+        const clicksInPercent = item.querySelector('.bar-item__data');
+        amountClicks.style.width = desktopClients[webmailAttribute].percent;
+        clicksInPercent.innerHTML = `<span class="mr-4 font-weight-bold">${desktopClients[webmailAttribute].number}</span> (${desktopClients[webmailAttribute].percent})`;
+      });
+    </script>
+
+    <script>
+      google.charts
+        .load('current', {
+          packages: ['geochart'],
+          // Note: you will need to get a mapsApiKey for your project.
+          // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+          mapsApiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY',
+        })
+        .then(function () {
+          var dataMap = [
+            ['Country', 'Clicks'],
+            ['United States', 1],
+            ['Turkey', 1],
+          ];
+
+          if (dataMap[1][1] === dataMap[2][1]) {
+            dataMap[1][1] = dataMap[1][1] + 0.1;
+          }
+
+          var data = google.visualization.arrayToDataTable(dataMap);
+
+          var options = {
+            colorAxis: {
+              colors: ['#0000FF', '#00EBA8'],
+            },
+            backgroundColor: {
+              fill: '#FFF',
+              strokeWidth: 0,
+            },
+            legend: 'none',
+            datalessRegionColor: '#B6FFE8',
+            defaultColor: '#B6FFE8',
+            tooltip: {
+              trigger: 'none',
+            },
+            enableRegionInteractivity: false,
+            domain: 'IN',
+          };
+
+          var container = document.getElementById('regions_div');
+          var chart = new google.visualization.GeoChart(container);
+
+          google.visualization.events.addListener(chart, 'ready', function () {
+            var countries = container.getElementsByTagName('path');
+            Array.prototype.forEach.call(countries, function (path) {
+              path.setAttribute('stroke', 'transparent');
+            });
+          });
+
+          chart.draw(data, options);
         });
-      }),
-      ($.FormPickers = new FormPickers()),
-      ($.FormPickers.Constructor = FormPickers);
-    })(window.jQuery),
-    (function ($) {
-      'use strict';
-      $.FormPickers.init();
-    })(window.jQuery);
+    </script>
 
-    // charts
-
-    google.charts
-      .load('current', {
+    <script>
+      google.charts.load('current', {
         packages: ['corechart'],
-      })
-      .then(function () {
-        var data = new google.visualization.DataTable();
+      });
+      google.charts.setOnLoadCallback(drawChart);
 
-        var dataInfo = [
-          [new Date(2020, 6, 6), 0, 0],
-          [new Date(2020, 6, 7), 0, 0],
-          [new Date(2020, 6, 8), 5, 6],
-          [new Date(2020, 6, 9), 2, 7],
-          [new Date(2020, 6, 10), 3, 6],
-          [new Date(2020, 6, 11), 10, 10],
-        ];
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Percentage'],
+          ['gmail.com', 47],
+          ['dodohousenyc.com', 31],
+          ['Others', 22],
+        ]);
 
-        data.addColumn('datetime', 'date');
-        data.addColumn('number', 'Openers');
-        data.addColumn('number', 'Clickers');
-        data.addRows(dataInfo);
+        var options = {
+          pieHole: 0.6,
+          slices: {
+            0: {
+              color: '#B6FFE8',
+            },
+            1: {
+              color: '#00EBA8',
+            },
+            2: {
+              color: '#0000FF',
+            },
+          },
+          legend: 'none',
+          tooltip: {
+            trigger: 'none',
+          },
+          backgroundColor: '#f6f9fc',
+          pieSliceText: 'none',
+          pieSliceBorderColor: 'transparent',
+          enableInteractivity: false,
+          chartArea: {
+            left: 0,
+            top: 0,
+            width: '100%',
+            height: '100%',
+          },
+        };
 
-        var dateRange = data.getColumnRange(0);
-        const opensRange = data.getColumnRange(1);
-        const clicksRange = data.getColumnRange(2);
-
-        var mindate = dateRange.min;
-        var maxdate = dateRange.max;
-
-        const maxValue = Math.max(opensRange.max, clicksRange.max);
-
-        let n = 10;
-
-        while (maxValue / n > 9) {
-          n = n * 10;
-        }
-
-        let ticks = [
-          ...Array.from(
-            [0, 2, 4, 6, 8, 10],
-            (x) => x * (Math.ceil(maxValue / n) * (n / 10))
-          ),
-        ];
-
-        console.log(ticks);
-
-        var chart = new google.visualization.LineChart(
-          document.getElementById('curve_chart')
+        var chart = new google.visualization.PieChart(
+          document.getElementById('donutchart')
         );
+
+        chart.draw(data, options);
+      }
+    </script>
+
+    <script>
+      // Range date picker settings and initialisation
+      !(function ($) {
+        'use strict';
+
+        var FormPickers = function () {};
+
+        (FormPickers.prototype.init = function () {
+          $('#range-datepicker').flatpickr({
+            mode: 'range',
+            altInput: true,
+            altFormat: 'M j',
+            dateFormat: 'Y-m-d',
+            locale: {
+              rangeSeparator: ' – ',
+            },
+          });
+        }),
+          ($.FormPickers = new FormPickers()),
+          ($.FormPickers.Constructor = FormPickers);
+      })(window.jQuery),
+        (function ($) {
+          'use strict';
+          $.FormPickers.init();
+        })(window.jQuery);
+
+      // charts
+
+      google.charts
+        .load('current', {
+          packages: ['corechart'],
+        })
+        .then(function () {
+          var data = new google.visualization.DataTable();
+
+          var dataInfo = [
+            [new Date(2020, 6, 6), 0, 0],
+            [new Date(2020, 6, 7), 0, 0],
+            [new Date(2020, 6, 8), 5, 6],
+            [new Date(2020, 6, 9), 2, 7],
+            [new Date(2020, 6, 10), 3, 6],
+            [new Date(2020, 6, 11), 10, 10],
+          ];
+
+          data.addColumn('datetime', 'date');
+          data.addColumn('number', 'Openers');
+          data.addColumn('number', 'Clickers');
+          data.addRows(dataInfo);
+
+          var dateRange = data.getColumnRange(0);
+          const opensRange = data.getColumnRange(1);
+          const clicksRange = data.getColumnRange(2);
+
+          var mindate = dateRange.min;
+          var maxdate = dateRange.max;
+
+          const maxValue = Math.max(opensRange.max, clicksRange.max);
+
+          let n = 10;
+
+          while (maxValue / n > 9) {
+            n = n * 10;
+          }
+
+          let ticks = [
+            ...Array.from(
+              [0, 2, 4, 6, 8, 10],
+              (x) => x * (Math.ceil(maxValue / n) * (n / 10))
+            ),
+          ];
+
+          console.log(ticks);
+
+          var chart = new google.visualization.LineChart(
+            document.getElementById('curve_chart')
+          );
+
+          var options = {
+            curveType: 'function',
+            series: {
+              0: {
+                color: '#00EBA8',
+              },
+              1: {
+                color: '#0000FF',
+              },
+            },
+            chartArea: {
+              height: '100%',
+              width: '100%',
+              top: 10,
+              left: 50,
+              bottom: 30,
+              right: 16,
+            },
+            height: 246,
+            width: '100%',
+            vAxis: {
+              gridlines: {
+                count: -1,
+                color: '#eef0f2',
+              },
+              minorGridlines: {
+                color: 'transparent',
+              },
+              textStyle: {
+                color: '#888888',
+                fontSize: 12,
+              },
+              baselineColor: '#eef0f2',
+              textPosition: 'out',
+              ticks: ticks,
+              viewWindow: {
+                min: (ticks[1] / 2) * -1,
+              },
+            },
+            hAxis: {
+              textStyle: {
+                color: '#888888',
+                fontSize: 12,
+              },
+              minorGridlines: {
+                count: 0,
+              },
+              gridlines: {
+                count: -1,
+                color: 'transparent',
+              },
+              ticks: data.getDistinctValues(0),
+              baselineColor: '#eef0f2',
+              format: 'MMM dd',
+              textPosition: 'out',
+              viewWindow: {
+                min: mindate,
+                max: maxdate,
+              },
+            },
+            lineWidth: 1.5,
+            animation: {
+              startup: true,
+              duration: 1000,
+              easing: 'out',
+            },
+            focusTarget: 'category',
+            tooltip: {
+              textStyle: {
+                color: '#454f5b',
+                fontName: 'Proxima Nova',
+                fontSize: '12',
+              },
+              showColorCode: true,
+            },
+          };
+
+          chart.draw(data, options);
+        });
+
+      // hourly line charts
+
+      google.charts.load('current', {
+        packages: ['corechart'],
+      });
+      google.charts.setOnLoadCallback(drawChart2).then(() => {});
+
+      function drawChart2() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Date', 'Openers'],
+          [new Date(2020, 6, 6, 0), 8],
+          [new Date(2020, 6, 6, 3), 24],
+          [new Date(2020, 6, 6, 6), 10],
+          [new Date(2020, 6, 6, 9), 14],
+          [new Date(2020, 6, 6, 12), 15],
+          [new Date(2020, 6, 6, 15), 16],
+          [new Date(2020, 6, 6, 18), 28],
+          [new Date(2020, 6, 6, 21), 22],
+        ]);
 
         var options = {
           curveType: 'function',
@@ -1736,19 +2449,18 @@
             0: {
               color: '#00EBA8',
             },
-            1: {
-              color: '#0000FF',
-            },
           },
+          backgroundColor: '#f6f9fc',
           chartArea: {
             height: '100%',
             width: '100%',
             top: 10,
-            left: 50,
+            left: 32,
             bottom: 30,
             right: 16,
+            backgroundColor: '#f6f9fc',
           },
-          height: 246,
+          height: 148,
           width: '100%',
           vAxis: {
             gridlines: {
@@ -1764,31 +2476,34 @@
             },
             baselineColor: '#eef0f2',
             textPosition: 'out',
-            ticks: ticks,
-            viewWindow: {
-              min: (ticks[1] / 2) * -1,
-            },
           },
           hAxis: {
             textStyle: {
               color: '#888888',
               fontSize: 12,
             },
-            minorGridlines: {
-              count: 0,
-            },
+
+            ticks: [
+              new Date(2020, 6, 6, 0),
+              new Date(2020, 6, 6, 3),
+              new Date(2020, 6, 6, 6),
+              new Date(2020, 6, 6, 9),
+              new Date(2020, 6, 6, 12),
+              new Date(2020, 6, 6, 15),
+              new Date(2020, 6, 6, 18),
+              new Date(2020, 6, 6, 21),
+            ],
+
             gridlines: {
               count: -1,
               color: 'transparent',
             },
-            ticks: data.getDistinctValues(0),
-            baselineColor: '#eef0f2',
-            format: 'MMM dd',
-            textPosition: 'out',
-            viewWindow: {
-              min: mindate,
-              max: maxdate,
+            minorGridlines: {
+              count: 0,
             },
+            format: 'hha',
+            baselineColor: '#eef0f2',
+            textPosition: 'out',
           },
           lineWidth: 1.5,
           animation: {
@@ -1807,130 +2522,27 @@
           },
         };
 
-        chart.draw(data, options);
-      });
+        var formatter = new google.visualization.DateFormat({
+          pattern: 'hha',
+        });
+        formatter.format(data, 0);
 
-    // hourly line charts
+        var chart2 = new google.visualization.LineChart(
+          document.getElementById('curve_chart-2')
+        );
 
-    google.charts.load('current', {
-      packages: ['corechart'],
-    });
-    google.charts.setOnLoadCallback(drawChart2).then(() => {});
+        chart2.draw(data, options);
+      }
+    </script>
 
-    function drawChart2() {
-      var data = new google.visualization.arrayToDataTable([
-        ['Date', 'Openers'],
-        [new Date(2020, 6, 6, 0), 8],
-        [new Date(2020, 6, 6, 3), 24],
-        [new Date(2020, 6, 6, 6), 10],
-        [new Date(2020, 6, 6, 9), 14],
-        [new Date(2020, 6, 6, 12), 15],
-        [new Date(2020, 6, 6, 15), 16],
-        [new Date(2020, 6, 6, 18), 28],
-        [new Date(2020, 6, 6, 21), 22],
-      ]);
-
-      var options = {
-        curveType: 'function',
-        series: {
-          0: {
-            color: '#00EBA8',
-          },
-        },
-        backgroundColor: '#f6f9fc',
-        chartArea: {
-          height: '100%',
-          width: '100%',
-          top: 10,
-          left: 32,
-          bottom: 30,
-          right: 16,
-          backgroundColor: '#f6f9fc',
-        },
-        height: 148,
-        width: '100%',
-        vAxis: {
-          gridlines: {
-            count: -1,
-            color: '#eef0f2',
-          },
-          minorGridlines: {
-            color: 'transparent',
-          },
-          textStyle: {
-            color: '#888888',
-            fontSize: 12,
-          },
-          baselineColor: '#eef0f2',
-          textPosition: 'out',
-        },
-        hAxis: {
-          textStyle: {
-            color: '#888888',
-            fontSize: 12,
-          },
-
-          ticks: [
-            new Date(2020, 6, 6, 0),
-            new Date(2020, 6, 6, 3),
-            new Date(2020, 6, 6, 6),
-            new Date(2020, 6, 6, 9),
-            new Date(2020, 6, 6, 12),
-            new Date(2020, 6, 6, 15),
-            new Date(2020, 6, 6, 18),
-            new Date(2020, 6, 6, 21),
-          ],
-
-          gridlines: {
-            count: -1,
-            color: 'transparent',
-          },
-          minorGridlines: {
-            count: 0,
-          },
-          format: 'hha',
-          baselineColor: '#eef0f2',
-          textPosition: 'out',
-        },
-        lineWidth: 1.5,
-        animation: {
-          startup: true,
-          duration: 1000,
-          easing: 'out',
-        },
-        focusTarget: 'category',
-        tooltip: {
-          textStyle: {
-            color: '#454f5b',
-            fontName: 'Proxima Nova',
-            fontSize: '12',
-          },
-          showColorCode: true,
-        },
+    <script>
+      const select2Options = {
+        placeholder: 'Select an option',
+        allowClear: true,
+        minimumResultsForSearch: -1,
       };
 
-      var formatter = new google.visualization.DateFormat({
-        pattern: 'hha',
-      });
-      formatter.format(data, 0);
-
-      var chart2 = new google.visualization.LineChart(
-        document.getElementById('curve_chart-2')
-      );
-
-      chart2.draw(data, options);
-    }
-  </script>
-
-  <script>
-    const select2Options = {
-      placeholder: 'Select an option',
-      allowClear: true,
-      minimumResultsForSearch: -1,
-    };
-
-    createSelect2ByClass('._select2-lg', select2Options);
-  </script>
-</body>
-
+      createSelect2ByClass('._select2-lg', select2Options);
+    </script>
+  </body>
 </html>
