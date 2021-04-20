@@ -779,7 +779,8 @@ File: Main Js File
   (Components.prototype.initPeityCharts = function () {
     $('[data-plugin="peity-pie"]').each(function (idx, obj) {
       const colors = $(this).attr('data-colors') ?
-        $(this).attr('data-colors').split(',') : [];
+        $(this).attr('data-colors').split(',') :
+        [];
       const width = $(this).attr('data-width') ?
         $(this).attr('data-width') :
         20; // default is 20
@@ -795,7 +796,8 @@ File: Main Js File
     // donut
     $('[data-plugin="peity-donut"]').each(function (idx, obj) {
       const colors = $(this).attr('data-colors') ?
-        $(this).attr('data-colors').split(',') : [];
+        $(this).attr('data-colors').split(',') :
+        [];
       const width = $(this).attr('data-width') ?
         $(this).attr('data-width') :
         20; // default is 20
@@ -821,7 +823,8 @@ File: Main Js File
     // bar
     $('[data-plugin="peity-bar"]').each(function (idx, obj) {
       const colors = $(this).attr('data-colors') ?
-        $(this).attr('data-colors').split(',') : [];
+        $(this).attr('data-colors').split(',') :
+        [];
       const width = $(this).attr('data-width') ?
         $(this).attr('data-width') :
         20; // default is 20
@@ -1854,17 +1857,20 @@ const createInputsWithShortcode = (dataShortcodeKey, params) => {
 
     createDropdown(elWrapper, params, element);
   });
-
 };
 
-let searchBtnMobile = document.querySelector('.search-btn__mobile');
-let navDrill = document.querySelector('.nav-drill');
-let appSearchClose = document.querySelector('.app-search-box__close')
+const searchBtnMobile = document.querySelector('.search-btn__mobile');
+const navDrill = document.querySelector('.nav-drill');
+const appSearchClose = document.querySelector('.app-search-box__close');
 
-searchBtnMobile.addEventListener('click', () => {
-  navDrill.classList.toggle('search-visible');
-});
+if (searchBtnMobile) {
+  searchBtnMobile.addEventListener('click', () => {
+    navDrill.classList.toggle('search-visible');
+  });
+}
 
-appSearchClose.addEventListener('click', () => {
-  navDrill.classList.remove('search-visible');
-})
+if (appSearchClose) {
+  appSearchClose.addEventListener('click', () => {
+    navDrill.classList.remove('search-visible');
+  });
+}
