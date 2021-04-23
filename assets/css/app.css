@@ -9576,7 +9576,9 @@ button.close {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default .select2-selection--single .select2-selection__placeholder {
+.select2-container--default
+.select2-selection--single
+.select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -9853,6 +9855,9 @@ button.close {
     display: block;
     height: 50px;
     max-width: 50px; }
+    .connect__icon svg.huge {
+      height: 58px;
+      max-width: 75px; }
 
 .connect__content {
   padding: 0 40px;
@@ -13606,6 +13611,29 @@ button {
   width: 100%;
   height: 1px; }
 
+.user-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-right: 20px; }
+  .user-img img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.user-mail {
+  margin-right: 22px;
+  font-size: 12px;
+  line-height: 1; }
+
+.user-name {
+  font-size: 12px;
+  font-weight: regular;
+  line-height: 1;
+  margin-right: 20px; }
+
 th,
 td {
   white-space: nowrap !important; }
@@ -14333,6 +14361,19 @@ div.dataTables_wrapper div.dataTables_info {
   .table-status._danger {
     color: #ed1c24;
     border-color: #ffcfef; }
+  .table-status._danger-bg {
+    color: #fff;
+    border-color: #ed1c24;
+    background-color: #ed1c24; }
+  .table-status._blue {
+    color: #0000FF;
+    border-color: #0000FF; }
+  .table-status._yellow {
+    color: #000000;
+    border-color: #FFFE00;
+    background-color: #FFFE00;
+    padding-top: 4px;
+    padding-bottom: 2px; }
   .table-status._small {
     padding: 0 4px;
     line-height: 14px;

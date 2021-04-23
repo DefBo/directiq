@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Settings - Add Sender Pop | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+</head>
+
+<body data-layout-mode="two-column" class="animation-stopper">
+    <!-- /.modal -->
+
+    <div id="add-team-member" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" style="display: none">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <svg width="8" height="8">
+                        <use xlink:href="assets/images/sprite.svg#cross"></use>
+                    </svg>
+                </button>
+                <div class="modal-body">
+                    <h4 class="mb-14">Add Team Member</h4>
+                    <div class="form-control__wrap mb-21">
+                        <input type="email" placeholder="Enter Email" class="form-control" />
+                    </div>
+                    <div class="switcher__wrap mb-30">
+                        <label for="switch-2" class="switcher__label font-weight-medium color-secondary">
+                            <b>Require password change every 30 days</b>
+                        </label>
+                        <input type="checkbox" id="switch-2" class="switcher" checked="">
+                        <label for="switch-2" class="switcher__toggle"></label>
+                    </div>
+                    <div class="d-flex-flex-column mb-16">
+                        <div class="radio_inline radio create-campaign__timing-col-radio">
+                            <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+                            <label for="inlineRadio1" class="font-14 font-weight-bold">
+                                Viewer
+                            </label>
+                        </div>
+                        <div class="ml-20 font-12 font-weight-regular">
+                            Viewer can only access reports.
+                        </div>
+                    </div>
+                    <div class="d-flex-flex-column mb-16">
+                        <div class="radio_inline radio create-campaign__timing-col-radio">
+                            <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                            <label for="inlineRadio2" class="font-14 font-weight-bold">
+                                Author
+                            </label>
+                        </div>
+                        <div class="ml-20 font-12 font-weight-regular">
+                            Author can manage contacts, create template and campaigns. 
+                        </div>
+                    </div>
+                    <div class="d-flex-flex-column mb-16">
+                        <div class="radio_inline radio create-campaign__timing-col-radio">
+                            <input type="radio" id="inlineRadio3" value="option3" name="radioInline">
+                            <label for="inlineRadio3" class="font-14 font-weight-bold">
+                                Manager
+                            </label>
+                        </div>
+                        <div class="ml-20 font-12 font-weight-regular">
+                            Manager has full access but can’t manage members or change plans
+                        </div>
+                    </div>
+                    <div class="d-flex-flex-column mb-16">
+                        <div class="radio_inline radio create-campaign__timing-col-radio">
+                            <input type="radio" id="inlineRadio4" value="option4" name="radioInline">
+                            <label for="inlineRadio4" class="font-14 font-weight-bold">
+                                Admin
+                            </label>
+                        </div>
+                        <div class="ml-20 font-12 font-weight-regular">
+                            Admin has full access with top level authorization.
+                        </div>
+                    </div>
+                    <button class="btn _lg _primary mt-14">Invite</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal -->
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            const select2Options = {
+                placeholder: 'Select',
+                allowClear: true,
+                minimumResultsForSearch: -1,
+            };
+
+            createSelect2ByClass('._select2-lg', select2Options);
+        });
+
+        $(window).on('load', function () {
+            $('#add-team-member').modal('show');
+        });
+    </script>
+</body>
+
+</html>
