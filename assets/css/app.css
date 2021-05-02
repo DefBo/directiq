@@ -7356,6 +7356,28 @@ body {
       .content-page._set-password p br {
         display: none; } }
 
+.content-page._choose-links {
+  padding-bottom: 0px; }
+  .content-page._choose-links .set-password__cloud:nth-of-type(1) {
+    top: 38%; }
+  .content-page._choose-links .set-password__cloud:nth-of-type(2) {
+    bottom: -45%; }
+  .content-page._choose-links .set-password__cloud:nth-of-type(4) {
+    bottom: -26%;
+    transform: translate(31%, -78%); }
+  .content-page._choose-links .confirmation._login {
+    width: 340px; }
+    .content-page._choose-links .confirmation._login.w-560 {
+      max-width: 560px;
+      width: 100%; }
+  .content-page._choose-links img {
+    margin-bottom: -8px; }
+  .content-page._choose-links .content {
+    background-color: transparent;
+    margin-top: 122px;
+    padding: 0px;
+    height: 100%; }
+
 .content-page._ready-to-go {
   align-items: center;
   padding-top: 118px;
@@ -8091,6 +8113,10 @@ body {
     border: 1px solid #0000ff; }
   .confirmation._positive:after {
     background: #0000ff; }
+  .confirmation._green > div {
+    border: 1px solid #00EBA8; }
+  .confirmation._green:after {
+    background: #00EBA8; }
   .confirmation._negative > div {
     border: 1px solid #ed1c24; }
   .confirmation._negative:after {
@@ -9576,9 +9602,7 @@ button.close {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default
-.select2-selection--single
-.select2-selection__placeholder {
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -13597,7 +13621,7 @@ button {
   padding-top: 170px; }
   .unread-block__top {
     position: relative;
-    background-color: #C3D8E5;
+    background-color: #c3d8e5;
     padding: 12px 20px;
     border-radius: 18px;
     margin-left: -30px; }
@@ -13632,157 +13656,63 @@ button {
   line-height: 1;
   margin-right: 20px; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(3) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(3) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(4) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(4) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(5) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(5) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(6) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(6) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(7) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(7) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(8) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(8) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(9) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(9) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(10) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(10) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(3) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(3) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(4) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(4) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(5) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(5) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(6) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(6) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(7) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(7) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(8) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(8) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(9) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(9) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(10) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(10) {
   text-align: center; }
+
+.white {
+  color: #fff; }
+
+.v2-login__link {
+  font-weight: 500; }
+  .v2-login__link:hover {
+    color: #fff; }
+  .v2-login__link svg {
+    transform: rotate(270deg); }
 
 th,
 td {
