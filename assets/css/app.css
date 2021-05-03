@@ -8114,9 +8114,9 @@ body {
   .confirmation._positive:after {
     background: #0000ff; }
   .confirmation._green > div {
-    border: 1px solid #00EBA8; }
+    border: 1px solid #00eba8; }
   .confirmation._green:after {
-    background: #00EBA8; }
+    background: #00eba8; }
   .confirmation._negative > div {
     border: 1px solid #ed1c24; }
   .confirmation._negative:after {
@@ -12434,11 +12434,24 @@ button.close {
 .login__logo-link {
   display: block;
   width: 188.035px;
-  height: 40.004px; }
+  height: 40.004px;
+  position: relative; }
+  .login__logo-link:after {
+    position: absolute;
+    right: -18px;
+    top: 8px;
+    content: 'v3';
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+    font-weight: 500; }
   @media (max-width: 767px) {
     .login__logo-link {
       width: 131.6245px;
-      height: 28.0028px; } }
+      height: 28.0028px; }
+      .login__logo-link:after {
+        top: 6px;
+        font-size: 12px; } }
   .login__logo-link svg {
     display: block;
     width: 100%;
