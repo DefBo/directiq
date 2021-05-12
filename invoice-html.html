@@ -1,244 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      @font-face {
-        font-family: 'Proxima Nova';
-        src: url('../fonts/ProximaNova-Regular.eot');
-        src: local('Cerebri-sans Light'),
-          url('../fonts/ProximaNova-Regular.woff') format('woff');
-        font-weight: 400;
-      }
 
-      @font-face {
-        font-family: 'Proxima Nova';
-        src: url('../fonts/ProximaNova-Medium.eot');
-        src: local('Cerebri-sans Light'),
-          url('../fonts/ProximaNova-Medium.woff') format('woff');
-        font-weight: 500;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1024" />
+  <title>Document</title>
+  <style>
+    @font-face {
+      font-family: 'Proxima Nova';
+      src: url('/assets/fonts/ProximaNova-Regular.eot');
+      src: local('Cerebri-sans Light'),
+        url('/assets/fonts/ProximaNova-Regular.woff') format('woff');
+      font-weight: 400;
+    }
 
-      @font-face {
-        font-family: 'Proxima Nova';
-        src: url('../fonts/ProximaNova-Semibold.eot');
-        src: local('Cerebri-sans Light'),
-          url('../fonts/ProximaNova-Semibold.woff') format('woff');
-        font-weight: 600;
-      }
+    @font-face {
+      font-family: 'Proxima Nova';
+      src: url('/assets/fonts/ProximaNova-Medium.eot');
+      src: local('Cerebri-sans Light'),
+        url('/assets/fonts/ProximaNova-Medium.woff') format('woff');
+      font-weight: 500;
+    }
 
-      @font-face {
-        font-family: 'Proxima Nova';
-        src: url('../fonts/ProximaNova-Bold.eot');
-        src: local('Cerebri-sans Light'),
-          url('../fonts/ProximaNova-Bold.woff') format('woff');
-        font-weight: 700;
-      }
+    @font-face {
+      font-family: 'Proxima Nova';
+      src: url('/assets/fonts/ProximaNova-Semibold.eot');
+      src: local('Cerebri-sans Light'),
+        url('/assets/fonts/ProximaNova-Semibold.woff') format('woff');
+      font-weight: 600;
+    }
 
-      body {
-        font-family: 'Proxima Nova';
-        margin: 0px;
-      }
+    @font-face {
+      font-family: 'Proxima Nova';
+      src: url('/assets/fonts/ProximaNova-Bold.eot');
+      src: local('Cerebri-sans Light'),
+        url('/assets/fonts/ProximaNova-Bold.woff') format('woff');
+      font-weight: 700;
+    }
 
-      .invoice {
-        padding: 40px;
-      }
+    body {
+      font-family: 'Proxima Nova';
+      margin: 0px;
+    }
 
+    .invoice {
+      padding: 40px;
+    }
+
+    .number-invoice {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .number-invoice__item {
+      display: flex;
+      align-items: center;
+      font-size: 36px;
+    }
+
+    .details-row {
+      display: flex;
+      width: 100%;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #474f5a;
+    }
+
+    .details-row__none {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      border-bottom: 0px;
+    }
+
+    .details-column {
+      flex: 1;
+      width: calc(100% / 3);
+      flex-direction: column;
+      display: flex;
+      height: 100%;
+      margin-bottom: 30px;
+    }
+
+    .details-column__title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .details-column__text p {
+      margin-bottom: 0px;
+      font-size: 12px;
+      margin-top: 0px;
+    }
+
+    .details-row__name {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .my-20 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .line {
+      height: 1px;
+      width: 100%;
+      background-color: #474f5a;
+    }
+
+    .details-row__data {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #474f5a;
+    }
+
+    .details-row__data-name {
+      font-size: 12px;
+    }
+
+    .details-row__data-currency {
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .details-half {
+      width: 50%;
+      margin-left: auto;
+    }
+
+    .details-half .details-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .details-row__title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .details-row__currency {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* @media (max-width: 768px) {
       .number-invoice {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 30px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .number-invoice__item {
-        display: flex;
-        align-items: center;
-        font-size: 36px;
+        order: 2;
+        margin-top: 20px;
       }
 
-      .details-row {
-        display: flex;
-        width: 100%;
+      .number-invoice__img {
+        order: 1;
       }
 
       .details-column {
-        flex: 1;
-        width: calc(100% / 3);
-        flex-direction: column;
-        display: flex;
-        height: 100%;
-        margin-bottom: 30px;
-      }
-
-      .details-column__title {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-
-      .details-column__text p {
-        margin-bottom: 0px;
-        font-size: 12px;
-        margin-top: 0px;
-      }
-
-      .details-row__name {
-        font-size: 18px;
-        font-weight: 600;
-      }
-
-      .my-20 {
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-
-      .line {
-        height: 1px;
         width: 100%;
-        background-color: #474f5a;
+        flex: auto;
       }
 
-      .details-row__data {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      .details-row {
+        flex-wrap: wrap;
       }
+    }
 
-      .details-row__data-name {
-        font-size: 12px;
-      }
-
-      .details-row__data-currency {
-        font-size: 12px;
-        font-weight: bold;
-      }
-
+    @media (max-width: 576px) {
       .details-half {
-        width: 50%;
-        margin-left: auto;
+        width: 100%;
       }
 
-      .details-half .details-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      .invoice {
+        padding-left: 20px;
+        padding-right: 20px;
       }
+    } */
+  </style>
+</head>
 
-      .details-row__title {
-        font-size: 18px;
-        font-weight: 600;
-      }
+<body>
+  <section class="invoice">
+    <div class="number-invoice">
+      <div class="number-invoice__item">Invoice # <span>24148</span></div>
+      <div class="number-invoice__img">
+        <img src="assets/images/directiq-logo.svg" alt="#" />
+      </div>
+    </div>
+    <div class="details-row details-row__none">
+      <div class="details-column">
+        <div class="details-column__title">Issued to</div>
+        <div class="details-column__text">
+          <p>Cagdas Kocyigit</p>
+          <p>dodogildo@gmail.com</p>
+          <p>Suleyman Seba cad</p>
+          <p>Istanbul, 34357</p>
+          <p>Turkey</p>
+        </div>
+      </div>
+      <div class="details-column">
+        <div class="details-column__title">Issued by</div>
+        <div class="details-column__text">
+          <p>Direct IQ, LLC.</p>
+          <p>1732 1st Ave #22999</p>
+          <p>New York, NY, 10128</p>
+        </div>
+      </div>
+      <div class="details-column">
+        <div class="details-column__title">Details</div>
+        <div class="details-column__text">
+          <p>Date: Jan 18, 2021</p>
+          <p>Invoice Number: #24148</p>
+          <p>Payment Method: 442742******6111</p>
+        </div>
+      </div>
+    </div>
+    <div class="details-row">
+      <div class="details-row__name">Billing Statement</div>
+    </div>
+    <div class="details-row__data">
+      <div class="details-row__data-name">
+        <b>Essential Plan</b> 500 Contacts (30 days)
+      </div>
+      <div class="details-row__data-currency">$9.99</div>
+    </div>
+    <div class="details-row details-row__none">
+      <div class="details-half">
+        <div class="details-row">
+          <div class="details-row__data-name">
+            <b>Subtotal</b>
+          </div>
+          <div class="details-row__data-currency">$9.99</div>
+        </div>
+        <div class="details-row">
+          <div class="details-row__data-name">
+            <b>Tax</b>
+          </div>
+          <div class="details-row__data-currency">$0.00</div>
+        </div>
+        <div class="details-row details-row__none">
+          <div class="details-row__title">Total</div>
+          <div class="details-row__currency">$19.45</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
 
-      .details-row__currency {
-        font-size: 18px;
-        font-weight: 600;
-      }
-
-      @media (max-width: 768px) {
-        .number-invoice {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .number-invoice__item {
-          order: 2;
-          margin-top: 20px;
-        }
-        .number-invoice__img {
-          order: 1;
-        }
-        .details-column {
-          width: 100%;
-          flex: auto;
-        }
-        .details-row {
-          flex-wrap: wrap;
-        }
-      }
-      @media (max-width: 576px) {
-        .details-half {
-          width: 100%;
-        }
-        .invoice {
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <section class="invoice">
-      <div class="number-invoice">
-        <div class="number-invoice__item">Invoice # <span>24148</span></div>
-        <div class="number-invoice__img">
-          <img src="assets/images/directiq-logo.svg" alt="#" />
-        </div>
-      </div>
-      <div class="details-row">
-        <div class="details-column">
-          <div class="details-column__title">Issued to</div>
-          <div class="details-column__text">
-            <p>Cagdas Kocyigit</p>
-            <p>dodogildo@gmail.com</p>
-            <p>Suleyman Seba cad</p>
-            <p>Istanbul, 34357</p>
-            <p>Turkey</p>
-          </div>
-        </div>
-        <div class="details-column">
-          <div class="details-column__title">Issued by</div>
-          <div class="details-column__text">
-            <p>Direct IQ, LLC.</p>
-            <p>1732 1st Ave #22999</p>
-            <p>New York, NY, 10128</p>
-          </div>
-        </div>
-        <div class="details-column">
-          <div class="details-column__title">Details</div>
-          <div class="details-column__text">
-            <p>Date: Jan 18, 2021</p>
-            <p>Invoice Number: #24148</p>
-            <p>Payment Method: 442742******6111</p>
-          </div>
-        </div>
-      </div>
-      <div class="details-row">
-        <div class="details-row__name">Billing Statement</div>
-      </div>
-      <div class="line my-20"></div>
-      <div class="details-row__data">
-        <div class="details-row__data-name">
-          <b>Essential Plan</b> 500 Contacts (30 days)
-        </div>
-        <div class="details-row__data-currency">$9.99</div>
-      </div>
-      <div class="line my-20"></div>
-      <div class="details-row">
-        <div class="details-half">
-          <div class="details-row">
-            <div class="details-row__data-name">
-              <b>Subtotal</b>
-            </div>
-            <div class="details-row__data-currency">$9.99</div>
-          </div>
-          <div class="line my-20"></div>
-          <div class="details-row">
-            <div class="details-row__data-name">
-              <b>Tax</b>
-            </div>
-            <div class="details-row__data-currency">$0.00</div>
-          </div>
-          <div class="line my-20"></div>
-          <div class="details-row">
-            <div class="details-row__title">Total</div>
-            <div class="details-row__currency">$19.45</div>
-          </div>
-          <div class="line my-20"></div>
-        </div>
-      </div>
-    </section>
-  </body>
 </html>
