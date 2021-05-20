@@ -13738,6 +13738,9 @@ button {
   .dropdown-menu-inner .confirm__modal {
     left: -150px; } }
 
+table.dataTable thead .sorting_asc {
+  background-image: none !important; }
+
 th,
 td {
   white-space: nowrap !important; }
