@@ -18026,7 +18026,7 @@ a.text-blue:hover, a.text-blue:focus {
   animation-fill-mode: both;
   margin: 0;
   position: absolute;
-  z-index: 1000; }
+  z-index: 1004; }
   .dropdown-menu.show {
     top: 100% !important; }
   .dropdown-menu i {
