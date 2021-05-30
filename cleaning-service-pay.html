@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Contacts | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/nouisliderribute/nouislider.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
+
+  </head>
+
+  <body data-layout-mode="two-column" class="animation-stopper _step">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page _modal">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="setup-payment">
+            <div class="setup-payment__modal">
+              <div class="setup-payment__row">
+                <div class="setup-payment__main">
+                  <div
+                    class="d-flex flex-sm-row flex-column justify-content-between mb-20"
+                  >
+                    <h1 class="cleaning-service-payment">
+                      Pay $4.21 (Cleaning Service for 12,411 contacts)
+                    </h1>
+                  </div>
+
+                  <div class="row mb-20">
+                    <div class="col">
+                      <p class="font-14 font-weight-bold mb-7">Country</p>
+                      <div>
+                        <select class="form-control _select2-lg" required>
+                          <option></option>
+                          <option value="test-1" selected>United States</option>
+                          <option value="test-2">Canada</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="font-14 font-weight-bold mb-7">State</p>
+                      <div>
+                        <select class="form-control _select2-lg" required>
+                          <option></option>
+                          <option value="test-1" selected>New York</option>
+                          <option value="test-2">Florida</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="setup-payment__invoice mb-44">
+                    <div class="switcher__wrap">
+                      <label
+                        for="invoice-checkbox"
+                        class="switcher__label font-weight-bold font-14"
+                      >
+                        Send me an invoice
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="invoice-checkbox"
+                        class="switcher"
+                      />
+                      <label
+                        for="invoice-checkbox"
+                        class="switcher__toggle"
+                      ></label>
+                    </div>
+
+                    <textarea
+                      name="invoice"
+                      id="invoice-textarea"
+                      rows="3"
+                      placeholder="Company name, tax info etc"
+                      class="form-control mt-6 d-none"
+                    ></textarea>
+                  </div>
+
+                  <div class="mb-20">
+                    <div class="mb-8 payment-widget">
+                      <img src="/assets/images/payment-widget.png" alt="" />
+                    </div>
+
+                    <div class="setup-payment__payment-box"></div>
+                  </div>
+
+                  <button class="btn _primary _lg">Purchase</button>
+                </div>
+
+                <div class="setup-payment__aside">
+                  <h4 class="mb-20">Purchase Summary</h4>
+
+                  <p class="font-14 font-weight-bold mb-4">Cleaning Service</p>
+
+                  <p class="font-12 mb-30 color-secondary">
+                    <span class="font-weight-bold color-primary">12,411</span>
+                    contacts
+                  </p>
+
+                  <div id="month-payment-description">
+                    <p class="font-14 font-weight-bold mb-4">
+                      What will happen?
+                    </p>
+
+                    <p class="font-12 mb-10 color-secondary">
+                      After you pay for the service we’ll start cleaning your
+                      list. You’ll be notified when the process is done.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="close">
+                <svg width="8" height="8">
+                  <use xlink:href="assets/images/sprite.svg#cross"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- container -->
+        </div>
+        <!-- content -->
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <!-- App js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+    <script src="assets/libs/nouisliderribute/nouislider.min.js"></script>
+    <script src="assets/libs/wnumb/wNumb.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const select2Options = {
+          placeholder: 'Select',
+          allowClear: true,
+          minimumResultsForSearch: -1,
+        };
+
+        createSelect2ByClass('._select2-lg', select2Options);
+      });
+    </script>
+  </body>
+</html>
