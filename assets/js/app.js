@@ -1117,44 +1117,16 @@ function addWithScrollTable() {
 
 function adjustDataTableColumns() {
   if ($($.fn.dataTable.tables()).length > 0) {
-    $(
+    const table = $(
       $.fn.dataTable.tables({
         visible: true,
       })
-    )
-      .DataTable()
-      .columns.adjust();
-    addWithScrollTable();
-    // setTimeout(function () {
-    //   const tableWithNewScroll = document.querySelector('.new-scroll');
-    //   if (tableWithNewScroll) {
-    //     $(
-    //       '.dataTables_scrollBody td:first-child, .dataTables_scrollBody td:nth-child(2), .dataTables_scrollBody td:last-child, .dataTables_scrollBody th:first-child, .dataTables_scrollBody th:nth-child(2), .dataTables_scrollBody th:last-child'
-    //     ).css('display', 'table-cell');
-    //   }
-    //   $($.fn.dataTable.tables({ visible: true }))
-    //     .DataTable()
-    //     .columns.adjust();
-    //   if (tableWithNewScroll) {
-    //     $(
-    //       '.dataTables_scrollBody td:first-child, .dataTables_scrollBody td:nth-child(2), .dataTables_scrollBody td:last-child, .dataTables_scrollBody th:first-child, .dataTables_scrollBody th:nth-child(2), .dataTables_scrollBody th:last-child'
-    //     ).css('display', 'none');
-    //     const scrollBody = tableWithNewScroll.querySelector(
-    //       '.dataTables_scrollBody'
-    //     );
-    //     const leftFixed = tableWithNewScroll.querySelector(
-    //       '.DTFC_LeftBodyWrapper table'
-    //     );
-    //     const rightFixed = tableWithNewScroll.querySelector(
-    //       '.DTFC_RightBodyWrapper table'
-    //     );
-    //     scrollBody.style.width = `calc(100% - ${
-    //       rightFixed.clientWidth + leftFixed.clientWidth
-    //     }px)`;
-    //     scrollBody.style.marginLeft = `${leftFixed.clientWidth}px`;
-    //   }
-    //   addWithScrollTable();
-    // }, 250);
+    ).DataTable();
+
+    if (table) {
+      table.columns.adjust();
+      addWithScrollTable();
+    }
   }
 }
 
@@ -1228,9 +1200,6 @@ $(document).ready(function () {
 
   if (isHaveDataTable()) {
     addWithScrollTable();
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-      adjustDataTableColumns();
-    });
   }
 
   $('.upload-list__next-step').click(function () {
@@ -1523,6 +1492,10 @@ $('.nav-tabs a').on('shown.bs.tab', function (e) {
     history.pushState(null, null, e.target.hash);
   } else {
     window.location.hash = e.target.hash; // Polyfill for old browsers
+  }
+  if (isHaveDataTable()) {
+    addWithScrollTable();
+    adjustDataTableColumns();
   }
 });
 
