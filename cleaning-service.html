@@ -1,70 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Add Contacts | DirectIQ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta content="Direct IQ frontend development version" name="description" />
-    <meta content="Coderthemes" name="author" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- App favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
-    />
-    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
-    <link
-      rel="mask-icon"
-      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
-      color="#5bbad5"
-    />
-    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
-    <meta name="msapplication-TileColor" content="#0000ff" />
-    <meta
-      name="msapplication-config"
-      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
-    />
-    <meta name="theme-color" content="#ffffff" />
 
-    <link
-      href="assets/libs/select2/css/select2.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- App css -->
-    <link
-      href="assets/css/bootstrap.min.css"
-      rel="stylesheet"
-      type="text/css"
-      id="bs-default-stylesheet"
-    />
-    <link
-      href="assets/css/app.min.css"
-      rel="stylesheet"
-      type="text/css"
-      id="app-default-stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <title>Add Contacts | DirectIQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content="Direct IQ frontend development version" name="description" />
+  <meta content="Coderthemes" name="author" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- App favicon -->
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+  />
+  <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+  <link
+    rel="mask-icon"
+    href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+    color="#5bbad5"
+  />
+  <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+  <meta name="msapplication-TileColor" content="#0000ff" />
+  <meta
+    name="msapplication-config"
+    content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+  />
+  <meta name="theme-color" content="#ffffff" />
 
-  </head>
+  <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+  <!-- App css -->
+  <link
+    href="assets/css/bootstrap.min.css"
+    rel="stylesheet"
+    type="text/css"
+    id="bs-default-stylesheet"
+  />
+  <link
+    href="assets/css/app.min.css"
+    rel="stylesheet"
+    type="text/css"
+    id="app-default-stylesheet"
+  />
 
-  <body data-layout-mode="two-column" class="animation-stopper">
-    <!-- Begin page -->
-    <div id="wrapper">
-      <!-- Topbar Start -->
-      <div class="navbar-custom">
+</head>
+
+<body data-layout-mode="two-column" class="animation-stopper">
+  <!-- Begin page -->
+  <div id="wrapper">
+
+    <!-- Topbar Start -->
+    <div class="navbar-custom">
         <div class="container-fluid navbar-custom__inner">
           <div>
             <!-- LOGO -->
@@ -84,33 +82,14 @@
                 Cleaning Service
                 <button class="btn_icon d-none d-md-inline ml-18">
                   <i class="add-to-fav-icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="19.5"
-                      height="17.805"
-                      viewBox="0 0 19.5 17.805"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
                       <g transform="translate(0.75 0.75)">
-                        <path
-                          class="add-to-fav-icon__bg"
-                          d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13"
-                          transform="translate(-1972.5 -1089.5)"
-                          fill="none"
-                          stroke="blue"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
-                        />
-                        <path
-                          class="add-to-fav-icon__plus"
-                          d="M1986.5,1093.5v8m4-4h-8"
-                          transform="translate(-1972.5 -1089.5)"
-                          fill="none"
-                          stroke="#00eba8"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
-                        />
+                        <path class="add-to-fav-icon__bg" d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13"
+                          transform="translate(-1972.5 -1089.5)" fill="none" stroke="blue" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="1.5" />
+                        <path class="add-to-fav-icon__plus" d="M1986.5,1093.5v8m4-4h-8"
+                          transform="translate(-1972.5 -1089.5)" fill="none" stroke="#00eba8" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="1.5" />
                       </g>
                     </svg>
                   </i>
@@ -124,12 +103,7 @@
             <form class="app-search d-none d-md-table">
               <div class="app-search-box">
                 <div class="input-group">
-                  <input
-                    type="search"
-                    class="form-control"
-                    placeholder="Start typing and search"
-                    id="top-search"
-                  />
+                  <input type="search" class="form-control" placeholder="Start typing and search" id="top-search" />
                   <div class="input-group-append">
                     <button class="btn" type="submit">
                       <svg width="19.955" height="20.061">
@@ -142,19 +116,11 @@
             </form>
 
             <div class="dropdown d-none d-sm-block">
-              <a
-                class="dropdown-toggle _outline _lg"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="false"
-                aria-expanded="false"
-              >
+              <a class="dropdown-toggle _outline _lg" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                aria-expanded="false">
                 Create
                 <svg width="13.545" height="8">
-                  <use
-                    xlink:href="assets/images/sprite.svg#dropdown-arrow"
-                  ></use>
+                  <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
                 </svg>
               </a>
               <div class="dropdown-menu">
@@ -163,14 +129,8 @@
             </div>
 
             <div class="dropdown ml-14 d-none d-md-block">
-              <a
-                class="dropdown-toggle _icon"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="false"
-                aria-expanded="false"
-              >
+              <a class="dropdown-toggle _icon" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                aria-expanded="false">
                 <svg width="18.261" height="30">
                   <use xlink:href="assets/images/sprite.svg#bulb"></use>
                 </svg>
@@ -181,14 +141,8 @@
             </div>
 
             <div class="dropdown d-none d-md-block">
-              <a
-                class="dropdown-toggle _icon"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="false"
-                aria-expanded="false"
-              >
+              <a class="dropdown-toggle _icon" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                aria-expanded="false">
                 <svg width="21.073" height="21.264">
                   <use xlink:href="assets/images/sprite.svg#bell"></use>
                 </svg>
@@ -200,14 +154,8 @@
             </div>
 
             <div class="dropdown ml-10 _user mr-20">
-              <a
-                class="dropdown-toggle _user d-none d-md-inline-block"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="false"
-                aria-expanded="false"
-              >
+              <a class="dropdown-toggle _user d-none d-md-inline-block" data-toggle="dropdown" href="#" role="button"
+                aria-haspopup="false" aria-expanded="false">
                 <span class="user-avatar">
                   <img src="assets/images/user.png" alt="User Avatar" />
                 </span>
@@ -233,19 +181,11 @@
                   <div class="profile-dropdown__progress">
                     <div class="d-flex justify-content-between mb-5">
                       <span class="font-weight-bold">Free</span>
-                      <span class="color-secondary font-weight-medium"
-                        >25/1500</span
-                      >
+                      <span class="color-secondary font-weight-medium">25/1500</span>
                     </div>
                     <div class="progress">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 25%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
+                      <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                        aria-valuemax="100"></div>
                     </div>
                   </div>
                   <a href="#" class="profile-dropdown__link mb-4">
@@ -272,11 +212,7 @@
                     </svg>
                   </a>
 
-                  <select
-                    class="form-control _select2-lg"
-                    data-toggle="select2"
-                    required
-                  >
+                  <select class="form-control _select2-lg" data-toggle="select2" required>
                     <option value="test-1">English</option>
                     <option value="test-2">Chinese</option>
                     <option value="test-2">Spanish</option>
@@ -290,26 +226,15 @@
                   <div class="profile-dropdown__discount">
                     <div class="font-14 font-weight-bold">Hey Baris!</div>
                     <div class="font-36">30%</div>
-                    <div
-                      class="font-12 color-secondary font-weight-medium mb-10"
-                    >
-                      <span class="text-nowrap"
-                        >Upgrade in 12 hours and use</span
-                      >
+                    <div class="font-12 color-secondary font-weight-medium mb-10">
+                      <span class="text-nowrap">Upgrade in 12 hours and use</span>
                       <br />
-                      <span class="font-weight-bold color-primary"
-                        >30% personal discount!</span
-                      >
+                      <span class="font-weight-bold color-primary">30% personal discount!</span>
                     </div>
                     <button class="btn _lg _primary">Redeem Now</button>
                   </div>
 
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-hidden="true"
-                  >
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     <svg width="8" height="8">
                       <use xlink:href="assets/images/sprite.svg#cross"></use>
                     </svg>
@@ -480,9 +405,7 @@
             <a class="nav-item-link nav-expand-link" href="#">
               <i>
                 <svg width="17.894" height="24">
-                  <use
-                    xlink:href="assets/images/sprite.svg#integrations-i"
-                  ></use>
+                  <use xlink:href="assets/images/sprite.svg#integrations-i"></use>
                 </svg>
               </i>
               <span>Integrations</span>
@@ -490,10 +413,7 @@
             <ul class="nav-items nav-expand-content">
               <li class="nav-title">Integrations</li>
               <li class="nav-item">
-                <a
-                  class="nav-item-link active"
-                  href="contact-integrations.html"
-                >
+                <a class="nav-item-link active" href="contact-integrations.html">
                   Contact Integrations
                 </a>
               </li>
@@ -605,1465 +525,928 @@
             </svg>
           </button>
 
-          <button
-            class="btn_icon user-avatar-mobile h-100"
-            id="user-profile-btn-mobile"
-          >
+          <button class="btn_icon user-avatar-mobile h-100" id="user-profile-btn-mobile">
             <img src="assets/images/user.png" alt="User Avatar" />
           </button>
         </div>
       </nav>
       <!-- Left Sidebar End -->
 
-      <!-- ============================================================== -->
-      <!-- Start Page Content here -->
-      <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
 
-      <div class="content-page">
-        <div class="content">
-          <!-- Start Content-->
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-12">
-                <div class="automated-top mb-20">
-                  <div class="automated-top__image-wrap">
-                    <svg width="64.991" height="65">
-                      <use xlink:href="assets/images/sprite.svg#cleaning"></use>
-                    </svg>
+    <div class="content-page">
+      <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="automated-top mb-20">
+                <div class="automated-top__image-wrap">
+                  <svg width="64.991" height="65">
+                    <use xlink:href="assets/images/sprite.svg#cleaning"></use>
+                  </svg>
+                </div>
+
+                <div class="automated-top__content">
+                  <div>
+                    <h4 class="mt-3">Cleaning Service</h4>
                   </div>
 
-                  <div class="automated-top__content">
-                    <div>
-                      <h4 class="mt-3">Cleaning Service</h4>
+                  <div class="confirm__wrap mt-12 mt-md-0">
+                    <button class="btn _lg _primary">
+                      Add List for Cleaning
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="nav nav-tabs nav-bordered">
+                <li class="nav-item">
+                  <a href="#all" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                    All
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#new" data-toggle="tab" aria-expanded="true" class="nav-link">
+                    New
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#processing" data-toggle="tab" aria-expanded="true" class="nav-link">
+                    Processing
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#cleaned" data-toggle="tab" aria-expanded="true" class="nav-link">
+                    Cleaned
+                  </a>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane show active" id="all">
+                  <div class="connect__cards-wrap">
+                    <div class="card connect__cards-main">
+                      <div class="w-100">
+                        <table id="data-table-all" class="datatable datatable_small _lists cleaning-table"
+                          style="width: 100%">
+                          <thead>
+                            <tr>
+                              <th>List Name</th>
+                              <th class="nosort">Status</th>
+                              <th>Total</th>
+                              <th>Good</th>
+                              <th>Bad</th>
+                              <th>Upload Date</th>
+                              <th class="nosort text-right">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 1</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>157,912</td>
+                              <td>3,934</td>
+                              <td>151,025</td>
+                              <td>June 10, 2020</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
+                                    </button>
+
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="red-text font-weight-semibold">Laundy list 2</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _danger-bg">new</span>
+                              </td>
+                              <td>83,053</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Apr 8, 2020</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
+                                    </button>
+
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="blue-text font-weight-semibold">Laundy list 3</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _blue">processing</span>
+                              </td>
+                              <td>46,536</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Sep 29, 2019</td>
+                              <td>
+                                <div
+                                  class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0 disabled">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
+                                    </button>
+
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 4</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>974</td>
+                              <td>812</td>
+                              <td>162</td>
+                              <td>Dec 4, 2019</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
+                                    </button>
+
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 5</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>46,536</td>
+                              <td>19,752</td>
+                              <td>27,530</td>
+                              <td>Dec 1, 2019</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
+                                    </button>
+
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
 
-                    <div class="confirm__wrap">
-                      <button class="btn _lg _primary confirm__btn">
-                        Add List for Cleaning
-                      </button>
-
-                      <div class="confirm__modal d-none" style="">
-                        <div class="confirm__content">
-                          <p class="confirm__text">
-                            Your campaign settings will be lost if you switch
-                            automation type. Are you sure?
-                          </p>
-                        </div>
-                        <div class="d-flex">
-                          <button class="btn _lg _secondary">Nope</button>
-                          <button class="btn _lg _primary">Sure</button>
-                        </div>
+                    <div class="connect__cards-aside">
+                      <div class="card connect__card-aside">
+                        <i class="mb-22">
+                          <svg width="46.91" height="50">
+                            <use xlink:href="assets/images/sprite.svg#cleaning-cat"></use>
+                          </svg>
+                        </i>
+                        <h5 class="mb-5">What’s Cleaning Service?</h5>
+                        <p class="font-12 color-secondary font-weight-medium mb-21">
+                          Lorem ipsum dolor sit amet, consetetur sadipscing
+                          elitr, sed diam nonumy eirmod.
+                        </p>
+                        <button class="btn _sm _secondary">Learn More</button>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <ul class="nav nav-tabs nav-bordered">
-                  <li class="nav-item">
-                    <a
-                      href="#all"
-                      data-toggle="tab"
-                      aria-expanded="false"
-                      class="nav-link active"
-                    >
-                      All
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="#new"
-                      data-toggle="tab"
-                      aria-expanded="true"
-                      class="nav-link"
-                    >
-                      New
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="#processing"
-                      data-toggle="tab"
-                      aria-expanded="true"
-                      class="nav-link"
-                    >
-                      Processing
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="#cleaned"
-                      data-toggle="tab"
-                      aria-expanded="true"
-                      class="nav-link"
-                    >
-                      Cleaned
-                    </a>
-                  </li>
-                </ul>
-
-                <div class="tab-content">
-                  <div class="tab-pane show active" id="all">
-                    <div class="connect__cards-wrap">
-                      <div class="card connect__cards-main">
-                        <div class="w-100">
-                          <table
-                            id="data-table-all"
-                            class="datatable datatable_small _fields cleaning-table"
-                            style="width: 100%"
-                          >
-                            <thead>
-                              <tr>
-                                <th>List Name</th>
-                                <th class="nosort">Status</th>
-                                <th class="text-right">Total</th>
-                                <th class="text-right">Good</th>
-                                <th class="text-right">Bad</th>
-                                <th>Upload Date</th>
-                                <th class="nosort text-right pr-35">Action</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 1</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">157,912</td>
-                                <td class="text-right">3,934</td>
-                                <td class="text-right">151,025</td>
-                                <td>June 10, 2020</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                <div class="tab-pane" id="new">
+                  <div class="connect__cards-wrap">
+                    <div class="card connect__cards-main">
+                      <div class="w-100">
+                        <table id="data-table-new" class="datatable datatable_small _lists cleaning-table"
+                          style="width: 100%">
+                          <thead>
+                            <tr>
+                              <th>List Name</th>
+                              <th class="nosort">Status</th>
+                              <th>Total</th>
+                              <th>Good</th>
+                              <th>Bad</th>
+                              <th>Upload Date</th>
+                              <th class="nosort text-right">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 1</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>157,912</td>
+                              <td>3,934</td>
+                              <td>151,025</td>
+                              <td>June 10, 2020</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a
-                                    href="#"
-                                    class="red-text font-weight-semibold"
-                                    >Laundy list 2</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _danger-bg"
-                                    >new</span
-                                  >
-                                </td>
-                                <td class="text-right">83,053</td>
-                                <td class="text-right">-</td>
-                                <td class="text-right">-</td>
-                                <td>Apr 8, 2020</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="red-text font-weight-semibold">Laundy list 2</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _danger-bg">new</span>
+                              </td>
+                              <td>83,053</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Apr 8, 2020</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a
-                                    href="#"
-                                    class="blue-text font-weight-semibold"
-                                    >Laundy list 3</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _blue"
-                                    >processing</span
-                                  >
-                                </td>
-                                <td class="text-right">46,536</td>
-                                <td class="text-right">-</td>
-                                <td class="text-right">-</td>
-                                <td>Sep 29, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0 disabled"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="blue-text font-weight-semibold">Laundy list 3</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _blue">processing</span>
+                              </td>
+                              <td>46,536</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Sep 29, 2019</td>
+                              <td>
+                                <div
+                                  class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0 disabled">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 4</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">974</td>
-                                <td class="text-right">812</td>
-                                <td class="text-right">162</td>
-                                <td>Dec 4, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 4</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>974</td>
+                              <td>812</td>
+                              <td>162</td>
+                              <td>Dec 4, 2019</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 5</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">46,536</td>
-                                <td class="text-right">19,752</td>
-                                <td class="text-right">27,530</td>
-                                <td>Dec 1, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 5</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>46,536</td>
+                              <td>19,752</td>
+                              <td>27,530</td>
+                              <td>Dec 1, 2019</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
+                    </div>
 
-                      <div class="connect__cards-aside">
-                        <div class="card connect__card-aside">
-                          <i class="mb-22">
-                            <svg width="46.91" height="50">
-                              <use
-                                xlink:href="assets/images/sprite.svg#cleaning-cat"
-                              ></use>
-                            </svg>
-                          </i>
-                          <h5 class="mb-5">What’s Cleaning Service?</h5>
-                          <p
-                            class="font-12 color-secondary font-weight-medium mb-21"
-                          >
-                            Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod.
-                          </p>
-                          <button class="btn _sm _secondary">Learn More</button>
-                        </div>
+                    <div class="connect__cards-aside">
+                      <div class="card connect__card-aside">
+                        <i class="mb-22">
+                          <svg width="46.91" height="50">
+                            <use xlink:href="assets/images/sprite.svg#cleaning-cat"></use>
+                          </svg>
+                        </i>
+                        <h5 class="mb-5">What’s Cleaning Service?</h5>
+                        <p class="font-12 color-secondary font-weight-medium mb-21">
+                          Lorem ipsum dolor sit amet, consetetur sadipscing
+                          elitr, sed diam nonumy eirmod.
+                        </p>
+                        <button class="btn _sm _secondary">Learn More</button>
                       </div>
                     </div>
                   </div>
-
-                  <div class="tab-pane" id="new">
-                    <div class="connect__cards-wrap">
-                      <div class="card connect__cards-main">
-                        <div class="w-100">
-                          <table
-                            id="data-table-new"
-                            class="datatable datatable_small _fields cleaning-table"
-                            style="width: 100%"
-                          >
-                            <thead>
-                              <tr>
-                                <th>List Name</th>
-                                <th class="nosort">Status</th>
-                                <th class="text-right">Total</th>
-                                <th class="text-right">Good</th>
-                                <th class="text-right">Bad</th>
-                                <th>Upload Date</th>
-                                <th class="nosort text-right pr-35">Action</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 1</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">157,912</td>
-                                <td class="text-right">3,934</td>
-                                <td class="text-right">151,025</td>
-                                <td>June 10, 2020</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                </div>
+                <div class="tab-pane" id="processing">
+                  <div class="connect__cards-wrap">
+                    <div class="card connect__cards-main">
+                      <div class="w-100">
+                        <table id="data-table-processing" class="datatable datatable_small _lists cleaning-table"
+                          style="width: 100%">
+                          <thead>
+                            <tr>
+                              <th>List Name</th>
+                              <th class="nosort">Status</th>
+                              <th>Total</th>
+                              <th>Good</th>
+                              <th>Bad</th>
+                              <th>Upload Date</th>
+                              <th class="nosort text-right">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 1</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>157,912</td>
+                              <td>3,934</td>
+                              <td>151,025</td>
+                              <td>June 10, 2020</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a
-                                    href="#"
-                                    class="red-text font-weight-semibold"
-                                    >Laundy list 2</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _danger-bg"
-                                    >new</span
-                                  >
-                                </td>
-                                <td class="text-right">83,053</td>
-                                <td class="text-right">-</td>
-                                <td class="text-right">-</td>
-                                <td>Apr 8, 2020</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="red-text font-weight-semibold">Laundy list 2</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _danger-bg">new</span>
+                              </td>
+                              <td>83,053</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Apr 8, 2020</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a
-                                    href="#"
-                                    class="blue-text font-weight-semibold"
-                                    >Laundy list 3</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _blue"
-                                    >processing</span
-                                  >
-                                </td>
-                                <td class="text-right">46,536</td>
-                                <td class="text-right">-</td>
-                                <td class="text-right">-</td>
-                                <td>Sep 29, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0 disabled"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="blue-text font-weight-semibold">Laundy list 3</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _blue">processing</span>
+                              </td>
+                              <td>46,536</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Sep 29, 2019</td>
+                              <td>
+                                <div
+                                  class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0 disabled">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 4</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">974</td>
-                                <td class="text-right">812</td>
-                                <td class="text-right">162</td>
-                                <td>Dec 4, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 4</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>974</td>
+                              <td>812</td>
+                              <td>162</td>
+                              <td>Dec 4, 2019</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 5</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">46,536</td>
-                                <td class="text-right">19,752</td>
-                                <td class="text-right">27,530</td>
-                                <td>Dec 1, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 5</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>46,536</td>
+                              <td>19,752</td>
+                              <td>27,530</td>
+                              <td>Dec 1, 2019</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
+                    </div>
 
-                      <div class="connect__cards-aside">
-                        <div class="card connect__card-aside">
-                          <i class="mb-22">
-                            <svg width="46.91" height="50">
-                              <use
-                                xlink:href="assets/images/sprite.svg#cleaning-cat"
-                              ></use>
-                            </svg>
-                          </i>
-                          <h5 class="mb-5">What’s Cleaning Service?</h5>
-                          <p
-                            class="font-12 color-secondary font-weight-medium mb-21"
-                          >
-                            Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod.
-                          </p>
-                          <button class="btn _sm _secondary">Learn More</button>
-                        </div>
+                    <div class="connect__cards-aside">
+                      <div class="card connect__card-aside">
+                        <i class="mb-22">
+                          <svg width="46.91" height="50">
+                            <use xlink:href="assets/images/sprite.svg#cleaning-cat"></use>
+                          </svg>
+                        </i>
+                        <h5 class="mb-5">What’s Cleaning Service?</h5>
+                        <p class="font-12 color-secondary font-weight-medium mb-21">
+                          Lorem ipsum dolor sit amet, consetetur sadipscing
+                          elitr, sed diam nonumy eirmod.
+                        </p>
+                        <button class="btn _sm _secondary">Learn More</button>
                       </div>
                     </div>
                   </div>
-                  <div class="tab-pane" id="processing">
-                    <div class="connect__cards-wrap">
-                      <div class="card connect__cards-main">
-                        <div class="w-100">
-                          <table
-                            id="data-table-processing"
-                            class="datatable datatable_small _fields cleaning-table"
-                            style="width: 100%"
-                          >
-                            <thead>
-                              <tr>
-                                <th>List Name</th>
-                                <th class="nosort">Status</th>
-                                <th class="text-right">Total</th>
-                                <th class="text-right">Good</th>
-                                <th class="text-right">Bad</th>
-                                <th>Upload Date</th>
-                                <th class="nosort text-right pr-35">Action</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 1</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">157,912</td>
-                                <td class="text-right">3,934</td>
-                                <td class="text-right">151,025</td>
-                                <td>June 10, 2020</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                </div>
+                <div class="tab-pane" id="cleaned">
+                  <div class="connect__cards-wrap">
+                    <div class="card connect__cards-main">
+                      <div class="w-100">
+                        <table id="data-table-cleaned" class="datatable datatable_small _lists cleaning-table"
+                          style="width: 100%">
+                          <thead>
+                            <tr>
+                              <th>List Name</th>
+                              <th class="nosort">Status</th>
+                              <th>Total</th>
+                              <th>Good</th>
+                              <th>Bad</th>
+                              <th>Upload Date</th>
+                              <th class="nosort text-right">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 1</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>157,912</td>
+                              <td>3,934</td>
+                              <td>151,025</td>
+                              <td>June 10, 2020</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a
-                                    href="#"
-                                    class="red-text font-weight-semibold"
-                                    >Laundy list 2</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _danger-bg"
-                                    >new</span
-                                  >
-                                </td>
-                                <td class="text-right">83,053</td>
-                                <td class="text-right">-</td>
-                                <td class="text-right">-</td>
-                                <td>Apr 8, 2020</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="red-text font-weight-semibold">Laundy list 2</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _danger-bg">new</span>
+                              </td>
+                              <td>83,053</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Apr 8, 2020</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a
-                                    href="#"
-                                    class="blue-text font-weight-semibold"
-                                    >Laundy list 3</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _blue"
-                                    >processing</span
-                                  >
-                                </td>
-                                <td class="text-right">46,536</td>
-                                <td class="text-right">-</td>
-                                <td class="text-right">-</td>
-                                <td>Sep 29, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0 disabled"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="blue-text font-weight-semibold">Laundy list 3</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _blue">processing</span>
+                              </td>
+                              <td>46,536</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Sep 29, 2019</td>
+                              <td>
+                                <div
+                                  class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0 disabled">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 4</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">974</td>
-                                <td class="text-right">812</td>
-                                <td class="text-right">162</td>
-                                <td>Dec 4, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 4</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>974</td>
+                              <td>812</td>
+                              <td>162</td>
+                              <td>Dec 4, 2019</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 5</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">46,536</td>
-                                <td class="text-right">19,752</td>
-                                <td class="text-right">27,530</td>
-                                <td>Dec 1, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="link font-weight-semibold">Laundy list 5</a>
+                              </td>
+                              <td>
+                                <span class="table-status _small _yellow">cleaned</span>
+                              </td>
+                              <td>46,536</td>
+                              <td>19,752</td>
+                              <td>27,530</td>
+                              <td>Dec 1, 2019</td>
+                              <td>
+                                <div class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0">
+                                  <button type="button" class="btn _sm _secondary">
+                                    Move to My Lists
+                                  </button>
+                                  <div class="dropdown _actions">
+                                    <button type="button" class="btn _sm _primary ml-4 px-6" data-toggle="dropdown"
+                                      aria-expanded="true">
+                                      <svg width="2" height="10">
+                                        <use xlink:href="assets/images/sprite.svg#dots"></use>
+                                      </svg>
                                     </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
+                                    <div class="dropdown-menu dropdown-menu-right _actions mt-5">
+                                      <div class="dropdown-menu-inner">
+                                        <a class="dropdown-item" href="#">Action Item 1</a>
+                                        <a class="dropdown-item" href="#">Action Item 2</a>
+                                        <a class="dropdown-item" href="#">Action Item 3</a>
                                       </div>
                                     </div>
                                   </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-
-                      <div class="connect__cards-aside">
-                        <div class="card connect__card-aside">
-                          <i class="mb-22">
-                            <svg width="46.91" height="50">
-                              <use
-                                xlink:href="assets/images/sprite.svg#cleaning-cat"
-                              ></use>
-                            </svg>
-                          </i>
-                          <h5 class="mb-5">What’s Cleaning Service?</h5>
-                          <p
-                            class="font-12 color-secondary font-weight-medium mb-21"
-                          >
-                            Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod.
-                          </p>
-                          <button class="btn _sm _secondary">Learn More</button>
-                        </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
-                  </div>
-                  <div class="tab-pane" id="cleaned">
-                    <div class="connect__cards-wrap">
-                      <div class="card connect__cards-main">
-                        <div class="w-100">
-                          <table
-                            id="data-table-cleaned"
-                            class="datatable datatable_small _fields cleaning-table"
-                            style="width: 100%"
-                          >
-                            <thead>
-                              <tr>
-                                <th>List Name</th>
-                                <th class="nosort">Status</th>
-                                <th class="text-right">Total</th>
-                                <th class="text-right">Good</th>
-                                <th class="text-right">Bad</th>
-                                <th>Upload Date</th>
-                                <th class="nosort text-right pr-35">Action</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 1</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">157,912</td>
-                                <td class="text-right">3,934</td>
-                                <td class="text-right">151,025</td>
-                                <td>June 10, 2020</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
-                                    </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
 
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a
-                                    href="#"
-                                    class="red-text font-weight-semibold"
-                                    >Laundy list 2</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _danger-bg"
-                                    >new</span
-                                  >
-                                </td>
-                                <td class="text-right">83,053</td>
-                                <td class="text-right">-</td>
-                                <td class="text-right">-</td>
-                                <td>Apr 8, 2020</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
-                                    </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
-
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a
-                                    href="#"
-                                    class="blue-text font-weight-semibold"
-                                    >Laundy list 3</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _blue"
-                                    >processing</span
-                                  >
-                                </td>
-                                <td class="text-right">46,536</td>
-                                <td class="text-right">-</td>
-                                <td class="text-right">-</td>
-                                <td>Sep 29, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0 disabled"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
-                                    </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
-
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 4</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">974</td>
-                                <td class="text-right">812</td>
-                                <td class="text-right">162</td>
-                                <td>Dec 4, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
-                                    </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
-
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <a href="#" class="link font-weight-semibold"
-                                    >Laundy list 5</a
-                                  >
-                                </td>
-                                <td>
-                                  <span class="table-status _small _yellow"
-                                    >cleaned</span
-                                  >
-                                </td>
-                                <td class="text-right">46,536</td>
-                                <td class="text-right">19,752</td>
-                                <td class="text-right">27,530</td>
-                                <td>Dec 1, 2019</td>
-                                <td>
-                                  <div
-                                    class="ml-30 d-flex align-items-center justify-content-end h-100 mt-12 mt-lg-0"
-                                  >
-                                    <button
-                                      type="button"
-                                      class="btn _sm _secondary"
-                                    >
-                                      Move to My Lists
-                                    </button>
-                                    <div class="dropdown _actions">
-                                      <button
-                                        type="button"
-                                        class="btn _sm _primary ml-4 px-6"
-                                        data-toggle="dropdown"
-                                        aria-expanded="true"
-                                      >
-                                        <svg width="2" height="10">
-                                          <use
-                                            xlink:href="assets/images/sprite.svg#dots"
-                                          ></use>
-                                        </svg>
-                                      </button>
-
-                                      <div
-                                        class="dropdown-menu dropdown-menu-right _actions mt-5"
-                                      >
-                                        <div class="dropdown-menu-inner">
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 1</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 2</a
-                                          >
-                                          <a class="dropdown-item" href="#"
-                                            >Action Item 3</a
-                                          >
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-
-                      <div class="connect__cards-aside">
-                        <div class="card connect__card-aside">
-                          <i class="mb-22">
-                            <svg width="46.91" height="50">
-                              <use
-                                xlink:href="assets/images/sprite.svg#cleaning-cat"
-                              ></use>
-                            </svg>
-                          </i>
-                          <h5 class="mb-5">What’s Cleaning Service?</h5>
-                          <p
-                            class="font-12 color-secondary font-weight-medium mb-21"
-                          >
-                            Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod.
-                          </p>
-                          <button class="btn _sm _secondary">Learn More</button>
-                        </div>
+                    <div class="connect__cards-aside">
+                      <div class="card connect__card-aside">
+                        <i class="mb-22">
+                          <svg width="46.91" height="50">
+                            <use xlink:href="assets/images/sprite.svg#cleaning-cat"></use>
+                          </svg>
+                        </i>
+                        <h5 class="mb-5">What’s Cleaning Service?</h5>
+                        <p class="font-12 color-secondary font-weight-medium mb-21">
+                          Lorem ipsum dolor sit amet, consetetur sadipscing
+                          elitr, sed diam nonumy eirmod.
+                        </p>
+                        <button class="btn _sm _secondary">Learn More</button>
                       </div>
                     </div>
                   </div>
@@ -2071,186 +1454,157 @@
               </div>
             </div>
           </div>
-          <!-- container -->
         </div>
-        <!-- content -->
+        <!-- container -->
       </div>
-
-      <!-- ============================================================== -->
-      <!-- End Page content -->
-      <!-- ============================================================== -->
-
-      <a href="#" class="btn_back">
-        <svg width="8" height="8">
-          <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
-        </svg>
-      </a>
-
-      <div
-        id="create-custom-field"
-        class="modal fade"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myModalLabel"
-        aria-hidden="true"
-        style="display: none"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-            >
-              <svg width="8" height="8">
-                <use xlink:href="assets/images/sprite.svg#cross"></use>
-              </svg>
-            </button>
-            <div class="modal-body">
-              <h4 class="mb-13">New Custom Field</h4>
-              <div class="new-field-inputs">
-                <div class="form-control__wrap">
-                  <input
-                    type="text"
-                    placeholder="Name Your Field"
-                    class="form-control"
-                  />
-                </div>
-                <select class="form-control _select2-lg mb-14" required>
-                  <option></option>
-                  <option value="test-1">Campaign</option>
-                  <option value="test-2">Option 2</option>
-                </select>
-              </div>
-              <div class="switcher__wrap mb-20">
-                <label for="switch1" class="switcher__label">
-                  <span>Make this field public</span>
-                </label>
-                <input type="checkbox" id="switch1" class="switcher" checked />
-                <label for="switch1" class="switcher__toggle"></label>
-              </div>
-              <button class="btn _lg _primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.modal -->
-
-      <div
-        id="edit-custom-field"
-        class="modal fade"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myModalLabel"
-        aria-hidden="true"
-        style="display: none"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-            >
-              <svg width="8" height="8">
-                <use xlink:href="assets/images/sprite.svg#cross"></use>
-              </svg>
-            </button>
-            <div class="modal-body">
-              <h4 class="mb-13">Edit Custom Field</h4>
-              <div class="new-field-inputs">
-                <div class="form-control__wrap">
-                  <input
-                    type="text"
-                    placeholder="Name Your Field"
-                    class="form-control"
-                    value="Custom Field Name"
-                  />
-                </div>
-                <select class="form-control _select2-lg mb-14" required>
-                  <option></option>
-                  <option value="test-1" selected>Text</option>
-                  <option value="test-2">Date</option>
-                </select>
-              </div>
-              <div class="switcher__wrap mb-20">
-                <label for="switch3" class="switcher__label">
-                  <span>Make this field public</span>
-                </label>
-                <input type="checkbox" id="switch3" class="switcher" checked />
-                <label for="switch3" class="switcher__toggle"></label>
-              </div>
-              <button class="btn _lg _primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.modal -->
+      <!-- content -->
     </div>
-    <!-- END wrapper -->
 
-    <!-- App js -->
-    <script src="assets/js/vendor.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
 
-    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="assets/libs/select2/js/select2.min.js"></script>
+    <a href="#" class="btn_back">
+      <svg width="8" height="8">
+        <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
+      </svg>
+    </a>
 
-    <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
-    <script src="assets/js/dataTable.js"></script>
+    <div id="create-custom-field" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true" style="display: none">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <div class="modal-body">
+            <h4 class="mb-13">New Custom Field</h4>
+            <div class="new-field-inputs">
+              <div class="form-control__wrap">
+                <input type="text" placeholder="Name Your Field" class="form-control" />
+              </div>
+              <select class="form-control _select2-lg mb-14" required>
+                <option></option>
+                <option value="test-1">Campaign</option>
+                <option value="test-2">Option 2</option>
+              </select>
+            </div>
+            <div class="switcher__wrap mb-20">
+              <label for="switch1" class="switcher__label">
+                <span>Make this field public</span>
+              </label>
+              <input type="checkbox" id="switch1" class="switcher" checked />
+              <label for="switch1" class="switcher__toggle"></label>
+            </div>
+            <button class="btn _lg _primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal -->
 
-    <script>
-      // Datatables settings
+    <div id="edit-custom-field" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true" style="display: none">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <svg width="8" height="8">
+              <use xlink:href="assets/images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <div class="modal-body">
+            <h4 class="mb-13">Edit Custom Field</h4>
+            <div class="new-field-inputs">
+              <div class="form-control__wrap">
+                <input type="text" placeholder="Name Your Field" class="form-control" value="Custom Field Name" />
+              </div>
+              <select class="form-control _select2-lg mb-14" required>
+                <option></option>
+                <option value="test-1" selected>Text</option>
+                <option value="test-2">Date</option>
+              </select>
+            </div>
+            <div class="switcher__wrap mb-20">
+              <label for="switch3" class="switcher__label">
+                <span>Make this field public</span>
+              </label>
+              <input type="checkbox" id="switch3" class="switcher" checked />
+              <label for="switch3" class="switcher__toggle"></label>
+            </div>
+            <button class="btn _lg _primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal -->
+  </div>
+  <!-- END wrapper -->
 
-      const DEFAULT_SELECT_OPTIONS = {
-        quality: [1, 2, 3, 4, 5],
-        status: ['active', 'passive'],
-        createdDate: [
-          {
-            label: 'Last Week',
-            value: 'week',
-          },
-          {
-            label: 'Last Month',
-            value: 'month',
-          },
-          {
-            label: 'Last Year',
-            value: 'year',
-          },
+  <!-- App js -->
+  <script src="assets/js/vendor.min.js"></script>
+
+  <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="assets/libs/select2/js/select2.min.js"></script>
+
+  <!-- App js -->
+  <script src="assets/js/app.min.js"></script>
+  <script src="assets/js/dataTable.js"></script>
+
+  <script>
+    // Datatables settings
+
+    const DEFAULT_SELECT_OPTIONS = {
+      quality: [1, 2, 3, 4, 5],
+      status: ['active', 'passive'],
+      createdDate: [{
+          label: 'Last Week',
+          value: 'week',
+        },
+        {
+          label: 'Last Month',
+          value: 'month',
+        },
+        {
+          label: 'Last Year',
+          value: 'year',
+        },
+      ],
+    };
+
+    $(document).ready(function () {
+      const tableConfig = {
+        scrollX: true,
+        scrollY: 220,
+        scrollCollapse: true,
+        paging: false,
+        order: [
+          [2, 'desc']
         ],
+        fixedColumns: {
+          rightColumns: 1,
+        },
+        aoColumnDefs: [{
+          bSortable: false,
+          aTargets: ['nosort'],
+        }, ],
+        sDom: 't',
+      };
+      const select2Options = {
+        placeholder: 'Select Data Type',
+        allowClear: true,
+        minimumResultsForSearch: -1,
       };
 
-      $(document).ready(function () {
-        const tableConfig = {
-          scrollX: true,
-          scrollY: 220,
-          scrollCollapse: true,
-          paging: false,
-          order: [[2, 'desc']],
-          aoColumnDefs: [
-            {
-              bSortable: false,
-              aTargets: ['nosort'],
-            },
-          ],
-          sDom: 't',
-        };
-        const select2Options = {
-          placeholder: 'Select Data Type',
-          allowClear: true,
-          minimumResultsForSearch: -1,
-        };
+      createDataTable('#data-table-all', tableConfig, false);
+      createDataTable('#data-table-new', tableConfig, false);
+      createDataTable('#data-table-processing', tableConfig, false);
+      createDataTable('#data-table-cleaned', tableConfig, false);
+      createSelect2ByClass('._select2-lg', select2Options);
+    });
+  </script>
+</body>
 
-        createDataTable('#data-table-all', tableConfig, false);
-        createDataTable('#data-table-new', tableConfig, false);
-        createDataTable('#data-table-processing', tableConfig, false);
-        createDataTable('#data-table-cleaned', tableConfig, false);
-        createSelect2ByClass('._select2-lg', select2Options);
-      });
-    </script>
-  </body>
 </html>
