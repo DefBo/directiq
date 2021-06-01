@@ -136,4 +136,5 @@ const createDataTable = (id, restConfig, isFixedCollumns) => {
     );
 
   setDataTableActions(table);
+  adjustDataTableColumns();
 };
