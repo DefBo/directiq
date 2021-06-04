@@ -14768,7 +14768,10 @@ div.dataTables_wrapper div.dataTables_info {
 .DTFC_RightBodyLiner {
   padding-right: 0px !important; }
 
-._lists th:nth-child(3), ._lists th:nth-child(4), ._lists th:nth-child(5), ._lists td:nth-child(3), ._lists td:nth-child(4), ._lists td:nth-child(5) {
+._lists th:nth-child(3), ._lists th:nth-child(4), ._lists th:nth-child(5),
+._lists td:nth-child(3),
+._lists td:nth-child(4),
+._lists td:nth-child(5) {
   text-align: right; }
 
 @media (max-width: 1124px) {
