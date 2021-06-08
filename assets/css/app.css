@@ -9604,9 +9604,7 @@ button.close {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default
-.select2-selection--single
-.select2-selection__placeholder {
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -13673,156 +13671,52 @@ button {
   line-height: 1;
   margin-right: 20px; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(3) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(3) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(4) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(4) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(5) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(5) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(6) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(6) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(7) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(7) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(8) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(8) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(9) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(9) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(10) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(10) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(3) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(3) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(4) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(4) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(5) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(5) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(6) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(6) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(7) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(7) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(8) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(8) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(9) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(9) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(10) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(10) {
   text-align: center; }
 
 .white {
@@ -13876,6 +13770,151 @@ table.dataTable thead .sorting_asc {
 
 #select2-requestCulture_RequestCulture_UICulture_Name-results .select2-results__option {
   margin: 0px; }
+
+.reports-page .reports {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px; }
+  @media (max-width: 991px) {
+    .reports-page .reports {
+      flex-direction: column; } }
+  .reports-page .reports-left {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 42px; }
+    @media (max-width: 991px) {
+      .reports-page .reports-left {
+        margin-right: 0rem;
+        margin-bottom: 32px; } }
+  .reports-page .reports-right {
+    border: 1px solid rgba(112, 112, 112, 0.5);
+    width: calc(100% - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%; }
+    @media (max-width: 1240px) {
+      .reports-page .reports-right {
+        align-items: flex-start; } }
+    .reports-page .reports-right__big {
+      color: #212b35;
+      font-weight: 400;
+      padding: 40px;
+      width: calc(100% - 250px);
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column; }
+      .reports-page .reports-right__big-item p {
+        font-size: 12px;
+        line-height: 1.33;
+        margin: 1px 0px; }
+        .reports-page .reports-right__big-item p b {
+          margin-left: 10px; }
+        .reports-page .reports-right__big-item p:last-child {
+          margin-bottom: 0px; }
+      .reports-page .reports-right__big-collumns {
+        display: flex;
+        align-items: flex-start;
+        width: 100%; }
+        .reports-page .reports-right__big-collumns .reports-right__big-item:first-child {
+          width: calc(100% / 3); }
+          @media (max-width: 1500px) {
+            .reports-page .reports-right__big-collumns .reports-right__big-item:first-child {
+              width: calc(100% / 12 * 5); } }
+          @media (max-width: 1240px) {
+            .reports-page .reports-right__big-collumns .reports-right__big-item:first-child {
+              width: 100%; } }
+        .reports-page .reports-right__big-collumns .reports-right__big-item:nth-child(2) {
+          width: calc(100% / 12 * 3); }
+          @media (max-width: 1500px) {
+            .reports-page .reports-right__big-collumns .reports-right__big-item:nth-child(2) {
+              width: calc(100% / 12 * 4); } }
+          @media (max-width: 1240px) {
+            .reports-page .reports-right__big-collumns .reports-right__big-item:nth-child(2) {
+              width: 100%; } }
+        .reports-page .reports-right__big-collumns .reports-right__big-item:nth-child(3) {
+          width: calc(100% / 12 * 5); }
+          @media (max-width: 1500px) {
+            .reports-page .reports-right__big-collumns .reports-right__big-item:nth-child(3) {
+              width: calc(100% / 12 * 3); } }
+          @media (max-width: 1240px) {
+            .reports-page .reports-right__big-collumns .reports-right__big-item:nth-child(3) {
+              width: 100%; } }
+        @media (max-width: 1240px) {
+          .reports-page .reports-right__big-collumns {
+            flex-direction: column; } }
+      .reports-page .reports-right__big-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 18px; }
+        @media (max-width: 1040px) {
+          .reports-page .reports-right__big-row {
+            flex-direction: column;
+            align-items: flex-start; } }
+      @media (max-width: 991px) {
+        .reports-page .reports-right__big {
+          width: calc(100% - 80px);
+          order: 2; } }
+    .reports-page .reports-right__small {
+      height: 213px;
+      width: 174px;
+      margin-left: auto;
+      position: relative; }
+      @media (max-width: 991px) {
+        .reports-page .reports-right__small {
+          width: 100%;
+          height: 380px; }
+          .reports-page .reports-right__small img {
+            -o-object-position: top;
+               object-position: top;
+            -o-object-fit: cover;
+               object-fit: cover; } }
+      .reports-page .reports-right__small img {
+        width: calc(100% + 1px);
+        height: calc(100% + 2px);
+        position: absolute;
+        content: '';
+        top: -1px;
+        right: -1px; }
+    @media (max-width: 991px) {
+      .reports-page .reports-right {
+        width: 100%;
+        flex-direction: column; } }
+
+.reports-page .organization {
+  font-size: 36px; }
+
+.reports-page .tags {
+  display: flex;
+  align-items: center;
+  margin-left: 3px; }
+  @media (max-width: 1040px) {
+    .reports-page .tags {
+      margin-left: 0px; } }
+  .reports-page .tags-item {
+    border: 1px solid #c7d8e4;
+    padding: 1px 4px;
+    color: #212b35;
+    font-size: 12px;
+    margin-right: 14px;
+    font-weight: 600; }
+    @media (max-width: 1040px) {
+      .reports-page .tags-item {
+        margin-top: 10px; } }
+
+.fixed-modal {
+  position: fixed;
+  z-index: 10000; }
+  @media (min-width: 768px) {
+    .fixed-modal {
+      left: 0px; } }
 
 th,
 td {

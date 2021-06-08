@@ -1,315 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: 'Proxima Nova';
+        src: url('/assets/fonts/ProximaNova-Regular.eot');
+        src: local('Cerebri-sans Light'),
+          url('/assets/fonts/ProximaNova-Regular.woff') format('woff');
+        font-weight: 400;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Document</title>
-  <style>
-    @font-face {
-      font-family: 'Proxima Nova';
-      src: url('/assets/fonts/ProximaNova-Regular.eot');
-      src: local('Cerebri-sans Light'),
-        url('/assets/fonts/ProximaNova-Regular.woff') format('woff');
-      font-weight: 400;
-    }
+      @font-face {
+        font-family: 'Proxima Nova';
+        src: url('/assets/fonts/ProximaNova-Medium.eot');
+        src: local('Cerebri-sans Light'),
+          url('/assets/fonts/ProximaNova-Medium.woff') format('woff');
+        font-weight: 500;
+      }
 
-    @font-face {
-      font-family: 'Proxima Nova';
-      src: url('/assets/fonts/ProximaNova-Medium.eot');
-      src: local('Cerebri-sans Light'),
-        url('/assets/fonts/ProximaNova-Medium.woff') format('woff');
-      font-weight: 500;
-    }
+      @font-face {
+        font-family: 'Proxima Nova';
+        src: url('/assets/fonts/ProximaNova-Semibold.eot');
+        src: local('Cerebri-sans Light'),
+          url('/assets/fonts/ProximaNova-Semibold.woff') format('woff');
+        font-weight: 600;
+      }
 
-    @font-face {
-      font-family: 'Proxima Nova';
-      src: url('/assets/fonts/ProximaNova-Semibold.eot');
-      src: local('Cerebri-sans Light'),
-        url('/assets/fonts/ProximaNova-Semibold.woff') format('woff');
-      font-weight: 600;
-    }
+      @font-face {
+        font-family: 'Proxima Nova';
+        src: url('/assets/fonts/ProximaNova-Bold.eot');
+        src: local('Cerebri-sans Light'),
+          url('/assets/fonts/ProximaNova-Bold.woff') format('woff');
+        font-weight: 700;
+      }
 
-    @font-face {
-      font-family: 'Proxima Nova';
-      src: url('/assets/fonts/ProximaNova-Bold.eot');
-      src: local('Cerebri-sans Light'),
-        url('/assets/fonts/ProximaNova-Bold.woff') format('woff');
-      font-weight: 700;
-    }
+      html {
+        font-size: 10px;
+      }
 
-    html {
-      font-size: 10px;
-    }
+      body {
+        font-family: 'Proxima Nova';
+        margin: 0rem;
+      }
 
-    body {
-      font-family: 'Proxima Nova';
-      margin: 0rem;
-    }
-
-    .reports {
-      margin: 4rem 2rem 4rem 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .reports-left {
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      border: 0.3rem solid #0020ff;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 4.2rem;
-    }
-
-    .reports-right {
-      border: 0.1rem solid rgba(112, 112, 112, 0.5);
-      width: calc(100% - 20rem);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-    }
-
-    @media(max-width: 991px) {
       .reports {
-        flex-direction: column;
+        margin: 4rem 2rem 4rem 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
       .reports-left {
-        margin-right: 0rem;
-        margin-bottom: 3.2rem;
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
+        border: 0.3rem solid #0020ff;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 4.2rem;
       }
 
       .reports-right {
-        width: 100%;
-        flex-direction: column;
+        border: 0.1rem solid rgba(112, 112, 112, 0.5);
+        width: calc(100% - 20rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
       }
-    }
 
-    .reports-left__sign {
-      color: #0000ff;
-      font-size: 6.4rem;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-    }
+      @media (max-width: 991px) {
+        .reports {
+          flex-direction: column;
+        }
 
-    .reports-left__logo {
-      position: absolute;
-      content: '';
-      top: -1.6rem;
-      width: 4.5rem;
-      height: 3.5rem;
-      left: calc(50% - 2.25rem);
-    }
+        .reports-left {
+          margin-right: 0rem;
+          margin-bottom: 3.2rem;
+        }
 
-    .reports-left__logo img {
-      width: 100%;
-      height: 100%;
-    }
+        .reports-right {
+          width: 100%;
+          flex-direction: column;
+        }
+      }
 
-    .reports-right__small {
-      height: 21.3rem;
-      width: 17.4rem;
-      margin-left: auto;
-      position: relative;
-    }
+      .reports-left__sign {
+        color: #0000ff;
+        font-size: 6.4rem;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
 
-    .reports-right__small img {
-      width: calc(100% + 0.1rem);
-      height: calc(100% + 0.2rem);
-      position: absolute;
-      content: '';
-      top: -0.1rem;
-      right: -0.1rem;
-    }
+      .reports-left__logo {
+        position: absolute;
+        content: '';
+        top: -1.6rem;
+        width: 4.5rem;
+        height: 3.5rem;
+        left: calc(50% - 2.25rem);
+      }
 
-    .reports-right__big {
-      color: #212b35;
-      font-weight: 400;
-      padding: 4rem;
-      width: calc(100% - 25rem);
-      height: 100%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-direction: column;
-    }
-
-    @media(max-width: 991px) {
-      .reports-right__big {
-        width: calc(100% - 8rem);
-        order: 2;
+      .reports-left__logo img {
+        width: 100%;
+        height: 100%;
       }
 
       .reports-right__small {
-        width: 100%;
-        height: 38rem;
+        height: 21.3rem;
+        width: 17.4rem;
+        margin-left: auto;
+        position: relative;
       }
 
       .reports-right__small img {
-        object-position: top;
-        object-fit: cover;
+        width: calc(100% + 0.1rem);
+        height: calc(100% + 0.2rem);
+        position: absolute;
+        content: '';
+        top: -0.1rem;
+        right: -0.1rem;
       }
-    }
 
-    .organization {
-      font-size: 3.6rem;
-    }
-
-    .reports-right__big-row {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.8rem;
-    }
-
-    .tags {
-      display: flex;
-      align-items: center;
-      margin-left: 3rem;
-    }
-
-    .tags-item {
-      border: 0.1rem solid #c7d8e4;
-      padding: 0.1rem 0.4rem;
-      color: #212b35;
-      font-size: 1.2rem;
-      margin-right: 1.4rem;
-      font-weight: 600;
-    }
-
-    @media(max-width: 1040px) {
-      .reports-right__big-row {
-        flex-direction: column;
+      .reports-right__big {
+        color: #212b35;
+        font-weight: 400;
+        padding: 4rem;
+        width: calc(100% - 25rem);
+        height: 100%;
+        display: flex;
         align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+
+      @media (max-width: 991px) {
+        .reports-right__big {
+          width: calc(100% - 8rem);
+          order: 2;
+        }
+
+        .reports-right__small {
+          width: 100%;
+          height: 38rem;
+        }
+
+        .reports-right__small img {
+          object-position: top;
+          object-fit: cover;
+        }
+      }
+
+      .organization {
+        font-size: 3.6rem;
+      }
+
+      .reports-right__big-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.8rem;
       }
 
       .tags {
-        margin-left: 0rem;
+        display: flex;
+        align-items: center;
+        margin-left: 3rem;
       }
 
       .tags-item {
-        margin-top: 1rem;
+        border: 0.1rem solid #c7d8e4;
+        padding: 0.1rem 0.4rem;
+        color: #212b35;
+        font-size: 1.2rem;
+        margin-right: 1.4rem;
+        font-weight: 600;
       }
-    }
 
-    .reports-right__big-collumns {
-      display: flex;
-      align-items: flex-start;
-      width: 100%;
-    }
+      @media (max-width: 1040px) {
+        .reports-right__big-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
 
-    @media(max-width: 1240px) {
+        .tags {
+          margin-left: 0rem;
+        }
+
+        .tags-item {
+          margin-top: 1rem;
+        }
+      }
+
       .reports-right__big-collumns {
-        flex-direction: column;
-      }
-
-      .reports-right {
+        display: flex;
         align-items: flex-start;
+        width: 100%;
       }
-    }
 
-    .reports-right__big-collumns .reports-right__big-item:first-child {
-      width: calc(100% / 3);
-    }
+      @media (max-width: 1240px) {
+        .reports-right__big-collumns {
+          flex-direction: column;
+        }
 
-    .reports-right__big-collumns .reports-right__big-item:nth-child(2) {
-      width: calc(100% / 12 * 3);
-    }
+        .reports-right {
+          align-items: flex-start;
+        }
+      }
 
-    .reports-right__big-collumns .reports-right__big-item:nth-child(3) {
-      width: calc(100% / 12 * 5);
-    }
-
-    @media(max-width: 1500px) {
       .reports-right__big-collumns .reports-right__big-item:first-child {
+        width: calc(100% / 3);
+      }
+
+      .reports-right__big-collumns .reports-right__big-item:nth-child(2) {
+        width: calc(100% / 12 * 3);
+      }
+
+      .reports-right__big-collumns .reports-right__big-item:nth-child(3) {
         width: calc(100% / 12 * 5);
       }
 
-      .reports-right__big-collumns .reports-right__big-item:nth-child(2) {
-        width: calc(100% / 12 * 4);
+      @media (max-width: 1500px) {
+        .reports-right__big-collumns .reports-right__big-item:first-child {
+          width: calc(100% / 12 * 5);
+        }
+
+        .reports-right__big-collumns .reports-right__big-item:nth-child(2) {
+          width: calc(100% / 12 * 4);
+        }
+
+        .reports-right__big-collumns .reports-right__big-item:nth-child(3) {
+          width: calc(100% / 12 * 3);
+        }
       }
 
-      .reports-right__big-collumns .reports-right__big-item:nth-child(3) {
-        width: calc(100% / 12 * 3);
+      @media (max-width: 1240px) {
+        .reports-right__big-collumns .reports-right__big-item:first-child {
+          width: 100%;
+        }
+
+        .reports-right__big-collumns .reports-right__big-item:nth-child(2) {
+          width: 100%;
+        }
+
+        .reports-right__big-collumns .reports-right__big-item:nth-child(3) {
+          width: 100%;
+        }
       }
-    }
 
-    @media(max-width: 1240px) {
-      .reports-right__big-collumns .reports-right__big-item:first-child {
-        width: 100%;
+      .reports-right__big-item p {
+        font-size: 1.2rem;
+        line-height: 1.33;
+        margin: 1rem 0rem;
       }
 
-      .reports-right__big-collumns .reports-right__big-item:nth-child(2) {
-        width: 100%;
+      .reports-right__big-item p b {
+        margin-left: 1rem;
       }
 
-      .reports-right__big-collumns .reports-right__big-item:nth-child(3) {
-        width: 100%;
+      .reports-right__big-item p:last-child {
+        margin-bottom: 0rem;
       }
-    }
+    </style>
+  </head>
 
-    .reports-right__big-item p {
-      font-size: 1.2rem;
-      line-height: 1.33;
-      margin: 1rem 0rem;
-    }
-
-    .reports-right__big-item p b {
-      margin-left: 1rem;
-    }
-
-    .reports-right__big-item p:last-child {
-      margin-bottom: 0rem;
-    }
-  </style>
-</head>
-
-<body>
-  <section class="reports">
-    <div class="reports-left">
-      <div class="reports-left__logo">
-        <img src="assets/images/logo.svg" alt="#" />
+  <body>
+    <section class="reports">
+      <div class="reports-left">
+        <div class="reports-left__logo">
+          <img src="assets/images/logo.svg" alt="#" />
+        </div>
+        <div class="reports-left__sign">A</div>
       </div>
-      <div class="reports-left__sign">A</div>
-    </div>
-    <div class="reports-right">
-      <div class="reports-right__big">
-        <div class="reports-right__big-row">
-          <div class="organization">Dodo’s Big Launch</div>
-          <div class="tags">
-            <div class="tags-item">member</div>
-            <div class="tags-item">sale</div>
-            <div class="tags-item">regular</div>
+      <div class="reports-right">
+        <div class="reports-right__big">
+          <div class="reports-right__big-row">
+            <div class="organization">Dodo’s Big Launch</div>
+            <div class="tags">
+              <div class="tags-item">member</div>
+              <div class="tags-item">sale</div>
+              <div class="tags-item">regular</div>
+            </div>
+          </div>
+          <div class="reports-right__big-collumns">
+            <div class="reports-right__big-item">
+              <p>Subject Line: <b>Hey %%firstname%% how are you?</b></p>
+              <p>Preheader: <b>Final Opportunity to Grab Discount</b></p>
+            </div>
+            <div class="reports-right__big-item">
+              <p>From: <b>Dodo Design / newsletter@selfi.net</b></p>
+              <p>Footer and Forms: <b>English</b></p>
+            </div>
+            <div class="reports-right__big-item">
+              <p>Delivered: <b>Today 2:45 PM</b></p>
+              <p>Google Analytics Tracking: <b>ON</b></p>
+            </div>
           </div>
         </div>
-        <div class="reports-right__big-collumns">
-          <div class="reports-right__big-item">
-            <p>Subject Line: <b>Hey %%firstname%% how are you?</b></p>
-            <p>Preheader: <b>Final Opportunity to Grab Discount</b></p>
-          </div>
-          <div class="reports-right__big-item">
-            <p>From: <b>Dodo Design / newsletter@selfi.net</b></p>
-            <p>Footer and Forms: <b>English</b></p>
-          </div>
-          <div class="reports-right__big-item">
-            <p>Delivered: <b>Today 2:45 PM</b></p>
-            <p>Google Analytics Tracking: <b>ON</b></p>
-          </div>
+        <div class="reports-right__small">
+          <img src="assets/images/template-3.jpg" alt="#" />
         </div>
       </div>
-      <div class="reports-right__small">
-        <img src="assets/images/template-3.jpg" alt="#" />
-      </div>
-    </div>
-  </section>
-</body>
-
+    </section>
+  </body>
 </html>
