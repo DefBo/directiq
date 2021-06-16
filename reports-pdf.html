@@ -1,687 +1,1104 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Reports PDF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Reports PDF</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta content="Direct IQ frontend development version" name="description" />
-  <meta content="Coderthemes" name="author" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- App favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png?v=M4K2b5JM9m" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png?v=M4K2b5JM9m" />
-  <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
-  <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m" color="#5bbad5" />
-  <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
-  <meta name="msapplication-TileColor" content="#0000ff" />
-  <meta name="msapplication-config" content="assets/images/browserconfig.xml?v=M4K2b5JM9m" />
-  <meta name="theme-color" content="#ffffff" />
+    <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
 
-  <!-- App css -->
-  <link
-    href="assets/css/bootstrap.min.css"
-    rel="stylesheet"
-    type="text/css"
-    id="bs-default-stylesheet"
-  />
-  <link
-    href="assets/css/app.min.css"
-    rel="stylesheet"
-    type="text/css"
-    id="app-default-stylesheet"
-  />
+  </head>
 
-</head>
+  <body data-layout-mode="two-column" class="animation-stopper">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
-<body data-layout-mode="two-column" class="animation-stopper">
-  <!-- Begin page -->
-  <div id="wrapper">
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
-
-    <div class="content-page m-0 reports-page bg-white">
-      <div class="content">
-        <!-- Start Content-->
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <section class="reports">
-                <div class="reports-left">
-                  <svg width="150" height="150">
-                    <use xlink:href="assets/images/sprite.svg#logo"></use>
-                  </svg>
-                </div>
-                <div class="reports-right">
-                  <div class="reports-right__big">
-                    <div class="reports-right__big-row">
-                      <div class="organization">Dodo’s Big Launch</div>
-                      <div class="tags">
-                        <div class="tags-item">member</div>
-                        <div class="tags-item">sale</div>
-                        <div class="tags-item">regular</div>
-                      </div>
-                    </div>
-                    <div class="reports-right__big-collumns">
-                      <div class="reports-right__big-item">
-                        <p>
-                          Subject Line: <b>Hey %%firstname%% how are you?</b>
-                        </p>
-                        <p>
-                          Preheader: <b>Final Opportunity to Grab Discount</b>
-                        </p>
-                      </div>
-                      <div class="reports-right__big-item">
-                        <p>From: <b>Dodo Design / newsletter@selfi.net</b></p>
-                        <p>Footer and Forms: <b>English</b></p>
-                      </div>
-                      <div class="reports-right__big-item">
-                        <p>Delivered: <b>Today 2:45 PM</b></p>
-                        <p>Google Analytics Tracking: <b>ON</b></p>
-                      </div>
-                    </div>
+      <div class="content-page m-0 reports-page bg-white">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <section class="reports">
+                  <div class="reports-left">
+                    <svg width="150" height="150">
+                      <use xlink:href="assets/images/sprite.svg#logo"></use>
+                    </svg>
                   </div>
-                  <div class="reports-right__small">
-                    <img src="assets/images/template-3.jpg" alt="#" />
-                  </div>
-                </div>
-              </section>
-            </div>
-
-            <div class="col-12">
-              <div class="row">
-                <div class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pr-15">
-                  <div class="card mb-0 align-items-start flex-grow-1 bs-no border-grey">
-                    <div class="font-36 lh-1 mt-n4">491</div>
-                    <h5 class="mt-10">Recipients</h5>
-                    <div class="font-12 color-secondary font-weight-medium mt-14">
-                      <a href="#" class="link">491 unique contacts</a>
-                      accross <a href="#" class="link">2 lists</a> /
-                      <a href="#" class="link">1 segment</a> /
-                      <a href="#" class="link">3 tags</a>
-                    </div>
-                  </div>
-                  <div class="card pt-20 pb-24 border-grey border-top-0 align-items-start flex-grow-1 bs-no min-h-90">
-                    <div class="row w-100">
-                      <div class="col-4">
-                        <div class="d-flex flex-column align-items-start">
-                          <p class="font-weight-semibold mb-3 font-18">23</p>
-                          <a href="#" class="link">Bounces</a>
+                  <div class="reports-right">
+                    <div class="reports-right__big">
+                      <div class="reports-right__big-row">
+                        <div class="organization">Dodo’s Big Launch</div>
+                        <div class="tags">
+                          <div class="tags-item">member</div>
+                          <div class="tags-item">sale</div>
+                          <div class="tags-item">regular</div>
                         </div>
                       </div>
-                      <div class="col-4 pl-0 pl-sm-12">
-                        <div class="d-flex flex-column align-items-start">
-                          <p class="font-weight-semibold mb-3 font-18 color-danger">
-                            7
+                      <div class="reports-right__big-collumns">
+                        <div class="reports-right__big-item">
+                          <p>
+                            Subject Line: <b>Hey %%firstname%% how are you?</b>
                           </p>
-                          <a href="#" class="link">Unsubscribes</a>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="d-flex flex-column align-items-start">
-                          <p class="font-weight-semibold mb-3 font-18 color-danger">
-                            3
-                          </p>
-                          <a href="#" class="link">Complaints</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pr-15 pl-15">
-                  <div class="card mb-0 align-items-start flex-grow-1 border-grey bs-no">
-                    <div class="d-flex flex-row w-100">
-                      <div class="d-flex flex-column">
-                        <div class="font-36 lh-1 mt-n4">139</div>
-                        <h5 class="mt-10">Opens</h5>
-                        <div class="font-12 color-secondary font-weight-medium mt-14">
-                          <a href="#" class="link">139 opens </a> and
-                          <a href="#" class="link">85 unique opens</a>
-                        </div>
-                      </div>
-                      <div class="d-flex ml-auto">
-                        <div class="knob-wrap knob-wrap_up knob-wrap_percent">
-                          <input data-plugin="knob" data-width="75" data-height="75" data-linecap="round"
-                            data-fgColor="#00EBA8" value="73" data-displayInput="false" data-skin="tron"
-                            data-angleOffset="0" data-readOnly="true" data-thickness=".1" data-bgColor="#f6f9fc" />
-                          <div class="knob-text">
-                            <p class="font-18 font-weight-semibold">
-                              27<span class="font-18 font-weight-semibold">%</span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card pt-18 pb-20 align-items-start border-grey border-top-0 flex-grow-1 bs-no min-h-90">
-                    <div class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100">
-                      Audience Average: <b class="ml-12 mr-5">42.2%</b>
-                      <span class="d-flex align-items-center justify-content-center">
-                        <svg width="7.026" height="8.197" class="up">
-                          <use xlink:href="assets/images/sprite.svg#arrow-blue-up"></use>
-                        </svg>
-                      </span>
-                    </div>
-                    <div class="mb-0 font-weight-regular font-12 d-flex align-items-center w-100">
-                      Industry Average:
-
-                      <b class="ml-12 mr-5"><span class="mr-5">(Finance)</span> 23.9%</b>
-                      <span class="d-flex align-items-center justify-content-center">
-                        <svg width="7.026" height="8.197" class="down">
-                          <use xlink:href="assets/images/sprite.svg#arrow-red-down"></use>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pl-15">
-                  <div class="card mb-0 align-items-start flex-grow-1 border-grey bs-no">
-                    <div class="d-flex flex-row w-100">
-                      <div class="d-flex flex-column">
-                        <div class="font-36 lh-1 mt-n4">26</div>
-                        <h5 class="mt-10">Clicks</h5>
-                        <div class="font-12 color-secondary font-weight-medium mt-14">
-                          <a href="#" class="link">26 clicks </a> and
-                          <a href="#" class="link">15 unique clicks</a>
-                        </div>
-                      </div>
-                      <div class="d-flex ml-auto">
-                        <div class="knob-wrap knob-wrap_up knob-wrap_percent">
-                          <input data-plugin="knob" data-width="75" data-height="75" data-linecap="round"
-                            data-fgColor="#001EF5" value="9,7" data-displayInput="false" data-skin="tron"
-                            data-angleOffset="0" data-readOnly="true" data-thickness=".1" data-bgColor="#f6f9fc" />
-                          <div class="knob-text">
-                            <p class="font-18 font-weight-semibold">
-                              9,7<span class="font-18 font-weight-semibold">%</span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card pt-18 pb-20 align-items-start flex-grow-1 bs-no border-grey border-top-0 min-h-90">
-                    <div class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100">
-                      Audience Average: <b class="ml-12 mr-5">11.2%</b>
-                      <span class="d-flex align-items-center justify-content-center">
-                        <svg width="7.026" height="8.197" class="down">
-                          <use xlink:href="assets/images/sprite.svg#arrow-red-down"></use>
-                        </svg>
-                      </span>
-                    </div>
-                    <div class="mb-0 font-weight-regular font-12 d-flex align-items-center w-100">
-                      Industry Average:
-
-                      <b class="ml-12 mr-5"><span class="mr-5">(Finance)</span> 10.5%</b>
-                      <span class="d-flex align-items-center justify-content-center">
-                        <svg width="7.026" height="8.197" class="up">
-                          <use xlink:href="assets/images/sprite.svg#arrow-blue-up"></use>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="position-relative">
-                <div class="row no-gutters chart-wrap">
-                  <div class="col-md-12">
-                    <div class="card align-content-start border-grey">
-                      <div class="d-flex justify-content-between align-items-center flex-wrap mb-35">
-                        <h4 class="font-weight-semibold font-18 mb-8 mb-md-0 mr-8">
-                          Engagement Timeline
-                        </h4>
-                        <div class="d-flex justify-content-end align-items-center report-calendar">
-                          <p class="font-12 color-secondary font-weight-medium mb-0">
-                            <span class="mr-20"><i class="circle-i circle-i_openers"></i>
-                              Opens</span>
-                            <span class="mr-20"><i class="circle-i circle-i_clickers"></i>
-                              Clicks</span>
-                          </p>
-                          <div class="date-range__wrap">
-                            <input type="text" id="range-datepicker" class="date-range__input bg-white"
-                              placeholder="Pick dates" value="2020-03-31 – 2020-04-25" />
-                            <i class="date-range__icon">
-                              <svg width="19.143" height="20">
-                                <use xlink:href="assets/images/sprite.svg#calendar"></use>
-                              </svg>
-                            </i>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="curve_chart" style="height: 246px" class="color-secondary"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="position-relative">
-                <div class="row chart-wrap">
-                  <div class="col-xl-8 pr-15 mb-28">
-                    <div class="card align-content-start h-100 border-grey mb-0">
-                      <div class="d-flex justify-content-between align-items-center flex-wrap mb-40">
-                        <h4 class="font-weight-semibold font-18">
-                          Opens by Hours
-                        </h4>
-                        <div class="d-flex justify-content-end align-items-center report-calendar">
-                          <p class="font-12 color-secondary font-weight-medium mb-0">
-                            <span class="mr-0"><i class="circle-i circle-i_openers"></i>
-                              Opens</span>
+                          <p>
+                            Preheader: <b>Final Opportunity to Grab Discount</b>
                           </p>
                         </div>
-                      </div>
-                      <div id="curve_chart-2" style="height: 148px" class="color-secondary"></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 pl-15 mb-28 d-md-flex flex-md-column flex-md-grow-1">
-                    <div class="card align-items-start mb-0 flex-grow-1 border-grey">
-                      <div class="d-flex flex-column w-100">
-                        <h4 class="font-weight-semibold font-18 mb-18">
-                          Social
-                        </h4>
-                        <h5 class="mb-10">Clicks From Your Newsletter</h5>
-                        <div class="d-flex w-100 mb-8" data-bar="social" data-id="instagram">
-                          <div class="soc-col__small mr-10">
-                            <div class="name-col text-right font-12 font-weight-regular">
-                              Instagram
-                            </div>
-                          </div>
-                          <div class="soc-col__big">
-                            <div class="bar-item w-100 d-flex align-items-center">
-                              <div class="grin-part"></div>
-                              <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                            </div>
-                          </div>
+                        <div class="reports-right__big-item">
+                          <p>From: <b>Dodo Design / newsletter@selfi.net</b></p>
+                          <p>Footer and Forms: <b>English</b></p>
                         </div>
-                        <div class="d-flex w-100 mb-18" data-bar="social" data-id="twitter">
-                          <div class="soc-col__small mr-10">
-                            <div class="name-col text-right font-12 font-weight-regular">
-                              Twitter
-                            </div>
-                          </div>
-                          <div class="soc-col__big">
-                            <div class="bar-item w-100 d-flex align-items-center">
-                              <div class="grin-part"></div>
-                              <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <h5 class="mb-8 mt-0">
-                          Clicks From Social Meda Integrations
-                        </h5>
-                        <div class="d-flex w-100 mb-18" data-bar="social" data-id="facebook">
-                          <div class="soc-col__small mr-10">
-                            <div class="name-col text-right font-12 font-weight-regular">
-                              Facebook
-                            </div>
-                          </div>
-                          <div class="soc-col__big">
-                            <div class="bar-item w-100 d-flex align-items-center">
-                              <div class="grin-part"></div>
-                              <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                            </div>
-                          </div>
+                        <div class="reports-right__big-item">
+                          <p>Delivered: <b>Today 2:45 PM</b></p>
+                          <p>Google Analytics Tracking: <b>ON</b></p>
                         </div>
                       </div>
                     </div>
+                    <div class="reports-right__small">
+                      <img src="assets/images/template-3.jpg" alt="#" />
+                    </div>
                   </div>
-                </div>
+                </section>
               </div>
 
-              <div class="card align-items-start border-grey">
-                <div class="w-100 d-flex">
-                  <h4 class="font-weight-semibold font-18 mb-18">
-                    Opens by Email Clients
-                  </h4>
-                </div>
-                <div class="w-100 d-flex flex-wrap">
-                  <div class="col-3-4 col-w-100 w-1170 d-flex flex-grow-1 mb-lg-0 mb-28">
-                    <div class="d-flex flex-column w-100 mb-28 mb-lg-0">
-                      <h5 class="mb-8">Mobile Clients</h5>
-                      <div class="d-flex w-100 mb-8" data-type="mobile" data-name="appleIphone">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Apple iPhone
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-8" data-type="mobile" data-name="appleIpad">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Apple iPad
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-8" data-type="mobile" data-name="googleAndroid">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Google Android
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-8" data-type="mobile" data-name="gmailApp">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Gmail App
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-0" data-type="mobile" data-name="samsungMail">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Samsung Mail
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-column w-100 ml-lg-40 mb-28 mb-lg-0">
-                      <h5 class="mb-10">Webmail Clients</h5>
-                      <div class="d-flex w-100 mb-8" data-type="webmail" data-name="gmail">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Gmail
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-8" data-type="webmail" data-name="yahooMail">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Yahoo! Mail
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-8" data-type="webmail" data-name="outlook">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Outlook.com
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-0" data-type="webmail" data-name="aol">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            AOL
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-column w-100 ml-lg-40">
-                      <h5 class="mb-10">Desktop Clients</h5>
-                      <div class="d-flex w-100 mb-8" data-type="desktop" data-name="appleMail">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Apple Mail
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-8" data-type="desktop" data-name="outlookWin">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Outlook (Win)
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-8" data-type="desktop" data-name="windows">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Windows Live Mail
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-8" data-type="desktop" data-name="thunderbird">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Thunderbird
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-8" data-type="desktop" data-name="entourage">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Entourage
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-8" data-type="desktop" data-name="outlookMac">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Outlook (Mac)
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex w-100 mb-0" data-type="desktop" data-name="lotus">
-                        <div class="col-chart _small mr-10">
-                          <div class="name-col text-right font-12 font-weight-regular">
-                            Lotus / IBM Notes
-                          </div>
-                        </div>
-                        <div class="col-chart _big">
-                          <div class="bar-item w-100 d-flex align-items-center">
-                            <div class="grin-part"></div>
-                            <div class="bar-item__data ml-10 font-weight-regular font-12 d-flex"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-1-4 col-w-100 pl-sm-70 w-1170 _charts pr-0 d-flex flex-grow-1 flex-column">
-                    <div class="d-flex flex-column">
-                      <h5 class="mb-18">Clients by Medium</h5>
-                      <div class="d-flex bars">
-                        <div class="bars-column d-flex flex-column align-items-center mr-20" data-type="columnBars"
-                          data-name="mobile">
-                          <div class="bars-item d-flex flex-column align-content-center justify-content-end">
-                            <div
-                              class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center">
-                            </div>
-                            <div class="bars-item__column light-green"></div>
-                          </div>
-                          <div class="bars-desc d-flex align-items-center flex-column justify-content-end">
-                            <img src="assets/images/line-light-green.svg" />
-                            <div class="center font-12 font-weight-regular mt-4">
-                              Mobile
-                            </div>
-                          </div>
-                        </div>
-                        <div class="bars-column d-flex flex-column align-items-center mr-20" data-type="columnBars"
-                          data-name="webmail">
-                          <div class="bars-item d-flex flex-column align-content-center justify-content-end">
-                            <div
-                              class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center">
-                            </div>
-                            <div class="bars-item__column dark-green"></div>
-                          </div>
-                          <div class="bars-desc d-flex align-items-center flex-column justify-content-end">
-                            <img src="assets/images/line-dark-green.svg" />
-                            <div class="center font-12 font-weight-regular mt-4">
-                              Webmail
-                            </div>
-                          </div>
-                        </div>
-                        <div class="bars-column d-flex flex-column align-items-center" data-type="columnBars"
-                          data-name="desktop">
-                          <div class="bars-item d-flex flex-column align-content-center justify-content-end">
-                            <div
-                              class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center">
-                            </div>
-                            <div class="bars-item__column blue"></div>
-                          </div>
-                          <div class="bars-desc d-flex align-items-center flex-column justify-content-end">
-                            <img src="assets/images/line-blue.svg" />
-                            <div class="center font-12 font-weight-regular mt-4">
-                              Desktop
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-4 w-1170 col-lg-5 mb-28 pr-15">
+              <div class="col-12">
+                <div class="row">
                   <div
-                    class="card align-items-start pr-28 flex-grow-1 border-grey d-flex flex-column vsc-initialized mb-0 h-100">
-                    <h4 class="font-weight-semibold font-18 mb-20">
-                      Opens by Domains
-                    </h4>
-                    <div class="row w-100 d-flex align-items-center">
-                      <div class="col-lg-6">
-                        <div id="donutchart" class="donutchart"></div>
+                    class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pr-15"
+                  >
+                    <div
+                      class="card mb-0 align-items-start flex-grow-1 bs-no border-grey"
+                    >
+                      <div class="font-36 lh-1 mt-n4">491</div>
+                      <h5 class="mt-10">Recipients</h5>
+                      <div
+                        class="font-12 color-secondary font-weight-medium mt-14"
+                      >
+                        <a href="#" class="link">491 unique contacts</a>
+                        accross <a href="#" class="link">2 lists</a> /
+                        <a href="#" class="link">1 segment</a> /
+                        <a href="#" class="link">3 tags</a>
                       </div>
-                      <div class="col-lg-6 pr-0">
+                    </div>
+                    <div
+                      class="card pt-20 pb-24 border-grey border-top-0 align-items-start flex-grow-1 bs-no min-h-90"
+                    >
+                      <div class="row w-100">
+                        <div class="col-4">
+                          <div class="d-flex flex-column align-items-start">
+                            <p class="font-weight-semibold mb-3 font-18">23</p>
+                            <a href="#" class="link">Bounces</a>
+                          </div>
+                        </div>
+                        <div class="col-4 pl-0 pl-sm-12">
+                          <div class="d-flex flex-column align-items-start">
+                            <p
+                              class="font-weight-semibold mb-3 font-18 color-danger"
+                            >
+                              7
+                            </p>
+                            <a href="#" class="link">Unsubscribes</a>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="d-flex flex-column align-items-start">
+                            <p
+                              class="font-weight-semibold mb-3 font-18 color-danger"
+                            >
+                              3
+                            </p>
+                            <a href="#" class="link">Complaints</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pr-15 pl-15"
+                  >
+                    <div
+                      class="card mb-0 align-items-start flex-grow-1 border-grey bs-no"
+                    >
+                      <div class="d-flex flex-row w-100">
                         <div class="d-flex flex-column">
-                          <p class="font-12 color-secondary font-weight-medium mb-10">
-                            <span class="mr-0"><i class="circle-i circle-i_openers"></i>
-                              <span class="mr-4 font-weight-bold">47%</span>
-                              gmail.com</span>
-                          </p>
-                          <p class="font-12 color-secondary font-weight-medium mb-10">
-                            <span class="mr-0"><i class="circle-i circle-i_clickers"></i>
-                              <span class="mr-4 font-weight-bold">31%</span>
-                              dodohousenyc.com</span>
-                          </p>
-                          <p class="font-12 color-secondary font-weight-medium mb-0">
-                            <span class="mr-0"><i class="circle-i circle-i_country"></i>
-                              <span class="mr-4 font-weight-bold">22%</span>
-                              Others</span>
-                          </p>
+                          <div class="font-36 lh-1 mt-n4">139</div>
+                          <h5 class="mt-10">Opens</h5>
+                          <div
+                            class="font-12 color-secondary font-weight-medium mt-14"
+                          >
+                            <a href="#" class="link">139 opens </a> and
+                            <a href="#" class="link">85 unique opens</a>
+                          </div>
+                        </div>
+                        <div class="d-flex ml-auto">
+                          <div class="knob-wrap knob-wrap_up knob-wrap_percent">
+                            <input
+                              data-plugin="knob"
+                              data-width="75"
+                              data-height="75"
+                              data-linecap="round"
+                              data-fgColor="#00EBA8"
+                              value="73"
+                              data-displayInput="false"
+                              data-skin="tron"
+                              data-angleOffset="0"
+                              data-readOnly="true"
+                              data-thickness=".1"
+                              data-bgColor="#f6f9fc"
+                            />
+                            <div class="knob-text">
+                              <p class="font-18 font-weight-semibold">
+                                27<span class="font-18 font-weight-semibold"
+                                  >%</span
+                                >
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="card pt-18 pb-20 align-items-start border-grey border-top-0 flex-grow-1 bs-no min-h-90"
+                    >
+                      <div
+                        class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100"
+                      >
+                        Audience Average: <b class="ml-12 mr-5">42.2%</b>
+                        <span
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <svg width="7.026" height="8.197" class="up">
+                            <use
+                              xlink:href="assets/images/sprite.svg#arrow-blue-up"
+                            ></use>
+                          </svg>
+                        </span>
+                      </div>
+                      <div
+                        class="mb-0 font-weight-regular font-12 d-flex align-items-center w-100"
+                      >
+                        Industry Average:
+
+                        <b class="ml-12 mr-5"
+                          ><span class="mr-5">(Finance)</span> 23.9%</b
+                        >
+                        <span
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <svg width="7.026" height="8.197" class="down">
+                            <use
+                              xlink:href="assets/images/sprite.svg#arrow-red-down"
+                            ></use>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-xl-4 col-lg-6 d-md-flex flex-md-column flex-md-grow-1 pl-15"
+                  >
+                    <div
+                      class="card mb-0 align-items-start flex-grow-1 border-grey bs-no"
+                    >
+                      <div class="d-flex flex-row w-100">
+                        <div class="d-flex flex-column">
+                          <div class="font-36 lh-1 mt-n4">26</div>
+                          <h5 class="mt-10">Clicks</h5>
+                          <div
+                            class="font-12 color-secondary font-weight-medium mt-14"
+                          >
+                            <a href="#" class="link">26 clicks </a> and
+                            <a href="#" class="link">15 unique clicks</a>
+                          </div>
+                        </div>
+                        <div class="d-flex ml-auto">
+                          <div class="knob-wrap knob-wrap_up knob-wrap_percent">
+                            <input
+                              data-plugin="knob"
+                              data-width="75"
+                              data-height="75"
+                              data-linecap="round"
+                              data-fgColor="#001EF5"
+                              value="9,7"
+                              data-displayInput="false"
+                              data-skin="tron"
+                              data-angleOffset="0"
+                              data-readOnly="true"
+                              data-thickness=".1"
+                              data-bgColor="#f6f9fc"
+                            />
+                            <div class="knob-text">
+                              <p class="font-18 font-weight-semibold">
+                                9,7<span class="font-18 font-weight-semibold"
+                                  >%</span
+                                >
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="card pt-18 pb-20 align-items-start flex-grow-1 bs-no border-grey border-top-0 min-h-90"
+                    >
+                      <div
+                        class="mb-5 font-weight-regular font-12 d-flex align-items-center w-100"
+                      >
+                        Audience Average: <b class="ml-12 mr-5">11.2%</b>
+                        <span
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <svg width="7.026" height="8.197" class="down">
+                            <use
+                              xlink:href="assets/images/sprite.svg#arrow-red-down"
+                            ></use>
+                          </svg>
+                        </span>
+                      </div>
+                      <div
+                        class="mb-0 font-weight-regular font-12 d-flex align-items-center w-100"
+                      >
+                        Industry Average:
+
+                        <b class="ml-12 mr-5"
+                          ><span class="mr-5">(Finance)</span> 10.5%</b
+                        >
+                        <span
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <svg width="7.026" height="8.197" class="up">
+                            <use
+                              xlink:href="assets/images/sprite.svg#arrow-blue-up"
+                            ></use>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="position-relative">
+                  <div class="row no-gutters chart-wrap">
+                    <div class="col-md-12">
+                      <div class="card align-content-start border-grey">
+                        <div
+                          class="d-flex justify-content-between align-items-center flex-wrap mb-35"
+                        >
+                          <h4
+                            class="font-weight-semibold font-18 mb-8 mb-md-0 mr-8"
+                          >
+                            Engagement Timeline
+                          </h4>
+                          <div
+                            class="d-flex justify-content-end align-items-center report-calendar"
+                          >
+                            <p
+                              class="font-12 color-secondary font-weight-medium mb-0"
+                            >
+                              <span class="mr-20"
+                                ><i class="circle-i circle-i_openers"></i>
+                                Opens</span
+                              >
+                              <span class="mr-20"
+                                ><i class="circle-i circle-i_clickers"></i>
+                                Clicks</span
+                              >
+                            </p>
+                            <div class="date-range__wrap">
+                              <input
+                                type="text"
+                                id="range-datepicker"
+                                class="date-range__input bg-white"
+                                placeholder="Pick dates"
+                                value="2020-03-31 – 2020-04-25"
+                              />
+                              <i class="date-range__icon">
+                                <svg width="19.143" height="20">
+                                  <use
+                                    xlink:href="assets/images/sprite.svg#calendar"
+                                  ></use>
+                                </svg>
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          id="curve_chart"
+                          style="height: 246px"
+                          class="color-secondary"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="position-relative">
+                  <div class="row chart-wrap">
+                    <div class="col-xl-8 pr-15 mb-28">
+                      <div
+                        class="card align-content-start h-100 border-grey mb-0"
+                      >
+                        <div
+                          class="d-flex justify-content-between align-items-center flex-wrap mb-40"
+                        >
+                          <h4 class="font-weight-semibold font-18">
+                            Opens by Hours
+                          </h4>
+                          <div
+                            class="d-flex justify-content-end align-items-center report-calendar"
+                          >
+                            <p
+                              class="font-12 color-secondary font-weight-medium mb-0"
+                            >
+                              <span class="mr-0"
+                                ><i class="circle-i circle-i_openers"></i>
+                                Opens</span
+                              >
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          id="curve_chart-2"
+                          style="height: 148px"
+                          class="color-secondary"
+                        ></div>
+                      </div>
+                    </div>
+                    <div
+                      class="col-xl-4 pl-15 mb-28 d-md-flex flex-md-column flex-md-grow-1"
+                    >
+                      <div
+                        class="card align-items-start mb-0 flex-grow-1 border-grey"
+                      >
+                        <div class="d-flex flex-column w-100">
+                          <h4 class="font-weight-semibold font-18 mb-18">
+                            Social
+                          </h4>
+                          <h5 class="mb-10">Clicks From Your Newsletter</h5>
+                          <div
+                            class="d-flex w-100 mb-8"
+                            data-bar="social"
+                            data-id="instagram"
+                          >
+                            <div class="soc-col__small mr-10">
+                              <div
+                                class="name-col text-right font-12 font-weight-regular"
+                              >
+                                Instagram
+                              </div>
+                            </div>
+                            <div class="soc-col__big">
+                              <div
+                                class="bar-item w-100 d-flex align-items-center"
+                              >
+                                <div class="grin-part"></div>
+                                <div
+                                  class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="d-flex w-100 mb-18"
+                            data-bar="social"
+                            data-id="twitter"
+                          >
+                            <div class="soc-col__small mr-10">
+                              <div
+                                class="name-col text-right font-12 font-weight-regular"
+                              >
+                                Twitter
+                              </div>
+                            </div>
+                            <div class="soc-col__big">
+                              <div
+                                class="bar-item w-100 d-flex align-items-center"
+                              >
+                                <div class="grin-part"></div>
+                                <div
+                                  class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <h5 class="mb-8 mt-0">
+                            Clicks From Social Meda Integrations
+                          </h5>
+                          <div
+                            class="d-flex w-100 mb-18"
+                            data-bar="social"
+                            data-id="facebook"
+                          >
+                            <div class="soc-col__small mr-10">
+                              <div
+                                class="name-col text-right font-12 font-weight-regular"
+                              >
+                                Facebook
+                              </div>
+                            </div>
+                            <div class="soc-col__big">
+                              <div
+                                class="bar-item w-100 d-flex align-items-center"
+                              >
+                                <div class="grin-part"></div>
+                                <div
+                                  class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-xl-8 w-1170 col-lg-7 mb-28 pl-15">
-                  <div
-                    class="card flex-grow-1 justify-content-between d-flex flex-column vsc-initialized mb-0 h-100 border-grey">
-                    <div class="row">
-                      <div class="col-md-8 col-lg-7 d-flex order-2 order-md-1">
-                        <div id="regions_div" class="map-small"></div>
+
+                <div class="card align-items-start border-grey">
+                  <div class="w-100 d-flex">
+                    <h4 class="font-weight-semibold font-18 mb-18">
+                      Opens by Email Clients
+                    </h4>
+                  </div>
+                  <div class="w-100 d-flex flex-wrap">
+                    <div
+                      class="col-3-4 col-w-100 w-1170 d-flex flex-grow-1 mb-lg-0 mb-28"
+                    >
+                      <div class="d-flex flex-column w-100 mb-28 mb-lg-0">
+                        <h5 class="mb-8">Mobile Clients</h5>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="mobile"
+                          data-name="appleIphone"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Apple iPhone
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="mobile"
+                          data-name="appleIpad"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Apple iPad
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="mobile"
+                          data-name="googleAndroid"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Google Android
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="mobile"
+                          data-name="gmailApp"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Gmail App
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-0"
+                          data-type="mobile"
+                          data-name="samsungMail"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Samsung Mail
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="col-md-4 col-lg-5 d-flex order-1 order-md-2">
-                        <div class="d-flex flex-column align-items-start justify-content-start">
-                          <h4 class="font-weight-semibold font-18 mb-18">
-                            Opens by Location
-                          </h4>
-                          <p class="font-12 color-secondary font-weight-medium mb-10">
-                            <span class="mr-0"><i class="circle-i circle-i_openers"></i>
-                              United States</span>
-                            <span class="data-click font-12 font-weight-regular ml-8">
-                              <span class="mr-4 font-weight-bold">1</span>
-                              (34%)
-                            </span>
-                          </p>
-                          <p class="font-12 color-secondary font-weight-medium mb-10">
-                            <span class="mr-0"><i class="circle-i circle-i_clickers"></i>
-                              Turkey</span>
-                            <span class="data-click font-12 font-weight-regular ml-8">
-                              <span class="mr-4 font-weight-bold">1</span>
-                              (28%)
-                            </span>
-                          </p>
-                          <p class="font-12 color-secondary font-weight-medium mb-0">
-                            <span class="mr-0"><i class="circle-i circle-i_country"></i>
-                              Others</span>
-                            <span class="data-click font-12 font-weight-regular ml-8">
-                              <span class="mr-4 font-weight-bold">21</span>
-                              (18%)
-                            </span>
-                          </p>
+                      <div
+                        class="d-flex flex-column w-100 ml-lg-40 mb-28 mb-lg-0"
+                      >
+                        <h5 class="mb-10">Webmail Clients</h5>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="webmail"
+                          data-name="gmail"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Gmail
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="webmail"
+                          data-name="yahooMail"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Yahoo! Mail
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="webmail"
+                          data-name="outlook"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Outlook.com
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-0"
+                          data-type="webmail"
+                          data-name="aol"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              AOL
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column w-100 ml-lg-40">
+                        <h5 class="mb-10">Desktop Clients</h5>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="desktop"
+                          data-name="appleMail"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Apple Mail
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="desktop"
+                          data-name="outlookWin"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Outlook (Win)
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="desktop"
+                          data-name="windows"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Windows Live Mail
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="desktop"
+                          data-name="thunderbird"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Thunderbird
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="desktop"
+                          data-name="entourage"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Entourage
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-8"
+                          data-type="desktop"
+                          data-name="outlookMac"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Outlook (Mac)
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex w-100 mb-0"
+                          data-type="desktop"
+                          data-name="lotus"
+                        >
+                          <div class="col-chart _small mr-10">
+                            <div
+                              class="name-col text-right font-12 font-weight-regular"
+                            >
+                              Lotus / IBM Notes
+                            </div>
+                          </div>
+                          <div class="col-chart _big">
+                            <div
+                              class="bar-item w-100 d-flex align-items-center"
+                            >
+                              <div class="grin-part"></div>
+                              <div
+                                class="bar-item__data ml-10 font-weight-regular font-12 d-flex"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="col-1-4 col-w-100 pl-sm-70 w-1170 _charts pr-0 d-flex flex-grow-1 flex-column"
+                    >
+                      <div class="d-flex flex-column">
+                        <h5 class="mb-18">Clients by Medium</h5>
+                        <div class="d-flex bars">
+                          <div
+                            class="bars-column d-flex flex-column align-items-center mr-20"
+                            data-type="columnBars"
+                            data-name="mobile"
+                          >
+                            <div
+                              class="bars-item d-flex flex-column align-content-center justify-content-end"
+                            >
+                              <div
+                                class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center"
+                              ></div>
+                              <div class="bars-item__column light-green"></div>
+                            </div>
+                            <div
+                              class="bars-desc d-flex align-items-center flex-column justify-content-end"
+                            >
+                              <img src="assets/images/line-light-green.svg" />
+                              <div
+                                class="center font-12 font-weight-regular mt-4"
+                              >
+                                Mobile
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="bars-column d-flex flex-column align-items-center mr-20"
+                            data-type="columnBars"
+                            data-name="webmail"
+                          >
+                            <div
+                              class="bars-item d-flex flex-column align-content-center justify-content-end"
+                            >
+                              <div
+                                class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center"
+                              ></div>
+                              <div class="bars-item__column dark-green"></div>
+                            </div>
+                            <div
+                              class="bars-desc d-flex align-items-center flex-column justify-content-end"
+                            >
+                              <img src="assets/images/line-dark-green.svg" />
+                              <div
+                                class="center font-12 font-weight-regular mt-4"
+                              >
+                                Webmail
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="bars-column d-flex flex-column align-items-center"
+                            data-type="columnBars"
+                            data-name="desktop"
+                          >
+                            <div
+                              class="bars-item d-flex flex-column align-content-center justify-content-end"
+                            >
+                              <div
+                                class="bars-item__number mb-2 font-14 font-weight-bold d-flex align-items-center justify-content-center"
+                              ></div>
+                              <div class="bars-item__column blue"></div>
+                            </div>
+                            <div
+                              class="bars-desc d-flex align-items-center flex-column justify-content-end"
+                            >
+                              <img src="assets/images/line-blue.svg" />
+                              <div
+                                class="center font-12 font-weight-regular mt-4"
+                              >
+                                Desktop
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-4 w-1170 col-lg-5 mb-28 pr-15">
+                    <div
+                      class="card align-items-start pr-28 flex-grow-1 border-grey d-flex flex-column vsc-initialized mb-0 h-100"
+                    >
+                      <h4 class="font-weight-semibold font-18 mb-20">
+                        Opens by Domains
+                      </h4>
+                      <div class="row w-100 d-flex align-items-center">
+                        <div class="col-lg-6">
+                          <div id="donutchart" class="donutchart"></div>
+                        </div>
+                        <div class="col-lg-6 pr-0">
+                          <div class="d-flex flex-column">
+                            <p
+                              class="font-12 color-secondary font-weight-medium mb-10"
+                            >
+                              <span class="mr-0"
+                                ><i class="circle-i circle-i_openers"></i>
+                                <span class="mr-4 font-weight-bold">47%</span>
+                                gmail.com</span
+                              >
+                            </p>
+                            <p
+                              class="font-12 color-secondary font-weight-medium mb-10"
+                            >
+                              <span class="mr-0"
+                                ><i class="circle-i circle-i_clickers"></i>
+                                <span class="mr-4 font-weight-bold">31%</span>
+                                dodohousenyc.com</span
+                              >
+                            </p>
+                            <p
+                              class="font-12 color-secondary font-weight-medium mb-0"
+                            >
+                              <span class="mr-0"
+                                ><i class="circle-i circle-i_country"></i>
+                                <span class="mr-4 font-weight-bold">22%</span>
+                                Others</span
+                              >
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-8 w-1170 col-lg-7 mb-28 pl-15">
+                    <div
+                      class="card flex-grow-1 justify-content-between d-flex flex-column vsc-initialized mb-0 h-100 border-grey"
+                    >
+                      <div class="row">
+                        <div
+                          class="col-md-8 col-lg-7 d-flex order-2 order-md-1"
+                        >
+                          <div id="regions_div" class="map-small"></div>
+                        </div>
+                        <div
+                          class="col-md-4 col-lg-5 d-flex order-1 order-md-2"
+                        >
+                          <div
+                            class="d-flex flex-column align-items-start justify-content-start"
+                          >
+                            <h4 class="font-weight-semibold font-18 mb-18">
+                              Opens by Location
+                            </h4>
+                            <p
+                              class="font-12 color-secondary font-weight-medium mb-10"
+                            >
+                              <span class="mr-0"
+                                ><i class="circle-i circle-i_openers"></i>
+                                United States</span
+                              >
+                              <span
+                                class="data-click font-12 font-weight-regular ml-8"
+                              >
+                                <span class="mr-4 font-weight-bold">1</span>
+                                (34%)
+                              </span>
+                            </p>
+                            <p
+                              class="font-12 color-secondary font-weight-medium mb-10"
+                            >
+                              <span class="mr-0"
+                                ><i class="circle-i circle-i_clickers"></i>
+                                Turkey</span
+                              >
+                              <span
+                                class="data-click font-12 font-weight-regular ml-8"
+                              >
+                                <span class="mr-4 font-weight-bold">1</span>
+                                (28%)
+                              </span>
+                            </p>
+                            <p
+                              class="font-12 color-secondary font-weight-medium mb-0"
+                            >
+                              <span class="mr-0"
+                                ><i class="circle-i circle-i_country"></i>
+                                Others</span
+                              >
+                              <span
+                                class="data-click font-12 font-weight-regular ml-8"
+                              >
+                                <span class="mr-4 font-weight-bold">21</span>
+                                (18%)
+                              </span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -690,370 +1107,466 @@
               </div>
             </div>
           </div>
+          <!-- container -->
         </div>
-        <!-- container -->
+        <!-- content -->
       </div>
-      <!-- content -->
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
     </div>
+    <!-- END wrapper -->
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
-  </div>
-  <!-- END wrapper -->
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
 
-  <!-- Vendor js -->
-  <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/libs/raphael/raphael.min.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+    <script src="assets/libs/select2/js/select2.min.js"></script>
 
-  <script src="assets/js/loader.js"></script>
-  <script src="assets/libs/raphael/raphael.min.js"></script>
-  <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
-  <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
-  <script src="assets/libs/select2/js/select2.min.js"></script>
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
 
-  <!-- App js -->
-  <script src="assets/js/app.min.js"></script>
+    <script>
+      window.onload = function () {
+        columnBarsInfo = {
+          mobile: {
+            percent: `${47}%`,
+          },
+          webmail: {
+            percent: `${31}%`,
+          },
+          desktop: {
+            percent: `${22}%`,
+          },
+        };
 
-  <script>
-    window.onload = function () {
-      columnBarsInfo = {
-        mobile: {
-          percent: `${47}%`,
-        },
-        webmail: {
-          percent: `${31}%`,
-        },
-        desktop: {
-          percent: `${22}%`,
-        },
+        const columnBarsObj = document.querySelectorAll(
+          '[data-type="columnBars"]'
+        );
+
+        columnBarsObj.forEach((item) => {
+          const columnBarsAttribute = item.getAttribute('data-name');
+          const barsHeight = item.querySelector('.bars-item__column');
+          const barsNumber = item.querySelector('.bars-item__number');
+          barsHeight.style.height = columnBarsInfo[columnBarsAttribute].percent;
+          barsNumber.innerHTML = columnBarsInfo[columnBarsAttribute].percent;
+        });
+
+        const socialObj = {
+          instagram: {
+            number: 2,
+            percent: `${9}%`,
+          },
+          twitter: {
+            number: 3,
+            percent: `${13.6}%`,
+          },
+          facebook: {
+            number: 17,
+            percent: `${77}%`,
+          },
+        };
+
+        var social = document.querySelectorAll('[data-bar="social"]');
+
+        social.forEach((item) => {
+          const socialAttribute = item.getAttribute('data-id');
+          const amountClicks = item.querySelector('.grin-part');
+          const percentClicks = item.querySelector('.bar-item__data');
+          amountClicks.style.width = socialObj[socialAttribute].percent;
+          percentClicks.innerHTML = socialObj[socialAttribute].number;
+        });
+
+        const mobileClients = {
+          appleIphone: {
+            number: 195,
+            percent: `${75}%`,
+          },
+          appleIpad: {
+            number: 27,
+            percent: `${10}%`,
+          },
+          googleAndroid: {
+            number: 21,
+            percent: `${8}%`,
+          },
+          gmailApp: {
+            number: 12,
+            percent: `${4}%`,
+          },
+          samsungMail: {
+            number: 3,
+            percent: `${1.1}%`,
+          },
+        };
+
+        var mobile = document.querySelectorAll('[data-type="mobile"]');
+
+        mobile.forEach((item) => {
+          const mobileAttribute = item.getAttribute('data-name');
+          const amountClicks = item.querySelector('.grin-part');
+          const clicksInPercent = item.querySelector('.bar-item__data');
+          amountClicks.style.width = mobileClients[mobileAttribute].percent;
+          clicksInPercent.innerHTML = `<span class="mr-4 font-weight-bold">${mobileClients[mobileAttribute].number}</span> (${mobileClients[mobileAttribute].percent})`;
+        });
+
+        const webmailClients = {
+          gmail: {
+            number: 195,
+            percent: `${79}%`,
+          },
+          yahooMail: {
+            number: 27,
+            percent: `${10}%`,
+          },
+          outlook: {
+            number: 21,
+            percent: `${8.5}%`,
+          },
+          aol: {
+            number: 3,
+            percent: `${1.2}%`,
+          },
+        };
+
+        var webmailObj = document.querySelectorAll('[data-type="webmail"]');
+
+        webmailObj.forEach((item) => {
+          const webmailAttribute = item.getAttribute('data-name');
+          const amountClicks = item.querySelector('.grin-part');
+          const clicksInPercent = item.querySelector('.bar-item__data');
+          amountClicks.style.width = webmailClients[webmailAttribute].percent;
+          clicksInPercent.innerHTML = `<span class="mr-4 font-weight-bold">${webmailClients[webmailAttribute].number}</span> (${webmailClients[webmailAttribute].percent})`;
+        });
+
+        const desktopClients = {
+          appleMail: {
+            number: 47,
+            percent: `${35}%`,
+          },
+          outlookWin: {
+            number: 26,
+            percent: `${19}%`,
+          },
+          windows: {
+            number: 21,
+            percent: `${16}%`,
+          },
+          thunderbird: {
+            number: 21,
+            percent: `${16}%`,
+          },
+          entourage: {
+            number: 12,
+            percent: `${9}%`,
+          },
+          outlookMac: {
+            number: 3,
+            percent: `${1.4}%`,
+          },
+          lotus: {
+            number: 1,
+            percent: `${0.2}%`,
+          },
+        };
+
+        var desktopObj = document.querySelectorAll('[data-type="desktop"]');
+
+        desktopObj.forEach((item) => {
+          const webmailAttribute = item.getAttribute('data-name');
+          const amountClicks = item.querySelector('.grin-part');
+          const clicksInPercent = item.querySelector('.bar-item__data');
+          amountClicks.style.width = desktopClients[webmailAttribute].percent;
+          clicksInPercent.innerHTML = `<span class="mr-4 font-weight-bold">${desktopClients[webmailAttribute].number}</span> (${desktopClients[webmailAttribute].percent})`;
+        });
       };
+    </script>
 
-      const columnBarsObj = document.querySelectorAll(
-        '[data-type="columnBars"]'
-      );
+    <script>
+      google.charts
+        .load('current', {
+          packages: ['geochart'],
+          // Note: you will need to get a mapsApiKey for your project.
+          // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+          mapsApiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY',
+        })
+        .then(function () {
+          var dataMap = [
+            ['Country', 'Clicks'],
+            ['United States', 1],
+            ['Turkey', 1],
+          ];
 
-      columnBarsObj.forEach((item) => {
-        const columnBarsAttribute = item.getAttribute('data-name');
-        const barsHeight = item.querySelector('.bars-item__column');
-        const barsNumber = item.querySelector('.bars-item__number');
-        barsHeight.style.height = columnBarsInfo[columnBarsAttribute].percent;
-        barsNumber.innerHTML = columnBarsInfo[columnBarsAttribute].percent;
+          if (dataMap[1][1] === dataMap[2][1]) {
+            dataMap[1][1] = dataMap[1][1] + 0.1;
+          }
+
+          var data = google.visualization.arrayToDataTable(dataMap);
+
+          var options = {
+            colorAxis: {
+              colors: ['#0000FF', '#00EBA8'],
+            },
+            backgroundColor: {
+              fill: '#FFF',
+              strokeWidth: 0,
+            },
+            legend: 'none',
+            datalessRegionColor: '#B6FFE8',
+            defaultColor: '#B6FFE8',
+            tooltip: {
+              trigger: 'none',
+            },
+            enableRegionInteractivity: false,
+            domain: 'IN',
+          };
+
+          var container = document.getElementById('regions_div');
+          var chart = new google.visualization.GeoChart(container);
+
+          google.visualization.events.addListener(chart, 'ready', function () {
+            var countries = container.getElementsByTagName('path');
+            Array.prototype.forEach.call(countries, function (path) {
+              path.setAttribute('stroke', 'transparent');
+            });
+          });
+
+          chart.draw(data, options);
+        });
+    </script>
+
+    <script>
+      google.charts.load('current', {
+        packages: ['corechart'],
       });
+      google.charts.setOnLoadCallback(drawChart);
 
-      const socialObj = {
-        instagram: {
-          number: 2,
-          percent: `${9}%`,
-        },
-        twitter: {
-          number: 3,
-          percent: `${13.6}%`,
-        },
-        facebook: {
-          number: 17,
-          percent: `${77}%`,
-        },
-      };
-
-      var social = document.querySelectorAll('[data-bar="social"]');
-
-      social.forEach((item) => {
-        const socialAttribute = item.getAttribute('data-id');
-        const amountClicks = item.querySelector('.grin-part');
-        const percentClicks = item.querySelector('.bar-item__data');
-        amountClicks.style.width = socialObj[socialAttribute].percent;
-        percentClicks.innerHTML = socialObj[socialAttribute].number;
-      });
-
-      const mobileClients = {
-        appleIphone: {
-          number: 195,
-          percent: `${75}%`,
-        },
-        appleIpad: {
-          number: 27,
-          percent: `${10}%`,
-        },
-        googleAndroid: {
-          number: 21,
-          percent: `${8}%`,
-        },
-        gmailApp: {
-          number: 12,
-          percent: `${4}%`,
-        },
-        samsungMail: {
-          number: 3,
-          percent: `${1.1}%`,
-        },
-      };
-
-      var mobile = document.querySelectorAll('[data-type="mobile"]');
-
-      mobile.forEach((item) => {
-        const mobileAttribute = item.getAttribute('data-name');
-        const amountClicks = item.querySelector('.grin-part');
-        const clicksInPercent = item.querySelector('.bar-item__data');
-        amountClicks.style.width = mobileClients[mobileAttribute].percent;
-        clicksInPercent.innerHTML =
-          `<span class="mr-4 font-weight-bold">${mobileClients[mobileAttribute].number}</span> (${mobileClients[mobileAttribute].percent})`;
-      });
-
-      const webmailClients = {
-        gmail: {
-          number: 195,
-          percent: `${79}%`,
-        },
-        yahooMail: {
-          number: 27,
-          percent: `${10}%`,
-        },
-        outlook: {
-          number: 21,
-          percent: `${8.5}%`,
-        },
-        aol: {
-          number: 3,
-          percent: `${1.2}%`,
-        },
-      };
-
-      var webmailObj = document.querySelectorAll('[data-type="webmail"]');
-
-      webmailObj.forEach((item) => {
-        const webmailAttribute = item.getAttribute('data-name');
-        const amountClicks = item.querySelector('.grin-part');
-        const clicksInPercent = item.querySelector('.bar-item__data');
-        amountClicks.style.width = webmailClients[webmailAttribute].percent;
-        clicksInPercent.innerHTML =
-          `<span class="mr-4 font-weight-bold">${webmailClients[webmailAttribute].number}</span> (${webmailClients[webmailAttribute].percent})`;
-      });
-
-      const desktopClients = {
-        appleMail: {
-          number: 47,
-          percent: `${35}%`,
-        },
-        outlookWin: {
-          number: 26,
-          percent: `${19}%`,
-        },
-        windows: {
-          number: 21,
-          percent: `${16}%`,
-        },
-        thunderbird: {
-          number: 21,
-          percent: `${16}%`,
-        },
-        entourage: {
-          number: 12,
-          percent: `${9}%`,
-        },
-        outlookMac: {
-          number: 3,
-          percent: `${1.4}%`,
-        },
-        lotus: {
-          number: 1,
-          percent: `${0.2}%`,
-        },
-      };
-
-      var desktopObj = document.querySelectorAll('[data-type="desktop"]');
-
-      desktopObj.forEach((item) => {
-        const webmailAttribute = item.getAttribute('data-name');
-        const amountClicks = item.querySelector('.grin-part');
-        const clicksInPercent = item.querySelector('.bar-item__data');
-        amountClicks.style.width = desktopClients[webmailAttribute].percent;
-        clicksInPercent.innerHTML =
-          `<span class="mr-4 font-weight-bold">${desktopClients[webmailAttribute].number}</span> (${desktopClients[webmailAttribute].percent})`;
-      });
-    };
-  </script>
-
-  <script>
-    google.charts
-      .load('current', {
-        packages: ['geochart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        mapsApiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY',
-      })
-      .then(function () {
-        var dataMap = [
-          ['Country', 'Clicks'],
-          ['United States', 1],
-          ['Turkey', 1],
-        ];
-
-        if (dataMap[1][1] === dataMap[2][1]) {
-          dataMap[1][1] = dataMap[1][1] + 0.1;
-        }
-
-        var data = google.visualization.arrayToDataTable(dataMap);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Percentage'],
+          ['gmail.com', 47],
+          ['dodohousenyc.com', 31],
+          ['Others', 22],
+        ]);
 
         var options = {
-          colorAxis: {
-            colors: ['#0000FF', '#00EBA8'],
-          },
-          backgroundColor: {
-            fill: '#FFF',
-            strokeWidth: 0,
+          pieHole: 0.6,
+          slices: {
+            0: {
+              color: '#B6FFE8',
+            },
+            1: {
+              color: '#00EBA8',
+            },
+            2: {
+              color: '#0000FF',
+            },
           },
           legend: 'none',
-          datalessRegionColor: '#B6FFE8',
-          defaultColor: '#B6FFE8',
           tooltip: {
             trigger: 'none',
           },
-          enableRegionInteractivity: false,
-          domain: 'IN',
+          backgroundColor: '#fff',
+          pieSliceText: 'none',
+          pieSliceBorderColor: 'transparent',
+          enableInteractivity: false,
+          chartArea: {
+            left: 0,
+            top: 0,
+            width: '100%',
+            height: '100%',
+          },
         };
 
-        var container = document.getElementById('regions_div');
-        var chart = new google.visualization.GeoChart(container);
-
-        google.visualization.events.addListener(chart, 'ready', function () {
-          var countries = container.getElementsByTagName('path');
-          Array.prototype.forEach.call(countries, function (path) {
-            path.setAttribute('stroke', 'transparent');
-          });
-        });
+        var chart = new google.visualization.PieChart(
+          document.getElementById('donutchart')
+        );
 
         chart.draw(data, options);
-      });
-  </script>
+      }
+    </script>
 
-  <script>
-    google.charts.load('current', {
-      packages: ['corechart'],
-    });
-    google.charts.setOnLoadCallback(drawChart);
+    <script>
+      // Range date picker settings and initialisation
+      !(function ($) {
+        'use strict';
 
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Task', 'Percentage'],
-        ['gmail.com', 47],
-        ['dodohousenyc.com', 31],
-        ['Others', 22],
-      ]);
+        var FormPickers = function () {};
 
-      var options = {
-        pieHole: 0.6,
-        slices: {
-          0: {
-            color: '#B6FFE8',
-          },
-          1: {
-            color: '#00EBA8',
-          },
-          2: {
-            color: '#0000FF',
-          },
-        },
-        legend: 'none',
-        tooltip: {
-          trigger: 'none',
-        },
-        backgroundColor: '#fff',
-        pieSliceText: 'none',
-        pieSliceBorderColor: 'transparent',
-        enableInteractivity: false,
-        chartArea: {
-          left: 0,
-          top: 0,
-          width: '100%',
-          height: '100%',
-        },
-      };
+        (FormPickers.prototype.init = function () {
+          $('#range-datepicker').flatpickr({
+            mode: 'range',
+            altInput: true,
+            altFormat: 'M j',
+            dateFormat: 'Y-m-d',
+            locale: {
+              rangeSeparator: ' – ',
+            },
+          });
+        }),
+          ($.FormPickers = new FormPickers()),
+          ($.FormPickers.Constructor = FormPickers);
+      })(window.jQuery),
+        (function ($) {
+          'use strict';
+          $.FormPickers.init();
+        })(window.jQuery);
 
-      var chart = new google.visualization.PieChart(
-        document.getElementById('donutchart')
-      );
+      // charts
 
-      chart.draw(data, options);
-    }
-  </script>
+      google.charts
+        .load('current', {
+          packages: ['corechart'],
+        })
+        .then(function () {
+          var data = new google.visualization.DataTable();
 
-  <script>
-    // Range date picker settings and initialisation
-    !(function ($) {
-      'use strict';
+          var dataInfo = [
+            [new Date(2020, 6, 6), 0, 0],
+            [new Date(2020, 6, 7), 0, 0],
+            [new Date(2020, 6, 8), 5, 6],
+            [new Date(2020, 6, 9), 2, 7],
+            [new Date(2020, 6, 10), 3, 6],
+            [new Date(2020, 6, 11), 10, 10],
+          ];
 
-      var FormPickers = function () {};
+          data.addColumn('datetime', 'date');
+          data.addColumn('number', 'Openers');
+          data.addColumn('number', 'Clickers');
+          data.addRows(dataInfo);
 
-      (FormPickers.prototype.init = function () {
-        $('#range-datepicker').flatpickr({
-          mode: 'range',
-          altInput: true,
-          altFormat: 'M j',
-          dateFormat: 'Y-m-d',
-          locale: {
-            rangeSeparator: ' – ',
-          },
+          var dateRange = data.getColumnRange(0);
+          const opensRange = data.getColumnRange(1);
+          const clicksRange = data.getColumnRange(2);
+
+          var mindate = dateRange.min;
+          var maxdate = dateRange.max;
+
+          const maxValue = Math.max(opensRange.max, clicksRange.max);
+
+          let n = 10;
+
+          while (maxValue / n > 9) {
+            n = n * 10;
+          }
+
+          let ticks = [
+            ...Array.from(
+              [0, 2, 4, 6, 8, 10],
+              (x) => x * (Math.ceil(maxValue / n) * (n / 10))
+            ),
+          ];
+
+          console.log(ticks);
+
+          var chart = new google.visualization.LineChart(
+            document.getElementById('curve_chart')
+          );
+
+          var options = {
+            curveType: 'function',
+            series: {
+              0: {
+                color: '#00EBA8',
+              },
+              1: {
+                color: '#0000FF',
+              },
+            },
+            chartArea: {
+              height: '100%',
+              width: '100%',
+              top: 10,
+              left: 50,
+              bottom: 30,
+              right: 16,
+            },
+            height: 246,
+            width: '100%',
+            vAxis: {
+              gridlines: {
+                count: -1,
+                color: '#eef0f2',
+              },
+              minorGridlines: {
+                color: 'transparent',
+              },
+              textStyle: {
+                color: '#888888',
+                fontSize: 12,
+              },
+              baselineColor: '#eef0f2',
+              textPosition: 'out',
+              ticks: ticks,
+              viewWindow: {
+                min: (ticks[1] / 2) * -1,
+              },
+            },
+            hAxis: {
+              textStyle: {
+                color: '#888888',
+                fontSize: 12,
+              },
+              minorGridlines: {
+                count: 0,
+              },
+              gridlines: {
+                count: -1,
+                color: 'transparent',
+              },
+              ticks: data.getDistinctValues(0),
+              baselineColor: '#eef0f2',
+              format: 'MMM dd',
+              textPosition: 'out',
+              viewWindow: {
+                min: mindate,
+                max: maxdate,
+              },
+            },
+            lineWidth: 1.5,
+            animation: {
+              startup: true,
+              duration: 1000,
+              easing: 'out',
+            },
+            focusTarget: 'category',
+            tooltip: {
+              textStyle: {
+                color: '#454f5b',
+                fontName: 'Proxima Nova',
+                fontSize: '12',
+              },
+              showColorCode: true,
+            },
+          };
+
+          chart.draw(data, options);
         });
-      }),
-      ($.FormPickers = new FormPickers()),
-      ($.FormPickers.Constructor = FormPickers);
-    })(window.jQuery),
-    (function ($) {
-      'use strict';
-      $.FormPickers.init();
-    })(window.jQuery);
 
-    // charts
+      // hourly line charts
 
-    google.charts
-      .load('current', {
+      google.charts.load('current', {
         packages: ['corechart'],
-      })
-      .then(function () {
-        var data = new google.visualization.DataTable();
+      });
+      google.charts.setOnLoadCallback(drawChart2).then(() => {});
 
-        var dataInfo = [
-          [new Date(2020, 6, 6), 0, 0],
-          [new Date(2020, 6, 7), 0, 0],
-          [new Date(2020, 6, 8), 5, 6],
-          [new Date(2020, 6, 9), 2, 7],
-          [new Date(2020, 6, 10), 3, 6],
-          [new Date(2020, 6, 11), 10, 10],
-        ];
-
-        data.addColumn('datetime', 'date');
-        data.addColumn('number', 'Openers');
-        data.addColumn('number', 'Clickers');
-        data.addRows(dataInfo);
-
-        var dateRange = data.getColumnRange(0);
-        const opensRange = data.getColumnRange(1);
-        const clicksRange = data.getColumnRange(2);
-
-        var mindate = dateRange.min;
-        var maxdate = dateRange.max;
-
-        const maxValue = Math.max(opensRange.max, clicksRange.max);
-
-        let n = 10;
-
-        while (maxValue / n > 9) {
-          n = n * 10;
-        }
-
-        let ticks = [
-          ...Array.from(
-            [0, 2, 4, 6, 8, 10],
-            (x) => x * (Math.ceil(maxValue / n) * (n / 10))
-          ),
-        ];
-
-        console.log(ticks);
-
-        var chart = new google.visualization.LineChart(
-          document.getElementById('curve_chart')
-        );
+      function drawChart2() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Date', 'Openers'],
+          [new Date(2020, 6, 6, 0), 8],
+          [new Date(2020, 6, 6, 3), 24],
+          [new Date(2020, 6, 6, 6), 10],
+          [new Date(2020, 6, 6, 9), 14],
+          [new Date(2020, 6, 6, 12), 15],
+          [new Date(2020, 6, 6, 15), 16],
+          [new Date(2020, 6, 6, 18), 28],
+          [new Date(2020, 6, 6, 21), 22],
+        ]);
 
         var options = {
           curveType: 'function',
@@ -1061,19 +1574,18 @@
             0: {
               color: '#00EBA8',
             },
-            1: {
-              color: '#0000FF',
-            },
           },
+          backgroundColor: '#fff',
           chartArea: {
             height: '100%',
             width: '100%',
             top: 10,
-            left: 50,
+            left: 32,
             bottom: 30,
             right: 16,
+            backgroundColor: '#fff',
           },
-          height: 246,
+          height: 148,
           width: '100%',
           vAxis: {
             gridlines: {
@@ -1089,31 +1601,34 @@
             },
             baselineColor: '#eef0f2',
             textPosition: 'out',
-            ticks: ticks,
-            viewWindow: {
-              min: (ticks[1] / 2) * -1,
-            },
           },
           hAxis: {
             textStyle: {
               color: '#888888',
               fontSize: 12,
             },
-            minorGridlines: {
-              count: 0,
-            },
+
+            ticks: [
+              new Date(2020, 6, 6, 0),
+              new Date(2020, 6, 6, 3),
+              new Date(2020, 6, 6, 6),
+              new Date(2020, 6, 6, 9),
+              new Date(2020, 6, 6, 12),
+              new Date(2020, 6, 6, 15),
+              new Date(2020, 6, 6, 18),
+              new Date(2020, 6, 6, 21),
+            ],
+
             gridlines: {
               count: -1,
               color: 'transparent',
             },
-            ticks: data.getDistinctValues(0),
-            baselineColor: '#eef0f2',
-            format: 'MMM dd',
-            textPosition: 'out',
-            viewWindow: {
-              min: mindate,
-              max: maxdate,
+            minorGridlines: {
+              count: 0,
             },
+            format: 'hha',
+            baselineColor: '#eef0f2',
+            textPosition: 'out',
           },
           lineWidth: 1.5,
           animation: {
@@ -1132,130 +1647,27 @@
           },
         };
 
-        chart.draw(data, options);
-      });
+        var formatter = new google.visualization.DateFormat({
+          pattern: 'hha',
+        });
+        formatter.format(data, 0);
 
-    // hourly line charts
+        var chart2 = new google.visualization.LineChart(
+          document.getElementById('curve_chart-2')
+        );
 
-    google.charts.load('current', {
-      packages: ['corechart'],
-    });
-    google.charts.setOnLoadCallback(drawChart2).then(() => {});
+        chart2.draw(data, options);
+      }
+    </script>
 
-    function drawChart2() {
-      var data = new google.visualization.arrayToDataTable([
-        ['Date', 'Openers'],
-        [new Date(2020, 6, 6, 0), 8],
-        [new Date(2020, 6, 6, 3), 24],
-        [new Date(2020, 6, 6, 6), 10],
-        [new Date(2020, 6, 6, 9), 14],
-        [new Date(2020, 6, 6, 12), 15],
-        [new Date(2020, 6, 6, 15), 16],
-        [new Date(2020, 6, 6, 18), 28],
-        [new Date(2020, 6, 6, 21), 22],
-      ]);
-
-      var options = {
-        curveType: 'function',
-        series: {
-          0: {
-            color: '#00EBA8',
-          },
-        },
-        backgroundColor: '#fff',
-        chartArea: {
-          height: '100%',
-          width: '100%',
-          top: 10,
-          left: 32,
-          bottom: 30,
-          right: 16,
-          backgroundColor: '#fff',
-        },
-        height: 148,
-        width: '100%',
-        vAxis: {
-          gridlines: {
-            count: -1,
-            color: '#eef0f2',
-          },
-          minorGridlines: {
-            color: 'transparent',
-          },
-          textStyle: {
-            color: '#888888',
-            fontSize: 12,
-          },
-          baselineColor: '#eef0f2',
-          textPosition: 'out',
-        },
-        hAxis: {
-          textStyle: {
-            color: '#888888',
-            fontSize: 12,
-          },
-
-          ticks: [
-            new Date(2020, 6, 6, 0),
-            new Date(2020, 6, 6, 3),
-            new Date(2020, 6, 6, 6),
-            new Date(2020, 6, 6, 9),
-            new Date(2020, 6, 6, 12),
-            new Date(2020, 6, 6, 15),
-            new Date(2020, 6, 6, 18),
-            new Date(2020, 6, 6, 21),
-          ],
-
-          gridlines: {
-            count: -1,
-            color: 'transparent',
-          },
-          minorGridlines: {
-            count: 0,
-          },
-          format: 'hha',
-          baselineColor: '#eef0f2',
-          textPosition: 'out',
-        },
-        lineWidth: 1.5,
-        animation: {
-          startup: true,
-          duration: 1000,
-          easing: 'out',
-        },
-        focusTarget: 'category',
-        tooltip: {
-          textStyle: {
-            color: '#454f5b',
-            fontName: 'Proxima Nova',
-            fontSize: '12',
-          },
-          showColorCode: true,
-        },
+    <script>
+      const select2Options = {
+        placeholder: 'Select an option',
+        allowClear: true,
+        minimumResultsForSearch: -1,
       };
 
-      var formatter = new google.visualization.DateFormat({
-        pattern: 'hha',
-      });
-      formatter.format(data, 0);
-
-      var chart2 = new google.visualization.LineChart(
-        document.getElementById('curve_chart-2')
-      );
-
-      chart2.draw(data, options);
-    }
-  </script>
-
-  <script>
-    const select2Options = {
-      placeholder: 'Select an option',
-      allowClear: true,
-      minimumResultsForSearch: -1,
-    };
-
-    createSelect2ByClass('._select2-lg', select2Options);
-  </script>
-</body>
-
+      createSelect2ByClass('._select2-lg', select2Options);
+    </script>
+  </body>
 </html>

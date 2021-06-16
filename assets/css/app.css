@@ -9607,9 +9607,7 @@ button.close {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default
-.select2-selection--single
-.select2-selection__placeholder {
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -13676,156 +13674,52 @@ button {
   line-height: 1;
   margin-right: 20px; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(3) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(3) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(4) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(4) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(5) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(5) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(6) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(6) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(7) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(7) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(8) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(8) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(9) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(9) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollBody
-> table
-> tbody
-> tr
-> td:nth-child(10) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(10) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(3) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(3) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(4) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(4) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(5) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(5) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(6) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(6) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(7) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(7) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(8) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(8) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(9) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(9) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper
-.dataTables_scroll
-div.dataTables_scrollHead
-div.dataTables_scrollHeadInner
-> table
-> thead
-> tr
-> th:nth-child(10) {
+._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(10) {
   text-align: center; }
 
 .white {
@@ -14059,6 +13953,67 @@ table.dataTable thead .sorting_asc {
 @media (max-width: 1350px) {
   .reports-page .col-1-4 {
     width: 100%; } }
+
+._password-help {
+  position: absolute;
+  content: '';
+  top: calc(50% - 74px);
+  right: -240px;
+  width: 220px;
+  background-color: #0000FF;
+  padding: 20px 20px 17px;
+  border-radius: 16px;
+  z-index: 1;
+  min-height: 140px;
+  line-height: 1.84; }
+  @media (max-width: 768px) {
+    ._password-help {
+      top: calc(100% + 10px);
+      right: 0px; } }
+  ._password-help::after {
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 10px;
+    top: calc(50% - 5px);
+    left: -10px;
+    background-image: url("../images/arrow-help.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px 10px; }
+    @media (max-width: 768px) {
+      ._password-help::after {
+        display: none; } }
+
+.help-status {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ED1C24;
+  margin-right: 8px; }
+  .help-status .status-correct {
+    display: none; }
+  .help-status__row {
+    display: flex;
+    align-items: center; }
+    .help-status__row.correct .help-status {
+      background-color: transparent;
+      border-radius: 0px;
+      width: 11px;
+      height: 8px;
+      margin-right: 4px; }
+    .help-status__row.correct .status-correct {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .help-status__row.correct .help-text {
+      text-decoration: line-through;
+      -webkit-text-decoration-color: #6BE7AD;
+              text-decoration-color: #6BE7AD; }
+
+.help-text {
+  font-size: 12px;
+  font-weight: regular; }
 
 th,
 td {

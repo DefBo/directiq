@@ -1,1419 +1,1769 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>All Pages | DirectIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Direct IQ frontend development version" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
+    <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
+    <meta name="msapplication-TileColor" content="#0000ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>All Pages | DirectIQ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta content="Direct IQ frontend development version" name="description" />
-  <meta content="Coderthemes" name="author" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- App favicon -->
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
-  />
-  <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
-  <link
-    rel="mask-icon"
-    href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
-    color="#5bbad5"
-  />
-  <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
-  <meta name="msapplication-TileColor" content="#0000ff" />
-  <meta
-    name="msapplication-config"
-    content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
-  />
-  <meta name="theme-color" content="#ffffff" />
 
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="bs-default-stylesheet"
+    />
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-default-stylesheet"
+    />
 
-  <!-- App css -->
-  <link
-    href="assets/css/bootstrap.min.css"
-    rel="stylesheet"
-    type="text/css"
-    id="bs-default-stylesheet"
-  />
-  <link
-    href="assets/css/app.min.css"
-    rel="stylesheet"
-    type="text/css"
-    id="app-default-stylesheet"
-  />
+  </head>
 
-</head>
+  <body data-layout-mode="two-column" class="animation-stopper">
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- Topbar Start -->
+      <div class="navbar-custom">
+        <div class="container-fluid navbar-custom__inner">
+          <div class="name-of-page__mobile w-100">My Lists</div>
+          <div>
+            <!-- LOGO -->
+            <div class="logo-box">
+              <a href="./" class="logo">
+                <svg width="44.834" height="45">
+                  <use xlink:href="assets/images/sprite.svg#logo"></use>
+                </svg>
+              </a>
+            </div>
 
-<body data-layout-mode="two-column" class="animation-stopper">
-  <!-- Begin page -->
-  <div id="wrapper">
-    <!-- Topbar Start -->
-    <div class="navbar-custom">
-      <div class="container-fluid navbar-custom__inner">
-        <div class="name-of-page__mobile w-100">My Lists</div>
-        <div>
-          <!-- LOGO -->
-          <div class="logo-box">
-            <a href="./" class="logo">
-              <svg width="44.834" height="45">
-                <use xlink:href="assets/images/sprite.svg#logo"></use>
-              </svg>
-            </a>
+            <ol class="breadcrumbs">
+              <li class="breadcrumb-item active">
+                Home
+                <button class="btn_icon d-none d-md-inline ml-18">
+                  <i class="add-to-fav-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19.5"
+                      height="17.805"
+                      viewBox="0 0 19.5 17.805"
+                    >
+                      <g transform="translate(0.75 0.75)">
+                        <path
+                          class="add-to-fav-icon__bg"
+                          d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13"
+                          transform="translate(-1972.5 -1089.5)"
+                          fill="none"
+                          stroke="blue"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          class="add-to-fav-icon__plus"
+                          d="M1986.5,1093.5v8m4-4h-8"
+                          transform="translate(-1972.5 -1089.5)"
+                          fill="none"
+                          stroke="#00eba8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </g>
+                    </svg>
+                  </i>
+                </button>
+              </li>
+            </ol>
           </div>
 
-          <ol class="breadcrumbs">
-            <li class="breadcrumb-item active">
-              Home
-              <button class="btn_icon d-none d-md-inline ml-18">
-                <i class="add-to-fav-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="17.805" viewBox="0 0 19.5 17.805">
-                    <g transform="translate(0.75 0.75)">
-                      <path class="add-to-fav-icon__bg" d="M1985.3,1105.5l-6.4-5.2-6.4,5.2v-16h13"
-                        transform="translate(-1972.5 -1089.5)" fill="none" stroke="blue" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="1.5" />
-                      <path class="add-to-fav-icon__plus" d="M1986.5,1093.5v8m4-4h-8"
-                        transform="translate(-1972.5 -1089.5)" fill="none" stroke="#00eba8" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="1.5" />
-                    </g>
-                  </svg>
-                </i>
-              </button>
-            </li>
-          </ol>
-        </div>
+          <div class="align-items-center d-flex">
+            <!--App Search-->
+            <form class="app-search d-none d-md-table">
+              <div class="app-search-box">
+                <div class="input-group">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Start typing and search"
+                    id="top-search"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn" type="submit">
+                      <svg width="19.955" height="20.061">
+                        <use xlink:href="assets/images/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
 
-        <div class="align-items-center d-flex">
-          <!--App Search-->
-          <form class="app-search d-none d-md-table">
-            <div class="app-search-box">
-              <div class="input-group">
-                <input type="search" class="form-control" placeholder="Start typing and search" id="top-search" />
-                <div class="input-group-append">
-                  <button class="btn" type="submit">
-                    <svg width="19.955" height="20.061">
-                      <use xlink:href="assets/images/sprite.svg#search"></use>
+            <div class="dropdown _user d-none d-md-block">
+              <a
+                class="dropdown-toggle _outline _lg"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                Create
+                <svg width="13.545" height="8">
+                  <use
+                    xlink:href="assets/images/sprite.svg#dropdown-arrow"
+                  ></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right _actions">
+                <div class="dropdown-menu-inner">
+                  <a class="dropdown-item" href="#">View</a>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#rename-tag-modal"
+                    >Rename</a
+                  >
+
+                  <div class="confirm__wrap">
+                    <button class="dropdown-item confirm__btn">Delete</button>
+
+                    <div class="confirm__modal _to-right d-none">
+                      <div class="confirm__content">
+                        <p class="confirm__text">
+                          You sure you want to delete this tag?
+                        </p>
+                      </div>
+                      <div class="d-flex">
+                        <button class="btn _lg _secondary">Nope</button>
+                        <button class="btn _lg _primary">Sure</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown ml-14 d-none d-md-block">
+              <a
+                class="dropdown-toggle _icon"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <svg width="18.261" height="30">
+                  <use xlink:href="assets/images/sprite.svg#bulb"></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown d-none d-md-block">
+              <a
+                class="dropdown-toggle _icon"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <svg width="21.073" height="21.264">
+                  <use xlink:href="assets/images/sprite.svg#bell"></use>
+                </svg>
+                <span class="badge">9</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                <p class="text-center">Sample Dropdown Content</p>
+              </div>
+            </div>
+
+            <div class="dropdown ml-10 _user mr-20">
+              <a
+                class="dropdown-toggle _user d-none d-md-inline-block"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <span class="user-avatar">
+                  <img src="assets/images/user.png" alt="User Avatar" />
+                </span>
+                <svg width="5.8" height="25">
+                  <use xlink:href="assets/images/sprite.svg#empty-dots"></use>
+                </svg>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+                <div class="profile-dropdown__inner">
+                  <div class="profile-dropdown__email">
+                    barisergin@gmail.com
+                  </div>
+                  <div class="profile-dropdown__id">Account ID #123456</div>
+                  <a href="#" class="profile-dropdown__link mb-9">
+                    <svg width="16" height="16">
+                      <use xlink:href="assets/images/sprite.svg#profile"></use>
+                      <span class="profile-dropdown__link-text">
+                        My Account
+                      </span>
+                    </svg>
+                  </a>
+                  <div class="profile-dropdown__divider mb-13"></div>
+                  <div class="profile-dropdown__progress">
+                    <div class="d-flex justify-content-between mb-5">
+                      <span class="font-weight-bold">Free</span>
+                      <span class="color-secondary font-weight-medium"
+                        >25/1500</span
+                      >
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 25%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+                  <a href="#" class="profile-dropdown__link mb-4">
+                    <svg width="13.375" height="16">
+                      <use xlink:href="assets/images/sprite.svg#swap"></use>
+                      <span class="profile-dropdown__link-text">
+                        Change Plan
+                      </span>
+                    </svg>
+                  </a>
+                  <div class="profile-dropdown__divider mb-5"></div>
+                  <a href="#" class="profile-dropdown__link">
+                    <svg width="16" height="12.235">
+                      <use xlink:href="assets/images/sprite.svg#group"></use>
+                      <span class="profile-dropdown__link-text">
+                        Switch Account
+                      </span>
+                    </svg>
+                  </a>
+                  <a href="#" class="profile-dropdown__link">
+                    <svg width="16" height="16">
+                      <use xlink:href="assets/images/sprite.svg#support"></use>
+                      <span class="profile-dropdown__link-text">Support</span>
+                    </svg>
+                  </a>
+
+                  <select
+                    class="form-control _select2-lg"
+                    data-toggle="select2"
+                    required
+                  >
+                    <option value="test-1">English</option>
+                    <option value="test-2">Chinese</option>
+                    <option value="test-2">Spanish</option>
+                    <option value="test-2">Portugese</option>
+                    <option value="test-2">Italian</option>
+                  </select>
+
+                  <div class="profile-dropdown__divider mb-22"></div>
+                  <button class="profile-dropdown__btn">Log-out</button>
+
+                  <div class="profile-dropdown__discount">
+                    <div class="font-14 font-weight-bold">Hey Baris!</div>
+                    <div class="font-36">30%</div>
+                    <div
+                      class="font-12 color-secondary font-weight-medium mb-10"
+                    >
+                      <span class="text-nowrap"
+                        >Upgrade in 12 hours and use</span
+                      >
+                      <br />
+                      <span class="font-weight-bold color-primary"
+                        >30% personal discount!</span
+                      >
+                    </div>
+                    <button class="btn _lg _primary">Redeem Now</button>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true"
+                  >
+                    <svg width="8" height="8">
+                      <use xlink:href="assets/images/sprite.svg#cross"></use>
                     </svg>
                   </button>
                 </div>
               </div>
             </div>
-          </form>
-
-          <div class="dropdown _user d-none d-md-block">
-            <a class="dropdown-toggle _outline _lg" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-              aria-expanded="false">
-              Create
-              <svg width="13.545" height="8">
-                <use xlink:href="assets/images/sprite.svg#dropdown-arrow"></use>
-              </svg>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right _actions">
-              <div class="dropdown-menu-inner">
-                <a class="dropdown-item" href="#">View</a>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#rename-tag-modal">Rename</a>
-
-                <div class="confirm__wrap">
-                  <button class="dropdown-item confirm__btn">Delete</button>
-
-                  <div class="confirm__modal _to-right d-none">
-                    <div class="confirm__content">
-                      <p class="confirm__text">
-                        You sure you want to delete this tag?
-                      </p>
-                    </div>
-                    <div class="d-flex">
-                      <button class="btn _lg _secondary">Nope</button>
-                      <button class="btn _lg _primary">Sure</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
+        </div>
+      </div>
+      <!-- end Topbar -->
 
-          <div class="dropdown ml-14 d-none d-md-block">
-            <a class="dropdown-toggle _icon" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-              aria-expanded="false">
-              <svg width="18.261" height="30">
-                <use xlink:href="assets/images/sprite.svg#bulb"></use>
+      <!-- ========== Left Sidebar Start ========== -->
+
+      <button class="hamburger hamburger--squeeze" id="ham" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+
+      <nav class="nav-drill">
+        <ul class="nav-items">
+          <li class="nav-item d-md-none">
+            <a class="nav-item-link _logo" href="./index.html">
+              <svg width="39.852" height="40">
+                <use xlink:href="assets/images/sprite.svg#logo-mobile"></use>
               </svg>
             </a>
-            <div class="dropdown-menu">
-              <p class="text-center">Sample Dropdown Content</p>
-            </div>
-          </div>
-
-          <div class="dropdown d-none d-md-block">
-            <a class="dropdown-toggle _icon" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-              aria-expanded="false">
-              <svg width="21.073" height="21.264">
-                <use xlink:href="assets/images/sprite.svg#bell"></use>
-              </svg>
-              <span class="badge">9</span>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="20.193" height="17.999">
+                  <use xlink:href="assets/images/sprite.svg#home-i"></use>
+                </svg>
+              </i>
+              <span> Home </span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-              <p class="text-center">Sample Dropdown Content</p>
-            </div>
-          </div>
-
-          <div class="dropdown ml-10 _user mr-20">
-            <a class="dropdown-toggle _user d-none d-md-inline-block" data-toggle="dropdown" href="#" role="button"
-              aria-haspopup="false" aria-expanded="false">
-              <span class="user-avatar">
-                <img src="assets/images/user.png" alt="User Avatar" />
-              </span>
-              <svg width="5.8" height="25">
-                <use xlink:href="assets/images/sprite.svg#empty-dots"></use>
-              </svg>
+            <ul class="nav-items nav-expand-content active">
+              <li class="nav-title">Home</li>
+              <li class="nav-item">
+                <a class="nav-item-link active" href="./"> Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="17.719" height="15.328">
+                  <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
+                </svg>
+              </i>
+              <span> Contacts </span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-              <div class="profile-dropdown__inner">
-                <div class="profile-dropdown__email">
-                  barisergin@gmail.com
-                </div>
-                <div class="profile-dropdown__id">Account ID #123456</div>
-                <a href="#" class="profile-dropdown__link mb-9">
-                  <svg width="16" height="16">
-                    <use xlink:href="assets/images/sprite.svg#profile"></use>
-                    <span class="profile-dropdown__link-text">
-                      My Account
-                    </span>
-                  </svg>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Contacts</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./contacts-home-static.html">
+                  Overview
                 </a>
-                <div class="profile-dropdown__divider mb-13"></div>
-                <div class="profile-dropdown__progress">
-                  <div class="d-flex justify-content-between mb-5">
-                    <span class="font-weight-bold">Free</span>
-                    <span class="color-secondary font-weight-medium">25/1500</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <a href="#" class="profile-dropdown__link mb-4">
-                  <svg width="13.375" height="16">
-                    <use xlink:href="assets/images/sprite.svg#swap"></use>
-                    <span class="profile-dropdown__link-text">
-                      Change Plan
-                    </span>
-                  </svg>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./my-lists-static.html">
+                  My Lists
                 </a>
-                <div class="profile-dropdown__divider mb-5"></div>
-                <a href="#" class="profile-dropdown__link">
-                  <svg width="16" height="12.235">
-                    <use xlink:href="assets/images/sprite.svg#group"></use>
-                    <span class="profile-dropdown__link-text">
-                      Switch Account
-                    </span>
-                  </svg>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="./add-contacts.html">
+                  Add Contacts
                 </a>
-                <a href="#" class="profile-dropdown__link">
-                  <svg width="16" height="16">
-                    <use xlink:href="assets/images/sprite.svg#support"></use>
-                    <span class="profile-dropdown__link-text">Support</span>
-                  </svg>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Tags </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="segments.html"> Segments </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Custom Fields </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Signup Forms </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Suppression Lists </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Cleaning Service </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="18" height="18">
+                  <use xlink:href="assets/images/sprite.svg#templates-i"></use>
+                </svg>
+              </i>
+              <span>Templates</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Templates</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="templates-home.html">
+                  My Templates
                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="create-template-free.html">
+                  Create Template
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="spam-doctor.html">
+                  Spam Doctor
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="inbox-preview.html">
+                  Inbox Preview
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="29.507" height="22">
+                  <use xlink:href="assets/images/sprite.svg#campaigns-i"></use>
+                </svg>
+              </i>
+              <span>Campaigns</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Campaigns</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="17.894" height="24">
+                  <use
+                    xlink:href="assets/images/sprite.svg#integrations-i"
+                  ></use>
+                </svg>
+              </i>
+              <span>Integrations</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Integrations</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="21.515" height="18.91">
+                  <use xlink:href="assets/images/sprite.svg#settings-i"></use>
+                </svg>
+              </i>
+              <span>Settings</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Settings</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-expand">
+            <a class="nav-item-link nav-expand-link" href="#">
+              <i>
+                <svg width="15.29" height="20">
+                  <use xlink:href="assets/images/sprite.svg#bookmarks-i"></use>
+                </svg>
+              </i>
+              <span>Bookmarks</span>
+            </a>
+            <ul class="nav-items nav-expand-content">
+              <li class="nav-title">Bookmarks</li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 4 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 5 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 6 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 7 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item-link" href="#"> Test Item 8 </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
 
-                <select class="form-control _select2-lg" data-toggle="select2" required>
-                  <option value="test-1">English</option>
-                  <option value="test-2">Chinese</option>
-                  <option value="test-2">Spanish</option>
-                  <option value="test-2">Portugese</option>
-                  <option value="test-2">Italian</option>
-                </select>
+        <div class="nav-drill__icons">
+          <button class="btn_icon search-btn__mobile">
+            <svg width="42.182" height="42.414">
+              <use xlink:href="assets/images/sprite.svg#mobile-search"></use>
+            </svg>
+          </button>
 
-                <div class="profile-dropdown__divider mb-22"></div>
-                <button class="profile-dropdown__btn">Log-out</button>
+          <button class="btn_icon d-none">
+            <svg width="24.354" height="40">
+              <use xlink:href="assets/images/sprite.svg#mobile-bulb"></use>
+            </svg>
+          </button>
 
-                <div class="profile-dropdown__discount">
-                  <div class="font-14 font-weight-bold">Hey Baris!</div>
-                  <div class="font-36">30%</div>
-                  <div class="font-12 color-secondary font-weight-medium mb-10">
-                    <span class="text-nowrap">Upgrade in 12 hours and use</span>
-                    <br />
-                    <span class="font-weight-bold color-primary">30% personal discount!</span>
-                  </div>
-                  <button class="btn _lg _primary">Redeem Now</button>
-                </div>
+          <button class="btn_icon position-relative">
+            <a href="#" class="notif-mobile"> </a>
+            <svg width="41.62" height="42">
+              <use xlink:href="assets/images/sprite.svg#mobile-bell"></use>
+            </svg>
+          </button>
 
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                  <svg width="8" height="8">
-                    <use xlink:href="assets/images/sprite.svg#cross"></use>
+          <button
+            class="btn_icon user-avatar-mobile h-100"
+            id="user-profile-btn-mobile"
+          >
+            <img src="assets/images/user.png" alt="User Avatar" />
+          </button>
+        </div>
+        <form class="app-search">
+          <div class="app-search-box">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search anything"
+                id="top-search"
+              />
+              <div class="input-group-append">
+                <button class="btn" type="submit">
+                  <svg width="19.955" height="20.061">
+                    <use xlink:href="assets/images/sprite.svg#search"></use>
                   </svg>
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end Topbar -->
-
-    <!-- ========== Left Sidebar Start ========== -->
-
-    <button class="hamburger hamburger--squeeze" id="ham" type="button">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
-
-    <nav class="nav-drill">
-      <ul class="nav-items">
-        <li class="nav-item d-md-none">
-          <a class="nav-item-link _logo" href="./index.html">
-            <svg width="39.852" height="40">
-              <use xlink:href="assets/images/sprite.svg#logo-mobile"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="20.193" height="17.999">
-                <use xlink:href="assets/images/sprite.svg#home-i"></use>
-              </svg>
-            </i>
-            <span> Home </span>
-          </a>
-          <ul class="nav-items nav-expand-content active">
-            <li class="nav-title">Home</li>
-            <li class="nav-item">
-              <a class="nav-item-link active" href="./"> Home </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="17.719" height="15.328">
-                <use xlink:href="assets/images/sprite.svg#contacts-i"></use>
-              </svg>
-            </i>
-            <span> Contacts </span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Contacts</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./contacts-home-static.html">
-                Overview
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./my-lists-static.html">
-                My Lists
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="./add-contacts.html">
-                Add Contacts
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Tags </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="segments.html"> Segments </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Custom Fields </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Signup Forms </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Suppression Lists </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Cleaning Service </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="18" height="18">
-                <use xlink:href="assets/images/sprite.svg#templates-i"></use>
-              </svg>
-            </i>
-            <span>Templates</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Templates</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="templates-home.html">
-                My Templates
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="create-template-free.html">
-                Create Template
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="spam-doctor.html">
-                Spam Doctor
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="inbox-preview.html">
-                Inbox Preview
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="29.507" height="22">
-                <use xlink:href="assets/images/sprite.svg#campaigns-i"></use>
-              </svg>
-            </i>
-            <span>Campaigns</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Campaigns</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="17.894" height="24">
-                <use xlink:href="assets/images/sprite.svg#integrations-i"></use>
-              </svg>
-            </i>
-            <span>Integrations</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Integrations</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="21.515" height="18.91">
-                <use xlink:href="assets/images/sprite.svg#settings-i"></use>
-              </svg>
-            </i>
-            <span>Settings</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Settings</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item nav-expand">
-          <a class="nav-item-link nav-expand-link" href="#">
-            <i>
-              <svg width="15.29" height="20">
-                <use xlink:href="assets/images/sprite.svg#bookmarks-i"></use>
-              </svg>
-            </i>
-            <span>Bookmarks</span>
-          </a>
-          <ul class="nav-items nav-expand-content">
-            <li class="nav-title">Bookmarks</li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 1 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 2 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 3 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 4 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 5 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 6 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 7 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item-link" href="#"> Test Item 8 </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-
-      <div class="nav-drill__icons">
-        <button class="btn_icon search-btn__mobile">
-          <svg width="42.182" height="42.414">
-            <use xlink:href="assets/images/sprite.svg#mobile-search"></use>
-          </svg>
-        </button>
-
-        <button class="btn_icon d-none">
-          <svg width="24.354" height="40">
-            <use xlink:href="assets/images/sprite.svg#mobile-bulb"></use>
-          </svg>
-        </button>
-
-        <button class="btn_icon position-relative">
-          <a href="#" class="notif-mobile"> </a>
-          <svg width="41.62" height="42">
-            <use xlink:href="assets/images/sprite.svg#mobile-bell"></use>
-          </svg>
-        </button>
-
-        <button class="btn_icon user-avatar-mobile h-100" id="user-profile-btn-mobile">
-          <img src="assets/images/user.png" alt="User Avatar" />
-        </button>
-      </div>
-      <form class="app-search">
-        <div class="app-search-box">
-          <div class="input-group">
-            <input type="search" class="form-control" placeholder="Search anything" id="top-search" />
-            <div class="input-group-append">
-              <button class="btn" type="submit">
-                <svg width="19.955" height="20.061">
-                  <use xlink:href="assets/images/sprite.svg#search"></use>
+              <div class="app-search-box__close">
+                <svg width="16" height="16">
+                  <use xlink:href="assets/images/sprite.svg#cross"></use>
                 </svg>
-              </button>
-            </div>
-            <div class="app-search-box__close">
-              <svg width="16" height="16">
-                <use xlink:href="assets/images/sprite.svg#cross"></use>
-              </svg>
+              </div>
             </div>
           </div>
-        </div>
-      </form>
-    </nav>
-
-    <!-- Left Sidebar End -->
-
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
-
-    <div class="content-page">
-      <div class="content">
-        <!-- Start Content-->
-        <div class="container-fluid">
-          <div class="card mb-0 mt-15">
-            <h3 class="mb-16">Pages</h3>
-
-            <p class="sub-header">
-              All pages that are implemented or currently in progress.
-            </p>
-
-            <h4 class="mb-16">
-              <a class="link" href="my-lists-static.html">My Lists</a>
-              (static)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="my-lists-ep.html">My Lists</a> (endpoint
-              integrated)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="my-lists-list-upload.html">My Lists</a>
-              (upload list)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="upgrade-push.html">Upgrade push</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="list-details-static.html">List Details</a>
-              (static)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="list-details-ep.html">List Details</a>
-              (endpoint integrated)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="contacts-home-static.html">Contacts Home</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="contact-details.html">Contact Details</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="add-contacts.html">Add Contacts</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="form-validation-examples.html">Form Validation Example</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="save-list-new-user.html">Save List</a>
-              (new user)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="save-list-few-lists.html">Save List</a>
-              (select from few lists)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="save-list-many-lists.html">Save List</a>
-              (select from many lists)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="confirm-modals.html">Confirmation Modals</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="import-from-other-service.html">Add Contacts</a>
-              (import from other service)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="connect-service-not-connected.html">Add Contacts</a>
-              (import from other service - not connected)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="toggle-columns.html">Toggle Columns Modal</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="contact-integrations.html">Contact Integrations</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="contact-integrations-not-connected.html">Contact Integrations</a>
-              (not connected)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="contact-integrations-connected.html">Contact Integrations</a>
-              (connected)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="contact-integrations-connected-no-list.html">Contact Integrations</a>
-              (connected - no list)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="social-media-integrations.html">Social Media Integrations</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="api.html">Integrations - API</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="confirmation.html">Confirmation Notification</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="negative.html">Negative Notification</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="segments.html">Segments</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="segments-fixes.html">Segments</a> (fixes)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="segments-possible-fields.html">Segments - Possible Fields</a>
-            </h4>
-
-            <h4 class="mb-16"><a class="link" href="tags.html">Tags</a></h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="plugins-and-apps.html">Integrations - Plugins & Apps</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="contact-fields.html">Contacts - Fields</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="suppression-lists.html">Contacts - Suppression Lists</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="contacts-edit-profile.html">Contacts / Edit Profile</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="contacts-fields-create.html">Contacts / Fields Create</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="templates-home.html">Templates - Home</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-template-free.html">Create Template - Free Templates</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-template-basic-layout.html">Create Template - Basic Layout</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-template-scratch.html">Create Template - Create From Scratch</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-template-import.html">Create Template - Import</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-template-preview-save.html">Create Template - Preview and Save</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="inbox-preview-empty.html">Templates - Inbox Preview</a>
-              (empty)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="inbox-preview-running.html">Templates - Inbox Preview</a>
-              (running)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="inbox-preview-complete.html">Templates - Inbox Preview</a>
-              (complete)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="spam-doctor-empty.html">Templates - Spam Doctor</a>
-              (empty)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="spam-doctor-running.html">Templates - Spam Doctor</a>
-              (running)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="spam-doctor-complete.html">Templates - Spam Doctor</a>
-              (complete)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="templates-send-test.html">Templates - Send Test</a>
-              (modal)
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="campaigns-home.html">Campaigns - Home</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign.html">Create Campaign</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="campaign-is-scheduled-modal.html">Campaign is scheduled (modal)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-a-b.html">Create Campaign - A/B</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-automated-overview.html">Create Campaign - Automated (overview)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-automated.html">Create Campaign - Automated (Welcome Email)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-onboarding-series.html">Create Campaign - Automated (Onboarding
-                Series)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-lead-nurturing.html">Create Campaign - Automated (Lead Nurturing)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-happy-birthday.html">Create Campaign - Automated (Happy Birthday)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-date-based.html">Create Campaign - Automated (Date Based)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-auto-resend.html">Create Campaign - Automated (Auto-Resend)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-rss.html">Create Campaign - Automated (RSS)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-recurring.html">Create Campaign - Automated (Recurring)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-education-series.html">Create Campaign - Automated (Education
-                Series)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-sales-pitch.html">Create Campaign - Automated (Sales Pitch)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-follow-up.html">Create Campaign - Automated (Follow Up)
-              </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="my-plan.html">My Plan </a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="my-plan-set-up-payment.html">My Plan (Set-Up Payment Modal)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="my-plan-success.html">My Plan (Success Modal)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="login.html">Login</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reset-password.html">Reset Password</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reset-password-success.html">Reset Password Success</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reset-password-failure.html">Reset Password Failure</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reset-password-new-password.html">Reset Password - New Password</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="two-factor-authentication.html">Two-Factor Authentication</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="two-factor-authentication-failure.html">Two-Factor Authentication Failure</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="sign-up.html">Sign Up</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="check-email.html">Check Email</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="set-password.html">Set Your Password</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="company-information.html">Company Information</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="add-address.html">Add Your Address</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="ready-to-go.html">You're ready to go</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-overview.html">Settings - Overview</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-my-account.html">Settings - My Account</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-connected-domains.html">Settings - Connected Domains</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-connected-domains-empty.html">Settings - Connected Domains – Empty</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-add-domain-1.html">Settings - Add Domain(1s)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-add-domain-2.html">Settings - Add Domain(2)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="confirmation-modal-3.html">Confirmation - Modal(3)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-connected-domains-1.html">Settings - Connected Domains – 1</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-senders.html">Settings - Senders</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-senders-empty.html">Settings - Senders – Empty</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-add-sender.html">Setting - Add Sender</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-add-sender-pop.html">Setting - Add Sender - Pop</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-edit-sender.html">Setting - Edit Sender</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-emailFotter-freeAccount.html">Settings - Email Footer - FREE ACCOUNT</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-emailFotter-paid.html">Settings - Email Footer - PAID</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="list-details-new-table.html">Custom Table</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="pseudo-modal.html">Pseudo Modal</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-name.html">Create Campaign - Campaign Name</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-to.html">Create Campaign - To</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-from.html">Create Campaign - From</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-email-design.html">Create Campaign - Email Design</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-timing.html">Create Campaign - Timing</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-ab-test.html">Create Campaign - A/B Test Rules</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-ab-from.html">Create Campaign - A/B From</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-ab-email-design.html">Create Campaign - A/B Email
-                Design</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-automated-to.html">Create Campaign - Automated (Welcome
-                Email - To)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-automated-timing.html">Create Campaign - Automated (Welcome
-                Email - Timing)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-onboarding-series-campaign-email-design.html">Create Campaign -
-                Automated (Onboarding Series - Campaign
-                Email Design)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-onboarding-series-timing.html">Create Campaign - Automated
-                (Onboarding Series - Timing )</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-happy-birthday-to.html">Create Campaign - Automated (Happy Birthday
-                - To)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-happy-birthday-timing.html">Create Campaign - Automated (Happy
-                Birthday - Timing)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-auto-resend-to.html">Create Campaign - Automated (Auto Resend -
-                To)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-auto-resend-timing.html">Create Campaign - Automated (Auto Resend -
-                Timing)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-rss-email-design.html">Create Campaign - Automated (RSS -
-                Campaign Email Design)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-rss-timing.html">Create Campaign - Automated (RSS - Timing)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-recuring-timing.html">Create Campaign - Automated (Recuring -
-                Timing)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="create-campaign-campaign-follow-up-email-design.html">Create Campaign - Automated
-                (Follow Up - Campaign Email
-                Design)</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="home.html">Home</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-overview.html">Reports Overview</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-ab.html">Reports AB</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-education-series.html">Reports Education Series</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-detail-opens.html">Reports Detail – Opens</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-detail-bounces.html">Reports Detail – Bounces</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-detail-complaints.html">Reports Detail – Complaints</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-detail-location.html">Reports Detail – Locations</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-detail-recipients.html">Reports Detail – Recipients</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-ab-overview.html">Reports AB - Overview AB Campaign</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-education-series-1.html">Reports Education Series 1</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="clickmap.html">Reports Detail – Clickmap</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="domains.html">Reports Detail – Domains</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="email-clients.html">Reports Detail – Email Clients</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="search-results.html">Search results</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="search-results-all.html">Search results - All results</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="search-results-contacts.html">Search results - Contacts</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="search-results-lists.html">Search results - Lists</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="search-results-templates.html">Search results - Templates</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="search-results-campaigns.html">Search results - Campaigns</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="search-results-other.html">Search results - Other</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="homepage-with-automation.html">
-                Home (Standard with automation)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="homepage-empty-automation.html">
-                Home (Standard - automation empty)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="homepage-user-step-1.html">
-                Home (New User Step 1)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="homepage-user-step-2.html">
-                Home (New User Step 2)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="homepage-user-step-3.html">
-                Home (New User Step 3)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="homepage-user-step-arrows.html">
-                Home (New User Step Arrows (done elements) Desicion)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="homepage-user-steps-no-stats.html">
-                Home (New User All Steps full - After 1st campaign but no
-                stats)</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="homepage-user-steps-with-stats.html">Home (New User Steps full - After 1st campaign
-                - with
-                stats)</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="rich-text-editor.html">Rich Text Editor</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="iframe-page.html">Iframe page</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="notifications-1-2.html">Notifications 1 – 2</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="notifications-1-1.html">Notifications 1 – 1</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="no-notif-mess.html">Notifications - no notifications message</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="campaign-setup-step-single-edit.html">Campaign Setup - Step - Single edit</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="campaign-setup-step-flow-edit.html">Campaign Setup - Step - Flow edit</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="campaign-setup-flow.html">Campaign Setup - Flow</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="bookmarks-page.html">Bookmarks page</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="billing-history.html">Billing History</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="no-history.html">Billing History – No History</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="invoice-details.html">Billing History – Invoice Details</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="invoice-html.html">Invoice HTML</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="settings-my-team.html">Settings - My Team</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="settings-my-team-add-member.html">Settings - My Team - Add Member</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="login-with-v2-link.html">Login with v2 link</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="old-vs-new.html">Old vs New</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="old.html">Old</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="migration-sent.html">Migration sent</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="old-new-pending.html">Old – New Pending</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="contacts-no-template.html">Contacts / No Template</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="feature-not-ready.html">Feature Not Ready</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="feature-not-ready-popup.html">Feature Not Ready Popup</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="feature-not-ready-absolute-popup.html">Feature Not Ready Absolute Popup</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="cleaning-service.html">Cleaning - Contacts / Cleaning Service</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="cleaning-service-list-details.html">Cleaning - Contacts / Cleaning Service – List
-                Details</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="add-cleaning-list.html">Cleaning - Contacts / Cleaning Service / Add List for
-                Cleaning</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="copy-past-list-cleaning.html">Contacts / Cleaning Service / Copy and Paste List for
-                Cleaning</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="cleaning-notification.html">Contacts / Cleaning Service / Notification</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="cleaning-list-rename.html">Contacts / Cleaning Service / List Rename</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="cleaning-service-pay.html">Contacts / Cleaning Service / Pay</a>
-            </h4>
-
-            <hr />
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-pdf.html">Reports PDF</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="reports-pdf-ab.html">Reports PDF AB - 1 - 2 -3 etc</a>
-            </h4>
-            <h4 class="mb-16">
-              <a class="link" href="v2-reports-pdf.html">v2 Reports PDF</a>
-            </h4>
-
-            <h4 class="mb-16">
-              <a class="link" href="v2-reports-pdf-ab.html">v2 Reports PDF AB - 1 - 2 -3 etc</a>
-            </h4>
+        </form>
+      </nav>
+
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="container-fluid">
+            <div class="card mb-0 mt-15">
+              <h3 class="mb-16">Pages</h3>
+
+              <p class="sub-header">
+                All pages that are implemented or currently in progress.
+              </p>
+
+              <h4 class="mb-16">
+                <a class="link" href="my-lists-static.html">My Lists</a>
+                (static)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="my-lists-ep.html">My Lists</a> (endpoint
+                integrated)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="my-lists-list-upload.html">My Lists</a>
+                (upload list)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="upgrade-push.html">Upgrade push</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="list-details-static.html">List Details</a>
+                (static)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="list-details-ep.html">List Details</a>
+                (endpoint integrated)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="contacts-home-static.html"
+                  >Contacts Home</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="contact-details.html">Contact Details</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="add-contacts.html">Add Contacts</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="form-validation-examples.html"
+                  >Form Validation Example</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="save-list-new-user.html">Save List</a>
+                (new user)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="save-list-few-lists.html">Save List</a>
+                (select from few lists)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="save-list-many-lists.html">Save List</a>
+                (select from many lists)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="confirm-modals.html"
+                  >Confirmation Modals</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="import-from-other-service.html"
+                  >Add Contacts</a
+                >
+                (import from other service)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="connect-service-not-connected.html"
+                  >Add Contacts</a
+                >
+                (import from other service - not connected)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="toggle-columns.html"
+                  >Toggle Columns Modal</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="contact-integrations.html"
+                  >Contact Integrations</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="contact-integrations-not-connected.html"
+                  >Contact Integrations</a
+                >
+                (not connected)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="contact-integrations-connected.html"
+                  >Contact Integrations</a
+                >
+                (connected)
+              </h4>
+
+              <h4 class="mb-16">
+                <a
+                  class="link"
+                  href="contact-integrations-connected-no-list.html"
+                  >Contact Integrations</a
+                >
+                (connected - no list)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="social-media-integrations.html"
+                  >Social Media Integrations</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="api.html">Integrations - API</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="confirmation.html"
+                  >Confirmation Notification</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="negative.html">Negative Notification</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="segments.html">Segments</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="segments-fixes.html">Segments</a> (fixes)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="segments-possible-fields.html"
+                  >Segments - Possible Fields</a
+                >
+              </h4>
+
+              <h4 class="mb-16"><a class="link" href="tags.html">Tags</a></h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="plugins-and-apps.html"
+                  >Integrations - Plugins & Apps</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="contact-fields.html">Contacts - Fields</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="suppression-lists.html"
+                  >Contacts - Suppression Lists</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="contacts-edit-profile.html"
+                  >Contacts / Edit Profile</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="contacts-fields-create.html"
+                  >Contacts / Fields Create</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="templates-home.html">Templates - Home</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-template-free.html"
+                  >Create Template - Free Templates</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-template-basic-layout.html"
+                  >Create Template - Basic Layout</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-template-scratch.html"
+                  >Create Template - Create From Scratch</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-template-import.html"
+                  >Create Template - Import</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-template-preview-save.html"
+                  >Create Template - Preview and Save</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="inbox-preview-empty.html"
+                  >Templates - Inbox Preview</a
+                >
+                (empty)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="inbox-preview-running.html"
+                  >Templates - Inbox Preview</a
+                >
+                (running)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="inbox-preview-complete.html"
+                  >Templates - Inbox Preview</a
+                >
+                (complete)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="spam-doctor-empty.html"
+                  >Templates - Spam Doctor</a
+                >
+                (empty)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="spam-doctor-running.html"
+                  >Templates - Spam Doctor</a
+                >
+                (running)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="spam-doctor-complete.html"
+                  >Templates - Spam Doctor</a
+                >
+                (complete)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="templates-send-test.html"
+                  >Templates - Send Test</a
+                >
+                (modal)
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="campaigns-home.html">Campaigns - Home</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign.html">Create Campaign</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="campaign-is-scheduled-modal.html"
+                  >Campaign is scheduled (modal)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-a-b.html"
+                  >Create Campaign - A/B</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-automated-overview.html"
+                  >Create Campaign - Automated (overview)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-automated.html"
+                  >Create Campaign - Automated (Welcome Email)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-onboarding-series.html"
+                  >Create Campaign - Automated (Onboarding Series)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-lead-nurturing.html"
+                  >Create Campaign - Automated (Lead Nurturing)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-happy-birthday.html"
+                  >Create Campaign - Automated (Happy Birthday)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-date-based.html"
+                  >Create Campaign - Automated (Date Based)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-auto-resend.html"
+                  >Create Campaign - Automated (Auto-Resend)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-rss.html"
+                  >Create Campaign - Automated (RSS)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-recurring.html"
+                  >Create Campaign - Automated (Recurring)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-education-series.html"
+                  >Create Campaign - Automated (Education Series)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-sales-pitch.html"
+                  >Create Campaign - Automated (Sales Pitch)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-follow-up.html"
+                  >Create Campaign - Automated (Follow Up)
+                </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="my-plan.html">My Plan </a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="my-plan-set-up-payment.html"
+                  >My Plan (Set-Up Payment Modal)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="my-plan-success.html"
+                  >My Plan (Success Modal)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="login.html">Login</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reset-password.html">Reset Password</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reset-password-success.html"
+                  >Reset Password Success</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reset-password-failure.html"
+                  >Reset Password Failure</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reset-password-new-password.html"
+                  >Reset Password - New Password</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="two-factor-authentication.html"
+                  >Two-Factor Authentication</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="two-factor-authentication-failure.html"
+                  >Two-Factor Authentication Failure</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="sign-up.html">Sign Up</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="check-email.html">Check Email</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="set-password.html">Set Your Password</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="company-information.html"
+                  >Company Information</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="add-address.html">Add Your Address</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="ready-to-go.html">You're ready to go</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-overview.html"
+                  >Settings - Overview</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-my-account.html"
+                  >Settings - My Account</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-connected-domains.html"
+                  >Settings - Connected Domains</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-connected-domains-empty.html"
+                  >Settings - Connected Domains – Empty</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-add-domain-1.html"
+                  >Settings - Add Domain(1s)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-add-domain-2.html"
+                  >Settings - Add Domain(2)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="confirmation-modal-3.html"
+                  >Confirmation - Modal(3)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-connected-domains-1.html"
+                  >Settings - Connected Domains – 1</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-senders.html"
+                  >Settings - Senders</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-senders-empty.html"
+                  >Settings - Senders – Empty</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-add-sender.html"
+                  >Setting - Add Sender</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-add-sender-pop.html"
+                  >Setting - Add Sender - Pop</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-edit-sender.html"
+                  >Setting - Edit Sender</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-emailFotter-freeAccount.html"
+                  >Settings - Email Footer - FREE ACCOUNT</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-emailFotter-paid.html"
+                  >Settings - Email Footer - PAID</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="list-details-new-table.html"
+                  >Custom Table</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="pseudo-modal.html">Pseudo Modal</a>
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-campaign-name.html"
+                  >Create Campaign - Campaign Name</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-campaign-to.html"
+                  >Create Campaign - To</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-campaign-from.html"
+                  >Create Campaign - From</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a
+                  class="link"
+                  href="create-campaign-campaign-email-design.html"
+                  >Create Campaign - Email Design</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-campaign-timing.html"
+                  >Create Campaign - Timing</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-campaign-ab-test.html"
+                  >Create Campaign - A/B Test Rules</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-campaign-ab-from.html"
+                  >Create Campaign - A/B From</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a
+                  class="link"
+                  href="create-campaign-campaign-ab-email-design.html"
+                  >Create Campaign - A/B Email Design</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a
+                  class="link"
+                  href="create-campaign-campaign-automated-to.html"
+                  >Create Campaign - Automated (Welcome Email - To)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a
+                  class="link"
+                  href="create-campaign-campaign-automated-timing.html"
+                  >Create Campaign - Automated (Welcome Email - Timing)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a
+                  class="link"
+                  href="create-campaign-onboarding-series-campaign-email-design.html"
+                  >Create Campaign - Automated (Onboarding Series - Campaign
+                  Email Design)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a
+                  class="link"
+                  href="create-campaign-onboarding-series-timing.html"
+                  >Create Campaign - Automated (Onboarding Series - Timing )</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-happy-birthday-to.html"
+                  >Create Campaign - Automated (Happy Birthday - To)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a
+                  class="link"
+                  href="create-campaign-happy-birthday-timing.html"
+                  >Create Campaign - Automated (Happy Birthday - Timing)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-auto-resend-to.html"
+                  >Create Campaign - Automated (Auto Resend - To)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-auto-resend-timing.html"
+                  >Create Campaign - Automated (Auto Resend - Timing)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a
+                  class="link"
+                  href="create-campaign-campaign-rss-email-design.html"
+                  >Create Campaign - Automated (RSS - Campaign Email Design)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-rss-timing.html"
+                  >Create Campaign - Automated (RSS - Timing)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="create-campaign-recuring-timing.html"
+                  >Create Campaign - Automated (Recuring - Timing)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a
+                  class="link"
+                  href="create-campaign-campaign-follow-up-email-design.html"
+                  >Create Campaign - Automated (Follow Up - Campaign Email
+                  Design)</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="home.html">Home</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-overview.html"
+                  >Reports Overview</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-ab.html">Reports AB</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-education-series.html"
+                  >Reports Education Series</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-detail-opens.html"
+                  >Reports Detail – Opens</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-detail-bounces.html"
+                  >Reports Detail – Bounces</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-detail-complaints.html"
+                  >Reports Detail – Complaints</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-detail-location.html"
+                  >Reports Detail – Locations</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-detail-recipients.html"
+                  >Reports Detail – Recipients</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-ab-overview.html"
+                  >Reports AB - Overview AB Campaign</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-education-series-1.html"
+                  >Reports Education Series 1</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="clickmap.html"
+                  >Reports Detail – Clickmap</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="domains.html">Reports Detail – Domains</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="email-clients.html"
+                  >Reports Detail – Email Clients</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="search-results.html">Search results</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="search-results-all.html"
+                  >Search results - All results</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="search-results-contacts.html"
+                  >Search results - Contacts</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="search-results-lists.html"
+                  >Search results - Lists</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="search-results-templates.html"
+                  >Search results - Templates</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="search-results-campaigns.html"
+                  >Search results - Campaigns</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="search-results-other.html"
+                  >Search results - Other</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="homepage-with-automation.html">
+                  Home (Standard with automation)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="homepage-empty-automation.html">
+                  Home (Standard - automation empty)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="homepage-user-step-1.html">
+                  Home (New User Step 1)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="homepage-user-step-2.html">
+                  Home (New User Step 2)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="homepage-user-step-3.html">
+                  Home (New User Step 3)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="homepage-user-step-arrows.html">
+                  Home (New User Step Arrows (done elements) Desicion)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="homepage-user-steps-no-stats.html">
+                  Home (New User All Steps full - After 1st campaign but no
+                  stats)</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="homepage-user-steps-with-stats.html"
+                  >Home (New User Steps full - After 1st campaign - with
+                  stats)</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="rich-text-editor.html"
+                  >Rich Text Editor</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="iframe-page.html">Iframe page</a>
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="notifications-1-2.html"
+                  >Notifications 1 – 2</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="notifications-1-1.html"
+                  >Notifications 1 – 1</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="no-notif-mess.html"
+                  >Notifications - no notifications message</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="campaign-setup-step-single-edit.html"
+                  >Campaign Setup - Step - Single edit</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="campaign-setup-step-flow-edit.html"
+                  >Campaign Setup - Step - Flow edit</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="campaign-setup-flow.html"
+                  >Campaign Setup - Flow</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="bookmarks-page.html">Bookmarks page</a>
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="billing-history.html">Billing History</a>
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="no-history.html"
+                  >Billing History – No History</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="invoice-details.html"
+                  >Billing History – Invoice Details</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="invoice-html.html">Invoice HTML</a>
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="settings-my-team.html"
+                  >Settings - My Team</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="settings-my-team-add-member.html"
+                  >Settings - My Team - Add Member</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="login-with-v2-link.html"
+                  >Login with v2 link</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="old-vs-new.html">Old vs New</a>
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="old.html">Old</a>
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="migration-sent.html">Migration sent</a>
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="old-new-pending.html"
+                  >Old – New Pending</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="contacts-no-template.html"
+                  >Contacts / No Template</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="feature-not-ready.html"
+                  >Feature Not Ready</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="feature-not-ready-popup.html"
+                  >Feature Not Ready Popup</a
+                >
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="feature-not-ready-absolute-popup.html"
+                  >Feature Not Ready Absolute Popup</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="cleaning-service.html"
+                  >Cleaning - Contacts / Cleaning Service</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="cleaning-service-list-details.html"
+                  >Cleaning - Contacts / Cleaning Service – List Details</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="add-cleaning-list.html"
+                  >Cleaning - Contacts / Cleaning Service / Add List for
+                  Cleaning</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="copy-past-list-cleaning.html"
+                  >Contacts / Cleaning Service / Copy and Paste List for
+                  Cleaning</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="cleaning-notification.html"
+                  >Contacts / Cleaning Service / Notification</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="cleaning-list-rename.html"
+                  >Contacts / Cleaning Service / List Rename</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="cleaning-service-pay.html"
+                  >Contacts / Cleaning Service / Pay</a
+                >
+              </h4>
+
+              <hr />
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-pdf.html">Reports PDF</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="reports-pdf-ab.html"
+                  >Reports PDF AB - 1 - 2 -3 etc</a
+                >
+              </h4>
+              <h4 class="mb-16">
+                <a class="link" href="v2-reports-pdf.html">v2 Reports PDF</a>
+              </h4>
+
+              <h4 class="mb-16">
+                <a class="link" href="v2-reports-pdf-ab.html"
+                  >v2 Reports PDF AB - 1 - 2 -3 etc</a
+                >
+              </h4>
+            </div>
           </div>
+          <!-- container -->
         </div>
-        <!-- container -->
+        <!-- content -->
       </div>
-      <!-- content -->
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+
+      <a href="#" class="btn_back">
+        <svg width="8" height="8">
+          <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
+        </svg>
+      </a>
     </div>
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
+    <!-- END wrapper -->
 
-    <a href="#" class="btn_back">
-      <svg width="8" height="8">
-        <use xlink:href="assets/images/sprite.svg#back-arrow"></use>
-      </svg>
-    </a>
-  </div>
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
 
-  <!-- END wrapper -->
+    <script src="assets/libs/select2/js/select2.min.js"></script>
 
-  <!-- Vendor js -->
-  <script src="assets/js/vendor.min.js"></script>
-
-  <script src="assets/libs/select2/js/select2.min.js"></script>
-
-  <!-- App js -->
-  <script src="assets/js/app.min.js"></script>
-</body>
-
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+  </body>
 </html>
-

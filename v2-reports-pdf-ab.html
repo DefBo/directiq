@@ -1,185 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Document</title>
     <!-- App favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png?v=M4K2b5JM9m" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png?v=M4K2b5JM9m" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png?v=M4K2b5JM9m"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png?v=M4K2b5JM9m"
+    />
     <link rel="manifest" href="assets/images/site.webmanifest?v=M4K2b5JM9m" />
-    <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m" color="#5bbad5" />
+    <link
+      rel="mask-icon"
+      href="assets/images/safari-pinned-tab.svg?v=M4K2b5JM9m"
+      color="#5bbad5"
+    />
     <link rel="shortcut icon" href="assets/images/favicon.ico?v=M4K2b5JM9m" />
     <meta name="msapplication-TileColor" content="#0000ff" />
-    <meta name="msapplication-config" content="assets/images/browserconfig.xml?v=M4K2b5JM9m" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/browserconfig.xml?v=M4K2b5JM9m"
+    />
     <meta name="theme-color" content="#ffffff" />
     <style>
-        @font-face {
-            font-family: 'Proxima Nova';
-            src: url('/assets/fonts/ProximaNova-Regular.eot');
-            src: local('Cerebri-sans Light'),
-                url('/assets/fonts/ProximaNova-Regular.woff') format('woff');
-            font-weight: 400;
-        }
+      @font-face {
+        font-family: 'Proxima Nova';
+        src: url('/assets/fonts/ProximaNova-Regular.eot');
+        src: local('Cerebri-sans Light'),
+          url('/assets/fonts/ProximaNova-Regular.woff') format('woff');
+        font-weight: 400;
+      }
 
-        @font-face {
-            font-family: 'Proxima Nova';
-            src: url('/assets/fonts/ProximaNova-Medium.eot');
-            src: local('Cerebri-sans Light'),
-                url('/assets/fonts/ProximaNova-Medium.woff') format('woff');
-            font-weight: 500;
-        }
+      @font-face {
+        font-family: 'Proxima Nova';
+        src: url('/assets/fonts/ProximaNova-Medium.eot');
+        src: local('Cerebri-sans Light'),
+          url('/assets/fonts/ProximaNova-Medium.woff') format('woff');
+        font-weight: 500;
+      }
 
-        @font-face {
-            font-family: 'Proxima Nova';
-            src: url('/assets/fonts/ProximaNova-Semibold.eot');
-            src: local('Cerebri-sans Light'),
-                url('/assets/fonts/ProximaNova-Semibold.woff') format('woff');
-            font-weight: 600;
-        }
+      @font-face {
+        font-family: 'Proxima Nova';
+        src: url('/assets/fonts/ProximaNova-Semibold.eot');
+        src: local('Cerebri-sans Light'),
+          url('/assets/fonts/ProximaNova-Semibold.woff') format('woff');
+        font-weight: 600;
+      }
 
-        @font-face {
-            font-family: 'Proxima Nova';
-            src: url('/assets/fonts/ProximaNova-Bold.eot');
-            src: local('Cerebri-sans Light'),
-                url('/assets/fonts/ProximaNova-Bold.woff') format('woff');
-            font-weight: 700;
-        }
+      @font-face {
+        font-family: 'Proxima Nova';
+        src: url('/assets/fonts/ProximaNova-Bold.eot');
+        src: local('Cerebri-sans Light'),
+          url('/assets/fonts/ProximaNova-Bold.woff') format('woff');
+        font-weight: 700;
+      }
 
-        html {
-            font-size: 10px;
-        }
+      html {
+        font-size: 10px;
+      }
 
-        body {
-            font-family: 'Proxima Nova';
-            margin: 0rem;
-            color: #212B35;
-        }
+      body {
+        font-family: 'Proxima Nova';
+        margin: 0rem;
+        color: #212b35;
+      }
 
-        .reports {
-            margin: 1rem;
-            display: flex;
-            flex-direction: column;
-            border: 0.1rem solid #C7D8E4;
-            padding: 3rem;
-        }
+      .reports {
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        border: 0.1rem solid #c7d8e4;
+        padding: 3rem;
+      }
 
-        .reports-top {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 2rem;
-        }
+      .reports-top {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2rem;
+      }
 
-        .reports-top__title {
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-right: 2rem;
-        }
+      .reports-top__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-right: 2rem;
+      }
 
-        .tags {
-            display: flex;
-            align-items: center;
-        }
+      .tags {
+        display: flex;
+        align-items: center;
+      }
 
-        .tags-item {
-            padding: 0.2rem 0.4rem;
-            border: 0.1rem solid #C7D8E4;
-            margin-right: 1.1rem;
-        }
+      .tags-item {
+        padding: 0.2rem 0.4rem;
+        border: 0.1rem solid #c7d8e4;
+        margin-right: 1.1rem;
+      }
 
-        .reports-body {
-            display: flex;
-            align-items: center;
-        }
+      .reports-body {
+        display: flex;
+        align-items: center;
+      }
 
-        .reports-body__img {
-            height: 12rem;
-            max-width: 10rem;
-            width: 100%;
-            margin-right: 2rem;
-        }
+      .reports-body__img {
+        height: 12rem;
+        max-width: 10rem;
+        width: 100%;
+        margin-right: 2rem;
+      }
 
-        .reports-body__img img {
-            width: 100%;
-            height: 100%;
-            object-fil: cover;
-            object-position: top;
-        }
+      .reports-body__img img {
+        width: 100%;
+        height: 100%;
+        object-fil: cover;
+        object-position: top;
+      }
 
-        .reports-body__name {
-            margin-left: auto;
-            width: 7.5rem;
-            height: 7.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.6rem;
-            color: #0000FF;
-            border: 0.2rem solid #0000FF;
-            border-radius: 50%;
-        }
+      .reports-body__name {
+        margin-left: auto;
+        width: 7.5rem;
+        height: 7.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.6rem;
+        color: #0000ff;
+        border: 0.2rem solid #0000ff;
+        border-radius: 50%;
+      }
 
-        .reports-body__content {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            justify-content: center;
-        }
+      .reports-body__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+      }
 
-        .reports-body__content p {
-            margin-top: 0rem;
-            margin-bottom: 1rem;
-            font-size: 0.8rem;
-        }
+      .reports-body__content p {
+        margin-top: 0rem;
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
+      }
 
-        .reports-body__content p:last-child {
-            margin-bottom: 0rem;
-        }
+      .reports-body__content p:last-child {
+        margin-bottom: 0rem;
+      }
 
-        .reports-body__content p b {
-            margin-left: 1rem;
-        }
+      .reports-body__content p b {
+        margin-left: 1rem;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="reports">
-        <div class="reports-top">
-            <div class="reports-top__title">
-                Dodo’s Big Launch Campaign
-            </div>
-            <div class="tags">
-                <div class="tags-item">
-                    member
-                </div>
-                <div class="tags-item">
-                    sale
-                </div>
-                <div class="tags-item">
-                    A/B
-                </div>
-            </div>
+      <div class="reports-top">
+        <div class="reports-top__title">Dodo’s Big Launch Campaign</div>
+        <div class="tags">
+          <div class="tags-item">member</div>
+          <div class="tags-item">sale</div>
+          <div class="tags-item">A/B</div>
         </div>
-        <div class="reports-body">
-            <div class="reports-body__img">
-                <img src="assets/images/template-3.jpg" alt="#">
-            </div>
-            <div class="reports-body__content">
-                <p>Subject Line: <b>Hey %%firstname%% how are you?</b></p>
-                <p>Preheader: <b>Final Opportunity to Grab Discount</b></p>
-                <p>From: <b>Dodo Design / newsletter@selfi.net</b></p>
-                <p>Delivered: <b>Today 2:45 PM</b></p>
-                <p>Footer and Forms: <b>English</b></p>
-                <p>Google Analytics Tracking: <b>ON</b></p>
-            </div>
-            <div class="reports-body__name">
-                <span>A</span>
-            </div>
+      </div>
+      <div class="reports-body">
+        <div class="reports-body__img">
+          <img src="assets/images/template-3.jpg" alt="#" />
         </div>
+        <div class="reports-body__content">
+          <p>Subject Line: <b>Hey %%firstname%% how are you?</b></p>
+          <p>Preheader: <b>Final Opportunity to Grab Discount</b></p>
+          <p>From: <b>Dodo Design / newsletter@selfi.net</b></p>
+          <p>Delivered: <b>Today 2:45 PM</b></p>
+          <p>Footer and Forms: <b>English</b></p>
+          <p>Google Analytics Tracking: <b>ON</b></p>
+        </div>
+        <div class="reports-body__name">
+          <span>A</span>
+        </div>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>
