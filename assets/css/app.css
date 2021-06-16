@@ -13960,7 +13960,7 @@ table.dataTable thead .sorting_asc {
   top: calc(50% - 74px);
   right: -240px;
   width: 220px;
-  background-color: #0000FF;
+  background-color: #0000ff;
   padding: 20px 20px 17px;
   border-radius: 16px;
   z-index: 1;
@@ -13989,7 +13989,7 @@ table.dataTable thead .sorting_asc {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #ED1C24;
+  background-color: #ed1c24;
   margin-right: 8px; }
   .help-status .status-correct {
     display: none; }
@@ -14008,12 +14008,24 @@ table.dataTable thead .sorting_asc {
       justify-content: center; }
     .help-status__row.correct .help-text {
       text-decoration: line-through;
-      -webkit-text-decoration-color: #6BE7AD;
-              text-decoration-color: #6BE7AD; }
+      -webkit-text-decoration-color: #6be7ad;
+              text-decoration-color: #6be7ad; }
 
 .help-text {
   font-size: 12px;
   font-weight: regular; }
+
+.text-404 {
+  font-style: normal;
+  position: absolute;
+  content: '';
+  left: auto;
+  right: auto;
+  top: 68px;
+  transform: translateX(100%); }
+
+.relative {
+  position: relative; }
 
 th,
 td {
