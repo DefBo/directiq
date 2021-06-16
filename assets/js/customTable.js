@@ -102,11 +102,16 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
         buttons.forEach((button) => {
           button.addEventListener('click', (e) => {
             e.preventDefault();
+            tabFilterSearchParams = {
+              [tableOuterControls.dataset.filter]: button.dataset.filterValue,
+            };
+
             globalSearchParams = {
               ...globalSearchParams,
-              [tableOuterControls.dataset.filter]: button.dataset.filterValue,
+              ...tabFilterSearchParams,
               pageNumber: 1,
             };
+
             filterCallback();
             buttons.forEach((button2) => {
               button2.classList.remove('active');
@@ -706,6 +711,7 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
 
   let defaultSearchParams = null;
   let globalSearchParams = {};
+  let tabFilterSearchParams = {};
   let fetchedData = null;
   let checkboxSelected = [];
 
@@ -960,6 +966,7 @@ const createCustomDataTable = async (id, restConfig, customConfig) => {
           orderDir: globalSearchParams.orderDir
             ? globalSearchParams.orderDir
             : '',
+          ...tabFilterSearchParams,
         };
 
         filterTable();
