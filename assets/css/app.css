@@ -7548,6 +7548,8 @@ body {
     margin: 16px 20px 0px 0px;
     padding-right: 5px;
     white-space: nowrap; }
+    .btn._tag-del__new {
+      margin-top: 20px; }
     .btn._tag-del .btn_icon {
       position: relative;
       height: 8px;
@@ -13872,6 +13874,9 @@ table.dataTable thead .sorting_asc {
 
 .red-text {
   color: #ed1c24; }
+
+#added-contacts {
+  margin-top: -10px; }
 
 .disabled {
   pointer-events: none;
