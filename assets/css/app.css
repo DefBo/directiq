@@ -14195,8 +14195,7 @@ table.dataTable.diriq-table tbody td {
     font-size: 0; }
   .diriq-table tfoot tr {
     height: 46px; }
-  ._list-name-table.with-scroll:not(.dataTables_wrapper--empty)
-.diriq-table th:nth-child(2):before {
+  ._list-name-table.with-scroll:not(.dataTables_wrapper--empty) .diriq-table th:nth-child(2):before {
     content: '';
     position: absolute;
     right: 0;
@@ -15060,6 +15059,9 @@ div.dataTables_wrapper div.dataTables_info {
 ._lists td:nth-child(4),
 ._lists td:nth-child(5) {
   text-align: right; }
+
+#data-table_info {
+  padding-right: 80px; }
 
 @media (max-width: 1124px) {
   .navbar-search {
