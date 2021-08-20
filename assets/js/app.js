@@ -746,7 +746,6 @@ File: Main Js File
     (Components.prototype.initPopoverPlugin = function () {
       $.fn.popover && $('[data-toggle="popover"]').popover();
     }),
-
     // initializing form validation
     (Components.prototype.initFormValidation = function () {
       $('.needs-validation').on('submit', function (event) {
