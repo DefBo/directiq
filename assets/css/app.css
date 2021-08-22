@@ -9609,7 +9609,9 @@ button.close {
   background-color: #f6f9fc;
   color: #212b35; }
 
-.select2-container--default .select2-selection--single .select2-selection__placeholder {
+.select2-container--default
+.select2-selection--single
+.select2-selection__placeholder {
   color: #758796; }
 
 .confirm__wrap {
@@ -13676,52 +13678,156 @@ button {
   line-height: 1;
   margin-right: 20px; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(3) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollBody
+> table
+> tbody
+> tr
+> td:nth-child(3) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(4) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollBody
+> table
+> tbody
+> tr
+> td:nth-child(4) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(5) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollBody
+> table
+> tbody
+> tr
+> td:nth-child(5) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(6) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollBody
+> table
+> tbody
+> tr
+> td:nth-child(6) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(7) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollBody
+> table
+> tbody
+> tr
+> td:nth-child(7) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(8) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollBody
+> table
+> tbody
+> tr
+> td:nth-child(8) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(9) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollBody
+> table
+> tbody
+> tr
+> td:nth-child(9) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td:nth-child(10) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollBody
+> table
+> tbody
+> tr
+> td:nth-child(10) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(3) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollHead
+div.dataTables_scrollHeadInner
+> table
+> thead
+> tr
+> th:nth-child(3) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(4) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollHead
+div.dataTables_scrollHeadInner
+> table
+> thead
+> tr
+> th:nth-child(4) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(5) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollHead
+div.dataTables_scrollHeadInner
+> table
+> thead
+> tr
+> th:nth-child(5) {
   text-align: right; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(6) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollHead
+div.dataTables_scrollHeadInner
+> table
+> thead
+> tr
+> th:nth-child(6) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(7) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollHead
+div.dataTables_scrollHeadInner
+> table
+> thead
+> tr
+> th:nth-child(7) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(8) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollHead
+div.dataTables_scrollHeadInner
+> table
+> thead
+> tr
+> th:nth-child(8) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(9) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollHead
+div.dataTables_scrollHeadInner
+> table
+> thead
+> tr
+> th:nth-child(9) {
   text-align: center; }
 
-._list-name-table .dataTables_wrapper .dataTables_scroll div.dataTables_scrollHead div.dataTables_scrollHeadInner > table > thead > tr > th:nth-child(10) {
+._list-name-table .dataTables_wrapper
+.dataTables_scroll
+div.dataTables_scrollHead
+div.dataTables_scrollHeadInner
+> table
+> thead
+> tr
+> th:nth-child(10) {
   text-align: center; }
 
 .white {
@@ -14063,16 +14169,12 @@ table.dataTable thead .sorting_asc {
     transform: translateX(100%); }
   40% {
     transform: translateX(-10%); }
-  80%,
   100% {
     transform: translateX(0rem); } }
 
 @keyframes hide_toast {
   0% {
     transform: translateX(0rem); }
-  40% {
-    transform: translateX(10%); }
-  80%,
   100% {
     opacity: 0;
     pointer-events: none;
@@ -14088,7 +14190,7 @@ table.dataTable thead .sorting_asc {
   font-size: 12px;
   padding: 26px;
   animation: show_toast 1s ease forwards; }
-  .toast.hide {
+  .toast.hide-toast {
     animation: hide_toast 1s ease forwards; }
   .toast:before {
     width: 100%;
