@@ -9230,6 +9230,10 @@ button.close {
     font-size: 14px;
     font-weight: 700; }
 
+@media (max-width: 768px) {
+  .nav-item-link a {
+    color: #fff; } }
+
 .knob-text {
   margin-left: 20px;
   display: flex;
