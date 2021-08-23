@@ -1185,16 +1185,18 @@
 
       createSelect2ByClass('._select2-lg', select2Options);
 
-      $('#toast1, #toast2, #toast3, #toast4').toast('show');
-
       // Selecting all required elements
       const toasts = document.querySelectorAll('.toast');
-
+      
       toasts.forEach((item) => {
         setTimeout(() => {
           //hide the toast notification automatically after 5 seconds
+          $('.toast').toast('show');
+        }, 1000);
+        setTimeout(() => {
+          //hide the toast notification automatically after 5 seconds
           item.classList.add('hide-toast');
-        }, 5000);
+        }, 10000);
       });
     </script>
   </body>
