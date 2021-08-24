@@ -14206,7 +14206,8 @@ table.dataTable thead .sorting_asc {
   content: '';
   z-index: 9999;
   font-size: 12px;
-  padding: 26px; }
+  padding: 26px;
+  border-radius: 0; }
   .toast-top {
     top: 15px; }
   .toast-left {
